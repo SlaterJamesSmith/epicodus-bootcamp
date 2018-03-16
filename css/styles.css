@@ -1,10 +1,17 @@
 #profile-pic {
   display: block;
-  width: 100%;
-  margin-top: 20px;
+  float: right;
+  width: 50%;
+  max-width: 953px;
+  margin: 0px 25px 50px;
+  border-radius: 100%;
 }
 
 /* GENERAL STYLES */
+
+body {
+  background: #fbfbfb;
+}
 
 h1, h2, h3 {
   font-family: 'Montserrat', sans-serif;
@@ -23,14 +30,6 @@ ol li {
   padding: 0px 20px;
 }
 
-ul {
-  padding: 0;
-}
-
-ul li {
-  list-style: none;
-}
-
 .header-break {
   display: block;
 }
@@ -45,27 +44,31 @@ ul li {
 
 /* SECTION STYLES */
 
+.section1 {
+background-color: #000;
+}
+
 .jumbotron {
-  margin-top: 20px;
-  background-color: #000;
-  color: #FFF;
+
+  overflow: auto;
+  min-height: 250px;
+  margin: 0px;
+  background-color: #0000;
+  color: #fff;
 }
 
 .jumbotron h1 {
+  margin: 0 20px;
   font-size: 5em;
-  text-align: right;
+  text-align: left;
+  float: left;
 }
 
-.aboutme h2 {
-  font-size: .8em;
-  font-weight: normal;
-  text-transform: lowercase;
-  color: #CCC;
-  margin: 10px 20px 10px;
-}
-
-.aboutme p {
-  margin: 0px 20px;
+.jumbotron p {
+  float: right;
+  color: #fff;
+  font-size: 1.3em;
+  margin: 20px;
 }
 
 .section2 h2 {
@@ -106,6 +109,17 @@ ul li {
   color: #fff;
   background-color: #d195f5;
   border-radius: 3px;
-  margin: 10px 10px;
-  padding:
+  margin: 10px 15px;
+}
+
+.section3 ul {
+  padding: 0;
+}
+
+.section3 ul li {
+  border: 1px solid #d195f5;
+  border-radius: 3px;
+  list-style: none;
+  margin: 10px 15px;
+  padding: 5px 10px;
 }
