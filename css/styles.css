@@ -11,6 +11,7 @@
 
 body {
   background: #fbfbfb;
+  min-width: 300px;
 }
 
 h1, h2, h3 {
@@ -109,13 +110,13 @@ background-color: #000;
 
 .section3 h3 {
   color: #fff;
-  background-color: #d195f5;
+  background-color: #ffa759;
   border-radius: 3px;
   margin: 10px 15px;
 }
 
 .section3 ul {
-  margin: 0px auto 30px; 
+  margin: 0px auto 30px;
   padding: 0;
 }
 
@@ -126,4 +127,21 @@ background-color: #000;
   list-style: none;
   margin: 10px 15px;
   padding: 5px 10px;
+}
+
+@media screen and (max-width: 632px) {
+  #profile-pic {
+    width: 95%;
+    float: none;
+    margin: 0 auto 25px;
+  }
+
+  .jumbotron {
+    text-align: center;
+  }
+
+  .jumbotron h1 {
+    text-align: center;
+    float: none;
+  }
 }
