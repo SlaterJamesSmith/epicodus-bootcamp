@@ -102,6 +102,8 @@ background-color: #000;
 }
 
 .section3 {
+  background-color: #000;
+  padding: 25px;
   text-align: center;
 }
 
@@ -113,10 +115,12 @@ background-color: #000;
 }
 
 .section3 ul {
+  margin: 0px auto 30px; 
   padding: 0;
 }
 
 .section3 ul li {
+  background-color: #fff;
   border: 1px solid #d195f5;
   border-radius: 3px;
   list-style: none;
