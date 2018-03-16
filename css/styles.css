@@ -18,9 +18,17 @@ ol {
   margin-bottom: 25px;
 }
 
-li {
+ol li {
   margin-bottom: 20px;
   padding: 0px 20px;
+}
+
+ul {
+  padding: 0;
+}
+
+ul li {
+  list-style: none;
 }
 
 .header-break {
@@ -90,8 +98,11 @@ li {
   background-color: #72d4fb;
 }
 
-.section3 h3 {
+.section3 {
   text-align: center;
+}
+
+.section3 h3 {
   color: #fff;
   background-color: #d195f5;
   border-radius: 3px;
