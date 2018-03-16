@@ -6,8 +6,12 @@
 
 /* GENERAL STYLES */
 
-h1, h2, h3, h4, h5, h6 {
+h1, h2, h3 {
   font-family: 'Montserrat', sans-serif;
+}
+
+strong {
+  font-family: 'Hind', sans-serif;
 }
 
 ol {
@@ -24,7 +28,11 @@ li {
 }
 
 .row {
-  margin-bottom: 50px;
+  margin-bottom: 25px;
+}
+
+.inner-row {
+  margin-bottom: 0;
 }
 
 /* SECTION STYLES */
@@ -80,4 +88,13 @@ li {
 .education h2 {
   color: #fff;
   background-color: #72d4fb;
+}
+
+.section3 h3 {
+  text-align: center;
+  color: #fff;
+  background-color: #d195f5;
+  border-radius: 3px;
+  margin: 10px 10px;
+  padding:
 }
