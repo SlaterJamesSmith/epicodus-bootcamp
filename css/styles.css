@@ -1,0 +1,26 @@
+#profile-pic {
+  display: block;
+  width: 100%;
+}
+
+.section1 {
+  text-align: right;
+}
+
+.jumbotron {
+  margin-top: 20px;
+  background-color: #000;
+  color: #FFF;
+}
+
+.jumbotron h1 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 5em;
+}
+
+.aboutme h2 {
+  font-size: .8em;
+  font-weight: normal;
+  text-transform: lowercase;
+  color: #AAA;
+}
