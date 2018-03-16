@@ -1,6 +1,8 @@
-# _EPICODUS - INTRO - WEEK 1: Solo Project_
+# _EPICODUS - INTRO WEEK 1: Solo Project_
 
-#### _{Brief description of application}, March 16, 2018_
+#### _A Custom-Built Personal Portfolio Site, March 16, 2018_
+
+## _GH-Pages Link: [https://mchuz.github.io/epi-wk1-solo-project/]_
 
 #### By _**Mike Chu**_
 
