@@ -1,3 +1,11 @@
+#profile-pic {
+  display: block;
+  width: 100%;
+  margin-top: 20px;
+}
+
+/* GENERAL STYLES */
+
 h1, h2, h3, h4, h5, h6 {
   font-family: 'Montserrat', sans-serif;
 }
@@ -11,19 +19,15 @@ li {
   padding: 0px 20px;
 }
 
+.header-break {
+  display: block;
+}
+
 .row {
   margin-bottom: 50px;
 }
 
-#profile-pic {
-  display: block;
-  width: 100%;
-  margin-top: 20px;
-}
-
-.header-break {
-  display: block;
-}
+/* SECTION STYLES */
 
 .jumbotron {
   margin-top: 20px;
@@ -48,15 +52,32 @@ li {
   margin: 0px 20px;
 }
 
+.section2 h2 {
+  color: white;
+  background-color: #00d491;
+  border-radius: 3px;
+}
+
 .section2 .section-title {
   margin: 0px auto 25px;
   text-align: center;
 }
 
-.section2 .panel {
-
+.section2 .panel-heading {
+  background-color: #fff;
 }
 
-.section2 .panel-heading {
-  background-color: #42f5b4;
+.section2 .panel-heading h2 {
+  color: #00d491;
+  background-color: #fff;
+}
+
+.experience h2 {
+  color: #fff;
+  background-color: #ff6868;
+}
+
+.education h2 {
+  color: #fff;
+  background-color: #72d4fb;
 }
