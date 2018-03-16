@@ -1,6 +1,18 @@
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Montserrat', sans-serif;
+}
+
+.row {
+  margin-bottom: 50px;
+}
+
 #profile-pic {
   display: block;
   width: 100%;
+}
+
+.header-break {
+  display: block;
 }
 
 .section1 {
@@ -14,7 +26,6 @@
 }
 
 .jumbotron h1 {
-  font-family: 'Montserrat', sans-serif;
   font-size: 5em;
 }
 
@@ -23,4 +34,20 @@
   font-weight: normal;
   text-transform: lowercase;
   color: #AAA;
+}
+
+.section2 {
+  text-align: center;
+}
+
+.section2 .section-title {
+  marign: auto;
+}
+
+.section2 .panel {
+  min-height: 300px;
+}
+
+.section2 .panel-heading {
+  background-color: silver;
 }
