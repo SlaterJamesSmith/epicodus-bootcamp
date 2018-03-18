@@ -11,7 +11,7 @@
   background-image: url(../img/videocamera.jpg);
   background-size: 100%;
   border-radius: 100%;
-  margin: 10px auto;
+  margin: 10px auto 10px;
   transition: background-image 0.7s ease-in-out;
 }
 
@@ -20,8 +20,11 @@
 }
 
 #video-portfolio img {
+  width: 100%;
+  filter: grayscale(0%);
   position: relative;
   top: -10px;
+  margin: 0;
   opacity: 0;
   transition: opacity 0.5s, top 0.4s;
 }
@@ -35,7 +38,7 @@
 
 body {
   background: #fbfbfb;
-  min-width: 450px;
+  min-width: 600px;
 }
 
 h1, h2, h3 {
@@ -185,7 +188,8 @@ a {
 .section3 img {
   border-radius: 100%;
   margin: 10px auto;
-  width: 95%;
+  width: 100%;
+  filter: grayscale(80%);
 }
 
 .section3 h2 {
@@ -208,6 +212,12 @@ a {
   padding-top: 0px;
 }
 
+.section3 .accent {
+  color: #fff;
+  background-color: #3b3b3b;
+  border: 1px solid #3b3b3b;
+}
+
 @media screen and (max-width: 1200px) {
   .jumbotron h1 {
     font-size: 7em;
@@ -218,11 +228,19 @@ a {
   }
 }
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 992px) {
   #profile-pic {
     width: 75%;
     margin: 0px auto 25px;
     float: none;
+  }
+
+  #video-portfolio {
+    width: 45%;
+  }
+
+  .header-break {
+    display: inline;
   }
 
   .jumbotron {
@@ -234,7 +252,21 @@ a {
     text-align: center;
   }
 
-  .header-break {
-    display: inline;
+  .section2 h2.section-title {
+    text-align: left;
+    padding-left: 15px;
+  }
+
+}
+
+@media screen and (max-width: 768px) {
+  .section3 h3 {
+    font-size: .8em;
+  }
+
+  .section3 p strong {
+    font-size: .7em;
+    font-family: 'Helvetica Neue', sans-serif;
+    font-weight: normal;
   }
 }
