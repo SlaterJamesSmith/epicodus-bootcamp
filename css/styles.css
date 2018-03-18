@@ -116,6 +116,12 @@ a {
   background-color: #000;
 }
 
+.experience img {
+  float: right;
+  width: 24px;
+  margin: -54px 4px;
+}
+
 .education {
   margin-bottom: 40px;
 }
