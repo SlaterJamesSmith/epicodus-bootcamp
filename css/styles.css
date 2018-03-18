@@ -94,6 +94,12 @@ a {
   border-radius: 3px;
 }
 
+.section2 img {
+  float: right;
+  width: 24px;
+  margin: -54px 4px;
+}
+
 .section2 .panel-heading {
   background-color: #fff;
 }
@@ -114,12 +120,6 @@ a {
 .experience h2 {
   color: #fff;
   background-color: #000;
-}
-
-.experience img {
-  float: right;
-  width: 24px;
-  margin: -54px 4px;
 }
 
 .education {
