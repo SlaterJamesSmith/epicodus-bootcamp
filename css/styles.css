@@ -32,12 +32,7 @@ ol li {
 }
 
 a {
-  color: #00d290;
-}
-
-a:hover {
-  font-weight: bold;
-  text-decoration: none;
+  color: #107cbd;
 }
 
 .header-break {
@@ -105,7 +100,7 @@ a:hover {
 }
 
 .panel-body a:hover {
-  color: #00d290;
+  color: #2aafff;
 }
 
 .experience {
@@ -119,6 +114,10 @@ a:hover {
 
 .education {
   margin-bottom: 40px;
+}
+
+.education a:hover {
+  color: #2aafff;
 }
 
 .education h2 {
