@@ -7,6 +7,30 @@
   border-radius: 100%;
 }
 
+#video-portfolio {
+  background-image: url(../img/videocamera.jpg);
+  background-size: 100%;
+  border-radius: 100%;
+  margin: 10px auto;
+  transition: background-image 0.7s ease-in-out;
+}
+
+#video-portfolio:hover {
+  background-image: url(../img/videocamera-bw.jpg);
+}
+
+#video-portfolio img {
+  position: relative;
+  top: -10px;
+  opacity: 0;
+  transition: opacity 0.5s, top 0.4s;
+}
+
+#video-portfolio img:hover {
+  top: 0;
+  opacity: 1;
+}
+
 /* GENERAL STYLES */
 
 body {
@@ -84,10 +108,6 @@ a {
   text-shadow: 0px 0px 10px #000;
 }
 
-.section2 {
-  border-bottom: 3px dashed #ddd;
-}
-
 .section2 h2 {
   color: white;
   background-color: #053b5d;
@@ -157,28 +177,35 @@ a {
 }
 
 .section3 {
+  background-color: #eae9e7;
   padding: 0 15px;
   text-align: center;
 }
 
+.section3 img {
+  border-radius: 100%;
+  margin: 10px auto;
+  width: 95%;
+}
+
 .section3 h2 {
-  color: #000;
-  border-radius: 3px;
-  border: 1px solid #000;
-}
-
-.section3 ul {
-  margin: 0px auto 30px;
-  padding: 0;
-}
-
-.section3 ul li {
+  color: #3b4a53;
   background-color: #fff;
-  border: 1px solid #d195f5;
   border-radius: 3px;
-  list-style: none;
-  margin: 10px 15px;
-  padding: 5px 10px;
+  border: 1px solid #3b4a53;
+  margin-top: -15px;
+}
+
+.section3 h3 {
+  color: #3b4a53;
+  background-color: #fff;
+  border: 1px solid #3b4a53;
+  border-radius: 3px;
+  padding: 5px;
+}
+
+.section3 .panel-heading {
+  padding-top: 0px;
 }
 
 @media screen and (max-width: 1200px) {
