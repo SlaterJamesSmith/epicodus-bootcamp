@@ -3,7 +3,7 @@
   float: right;
   width: 50%;
   max-width: 800px;
-  margin: 0px 25px 35px;
+  margin: 0px 75px 35px 25px;
   border-radius: 100%;
 }
 
@@ -11,7 +11,7 @@
 
 body {
   background: #fbfbfb;
-  min-width: 300px;
+  min-width: 450px;
 }
 
 h1, h2, h3 {
@@ -72,9 +72,8 @@ a:hover {
 
 .jumbotron h1 {
   margin: 0 20px;
-  font-size: 5em;
+  font-size: 10em;
   text-align: left;
-  float: left;
 }
 
 .jumbotron p {
@@ -175,11 +174,21 @@ a:hover {
   padding: 5px 10px;
 }
 
-@media screen and (max-width: 632px) {
+@media screen and (max-width: 1200px) {
+  .jumbotron h1 {
+    font-size: 7em;
+  }
+
   #profile-pic {
-    width: 95%;
+    margin-right: 25px;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  #profile-pic {
+    width: 75%;
+    margin: 0px auto 25px;
     float: none;
-    margin: 0 auto 25px;
   }
 
   .jumbotron {
@@ -187,7 +196,11 @@ a:hover {
   }
 
   .jumbotron h1 {
+    font-size: 4em;
     text-align: center;
-    float: none;
+  }
+
+  .header-break {
+    display: inline;
   }
 }
