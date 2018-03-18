@@ -4,16 +4,13 @@
 
 #### _By Mike Chu_
 
-**GH-Pages Link:** https://mchuz.github.io/epi-wk1-solo-project/
-
 ## Description
 
 _This website project is a practice in the use of HTML, CSS, and Bootstrap (v3.3.7)._
 
 ## Setup/Installation Requirements
 
-1. _Clone this repository._
-2. _Open index.html in a web browser._
+1. Visit website link: https://mchuz.github.io/epi-wk1-solo-project/
 
 ## Known Bugs
 
