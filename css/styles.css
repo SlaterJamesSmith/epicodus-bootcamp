@@ -92,14 +92,43 @@ background-color: #000;
   background-color: #fff;
 }
 
+.experience {
+  margin-bottom: 50px;
+}
+
 .experience h2 {
   color: #fff;
   background-color: #ff6868;
 }
 
+.education {
+  margin-bottom: 40px;
+}
+
 .education h2 {
   color: #fff;
   background-color: #72d4fb;
+}
+
+.education ol {
+  margin-left: -20px;
+}
+
+.education li {
+  list-style: none;
+  padding-left: 70px;
+}
+
+.epicodus-logo {
+  background: url('../img/logo-epi.png') no-repeat 0 0;
+}
+
+.wcc-logo {
+  background: url('../img/logo-wcc.png') no-repeat 0 0;
+}
+
+.um-logo {
+  background: url('../img/logo-um.png') no-repeat 0 0;
 }
 
 .section3 {
