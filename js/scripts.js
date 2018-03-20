@@ -1,6 +1,6 @@
 $(document).ready(function() {
-  $(".img1").click(function() {
-    alert(userString);
+  $(".").click(function() {
+    userMessage = prompt("Enter a message for the cipher:");
   });
 
   $(".img2").click(function() {
@@ -8,9 +8,10 @@ $(document).ready(function() {
   });
 });
 
+var userMessage = "No Message Input."
 
-var userString = prompt("Please enter a complete sentence.");
 var capsString;
+
 alert("You entered: \"" + userString + "\"");
 
 function capitalizeEnds(string) {
