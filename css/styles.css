@@ -1,3 +1,17 @@
+.light-theme {
+  background-color: yellow;
+  color: #000;
+}
+
+.dark-theme {
+  background-color: #000;
+  color: #fff;
+}
+
+.dark-theme .clickable {
+  color: pink;
+}
+
 .invisible {
   display: none;
 }
