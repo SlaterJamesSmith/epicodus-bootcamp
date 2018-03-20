@@ -1,6 +1,6 @@
 $(document).ready(function() {
   $("a.activate").click(function() {
-    userMessage = prompt("Enter a message for the cipher:");
+    userMessage = prompt("Enter a brief message for the cipher (40 character limit):");
     messageCheck();
   });
 
@@ -16,10 +16,18 @@ var cipherMessage;
 function messageCheck() {
   if (userMessage === null || userMessage === "" || userMessage === undefined) {
     userMessage = "Error: No Message Input.";
+    $(".cipher h2").html("Standby.");
     alert(userMessage);
   } else {
-    alert("Message Sent.");
-    cipher(userMessage);
+    if (userMessage.length > 40) {
+      $(".cipher h2").html("Standby.");
+      userMessage = "Error: No Message Input.";
+      alert("Error: Message Exceeds 40 Character Limit.");
+    } else {
+      alert("Message Sent.");
+      cipher(userMessage);
+      $(".cipher h2").html('\"' + cipherMessage + '\"');
+    };
   };
 };
 
