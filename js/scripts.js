@@ -17,4 +17,9 @@ $(document).ready(function() {
   $("span.original").click(function() {
     $("body").removeClass();
   });
+
+  $(".boring-lecture").click(function() {
+    $(".boring-lecture").toggleClass("highlight");
+  });
+
 });

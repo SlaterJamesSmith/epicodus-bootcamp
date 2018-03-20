@@ -25,3 +25,10 @@
 .clickable:hover {
   text-decoration: underline;
 }
+.boring-lecture {
+  cursor: pointer;
+}
+.highlight {
+  border: 2px solid green;
+  background-color: magenta;
+}
