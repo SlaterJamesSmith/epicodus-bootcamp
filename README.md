@@ -10,7 +10,7 @@ _This website project is a practice in the use of HTML, CSS, and Bootstrap (v3.3
 
 ## Setup/Installation Requirements
 
-1. Visit website link: https://mchuz.github.io/epi-wk1-solo-project/
+1. Visit website link: https://m-chu.github.io/epi-wk1-solo-project/
 
 ## Known Bugs
 
