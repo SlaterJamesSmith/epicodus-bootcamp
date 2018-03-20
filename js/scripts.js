@@ -1,10 +1,10 @@
 $(document).ready(function() {
-  $(".activate").click(function() {
+  $("a.activate").click(function() {
     userMessage = prompt("Enter a message for the cipher:");
     messageCheck();
   });
 
-  $(".monitor").click(function() {
+  $("a.monitor").click(function() {
     alert(userMessage);
   });
 });
