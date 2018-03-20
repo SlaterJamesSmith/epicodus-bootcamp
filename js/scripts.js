@@ -1,5 +1,5 @@
 $(document).ready(function() {
-  $(".clickable").click(function() {
+  $(".effect .clickable").click(function() {
     $(".visible").slideToggle();
     $(".invisible").slideToggle();
   });
@@ -12,5 +12,9 @@ $(document).ready(function() {
   $("span.dark").click(function() {
     $("body").removeClass();
     $("body").addClass("dark-theme");
+  });
+
+  $("span.original").click(function() {
+    $("body").removeClass();
   });
 });
