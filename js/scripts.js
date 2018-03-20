@@ -9,7 +9,9 @@ $(document).ready(function() {
   });
 });
 
-var userMessage = "Error: No Message Input."
+var userMessage = "Error: No Message Input.";
+
+var cipherMessage;
 
 function messageCheck() {
   if (userMessage === null || userMessage === "" || userMessage === undefined) {
@@ -17,13 +19,17 @@ function messageCheck() {
     alert(userMessage);
   } else {
     alert("Message Sent.");
+    cipher(userMessage);
   };
 };
-//
-// function capitalizeEnds(string) {
-//   capsString = userString.replace(/^./, userString.charAt(0).toUpperCase()).replace(/.$/, userString.charAt(userString.length - 1).toUpperCase());
-// };
-//
+
+function cipher(string) {
+  var lastFirstCharExtract = (userMessage.slice(-1) + userMessage.slice(0,1)).toUpperCase();
+  cipherMessage = userMessage + lastFirstCharExtract;
+  cipherMessage = userMessage.charAt(parseInt(userMessage.length / 2)) + cipherMessage;
+  cipherMessage = cipherMessage.split("").reverse().join("");
+};
+
 // capitalizeEnds(userString);
 //
 // var capsFirst = capsString.charAt(0);
