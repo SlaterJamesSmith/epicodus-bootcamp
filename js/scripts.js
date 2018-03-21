@@ -11,6 +11,11 @@ var multiply = function(number1, number2) {
   return number1 * number2;
 };
 
+var division = function(number1, number2) {
+  return number1 / number2;
+};
+
+
 // User Interface Logic
 $(document).ready(function() {
   $("form#add").submit(function(event) {
@@ -41,6 +46,16 @@ $(document).ready(function() {
     var result = multiply(number1, number2);
 
     $("#multiplyresult").text(result);
+  });
+
+  $("form#division").submit(function(event) {
+    event.preventDefault();
+
+    var number1 = parseInt($("input#division1").val());
+    var number2 = parseInt($("input#division2").val());
+    var result = division(number1, number2);
+
+    $("#divisionresult").text(result);
   });
 
 });
