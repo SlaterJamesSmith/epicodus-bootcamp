@@ -117,6 +117,7 @@
           <div class="form-group">
             <label for="addin1">$0.75 Add-Ins:</label>
             <select class="form-control" id="addin1">
+              <option>none</option>
               <option>toasted cashews</option>
               <option>toasted almonds</option>
               <option>candied cashews</option>
@@ -125,9 +126,21 @@
               <option>parmesan crisp</option>
             </select>
           </div>
+          <button type="submit" class="btn btn-warning">ORDER</button>
         </form>
       </div>
 <!-- MENU END -->
+      <div id="receipt">
+        <h3>Reciept</h3>
+        <p>Order for <span class="name"></span>.</p>
+        <p><strong>Bowl Base:</strong> <span class="base"></span></p>
+        <p><strong>Toppings:</strong></p>
+        <ul>
+          <li class="topping1"></li>
+          <li class="topping2"></li>
+        </ul>
+      </div>
+
     </div>
   </body>
 </html>
