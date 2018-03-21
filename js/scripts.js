@@ -7,6 +7,10 @@ var subtract = function(number1, number2) {
   return number1 - number2;
 };
 
+var multiply = function(number1, number2) {
+  return number1 * number2;
+};
+
 // User Interface Logic
 $(document).ready(function() {
   $("form#add").submit(function(event) {
@@ -27,6 +31,16 @@ $(document).ready(function() {
     var result = subtract(number1, number2);
 
     $("#subtractresult").text(result);
+  });
+
+  $("form#multiply").submit(function(event) {
+    event.preventDefault();
+
+    var number1 = parseInt($("input#multiply1").val());
+    var number2 = parseInt($("input#multiply2").val());
+    var result = multiply(number1, number2);
+
+    $("#multiplyresult").text(result);
   });
 
 });
