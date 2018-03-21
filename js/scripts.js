@@ -16,13 +16,11 @@ var cipherMessage;
 function messageCheck() {
   if (userMessage === null || userMessage === "" || userMessage === undefined) {
     userMessage = "Error: No Message Input.";
-    $(".cipher h2").html("Standby.");
-    alert(userMessage);
+    $(".cipher h2").html("Error: No Message Input.");
   } else {
     if (userMessage.length > 40) {
-      $(".cipher h2").html("Standby.");
+      $(".cipher h2").html("Error: Message Exceeds 40 Character Limit.");
       userMessage = "Error: No Message Input.";
-      alert("Error: Message Exceeds 40 Character Limit.");
     } else {
       alert("Message Sent.");
       cipher(userMessage);

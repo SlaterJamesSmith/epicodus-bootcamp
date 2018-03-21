@@ -19,13 +19,13 @@ a:link, a:visited, a:hover, a:active {
   border: 3px solid #36ffb8;
   text-shadow: 0px 0px 10px #36ffb8;
   transition: border 1s, width 0.5s;
-  width: 100%;
+  width: 90%;
 }
 
 .activate h1:hover {
   border: 3px dotted #0a271d;
   filter: blur(1px);
-  width: 85%;
+  width: 80%;
 }
 
 .activate a:link {
@@ -42,13 +42,13 @@ a:link, a:visited, a:hover, a:active {
   border: 3px solid #ff7500;
   text-shadow: 0px 0px 10px #ff7500;
   transition: border 1s, width 0.5s;
-  width: 100%;
+  width: 90%;
 }
 
 .monitor h1:hover {
   border: 3px dotted #2f1600;
   filter: blur(1px);
-  width: 85%;
+  width: 80%;
 }
 
 .monitor a:link {
@@ -65,14 +65,13 @@ a:link, a:visited, a:hover, a:active {
   border: 1px dashed #36ffb8;
   border-radius: 3px;
   color: #36ffb8;
-  font-size: 1em;
+  font-size: 1.5em;
   font-weight: lighter;
   height: auto;
   margin: 10px auto;
   min-height: 50px;
   padding: 20px 10px;
-  text-transform: uppercase;
-  width: 90%;
+  width: 100%;
 }
 
 .container {
