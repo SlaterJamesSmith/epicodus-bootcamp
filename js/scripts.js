@@ -1,3 +1,11 @@
+var cost = function() {
+  if ($("select#addin1").val() === "none") {
+    return 8.50;
+  } else {
+    return 9.25;
+  };
+};
+
 $(document).ready(function() {
   $("form").submit(function(event) {
     event.preventDefault();
@@ -6,12 +14,17 @@ $(document).ready(function() {
     var inputBase = $("select#base").val();
     var inputTopping1 = $("input:radio[name=topping1]:checked").val();
     var inputTopping2 = $("input:radio[name=topping2]:checked").val();
+    var inputAddIn1 = $("select#addin1").val();
 
     $(".name").text(inputName);
     $(".base").text(inputBase);
     $(".topping1").text(inputTopping1);
     $(".topping2").text(inputTopping2);
+    $(".addin1").text(inputAddIn1);
 
+    $(".price").text(cost().toFixed(2));
+
+    $("#receipt").show();
   });
 
 });
