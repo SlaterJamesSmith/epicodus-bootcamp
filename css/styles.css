@@ -14,6 +14,7 @@ h1 {
   line-height: 1em;
   padding-right: 40px;
   text-align: right;
+  word-wrap: break-word;
 }
 
 #keypad .well {

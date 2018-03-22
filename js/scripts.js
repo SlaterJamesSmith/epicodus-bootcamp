@@ -56,7 +56,7 @@ $(document).ready(function() {
         $("#display-number1").append("1");
       };
     } else {
-      if ($("#display-number2").html() === "") {
+      if ($("#display-number2").html() === "" || $("#display-number2").html() === "0") {
         $("#display-number2").text("1");
       } else {
         $("#display-number2").append("1");
@@ -72,7 +72,7 @@ $(document).ready(function() {
         $("#display-number1").append("2");
       };
     } else {
-      if ($("#display-number2").html() === "") {
+      if ($("#display-number2").html() === "" || $("#display-number2").html() === "0") {
         $("#display-number2").text("2");
       } else {
         $("#display-number2").append("2");
@@ -88,7 +88,7 @@ $(document).ready(function() {
         $("#display-number1").append("3");
       };
     } else {
-      if ($("#display-number2").html() === "") {
+      if ($("#display-number2").html() === "" || $("#display-number2").html() === "0") {
         $("#display-number2").text("3");
       } else {
         $("#display-number2").append("3");
@@ -104,7 +104,7 @@ $(document).ready(function() {
         $("#display-number1").append("4");
       };
     } else {
-      if ($("#display-number2").html() === "") {
+      if ($("#display-number2").html() === "" || $("#display-number2").html() === "0") {
         $("#display-number2").text("4");
       } else {
         $("#display-number2").append("4");
@@ -120,7 +120,7 @@ $(document).ready(function() {
         $("#display-number1").append("5");
       };
     } else {
-      if ($("#display-number2").html() === "") {
+      if ($("#display-number2").html() === "" || $("#display-number2").html() === "0") {
         $("#display-number2").text("5");
       } else {
         $("#display-number2").append("5");
@@ -136,7 +136,7 @@ $(document).ready(function() {
         $("#display-number1").append("6");
       };
     } else {
-      if ($("#display-number2").html() === "") {
+      if ($("#display-number2").html() === "" || $("#display-number2").html() === "0") {
         $("#display-number2").text("6");
       } else {
         $("#display-number2").append("6");
@@ -152,7 +152,7 @@ $(document).ready(function() {
         $("#display-number1").append("7");
       };
     } else {
-      if ($("#display-number2").html() === "") {
+      if ($("#display-number2").html() === "" || $("#display-number2").html() === "0") {
         $("#display-number2").text("7");
       } else {
         $("#display-number2").append("7");
@@ -168,7 +168,7 @@ $(document).ready(function() {
         $("#display-number1").append("8");
       };
     } else {
-      if ($("#display-number2").html() === "") {
+      if ($("#display-number2").html() === "" || $("#display-number2").html() === "0") {
         $("#display-number2").text("8");
       } else {
         $("#display-number2").append("8");
@@ -184,7 +184,7 @@ $(document).ready(function() {
         $("#display-number1").append("9");
       };
     } else {
-      if ($("#display-number2").html() === "") {
+      if ($("#display-number2").html() === "" || $("#display-number2").html() === "0") {
         $("#display-number2").text("9");
       } else {
         $("#display-number2").append("9");
@@ -193,7 +193,19 @@ $(document).ready(function() {
   });
 
   $("#key0").click(function() {
-
+    if (operatorSelection === "none") {
+      if ($("#display-number1").html() === "0") {
+        $("#display-number1").text("0");
+      } else {
+        $("#display-number1").append("0");
+      };
+    } else {
+      if ($("#display-number2").html() === "" || $("#display-number2").html() === "0") {
+        $("#display-number2").text("0");
+      } else {
+        $("#display-number2").append("0");
+      };
+    };
   });
 
 });
