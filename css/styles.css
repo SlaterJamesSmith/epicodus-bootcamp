@@ -24,6 +24,14 @@ h1 {
   width: 23%
 }
 
+#keypad .row div {
+  cursor: pointer;
+}
+
+#keypad .row div:hover {
+  filter: invert(100%);
+}
+
 #clear-all {
   color: white;
   background-color: orange;
