@@ -24,6 +24,21 @@ h1 {
   width: 23%
 }
 
+#clear-all {
+  color: white;
+  background-color: orange;
+}
+
+#equals {
+  color: white;
+  background-color: black;
+}
+
+.operator {
+  color: white;
+  background-color: teal;
+}
+
 .container {
   padding: 0 25px;
 }
