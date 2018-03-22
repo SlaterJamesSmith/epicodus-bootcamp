@@ -1,6 +1,6 @@
 var number1 = "0";
 var number2 = "0";
-var operatorSelection;
+var operatorSelection = "none";
 
 function add(number1, number2) {
   return number1 + number2;
@@ -23,24 +23,47 @@ $(document).ready(function() {
     number1 = "0";
     number2 = "0";
     operatorSelection = "none";
-    $("#display").text("0");
+    $("#display-number1").text("0");
+    $("#display-operator").text("");
+    $("#display-number2").text("");
+  });
+
+  $("#add").click(function() {
+    operatorSelection = "add";
+    $("#display-operator").html("&plus;");
+  });
+
+  $("#subtract").click(function() {
+    operatorSelection = "subtract";
+    $("#display-operator").html("&minus;");
+  });
+
+  $("#multiply").click(function() {
+    operatorSelection = "multiply";
+    $("#display-operator").html("&times;");
+  });
+
+  $("#divide").click(function() {
+    operatorSelection = "divide";
+    $("#display-operator").html("&divide;");
   });
 
   $("#key1").click(function() {
-    if ($("#display").html() === "0") {
-      $("#display").text("1");
-    } else {
-        $("#display").append("1");
+    if (operatorSelection === "none") {
+      if ($("#display-number1").html() === "0") {
+        $("#display-number1").text("1");
+      } else {
+        $("#display-number1").append("1");
       };
+    } else {
+      if ($("#display-number2").html() === "") {
+        $("#display-number2").text("1");
+      } else {
+        $("#display-number2").append("1");
+      };    
+    };
   });
 
-  $("#key2").click(function() {
-    number1 = "2"
-    if ($("#display").html() === "0") {
-      $("#display").text("1");} else {
-        $("#display").append("1");
-      };
-  });
 
 
 });
