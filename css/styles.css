@@ -2,11 +2,6 @@ body {
   min-width: 500px;
 }
 
-p {
-  font-size: 3em;
-  margin: 0;
-}
-
 h1 {
   margin: 25px;
   text-align: center;
@@ -21,6 +16,7 @@ h1 {
 }
 
 #keypad .well {
+  font-size: 3em;
   font-weight: bold;
   margin: 1.5%;
   text-align: center;
