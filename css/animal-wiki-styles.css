@@ -1,0 +1,12 @@
+img {
+  width: 100%;
+  cursor: pointer;
+}
+
+.invis {
+  display: none;
+}
+
+h1 {
+  text-align: center;
+}
