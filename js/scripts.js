@@ -1,5 +1,4 @@
-var number1 = "0";
-var number2 = "0";
+// BUSINESS LOGIC
 var operatorSelection = "none";
 
 function add(number1, number2) {
@@ -18,6 +17,8 @@ function multiply(number1, number2) {
   return number1 * number2;
 };
 
+
+// USER INTERFACE LOGIC
 $(document).ready(function() {
   $("#clear-all").click(function() {
     number1 = "0";
@@ -204,6 +205,37 @@ $(document).ready(function() {
         $("#display-number2").text("0");
       } else {
         $("#display-number2").append("0");
+      };
+    };
+  });
+
+  $("#equals").click(function() {
+    if (operatorSelection === "none" || $("#display-number2").html() === "") {
+      return;
+    } else {
+      var number1 = parseInt($("#display-number1").html());
+      var number2 = parseInt($("#display-number2").html());
+
+      if (operatorSelection === "add") {
+        $("#display-number1").text(add(number1, number2));
+        $("#display-operator").text("");
+        $("#display-number2").text("");
+        operatorSelection = "none";
+      } else if (operatorSelection === "subtract") {
+        $("#display-number1").text(subtract(number1, number2));
+        $("#display-operator").text("");
+        $("#display-number2").text("");
+        operatorSelection = "none";
+      } else if (operatorSelection === "multiply") {
+        $("#display-number1").text(multiply(number1, number2));
+        $("#display-operator").text("");
+        $("#display-number2").text("");
+        operatorSelection = "none";
+      } else {
+        $("#display-number1").text(divide(number1, number2));
+        $("#display-operator").text("");
+        $("#display-number2").text("");
+        operatorSelection = "none";
       };
     };
   });
