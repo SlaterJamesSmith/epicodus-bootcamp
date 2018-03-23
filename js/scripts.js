@@ -29,17 +29,17 @@ $(document).ready(function() {
     $("form").hide();
     $("#thankyou").fadeIn();
 
-    // if () {
-    //   $("#result1").fadeIn();
-    // } else if () {
-    //   $("#result2").fadeIn();
-    // } else if () {
-    //   $("#result3").fadeIn();
-    // } else if () {
-    //   $("#result4").fadeIn();
-    // } else {
-    //   $("#result5").fadeIn();
-    // };
+    if (aptitudeScore + attitudeScore === 0) {
+      $("#result1").fadeIn();
+    } else if (true) {
+      $("#result2").fadeIn();
+    } else if (true) {
+      $("#result3").fadeIn();
+    } else if (true) {
+      $("#result4").fadeIn();
+    } else {
+      $("#result5").fadeIn();
+    };
   });
 
   $("#retake-survey").click(function() {
