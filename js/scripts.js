@@ -22,17 +22,17 @@ $(document).ready(function() {
     var attitudeCode = $("input:radio[name=attitude1]:checked").val();
     var interestCode = $("input:radio[name=interest1]:checked").val() + $("input:radio[name=interest2]:checked").val() + $("input:radio[name=interest3]:checked").val();
 
-    console.log("AptCode: " + aptitudeCode);
-    console.log("AttCode: " + attitudeCode);
-    console.log("IntCode: " + interestCode);
+    console.log("TP0 AptCode: " + aptitudeCode);
+    console.log("TP1 AttCode: " + attitudeCode);
+    console.log("TP2 IntCode: " + interestCode);
 
-    var aptitudeScore;
+    var aptitudeScore = tallyScore(aptitudeCode.slice(0,1)) + tallyScore(aptitudeCode.slice(1,2));
     var attitudeScore = tallyScore(attitudeCode);
-    var interestScore;
+    var interestScore = tallyScore(interestCode.slice(0,1)) + tallyScore(interestCode.slice(1,2)) + tallyScore(interestCode.slice(2,3));
 
-    console.log("AptScore: " + aptitudeScore);
-    console.log("AttScore: " + attitudeScore);
-    console.log("IntScore: " + interestScore);
+    console.log("TP10 AptScore: " + aptitudeScore);
+    console.log("TP11 AttScore: " + attitudeScore);
+    console.log("TP12 IntScore: " + interestScore);
 
     //
     // if () {
