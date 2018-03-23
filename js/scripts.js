@@ -29,16 +29,52 @@ $(document).ready(function() {
     $("form").hide();
     $("#thankyou").fadeIn();
 
-    if (aptitudeScore + attitudeScore === 0) {
-      $("#result1").fadeIn();
-    } else if (true) {
-      $("#result2").fadeIn();
-    } else if (true) {
-      $("#result3").fadeIn();
-    } else if (true) {
-      $("#result4").fadeIn();
+    // Sequentially Check Base Aptitude, sub-branch thru Attitude, then sub-branch thru Interest
+    if (aptitudeScore === 0) {
+      if (attitudeScore === 0) {
+        $("#result1").fadeIn();
+      } else {
+        $("#result2").fadeIn();
+      };
+    // Aptitude 1
+    } else if (aptitudeScore === 1) {
+      if (attitudeScore === 0) {
+        $("#result2").fadeIn();
+      } else {
+        $("#result3").fadeIn();
+      };
+    // Aptitude 2
+    } else if (aptitudeScore === 2) {
+      if (attitudeScore <= 1) {
+        $("#result3").fadeIn();
+      } else {
+        if (interestScore <= 3) {
+          $("#result3").fadeIn();
+        } else if (interestScore > 3 && interestScore <= 5) {
+          $("#result5").fadeIn();
+        } else {
+          $("#result4").fadeIn();
+        };
+      };
+    // Aptitude 3 - 4
     } else {
-      $("#result5").fadeIn();
+      if (attitudeScore === 0) {
+        if (interestScore <= 3) {
+          $("#result3").fadeIn();
+        } else {
+          $("#result4").fadeIn();
+        };
+      } else {
+        if (interestScore === 0) {
+          $("#result3").fadeIn();
+        } else if (interestScore >= 1 && interestScore <= 2) {
+          $("#result5").fadeIn();
+        } else if (interestScore >= 3 && interestScore <= 4) {
+          $("#result4").fadeIn();
+        } else {
+          $("#result6").fadeIn();
+        };
+      };
     };
   });
 
