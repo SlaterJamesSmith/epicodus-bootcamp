@@ -1,6 +1,11 @@
 /* GENERAL STYLES */
+
 body {
   font-size: 1.6em;
+}
+
+h1, h2, h3 {
+  text-align: center;
 }
 
 label {
@@ -17,23 +22,13 @@ label {
 
 /* BOOTSTRAP CUSTOMIZATIONS */
 
-.btn {
-  display: block;
-  float: right;
-  margin: 5px 10px 0;
+.panel {
+  margin: 10px 0px;
+  padding: 25px 10px 20px;
 }
 
-.container .jumbotron {
-  border-top-left-radius: 0;
-  border-top-right-radius: 0;
-  padding: 5px;
-  text-align: center;
-}
-
-
-
-div.radio {
-  margin: 10px 18px;
+.well {
+  overflow: auto;
 }
 
 .jumbotron p {
@@ -45,11 +40,32 @@ div.radio {
   margin: 10px auto;
 }
 
-.panel {
-  margin: 10px 0px;
-  padding: 25px 10px 20px;
+.container .jumbotron {
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  padding: 5px;
 }
 
-.well {
-  overflow: auto;
+/* Survey Section */
+
+div.radio {
+  margin: 10px 18px;
+}
+
+form .btn {
+  display: block;
+  float: right;
+  margin: 5px 10px 0;
+}
+
+/* Thank You Section*/
+
+#thankyou h2 {
+  font-size: 1.5em;
+  margin: 5px auto 0;
+}
+
+#thankyou .btn {
+  display: block;
+  margin: 0 auto;
 }
