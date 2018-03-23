@@ -1,0 +1,30 @@
+/* GENERAL STYLES */
+
+.upsize {
+  font-size: 1.3em;
+}
+
+.downsize {
+  font-size: .7em;
+}
+
+/* BOOTSTRAP CUSTOMIZATIONS */
+
+.btn {
+  display: block;
+  margin: 0 auto;
+}
+
+.jumbotron {
+  padding: 5px;
+  text-align: center;
+}
+
+.jumbotron p {
+  font-size: 1.3em;
+}
+
+.jumbotron h1 {
+  font-size: 2.5em;
+  margin: 10px auto;
+}
