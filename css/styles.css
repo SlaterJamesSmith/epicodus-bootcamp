@@ -12,7 +12,8 @@
 
 .btn {
   display: block;
-  margin: 0 auto;
+  float: right;
+  margin: 0 10px;
 }
 
 .jumbotron {
@@ -27,4 +28,8 @@
 .jumbotron h1 {
   font-size: 2.5em;
   margin: 10px auto;
+}
+
+.well {
+  overflow: auto;
 }
