@@ -24,20 +24,8 @@ $(document).ready(function() {
     $("#display-number2").text("");
   });
 
-  $("#add").click(function() {
-    $("#display-operator").html("&plus;");
-  });
-
-  $("#subtract").click(function() {
-    $("#display-operator").html("&minus;");
-  });
-
-  $("#multiply").click(function() {
-    $("#display-operator").html("&times;");
-  });
-
-  $("#divide").click(function() {
-    $("#display-operator").html("&divide;");
+  $(".operator-key").click(function() {
+    $("#display-operator").html($(this).html());
   });
 
   $("#key1").click(function() {
