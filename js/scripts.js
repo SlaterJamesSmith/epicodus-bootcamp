@@ -25,7 +25,11 @@ $(document).ready(function() {
   });
 
   $(".operator-key").click(function() {
-    $("#display-operator").html($(this).html());
+    if ($("#display-number2").text() === "") {
+      $("#display-operator").html($(this).html());
+    } else {
+      return;
+    };
   });
 
   $("#key1").click(function() {
