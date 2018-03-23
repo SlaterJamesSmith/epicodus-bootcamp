@@ -1,6 +1,6 @@
 # _EPICODUS - INTRO WEEK 2: Solo Project_
 
-#### _[Change Me], March 23, 2018_
+#### _Epicodus Program-Track Matchmaker, March 23, 2018_
 
 #### _By Mike Chu_
 
