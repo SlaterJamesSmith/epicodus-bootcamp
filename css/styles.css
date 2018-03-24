@@ -21,6 +21,15 @@ label {
   font-size: 1.3em;
 }
 
+.recommend {
+  background-color: orange;
+  border-radius: 20px;
+  color: white;
+  margin: 0 auto;
+  text-align: center;
+  width: 200px;
+}
+
 .no-display {
   display: none;
 }
