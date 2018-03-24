@@ -1,7 +1,7 @@
 /* GENERAL STYLES */
 
 body {
-  font-size: 1.6em;
+  font-size: 1.4em;
   min-width: 550px;
 }
 
@@ -37,8 +37,14 @@ label {
 /* BOOTSTRAP CUSTOMIZATIONS */
 
 .btn {
+  background-color: #038b8c;
+  color: #fff;
   display: block;
   margin: 15px auto 0px;
+}
+
+.btn:hover {
+  color: #fff;
 }
 
 .panel {
@@ -47,6 +53,8 @@ label {
 }
 
 .well {
+  background-color: #e9f7f4;
+  border: 1px solid #bcd4d1;
   overflow: auto;
 }
 
@@ -57,6 +65,16 @@ label {
 .jumbotron h1 {
   font-size: 2.5em;
   margin: 10px auto;
+}
+
+.jumbotron h1 .upsize {
+  color: #05b3b4;
+  font-weight: bold;
+}
+
+img {
+  display: block;
+  margin: 0 auto;
 }
 
 .container .jumbotron {
@@ -73,14 +91,23 @@ div.radio {
   margin: 10px 18px;
 }
 
+/* Result Section*/
+
+.result {
+  background-color: #fff;
+  border: 1px solid #3cab9c;
+}
+
 /* Thank You Section*/
 
 #thankyou {
+  background-color: #fff;
+  border: none;
   text-align: center;
 }
 
 #thankyou h2 {
-  font-size: 1.5em;
+  font-size: 1.2em;
   margin: 0 auto;
 }
 
