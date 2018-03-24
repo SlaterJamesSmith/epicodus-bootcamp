@@ -7,35 +7,7 @@
   border-radius: 100%;
 }
 
-#video-portfolio {
-  background-image: url(../img/videocamera.jpg);
-  background-size: 100%;
-  border-radius: 100%;
-  margin: 10px auto 10px;
-  transition: background-image 0.7s ease-in-out;
-}
-
-#video-portfolio:hover {
-  background-image: url(../img/videocamera-bw.jpg);
-}
-
-#video-portfolio img {
-  width: 100%;
-  filter: grayscale(0%);
-  position: relative;
-  top: -10px;
-  margin: 0;
-  opacity: 0;
-  transition: opacity 0.5s, top 0.4s;
-}
-
-#video-portfolio img:hover {
-  top: 0;
-  opacity: 1;
-}
-
 /* GENERAL STYLES */
-
 body {
   background: #fbfbfb;
   min-width: 600px;
@@ -75,7 +47,6 @@ a {
 }
 
 /* SECTION STYLES */
-
 .section-title {
   margin: 0px auto 25px;
   text-align: center;
@@ -179,40 +150,11 @@ a {
   background: url('../img/logo-um.png') no-repeat 0 0;
 }
 
-.section3 {
-  background-color: #eae9e7;
-  padding: 0 15px;
-  text-align: center;
-}
-
-.section3 img {
-  border-radius: 100%;
-  margin: 10px auto;
-  width: 100%;
-  filter: grayscale(80%);
-}
-
-.section3 h2 {
-  color: #3b3b3b;
-  margin-top: 20px;
-}
-
-.section3 h3 {
+.hobbies h2 {
   color: #3b4a53;
   background-color: #fff;
   border: 1px solid #3b4a53;
-  border-radius: 3px;
-  padding: 5px;
-}
-
-.section3 .panel-heading {
-  padding-top: 0px;
-}
-
-.section3 .accent {
-  color: #fff;
-  background-color: #3b3b3b;
-  border: 1px solid #3b3b3b;
+  margin-top: 20px;
 }
 
 @media screen and (max-width: 1200px) {
@@ -230,10 +172,6 @@ a {
     width: 75%;
     margin: 0px auto 25px;
     float: none;
-  }
-
-  #video-portfolio {
-    width: 45%;
   }
 
   .header-break {

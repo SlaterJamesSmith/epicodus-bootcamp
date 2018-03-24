@@ -1,33 +1,27 @@
-# _EPICODUS - INTRO WEEK 1: Solo Project_
+# Portfolio
 
-#### _A Custom-Built Personal Portfolio Site, March 16, 2018_
+**Epicodus Solo Project | Intro | Week 1 | March 16, 2018**
 
-#### _By Mike Chu_
+**By Mike Chu**
 
 ## Description
 
-_This website project is a practice in the use of HTML, CSS, and Bootstrap (v3.3.7)._
+A custom-built personal portfolio website.
 
 ## Setup/Installation Requirements
 
-1. Visit website link: https://m-chu.github.io/epi-wk1-solo-project/
+Live Site: https://m-chu.github.io/epicodus-solo-01
+
+1. Clone repository.
+
+2. Open index.html in web browser.
 
 ## Known Bugs
 
-_None._
-
-## Support and contact details
-
-_Please feel free to send your comments, questions, or concerns to Mike Chu at mcihkue@gmail.com._
+None.
 
 ## Technologies Used
 
-* _HTML_
-* _CSS_
-* _Bootstrap_
-
-### License
-
-*GPL*
-
-Copyright (c) 2018 **_Mike Chu_**
+- HTML
+- CSS
+- Bootstrap
