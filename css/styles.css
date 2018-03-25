@@ -19,7 +19,7 @@ label {
 }
 
 .downsize {
-  font-size: .7em;
+  font-size: 0.9em;
 }
 
 .upsize {
@@ -41,6 +41,10 @@ label {
 
 .btn:hover {
   color: #fff;
+}
+
+.container {
+  margin-bottom: 50px;
 }
 
 .panel {
@@ -101,6 +105,10 @@ div.radio {
 .result {
   background-color: #fff;
   border: 1px solid #3cab9c;
+}
+
+.result h3 .downsize {
+  font-size: 0.6em;
 }
 
 /* Thank You Section*/
