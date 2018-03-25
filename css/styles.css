@@ -30,9 +30,9 @@ label {
   width: 200px;
 }
 
-.no-display {
+/* .no-display {
   display: none;
-}
+} */
 
 /* BOOTSTRAP CUSTOMIZATIONS */
 
@@ -48,6 +48,7 @@ label {
 }
 
 .panel {
+  border-radius: 5px;
   margin: 10px 0px;
   padding: 25px 10px 20px;
 }
