@@ -16,7 +16,13 @@ $(document).ready(function() {
   $("form").submit(function(event) {
     event.preventDefault();
 
-    $(".input-name").text($("#firstname").val().slice(0,1).toUpperCase() + $("#firstname").val().slice(1,$("#firstname").val().length).toLowerCase());
+    if ($("#firstname").val() === "") {
+      $("#result1 .input-name").text("W");
+      $("#thankyou .input-name").text("");
+    } else {
+      $("#result1 .input-name").prepend($("#firstname").val().slice(0,1).toUpperCase() + $("#firstname").val().slice(1,$("#firstname").val().length).toLowerCase());
+      $("#thankyou .input-name").append($("#firstname").val().slice(0,1).toUpperCase() + $("#firstname").val().slice(1,$("#firstname").val().length).toLowerCase());
+    };
 
     var aptitudeCode = $("input:radio[name=aptitude1]:checked").val() + $("input:radio[name=aptitude2]:checked").val();
     var attitudeCode = $("input:radio[name=attitude1]:checked").val();
@@ -82,5 +88,7 @@ $(document).ready(function() {
     $("form").show();
     $(".no-display").hide();
     $("form")[0].reset();
+    $("#result1 .input-name").text(", w");
+    $("#thankyou .input-name").text(", ");
   });
 });
