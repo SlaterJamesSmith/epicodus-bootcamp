@@ -26,15 +26,6 @@ label {
   font-size: 1.3em;
 }
 
-.recommend {
-  background-color: orange;
-  border-radius: 20px;
-  color: white;
-  margin: 0 auto;
-  text-align: center;
-  width: 200px;
-}
-
 .no-display {
   display: none;
 }
@@ -94,16 +85,31 @@ div.radio {
 
 /* Result Section*/
 
+.recommend {
+  background-color: orange;
+  border-radius: 20px;
+  color: white;
+  display: none;
+  margin: 0 auto;
+  text-align: center;
+  width: 200px;
+}
+
 .result {
   background-color: #fff;
   border: 1px solid #3cab9c;
 }
 
 /* Thank You Section*/
+#all-tracks {
+  margin: 15px auto;
+  text-transform: uppercase;
+}
 
 #thankyou {
   background-color: #fff;
   border: none;
+  box-shadow: 0;
   text-align: center;
 }
 
@@ -112,6 +118,15 @@ div.radio {
   margin: 0 auto;
 }
 
-#thankyou .btn {
-  margin-bottom: 10px;
+#retake-survey {
+  background-color: #fff;
+  border: 1px solid #038b8c;
+  border-radius: 3px;
+  color: #038b8c;
+  cursor: pointer;
+  font-size: 0.9em;
+  margin: 15px auto;
+  padding: 5px 0px 3px;
+  text-transform: uppercase;
+  width: 125px;
 }

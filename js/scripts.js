@@ -39,27 +39,35 @@ $(document).ready(function() {
     if (aptitudeScore === 0) {
       if (attitudeScore === 0) {
         $("#result1").fadeIn();
+        $("#result1 .recommend").show();
       } else {
         $("#result2").fadeIn();
+        $("#result2 .recommend").show();
       };
     // Aptitude 1
     } else if (aptitudeScore === 1) {
       if (attitudeScore === 0) {
         $("#result2").fadeIn();
+        $("#result2 .recommend").show();
       } else {
         $("#result3").fadeIn();
+        $("#result3 .recommend").show();
       };
     // Aptitude 2
     } else if (aptitudeScore === 2) {
       if (attitudeScore <= 1) {
         $("#result3").fadeIn();
+        $("#result3 .recommend").show();
       } else {
         if (interestScore <= 3) {
           $("#result3").fadeIn();
+          $("#result3 .recommend").show();
         } else if (interestScore > 3 && interestScore <= 5) {
           $("#result5").fadeIn();
+          $("#result5 .recommend").show();
         } else {
           $("#result4").fadeIn();
+          $("#result4 .recommend").show();
         };
       };
     // Aptitude 3 - 4
@@ -67,27 +75,41 @@ $(document).ready(function() {
       if (attitudeScore === 0) {
         if (interestScore <= 3) {
           $("#result3").fadeIn();
+          $("#result3 .recommend").show();
         } else {
           $("#result4").fadeIn();
+          $("#result4 .recommend").show();
         };
       } else {
         if (interestScore === 0) {
           $("#result3").fadeIn();
+          $("#result3 .recommend").show();
         } else if (interestScore >= 1 && interestScore <= 2) {
           $("#result5").fadeIn();
+          $("#result5 .recommend").show();
         } else if (interestScore >= 3 && interestScore <= 4) {
           $("#result4").fadeIn();
+          $("#result4 .recommend").show();
         } else {
           $("#result6").fadeIn();
+          $("#result6 .recommend").show();
         };
       };
     };
   });
 
+  $("#all-tracks").click(function() {
+    $(".result").show();
+    $("#result1").hide();
+    $("#all-tracks").hide();
+  });
+
   $("#retake-survey").click(function() {
     $("form").show();
+    $("#all-tracks").show();
     $(".no-display").hide();
     $("form")[0].reset();
+    $(".recommend").hide();
     $("#result1 .input-name").text(", w");
     $("#thankyou .input-name").text(", ");
   });
