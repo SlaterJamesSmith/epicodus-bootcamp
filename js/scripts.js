@@ -8,7 +8,12 @@ $(document).ready(function() {
     });
 
     groceryList.sort();
-    alert(groceryList);
+
+    groceryList.forEach(function(item) {
+      $("ul").append("<li>" + item + "</li>");
+    });
+
+
     $("form").hide();
 
   });
