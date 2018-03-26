@@ -10,6 +10,8 @@ $(document).ready(function() {
     });
   });
 
-  
+  fullDeck.forEach(function(card) {
+    $("ul").append("<li>" + card + "</li>");
+  });
 
 });
