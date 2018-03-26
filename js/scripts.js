@@ -8,7 +8,7 @@ function tallyScore(traitCode) {
     return 2;
   } else {
     return;
-  };
+  }
 };
 
 // USER INTERFACE LOGIC
@@ -22,7 +22,7 @@ $(document).ready(function() {
     } else {
       $("#result1 .input-name").prepend($("#firstname").val().slice(0,1).toUpperCase() + $("#firstname").val().slice(1,$("#firstname").val().length).toLowerCase());
       $("#thankyou .input-name").append($("#firstname").val().slice(0,1).toUpperCase() + $("#firstname").val().slice(1,$("#firstname").val().length).toLowerCase());
-    };
+    }
 
     var aptitudeCode = $("input:radio[name=aptitude1]:checked").val() + $("input:radio[name=aptitude2]:checked").val();
     var attitudeCode = $("input:radio[name=attitude1]:checked").val();
@@ -43,7 +43,7 @@ $(document).ready(function() {
       } else {
         $("#result2").fadeIn();
         $("#result2 .recommend").show();
-      };
+      }
     // Aptitude 1
     } else if (aptitudeScore === 1) {
       if (attitudeScore === 0) {
@@ -52,7 +52,7 @@ $(document).ready(function() {
       } else {
         $("#result3").fadeIn();
         $("#result3 .recommend").show();
-      };
+      }
     // Aptitude 2
     } else if (aptitudeScore === 2) {
       if (attitudeScore <= 1) {
@@ -68,8 +68,8 @@ $(document).ready(function() {
         } else {
           $("#result4").fadeIn();
           $("#result4 .recommend").show();
-        };
-      };
+        }
+      }
     // Aptitude 3 - 4
     } else {
       if (attitudeScore === 0) {
@@ -79,7 +79,7 @@ $(document).ready(function() {
         } else {
           $("#result4").fadeIn();
           $("#result4 .recommend").show();
-        };
+        }
       } else {
         if (interestScore === 0) {
           $("#result3").fadeIn();
@@ -93,9 +93,9 @@ $(document).ready(function() {
         } else {
           $("#result6").fadeIn();
           $("#result6 .recommend").show();
-        };
-      };
-    };
+        }
+      }
+    }
   });
 
   $("#all-tracks").click(function() {
@@ -104,7 +104,7 @@ $(document).ready(function() {
     $("#all-tracks").hide();
   });
 
-  $("#retake-survey").click(function() {
+  $("#reset").click(function() {
     $("form").show();
     $("#all-tracks").show();
     $(".no-display").hide();

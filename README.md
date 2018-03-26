@@ -1,35 +1,29 @@
-# _EPICODUS - INTRO WEEK 2: Solo Project_
+# Epicodus Program Track Suggester
 
-#### _Epicodus Program-Track Matchmaker, March 23, 2018_
+**Epicodus Solo Project | Intro | Week 2 | March 23, 2018**
 
-#### _By Mike Chu_
+**By Mike Chu**
 
 ## Description
 
-_This website project is a practice in the use of HTML, CSS, and JavaScript with a focus on jQuery and branching. Prospective Epicodus students are asked to rate themselves according to their current technical aptitude, learning attitude, and interests in coding/programming. The students' inputs are then scored and passed through a network of checks to determine an appropriate course recommendation. Lower aptitude scores rely heavily on learning attitudes while higher aptitude scores rely more on interests to select a recommendation._
+Prospective Epicodus students are asked to rate themselves according to their current technical aptitude, learning attitude, and interests in coding/programming. The students' inputs are then scored and passed through a network of checks to determine an appropriate course recommendation. Lower aptitude scores rely heavily on learning attitudes while higher aptitude scores rely more on interests to select a recommendation.
 
 ## Setup/Installation Requirements
 
-1. Visit website link: https://m-chu.github.io/epicodus-solo-project-2/
+Live Site: https://m-chu.github.io/epicodus-solo-02
+
+1. Clone repository.
+
+2. Open index.html in web browser.
 
 ## Known Bugs
 
-_None._
-
-## Support and contact details
-
-_Please feel free to send your comments, questions, or concerns to Mike Chu at mcihkue@gmail.com._
+None.
 
 ## Technologies Used
 
-* _HTML_
-* _CSS_
-* _JavaScript_
-* _Bootstrap_
-* _jQuery_
-
-### License
-
-*GPL*
-
-Copyright (c) 2018 **_Mike Chu_**
+* HTML
+* CSS
+* JavaScript
+* Bootstrap
+* jQuery
