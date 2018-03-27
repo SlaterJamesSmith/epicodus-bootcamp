@@ -5,13 +5,15 @@ $(document).ready(function() {
   var fullDeck = [];
 
   suits.forEach(function(suit) {
+    $("#card-table").prepend('<div class=\"suit well no-display\"><h2>' + suit + '</h2><ul></ul></div>')
     ranks.forEach(function(rank) {
-      fullDeck.push(rank + " of " + suit);
+      $(".suit").children("ul").first().append("<li>" + rank + " of " + suit + "</li>");
     });
+
   });
 
-  fullDeck.forEach(function(card) {
-    $("ul").append("<li>" + card + "</li>");
+  $("#create-deck").click(function() {
+    $(".no-display").fadeIn();
   });
 
 });
