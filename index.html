@@ -6,39 +6,49 @@
     <script src="js/jquery-3.3.1.js"></script>
     <script src="js/scripts.js"></script>
     <meta charset="utf-8">
-    <title></title>
+    <title>EPI-WK3: Array &amp; Looping</title>
   </head>
   <body>
     <div class="container">
-      <h1>Favorite Things:</h1>
-      <form>
+      <h1>Favorite Things</h1>
+      <p><span class="text-uppercase">Epicodus | Intro Week 3</span> | Arrays & Looping Practice</p>
+      <form class="well">
         <div class="form-group">
           <label for="name">Name:</label>
           <input id="name" type="text" class="form-control">
         </div>
         <label>Beverage</label>
-        <select class="form-control" id="beverage">
-          <option>Coffee</option>
-          <option>Tea</option>
-          <option>Water</option>
-        </select>
+        <div class="form-group">
+          <select class="form-control" id="beverage">
+            <option>Water</option>
+            <option>Coffee</option>
+            <option>Tea</option>
+          </select>
+        </div>
+        <div class="form-group">
         <label>Pet</label>
-        <select class="form-control" id="pet">
-          <option>Cat</option>
-          <option>Dog</option>
-          <option>Goat</option>
-        </select>
+          <select class="form-control" id="pet">
+            <option>Cat</option>
+            <option>Dog</option>
+            <option>Goat</option>
+          </select>
+        </div>
+        <div class="form-group">
         <label>Food</label>
-        <select class="form-control" id="food">
-          <option>Pizza</option>
-          <option>Burgers</option>
-          <option>Salad</option>
-        </select>
-        <button type="submit" class="btn" name="button">Submit</button>
+          <select class="form-control" id="food">
+            <option>Salad</option>
+            <option>Pizza</option>
+            <option>Burgers</option>
+          </select>
+        </div>
+        <button type="submit" class="btn btn-success">SAVE</button>
       </form>
-      <ul>
-        
-      </ul>
+      <div id="results" class="well hide">
+        <h2>Your Favorite Things</h2>
+        <ul>
+
+        </ul>
+      </div>
     </div>
   </body>
 </html>
