@@ -6,7 +6,7 @@
     <script src="js/jquery-3.3.1.js"></script>
     <script src="js/scripts.js"></script>
     <meta charset="utf-8">
-    <title>EPI-WK3: Array &amp; Looping</title>
+    <title>EPI-WK3: Arrays &amp; Looping</title>
   </head>
   <body>
     <div class="container">
@@ -15,11 +15,11 @@
       <form class="well">
         <div class="form-group">
           <label for="name">Name:</label>
-          <input id="name" type="text" class="form-control">
+          <input id="name" type="text" class="form-control" required>
         </div>
         <label>Beverage</label>
         <div class="form-group">
-          <select class="form-control" id="beverage">
+          <select id="beverage" class="form-control">
             <option>Water</option>
             <option>Coffee</option>
             <option>Tea</option>
@@ -27,7 +27,7 @@
         </div>
         <div class="form-group">
         <label>Pet</label>
-          <select class="form-control" id="pet">
+          <select id="pet" class="form-control">
             <option>Cat</option>
             <option>Dog</option>
             <option>Goat</option>
@@ -35,7 +35,7 @@
         </div>
         <div class="form-group">
         <label>Food</label>
-          <select class="form-control" id="food">
+          <select id="food" class="form-control">
             <option>Salad</option>
             <option>Pizza</option>
             <option>Burgers</option>
@@ -43,11 +43,8 @@
         </div>
         <button type="submit" class="btn btn-success">SAVE</button>
       </form>
-      <div id="results" class="well hide">
-        <h2>Your Favorite Things</h2>
-        <ul>
+      <div id="results" class="no-display">
 
-        </ul>
       </div>
     </div>
   </body>
