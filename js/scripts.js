@@ -3,8 +3,14 @@ $(document).ready(function() {
     event.preventDefault();
 
     var groceryForm = ["item1", "item2", "item3", "item4", "item5"];
-    var groceryList = groceryForm.map(function(item) {
-      return $("#" + item).val().toUpperCase();
+    var groceryList = [];
+
+    groceryForm.map(function(item) {
+      if ($("#" + item).val() !== "") {
+        groceryList.push($("#" + item).val().toUpperCase());
+      } else {
+        return;
+      };
     });
 
     groceryList.sort();
@@ -13,15 +19,9 @@ $(document).ready(function() {
       $("ul").append("<li>" + item + "</li>");
     });
 
-
     $("form").hide();
+    $("#grocery-list").show();
 
   });
-
-  // $(".addItem").click(function() {
-  //   $("form").append('<div class=\"form-group\"><label>Item</label><input type=\"text\"></div>');
-  //
-  // });
-
 
 });
