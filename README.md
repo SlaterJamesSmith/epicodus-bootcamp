@@ -30,4 +30,4 @@ _None._
 
 *GPL*
 
-Copyright (c) 2018 **_Mike Chu_**
+Copyright (c) 2018 **_Mike Chu & Jesse Drebin_**
