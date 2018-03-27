@@ -2,27 +2,19 @@ $(document).ready(function(){
   $("form").submit(function(event) {
     event.preventDefault();
 
-    var sentenceArray = $("#sentence").val().split(" ");
-    console.log("Checkpoint 1:");
-    console.log(sentenceArray);
+    var sentenceSplitArray = $("#sentence").val().split(" ");
+    var lengthFilterArray = [];
 
-    var secondArray = [];
-
-    sentenceArray.map(function(word) {
+    sentenceSplitArray.map(function(word) {
       if (word.length > 3) {
-        secondArray.push(word);
+        lengthFilterArray.push(word);
       };
     });
 
-    console.log("Checkpoint 2:");
-    console.log(secondArray);
+    var returnString = lengthFilterArray.reverse().join(" ");
 
-    var finalString = secondArray.reverse().join(" ");
-
-    console.log("Checkpoint 3:");
-    console.log(finalString);
-
-    $("body").append(finalString);
+    $("#result p").append(returnString);
+    $("#result").show();
 
   });
 
