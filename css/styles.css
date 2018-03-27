@@ -1,3 +1,7 @@
 h1, h2 {
   text-transform: uppercase;
 }
+
+#ice-cream button {
+  margin-bottom: 20px;
+}
