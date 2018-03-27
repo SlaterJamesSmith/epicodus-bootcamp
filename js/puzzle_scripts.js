@@ -16,5 +16,13 @@ $(document).ready(function(){
 
     outputStringArray.push(pushValue);
   }
-  console.log(outputStringArray);
+
+  $("#output").text(outputStringArray.join(""));
+
+  $("#toggle-solution").click(function() {
+    $("#solution").text(inputStringAsArray.join(""));
+    $("#solution").toggle();
+    $("#output").toggle();
+  });
+
 });
