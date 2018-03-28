@@ -2,6 +2,10 @@ h1, h2, h3 {
   text-transform: uppercase;
 }
 
+input[type="checkbox"] {
+  margin-right: 15px;
+}
+
 .no-display {
   display: none;
 }

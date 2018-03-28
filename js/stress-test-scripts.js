@@ -3,7 +3,6 @@ function stressTest(signs, symptoms, coping) {
 };
 
 $(document).ready(function() {
-
   $("form").submit(function(event) {
     event.preventDefault();
 
@@ -21,16 +20,16 @@ $(document).ready(function() {
       copingMechanisms += parseInt($(this).val());
     });
 
-    stressIndex = stressTest(warningSigns, healthSymptoms, copingMechanisms);
+    var stressIndex = stressTest(warningSigns, healthSymptoms, copingMechanisms);
 
-    $(".jumbotron").show();
+    $("#results").show();
 
     if (stressIndex > 9) {
-      $("#output").text("Game over pal!");
-    } else if (stressIndex <= 9 && stressIndex >= 6){
-      $("#output").text("Take a yoga class?");
+      $("#results h2").text("You're screwed.");
+    } else if (stressIndex <= 9 && stressIndex >= 6) {
+      $("#results h2").text("You're normal.");
     } else {
-      $("#output").text("Why are you even here?");
+      $("#results h2").text("You're too easy going.");
     }
   });
 
