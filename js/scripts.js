@@ -26,8 +26,10 @@ function pigLatin(string) {
     return userInput + "way";
   // Consonants Branch
   } else if (!vowels.includes(userInputArray[0])) {
-    userInputArray.push(userInputArray[0]);
-    userInputArray.shift();
+    while (!vowels.includes(userInputArray[0])) {
+      userInputArray.push(userInputArray[0]);
+      userInputArray.shift();
+    };
     return userInputArray.join("") + "ay";
   }
 };
