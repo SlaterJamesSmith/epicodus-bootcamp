@@ -9,24 +9,24 @@ function validateInput(string) {
   var lettersOnly = true;
 
   userInputArray.forEach(function(letter) {
-    if (alphabet.includes(letter)) {
+    if (alphabet.includes(letter.toLowerCase())) {
       return;
     } else {
       lettersOnly = false;
     }
   });
-
+  console.log(lettersOnly);
   return lettersOnly;
 
 };
 
 function pigLatin(string) {
   // Vowels Branch
-  if (vowels.includes(userInputArray[0])) {
+  if (vowels.includes(userInputArray[0].toLowerCase())) {
     return userInput + "way";
   // Consonants Branch
-  } else if (!vowels.includes(userInputArray[0])) {
-    while (!vowels.includes(userInputArray[0])) {
+} else if (!vowels.includes(userInputArray[0].toLowerCase())) {
+    while (!vowels.includes(userInputArray[0].toLowerCase())) {
       userInputArray.push(userInputArray[0]);
       userInputArray.shift();
     };
