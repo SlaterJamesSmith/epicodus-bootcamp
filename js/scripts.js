@@ -20,20 +20,17 @@ function validateInput(string) {
 
 };
 
-function translateVowels(string) {
+function pigLatin(string) {
+  // Vowels Branch
   if (vowels.includes(userInputArray[0])) {
     return userInput + "way";
-  }
-}
-
-function translateConsonant(string) {
-  if (!vowels.includes(userInputArray[0])) {
+  // Consonants Branch
+  } else if (!vowels.includes(userInputArray[0])) {
     userInputArray.push(userInputArray[0]);
     userInputArray.shift();
     return userInputArray.join("") + "ay";
   }
-}
-
+};
 
 // USER INTERFACE
 $(function() {
@@ -42,7 +39,7 @@ $(function() {
     userInput = $("#input").val();
     var inputValidation = validateInput(userInput);
     if (inputValidation === true) {
-      var result = translateConsonant(userInput);
+      var result = pigLatin(userInput);
     }
     $("#result p").text(result);
     $("#result").show();
