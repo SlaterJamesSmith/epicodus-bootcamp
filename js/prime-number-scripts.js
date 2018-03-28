@@ -1,5 +1,4 @@
 var numberArray = [];
-var inputNumber;
 var primeArray = [];
 
 function generateNumbers(number) {
@@ -11,18 +10,14 @@ function generateNumbers(number) {
 
 function removeNonPrimes(number) {
   for (var i = 2; i <= number; i += 1 ) {
-    // console.log("Checking " + i);
-    // debugger;
     var arrayIndex = 0;
     numberArray.forEach(function(element) {
-      // debugger;
       if (element > i && element % i === 0) {
         numberArray[arrayIndex] = 0;
       }
       arrayIndex += 1;
     });
   };
-
 
   numberArray.forEach(function(element) {
     if (element !== 0) {
@@ -32,12 +27,24 @@ function removeNonPrimes(number) {
 
 };
 
-function primeSifter() {
-  inputNumber = parseInt(prompt("Enter a number"));
-  generateNumbers(inputNumber);
-  removeNonPrimes(inputNumber);
-  console.log("PrimeSifter END");
-  console.log(primeArray);
-}
+$(document).ready(function() {
+  $("form").submit(function(event) {
+    event.preventDefault();
 
-primeSifter();
+    $("#primeResult ul li").remove();
+    var inputNumber = parseInt($("#input").val());
+
+    generateNumbers(inputNumber);
+    removeNonPrimes(inputNumber);
+
+    primeArray.forEach(function(element) {
+      $("#primeResult ul").append("<li>" + element + "</li>");
+    });
+
+    $("#primeResult").show();
+    numberArray = [];
+    primeArray = [];
+
+  });
+
+});
