@@ -1,10 +1,18 @@
 $(document).ready(function() {
-  var inputStringArray = prompt("Enter a number/word/phrase").split("");
-  var reversedStringArray = inputStringArray.slice().reverse();
-  
-  if (reversedStringArray.join() === inputStringArray.join()) {
-    alert("It's a palindrome!");
-  } else {
-    alert("It's NOT a palindrome!");
-  }
+  $("form").submit(function(event) {
+    event.preventDefault();
+
+    var inputStringArray = $("#input").val().split("");
+    var reversedStringArray = inputStringArray.slice().reverse();
+
+    if (reversedStringArray.join() === inputStringArray.join()) {
+      $("#result h2").text("It's a palindrome!");
+    } else {
+      $("#result h2").text("It's NOT a palindrome!");
+    }
+
+    $("#result").show();
+
+  });
+
 });
