@@ -41,7 +41,11 @@ function vowelTranslate(word) {
 
 function consonantTranslate(word) {
   var userInputArray = word.split("");
-  while (!vowels.includes(userInputArray[0].toLowerCase())) {
+
+  userInputArray.push(userInputArray[0]);
+  userInputArray.shift();
+
+  while (!vowels.includes(userInputArray[0].toLowerCase()) && userInputArray[0].toLowerCase() !== "y") {
     userInputArray.push(userInputArray[0]);
     userInputArray.shift();
   };
