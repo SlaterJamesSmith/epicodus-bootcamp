@@ -10,14 +10,26 @@ function binaryToDecimal(binaryNumber) {
   return total;
 };
 
-
 $(function() {
   $("form").submit(function(event) {
     event.preventDefault();
     var userInput = $("#input").val();
-    var result = binaryToDecimal(userInput);
-    $("#result .binaryInput").text(userInput);
-    $("#result .decimalOutput").text(result);
+    var userInputArray = userInput.split("");
+    var isBinaryNumber = true;
+    userInputArray.forEach(function(digit) {
+      if (digit !== "0" && digit !== "1") {
+        isBinaryNumber = false;
+      }
+    });
+
+    if (isBinaryNumber) {
+      var result = binaryToDecimal(userInput);
+      $("#result .binaryInput").text(userInput);
+      $("#result .decimalOutput").text(result);
+    } else {
+      $("#result p").text("Please enter a binary number.");
+    }
+
     $("#result").show();
 
   });
