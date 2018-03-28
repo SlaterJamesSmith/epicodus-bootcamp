@@ -30,6 +30,10 @@ function pigLatin(string) {
       userInputArray.push(userInputArray[0]);
       userInputArray.shift();
     };
+    if (userInputArray[userInputArray.length - 1] === "q" && userInputArray[0] === "u") {
+      userInputArray.push(userInputArray[0]);
+      userInputArray.shift();
+    }
     return userInputArray.join("") + "ay";
   }
 };
