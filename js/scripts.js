@@ -1,36 +1,64 @@
 var converter = function(input) {
+  var inputArray = input.split("").reverse();
+  var outputArray = [];
+  for(var index = 0; index < inputArray.length; index ++){
+    outputArray.push(onesTranslate(inputArray[index], index));
+  }
+  return outputArray.reverse().join("");
+};
+
+var onesTranslate = function (input, index) {
+  var ones;
+  var fives;
+  var tens;
+  switch (index) {
+    case 0:
+      ones = "I";
+      fives = "V";
+      tens = "X";
+      break;
+    case 1:
+      ones = "X";
+      fives = "L";
+      tens = "C";
+      break;
+    case 2:
+      ones = "C";
+      fives = "D";
+      tens = "M";
+      break;
+    case 3:
+      ones = "M";
+      break;
+  }
+  input = parseInt(input);
   var romanNumeral = "";
   if (input < 4) {
     for(var index = 0; index < input; index++){
-      romanNumeral += "I";
+      romanNumeral += ones;
     }
   } else if (input === 4) {
-    romanNumeral += "IV";
+    romanNumeral = ones + fives;
   } else if (input === 5) {
-    romanNumeral += "V";
+    romanNumeral = fives;
   } else if (input < 9) {
-    romanNumeral += "V";
+    romanNumeral = fives;
     for(var index = 0; index < input - 5; index++){
-      romanNumeral += "I";
+      romanNumeral += ones;
     }
   } else if (input === 9) {
-    romanNumeral += "IX";
-  } else if (input === 10) {
-    romanNumeral += "X";
+    romanNumeral = ones + tens;
   } else {
       return false;
   }
   return romanNumeral;
-};
+}
 
 
-
-
-
-
+//interface logic
 $(document).ready(function() {
   $("#number-form").submit(function(event) {
-    var input = parseInt($("#input").val());
+    var input = $("#input").val();
     $("#result p").text(converter(input));
     event.preventDefault();
   });
