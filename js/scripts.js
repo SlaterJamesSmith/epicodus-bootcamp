@@ -1,24 +1,34 @@
 function cryptoSquare(input) {
-  if (input.length < 5) {
-    return makeSquare(input);
-  } else {
-    return input;
-  }
+  var input = input.toLowerCase().replace(/\s/g,"")
+  var squareCounter = 2;
+
+  while (Math.sqrt(input.length) > squareCounter) {
+    squareCounter += 1;
+  };
+
+  return makeSquare(input,squareCounter);
 
 };
 
-function makeSquare(input) {
-  var square = [[],[]];
+function makeSquare(input,squareSize) {
+  var square = [];
+  for (var colCounter = 0; colCounter < squareSize; colCounter ++){
+    square.push([]);
+  }
+  console.log(square);
   var arraySwitcher = 0;
   for(var strLength = 0; strLength < input.length; strLength ++) {
     square[arraySwitcher].push(input[strLength]);
-    if (arraySwitcher === 0){
-      arraySwitcher = 1;
-    }
-    else {
+    if (arraySwitcher  == squareSize - 1){
       arraySwitcher = 0;
     }
+    else {
+      arraySwitcher += 1;
+    }
   }
+
+  
+
   return square.join("").replace(/,/g,"");
 
 };
