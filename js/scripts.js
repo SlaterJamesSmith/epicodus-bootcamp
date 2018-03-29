@@ -2,12 +2,12 @@ var converter = function(input) {
   var inputArray = input.split("").reverse();
   var outputArray = [];
   for(var index = 0; index < inputArray.length; index ++){
-    outputArray.push(onesTranslate(inputArray[index], index));
+    outputArray.push(translate(inputArray[index], index));
   }
   return outputArray.reverse().join("");
 };
 
-var onesTranslate = function (input, index) {
+var translate = function (input, index) {
   var ones;
   var fives;
   var tens;
