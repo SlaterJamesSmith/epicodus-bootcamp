@@ -10,7 +10,24 @@ _This project is a practice in JavaScript Arrays & Looping._
 
 ##### Crypto Square Specifications
 
-* __
+* _Takes one letter and outputs one letter._
+  * _Input: "a"_
+  * _Output: "a"_
+* _Takes a lowercase 4-character word (or shorter) and returns crypto square encoded output._
+  * _Input: "cat"_
+  * _Output: "cta"_
+* _Takes any case 4-character word (or shorter) and returns crypto square encoded output._
+  * _Input: "Cat"_
+  * _Output: "cta"_
+* _Takes a 9-character word (or shorter) and returns crypto square encoded output._
+  * _Input: "juxtapose"_
+  * _Output: "jtouasxpe"_
+* _Takes a 9-character word (or shorter) and returns crypto square encoded output in 5-character chunks._
+  * _Input: "juxtapose"_
+  * _Output: "jtoua sxpe"_
+* _Takes a sentence and returns crypto square encoded output in 5-character chunks._
+  * _Input: "i ate good pizza"_
+  * _Output: "igpaa oitoz edz"_
 
 ## Setup/Installation Requirements
 
