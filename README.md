@@ -2,7 +2,7 @@
 
 #### _Arrays & Looping Practice Project, March 26, 2018_
 
-#### _By Mike Chu & Jesse Drebin_
+#### _By Jesse Drebin & Mike Chu_
 
 ## Description
 
@@ -30,4 +30,4 @@ _None._
 
 *GPL*
 
-Copyright (c) 2018 **_Mike Chu & Jesse Drebin_**
+Copyright (c) 2018 **_Jesse Drebin & Mike Chu_**
