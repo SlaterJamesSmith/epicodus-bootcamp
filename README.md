@@ -1,14 +1,14 @@
-# _EPICODUS - WEEK 3 - DAY 3_
+# _EPICODUS - INTRO WEEK 3 - DAY 3_
 
 #### _Arrays & Looping Practice, March 28, 2018_
 
-#### _My Matt Miller & Mike Chu_
+#### _By Matt Miller & Mike Chu_
 
 ## Description
 
 _This project is a practice in JavaScript Arrays & Looping._
 
-###### Leap Year Specifications:
+##### Leap Year Specifications:
 
 * _The program should return when a year is not a leap year._
   * _Input Example: 1993_
@@ -23,14 +23,14 @@ _This project is a practice in JavaScript Arrays & Looping._
   * _Input Example: 2000_
   * _Output Example: true_
 
-###### Pig Latin Specifications:
+##### Pig Latin Specifications:
 
   _The program does nothing to non-alphabetical characters, since they do not contain consonants or vowels._
  * _The program adds "way" to words beginning with a vowel._
  * _The program moves the first consonant at the beginning of a word to the end of the word and adds "ay"._
  * _The program treats "y" as a vowel when it is not the first letter in a word._
  * _The program moves all consonants at the beginning of a word to the end of the word and adds "ay"._
- * _The program moves "qu" to the end of a word and adds "ay," if the "q" is among the beginning consonants. _
+ * _The program moves "qu" to the end of a word and adds "ay," if the "q" is among the beginning consonants._
  * _The program translates characters regardless of case._
  * _The program translates multiple words._
 
