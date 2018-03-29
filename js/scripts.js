@@ -12,6 +12,7 @@ function cryptoSquare(input) {
 
 function makeSquare(input,squareSize) {
   var square = [];
+  var encodeArray = [];
   for (var colCounter = 0; colCounter < squareSize; colCounter ++){
     square.push([]);
   }
@@ -27,9 +28,16 @@ function makeSquare(input,squareSize) {
     }
   }
 
-  
+  var preEncodeArray = square.join("").replace(/,/g,"").split("");
 
-  return square.join("").replace(/,/g,"");
+  while (preEncodeArray.length > 0) {
+    for (var i = 0; i < 5; i ++) {
+    encodeArray.push(preEncodeArray.shift());
+    }
+    encodeArray.push(" ");
+  }
+
+  return encodeArray.join("");
 
 };
 
