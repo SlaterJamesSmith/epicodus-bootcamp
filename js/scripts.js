@@ -52,7 +52,7 @@ var onesTranslate = function (input, index) {
       return false;
   }
   return romanNumeral;
-}
+};
 
 
 //interface logic

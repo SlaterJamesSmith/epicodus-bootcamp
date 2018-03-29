@@ -10,21 +10,20 @@ _This project is a practice in JavaScript Arrays & Looping._
 
 ##### Roman Numerals Specifications
 
-* _Converts base roman numeral values to corresponding roman numeral._
-  * _Input: "1", "5", "10", "50", "100", "500", "1000"_
-  * _Output: "I", "V", "X", "L", "C", "D", "M"_
-* _Increments 1 - 3 by appending "I."_
+* _Converts the number "1" to "I."_
+* _Increments from 1 - 3 by appending "I."_
   * _Input: "2"_
   * _Output: "II"_
 * _Converts the number "4" to "IV."_
+* _Converts the number "5" to "V."_
 * _Increments 6 - 8 by appending "I."_
   * _Input: "7"_
   * _Output: "VII"_
 * _Converts the number "9" to "IX."_
-* _Converts the number "40" to "XL."_
-* _Converts the number "90" to "XC."_
-* _Converts the number "400" to "CD."_
-* _Converts the number "900" to "CM."_
+* _Converts the number "10" to "X."_
+* _Replicates counting pattern of 1 - 10 for numbers 11 - 100._
+* _Replicates counting pattern of 1 - 10 for numbers 101 - 1000._
+* _Replicates counting pattern of 1 - 10 for numbers 1001 - 3999._
 
 ## Setup/Installation Requirements
 
