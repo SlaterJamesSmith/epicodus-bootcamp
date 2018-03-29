@@ -8,14 +8,12 @@ $(document).ready(function(){
     sentenceSplitArray.map(function(word) {
       if (word.length > 3) {
         lengthFilterArray.push(word);
-      };
+      }
     });
 
     var returnString = lengthFilterArray.reverse().join(" ");
 
-    $("#result p").append(returnString);
+    $("#result").append(returnString);
     $("#result").show();
-
   });
-
 });

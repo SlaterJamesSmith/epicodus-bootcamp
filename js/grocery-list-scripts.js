@@ -10,7 +10,7 @@ $(document).ready(function() {
         groceryList.push($("#" + item).val().toUpperCase());
       } else {
         return;
-      };
+      }
     });
 
     groceryList.sort();
@@ -20,8 +20,6 @@ $(document).ready(function() {
     });
 
     $("form").hide();
-    $("#grocery-list").show();
-
+    $("#result").show();
   });
-
 });

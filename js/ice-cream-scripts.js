@@ -3,10 +3,12 @@ $(document).ready(function() {
 
   favoriteFlavors.sort();
 
-  $("#ice-cream button").click(function() {
+  $("button").click(function() {
+    $("#result").empty();
     favoriteFlavors.forEach(function(flavor) {
-      $("#ice-cream ul").append("<li>"+ flavor.toUpperCase() + "</li>")
+      $("#result").append("<p>"+ flavor.toUpperCase() + "</p>")
     });
-  });
 
+    $("#result").show();
+  });
 });

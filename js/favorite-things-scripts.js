@@ -8,20 +8,18 @@ $(document).ready(function() {
     favoriteThings.push($("#pet").val());
     favoriteThings.push($("#food").val());
 
-    $("#results").prepend('<div class=\"record well\"><h2 class=\"nameBlank\">\'s<br>Favorite Things</h2><ul></ul></div>');
+    $("#result").prepend('<div class="record well"><p class="nameBlank">\'s Favorite Things</h2><ul></ul></p>');
 
-    $("#results").children("div").first().click(function() {
+    $("#result").children("div").first().click(function() {
       $(this).remove();
     });
 
-    $("#results .record").children(".nameBlank").first().prepend($("#name").val());
+    $("#result .record").children(".nameBlank").first().prepend($("#name").val());
 
     favoriteThings.forEach(function(item) {
-      $("#results .record").children("ul").first().append("<li>" + item + "</li>");
+      $("#result").children(".record").first().append("<p>" + item + "</p>");
     });
 
-    $("#results").show();
-
+    $("#result").show();
   });
-
 });

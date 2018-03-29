@@ -1,12 +1,18 @@
-# _EPICODUS - WEEK 3: Arrays & Looping Practice_
+# _EPICODUS - INTRO - WEEK 3_
 
-#### _Arrays & Looping Practice Project, March 26, 2018_
+#### _Arrays & Looping Practice, March 26, 2018_
 
-#### _By Jesse Drebin & Mike Chu_
+#### _Collaborators_
+
+* Pablo Barreyro
+* Brea Borlas
+* Mike Chu
+* Jesse Drebin
+* Matt Miller
 
 ## Description
 
-_This project is a practice in JavaScript Arrays & Looping._
+A collection of practice projects using JavaScript Arrays & Looping.
 
 ## Setup/Installation Requirements
 
@@ -15,19 +21,17 @@ _This project is a practice in JavaScript Arrays & Looping._
 
 ## Known Bugs
 
-_None._
+None.
 
 ## Technologies Used
 
-* _HTML_
-* _CSS_
-* _Bootstrap_
-* _JavaScript_
-* _jQuery_
+* HTML
+* CSS
+* Bootstrap
+* JavaScript
+* jQuery
 
 
 ### License
 
-*GPL*
-
-Copyright (c) 2018 **_Jesse Drebin & Mike Chu_**
+_GPL_
