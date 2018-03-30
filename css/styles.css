@@ -38,7 +38,7 @@ label {
   margin: 0 auto;
 }*/
 
-#submit, #reverse, #forward {
+#controls button {
   border-radius: 3px;
   margin: 5px;
 }
@@ -49,17 +49,23 @@ label {
   color: #ffdf7f;
 }
 #reverse {
-    background-color: #0000;
-    border: 1px solid #00ffbc;
+  background-color: #0000;
+  border: 1px solid #00ffbc;
+}
+
+#purge {
+  background-color: #0000;
+  border: 1px solid #ff061b;
+  color: #ff061b;
 }
 
 
-.no-display, #forward, #reverse {
+.no-display, #forward, #reverse, #purge {
   display: none;
 }
 
 .beep-boops {
-  background-color: #ff5806;
+  background-color: #ff061b;
   color: #fffd8c;
   display: none;
   float: left;

@@ -51,6 +51,8 @@ $(document).ready(function() {
     var userName = $("#input-name").val();
     var userResult = beepyBooper(userInput, userName);
 
+    $("form")[0].reset();
+
     // Push Results Forward or in Reverse
     function resultFeeder(direction) {
       $("#result").empty();
@@ -81,8 +83,17 @@ $(document).ready(function() {
       resultFeeder("forward");
     });
 
+    // Purge
+    $("#purge").click(function() {
+      $("#result").empty();
+      $("#reverse").hide();
+      $("#forward").hide();
+      $("#purge").hide();
+    });
+
     $("#result").show();
     $("#reverse").show();
+    $("#purge").show();
     $("#forward").hide();
   });
 });
