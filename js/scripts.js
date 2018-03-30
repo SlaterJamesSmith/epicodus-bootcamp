@@ -50,7 +50,7 @@ $(document).ready(function() {
     $("#result").empty();
 
     userResult.forEach(function(number) {
-      $("#result").append('<div class="beeb-boop-nuggets">' + number + '</div>');
+      $("#result").append('<div class="beep-boops">' + number + '</div>');
     });
 
     $("#result").show();
