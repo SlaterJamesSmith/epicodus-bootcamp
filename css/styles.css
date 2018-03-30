@@ -1,12 +1,13 @@
 body {
   background-color: black;
+  color: #00ffbc;
   font-family: 'Open Sans', sans-serif;
   font-size: 2em;
 }
 
 h1 {
-  border-bottom: 1px solid #ff1754;
-  border-top: 1px solid #ff1754;
+  border-bottom: 1px dashed #ff1754;
+  border-top: 1px dashed #ff1754;
   color: #ff1754;
   font-family: 'Monoton', sans-serif;
   margin: 25px;
@@ -16,6 +17,13 @@ h1 {
 h1, h2 {
   font-size: 6em;
   text-align: center;
+  text-transform: uppercase;
+}
+
+label {
+  font-size: 0.8em;
+  letter-spacing: 10px;
+  padding-left: 20px;
   text-transform: uppercase;
 }
 
@@ -44,6 +52,16 @@ h1, h2 {
 
 .btn-group .btn {
   border-radius: 0;
+}
+
+.form-control {
+  background-color: #0000;
+  border: 1px dotted #00ffbc;
+  color: #00ffbc;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 2em;
+  height: 60px;
+  letter-spacing: 10px;
 }
 
 .well {
