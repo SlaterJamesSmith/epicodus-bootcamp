@@ -1,4 +1,4 @@
-// BUSINESS LOGIC //
+/// BUSINESS LOGIC ///
 
 // Primary Beep Boop Function
 function beepyBooper(inputNumber, userName) {
@@ -42,7 +42,7 @@ function numberParser(inputNumber) {
   return parsedNumber;
 };
 
-// USER INTERFACE LOGIC //
+/// USER INTERFACE LOGIC ///
 $(document).ready(function() {
   $("form").submit(function(event) {
     event.preventDefault();
@@ -51,12 +51,37 @@ $(document).ready(function() {
     var userName = $("#input-name").val();
     var userResult = beepyBooper(userInput, userName);
 
-    $("#result").empty();
+    // Push Results Forward or in Reverse
+    function resultFeeder(direction) {
+      $("#result").empty();
+      if (direction == "forward") {
+        userResult.forEach(function(number) {
+          $("#result").append('<div class="beep-boops">' + number + '</div>');
+        });
+      } else if (direction == "reverse") {
+        userResult.forEach(function(number) {
+          $("#result").prepend('<div class="beep-boops">' + number + '</div>');
+        });
+      } else {
+        console.log("resultFeeder direction must be forward or reverse.");
+      }
+    };
 
-    userResult.forEach(function(number) {
-      $("#result").append('<div class="beep-boops">' + number + '</div>');
+    resultFeeder("forward");
+
+    // Post-Result Reverse Feed
+    $("#reverse").click(function() {
+      resultFeeder("reverse");
+      $("#forward").show();
+    });
+
+    // Post-Result Forward Feed
+    $("#forward").click(function() {
+      resultFeeder("forward");
     });
 
     $("#result").show();
+    $("#feed-direction").show();
+    $("#forward").hide();
   });
 });

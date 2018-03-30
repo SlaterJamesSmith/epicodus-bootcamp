@@ -11,16 +11,30 @@
   <body>
     <div class="container">
       <h1>Beep Boop Machine</h1>
-      <form class="well row">
-        <div class="form-group col-md-6">
-          <label for="input-number">Enter Number:</label>
-          <input id="input-number" class="form-control" type="number" min="0" required>
+      <form class="well">
+        <div class="row">
+          <div class="form-group col-md-6">
+            <label for="input-number">Enter Number:</label>
+            <input id="input-number" class="form-control" type="number" min="0" required>
+          </div>
+          <div class="form-group col-md-6">
+            <label for="input-name">Your Name:</label>
+            <input id="input-name" class="form-control" type="text">
+          </div>
         </div>
-        <div class="form-group col-md-6">
-          <label for="input-name">Your Name:</label>
-          <input id="input-name" class="form-control" type="text">
+        <div class="row">
+          <div class="col-md-2">
+            <button type="submit" class="btn btn-danger">B33P B00P</button>
+          </div>
+          <div class="col-md-6">
+            <div id="feed-direction" class="btn-group no-display">
+              <button id="reverse" type="button" class="btn btn-default">REVERSE</button>
+              <button id="forward" type="button" class="btn btn-default no-display">FORWARD</button>
+            </div>
+          </div>
+          <div class="col-md-4">
+          </div>
         </div>
-        <button type="submit" class="btn btn-danger">B33P B00P</button>
       </form>
       <div id="result" class="no-display">
 

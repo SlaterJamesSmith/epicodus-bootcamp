@@ -14,3 +14,9 @@ h1, h2 {
 .no-display {
   display: none;
 }
+
+/* BOOTSTRAP CUSTOMIZATIONS */
+
+.btn-group .btn {
+  border-radius: 0;
+}
