@@ -4,6 +4,8 @@ function beepyBooper(inputNumber) {
     return "Beep!";
   } else if (inputNumber === 1) {
     return "Boop!";
+  } else if (inputNumber % 3 === 0) {
+    return "I'm sorry, Dave. I'm afraid I can't do that.";
   } else {
     return false;
   }
