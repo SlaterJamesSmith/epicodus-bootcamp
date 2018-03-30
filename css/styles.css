@@ -3,6 +3,7 @@ body {
   color: #00ffbc;
   font-family: 'Open Sans', sans-serif;
   font-size: 2em;
+  min-width: 800px;
 }
 
 h1 {
@@ -20,11 +21,41 @@ h1, h2 {
   text-transform: uppercase;
 }
 
+form {
+  overflow: auto;
+}
+
 label {
   font-size: 0.8em;
   letter-spacing: 10px;
   padding-left: 20px;
   text-transform: uppercase;
+}
+
+/*#controls {
+  display: block;
+  width: 360px;
+  margin: 0 auto;
+}*/
+
+#submit, #reverse, #forward {
+  border-radius: 3px;
+  margin: 5px;
+}
+
+#submit, #forward {
+  background-color: #ff1754;
+  border: 1px solid #ffdf7f;
+  color: #ffdf7f;
+}
+#reverse {
+    background-color: #0000;
+    border: 1px solid #00ffbc;
+}
+
+
+.no-display, #forward, #reverse {
+  display: none;
 }
 
 .beep-boops {
@@ -39,19 +70,10 @@ label {
   text-align: center;
 }
 
-.no-display {
-  display: none;
-}
-
 /* BOOTSTRAP CUSTOMIZATIONS */
 
 .btn {
-  display: block;
-  margin: 10px auto;
-}
-
-.btn-group .btn {
-  border-radius: 0;
+  min-width: 110px;
 }
 
 .form-control {

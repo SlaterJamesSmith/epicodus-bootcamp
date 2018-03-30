@@ -3,7 +3,7 @@
   <head>
     <link href="css/bootstrap.css" rel="stylesheet" type="text/css">
     <link href="css/styles.css" rel="stylesheet" type="text/css">
-    <link href="https://fonts.googleapis.com/css?family=Monoton|Open+Sans:700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Monoton|Open+Sans:700|Montserrat:300" rel="stylesheet">
     <script src="js/jquery-3.3.1.js"></script>
     <script src="js/scripts.js"></script>
     <meta charset="utf-8">
@@ -23,20 +23,10 @@
             <input id="input-name" class="form-control" type="text">
           </div>
         </div>
-        <div class="row">
-          <div class="col-sm-3">
-            <button type="submit" class="btn btn-danger">B33P B00P</button>
-          </div>
-          <div class="col-sm-3">
-            <div id="feed-direction" class="btn-group no-display">
-              <button id="reverse" type="button" class="btn btn-default">REVERSE</button>
-              <button id="forward" type="button" class="btn btn-default no-display">FORWARD</button>
-            </div>
-          </div>
-          <div class="col-sm-3">
-          </div>
-          <div class="col-sm-3">
-          </div>
+        <div id="controls" class="btn-group">
+          <button id="submit" type="submit" class="btn">B33P B00P!</button>
+          <button id="reverse" type="button" class="btn">REVERSE</button>
+          <button id="forward" type="button" class="btn">FORWARD</button>
         </div>
       </form>
       <div id="result" class="no-display">

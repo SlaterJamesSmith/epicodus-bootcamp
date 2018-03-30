@@ -82,7 +82,7 @@ $(document).ready(function() {
     });
 
     $("#result").show();
-    $("#feed-direction").show();
+    $("#reverse").show();
     $("#forward").hide();
   });
 });

@@ -31,8 +31,7 @@ This project is a practice in JavaScript Arrays & Looping. A user inputs a singl
 
 ## Setup/Installation Requirements
 
-1. Clone repository.
-2. Open index.html in web browser.
+1. Visit website link: https://m-chu.github.io/epicodus-solo-project-3/
 
 ## Known Bugs
 
