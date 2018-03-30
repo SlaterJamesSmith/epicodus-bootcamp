@@ -1,16 +1,24 @@
 // BUSINESS LOGIC
+
+// Primary Beep Boop Function
 function beepyBooper(inputNumber) {
-  if (inputNumber === 0) {
+  var beepyBooperInput = numberParser(inputNumber);
+
+  if (inputNumber === "0") {
     return "Beep!";
-  } else if (inputNumber === 1) {
+  } else if (inputNumber === "1") {
     return "Boop!";
-  } else if (inputNumber % 3 === 0) {
+  } else if (parseInt(inputNumber) % 3 === 0) {
     return "I'm sorry, Dave. I'm afraid I can't do that.";
   } else {
-    return false;
+    return inputNumber;
   }
 };
 
+function numberParser(inputNumber) {
+  var parsedNumber = inputNumber.split("");
+  return parsedNumber;
+}
 
 // USER INTERFACE LOGIC
 $(document).ready(function() {
@@ -18,7 +26,7 @@ $(document).ready(function() {
     event.preventDefault();
 
     $("#result").empty();
-    var userInput = parseInt($("#input").val());
+    var userInput = $("#input").val();
     var userResult = beepyBooper(userInput);
     $("#result").text(userResult);
     $("#result").show();
