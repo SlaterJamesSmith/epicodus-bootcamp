@@ -4,12 +4,12 @@
 function beepyBooper(inputNumber) {
   var beepBoopInput = numberParser(inputNumber);
 
-  if (beepBoopInput.includes("0")) {
-    return "Beep!";
+  if (parseInt(inputNumber) % 3 === 0 && parseInt(inputNumber) !== 0) {
+    return "I'm sorry, Dave. I'm afraid I can't do that.";
   } else if (beepBoopInput.includes("1")) {
     return "Boop!";
-  } else if (parseInt(inputNumber) % 3 === 0) {
-    return "I'm sorry, Dave. I'm afraid I can't do that.";
+  } else if (beepBoopInput.includes("0")) {
+    return "Beep!";
   } else {
     return inputNumber;
   }
@@ -19,7 +19,7 @@ function beepyBooper(inputNumber) {
 function numberParser(inputNumber) {
   var parsedNumber = inputNumber.split("");
   return parsedNumber;
-}
+};
 
 // USER INTERFACE LOGIC
 $(document).ready(function() {
