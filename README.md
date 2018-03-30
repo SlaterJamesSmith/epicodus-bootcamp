@@ -2,7 +2,11 @@
 
 #### _JavaScript & jQuery Practice, March 19, 2018_
 
-#### By Matt Miller & Mike Chu
+#### Collaborators
+
+* Mike Chu
+* Matthew Dowdney
+* Susan Southall
 
 ## Description
 
