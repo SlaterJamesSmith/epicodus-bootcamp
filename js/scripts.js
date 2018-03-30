@@ -21,6 +21,15 @@ function numberParser(inputNumber) {
   return parsedNumber;
 };
 
+// Generate Range of Numbers Array
+function generateNumbers(inputNumber) {
+  var rangeOfNumbers = [];
+  for (var i = 0;i <= parseInt(inputNumber); i ++) {
+    rangeOfNumbers.push(i);
+  };
+  return rangeOfNumbers;
+};
+
 // USER INTERFACE LOGIC
 $(document).ready(function() {
   $("form").submit(function(event) {
