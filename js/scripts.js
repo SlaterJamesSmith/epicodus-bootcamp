@@ -1,46 +1,58 @@
-// BUSINESS LOGIC
+// BUSINESS LOGIC //
 
 // Primary Beep Boop Function
 function beepyBooper(inputNumber) {
-  var beepBoopInput = numberParser(inputNumber);
+  var beepBoopFeedIn = generateNumbers(inputNumber);
+  var beepBoopFeedOut = [];
 
-  if (parseInt(inputNumber) % 3 === 0 && parseInt(inputNumber) !== 0) {
-    return "I'm sorry, Dave. I'm afraid I can't do that.";
-  } else if (beepBoopInput.includes("1")) {
-    return "Boop!";
-  } else if (beepBoopInput.includes("0")) {
-    return "Beep!";
-  } else {
-    return inputNumber;
-  }
+  // Beep Boop Engine
+  beepBoopFeedIn.map(function(numberString) {
+    var parsedNumber = numberParser(numberString);
+
+    if (parseInt(numberString) % 3 === 0 && parseInt(numberString) !== 0) {
+      beepBoopFeedOut.push("I'm sorry, Dave. I'm afraid I can't do that.");
+    } else if (parsedNumber.includes("1")) {
+      beepBoopFeedOut.push("Boop!");
+    } else if (parsedNumber.includes("0")) {
+      beepBoopFeedOut.push("Beep!");
+    } else {
+      beepBoopFeedOut.push(numberString);
+    }
+  });
+
+  return beepBoopFeedOut;
 };
 
-// Turn Number Into Array of Digits
+// Turn Number String Into Array of Digits
 function numberParser(inputNumber) {
   var parsedNumber = inputNumber.split("");
   return parsedNumber;
 };
 
-// Generate Range of Numbers Array
+// Generate Range of Numbers as Strings Array
 function generateNumbers(inputNumber) {
   var rangeOfNumbers = [];
   for (var i = 0;i <= parseInt(inputNumber); i ++) {
-    rangeOfNumbers.push(i);
+    rangeOfNumbers.push(i.toString());
   };
   return rangeOfNumbers;
 };
 
-// USER INTERFACE LOGIC
+
+// USER INTERFACE LOGIC //
 $(document).ready(function() {
   $("form").submit(function(event) {
     event.preventDefault();
 
-    $("#result").empty();
     var userInput = $("#input").val();
     var userResult = beepyBooper(userInput);
-    $("#result").text(userResult);
+
+    $("#result").empty();
+
+    userResult.forEach(function(number) {
+      $("#result").append('<div class="beeb-boop-nuggets">' + number + '</div>');
+    });
+
     $("#result").show();
-
   });
-
 });
