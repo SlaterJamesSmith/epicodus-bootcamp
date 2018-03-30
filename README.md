@@ -2,7 +2,7 @@
 
 #### _BEEP BOOP Machine, March 30, 2018_
 
-#### By Mike Chu
+#### _By Mike Chu_
 
 ## Description
 
@@ -37,6 +37,10 @@ This project is a practice in JavaScript Arrays & Looping. A user inputs a singl
 ## Known Bugs
 
 None.
+
+## Support and Contact
+
+Please feel free to send your comments, questions, or concerns to Mike Chu at mcihkue@gmail.com.
 
 ## Technologies Used
 
