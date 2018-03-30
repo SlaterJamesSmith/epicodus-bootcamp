@@ -1,14 +1,27 @@
 body {
+  background-color: black;
   font-family: 'Open Sans', sans-serif;
   font-size: 2em;
 }
 
+h1 {
+  border-bottom: 1px solid #ff1754;
+  border-top: 1px solid #ff1754;
+  color: #ff1754;
+  font-family: 'Monoton', sans-serif;
+  margin: 25px;
+  padding: 20px;
+}
+
 h1, h2 {
+  font-size: 6em;
+  text-align: center;
   text-transform: uppercase;
 }
 
 .beep-boops {
-  background-color: #00ffde;
+  background-color: #ff5806;
+  color: #fffd8c;
   display: none;
   float: left;
   font-weight: bold;
@@ -31,4 +44,9 @@ h1, h2 {
 
 .btn-group .btn {
   border-radius: 0;
+}
+
+.well {
+  background-color: #0000;
+  border: none;
 }

@@ -18,7 +18,7 @@ function beepyBooper(inputNumber, userName) {
     } else if (parsedNumber.includes("1")) {
       beepBoopFeedOut.push("Boop!");
     } else if (parsedNumber.includes("0")) {
-      beepBoopFeedOut.push("Beep!");
+      beepBoopFeedOut.push("BEEP!");
     } else {
       beepBoopFeedOut.push(numberString);
     }
