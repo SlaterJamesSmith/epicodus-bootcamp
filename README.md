@@ -15,7 +15,7 @@ This project is a practice in JavaScript Arrays & Looping. A user inputs a singl
 3. **Numbers Containing the Digit 0**
   * Replace with: "Beep!"
 
-### Specifications
+## Specifications
 
 |Program Behavior|Input |Output|
 |----------------|------|------|

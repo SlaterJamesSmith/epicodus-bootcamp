@@ -23,12 +23,6 @@ function beepyBooper(inputNumber) {
   return beepBoopFeedOut;
 };
 
-// Turn Number String Into Array of Digits
-function numberParser(inputNumber) {
-  var parsedNumber = inputNumber.split("");
-  return parsedNumber;
-};
-
 // Generate Range of Numbers as Strings Array
 function generateNumbers(inputNumber) {
   var rangeOfNumbers = [];
@@ -38,6 +32,11 @@ function generateNumbers(inputNumber) {
   return rangeOfNumbers;
 };
 
+// Turn Number String Into Array of Digits
+function numberParser(inputNumber) {
+  var parsedNumber = inputNumber.split("");
+  return parsedNumber;
+};
 
 // USER INTERFACE LOGIC //
 $(document).ready(function() {
