@@ -2,11 +2,11 @@
 
 // Primary Beep Boop Function
 function beepyBooper(inputNumber) {
-  var beepyBooperInput = numberParser(inputNumber);
+  var beepBoopInput = numberParser(inputNumber);
 
-  if (inputNumber === "0") {
+  if (beepBoopInput.includes("0")) {
     return "Beep!";
-  } else if (inputNumber === "1") {
+  } else if (beepBoopInput.includes("1")) {
     return "Boop!";
   } else if (parseInt(inputNumber) % 3 === 0) {
     return "I'm sorry, Dave. I'm afraid I can't do that.";
@@ -15,6 +15,7 @@ function beepyBooper(inputNumber) {
   }
 };
 
+// Turn Number Into Array of Digits
 function numberParser(inputNumber) {
   var parsedNumber = inputNumber.split("");
   return parsedNumber;
