@@ -2,9 +2,11 @@
 function beepyBooper(inputNumber) {
   if (inputNumber === 0) {
     return "Beep!";
+  } else if (inputNumber === 1) {
+    return "Boop!";
   } else {
     return false;
-  };
+  }
 };
 
 
