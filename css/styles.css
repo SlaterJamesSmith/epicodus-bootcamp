@@ -1,3 +1,8 @@
+body {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 2em;
+}
+
 h1, h2 {
   text-transform: uppercase;
 }
@@ -8,6 +13,7 @@ h1, h2 {
   float: left;
   font-weight: bold;
   margin: 10px;
+  min-width: 75px;
   padding: 10px;
   text-align: center;
 }
@@ -17,6 +23,11 @@ h1, h2 {
 }
 
 /* BOOTSTRAP CUSTOMIZATIONS */
+
+.btn {
+  display: block;
+  margin: 10px auto;
+}
 
 .btn-group .btn {
   border-radius: 0;
