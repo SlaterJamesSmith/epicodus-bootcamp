@@ -1,4 +1,4 @@
-# EPICODUS - INTRO WEEK 3: Solo Project
+# _EPICODUS - INTRO WEEK 3: Solo Project_
 
 #### _BEEP BOOP Machine, March 30, 2018_
 
@@ -8,7 +8,7 @@
 
 This project is a practice in JavaScript Arrays & Looping.
 
-#### Specifications
+### Specifications
 
 |Program Behavior|Input |Output|
 |----------------|------|------|
