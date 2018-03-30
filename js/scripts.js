@@ -65,6 +65,7 @@ $(document).ready(function() {
       } else {
         console.log("resultFeeder direction must be forward or reverse.");
       }
+      $(".beep-boops").fadeIn();
     };
 
     resultFeeder("forward");
