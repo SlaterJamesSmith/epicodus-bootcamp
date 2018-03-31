@@ -3,17 +3,14 @@ $(document).ready(function() {
     event.preventDefault();
 
     if ($("input:radio[name=height]:checked").val() === "lt-four") {
-      $(".ride-section div").removeClass("blah");
-      $(".lt-four").addClass("blah");
-
+      $(".ride-list li").removeClass("highlight");
+      $(".lt-four").addClass("highlight");
     } else if ($("input:radio[name=height]:checked").val() === "four-to-six") {
-      $(".ride-section div").removeClass("blah");
-      $(".four-to-six").addClass("blah");
+      $(".ride-list li").removeClass("highlight");
+      $(".four-to-six").addClass("highlight");
     } else {
-      $(".ride-section div").removeClass("blah");
-      $(".gt-six").addClass("blah");
-    };
-
+      $(".ride-list li").removeClass("highlight");
+      $(".gt-six").addClass("highlight");
+    }
   });
-
 });

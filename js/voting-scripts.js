@@ -2,14 +2,12 @@ $(document).ready(function() {
   $("form").submit(function(event) {
     event.preventDefault();
 
+    $(".display-none").hide();
+
     if ($("input:radio[name=age-check]:checked").val() === "over18") {
-      $("#age-check").hide();
-      $("#votinginfo").show();
+      $("#voting-info").show();
     } else {
-      $("#age-check").hide();
-      $("#novoting").show();
-    };
-
+      $("#no-voting").show();
+    }
   });
-
 });

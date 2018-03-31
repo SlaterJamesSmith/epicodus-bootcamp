@@ -5,15 +5,15 @@ $(document).ready(function() {
     var inputName = $("input#name").val();
     var inputDesc = $("input#desc").val();
     var inputDate = $("input#date").val();
-    var inputTimeStart = $("input#timestart").val();
-    var inputTimeEnd = $("input#timeend").val();
+    var inputTimeStart = $("input#time-start").val();
+    var inputTimeEnd = $("input#time-end").val();
 
     $(".name").text(inputName);
     $(".desc").text(inputDesc);
     $(".date").text(inputDate);
-    $(".timestart").text(inputTimeStart);
-    $(".timeend").text(inputTimeEnd);
+    $(".time-start").text(inputTimeStart);
+    $(".time-end").text(inputTimeEnd);
 
-    $(".panel").show();
+    $("#result").show();
   });
 });

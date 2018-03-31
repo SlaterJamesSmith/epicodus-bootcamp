@@ -1,3 +1,18 @@
+#project-title {
+  color: #fff;
+  font-weight: bold;
+  margin: 20px 0;
+  padding: 0;
+  text-align: left;
+  text-transform: uppercase;
+}
+
+#project-title .subtitle {
+  display: block;
+  font-size: 0.8em;
+  font-weight: normal;
+}
+
 body {
   background-color: #000;
   min-width: 450px;
@@ -75,9 +90,7 @@ a:link, a:visited, a:hover, a:active {
 }
 
 .container {
-  padding: 50px;
   text-align: center;
-  width: 70%;
 }
 
 .panel {

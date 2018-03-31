@@ -1,0 +1,86 @@
+h1 {
+  font-weight: bold;
+  margin: 20px 0;
+  text-transform: uppercase;
+}
+
+h1 .subtitle {
+  display: block;
+  font-size: 0.8em;
+  font-weight: normal;
+}
+
+.monospace p {
+  background-color: #d9edf7;
+  border-radius: 3px;
+  font-family: monospace;
+  font-size: 1.1em;
+  padding: 5px 10px;
+}
+
+.actionable {
+  cursor: pointer;
+  background-color: #ff984d;
+  border-radius: 3px;
+  color: #fff;
+  padding: 10px 15px;
+}
+
+.display-none {
+  display: none;
+}
+
+/* Walrus */
+.display-regular {
+  margin-top: 20px;
+}
+
+.clickable {
+  cursor: pointer;
+}
+
+.link-color {
+  color: blue;
+}
+
+.light-theme {
+  background-color: #fff4e1;
+  color: gray;
+}
+
+.light-theme button {
+  background-color: #ffe1d0;
+}
+
+.light-theme .link-color {
+  color: #ff792b;
+}
+
+.dark-theme {
+  background-color: #000;
+  color: #fff;
+}
+
+.dark-theme button {
+  background-color: #00695a;
+}
+
+.dark-theme .link-color {
+  color: #c0ffdc;
+}
+
+.dark-theme .well {
+  color: #000;
+}
+
+/* Theme Park */
+.highlight {
+  color: #fff;
+  background-color: #e41e33;
+}
+
+.ride-list li {
+  border-radius: 3px;
+  margin-bottom: 5px;
+  padding-left: 5px;
+}

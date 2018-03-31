@@ -5,25 +5,26 @@
     <link href="css/styles.css" rel="stylesheet" type="text/css">
     <script src="js/jquery-3.3.1.js"></script>
     <script src="js/dom-practice-scripts.js"></script>
-    <title>Talk to the web page</title>
+    <meta charset="utf-8">
+    <title>EPI-WK2: DOM Practice</title>
   </head>
   <body>
     <div class="container">
-      <h1>Talk to the web page</h1>
+      <h1><a href="index.html">Epicodus Week 2</a> <span class="subtitle">DOM Practice</span></h1>
       <p>Click a button to say something to the web page. See what it says back!</p>
-      <button class="btn btn-primary" id="hello">Say "hello"</button>
-      <button class="btn btn-warning" id="goodbye">Say "goodbye"</button>
-      <button class="btn btn-danger" id="stop">Say "stop copying me!"</button>
+      <button class="btn btn-primary" id="hello">Say "Hello."</button>
+      <button class="btn btn-warning" id="goodbye">Say "Goodbye."</button>
+      <button class="btn btn-danger" id="stop">Say "Stop copying me!"</button>
       <div class="row">
-        <div class="col-md-6">
+        <div class="col-sm-6">
           <h2>You said:</h2>
-          <ul class="unstyled" id="user">
+          <ul id="user">
 
           </ul>
         </div>
-        <div class="col-md-6">
-          <h2>The web page said back:</h2>
-          <ul class="unstyled" id="webpage">
+        <div class="col-sm-6">
+          <h2>Webpage replied:</h2>
+          <ul id="webpage">
 
           </ul>
         </div>

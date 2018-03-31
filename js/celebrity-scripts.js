@@ -1,21 +1,21 @@
 $(document).ready(function() {
   $("form").submit(function(event) {
-    $(".invis").hide();
+    event.preventDefault();
+
+    $(".display-none").hide();
     var height = parseInt($("#height").val());
     var weight = parseInt($("#weight").val());
     var age = parseInt($("#age").val());
     var result = height + weight + age;
 
     if (result > 7) {
-      $(".lou").show();
+      $("#lou").show();
     } else if (8 > result && result > 5) {
-      $(".hulk").show();
+      $("#hulk").show();
     } else  {
-      $(".hogan").show();
-    };
+      $("#hogan").show();
+    }
 
-
-
-    event.preventDefault();
+    $("form")[0].reset();
   });
 });

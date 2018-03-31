@@ -1,25 +1,24 @@
 $(document).ready(function() {
   $(".effect .clickable").click(function() {
-    $(".visible").slideToggle();
-    $(".invisible").slideToggle();
+    $(".display-regular").fadeToggle();
+    $(".display-none").fadeToggle();
   });
 
-  $("span.light").click(function() {
+  $(".light").click(function() {
     $("body").removeClass();
     $("body").addClass("light-theme");
   });
 
-  $("span.dark").click(function() {
+  $(".dark").click(function() {
     $("body").removeClass();
     $("body").addClass("dark-theme");
   });
 
-  $("span.original").click(function() {
+  $(".original").click(function() {
     $("body").removeClass();
   });
 
-  $(".boring-lecture").click(function() {
-    $(".boring-lecture").toggleClass("highlight");
+  $("#boring-lecture").click(function() {
+    $("#boring-lecture").toggleClass("highlight");
   });
-
 });

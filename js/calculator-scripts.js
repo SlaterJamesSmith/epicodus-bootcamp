@@ -1,60 +1,43 @@
 // Business Logic
-var add = function(number1, number2) {
+function calculate(number1, number2, operator) {
+  switch (operator) {
+    case "add":
+      return add(number1, number2);
+    case "subtract":
+      return subtract(number1, number2);
+    case "multiply":
+      return multiply(number1, number2);
+    case "divide":
+      return divide(number1, number2);
+  };
+};
+
+function add(number1, number2) {
   return number1 + number2;
 };
 
-var subtract = function(number1, number2) {
+function subtract(number1, number2) {
   return number1 - number2;
 };
 
-var multiply = function(number1, number2) {
+function multiply(number1, number2) {
   return number1 * number2;
 };
 
-var division = function(number1, number2) {
+function divide(number1, number2) {
   return number1 / number2;
 };
 
 // User Interface Logic
 $(document).ready(function() {
-  $("form#add").submit(function(event) {
+  $("form").submit(function(event) {
     event.preventDefault();
 
-    var number1 = parseInt($("input#add1").val());
-    var number2 = parseInt($("input#add2").val());
-    var result = add(number1, number2);
-
-    $("#addresult").text(result);
+    var number1 = parseFloat($("#input1").val());
+    var number2 = parseFloat($("#input2").val());
+    var operator = $("input:radio[name=operator]:checked").val();
+    var result = calculate(number1, number2, operator);
+    console.log(operator, result);
+    $("#result").text(result);
   });
-
-  $("form#subtract").submit(function(event) {
-    event.preventDefault();
-
-    var number1 = parseInt($("input#subtract1").val());
-    var number2 = parseInt($("input#subtract2").val());
-    var result = subtract(number1, number2);
-
-    $("#subtractresult").text(result);
-  });
-
-  $("form#multiply").submit(function(event) {
-    event.preventDefault();
-
-    var number1 = parseInt($("input#multiply1").val());
-    var number2 = parseInt($("input#multiply2").val());
-    var result = multiply(number1, number2);
-
-    $("#multiplyresult").text(result);
-  });
-
-  $("form#division").submit(function(event) {
-    event.preventDefault();
-
-    var number1 = parseInt($("input#division1").val());
-    var number2 = parseInt($("input#division2").val());
-    var result = division(number1, number2);
-
-    $("#divisionresult").text(result);
-  });
-
 });
