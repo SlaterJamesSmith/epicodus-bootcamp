@@ -11,9 +11,9 @@ function beepyBooper(inputNumber, userName) {
 
     if (parseInt(numberString) % 3 === 0 && parseInt(numberString) !== 0) {
       if (userName !== "") {
-        beepBoopFeedOut.push('<div class="blocks sorry blink">I\'m sorry, ' + userName + '. I\'m afraid I can\'t do that.</div>');
+        beepBoopFeedOut.push('<div class="blocks sorry">I\'m sorry, ' + userName + '. I\'m afraid I can\'t do that.</div>');
       } else {
-        beepBoopFeedOut.push('<div class="blocks sorry blink">I\'m sorry, Dave. I\'m afraid I can\'t do that.</div>');
+        beepBoopFeedOut.push('<div class="blocks sorry">I\'m sorry, Dave. I\'m afraid I can\'t do that.</div>');
       }
     } else if (parsedNumber.includes("1")) {
       beepBoopFeedOut.push('<div class="blocks boop">Boop!</div>');

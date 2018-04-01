@@ -89,13 +89,13 @@ input:focus {
 .beep {
   animation: blink 0.7s infinite;
   background-color: red;
-  border: 1px dashed #fffd8c;
+  border: 1px dotted #fffd8c;
   color: #fffd8c;
 }
 
 .boop {
   background-color: #00b568;
-  border: 1px dashed #fff;
+  border: 1px solid #fff;
   color: #fff;
 }
 
