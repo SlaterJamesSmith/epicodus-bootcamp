@@ -11,16 +11,16 @@ function beepyBooper(inputNumber, userName) {
 
     if (parseInt(numberString) % 3 === 0 && parseInt(numberString) !== 0) {
       if (userName !== "") {
-        beepBoopFeedOut.push('<div class="blocks sorry">I\'m sorry, ' + userName + '. I\'m afraid I can\'t do that.</div>');
+        beepBoopFeedOut.push(userName);
       } else {
-        beepBoopFeedOut.push('<div class="blocks sorry">I\'m sorry, Dave. I\'m afraid I can\'t do that.</div>');
+        beepBoopFeedOut.push("Dave");
       }
     } else if (parsedNumber.includes("1")) {
-      beepBoopFeedOut.push('<div class="blocks boop">Boop!</div>');
+      beepBoopFeedOut.push("Boop!");
     } else if (parsedNumber.includes("0")) {
-      beepBoopFeedOut.push('<div class="blocks beep">BEEP!</div>');
+      beepBoopFeedOut.push("BEEP!");
     } else {
-      beepBoopFeedOut.push('<div class="blocks digit">' + numberString + '</div>');
+      beepBoopFeedOut.push(numberString);
     }
   });
 
@@ -49,33 +49,47 @@ $(document).ready(function() {
 
     var userInput = $("#input-number").val();
     var userName = $("#input-name").val();
-    var beepBoopFeedOut = beepyBooper(userInput, userName);
+    var rawBeepBoop = beepyBooper(userInput, userName);
+    var beepBoopFeedOut = [];
     $("form")[0].reset();
 
-    // Feed Out Result
+    // Make HTML Read-Out Result
+    rawBeepBoop.map(function(beepBoop) {
+      if (beepBoop === "Boop!") {
+        beepBoopFeedOut.push('<div class="blocks boop">Boop!</div>');
+      } else if (beepBoop === "BEEP!") {
+        beepBoopFeedOut.push('<div class="blocks beep">BEEP!</div>');
+      } else if (parseInt(beepBoop) / parseInt(beepBoop) === 1) {
+        beepBoopFeedOut.push('<div class="blocks digit">' + beepBoop + '</div>');
+      } else {
+        if (beepBoop = "Dave") {
+          beepBoopFeedOut.push('<div class="blocks sorry">I\'m sorry, Dave. I\'m afraid I can\'t do that.</div>');
+        } else {
+          beepBoopFeedOut.push('<div class="blocks sorry">I\'m sorry, ' + beepBoop + '. I\'m afraid I can\'t do that.</div>');
+        }
+      }
+    });
+
+    // Feed Out HTML Result
     function resultFeeder(feedOutArray) {
       $("#result").empty();
       feedOutArray.forEach(function(number) {
         $("#result").append(number);
-      $(".beep-boops").fadeIn();
+        $(".beep-boops").fadeIn();
       });
     };
 
     resultFeeder(beepBoopFeedOut);
 
     $("#result").show();
-    $("button.post-ctrl").show();
-    $("button#forward").hide();
+    $("#reverse").show();
+    $("#purge").show();
 
     // Post-Result Reverse Feed
-    $("#reverse").click(function() {
+    $(".toggle").click(function() {
       resultFeeder(beepBoopFeedOut.reverse());
-      $("#forward").show();
-    });
-
-    // Post-Result Forward Feed
-    $("#forward").click(function() {
-      resultFeeder(beepBoopFeedOut);
+      $("#reverse").toggle();
+      $("#forward").toggle();
     });
 
     // Post-Result Purge

@@ -41,21 +41,34 @@ label {
   margin: 5px;
 }
 
-#submit, #forward {
+#submit {
   background-color: #ff1754;
   border: 1px solid #ffdf7f;
   color: #ffdf7f;
 }
-#reverse {
+
+#submit:hover {
+  background-color: red;
+}
+
+#reverse, #forward {
   background-color: #0000;
   border: 1px solid #00ffbc;
+}
+
+#reverse:hover, #forward:hover {
+  color: #ff1754;
 }
 
 #purge {
   animation: pulse 1.2s infinite;
   background-color: #0000;
-  border: 1px solid #ff061b;
-  color: #ff061b;
+  border: 1px solid #ff1754;
+  color: #ff1754;
+}
+
+#purge:hover {
+  animation: pulse 0.3s infinite;
 }
 
 .input-shell {
