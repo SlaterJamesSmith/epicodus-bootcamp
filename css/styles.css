@@ -95,7 +95,7 @@ input:focus {
 }
 
 @keyframes bounce {
-  50% {font-size: 2em; letter-spacing: 20px;}
+  50% {letter-spacing: 5px;}
 }
 
 .bounce {

@@ -11,14 +11,14 @@ function beepyBooper(inputNumber, userName) {
 
     if (parseInt(numberString) % 3 === 0 && parseInt(numberString) !== 0) {
       if (userName !== "") {
-        beepBoopFeedOut.push("I'm sorry, " + userName + ". I'm afraid I can't do that.");
+        beepBoopFeedOut.push("<span class=\"sorry\">I'm sorry, " + userName + ". I'm afraid I can't do that.</span>");
       } else {
-        beepBoopFeedOut.push("I'm sorry, Dave. I'm afraid I can't do that.");
+        beepBoopFeedOut.push("<span class=\"sorry\">I'm sorry, Dave. I'm afraid I can't do that.</span>");
       }
     } else if (parsedNumber.includes("1")) {
-      beepBoopFeedOut.push("Boop!");
+      beepBoopFeedOut.push("<span class=\"bounce\">Boop!</span>");
     } else if (parsedNumber.includes("0")) {
-      beepBoopFeedOut.push("BEEP!");
+      beepBoopFeedOut.push("<span class=\"beep\">BEEP!</span>");
     } else {
       beepBoopFeedOut.push(numberString);
     }
