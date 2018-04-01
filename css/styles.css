@@ -11,12 +11,12 @@ h1 {
   border-top: 1px dashed #ff1754;
   color: #ff1754;
   font-family: 'Monoton', sans-serif;
+  font-size: 6em;
   margin: 25px;
   padding: 20px;
 }
 
 h1, h2 {
-  font-size: 6em;
   text-align: center;
   text-transform: uppercase;
 }
@@ -30,6 +30,10 @@ label {
   letter-spacing: 10px;
   padding-left: 20px;
   text-transform: uppercase;
+}
+
+.display-none {
+  display: none;
 }
 
 #controls button {
@@ -48,25 +52,10 @@ label {
 }
 
 #purge {
+  animation: pulse 1.2s infinite;
   background-color: #0000;
   border: 1px solid #ff061b;
   color: #ff061b;
-}
-
-.display-none {
-  display: none;
-}
-
-.beep-boops {
-  background-color: #ff061b;
-  color: #fffd8c;
-  display: none;
-  float: left;
-  font-weight: bold;
-  margin: 10px;
-  min-width: 75px;
-  padding: 10px;
-  text-align: center;
 }
 
 .input-shell {
@@ -86,24 +75,70 @@ input:focus {
   color: #7b0038;
 }
 
+.blocks {
+  border-radius: 5px;
+  color: #fffd8c;
+  float: left;
+  font-weight: bold;
+  margin: 10px;
+  min-width: 75px;
+  padding: 10px;
+  text-align: center;
+}
+
+.beep {
+  animation: blink 0.7s infinite;
+  background-color: red;
+  border: 1px dashed #fffd8c;
+  color: #fffd8c;
+}
+
+.boop {
+  background-color: #00b568;
+  border: 1px dashed #fff;
+  color: #fff;
+}
+
+.sorry {
+  animation: blink 1.2s infinite;
+  border: 1px dashed #fffd8c;
+  color: #fffd8c;
+  font-size: 0.5em;
+  line-height: 1em;
+  margin: 19px 10px;
+}
+
+.digit {
+  border: 1px dotted #ff1754;
+  color: #ff1754;
+  font-size: 2.4em;
+  line-height: 1em;
+  padding: 0px 10px;
+}
+
+/* ANIMATION CLASSES */
+@keyframes breathe {
+  50% {letter-spacing: 3px;}
+}
+
+.breathe {
+  animation: breathe 3s infinite;
+}
+
+@keyframes blink {
+  20% {opacity: 0;}
+  80% {opacity: 0;}
+}
+
+.blink {
+  animation: blink 1.2s infinite;
+}
+
 @keyframes pulse {
-  50% {opacity: 0.5;}
-}
-
-.pulse {
-  animation: pulse 1.2s infinite;
-}
-
-@keyframes bounce {
-  50% {letter-spacing: 5px;}
-}
-
-.bounce {
-  animation: bounce 1.2s infinite;
+  50% {opacity: 0.7;}
 }
 
 /* BOOTSTRAP CUSTOMIZATIONS */
-
 .btn {
   min-width: 110px;
 }

@@ -11,16 +11,16 @@ function beepyBooper(inputNumber, userName) {
 
     if (parseInt(numberString) % 3 === 0 && parseInt(numberString) !== 0) {
       if (userName !== "") {
-        beepBoopFeedOut.push("<span class=\"sorry\">I'm sorry, " + userName + ". I'm afraid I can't do that.</span>");
+        beepBoopFeedOut.push('<div class="blocks sorry blink">I\'m sorry, ' + userName + '. I\'m afraid I can\'t do that.</div>');
       } else {
-        beepBoopFeedOut.push("<span class=\"sorry\">I'm sorry, Dave. I'm afraid I can't do that.</span>");
+        beepBoopFeedOut.push('<div class="blocks sorry blink">I\'m sorry, Dave. I\'m afraid I can\'t do that.</div>');
       }
     } else if (parsedNumber.includes("1")) {
-      beepBoopFeedOut.push("<span class=\"bounce\">Boop!</span>");
+      beepBoopFeedOut.push('<div class="blocks boop">Boop!</div>');
     } else if (parsedNumber.includes("0")) {
-      beepBoopFeedOut.push("<span class=\"beep\">BEEP!</span>");
+      beepBoopFeedOut.push('<div class="blocks beep">BEEP!</div>');
     } else {
-      beepBoopFeedOut.push(numberString);
+      beepBoopFeedOut.push('<div class="blocks digit">' + numberString + '</div>');
     }
   });
 
@@ -56,7 +56,7 @@ $(document).ready(function() {
     function resultFeeder(feedOutArray) {
       $("#result").empty();
       feedOutArray.forEach(function(number) {
-        $("#result").append('<div class="beep-boops">' + number + '</div>');
+        $("#result").append(number);
       $(".beep-boops").fadeIn();
       });
     };
@@ -82,6 +82,7 @@ $(document).ready(function() {
     $("button#purge").click(function() {
       $("#result").empty();
       $("button.post-ctrl").hide();
+      $("#input-number").addClass("blink");
       $("#input-number").attr("placeholder", "_");
       $("#input-name").attr("placeholder", "Current > Dave");
     });
@@ -90,5 +91,6 @@ $(document).ready(function() {
   // Turn Off Placeholder
   $("input").click(function() {
     $(this).attr("placeholder", "");
+    $(this).removeClass("blink");
   });
 });
