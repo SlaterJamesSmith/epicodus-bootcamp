@@ -94,6 +94,14 @@ input:focus {
   animation: pulse 1.2s infinite;
 }
 
+@keyframes bounce {
+  50% {font-size: 2em; letter-spacing: 20px;}
+}
+
+.bounce {
+  animation: bounce 1.2s infinite;
+}
+
 /* BOOTSTRAP CUSTOMIZATIONS */
 
 .btn {
