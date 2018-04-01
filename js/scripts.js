@@ -16,7 +16,7 @@ function beepyBooper(inputNumber, userName) {
         beepBoopFeedOut.push("Dave");
       }
     } else if (parsedNumber.includes("1")) {
-      beepBoopFeedOut.push("Boop!");
+      beepBoopFeedOut.push("B00P!");
     } else if (parsedNumber.includes("0")) {
       beepBoopFeedOut.push("BEEP!");
     } else {
@@ -56,10 +56,10 @@ $(document).ready(function() {
     var beepBoopFeedOut = [];
     $("form")[0].reset();
 
-    // Make HTML Read-Out Result
+    // Create HTML Tagged Read-Out
     rawBeepBoop.map(function(beepBoop) {
-      if (beepBoop === "Boop!") {
-        beepBoopFeedOut.push('<div class="blocks boop">Boop!</div>');
+      if (beepBoop === "B00P!") {
+        beepBoopFeedOut.push('<div class="blocks boop">B00P!</div>');
       } else if (beepBoop === "BEEP!") {
         beepBoopFeedOut.push('<div class="blocks beep blink' + (Math.floor(Math.random() * 4) + 1) + '">BEEP!</div>');
       } else if (parseInt(beepBoop) / parseInt(beepBoop) === 1) {
@@ -87,14 +87,14 @@ $(document).ready(function() {
     $("#reverse").show();
     $("#purge").show();
 
-    // Post-Result Reverse Feed
+    // Toggle Feed Direction
     $(".toggle").click(function() {
       resultFeeder(beepBoopFeedOut.reverse());
       $("#reverse").toggle();
       $("#forward").toggle();
     });
 
-    // Post-Result Purge
+    // Purge Results
     $("button#purge").click(function() {
       $("#shield").fadeOut();
       $("#result").empty().hide();

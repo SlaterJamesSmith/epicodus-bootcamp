@@ -89,10 +89,6 @@ label {
   border-radius: 3px;
 }
 
-input[type=number]::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-}
-
 input:focus {
   color: #ff1754;
 }
@@ -109,6 +105,7 @@ input:focus {
   border-radius: 5px;
   float: left;
   font-weight: bold;
+  height: 50px;
   margin: 10px;
   min-width: 75px;
   padding: 10px;
@@ -134,7 +131,6 @@ input:focus {
   font-size: 0.7em;
   line-height: 1em;
   margin: 10px 10px;
-  min-height: 50px;
   word-wrap: normal;
 }
 
