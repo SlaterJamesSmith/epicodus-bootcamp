@@ -54,12 +54,12 @@ var translate = function (input, index) {
   return romanNumeral;
 };
 
-
-//interface logic
+// USER INTERFACE LOGIC
 $(document).ready(function() {
-  $("#number-form").submit(function(event) {
+  $("form").submit(function(event) {
     var input = $("#input").val();
-    $("#result p").text(converter(input));
+    $("#result").text(converter(input));
     event.preventDefault();
+    $("#result").show();
   });
 });
