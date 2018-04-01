@@ -67,6 +67,7 @@ label {
 
 #reverse:hover, #forward:hover {
   color: #ff1754;
+  text-shadow: 3px 3px 2px #00a97c;
 }
 
 #purge {
@@ -91,7 +92,7 @@ input:focus {
 }
 
 .form-control::placeholder {
-  color: #7b0038;
+  color: #d40038;
 }
 
 #inputs .form-control:focus::placeholder {
@@ -100,8 +101,6 @@ input:focus {
 
 .blocks {
   border-radius: 5px;
-  color: #fffd8c;
-  display: none;
   float: left;
   font-weight: bold;
   margin: 10px;
@@ -112,14 +111,15 @@ input:focus {
 
 .beep {
   background-color: red;
-  border: 1px dotted #fffd8c;
-  color: #fffd8c;
+  border: 1px solid red;
+  color: #fffc7f;
+  width: 75px;
 }
 
 .boop {
-  background-color: #00b568;
-  border: 1px solid #fff;
-  color: #fff;
+  background-color: #093824;
+  border: 1px solid #00ffbc;
+  width: 75px;
 }
 
 .sorry {
@@ -147,14 +147,15 @@ input:focus {
 
 #purge:hover {
   animation: pulse 0.3s infinite;
+  color: #fcff71;
 }
 
-@keyframes breathe {
+@keyframes h1-breathe {
   50% {letter-spacing: 3px; width: 85%;}
 }
 
-.breathe {
-  animation: breathe 3s infinite;
+@keyframes breathe {
+  50% {letter-spacing: 3px; width: 100px;}
 }
 
 @keyframes blink {
@@ -162,8 +163,24 @@ input:focus {
   80% {opacity: 1;}
 }
 
-.blink1 {
-  animation: blink 0.7s infinite;
+@keyframes pulse {
+  50% {opacity: 0.7;}
+}
+
+h1.breathe {
+  animation: h1-breathe 3s infinite;
+}
+
+input.blink {
+  animation: blink 0.9s infinite;
+}
+
+input.pulse, button.pulse {
+  animation: pulse 1s infinite;
+}
+
+.beep1 {
+  animation: blink 0.5s infinite, breathe 3s infinite;
 }
 
 .blink2 {
@@ -171,11 +188,11 @@ input:focus {
 }
 
 .blink3 {
-  animation: blink 1.2s infinite;
+  animation: blink 1.5s infinite;
 }
 
-@keyframes pulse {
-  50% {opacity: 0.7;}
+.blink4 {
+  animation: blink 2s infinite;
 }
 
 .pulse1 {

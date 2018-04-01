@@ -46,6 +46,8 @@ function numberParser(inputNumber) {
 $(document).ready(function() {
   $("form").submit(function(event) {
     event.preventDefault();
+    $("h1").fadeOut(200);
+    $("header").slideUp();
 
     var userInput = $("#input-number").val();
     var userName = $("#input-name").val();
@@ -58,7 +60,7 @@ $(document).ready(function() {
       if (beepBoop === "Boop!") {
         beepBoopFeedOut.push('<div class="blocks boop">Boop!</div>');
       } else if (beepBoop === "BEEP!") {
-        beepBoopFeedOut.push('<div class="blocks beep">BEEP!</div>');
+        beepBoopFeedOut.push('<div class="blocks beep blink' + (Math.floor(Math.random() * 4) + 1) + '">BEEP!</div>');
       } else if (parseInt(beepBoop) / parseInt(beepBoop) === 1) {
         beepBoopFeedOut.push('<div class="blocks digit">' + beepBoop + '</div>');
       } else {
@@ -75,13 +77,12 @@ $(document).ready(function() {
       $("#result").empty();
       feedOutArray.forEach(function(number) {
         $("#result").append(number);
-        $(".blocks").fadeIn();
       });
+      $("#result").delay(400).fadeIn();
     };
 
     resultFeeder(beepBoopFeedOut);
 
-    $("#result").show();
     $("#reverse").show();
     $("#purge").show();
 
@@ -94,8 +95,10 @@ $(document).ready(function() {
 
     // Post-Result Purge
     $("button#purge").click(function() {
-      $("#result").empty();
+      $("#result").empty().hide();
       $("button.post-ctrl").hide();
+      $("h1").show();
+      $("header").slideDown();
     });
   });
 });
