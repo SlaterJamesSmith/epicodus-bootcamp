@@ -63,9 +63,9 @@ $(document).ready(function() {
         beepBoopFeedOut.push('<div class="blocks digit">' + beepBoop + '</div>');
       } else {
         if (beepBoop === "Dave") {
-          beepBoopFeedOut.push('<div class="blocks sorry">I\'m sorry, Dave. I\'m afraid I can\'t do that.</div>');
+          beepBoopFeedOut.push('<div class="blocks sorry">I\'m sorry, Dave. <br>I\'m afraid I can\'t do that.</div>');
         } else {
-          beepBoopFeedOut.push('<div class="blocks sorry">I\'m sorry, ' + beepBoop + '. I\'m afraid I can\'t do that.</div>');
+          beepBoopFeedOut.push('<div class="blocks sorry">I\'m sorry, ' + beepBoop + '. <br>I\'m afraid I can\'t do that.</div>');
         }
       }
     });
