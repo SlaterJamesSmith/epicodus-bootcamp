@@ -48,6 +48,7 @@ $(document).ready(function() {
     event.preventDefault();
     $("h1").fadeOut(200);
     $("header").slideUp();
+    $("#shield").slideDown();
 
     var userInput = $("#input-number").val();
     var userName = $("#input-name").val();
@@ -95,6 +96,7 @@ $(document).ready(function() {
 
     // Post-Result Purge
     $("button#purge").click(function() {
+      $("#shield").fadeOut();
       $("#result").empty().hide();
       $("button.post-ctrl").hide();
       $("h1").show();
