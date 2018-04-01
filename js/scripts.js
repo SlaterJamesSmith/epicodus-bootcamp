@@ -62,7 +62,7 @@ $(document).ready(function() {
       } else if (parseInt(beepBoop) / parseInt(beepBoop) === 1) {
         beepBoopFeedOut.push('<div class="blocks digit">' + beepBoop + '</div>');
       } else {
-        if (beepBoop = "Dave") {
+        if (beepBoop === "Dave") {
           beepBoopFeedOut.push('<div class="blocks sorry">I\'m sorry, Dave. I\'m afraid I can\'t do that.</div>');
         } else {
           beepBoopFeedOut.push('<div class="blocks sorry">I\'m sorry, ' + beepBoop + '. I\'m afraid I can\'t do that.</div>');
@@ -75,7 +75,7 @@ $(document).ready(function() {
       $("#result").empty();
       feedOutArray.forEach(function(number) {
         $("#result").append(number);
-        $(".beep-boops").fadeIn();
+        $(".blocks").fadeIn();
       });
     };
 

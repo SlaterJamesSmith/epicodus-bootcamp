@@ -11,6 +11,7 @@ header {
   border-bottom: 1px dashed #ff1754;
   border-top: 1px dashed #ff1754;
   margin-top: 25px;
+  padding-top: 5px;
 }
 
 h1 {
@@ -105,6 +106,7 @@ input:focus {
 .blocks {
   border-radius: 5px;
   color: #fffd8c;
+  display: none;
   float: left;
   font-weight: bold;
   margin: 10px;
@@ -171,6 +173,10 @@ input:focus {
 
 .pulse {
   animation: pulse 1s infinite;
+}
+
+.pulse:focus {
+  animation: none;
 }
 
 /* BOOTSTRAP CUSTOMIZATIONS */
