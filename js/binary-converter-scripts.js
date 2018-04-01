@@ -31,7 +31,5 @@ $(function() {
     }
 
     $("#result").show();
-
   });
-
 });

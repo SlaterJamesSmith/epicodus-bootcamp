@@ -31,7 +31,6 @@ function pigLatin(string) {
     } else {
       return word;
     }
-
   });
 };
 
@@ -64,7 +63,7 @@ $(function() {
     event.preventDefault();
     userInput = $("#input").val();
     pigLatin(userInput);
-    $("#result p").text(pigLatinized.join(" "));
+    $("#result").text(pigLatinized.join(" "));
     $("#result").show();
   });
 });
