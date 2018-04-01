@@ -70,14 +70,9 @@ label {
 }
 
 #purge {
-  animation: pulse 1.2s infinite;
   background-color: #0000;
   border: 1px solid #ff1754;
   color: #ff1754;
-}
-
-#purge:hover {
-  animation: pulse 0.3s infinite;
 }
 
 /* INPUTS */
@@ -116,7 +111,6 @@ input:focus {
 }
 
 .beep {
-  animation: blink 0.7s infinite;
   background-color: red;
   border: 1px dotted #fffd8c;
   color: #fffd8c;
@@ -129,7 +123,6 @@ input:focus {
 }
 
 .sorry {
-  animation: blink 1.2s infinite;
   border: 1px dashed #fffd8c;
   color: #fffd8c;
   font-size: 0.7em;
@@ -148,6 +141,14 @@ input:focus {
 }
 
 /* ANIMATIONS */
+#inputs .form-control:focus {
+  animation: none;
+}
+
+#purge:hover {
+  animation: pulse 0.3s infinite;
+}
+
 @keyframes breathe {
   50% {letter-spacing: 3px; width: 85%;}
 }
@@ -161,24 +162,28 @@ input:focus {
   80% {opacity: 1;}
 }
 
-.blink {
+.blink1 {
+  animation: blink 0.7s infinite;
+}
+
+.blink2 {
   animation: blink 0.9s infinite;
 }
 
-.blink:focus {
-  animation: none;
+.blink3 {
+  animation: blink 1.2s infinite;
 }
 
 @keyframes pulse {
   50% {opacity: 0.7;}
 }
 
-.pulse {
+.pulse1 {
   animation: pulse 1s infinite;
 }
 
-.pulse:focus {
-  animation: none;
+.pulse2 {
+  animation: pulse 1.2s infinite;
 }
 
 /* BOOTSTRAP CUSTOMIZATIONS */
