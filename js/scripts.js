@@ -82,6 +82,13 @@ $(document).ready(function() {
     $("button#purge").click(function() {
       $("#result").empty();
       $("button.post-ctrl").hide();
+      $("#input-number").attr("placeholder", "_");
+      $("#input-name").attr("placeholder", "Current > Dave");
     });
+  });
+
+  // Turn Off Placeholder
+  $("input").click(function() {
+    $(this).attr("placeholder", "");
   });
 });

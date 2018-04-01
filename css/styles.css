@@ -32,12 +32,6 @@ label {
   text-transform: uppercase;
 }
 
-/*#controls {
-  display: block;
-  width: 360px;
-  margin: 0 auto;
-}*/
-
 #controls button {
   border-radius: 3px;
   margin: 5px;
@@ -59,8 +53,7 @@ label {
   color: #ff061b;
 }
 
-
-.no-display, #forward, #reverse, #purge {
+.display-none {
   display: none;
 }
 
@@ -76,6 +69,31 @@ label {
   text-align: center;
 }
 
+.input-shell {
+  border: 1px dotted #00ffbc;
+  border-radius: 3px;
+}
+
+input[type=number]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+
+input:focus {
+  color: #ff1754;
+}
+
+.form-control::placeholder {
+  color: #7b0038;
+}
+
+@keyframes pulse {
+  50% {opacity: 0.5;}
+}
+
+.pulse {
+  animation: pulse 1.2s infinite;
+}
+
 /* BOOTSTRAP CUSTOMIZATIONS */
 
 .btn {
@@ -84,7 +102,7 @@ label {
 
 .form-control {
   background-color: #0000;
-  border: 1px dotted #00ffbc;
+  border: none;
   color: #00ffbc;
   font-family: 'Montserrat', sans-serif;
   font-size: 2em;
