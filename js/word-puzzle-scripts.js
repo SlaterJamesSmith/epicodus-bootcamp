@@ -12,23 +12,19 @@ $(document).ready(function() {
       vowels.forEach(function(vowel){
         if (pushValue === vowel) {
           pushValue = "-";
-        };
+        }
       });
-
       outputStringArray.push(pushValue);
-    }
+    };
 
     $("#output").text(outputStringArray.join(""));
     $("#result").show();
     $("form").hide();
-
 
     $("#toggle-solution").click(function() {
       $("#solution").text(inputStringArray.join(""));
       $("#solution").toggle();
       $("#output").toggle();
     });
-
   });
-
 });

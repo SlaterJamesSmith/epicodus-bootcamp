@@ -22,15 +22,14 @@ $(document).ready(function() {
 
     var stressIndex = stressTest(warningSigns, healthSymptoms, copingMechanisms);
 
-    $("#results").show();
-
     if (stressIndex > 9) {
-      $("#results h2").text("You're screwed.");
+      $("#result").text("You're screwed.");
     } else if (stressIndex <= 9 && stressIndex >= 6) {
-      $("#results h2").text("You're normal.");
+      $("#result").text("You're normal.");
     } else {
-      $("#results h2").text("You're too easy going.");
+      $("#result").text("You're too easy going.");
     }
-  });
 
+    $("#result").show();
+  });
 });

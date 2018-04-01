@@ -6,25 +6,23 @@
     <script src="js/jquery-3.3.1.js"></script>
     <script src="js/word-puzzle-scripts.js"></script>
     <meta charset="utf-8">
-    <title>EPI-WK3: Arrays &amp; Looping</title>
+    <title>EPI-WK3: Word Puzzle</title>
   </head>
   <body>
     <div class="container">
-      <h1>Word Puzzle</h1>
-      <p><span class="text-uppercase">Epicodus | Intro Week 3</span> | Arrays &amp; Looping Practice</p>
+      <h1><a href="index.html">Epicodus Week 3</a> <span class="subtitle">Word Puzzle</span></h1>
       <form class="well">
         <div class="form-group">
-          <label>Enter a Sentence:</label>
+          <label>Enter a sentence:</label>
           <input id="input" class="form-control" type="text" required>
         </div>
         <button type="submit" class="btn btn-warning">CREATE PUZZLE</button>
       </form>
-      <div id="result" class="well no-display">
-        <h2 id="solution" class="no-display"></h2>
-        <h2 id="output"></h2>
-        <button id="toggle-solution" type="button" class="btn btn-warning">Toggle Solution</button>
+      <div id="result" class="well display-none">
+        <p id="solution" class="display-none"></p>
+        <p id="output"></p>
+        <button id="toggle-solution" type="button" class="btn btn-info">TOGGLE SOLUTION</button>
       </div>
-
     </div>
   </body>
 </html>

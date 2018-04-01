@@ -24,27 +24,24 @@ function removeNonPrimes(number) {
       primeArray.push(element);
     }
   });
-
 };
 
 $(document).ready(function() {
   $("form").submit(function(event) {
     event.preventDefault();
 
-    $("#primeResult ul li").remove();
+    $("#result ul li").remove();
     var inputNumber = parseInt($("#input").val());
 
     generateNumbers(inputNumber);
     removeNonPrimes(inputNumber);
 
     primeArray.forEach(function(element) {
-      $("#primeResult ul").append("<li>" + element + "</li>");
+      $("#result ul").append("<li>" + element + "</li>");
     });
 
-    $("#primeResult").show();
+    $("#result").show();
     numberArray = [];
     primeArray = [];
-
   });
-
 });

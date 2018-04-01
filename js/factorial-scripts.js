@@ -17,15 +17,13 @@ $(document).ready(function() {
   $("form").submit(function(event) {
     event.preventDefault();
 
-    findFactors(parseFloat($("#input").val()));
+    findFactors(parseInt($("#input").val()));
     calculateFactorial(factorialArray);
 
-    $("#result h2").text(calcValue);
+    $("#result").text(calcValue);
     $("#result").show();
 
     calcValue = 1;
     factorialArray = [];
-
   });
-
 });
