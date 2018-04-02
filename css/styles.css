@@ -150,8 +150,8 @@ input:focus {
 }
 
 .sorry {
-  border: 1px dashed #fffd8c;
-  color: #fffd8c;
+  border: 1px dashed #ff7600;
+  color: #ffd600;
   font-size: 0.7em;
   line-height: 1em;
   word-wrap: normal;
