@@ -29,7 +29,6 @@ h1, h2 {
 }
 
 form {
-  height: 180px;
   overflow: auto;
 }
 
@@ -101,7 +100,7 @@ label {
 }
 
 #reverse:hover, #forward:hover {
-  color: #ff1754;
+  color: #fff;
   text-shadow: 3px 3px 2px #00a97c;
 }
 

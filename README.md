@@ -8,12 +8,9 @@
 
 A user inputs a single number and optionally, a login name. The application returns a range of numbers from 0 to the chosen number. However, the numbers are modified by additional rules in the following order of precedence:
 
-1. **Numbers Divisible by 3**
-  * Replace with: "I'm sorry, Dave. I'm afraid I can't do that."
-2. **Numbers Containing the Digit 1**
-  * Replace with: "Boop!"
-3. **Numbers Containing the Digit 0**
-  * Replace with: "Beep!"
+1. **Numbers Divisible by 3:** Replace with "I'm sorry, Dave. I'm afraid I can't do that."
+2. **Numbers Containing the Digit 1:** Replace with "Boop!"
+3. **Numbers Containing the Digit 0:** Replace with "Beep!"
 
 ## Specifications
 
