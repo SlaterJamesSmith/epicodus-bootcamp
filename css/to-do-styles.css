@@ -6,3 +6,12 @@
 .task:hover {
   text-decoration: underline;
 }
+
+#taskShow {
+  display: none;
+}
+
+.strike {
+  color: red;
+  text-decoration: line-through;
+}
