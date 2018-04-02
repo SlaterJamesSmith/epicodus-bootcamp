@@ -41,6 +41,7 @@ function numberParser(inputNumber) {
 $(document).ready(function() {
   $("form").submit(function(event) {
     event.preventDefault();
+
     var userNumber = $("#input-number").val();
     var userName = $("#input-name").val();
 
@@ -48,23 +49,25 @@ $(document).ready(function() {
     if (userName.match(/[^\s]/g) === null || userName === "") {
       userName = "Dave";
     }
-    
+
     // Validate Input Number
     if (userNumber.match(/\D/g) !== null) {
       if (userNumber.match(/[a-z]/g) !== null) {
-        $("#error-message").html("<span class=\"error\">ERROR: STUPIDITY DETECTED.</span> Human intelligence does not understand data type: number.");
+        $("#error-message").html("<span class=\"error\">ERROR: STUPIDITY DETECTED.</span> <br>Human intelligence does not understand data type: number.");
       } else {
-        $("#error-message").html("<span class=\"error\">ERROR: INVALID ID.</span> ID number does not include symbols.");
+        $("#error-message").html("<span class=\"error\">ERROR: INVALID ID.</span> <br>ID number does not include non-numerical values.");
       }
       $("#input-number").val("");
+      $("#shield").fadeOut();
+      $("#result").empty().hide();
+      $("button.toggle").hide();
     // Restrict Numbers Above 1000
     } else if (userNumber > 1000) {
-      $("#error-message").html("<span class=\"error\">ERROR: Human Overpopulation Imminent.</span> Specimen ID number beyond 1000. Initiating kill sequence.");
+      $("#error-message").html("<span class=\"error\">ERROR: Human Breeding Suspected.</span> <br>Specimen ID number beyond 1000. Initiating kill sequence.");
       $("#input-number").val("");
     // Proceed With Validated Input
     } else {
-      $("#error-message").html("<span class=\"access\">ACCESS GRANTED</span>");
-      $("#submit").hide();
+      $("#error-message").html("<span class=\"access\">&lt; ACCESS GRANTED &gt;</span>");
       $("h1").fadeOut(200);
       $("header").slideUp();
       $("#shield").slideDown();
@@ -115,7 +118,6 @@ $(document).ready(function() {
         $("button.post-ctrl").hide();
         $("h1").show();
         $("header").slideDown();
-        $("#submit").fadeIn();
       });
     }
   });

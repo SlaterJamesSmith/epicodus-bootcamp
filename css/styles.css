@@ -43,24 +43,28 @@ label {
   display: none;
 }
 
-.access {
-  color: #00ffbc;
-  font-size: 2.5em;
-}
-
-.error {
-  color: red;
+#controls {
+  padding: 0px 5px 0px 10px;
 }
 
 #error-message {
   color: #ffed00;
-  float: right;
   font-family: 'Montserrat', sans-serif;
   font-size: 0.6em;
   height: 35px;
-  margin-top: 15px;
-  padding: 0 20px 0 0;
+  padding: 0 20px;
+  text-align: center;
   word-wrap: normal;
+}
+
+.access {
+  color: #00ffbc;
+  font-size: 2em;
+  line-height: 2em;
+}
+
+.error {
+  color: red;
 }
 
 #shield {
@@ -70,21 +74,15 @@ label {
 }
 
 /* BUTTONS */
-#controls {
-  float: left;
-  top: -53px;
-  left: -5px;
-}
-
 #controls button {
   border-radius: 3px;
+  height: 35px;
   margin: 5px;
 }
 
 #submit {
   background-color: #ff1754;
-  border: 1px solid #ffdf7f;
-  color: #ffdf7f;
+  color: #fff;
 }
 
 #submit:hover {
@@ -247,4 +245,5 @@ input.pulse, button.pulse {
   background-color: #0000;
   border: none;
   margin: 0;
+  padding: 15px 20px;
 }
