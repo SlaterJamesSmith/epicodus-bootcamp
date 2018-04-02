@@ -14,6 +14,7 @@ $(document).ready(function() {
     var instructions = $("input#instructions").val();
 
     var newTask = new Task(taskName, dueDate, instructions);
-    console.log(newTask);
+
+    $("#taskList").append("<p><span class='task'>" + newTask.taskName + "</span></p>");
   });
 });
