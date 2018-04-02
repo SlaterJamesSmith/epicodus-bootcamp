@@ -154,7 +154,6 @@ input:focus {
   color: #ffd600;
   font-size: 0.7em;
   line-height: 1em;
-  word-wrap: normal;
 }
 
 .digit {
@@ -190,6 +189,26 @@ input:focus {
 
 @keyframes pulse {
   50% {opacity: 0.5;}
+}
+
+@keyframes strobe {
+  50% {color: red; border-color: red;}
+}
+
+@keyframes strobe2 {
+  50% {color: magenta;}
+}
+
+@keyframes strobe3 {
+  50% {border-color: red;}
+}
+
+@keyframes strobe4 {
+  50% {color:red; border-color: magenta;}
+}
+
+@keyframes grow {
+  50% {font-size: 1.1em; line-height: 1.1em; padding-top: 0px;}
 }
 
 h1.breathe {
@@ -234,6 +253,22 @@ input.pulse, button.pulse {
 
 .pulse4 {
   animation: pulse 2s infinite, breathe 1s infinite;
+}
+
+.strobe1 {
+  animation: strobe 0.5s infinite, grow 1s infinite;
+}
+
+.strobe2 {
+  animation: strobe2 0.5s infinite;
+}
+
+.strobe3 {
+  animation: strobe3 0.1s infinite;
+}
+
+.strobe4 {
+  animation: strobe4 1.5s infinite;
 }
 
 /* BOOTSTRAP CUSTOMIZATIONS */

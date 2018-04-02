@@ -83,7 +83,7 @@ $(document).ready(function() {
         if (parseInt(beepBoop) * 0 === 0) {
           beepBoopFeedOut.push('<div class="blocks digit">' + beepBoop + '</div>');
         } else if (beepBoop === "Sorry") {
-          beepBoopFeedOut.push('<div class="blocks sorry strobe' + (Math.floor(Math.random() * 4) + 1) + '">I\'m sorry, ' + userName + '. <br>' + imSorry[(Math.floor(Math.random() * 13))] + '</div>');
+          beepBoopFeedOut.push('<div class="blocks sorry strobe' + (Math.floor(Math.random() * 5) + 1) + '">I\'m sorry, ' + userName + '. <br>' + imSorry[(Math.floor(Math.random() * 13))] + '</div>');
         } else if (beepBoop === "B00P!") {
           beepBoopFeedOut.push('<div class="blocks boop pulse' + (Math.floor(Math.random() * 4) + 1) + '">B00P!</div>');
         } else {
