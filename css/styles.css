@@ -70,7 +70,6 @@ label {
 }
 
 /* BUTTONS */
-
 #controls {
   float: left;
   top: -53px;
@@ -112,7 +111,6 @@ label {
 }
 
 /* INPUTS */
-
 .input-shell {
   border: 1px dotted #00ffbc;
   border-radius: 3px;

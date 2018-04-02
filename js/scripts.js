@@ -3,28 +3,23 @@
 // Primary Beep Boop Function
 function beepyBooper(inputNumber, userName) {
   var beepBoopFeedIn = generateNumbers(inputNumber);
-  var beepBoopFeedOut = [];
+  var rawBoopFeedOut = [];
 
   // Beep Boop Engine
   beepBoopFeedIn.map(function(numberString) {
     var parsedNumber = numberParser(numberString);
 
     if (parseInt(numberString) % 3 === 0 && parseInt(numberString) !== 0) {
-      if (userName !== "") {
-        beepBoopFeedOut.push(userName);
-      } else {
-        beepBoopFeedOut.push("Dave");
-      }
+        rawBoopFeedOut.push("Sorry");
     } else if (parsedNumber.includes("1")) {
-      beepBoopFeedOut.push("B00P!");
+      rawBoopFeedOut.push("B00P!");
     } else if (parsedNumber.includes("0")) {
-      beepBoopFeedOut.push("BEEP!");
+      rawBoopFeedOut.push("BEEP!");
     } else {
-      beepBoopFeedOut.push(numberString);
+      rawBoopFeedOut.push(numberString);
     }
   });
-
-  return beepBoopFeedOut;
+  return rawBoopFeedOut;
 };
 
 // Generate Range of Numbers as Strings Array
@@ -46,18 +41,24 @@ function numberParser(inputNumber) {
 $(document).ready(function() {
   $("form").submit(function(event) {
     event.preventDefault();
-    var userInput = $("#input-number").val();
+    var userNumber = $("#input-number").val();
     var userName = $("#input-name").val();
 
-    // Validate Input
-    if (userInput.match(/\D/g) !== null) {
-      if (userInput.match(/[a-z]/g) !== null) {
+    // Sanitize Input Name
+    if (userName.match(/[^\s]/g) === null || userName === "") {
+      userName = "Dave";
+    }
+    
+    // Validate Input Number
+    if (userNumber.match(/\D/g) !== null) {
+      if (userNumber.match(/[a-z]/g) !== null) {
         $("#error-message").html("<span class=\"error\">ERROR: STUPIDITY DETECTED.</span> Human intelligence does not understand data type: number.");
       } else {
         $("#error-message").html("<span class=\"error\">ERROR: INVALID ID.</span> ID number does not include symbols.");
       }
       $("#input-number").val("");
-    } else if (userInput > 1000) {
+    // Restrict Numbers Above 1000
+    } else if (userNumber > 1000) {
       $("#error-message").html("<span class=\"error\">ERROR: Human Overpopulation Imminent.</span> Specimen ID number beyond 1000. Initiating kill sequence.");
       $("#input-number").val("");
     // Proceed With Validated Input
@@ -68,23 +69,19 @@ $(document).ready(function() {
       $("header").slideUp();
       $("#shield").slideDown();
 
-      var rawBeepBoop = beepyBooper(userInput, userName);
+      var beepyBooperOutput = beepyBooper(userNumber, userName);
       var beepBoopFeedOut = [];
 
       // Create HTML Tagged Read-Out
-      rawBeepBoop.map(function(beepBoop) {
-        if (beepBoop === "B00P!") {
-          beepBoopFeedOut.push('<div class="blocks boop">B00P!</div>');
-        } else if (beepBoop === "BEEP!") {
-          beepBoopFeedOut.push('<div class="blocks beep blink' + (Math.floor(Math.random() * 4) + 1) + '">BEEP!</div>');
-        } else if (parseInt(beepBoop) / parseInt(beepBoop) === 1) {
+      beepyBooperOutput.map(function(beepBoop) {
+        if (parseInt(beepBoop) * 0 === 0) {
           beepBoopFeedOut.push('<div class="blocks digit">' + beepBoop + '</div>');
+        } else if (beepBoop === "Sorry") {
+          beepBoopFeedOut.push('<div class="blocks sorry">I\'m sorry, ' + userName + '. <br>I\'m afraid I can\'t do that.</div>');
+        } else if (beepBoop === "B00P!") {
+          beepBoopFeedOut.push('<div class="blocks boop">B00P!</div>');
         } else {
-          if (beepBoop === "Dave") {
-            beepBoopFeedOut.push('<div class="blocks sorry">I\'m sorry, Dave. <br>I\'m afraid I can\'t do that.</div>');
-          } else {
-            beepBoopFeedOut.push('<div class="blocks sorry">I\'m sorry, ' + beepBoop + '. <br>I\'m afraid I can\'t do that.</div>');
-          }
+          beepBoopFeedOut.push('<div class="blocks beep blink' + (Math.floor(Math.random() * 4) + 1) + '">BEEP!</div>');
         }
       });
 
