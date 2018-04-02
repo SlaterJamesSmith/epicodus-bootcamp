@@ -18,6 +18,15 @@ Add description.
 |Creates a link for the location when the input is saved.|Click submit.|List item appears.|
 |Displays location and details when location link is clicked.|Click link.|Location and details panel appears.|
 
+### To Do List
+|Program Behavior|Input |Output|
+|----------------|------|------|
+|Save Name of a task|"Laundry"|"Laundry"|
+|Save additional task details|"Laundry", "Buy more detergent", "Check pockets for loose items"|"Laundry", ...|
+|Create a task entry on webpage|Click Submit|Task item appears|
+|Display task items when Task is clicked|Click Link|Task plus additional details|
+|Allow tasks to be marked complete|Click 'Done' Button|Task becomes striked-out|
+
 ## Setup/Installation Requirements
 
 1. Add instructions.
