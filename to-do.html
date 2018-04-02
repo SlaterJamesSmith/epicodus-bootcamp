@@ -2,15 +2,48 @@
 <html>
   <head>
     <link href="css/bootstrap.css" rel="stylesheet" type="text/css">
-    <link href="css/styles.css" rel="stylesheet" type="text/css">
+    <link href="css/to-do-styles.css" rel="stylesheet" type="text/css">
     <script src="js/jquery-3.3.1.js"></script>
-    <script src="js/scripts.js"></script>
+    <script src="js/to-do-scripts.js"></script>
     <meta charset="utf-8">
     <title></title>
   </head>
   <body>
     <div class="container">
+      <div class="col-6-md">
 
+        <!--Begin Form-->
+        <form id="taskInput">
+          <div class="form-group">
+            <label for="taskName">What Task do you need to complete:</label>
+            <input id="taskName" class="form-control" type="text">
+          </div>
+          <div class="form-group">
+            <label for="dueDate">When do you need to complete your task:</label>
+            <input id="dueDate" class="form-control" type="text">
+          </div>
+          <div class="form-group">
+            <label for="instructions">Are there any special instructions to complete your task:</label>
+            <input id="instructions" class="form-control" type="text">
+          </div>
+          <button type="submit" class="btn btn-info">Submit</button>
+        </form>
+        <!--End form-->
+
+        <!--Task List Begin-->
+        <div id="taskList">
+
+        </div>
+        <!--Task List Ends-->
+
+        <!--Task Show Begins-->
+        <div class="col-md-6" id="taskShow">
+          <ul>
+
+          </ul>
+        </div>
+        <!--Task Show Ends-->
+      </div>
     </div>
   </body>
 </html>
