@@ -50,4 +50,4 @@ Please send comments and questions to Mike Chu at mcihkue@gmail.com.
 
 _GPL_
 
-Copyright (c) 2018 **_Mike Chu_**
+Copyright (c) 2018 **Mike Chu**

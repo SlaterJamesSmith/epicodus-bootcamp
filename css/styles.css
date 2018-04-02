@@ -209,31 +209,31 @@ input.pulse, button.pulse {
 }
 
 .blink2 {
-  animation: blink 1s infinite;
+  animation: blink 1s infinite, breathe 2s infinite;
 }
 
 .blink3 {
-  animation: blink 1.5s infinite;
+  animation: blink 1.5s infinite, breathe 1s infinite;
 }
 
 .blink4 {
-  animation: blink 2s infinite;
+  animation: blink 2s infinite, breathe .5s infinite;
 }
 
 .pulse1 {
-  animation: pulse 0.5s infinite, breathe 3s infinite;
+  animation: pulse 0.5s infinite, breathe 4s infinite;
 }
 
 .pulse2 {
-  animation: pulse 1s infinite;
+  animation: pulse 1s infinite, breathe 3s infinite;
 }
 
 .pulse3 {
-  animation: pulse 1.5s infinite;
+  animation: pulse 1.5s infinite, breathe 2s infinite;
 }
 
 .pulse4 {
-  animation: pulse 2s infinite;
+  animation: pulse 2s infinite, breathe 1s infinite;
 }
 
 /* BOOTSTRAP CUSTOMIZATIONS */
