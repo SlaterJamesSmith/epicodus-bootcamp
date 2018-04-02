@@ -17,7 +17,15 @@ $(document).ready(function() {
     var landmarks =$("input#landmarks").val();
 
     var newPlace = new Places(location, month, weather, landmarks);
-
+    console.log(newPlace);
     $("#location-list").append("<li class='place'>" + newPlace.location + "</li>");
+
+    $(".place").last().click(function() {
+      $("#show-location h2").text(newPlace.location);
+      $("#show-location ul").append("<li>Time of Year: " + newPlace.timeOfYear + "</li>");
+      $("#show-location ul").append("<li>Weather : " + newPlace.weather + "</li>");
+      $("#show-location ul").append("<li>Landmarks : " + newPlace.landmarks + "</li>");
+      $("#show-location").slideDown();
+    });
   });
 });

@@ -1,4 +1,9 @@
 .place {
   color: blue;
   cursor: pointer;
+  list-style: none;
+}
+
+#show-location {
+  display: none;
 }

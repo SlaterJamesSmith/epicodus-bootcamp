@@ -11,29 +11,39 @@
   <body>
     <div class="container">
       <h1>Places I've Been</h1>
-      <form>
-        <div class="form-group">
-          <label for="location">Name of Location</label>
-          <input id="location" class="form-control" type="text">
+      <div class="row">
+        <div class="col-md-6">
+          <form>
+            <div class="form-group">
+              <label for="location">Name of Location</label>
+              <input id="location" class="form-control" type="text">
+            </div>
+            <div class="form-group">
+              <label for="month">Time of Year</label>
+              <input id="month" class="form-control" type="text">
+            </div>
+            <div class="form-group">
+              <label for="weather">Type of Weather</label>
+              <input id="weather" class="form-control" type="text">
+            </div>
+            <div class="form-group">
+              <label for="landmarks">Landmarks Visited</label>
+              <input id="landmarks" class="form-control" type="text">
+            </div>
+            <button type="submit" class="btn btn-info">SUBMIT</button>
+          </form>
+          <div id="location-list">
+            <ul>
+
+            </ul>
+          </div>
         </div>
-        <div class="form-group">
-          <label for="time-of-year">Time of Year</label>
-          <input id="time-of-year" class="form-control" type="text">
+        <div id="show-location" class="col-md-6">
+          <h2></h2>
+          <ul>
+            
+          </ul>
         </div>
-        <div class="form-group">
-          <label for="weather">Type of Weather</label>
-          <input id="weather" class="form-control" type="text">
-        </div>
-        <div class="form-group">
-          <label for="landmarks">Landmarks Visited</label>
-          <input id="landmarks" class="form-control" type="text">
-        </div>
-        <button type="submit" class="btn btn-info">SUBMIT</button>
-      </form>
-      <div id="location-list">
-        <ul>
-          
-        </ul>
       </div>
     </div>
   </body>
