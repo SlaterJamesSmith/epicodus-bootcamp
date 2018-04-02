@@ -4,3 +4,5 @@ function Places(location, month, weather, landmarks) {
   this.weather = weather;
   this.landmarks = landmarks;
 }
+
+$("input#location")
