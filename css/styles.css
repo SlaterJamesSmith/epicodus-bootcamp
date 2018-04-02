@@ -29,6 +29,7 @@ h1, h2 {
 }
 
 form {
+  height: 180px;
   overflow: auto;
 }
 
@@ -43,6 +44,26 @@ label {
   display: none;
 }
 
+.access {
+  color: #00ffbc;
+  font-size: 2.5em;
+}
+
+.error {
+  color: red;
+}
+
+#error-message {
+  color: #ffed00;
+  float: right;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.6em;
+  height: 35px;
+  margin-top: 15px;
+  padding: 0 20px 0 0;
+  word-wrap: normal;
+}
+
 #shield {
   background-color: #00ffbc26;
   border-radius: 10px;
@@ -50,6 +71,12 @@ label {
 }
 
 /* BUTTONS */
+
+#controls {
+  float: left;
+  top: -53px;
+  left: -5px;
+}
 
 #controls button {
   border-radius: 3px;
@@ -69,6 +96,8 @@ label {
 #reverse, #forward {
   background-color: #0000;
   border: 1px solid #00ffbc;
+  color: #00ffbc;
+  width: 60px;
 }
 
 #reverse:hover, #forward:hover {
@@ -80,6 +109,7 @@ label {
   background-color: #0000;
   border: 1px solid #ff1754;
   color: #ff1754;
+  width: 75px;
 }
 
 /* INPUTS */
@@ -206,10 +236,6 @@ input.pulse, button.pulse {
 }
 
 /* BOOTSTRAP CUSTOMIZATIONS */
-.btn {
-  min-width: 110px;
-}
-
 .form-control {
   background-color: #0000;
   border: none;
