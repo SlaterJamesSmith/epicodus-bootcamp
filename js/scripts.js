@@ -82,7 +82,7 @@ $(document).ready(function() {
         } else if (beepBoop === "Sorry") {
           beepBoopFeedOut.push('<div class="blocks sorry">I\'m sorry, ' + userName + '. <br>I\'m afraid I can\'t do that.</div>');
         } else if (beepBoop === "B00P!") {
-          beepBoopFeedOut.push('<div class="blocks boop">B00P!</div>');
+          beepBoopFeedOut.push('<div class="blocks boop pulse' + (Math.floor(Math.random() * 4) + 1) + '">B00P!</div>');
         } else {
           beepBoopFeedOut.push('<div class="blocks beep blink' + (Math.floor(Math.random() * 4) + 1) + '">BEEP!</div>');
         }

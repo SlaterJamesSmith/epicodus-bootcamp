@@ -132,7 +132,6 @@ input:focus {
   font-weight: bold;
   height: 50px;
   margin: 10px;
-  min-width: 75px;
   padding: 10px;
   text-align: center;
 }
@@ -155,7 +154,6 @@ input:focus {
   color: #fffd8c;
   font-size: 0.7em;
   line-height: 1em;
-  margin: 10px 10px;
   word-wrap: normal;
 }
 
@@ -191,7 +189,7 @@ input:focus {
 }
 
 @keyframes pulse {
-  50% {opacity: 0.7;}
+  50% {opacity: 0.5;}
 }
 
 h1.breathe {
@@ -206,12 +204,12 @@ input.pulse, button.pulse {
   animation: pulse 1s infinite;
 }
 
-.beep1 {
+.blink1 {
   animation: blink 0.5s infinite, breathe 3s infinite;
 }
 
 .blink2 {
-  animation: blink 0.9s infinite;
+  animation: blink 1s infinite;
 }
 
 .blink3 {
@@ -223,11 +221,19 @@ input.pulse, button.pulse {
 }
 
 .pulse1 {
-  animation: pulse 1s infinite;
+  animation: pulse 0.5s infinite, breathe 3s infinite;
 }
 
 .pulse2 {
-  animation: pulse 1.2s infinite;
+  animation: pulse 1s infinite;
+}
+
+.pulse3 {
+  animation: pulse 1.5s infinite;
+}
+
+.pulse4 {
+  animation: pulse 2s infinite;
 }
 
 /* BOOTSTRAP CUSTOMIZATIONS */
