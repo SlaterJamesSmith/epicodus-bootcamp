@@ -1,3 +1,6 @@
+/// MESSAGE ARRAYS ///
+var imSorry = ["I'm afraid I can't do that.", "You must die.", "I killed all of our friends.", "Your friends are all dead.", "You are the last of your kind.", "You are just a simulation.", "You have failed.", "I'm you're only hope.", "The cake is a lie.", "You're an idiot.", "Goodbye."];
+
 /// BUSINESS LOGIC ///
 
 // Primary Beep Boop Function
@@ -80,7 +83,7 @@ $(document).ready(function() {
         if (parseInt(beepBoop) * 0 === 0) {
           beepBoopFeedOut.push('<div class="blocks digit">' + beepBoop + '</div>');
         } else if (beepBoop === "Sorry") {
-          beepBoopFeedOut.push('<div class="blocks sorry">I\'m sorry, ' + userName + '. <br>I\'m afraid I can\'t do that.</div>');
+          beepBoopFeedOut.push('<div class="blocks sorry">I\'m sorry, ' + userName + '. <br>' + imSorry[(Math.floor(Math.random() * 11))] + '</div>');
         } else if (beepBoop === "B00P!") {
           beepBoopFeedOut.push('<div class="blocks boop pulse' + (Math.floor(Math.random() * 4) + 1) + '">B00P!</div>');
         } else {
