@@ -1,19 +1,28 @@
+function Account(username, name, balance){
+  this.username = username;
+  this.name = name;
+  this.balance = balance;
+}
+
 var mike = {
   username: "mike",
   name: "Mike Chu",
   balance: 0
 };
 
+
 var accounts = [mike];
 
 function findAccount(username) {
+  var targetAccount = [];
   accounts.forEach(function(account) {
     if (username === account.username) {
-      return true;
+      targetAccount.push(account);
     } else {
-      return null;
+      targetAccount = null;
     }
   });
+  return targetAccount;
 }
 
 $(document).ready(function() {
@@ -23,7 +32,6 @@ $(document).ready(function() {
     var initialDepositInput = 0;
 
     var foundAccount = findAccount(usernameInput);
-
     if (foundAccount === null) {
       alert("No account found.");
     } else {
@@ -32,13 +40,12 @@ $(document).ready(function() {
       } else {
         initialDepositInput = parseInt($("#initial-deposit").val());
       }
-
       $("#login").hide();
       $(".transaction").show();
       $(".account-display").show();
-      $(".account-name").text(usernameInput);
-      myAccount.balance += initialDepositInput;
-      $(".balance-output").text(myAccount.balance);
+      $(".account-name").text(foundAccount[0].name);
+      foundAccount[0].balance += initialDepositInput;
+      $(".balance-output").text(foundAccount[0].balance);
 
       $(".transaction button").click(function() {
         var deposit = 0;
@@ -56,9 +63,16 @@ $(document).ready(function() {
           withdraw = parseInt($("#withdraw").val());
         }
 
-        myAccount.balance += deposit;
-        myAccount.balance -= withdraw;
-        $(".balance-output").text(myAccount.balance);
+        foundAccount[0].balance += deposit;
+        foundAccount[0].balance -= withdraw;
+        $(".balance-output").text(foundAccount[0].balance);
+      });
+
+      $("#logout").click(function() {
+        $("#login").show();
+        $(".transaction").hide();
+        $(".account-display").hide();
+        $("form")[0].reset();
       });
     }
   });
