@@ -18,14 +18,14 @@ $(document).ready(function() {
 
     var newPlace = new Places(location, month, weather, landmarks);
     console.log(newPlace);
-    $("#location-list").append("<li class='place'>" + newPlace.location + "</li>");
+    $("#location-list").append("<li class='place'><a href='#'>" + newPlace.location + "</a></li>");
 
     $(".place").last().click(function() {
       $("#show-location h2").text(newPlace.location);
       $("#show-location ul").append("<li>Time of Year: " + newPlace.timeOfYear + "</li>");
       $("#show-location ul").append("<li>Weather : " + newPlace.weather + "</li>");
       $("#show-location ul").append("<li>Landmarks : " + newPlace.landmarks + "</li>");
-      $("#show-location").slideDown();
+      $("#show-location").show();
     });
   });
 });

@@ -1,4 +1,4 @@
-//business logic
+// BUSINESS LOGIC
 function Contact(first, last) {
   this.firstName = first;
   this.lastName = last;
@@ -19,7 +19,7 @@ Address.prototype.fullAddress = function () {
   return this.street + ", " + this.city + ", " + this.state;
 }
 
-//user interface logic
+// USER INTERFACE LOGIC
 $(document).ready(function() {
   function resetFields() {
     $("input#new-first-name").val("");
@@ -62,7 +62,7 @@ $(document).ready(function() {
       newContact.addresses.push(newAddress);
     });
 
-    $("ul#contacts").append("<li><span class='contact'>" + newContact.fullName() + "</span></li>");
+    $("ul#contacts").append("<li><span class='contact'><a href='#'>" + newContact.fullName() + "</a></span></li>");
 
     $(".contact").last().click(function() {
       $("#show-contact").show();
