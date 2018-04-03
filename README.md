@@ -1,8 +1,8 @@
-# _BEEP! BOOP! Machine_
+# Beep! Boop! Machine
 
-#### _Epicodus Solo Project - Intro - Week 3, March 30, 2018_
+**Epicodus Solo Project | Intro | Week 3 | March 30, 2018**
 
-#### _By Mike Chu_
+**By Mike Chu**
 
 ## Description
 
@@ -12,31 +12,17 @@ A user inputs a single number and optionally, a login name. The application retu
 2. **Numbers Containing the Digit 1:** Replace with "Boop!"
 3. **Numbers Containing the Digit 0:** Replace with "Beep!"
 
-## Specifications
-
-|Program Behavior|Input |Output|
-|----------------|------|------|
-|Repeats any single digit input.|1|1|
-|Replaces 0 with "Beep!"|0|"Beep!"|
-|Replaces 1 with "Boop!"|1|"Boop!"|
-|Replaces numbers divisible by 3 with "I'm sorry, Dave. I'm afraid I can't do that."|9|"I'm sorry, Dave. I'm afraid I can't do that."|
-|Replaces numbers containing a 0 with "Beep!"|20|"Beep!"|
-|Replaces numbers containing a 1 with "Boop!"|21|"Boop!"|
-|Applies replacement rules above with the following ranking of precedence: (1) Divisible by Three, (2) Contains a One, (3) Contains a Zero.|120|"I'm sorry, Dave. I'm afraid I can't do that."|
-|Generates all numbers from 0 up to the input number.|9|0, 1, 2, 3, 4, 5, 6, 7, 8, 9|
-|Operates on all numbers from 0 up to the input number.|5|"Beep!", "Boop!", 2, "I'm sorry, Dave. I'm afraid I can't do that.", 4, 5|
-
 ## Setup/Installation Requirements
 
-1. Visit website link: https://m-chu.github.io/epicodus-solo-project-3/
+Live Site: https://m-chu.github.io/epicodus-solo-03
+
+1. Clone repository.
+
+2. Open index.html in web browser.
 
 ## Known Bugs
 
 None.
-
-## Support and Contact
-
-Please send comments and questions to Mike Chu at mcihkue@gmail.com.
 
 ## Technologies Used
 
@@ -46,8 +32,20 @@ Please send comments and questions to Mike Chu at mcihkue@gmail.com.
 * JavaScript
 * jQuery
 
-### License
+## Specifications
 
-_GPL_
+| Program Behavior | Input | Output |
+| --- | --- | --- |
+| Outputs range of digits from 0 to input number. | 12 | [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12 ] |
+| Replaces numbers containing 0 with "Beep!" | 0 | [ "Beep!" ] |
+| Replaces numbers containing 1 with "Boop!" | 1 | [ "Beep!", "Boop!" ] |
+| Replaces numbers divisible by 3 with "I'm sorry, Dave. I'm afraid I can't do that." | 3 | [ "Beep!", "Boop!", 2, "I'm sorry, Dave. I'm afraid I can't do that." ] |
+| Prioritizes replacement rule for numbers containing 1 over replacement rule for numbers containing 0. | 10 | [ "Beep!", "Boop!", 2, "I'm sorry, Dave. I'm afraid I can't do that.", 4, 5, "I'm sorry, Dave. I'm afraid I can't do that.", 7, 8, "I'm sorry, Dave. I'm afraid I can't do that.", **"Boop!"** ] |
+| Prioritizes replacement rule for numbers divisible by 3 over replacement rules for numbers containing 1 or 0. | 12 | [ "Beep!", "Boop!", 2, "I'm sorry, Dave. I'm afraid I can't do that.", 4, 5, "I'm sorry, Dave. I'm afraid I can't do that.", 7, 8, "I'm sorry, Dave. I'm afraid I can't do that.", **"Boop!"**, **"Boop!"**, **"I'm sorry, Dave. I'm afraid I can't do that."** ] |
+| **Bonus Feature:** Replaces numbers divisible by 3 with "I'm sorry, Dave," plus a randomized second phrase, which may include the original "I'm afraid I can't do that." | 12 | [ "Beep!", "Boop!", 2, **"I'm sorry, Dave. I'm afraid I can't do that."**, 4, 5, **"I'm sorry, Dave. Nobody loves you."**, 7, 8, **"I'm sorry, Dave. You have failed."**, "Boop!", "Boop!", **"I'm sorry, Dave. You must die."** ] |
+
+## License
+
+This software is licensed under the MIT license.
 
 Copyright (c) 2018 **Mike Chu**

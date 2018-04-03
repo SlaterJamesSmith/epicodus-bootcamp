@@ -44,13 +44,15 @@ $(document).ready(function() {
     $(".blocks").click(function() {
       $(this).remove();
     });
-    $("#error-message").html("<span class=\"access\">&lt; ACCESS GRANTED &gt;</span>");
-    $("h1").fadeOut(200);
-    $("header").slideUp();
-    $("#shield").slideDown();
-    $("#reverse").show();
-    $("#purge").show();
-    $("#result").delay(400).fadeIn();
+  }
+
+  function shutdownMachine() {
+    $("form")[0].reset();
+    $("#shield").hide();
+    $("#result").empty().hide();
+    $("button.post-ctrl").hide();
+    $("h1").show();
+    $("header").slideDown();
   }
 
   $("form").submit(function(event) {
@@ -66,24 +68,29 @@ $(document).ready(function() {
     // Validate Input Number
     if (userNumber.match(/\D/g) !== null) {
       if (userNumber.match(/[a-z]/g) !== null) {
-        $("#error-message").html("<span class=\"error\">ERROR: STUPIDITY DETECTED.</span> <br>Human intelligence does not understand data type: number.");
+        $("#error-message").hide().html("<span class=\"error\">ERROR: STUPIDITY DETECTED.</span> <br>Human intelligence does not understand data type: number.").fadeIn();
       } else {
-        $("#error-message").html("<span class=\"error\">ERROR: INVALID ID.</span> <br>ID number does not include symbols or spaces.");
+        $("#error-message").hide().html("<span class=\"error\">ERROR: INVALID ID.</span> <br>ID number does not include symbols or spaces.").fadeIn();
       }
-      $("#input-number").val("");
-      $("#shield").fadeOut();
-      $("#result").empty().hide();
-      $("button.toggle").hide();
+      shutdownMachine();
     } else if (userNumber > 1000) {
-      $("#error-message").html("<span class=\"error\">ERROR: Human Breeding Suspected.</span> <br>Specimen ID number beyond 1000. Initiating kill sequence.");
-      $("#input-number").val("");
+      $("#error-message").hide().html("<span class=\"error\">ERROR: Human Breeding Suspected.</span> <br>Specimen ID number beyond 1000. Initiating kill sequence.").fadeIn();
+      shutdownMachine();
     } else {
+      $("h1").fadeOut(200);
+      $("header").slideUp();
 
       var beepyBooperOutput = beepyBooper(userNumber, userName);
       var beepBoopHtmlFeed = [];
 
       createBeepBoopHtml(beepyBooperOutput,beepBoopHtmlFeed);
       displayBeepBoopResult(beepBoopHtmlFeed);
+
+      $("#error-message").html("<span class=\"access\">&lt; ACCESS GRANTED &gt;</span>").fadeIn();
+      $("#shield").fadeIn();
+      $("#reverse").show();
+      $("#purge").show();
+      $("#result").delay(400).fadeIn();
 
       // Toggle Feed Direction
       $(".toggle").click(function() {
@@ -94,13 +101,8 @@ $(document).ready(function() {
 
       // Purge Results
       $("button#purge").click(function() {
-        $("form")[0].reset();
-        $("#shield").fadeOut();
-        $("#error-message").empty();
-        $("#result").empty().hide();
-        $("button.post-ctrl").hide();
-        $("h1").show();
-        $("header").slideDown();
+        $("#error-message").hide().empty();
+        shutdownMachine();
       });
     }
   });
