@@ -11,16 +11,28 @@
   <body>
     <div class="container">
       <h1><a href="index.html">Epicodus Week 4</a> <span class="subtitle">Bank Account</span></h1>
+      <form id="registration" class="well">
+        <h2>Register a new account</h2>
+        <div class="form-group">
+          <label for="new-username">Create new username</label>
+          <input id="new-username" class="form-control" type="text" placeholder="Username" required>
+          <label for="new-name">Full name</label>
+          <input id="new-name" class="form-control" type="text" placeholder="Name" required>
+          <label for="initial-deposit">Initial Deposit</label>
+          <input id="initial-deposit" class="form-control" type="text" placeholder="$0.00">
+        </div>
+        <button type="submit" class="btn btn-info">Register</button>
+        <button type="button" class="toggle btn btn-info">Switch to Login</button>
+      </form>
 <!-- LOGIN -->
-      <form id="login" class="well">
+      <form id="login" class="well display-none">
         <h2>Login</h2>
         <div class="form-group">
           <label for="username">Username</label>
           <input id="username" class="form-control" type="text" placeholder="Username" required>
-          <label for="initial-deposit">Initial Deposit</label>
-          <input id="initial-deposit" class="form-control" type="text" placeholder="$0.00">
         </div>
-        <button type="submit" class="btn btn-info">Register or Login</button>
+        <button type="submit" class="btn btn-info">Login</button>
+        <button type="button" class="toggle btn btn-info">New User?</button>
       </form>
 <!-- TRANSACTION -->
       <form class="transaction well display-none">
