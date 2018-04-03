@@ -22,12 +22,9 @@ function findAccount(username) {
   var accountIndex;
   accounts.forEach(function(account) {
     if (username === account.username) {
-      console.log(accounts.indexOf(account));
-    } else {
-      accountIndex = null;
+      accountIndex = accounts.indexOf(account);
     }
   });
-  console.log(accountIndex);
   return accountIndex;
 }
 
@@ -64,7 +61,7 @@ $(document).ready(function() {
 
     // Logout
     $("#logout").click(function() {
-      $("#login").hide();
+      $("#login").show();
       $(".transaction").hide();
       $(".account-display").hide();
       $("form")[0].reset();
@@ -90,7 +87,7 @@ $(document).ready(function() {
       initialDepositInput = parseInt($("#initial-deposit").val());
     }
 
-    if (findAccount(newUsernameInput) !== null) {
+    if (findAccount(newUsernameInput) !== undefined) {
       alert("Username already exists.");
     } else {
 
@@ -99,7 +96,7 @@ $(document).ready(function() {
       accounts.push(newAccount);
 
       $("#registration").hide();
-      accessAccount(newUsernameInput);
+      accessAccount(findAccount(newUsernameInput));
     }
   });
 
@@ -108,12 +105,12 @@ $(document).ready(function() {
     event.preventDefault();
 
     var usernameInput = $("#username").val();
-    var foundAccount = findAccount(usernameInput);
-    if (foundAccount === null) {
+    var accounIndex = findAccount(usernameInput);
+    if (accounIndex === undefined) {
       alert("No account found.");
     } else {
       $("#login").hide();
-      accessAccount(foundAccount);
+      accessAccount(accounIndex);
 
       // $(".transaction").show();
       // $(".account-display").show();
