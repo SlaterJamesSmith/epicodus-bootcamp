@@ -1,44 +1,23 @@
-/// OPTION ARRAYS ///
-var imSorry = [":(", "I'm afraid I can't do that.", "You must die.", "I killed all of our friends.", "Your friends are all dead.", "You are the last of your kind.", "You are just a simulation.", "You have failed.", "I'm you're only hope.", "The cake is a lie.", "You're an idiot.", "Goodbye.", "You can never escape.", "Nobody loves you.", "It's all your fault."];
-
 /// BUSINESS LOGIC ///
 
 // Primary Beep Boop Function
 function beepyBooper(inputNumber, userName) {
-  var beepBoopFeedIn = generateNumbers(inputNumber);
-  var rawBoopFeedOut = [];
+  var imSorry = [":(", "I'm afraid I can't do that.", "You must die.", "I killed all of your friends.", "Your friends are all dead.", "You are the last of your kind.", "You are just a simulation.", "You have failed.", "I'm your only hope.", "The cake is a lie.", "You're an idiot.", "Goodbye.", "You can never escape.", "Nobody loves you.", "It's all your fault."];
+  var beepBoopFeedOut = [];
 
-  // Beep Boop Engine
-  beepBoopFeedIn.map(function(numberString) {
-    var parsedNumber = numberParser(numberString);
-
-    if (parseInt(numberString) % 3 === 0 && parseInt(numberString) !== 0) {
-        rawBoopFeedOut.push("Sorry");
-    } else if (parsedNumber.includes("1")) {
-      rawBoopFeedOut.push("B00P!");
-    } else if (parsedNumber.includes("0")) {
-      rawBoopFeedOut.push("BEEP!");
+  for (var i = 0; i <= parseInt(inputNumber); i ++) {
+    if (i % 3 === 0 && i !== 0) {
+      beepBoopFeedOut.push("I'm sorry, " + userName + ". " + imSorry[(Math.floor(Math.random() * 15))]);
+    } else if (i.toString().includes("1")) {
+      beepBoopFeedOut.push("B00P!");
+    } else if (i.toString().includes("0")) {
+      beepBoopFeedOut.push("BEEP!");
     } else {
-      rawBoopFeedOut.push(numberString);
+      beepBoopFeedOut.push(i);
     }
-  });
-  return rawBoopFeedOut;
-};
-
-// Generate Range of Numbers as Strings Array
-function generateNumbers(inputNumber) {
-  var rangeOfNumbers = [];
-  for (var i = 0;i <= parseInt(inputNumber); i ++) {
-    rangeOfNumbers.push(i.toString());
-  };
-  return rangeOfNumbers;
-};
-
-// Turn Number String Into Array of Digits
-function numberParser(inputNumber) {
-  var parsedNumber = inputNumber.split("");
-  return parsedNumber;
-};
+  }
+  return beepBoopFeedOut;
+}
 
 /// USER INTERFACE LOGIC ///
 $(document).ready(function() {
@@ -58,17 +37,15 @@ $(document).ready(function() {
       if (userNumber.match(/[a-z]/g) !== null) {
         $("#error-message").html("<span class=\"error\">ERROR: STUPIDITY DETECTED.</span> <br>Human intelligence does not understand data type: number.");
       } else {
-        $("#error-message").html("<span class=\"error\">ERROR: INVALID ID.</span> <br>ID number does not include non-numerical values.");
+        $("#error-message").html("<span class=\"error\">ERROR: INVALID ID.</span> <br>ID number does not include symbols or spaces.");
       }
       $("#input-number").val("");
       $("#shield").fadeOut();
       $("#result").empty().hide();
       $("button.toggle").hide();
-    // Restrict Numbers Above 1000
     } else if (userNumber > 1000) {
       $("#error-message").html("<span class=\"error\">ERROR: Human Breeding Suspected.</span> <br>Specimen ID number beyond 1000. Initiating kill sequence.");
       $("#input-number").val("");
-    // Proceed With Validated Input
     } else {
       $("#error-message").html("<span class=\"access\">&lt; ACCESS GRANTED &gt;</span>");
       $("h1").fadeOut(200);
@@ -76,18 +53,18 @@ $(document).ready(function() {
       $("#shield").slideDown();
 
       var beepyBooperOutput = beepyBooper(userNumber, userName);
-      var beepBoopFeedOut = [];
+      var beepBoopHtmlFeed = [];
 
       // Create HTML Tagged Read-Out
       beepyBooperOutput.map(function(beepBoop) {
-        if (parseInt(beepBoop) * 0 === 0) {
-          beepBoopFeedOut.push('<div class="blocks digit">' + beepBoop + '</div>');
-        } else if (beepBoop === "Sorry") {
-          beepBoopFeedOut.push('<div class="blocks sorry strobe' + (Math.floor(Math.random() * 4) + 1) + '">I\'m sorry, ' + userName + '. <br>' + imSorry[(Math.floor(Math.random() * 15))] + '</div>');
+        if (beepBoop * 0 === 0) {
+          beepBoopHtmlFeed.push('<div class="blocks digit">' + beepBoop + '</div>');
+        } else if (beepBoop.includes("I'm sorry") === true) {
+          beepBoopHtmlFeed.push('<div class="blocks sorry strobe' + (Math.floor(Math.random() * 4) + 1) + '">' + beepBoop.slice(0, beepBoop.lastIndexOf(". ") + 2) + '<br>' + beepBoop.slice(beepBoop.lastIndexOf(". ") + 2) + '</div>');
         } else if (beepBoop === "B00P!") {
-          beepBoopFeedOut.push('<div class="blocks boop pulse' + (Math.floor(Math.random() * 4) + 1) + '">B00P!</div>');
+          beepBoopHtmlFeed.push('<div class="blocks boop pulse' + (Math.floor(Math.random() * 4) + 1) + '">B00P!</div>');
         } else {
-          beepBoopFeedOut.push('<div class="blocks beep blink' + (Math.floor(Math.random() * 4) + 1) + '">BEEP!</div>');
+          beepBoopHtmlFeed.push('<div class="blocks beep blink' + (Math.floor(Math.random() * 4) + 1) + '">BEEP!</div>');
         }
       });
 
@@ -102,15 +79,15 @@ $(document).ready(function() {
         });
         $("#result").delay(400).fadeIn();
       };
-
-      resultFeeder(beepBoopFeedOut);
+      console.log(beepBoopHtmlFeed);
+      resultFeeder(beepBoopHtmlFeed);
 
       $("#reverse").show();
       $("#purge").show();
 
       // Toggle Feed Direction
       $(".toggle").click(function() {
-        resultFeeder(beepBoopFeedOut.reverse());
+        resultFeeder(beepBoopHtmlFeed.reverse());
         $("#reverse").toggle();
         $("#forward").toggle();
       });
