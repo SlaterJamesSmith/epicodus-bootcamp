@@ -42,6 +42,14 @@ function targetAccountIndex(username) {
 
 $(document).ready(function() {
 
+  // Toggle Registration & Login
+  $(".toggle").click(function() {
+    $("#login")[0].reset();
+    $("#register")[0].reset();
+    $("#login").toggle();
+    $("#register").toggle();
+  });
+
   function accessAccount(username) {
     var accountIndex = targetAccountIndex(username);
     $("#transactions").show();
@@ -49,25 +57,24 @@ $(document).ready(function() {
     $("#account-view .name").text(registeredAccounts[accountIndex].name);
     $("#account-balance").text(registeredAccounts[accountIndex].balance);
 
-    // Transactions
-    $("#transactions button").click(function() {
-      var deposit = 0;
-      var withdraw = 0;
+    // TRANSACTIONS
+    $("#transactions").submit(function(event) {
+      event.preventDefault();
+      var transactionAmount = 0;
+      var transactionType = $("input:radio[name=transaction]:checked").val();
 
-      if ($("#deposit").val() === "") {
-        deposit = 0;
+      if (parseFloat(parseFloat($("#transaction-amount").val()).toFixed(2)) === NaN) {
+        alert("Please enter a dollar amount.")
       } else {
-        deposit = parseInt($("#deposit").val());
+        transactionAmount = parseFloat(parseFloat($("#transaction-amount").val()).toFixed(2));
       }
 
-      if ($("#withdraw").val() === "") {
-        withdraw = 0;
+      if (transactionType === "deposit") {
+        registeredAccounts[accountIndex].balance += transactionAmount;
       } else {
-        withdraw = parseInt($("#withdraw").val());
+        registeredAccounts[accountIndex].balance -= transactionAmount;
       }
 
-      registeredAccounts[accountIndex].balance += deposit;
-      registeredAccounts[accountIndex].balance -= withdraw;
       $("#account-balance").text(registeredAccounts[accountIndex].balance);
     });
 
@@ -80,11 +87,6 @@ $(document).ready(function() {
     });
   }
 
-  $(".toggle").click(function() {
-    $("#login").toggle();
-    $("#register").toggle();
-  });
-
   // REGISTRATION
   $("#register").submit(function(event) {
     event.preventDefault();
@@ -93,10 +95,10 @@ $(document).ready(function() {
     var newName = $("#register-name").val();
     var initialDeposit = 0;
 
-    if ($("#initial-deposit").val() === "") {
-      initialDepositInput = 0;
+    if (parseFloat(parseFloat($("#initial-deposit").val()).toFixed(2)) === NaN) {
+      initialDeposit = 0;
     } else {
-      initialDepositInput = parseInt($("#initial-deposit").val());
+      initialDeposit = parseFloat(parseFloat($("#initial-deposit").val()).toFixed(2));
     }
 
     if (checkNewUsername(newUsername)) {
