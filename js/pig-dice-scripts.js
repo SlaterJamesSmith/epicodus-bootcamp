@@ -25,6 +25,21 @@ $(document).ready(function() {
     }
   }
 
+  function playAgain() {
+    player1Total = 0;
+    player2Total = 0;
+    player1Pot = 0;
+    player2Pot = 0;
+    $("#scoreboard").show();
+    $("#winner").hide();
+    $("#player1 .buttons").show();
+    $("#player2 .buttons").hide();
+    $("#player1 .total-points").text(player1Total);
+    $("#player2 .total-points").text(player2Total);
+    $("#player1 .turn-pot").text(player1Pot);
+    $("#player2 .turn-pot").text(player2Pot);
+  }
+
   // PLAYER 1 ROLL
   $("#player1 .roll-dice").click(function() {
     var diceValue = rollDice();
@@ -61,6 +76,10 @@ $(document).ready(function() {
     player2Total += player2Pot;
     $("#player2 .total-points").text(player2Total);
     checkForWin("Player 2", player2Total);
+  });
+
+  $("#play-again").click(function() {
+    playAgain();
   });
 
 });
