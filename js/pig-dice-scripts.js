@@ -7,16 +7,18 @@ $(document).ready(function() {
   var player2Total = 0;
   var player1Pot = 0;
   var player2Pot = 0;
+  var rollCount = 0;
 
   function switchPlayers() {
     player1Pot = 0;
     player2Pot = 0;
+    rollCount = 0;
     $(".turn-pot").text("0");
     $(".buttons").toggle();
   }
 
   function checkForWin(player, playerTotal) {
-    if (playerTotal >= 100) {
+    if (playerTotal >= 1) {
       $("#scoreboard").hide();
       $("#winner").show();
       $("#winner .winner").text(player);
@@ -35,20 +37,22 @@ $(document).ready(function() {
     player2Total = 0;
     player1Pot = 0;
     player2Pot = 0;
+    rollCount = 0;
     $("#scoreboard").show();
     $("#winner").hide();
     $("#player1 .buttons").show();
     $("#player2 .buttons").hide();
-    $("#player1 .total-points").text(player1Total);
-    $("#player2 .total-points").text(player2Total);
-    $("#player1 .turn-pot").text(player1Pot);
-    $("#player2 .turn-pot").text(player2Pot);
+    $(".total-points").text(0);
+    $(".turn-pot").text(0);
+    $(".roll-count").empty();
+    $(".dice div").removeClass();
   }
 
   // PLAYER 1 ROLL
   $("#player1 .roll-dice").click(function() {
+    rollCount ++;
     var diceValue = rollDice();
-    $("#player1 .diceValue").text("Rolled " + diceValue);
+    $("#player1 .roll-count").text("Roll " + rollCount);
     showDiceFace("player1", diceValue);
     if (diceValue === 1) {
       player1Pot = 0;
@@ -61,8 +65,9 @@ $(document).ready(function() {
 
   // PLAYER 2 ROLL
   $("#player2 .roll-dice").click(function() {
+    rollCount ++;
     var diceValue = rollDice();
-    $("#player2 .diceValue").text("Rolled " + diceValue);
+    $("#player2 .roll-count").text("Roll " + rollCount);
     showDiceFace("player2", diceValue);
     if (diceValue === 1) {
       player2Pot = 0;
