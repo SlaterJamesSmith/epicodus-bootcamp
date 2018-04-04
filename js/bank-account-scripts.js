@@ -1,44 +1,56 @@
-function Account(username, name, balance){
+function Account(username, password, name, balance) {
   this.username = username;
+  this.password = password
   this.name = name;
   this.balance = balance;
-}
-
-var mike = {
-  username: "mike",
-  name: "Mike Chu",
-  balance: 0
 };
 
-var mike2 = {
-  username: "mike2",
-  name: "Mike Chu 2",
-  balance: 0
-};
+var mike = new Account ("mike", "mike", "Mike Chu", 100);
+var ami = new Account ("ami", "ami", "Ami Cooper", 200);
 
-var accounts = [mike, mike2];
+var registeredAccounts = [mike, ami];
 
-function findAccount(username) {
-  var accountIndex;
-  accounts.forEach(function(account) {
+function checkNewUsername(username) {
+  var isUnique = true;
+  registeredAccounts.forEach(function(account) {
     if (username === account.username) {
-      accountIndex = accounts.indexOf(account);
+      isUnique = false;
     }
   });
-  return accountIndex;
+  return isUnique;
+};
+
+function checkLoginCredentials(username, password) {
+  var isValid = false;
+  registeredAccounts.forEach(function(account) {
+    if (username === account.username && password === account.password) {
+      isValid = true;
+    }
+  });
+  return isValid;
+};
+
+function targetAccountIndex(username) {
+  var targetIndex;
+  registeredAccounts.forEach(function(account) {
+    if (username === account.username) {
+      targetIndex = registeredAccounts.indexOf(account);
+    }
+  });
+  return targetIndex;
 }
 
 $(document).ready(function() {
 
-  function accessAccount(accountIndex) {
-    $(".transaction").show();
-    $(".account-display").show();
-
-    $(".account-name").text(accounts[accountIndex].name);
-    $(".balance-output").text(accounts[accountIndex].balance);
+  function accessAccount(username) {
+    var accountIndex = targetAccountIndex(username);
+    $("#transactions").show();
+    $("#account-view").show();
+    $("#account-view .name").text(registeredAccounts[accountIndex].name);
+    $("#account-balance").text(registeredAccounts[accountIndex].balance);
 
     // Transactions
-    $(".transaction button").click(function() {
+    $("#transactions button").click(function() {
       var deposit = 0;
       var withdraw = 0;
 
@@ -54,32 +66,32 @@ $(document).ready(function() {
         withdraw = parseInt($("#withdraw").val());
       }
 
-      accounts[accountIndex].balance += deposit;
-      accounts[accountIndex].balance -= withdraw;
-      $(".balance-output").text(accounts[accountIndex].balance);
+      registeredAccounts[accountIndex].balance += deposit;
+      registeredAccounts[accountIndex].balance -= withdraw;
+      $("#account-balance").text(registeredAccounts[accountIndex].balance);
     });
 
     // Logout
     $("#logout").click(function() {
-      $("#login").show();
-      $(".transaction").hide();
-      $(".account-display").hide();
-      $("form")[0].reset();
+      $("#login").hide();
+      $("#register").show();
+      $("#transactions").hide();
+      $("#account-view").hide();
     });
   }
 
   $(".toggle").click(function() {
     $("#login").toggle();
-    $("#registration").toggle();
+    $("#register").toggle();
   });
 
   // REGISTRATION
-  $("#registration").submit(function(event){
+  $("#register").submit(function(event) {
     event.preventDefault();
-
-    var newUsernameInput = $("#new-username").val();
-    var newNameInput = $("#new-name").val();
-    var initialDepositInput = 0;
+    var newUsername = $("#create-username").val();
+    var newPassword = $("#create-password").val();
+    var newName = $("#register-name").val();
+    var initialDeposit = 0;
 
     if ($("#initial-deposit").val() === "") {
       initialDepositInput = 0;
@@ -87,65 +99,29 @@ $(document).ready(function() {
       initialDepositInput = parseInt($("#initial-deposit").val());
     }
 
-    if (findAccount(newUsernameInput) !== undefined) {
-      alert("Username already exists.");
+    if (checkNewUsername(newUsername)) {
+      var newAccount = new Account(newUsername, newPassword, newName, initialDeposit);
+      registeredAccounts.push(newAccount);
+      accessAccount(newUsername);
+      $("#register")[0].reset();
+      $("#register").hide();
     } else {
-
-      var newAccount = new Account(newUsernameInput, newNameInput, initialDepositInput);
-
-      accounts.push(newAccount);
-
-      $("#registration").hide();
-      accessAccount(findAccount(newUsernameInput));
+      alert("Username already exists. Please choose another.");
     }
   });
 
   // LOGIN SECTION
-  $("#login").submit(function(event){
+  $("#login").submit(function(event) {
     event.preventDefault();
+    var username = $("#username").val();
+    var password = $("#password").val();
 
-    var usernameInput = $("#username").val();
-    var accounIndex = findAccount(usernameInput);
-    if (accounIndex === undefined) {
-      alert("No account found.");
-    } else {
+    if (checkLoginCredentials(username, password)) {
+      accessAccount(username);
+      $("#login")[0].reset();
       $("#login").hide();
-      accessAccount(accounIndex);
-
-      // $(".transaction").show();
-      // $(".account-display").show();
-      // $(".account-name").text(foundAccount[0].name);
-      // $(".balance-output").text(foundAccount[0].balance);
-      //
-      // // Transactions
-      // $(".transaction button").click(function() {
-      //   var deposit = 0;
-      //   var withdraw = 0;
-      //
-      //   if ($("#deposit").val() === "") {
-      //     deposit = 0;
-      //   } else {
-      //     deposit = parseInt($("#deposit").val());
-      //   }
-      //
-      //   if ($("#withdraw").val() === "") {
-      //     withdraw = 0;
-      //   } else {
-      //     withdraw = parseInt($("#withdraw").val());
-      //   }
-      //
-      //   foundAccount[0].balance += deposit;
-      //   foundAccount[0].balance -= withdraw;
-      //   $(".balance-output").text(foundAccount[0].balance);
-      // });
-      //
-      // // Logout
-      // $("#logout").click(function() {
-      //   $("#login").hide();
-      //   $(".transaction").hide();
-      //   $(".account-display").hide();
-      //   $("form")[0].reset();
-      // });
+    } else {
+      alert("Username or password does not match.");
     }
   });
 });
