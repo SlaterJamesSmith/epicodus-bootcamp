@@ -5,6 +5,14 @@ function Account(username, password, name, balance) {
   this.balance = balance;
 };
 
+Account.prototype.deposit = function(amount) {
+  this.balance += amount;
+}
+
+Account.prototype.withdraw = function(amount) {
+  this.balance -= amount;
+}
+
 var mike = new Account ("mike", "mike", "Mike Chu", 100);
 var ami = new Account ("ami", "ami", "Ami Cooper", 200);
 
@@ -70,9 +78,9 @@ $(document).ready(function() {
       }
 
       if (transactionType === "deposit") {
-        registeredAccounts[accountIndex].balance += transactionAmount;
+        registeredAccounts[accountIndex].deposit(transactionAmount);
       } else {
-        registeredAccounts[accountIndex].balance -= transactionAmount;
+        registeredAccounts[accountIndex].withdraw(transactionAmount);
       }
 
       $("#account-balance").text(registeredAccounts[accountIndex].balance);
