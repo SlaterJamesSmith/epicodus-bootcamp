@@ -13,6 +13,16 @@ $(document).ready(function() {
     $(".buttons").toggle();
   }
 
+  function checkForWin(player, playerTotal) {
+    if (playerTotal >= 100) {
+      $("#scoreboard").hide();
+      $("#winner").show();
+      $("#winner .winner").text(player);
+    } else {
+      switchPlayers();
+    }
+  }
+
   // PLAYER 1 ROLL
   $("#player1 .roll-dice").click(function() {
     var diceValue = rollDice();
@@ -41,14 +51,14 @@ $(document).ready(function() {
   $("#player1 .end-turn").click(function() {
     player1Total += player1Pot;
     $("#player1 .total-points").text(player1Total);
-    switchPlayers();
+    checkForWin("Player 1", player1Total);
   });
 
   // PLAYER 2 HOLD
   $("#player2 .end-turn").click(function() {
     player2Total += player2Pot;
     $("#player2 .total-points").text(player2Total);
-    switchPlayers();
+    checkForWin("Player 2", player2Total);
   });
 
 });
