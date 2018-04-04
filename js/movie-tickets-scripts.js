@@ -1,8 +1,3 @@
-//Pandas G both
-//Spiral PG matinee only
-//Endless PG-13 both
-//Blockers R night only
-
 function Ticket(title, age, ageGroupName, time) {
   this.movieTitle = title;
   this.ageLimit = age;
@@ -17,39 +12,40 @@ var blockersTicket = new Ticket ("Blockers", 2, "Adult", [2]);
 
 var ticketCatalog = [pandasTicket, spiralTicket, endlessTicket, blockersTicket];
 
-function getMovie(age, time){
-  var ticketMatch = [];
+function searchTickets(age, time){
+  var matchedTickets = [];
   ticketCatalog.forEach(function(ticket) {
     if(age >= ticket.ageLimit && ticket.showTime.includes(time)){
-      ticketMatch.push(ticket);
+      matchedTickets.push(ticket);
     }
   });
-  return ticketMatch;
+  return matchedTickets;
 }
 
-$(document).ready(function(){
-  $("form").submit(function(event){
+$(document).ready(function() {
+  $("form").submit(function(event) {
     event.preventDefault();
-    $(".ticket-output").empty();
-    var ageInput = parseInt($(".age-group").val());
-    var timeInput = parseInt($(".time-of-day").val());
+    $("#show-tickets .ticket").remove();
+    $("#show-tickets").show();
 
-    var ticketMatch = getMovie(ageInput,timeInput);
+    var ageInput = parseInt($("#age-group").val());
+    var timeInput = parseInt($("#show-time").val());
+    var searchResults = searchTickets(ageInput,timeInput);
 
-    ticketMatch.forEach(function(ticket){
-      $(".ticket-output").append("<div class='ticket'><h2>" + ticket.movieTitle +"</h2></div>");
+    searchResults.forEach(function(ticket){
+      $("#show-tickets").append('<div class="ticket"><h3><a href="#">' + ticket.movieTitle +"</a></h3></div>");
       $(".ticket").last().click(function(){
         $(this).addClass("selected")
         if(ageInput === 3){
-          $(".price-output").text("Your ticket will be $5")
+          $("#show-price h3").text("$8.00")
         } else if(timeInput ===1){
-          $(".price-output").text("$8")
+          $("#show-price h3").text("$10.00")
         }else{
-          $(".price-output").text("$15")
+          $("#show-price h3").text("$15.00")
         }
         $(".ticket").not(".selected").remove();
-      })
+        $("#show-price").show();
+      });
     });
-
   });
 });

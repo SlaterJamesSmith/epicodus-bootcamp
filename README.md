@@ -6,24 +6,11 @@
 
 * Aaron Akbari-Mort
 * Mike Chu
+* Ami Cooper
 
 ## Description
 
 A collection of practice projects using Object-Oriented JavaScript.
-
-## Specifications
-
-### Places You've Been
-|Program Behavior|Input |Output|
-|----------------|------|------|
-|Returns input location name.|"Italy"|"Italy"|
-|Returns input location name and associated details.|"Italy", "July", "Cloudy"|"Italy", "July", "Cloudy"|
-
-### To Do List
-|Program Behavior|Input |Output|
-|----------------|------|------|
-|Returns input tasks.|"Laundry"|"Laundry"|
-|Returns input tasks with additional task details.|"Laundry", "Buy more detergent"|"Laundry", "Buy more detergent"|
 
 ## Setup/Installation Requirements
 
