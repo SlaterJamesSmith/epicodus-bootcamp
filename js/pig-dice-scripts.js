@@ -25,6 +25,11 @@ $(document).ready(function() {
     }
   }
 
+  function showDiceFace(player, diceValue) {
+    $("#" + player + " .dice div").removeClass();
+    $("#" + player + " .dice div").addClass("face" + diceValue);
+  }
+
   function playAgain() {
     player1Total = 0;
     player2Total = 0;
@@ -43,6 +48,8 @@ $(document).ready(function() {
   // PLAYER 1 ROLL
   $("#player1 .roll-dice").click(function() {
     var diceValue = rollDice();
+    $("#player1 .diceValue").text("Rolled " + diceValue);
+    showDiceFace("player1", diceValue);
     if (diceValue === 1) {
       player1Pot = 0;
       switchPlayers();
@@ -55,6 +62,8 @@ $(document).ready(function() {
   // PLAYER 2 ROLL
   $("#player2 .roll-dice").click(function() {
     var diceValue = rollDice();
+    $("#player2 .diceValue").text("Rolled " + diceValue);
+    showDiceFace("player2", diceValue);
     if (diceValue === 1) {
       player2Pot = 0;
       switchPlayers();

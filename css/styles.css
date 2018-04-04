@@ -22,6 +22,42 @@ h1 .subtitle {
   display: none;
 }
 
+.dice div{
+  margin: 20px auto;
+  height: 222px;
+  width: 222px;
+}
+
+.face1 {
+  background-image: url(../img/dice.png);
+  background-position: 0px 0px;
+}
+
+.face2 {
+  background-image: url(../img/dice.png);
+  background-position: -224px 0px;
+}
+
+.face3 {
+  background-image: url(../img/dice.png);
+  background-position: -447px 0px;
+}
+
+.face4 {
+  background-image: url(../img/dice.png);
+  background-position: -1px 225px;
+}
+
+.face5 {
+  background-image: url(../img/dice.png);
+  background-position: -229px 225px;
+}
+
+.face6 {
+  background-image: url(../img/dice.png);
+  background-position: -451px 221px;
+}
+
 .well {
   min-height: 230px;
 }
