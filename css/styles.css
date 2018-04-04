@@ -21,3 +21,7 @@ h1 .subtitle {
 .display-none {
   display: none;
 }
+
+.well {
+  min-height: 230px;
+}

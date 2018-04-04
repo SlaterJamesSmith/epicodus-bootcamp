@@ -9,6 +9,8 @@ $(document).ready(function() {
   var player2Pot = 0;
 
   function switchPlayers() {
+    player1Pot = 0;
+    player2Pot = 0;
     $(".turn-pot").text("0");
     $(".buttons").toggle();
   }
