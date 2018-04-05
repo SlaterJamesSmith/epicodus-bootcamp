@@ -82,7 +82,19 @@ $().ready(function() {
     } else {
       mark = "X";
     }
-    checkWin(tttBoard.playerBoard);
+    if (checkWin(tttBoard.playerBoard) === 'X' || checkWin(tttBoard.playerBoard) === 'O') {
+
+      if (checkWin(tttBoard.playerBoard) === 'X') {
+        $("#win").text("The winner is X!");
+      } else {
+        $("#win").text("The winner is O!");
+      }
+      $(".cell").unbind();
+    }
+  });
+
+  $(".start").click(function() {
+    location.reload();
   });
 
 });
