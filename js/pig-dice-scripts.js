@@ -2,6 +2,7 @@ function rollDice() {
   return diceValue = Math.floor(Math.random() * 6) + 1;
 }
 
+// USER INTERFACE LOGIC
 $(document).ready(function() {
   var player1Total = 0;
   var player2Total = 0;
@@ -18,7 +19,7 @@ $(document).ready(function() {
   }
 
   function checkForWin(player, playerTotal) {
-    if (playerTotal >= 1) {
+    if (playerTotal >= 100) {
       $("#scoreboard").hide();
       $("#winner").show();
       $("#winner .winner").text(player);
@@ -30,22 +31,6 @@ $(document).ready(function() {
   function showDiceFace(player, diceValue) {
     $("#" + player + " .dice div").removeClass();
     $("#" + player + " .dice div").addClass("face" + diceValue);
-  }
-
-  function playAgain() {
-    player1Total = 0;
-    player2Total = 0;
-    player1Pot = 0;
-    player2Pot = 0;
-    rollCount = 0;
-    $("#scoreboard").show();
-    $("#winner").hide();
-    $("#player1 .buttons").show();
-    $("#player2 .buttons").hide();
-    $(".total-points").text(0);
-    $(".turn-pot").text(0);
-    $(".roll-count").empty();
-    $(".dice div").removeClass();
   }
 
   // PLAYER 1 ROLL
@@ -93,7 +78,6 @@ $(document).ready(function() {
   });
 
   $("#play-again").click(function() {
-    playAgain();
+    location.reload();
   });
-
 });
