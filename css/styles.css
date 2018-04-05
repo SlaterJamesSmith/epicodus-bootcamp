@@ -1,0 +1,24 @@
+h1 {
+  font-weight: bold;
+  margin: 20px 0;
+  text-transform: uppercase;
+}
+
+h1 .subtitle {
+  display: block;
+  font-size: 0.8em;
+  font-weight: normal;
+}
+
+.monospace p {
+  background-color: #d9edf7;
+  border-radius: 3px;
+  font-family: monospace;
+  font-size: 1.1em;
+  padding: 5px 10px;
+}
+
+.display-none {
+  display: none;
+}
+ß
