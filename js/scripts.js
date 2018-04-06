@@ -5,6 +5,20 @@ function PizzaOrder(size, toppings) {
   this.price;
 }
 
+PizzaOrder.prototype.calcPrice = function() {
+  var pizzaCost = 12;
+  if (this.size === "large") {
+    pizzaCost += 10;
+  } else if (this.size === "medium") {
+    pizzaCost += 6;
+  }
+  if (this.toppings.length > 2) {
+    pizzaCost += 1.5 * (this.toppings.length - 2);
+  }
+  this.price = pizzaCost;
+}
+
+
 /// USER INTERFACE LOGIC ///
 $(document).ready(function() {
   var pizzaQueue = [];
@@ -17,10 +31,9 @@ $(document).ready(function() {
       var selectedTopping = $(this).val();
       toppings.push(selectedTopping);
     });
-    
     var newPizza = new PizzaOrder(pizzaSize, toppings);
+    newPizza.calcPrice();
     pizzaQueue.push(newPizza);
-
-    console.log(pizzaQueue);
+    console.log(newPizza);
   });
 });
