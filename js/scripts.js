@@ -22,16 +22,27 @@ PizzaOrder.prototype.calcPrice = function() {
 $(document).ready(function() {
   var pizzaQueue = [];
   var orderNumber = 0;
+  var orderTotal = 0;
+  var cartCount = 0
 
   function addToCart() {
-    $("#order-cart").append("<div id=\"order" + orderNumber + "\" class=\"pizza\">" + "<h3>" + pizzaQueue[orderNumber].size + " Pizza</h3>" + "<h3>Toppings:</h3>" + "<ul></ul>" + "<h3>Price: &dollar;" + pizzaQueue[orderNumber].price.toFixed(2) + "</h3>" + "<button class=\"btn btn-danger\">Remove</button>" + "</div>");
+    $("#order-cart").append("<div id=\"order" + orderNumber + "\" class=\"pizza\">" + "<h3>" + pizzaQueue[orderNumber].size + " Pizza</h3>" + "<h3>Toppings:</h3>" + "<ul></ul>" + "<h3>Price: &dollar;" + pizzaQueue[orderNumber].price.toFixed(2) + "</h3>" + "<button class=\"btn btn-danger\" value=\"" + pizzaQueue[orderNumber].price + "\">Remove</button>" + "</div>");
     pizzaQueue[orderNumber].toppings.forEach(function(topping) {
       $("#order" + orderNumber + " ul").append("<li>" + topping + "</li>");
     })
     $("#order" + orderNumber + " button").click(function() {
       $(this).parent().remove();
+      orderTotal -= parseFloat($(this).val());
+      cartCount --;
+      $("#order-total").text(orderTotal.toFixed(2));
+      $("#pizza-count").text(cartCount);
     });
+    orderTotal += pizzaQueue[orderNumber].price;
+    cartCount ++;
+    $("#order-total").text(orderTotal.toFixed(2));
+    $("#pizza-count").text(cartCount);
     orderNumber ++;
+
   }
 
   $("form#order").submit(function(event) {
@@ -50,7 +61,7 @@ $(document).ready(function() {
   });
 
   $(".cheese-only").click(function() {
-    
+
   });
 
 });

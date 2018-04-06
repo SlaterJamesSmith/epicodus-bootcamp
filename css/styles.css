@@ -15,8 +15,20 @@ h1 {
   text-shadow: 3px 3px 5px #a50000;
 }
 
+h1 .letterspace {
+  letter-spacing: 23px;
+}
+
+h1 .letterspace2 {
+  letter-spacing: 30px;
+}
+
 h2, h3 {
   font-family: 'Lobster', cursive;
+}
+
+h3.upsize {
+  font-size: 4em;
 }
 
 ul {
@@ -28,14 +40,6 @@ li {
   list-style: none;
 }
 
-h1 .letterspace {
-  letter-spacing: 23px;
-}
-
-h1 .letterspace2 {
-  letter-spacing: 30px;
-}
-
 input[type="checkbox"] {
   margin: 5px 10px;
 }
@@ -45,8 +49,7 @@ input[type="checkbox"] {
 }
 
 .pizza {
-  background-color: #f0b96bf5;
-  border: 1px solid #f09417;
+  background-color: #000000;
   border-radius: 5px;
   color: #fff;
   float: left;
