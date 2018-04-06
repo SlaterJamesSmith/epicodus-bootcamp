@@ -11,44 +11,40 @@
   <body>
     <div class="container">
       <h1><a href="index.html">Epicodus Week 4</a> <span class="subtitle">Pig Dice</span></h1>
-      <div id="scoreboard" class="row">
+      <div id="scoreboard" class="row text-center">
         <div id="player1" class="col-sm-6">
-          <div class="well">
+          <div class="well clearfix">
             <h2>PLAYER 1</h2>
             <h3>SCORE: <span class="total-points">0</span> / 100</h3>
-            <h3>POT: <span class="turn-pot">0</span></h3>
+            <h3>POT: <span class="turn-total">0</span></h3>
             <div class="buttons btn-group">
-              <button class="roll-dice btn btn-info" type="button">ROLL</button>
-              <button class="end-turn btn btn-default" type="button">HOLD</button>
+              <button class="roll-dice btn btn-info" type="button" value="player1" >ROLL</button>
+              <button class="end-turn btn btn-default" type="button" value="player1" >HOLD</button>
             </div>
           </div>
-          <h3 class="text-center roll-count"></h3>
-          <div class="dice">
-            <div>
-              <!-- DICE FACE -->
-            </div>
+          <h3 class="roll-count"></h3>
+          <div class="dice-value text-danger">
+            <h2></h2>
           </div>
         </div>
         <div id="player2" class="col-sm-6">
-          <div class="well">
+          <div class="well clearfix">
             <h2>PLAYER 2</h2>
             <h3>SCORE: <span class="total-points">0</span> / 100</h3>
-            <h3>POT: <span class="turn-pot">0</span></h3>
-            <div class="buttons btn-group display-none">
-              <button class="roll-dice btn btn-danger" type="button">ROLL</button>
-              <button class="end-turn btn btn-default" type="button">HOLD</button>
+            <h3>POT: <span class="turn-total">0</span></h3>
+            <div class="buttons btn-group">
+              <button class="roll-dice btn btn-danger display-none" type="button" value="player2">ROLL</button>
+              <button class="end-turn btn btn-default display-none" type="button" value="player2">HOLD</button>
             </div>
           </div>
-          <h3 class="text-center roll-count"></h3>
-          <div class="dice">
-            <div>
-              <!-- DICE FACE -->
-            </div>
+          <h3 class="roll-count"></h3>
+          <div class="dice-value text-danger">
+            <h2></h2>
           </div>
         </div>
       </div>
-      <div id="winner" class="display-none">
-        <h2><span class="winner"></span> is the winner!</h2>
+      <div id="winner" class="display-none text-center">
+        <h2><span></span> is the winner!</h2>
         <button id="play-again" class="btn btn-success" type="button">PLAY AGAIN</button>
       </div>
     </div>

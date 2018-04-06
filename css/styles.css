@@ -21,3 +21,8 @@ h1 .subtitle {
 .display-none {
   display: none;
 }
+
+/* Pig Dice */
+#scoreboard .well {
+  min-height: 230px;
+}

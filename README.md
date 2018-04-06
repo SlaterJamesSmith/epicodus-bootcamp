@@ -5,6 +5,7 @@
 #### _Collaborators_
 
 * Aaron Akbari-Mort
+* Adriana Chen
 * Mike Chu
 * Ami Cooper
 
