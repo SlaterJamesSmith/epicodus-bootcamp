@@ -48,8 +48,14 @@ input[type="checkbox"] {
   display: none;
 }
 
+#order-input {
+  background-color: #f9f4eb;
+  border-radius: 10px;
+  padding: 10px 25px 25px;
+}
+
 .pizza {
-  background-color: #000000;
+  background-color: #3e3e3e;
   border-radius: 5px;
   color: #fff;
   float: left;
@@ -59,8 +65,14 @@ input[type="checkbox"] {
   width: 29%;
 }
 
+.btn-group {
+  display: block;
+  margin: 0 auto;
+  width: 220px;
+}
+
 .well {
-  background-color: #fffbf1f2;
+  background-color: #fff;
   border-radius: 7px;
   padding: 20px 40px;
 }

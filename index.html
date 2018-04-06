@@ -14,7 +14,7 @@
     <div class="container">
       <form id="order" class="well">
         <div class="row">
-          <div class="col-xs-6">
+          <div id="order-input" class="col-xs-4">
 <!-- PIE SIZE -->
             <h2>Size</h2>
             <div class="form-group">
@@ -53,18 +53,17 @@
               <input type="checkbox" name="toppings" value="Sundried Tomatoes">Sundried Tomatoes<br>
               <input type="checkbox" name="toppings" value="Mushrooms">Mushrooms<br>
             </div>
+            <div class="btn-group text-center">
+              <button class="btn btn-warning" type="submit">ADD TO ORDER</button>
+              <button class="btn btn-success" type="button">CONFIRM</button>
+            </div>
           </div>
-          <div class="col-xs-6 text-right">
+          <div class="col-xs-8 text-right">
             <h2>Order Total</h2>
             <h3 class="upsize text-warning">&dollar;<span id="order-total">0.00</span></h3>
             <h2>Pizza Count</h2>
             <h3 id="pizza-count" class="upsize">0</h3>
           </div>
-        </div>
-
-
-        <div class="text-center">
-          <button class="btn btn-success" type="submit">ADD TO ORDER</button>
         </div>
       </form>
       <div id="order-cart" class="text-center">
