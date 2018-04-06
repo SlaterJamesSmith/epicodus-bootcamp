@@ -15,7 +15,7 @@
       <form id="order" class="well">
         <div class="row">
 <!-- ORDER FORM INPUTS -->
-          <div id="order-input" class="col-xs-5">
+          <div id="order-input" class="col-xs-4">
             <h2>Size</h2>
             <div class="form-group">
               <div class="radio">
@@ -40,9 +40,9 @@
             </div>
             <h2>Toppings</h2>
             <p><strong>Price includes 2 toppings.</strong></p>
-            <p>&dollar;1.50 for each additional topping.</p>
-            <div class="checkboxes form-group">
-              <input class="cheese-only" type="checkbox" name="toppings" value="Cheese">Cheese Only<br>
+            <p>Extras &dollar;1.50 each.</p>
+            <div class="form-group">
+              <input type="checkbox" name="toppings" value="Artichoke">Artichoke<br>
               <input type="checkbox" name="toppings" value="Bacon">Bacon<br>
               <input type="checkbox" name="toppings" value="Chicken">Chicken<br>
               <input type="checkbox" name="toppings" value="Feta Cheese">Feta Cheese<br>
@@ -53,12 +53,58 @@
               <input type="checkbox" name="toppings" value="Tomatoes">Tomatoes<br>
             </div>
             <div class="btn-group text-center">
-              <button class="btn btn-warning" type="submit">ADD PIZZA</button>
+              <button class="btn btn-warning" type="submit">ADD</button>
               <button class="btn btn-success" type="button">CHECKOUT</button>
             </div>
           </div>
+          <div id="order-input2" class="col-xs-4 text-left">
+            <h2>Sauce</h2>
+            <div class="form-group">
+              <div class="radio">
+                <label>
+                  <input type="radio" name="sauce" value="Marinara" checked>Marinara
+                </label>
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="radio">
+                <label>
+                  <input type="radio" name="sauce" value="Pesto">Pesto
+                </label>
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="radio">
+                <label>
+                  <input type="radio" name="sauce" value="No Sauce">No Sauce
+                </label>
+              </div>
+            </div>
+            <h2>Base Cheese</h2>
+            <div class="form-group">
+              <div class="radio">
+                <label>
+                  <input type="radio" name="cheese" value="Mozarella" checked>Mozarella
+                </label>
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="radio">
+                <label>
+                  <input type="radio" name="cheese" value="3-Cheese">Three Cheese Blend
+                </label>
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="radio">
+                <label>
+                  <input type="radio" name="cheese" value="No Cheese">No Cheese
+                </label>
+              </div>
+            </div>
+          </div>
 <!-- ORDER DETAILS -->
-          <div id="order-details" class="col-xs-7 text-right">
+          <div id="order-details" class="col-xs-4 text-right">
             <h2>Order Total</h2>
             <h3 class="upsize text-warning">&dollar;<span id="order-total">0.00</span></h3>
             <h2>Pizza Count</h2>

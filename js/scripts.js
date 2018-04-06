@@ -1,6 +1,8 @@
 /// BUSINESS LOGIC ///
-function PizzaOrder(size, toppings) {
+function PizzaOrder(size, sauce, cheese, toppings) {
   this.size = size;
+  this.sauce = sauce;
+  this.cheese = cheese;
   this.toppings = toppings;
   this.price;
 }
@@ -26,7 +28,9 @@ $(document).ready(function() {
   var cartCount = 0
 
   function addToCart() {
-    $("#order-cart").append("<div id=\"order" + orderNumber + "\" class=\"pizza\">" + "<h3>" + pizzaQueue[orderNumber].size + " Pizza</h3>" + "<h4>Toppings:</h4>" + "<ul></ul>" + "<h3>Price: &dollar;" + pizzaQueue[orderNumber].price.toFixed(2) + "</h3>" + "<button class=\"btn btn-danger\" value=\"" + pizzaQueue[orderNumber].price + "\">Remove</button>" + "</div>");
+    $("#order-cart").append("<div id=\"order" + orderNumber + "\" class=\"pizza\">" + "<h3>" + pizzaQueue[orderNumber].size + " Pizza</h3>" + "<h4>&dollar;" + pizzaQueue[orderNumber].price.toFixed(2) + "</h4>" + "<ul class=\"clearfix\"></ul>" + "<button class=\"btn btn-danger\" value=\"" + pizzaQueue[orderNumber].price + "\">Remove</button>" + "</div>");
+    $("#order" + orderNumber + " ul").append("<li>" + pizzaQueue[orderNumber].sauce + "</li>");
+    $("#order" + orderNumber + " ul").append("<li>" + pizzaQueue[orderNumber].cheese + "</li>");
     pizzaQueue[orderNumber].toppings.forEach(function(topping) {
       $("#order" + orderNumber + " ul").append("<li>" + topping + "</li>");
     })
@@ -47,26 +51,18 @@ $(document).ready(function() {
   $("form#order").submit(function(event) {
     event.preventDefault();
     var pizzaSize = $("input:radio[name=pizza-size]:checked").val();
+    var sauce = $("input:radio[name=sauce]:checked").val();
+    var cheese = $("input:radio[name=cheese]:checked").val();
     var toppings = [];
     $("input:checkbox[name=toppings]:checked").each(function(){
       var selectedTopping = $(this).val();
       toppings.push(selectedTopping);
     });
-    var newPizza = new PizzaOrder(pizzaSize, toppings);
+    var newPizza = new PizzaOrder(pizzaSize, sauce, cheese, toppings);
     newPizza.calcPrice();
     pizzaQueue.push(newPizza);
     addToCart();
     $("form")[0].reset();
-  });
-
-  $(".cheese-only").click(function() {
-    if ($(".cheese-only").prop("checked")) {
-      $(".checkboxes input").not(".cheese-only").attr("disabled", true);
-      $(".checkboxes input").not(".cheese-only").prop("checked", false);
-    } else {
-      $(".checkboxes input").not(".cheese-only").attr("disabled", false);
-    }
-
   });
 
 });
