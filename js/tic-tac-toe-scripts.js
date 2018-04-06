@@ -1,7 +1,6 @@
-function Board (){
-  this.coords = [0, 1, 2, 3, 4, 5, 6, 7, 8];
+function Game (){
   this.playerBoard = [0, 1, 2, 3, 4, 5, 6, 7, 8];
-  this.winComs = [
+  this.winCombos = [
     [0,1,2],
     [3,4,5],
     [6,7,8],
@@ -13,88 +12,59 @@ function Board (){
   ];
 }
 
-Board.prototype.markBoard = function (player, square) {
-  this.playerBoard[square] = player;
+Game.prototype.markBoard = function (player, space) {
+  this.playerBoard[space] = player;
 };
 
-// Board.prototype.checkWin = function () {
-//   this.winComs.forEach(function(combo, index) {
-//     console.log(this.playerBoard);
-//     // combo [0, 1, 2]
-//     // playerBoard[0], playerBoard[1], playerBoard[2]
-//
-//     // if (this.playerBoard[combo[0]] === this.playerBoard[combo[1]] === this.playerBoard[combo[2]] === 'undefined'){
-//     //
-//     // }
-//     if(this.playerBoard[combo[0]] === this.playerBoard[combo[1]] === this.playerBoard[combo[2]]){
-//       var player = this.playerBoard[combo[0]];
-//       if(player === 'X'){
-//         console.log("X wins");
-//       }else if(player === 'O'){
-//         console.log("O wins");
-//       }else{
-//         console.log("no winner");
-//       }
-//
-//     }
-//
-//   })
-// };
-
-function checkWin(playerBoard) {
-  var winCombos = [
-    [0,1,2],
-    [3,4,5],
-    [6,7,8],
-    [0,3,6],
-    [1,4,7],
-    [2,5,8],
-    [0,4,8],
-    [2,4,6],
-  ];
+Game.prototype.checkWin = function (playerBoard) {
   var winState = false;
-  winCombos.forEach(function(combo) {
+  this.winCombos.forEach(function(combo) {
     if(playerBoard[combo[0]] === playerBoard[combo[1]] && playerBoard[combo[1]] === playerBoard[combo[2]]) {
-      var player = playerBoard[combo[0]];
-      if(player === 'X'){
+      var playerMark = playerBoard[combo[0]];
+      if(playerMark === 'X'){
         winState = 'X';
-      }else if (player === 'O') {
+      }else if (playerMark === 'O') {
         winState = 'O';
       }
     }
   });
-  console.log("Winner is " + winState);
   return winState
 }
 
-
-$().ready(function() {
-  var tttBoard = new Board();
+$(document).ready(function() {
+  var game = new Game();
   var mark = "X";
 
-  $(".cell").click(function(e) {
-    var id = e.target.id;
-    tttBoard.markBoard(mark, parseInt(id));
-    $(this).text(mark);
-    $(this).unbind();
+  function switchPlayer() {
     if (mark === "X") {
       mark = "O";
     } else {
       mark = "X";
     }
-    if (checkWin(tttBoard.playerBoard) === 'X' || checkWin(tttBoard.playerBoard) === 'O') {
+  }
 
-      if (checkWin(tttBoard.playerBoard) === 'X') {
-        $("#win").text("The winner is X!");
+  function reportWin(winCheck) {
+    if (winCheck === 'X' || winCheck === 'O') {
+      if (winCheck === 'X') {
+        $("#game-status h2").text("X WINS!");
       } else {
-        $("#win").text("The winner is O!");
+        $("#game-status h2").text("O WINS!");
       }
-      $(".cell").unbind();
+      $("#tic-tac-toe-grid td").unbind();
     }
+  }
+
+  $("#tic-tac-toe-grid td").click(function(e) {
+    var id = e.target.id;
+    $(this).text(mark);
+    $(this).unbind();
+    game.markBoard(mark, parseInt(id));
+    winCheck = game.checkWin(game.playerBoard);
+    reportWin(winCheck);
+    switchPlayer();
   });
 
-  $(".start").click(function() {
+  $(".restart-game").click(function() {
     location.reload();
   });
-
 });

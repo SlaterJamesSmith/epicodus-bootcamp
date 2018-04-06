@@ -26,3 +26,31 @@ h1 .subtitle {
 #scoreboard .well {
   min-height: 230px;
 }
+
+/* Tic Tac Toe */
+#tic-tac-toe-grid {
+  margin: 50px auto;
+}
+
+#tic-tac-toe-grid td {
+  border: 1px solid #337ac7;
+  font-size: 6em;
+  height: 150px;
+  width: 150px;
+}
+
+#tic-tac-toe-grid tr:first-child td {
+  border-top: none;
+}
+
+#tic-tac-toe-grid tr:last-child td {
+  border-bottom: none;
+}
+
+#tic-tac-toe-grid tr td:first-child {
+  border-left: none;
+}
+
+#tic-tac-toe-grid tr td:last-child {
+  border-right: none;
+}

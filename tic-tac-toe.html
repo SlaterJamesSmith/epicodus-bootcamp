@@ -9,33 +9,30 @@
     <title>EPI-WK4: Tic Tac Toe</title>
   </head>
   <body>
-    <div class="container my-5">
-      <h1 class="mb-5"><a href="index.html">Epicodus Week 4</a> <span class="subtitle">Tic Tac Toe</span></h1>
-      <table>
-        <tr>
-          <td class="cell" id="0"></td>
-          <td class="cell" id="1"></td>
-          <td class="cell" id="2"></td>
-        </tr>
-        <tr>
-          <td class="cell" id="3"></td>
-          <td class="cell" id="4"></td>
-          <td class="cell" id="5"></td>
-        </tr><tr>
-          <td class="cell" id="6"></td>
-          <td class="cell" id="7"></td>
-          <td class="cell" id="8"></td>
-        </tr>
-      </table>
-
-      <div class="gameStatus">
-
-      </div>
-      <div>
-        <button class="start" type="button">reboot</button>
-      </div>
-      <div id="win">
-
+    <div class="container">
+      <h1><a href="index.html">Epicodus Week 4</a> <span class="subtitle">Tic Tac Toe</span></h1>
+      <div class="text-center">
+        <table id="tic-tac-toe-grid">
+          <tr>
+            <td id="0"></td>
+            <td id="1"></td>
+            <td id="2"></td>
+          </tr>
+          <tr>
+            <td id="3"></td>
+            <td id="4"></td>
+            <td id="5"></td>
+          </tr>
+          <tr>
+            <td id="6"></td>
+            <td id="7"></td>
+            <td id="8"></td>
+          </tr>
+        </table>
+        <div id="game-status">
+          <h2></h2>
+          <button class="restart-game btn btn-warning" type="button">RESTART</button>
+        </div>
       </div>
     </div>
   </body>
