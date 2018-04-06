@@ -26,7 +26,7 @@ $(document).ready(function() {
   var cartCount = 0
 
   function addToCart() {
-    $("#order-cart").append("<div id=\"order" + orderNumber + "\" class=\"pizza\">" + "<h3>" + pizzaQueue[orderNumber].size + " Pizza</h3>" + "<h3>Toppings:</h3>" + "<ul></ul>" + "<h3>Price: &dollar;" + pizzaQueue[orderNumber].price.toFixed(2) + "</h3>" + "<button class=\"btn btn-danger\" value=\"" + pizzaQueue[orderNumber].price + "\">Remove</button>" + "</div>");
+    $("#order-cart").append("<div id=\"order" + orderNumber + "\" class=\"pizza\">" + "<h3>" + pizzaQueue[orderNumber].size + " Pizza</h3>" + "<h4>Toppings:</h4>" + "<ul></ul>" + "<h3>Price: &dollar;" + pizzaQueue[orderNumber].price.toFixed(2) + "</h3>" + "<button class=\"btn btn-danger\" value=\"" + pizzaQueue[orderNumber].price + "\">Remove</button>" + "</div>");
     pizzaQueue[orderNumber].toppings.forEach(function(topping) {
       $("#order" + orderNumber + " ul").append("<li>" + topping + "</li>");
     })
@@ -60,7 +60,7 @@ $(document).ready(function() {
   });
 
   $(".cheese-only").click(function() {
-    
+
   });
 
 });

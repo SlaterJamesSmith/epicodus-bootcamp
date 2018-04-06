@@ -6,7 +6,7 @@
 
 ## Description
 
- An application for ordering pizzas. Various options allow a user to customize a pizza order, add pizzas to a cart, and obtain order details such as individual pizza prices, total order price, and a pizza count.
+ An application for ordering pizza. Various options allow a user to customize a pizza order, add pizzas to a cart, and obtain order details such as individual pizza prices, total order price, and a pizza count.
 
 ## Specifications
 

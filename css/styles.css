@@ -32,12 +32,19 @@ h3.upsize {
 }
 
 ul {
-  min-height: 220px;
+  min-height: 60px;
+  margin-bottom: 30px;
   padding: 0;
 }
 
 li {
+  border: 1px dotted #fff;
+  border-radius: 3px;
+  display: block;
+  float: left;
   list-style: none;
+  margin: 1%;
+  width: 48%;
 }
 
 input[type="checkbox"] {
@@ -54,10 +61,6 @@ input[type="checkbox"] {
   padding: 10px 25px 25px;
 }
 
-#order-details {
-  min-height: 560px;
-}
-
 #floating-pizza {
   animation: floaty-pizza 2s infinite;
   float: right;
@@ -72,10 +75,10 @@ input[type="checkbox"] {
   border-radius: 5px;
   color: #fff;
   float: left;
-  margin: 2%;
+  margin: 1%;
   overflow: auto;
   padding: 0px 15px 20px;
-  width: 29%;
+  width: 31%;
 }
 
 /* ANIMATIONS */
