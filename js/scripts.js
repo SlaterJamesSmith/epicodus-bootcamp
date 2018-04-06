@@ -1,6 +1,6 @@
 /// BUSINESS LOGIC ///
-function PizzaOrder() {
-  this.size = "medium";
+function PizzaOrder(size) {
+  this.size = size;
   this.toppings = ["pepperoni"];
   this.price;
 }
@@ -11,9 +11,10 @@ $(document).ready(function() {
 
   $("form#order").submit(function(event) {
     event.preventDefault();
-    var newPizza = new PizzaOrder();
+    var pizzaSize = $("input:radio[name=pizza-size]:checked").val();
+    var newPizza = new PizzaOrder(pizzaSize);
     pizzaQueue.push(newPizza);
 
-    console.log(pizzaQueue[0]);
+    console.log(pizzaQueue);
   });
 });
