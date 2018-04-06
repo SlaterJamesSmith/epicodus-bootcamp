@@ -48,4 +48,9 @@ $(document).ready(function() {
     addToCart();
     $("form")[0].reset();
   });
+
+  $(".cheese-only").click(function() {
+    
+  });
+
 });

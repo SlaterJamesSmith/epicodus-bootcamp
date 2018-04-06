@@ -10,42 +10,57 @@
     <title>Pizza Time!</title>
   </head>
   <body>
-    <h1 class="text-uppercase">Pizza</h1>
+    <h1><span class="letterspace">P<span class="letterspace2">i</span>z<span class="letterspace2">z</span>a</span></h1>
     <div class="container">
       <form id="order" class="well">
+        <div class="row">
+          <div class="col-xs-6">
 <!-- PIE SIZE -->
-        <div class="form-group">
-          <h2>Size</h2>
-          <div class="radio">
-            <label>
-              <input type="radio" name="pizza-size" value="Small">&dollar;12 | Small - 12"
-            </label>
-          </div>
-          <div class="radio">
-            <label>
-              <input type="radio" name="pizza-size" value="Medium" checked>&dollar;18 | Medium - 16"
-            </label>
-          </div>
-          <div class="radio">
-            <label>
-              <input type="radio" name="pizza-size" value="Large">&dollar;22 | Large - 20"
-            </label>
-          </div>
-        </div>
+            <h2>Size</h2>
+            <div class="form-group">
+              <div class="radio">
+                <label>
+                  <input type="radio" name="pizza-size" value="Small"><strong>&dollar;12</strong> | Small - 12"
+                </label>
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="radio">
+                <label>
+                  <input type="radio" name="pizza-size" value="Medium" checked><strong>&dollar;18</strong> | Medium - 16"
+                </label>
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="radio">
+                <label>
+                  <input type="radio" name="pizza-size" value="Large"><strong>&dollar;22</strong> | Large - 20"
+                </label>
+              </div>
+            </div>
 <!-- TOPPINGS -->
-        <h2>Toppings</h2>
-        <p>Price includes 2 toppings. &dollar;1.50 for each additional topping.</p>
-        <div class="form-group">
-          <input type="checkbox" name="toppings" value="Cheese">Cheese Only<br>
-          <input type="checkbox" name="toppings" value="Pepperoni">Pepperoni<br>
-          <input type="checkbox" name="toppings" value="Bacon">Bacon<br>
-          <input type="checkbox" name="toppings" value="Jalapenos">Jalapenos<br>
-          <input type="checkbox" name="toppings" value="Chicken">Chicken<br>
-          <input type="checkbox" name="toppings" value="Olives">Olives<br>
-          <input type="checkbox" name="toppings" value="Feta Cheese">Feta Cheese<br>
-          <input type="checkbox" name="toppings" value="Sundried Tomatoes">Sundried Tomatoes<br>
-          <input type="checkbox" name="toppings" value="Mushrooms">Mushrooms<br>
+            <h2>Toppings</h2>
+            <p><strong>Price includes 2 toppings.</strong></p>
+            <p>&dollar;1.50 for each additional topping.</p>
+            <div class="checboxes form-group">
+              <input class="cheese-only" type="checkbox" name="toppings" value="Cheese">Cheese Only<br>
+              <input type="checkbox" name="toppings" value="Pepperoni">Pepperoni<br>
+              <input type="checkbox" name="toppings" value="Bacon">Bacon<br>
+              <input type="checkbox" name="toppings" value="Jalapenos">Jalapenos<br>
+              <input type="checkbox" name="toppings" value="Chicken">Chicken<br>
+              <input type="checkbox" name="toppings" value="Olives">Olives<br>
+              <input type="checkbox" name="toppings" value="Feta Cheese">Feta Cheese<br>
+              <input type="checkbox" name="toppings" value="Sundried Tomatoes">Sundried Tomatoes<br>
+              <input type="checkbox" name="toppings" value="Mushrooms">Mushrooms<br>
+            </div>
+          </div>
+          <div class="col-xs-6 text-right">
+            <h2>Order Total</h2>
+            <h3>&dollar;<span id="order-total">0.00</span></h3>
+          </div>
         </div>
+
+
         <div class="text-center">
           <button class="btn btn-success" type="submit">ADD TO ORDER</button>
         </div>
