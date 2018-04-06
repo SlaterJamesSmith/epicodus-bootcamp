@@ -54,6 +54,20 @@ input[type="checkbox"] {
   padding: 10px 25px 25px;
 }
 
+#order-details {
+  min-height: 560px;
+}
+
+#pizza-count {
+  animation: floatyBG 2s infinite;
+  background-image: url('../img/pizza.png');
+  background-repeat: no-repeat;
+  background-position: 506px 0px;
+  background-size: 70px;
+  margin: 0;
+  padding: 10px 60px;
+}
+
 .pizza {
   background-color: #3e3e3e;
   border-radius: 5px;
@@ -65,6 +79,13 @@ input[type="checkbox"] {
   width: 29%;
 }
 
+/* ANIMATIONS */
+@keyframes floatyBG {
+  50% {background-position: 506px 8px;}
+}
+
+
+/* BOOTSTRAP CUSTOMIZATIONS */
 .btn-group {
   display: block;
   margin: 0 auto;

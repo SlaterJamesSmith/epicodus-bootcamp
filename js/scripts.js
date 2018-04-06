@@ -42,7 +42,6 @@ $(document).ready(function() {
     $("#order-total").text(orderTotal.toFixed(2));
     $("#pizza-count").text(cartCount);
     orderNumber ++;
-
   }
 
   $("form#order").submit(function(event) {
