@@ -1,7 +1,7 @@
 /// BUSINESS LOGIC ///
-function PizzaOrder(size) {
+function PizzaOrder(size, toppings) {
   this.size = size;
-  this.toppings = ["pepperoni"];
+  this.toppings = toppings;
   this.price;
 }
 
@@ -12,7 +12,13 @@ $(document).ready(function() {
   $("form#order").submit(function(event) {
     event.preventDefault();
     var pizzaSize = $("input:radio[name=pizza-size]:checked").val();
-    var newPizza = new PizzaOrder(pizzaSize);
+    var toppings = [];
+    $("input:checkbox[name=toppings]:checked").each(function(){
+      var selectedTopping = $(this).val();
+      toppings.push(selectedTopping);
+    });
+    
+    var newPizza = new PizzaOrder(pizzaSize, toppings);
     pizzaQueue.push(newPizza);
 
     console.log(pizzaQueue);
