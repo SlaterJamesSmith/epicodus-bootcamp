@@ -28,7 +28,7 @@ $(document).ready(function() {
   var cartCount = 0
 
   function addToCart() {
-    $("#order-cart").append("<div id=\"order" + orderNumber + "\" class=\"pizza\">" + "<h3>" + pizzaQueue[orderNumber].size + " Pizza</h3>" + "<h4>&dollar;" + pizzaQueue[orderNumber].price.toFixed(2) + "</h4>" + "<ul class=\"clearfix\"></ul>" + "<button class=\"btn btn-danger\" value=\"" + pizzaQueue[orderNumber].price + "\">Remove</button>" + "</div>");
+    $("#order-cart").append("<div id=\"order" + orderNumber + "\" class=\"pizza\">" + "<h3 class=\"text-right\">" + pizzaQueue[orderNumber].size + " Pizza</h3>" + "<h4 class=\"text-right\">&dollar;" + pizzaQueue[orderNumber].price.toFixed(2) + "</h4>" + "<ul class=\"clearfix\"></ul>" + "<button class=\"btn btn-danger\" value=\"" + pizzaQueue[orderNumber].price + "\">Remove</button>" + "</div>");
     $("#order" + orderNumber + " ul").append("<li>" + pizzaQueue[orderNumber].sauce + "</li>");
     $("#order" + orderNumber + " ul").append("<li>" + pizzaQueue[orderNumber].cheese + "</li>");
     pizzaQueue[orderNumber].toppings.forEach(function(topping) {

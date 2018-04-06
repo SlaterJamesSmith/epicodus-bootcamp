@@ -38,7 +38,7 @@ ul {
 }
 
 li {
-  border: 1px dotted #fff;
+  background-color: #3e3e3e;
   border-radius: 3px;
   display: block;
   float: left;
@@ -83,7 +83,11 @@ input[type="checkbox"] {
 }
 
 .pizza {
-  background-color: #3e3e3e;
+  background-color: #3e3e3ed6;
+  background-image: url('../img/pizza.png');
+  background-position: 0 -5px;
+  background-repeat: no-repeat;
+  background-size: 100px;
   border-radius: 5px;
   color: #fff;
   float: left;
