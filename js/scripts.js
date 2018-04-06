@@ -60,6 +60,12 @@ $(document).ready(function() {
   });
 
   $(".cheese-only").click(function() {
+    if ($(".cheese-only").prop("checked")) {
+      $(".checkboxes input").not(".cheese-only").attr("disabled", true);
+      $(".checkboxes input").not(".cheese-only").prop("checked", false);
+    } else {
+      $(".checkboxes input").not(".cheese-only").attr("disabled", false);
+    }
 
   });
 
