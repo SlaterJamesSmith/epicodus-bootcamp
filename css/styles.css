@@ -1,3 +1,22 @@
+ul {
+  min-height: 220px;
+  padding: 0;
+}
+
+li {
+  list-style: none;
+}
+
 .display-none {
   display: none;
+}
+
+.pizza {
+  border: 1px solid black;
+  border-radius: 5px;
+  float: left;
+  margin: 10px;
+  overflow: auto;
+  padding: 0px 15px 20px;
+  width: 250px;
 }
