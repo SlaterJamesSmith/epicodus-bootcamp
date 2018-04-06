@@ -1,4 +1,4 @@
-# _Solo Project 4_
+# _Order Pizza_
 
 #### _Epicodus Solo Project - Intro - Week 4, April 6, 2018_
 
@@ -6,7 +6,7 @@
 
 ## Description
 
-Add description.
+ An application for ordering pizzas. Various options allow a user to customize a pizza order, add pizzas to a cart, and obtain order details such as individual pizza prices, total order price, and a pizza count.
 
 ## Specifications
 

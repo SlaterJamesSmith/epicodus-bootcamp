@@ -1,5 +1,5 @@
 body {
-
+  background-color: #fff8eb;
   min-width: 750px;
 }
 
@@ -49,7 +49,7 @@ input[type="checkbox"] {
 }
 
 #order-input {
-  background-color: #f9f4eb;
+  background-color: #fff8eb;
   border-radius: 10px;
   padding: 10px 25px 25px;
 }
@@ -58,14 +58,13 @@ input[type="checkbox"] {
   min-height: 560px;
 }
 
-#pizza-count {
-  animation: floatyBG 2s infinite;
-  background-image: url('../img/pizza.png');
-  background-repeat: no-repeat;
-  background-position: 506px 0px;
-  background-size: 70px;
-  margin: 0;
-  padding: 10px 60px;
+#floating-pizza {
+  animation: floaty-pizza 2s infinite;
+  float: right;
+  position: relative;
+  top: 0px;
+  right: -5px;
+  width: 70px;
 }
 
 .pizza {
@@ -80,10 +79,9 @@ input[type="checkbox"] {
 }
 
 /* ANIMATIONS */
-@keyframes floatyBG {
-  50% {background-position: 506px 8px;}
+@keyframes floaty-pizza {
+  50% {top: 8px;}
 }
-
 
 /* BOOTSTRAP CUSTOMIZATIONS */
 .btn-group {
