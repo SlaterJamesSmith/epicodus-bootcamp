@@ -12,7 +12,12 @@ Add description.
 
 |Program Behavior|Input |Output|
 |----------------|------|------|
-||||
+|Receives order and creates standardized plain pizza.|orderPizza()|[ { size: "medium", toppings: ["pepperoni"] } ]|
+|Receives size with order and creates pizza of matching size.|orderPizza( "small" )|[ { size: "small", toppings: ["pepperoni"] } ]|
+|Receives 1 topping with order and creates matching pizza.|orderPizza( "medium", ["pepperoni"] )|[ { size: "medium", toppings: ["pepperoni"] } ]|
+|Receives 2 toppings with order and create matching pizza.|orderPizza( "large", ["pepperoni", "jalapenos"] )|[ { size: "large", toppings: ["pepperoni", "jalapenos"] } ]|
+|Receives 2 pizza orders and creates both pizzas.|orderPizza( "small", ["cheese"] ), orderPizza( "medium", ["pepperoni"] )|[ { size: "small", toppings: ["cheese"] }, { size: "medium", toppings: ["pepperoni"] } ]|
+|Calculates and retains price of existing pizza order.|pizzaOrder.price()|[ { size: "small", toppings: ["cheese"], price: 8} ]|
 
 ## Setup/Installation Requirements
 
