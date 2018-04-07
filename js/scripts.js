@@ -38,12 +38,12 @@ $(document).ready(function() {
       $(this).parent().remove();
       orderTotal -= parseFloat($(this).val());
       cartCount --;
-      $("#order-total").text(orderTotal.toFixed(2));
+      $("#order-total span").text(orderTotal.toFixed(2));
       $("#pizza-count").text(cartCount);
     });
     orderTotal += pizzaQueue[orderNumber].price;
     cartCount ++;
-    $("#order-total").text(orderTotal.toFixed(2));
+    $("#order-total span").text(orderTotal.toFixed(2));
     $("#pizza-count").text(cartCount);
     orderNumber ++;
   }

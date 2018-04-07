@@ -55,22 +55,38 @@ input[type="checkbox"] {
   display: none;
 }
 
+#order-total {
+  color: #ffe372;
+}
+
+#order {
+  background-image: url('../img/pizza.jpg');
+  background-size: cover;
+  background-position: 0px -90px;
+}
+
 #order-input, #order-input2, #order-details {
   min-height: 560px;
 }
 
-#order-input {
-  background-color: #fff8eb;
-  border-top-left-radius: 10px;
-  border-bottom-left-radius: 10px;
+#order-input, #order-input2 {
+  background-color: #fafdffd9;
   padding: 10px 25px 25px;
 }
 
+#order-input {
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+
 #order-input2 {
-  background-color: #fff8eb;
   border-top-right-radius: 10px;
   border-bottom-right-radius: 10px;
-  padding: 10px 25px 25px;
+}
+
+#order-details {
+  color: #fff;
+  padding-top: 130px;
 }
 
 #floating-pizza {
