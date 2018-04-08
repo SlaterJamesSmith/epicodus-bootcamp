@@ -28,12 +28,13 @@ $(document).ready(function() {
   var cartCount = 0
 
   function addToCart() {
-    $("#order-cart").append("<div id=\"order" + orderNumber + "\" class=\"pizza\">" + "<h3 class=\"text-right\">" + pizzaQueue[orderNumber].size + " Pizza</h3>" + "<h4 class=\"text-right\">&dollar;" + pizzaQueue[orderNumber].price.toFixed(2) + "</h4>" + "<ul class=\"clearfix\"></ul>" + "<button class=\"btn btn-danger\" value=\"" + pizzaQueue[orderNumber].price + "\">Remove</button>" + "</div>");
+    $("#order-cart").prepend("<div id=\"order" + orderNumber + "\" class=\"pizza display-none\">" + "<h3 class=\"text-right\">" + pizzaQueue[orderNumber].size + " Pizza</h3>" + "<h4 class=\"text-right\">&dollar;" + pizzaQueue[orderNumber].price.toFixed(2) + "</h4>" + "<ul class=\"clearfix\"></ul>" + "<button class=\"btn btn-danger\" value=\"" + pizzaQueue[orderNumber].price + "\"><strong>X</strong></button>" + "</div>");
     $("#order" + orderNumber + " ul").append("<li>" + pizzaQueue[orderNumber].sauce + "</li>");
     $("#order" + orderNumber + " ul").append("<li>" + pizzaQueue[orderNumber].cheese + "</li>");
     pizzaQueue[orderNumber].toppings.forEach(function(topping) {
       $("#order" + orderNumber + " ul").append("<li>" + topping + "</li>");
     })
+    $(".pizza").slideDown();
     $("#order" + orderNumber + " button").click(function() {
       $(this).parent().remove();
       orderTotal -= parseFloat($(this).val());
@@ -43,9 +44,9 @@ $(document).ready(function() {
     });
     orderTotal += pizzaQueue[orderNumber].price;
     cartCount ++;
+    orderNumber ++;
     $("#order-total span").text(orderTotal.toFixed(2));
     $("#pizza-count").text(cartCount);
-    orderNumber ++;
   }
 
   $("form#order").submit(function(event) {
@@ -64,5 +65,4 @@ $(document).ready(function() {
     addToCart();
     $("form")[0].reset();
   });
-
 });

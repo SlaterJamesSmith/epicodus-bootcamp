@@ -7,7 +7,7 @@
     <script src="js/jquery-3.3.1.js"></script>
     <script src="js/scripts.js"></script>
     <meta charset="utf-8">
-    <title>Pizza Time!</title>
+    <title>Pizza</title>
   </head>
   <body>
     <h1><span class="letterspace">P<span class="letterspace2">i</span>z<span class="letterspace2">z</span>a</span></h1>
@@ -15,91 +15,95 @@
       <form id="order" class="well">
         <div class="row">
 <!-- ORDER FORM INPUTS -->
-          <div id="order-input" class="col-xs-4">
-            <h2>Size</h2>
-            <div class="form-group">
-              <div class="radio">
-                <label>
-                  <input type="radio" name="pizza-size" value="Small"><strong>&dollar;12</strong> | Small - 12"
-                </label>
+          <div id="order-input" class="col-xs-8">
+            <div class="row">
+              <div class="col-xs-6">
+                <h2>Size</h2>
+                <div class="form-group">
+                  <div class="radio">
+                    <label>
+                      <input type="radio" name="pizza-size" value="Small"><strong>&dollar;12</strong> | Small - 12"
+                    </label>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <div class="radio">
+                    <label>
+                      <input type="radio" name="pizza-size" value="Medium" checked><strong>&dollar;18</strong> | Medium - 16"
+                    </label>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <div class="radio">
+                    <label>
+                      <input type="radio" name="pizza-size" value="Large"><strong>&dollar;22</strong> | Large - 20"
+                    </label>
+                  </div>
+                </div>
+                <h2>Toppings</h2>
+                <p><strong>Price includes 2 toppings.</strong></p>
+                <p>Extras &dollar;1.50 each.</p>
+                <div class="form-group">
+                  <input type="checkbox" name="toppings" value="Artichoke">Artichoke<br>
+                  <input type="checkbox" name="toppings" value="Bacon">Bacon<br>
+                  <input type="checkbox" name="toppings" value="Chicken">Chicken<br>
+                  <input type="checkbox" name="toppings" value="Feta Cheese">Feta Cheese<br>
+                  <input type="checkbox" name="toppings" value="Jalapenos">Jalapenos<br>
+                  <input type="checkbox" name="toppings" value="Mushrooms">Mushrooms<br>
+                  <input type="checkbox" name="toppings" value="Olives">Olives<br>
+                  <input type="checkbox" name="toppings" value="Pepperoni">Pepperoni<br>
+                  <input type="checkbox" name="toppings" value="Tomatoes">Tomatoes<br>
+                </div>
+                <div class="btn-group text-center">
+                  <button class="btn btn-warning" type="submit">ADD</button>
+                  <button class="btn btn-success" type="button">CHECKOUT</button>
+                </div>
               </div>
-            </div>
-            <div class="form-group">
-              <div class="radio">
-                <label>
-                  <input type="radio" name="pizza-size" value="Medium" checked><strong>&dollar;18</strong> | Medium - 16"
-                </label>
-              </div>
-            </div>
-            <div class="form-group">
-              <div class="radio">
-                <label>
-                  <input type="radio" name="pizza-size" value="Large"><strong>&dollar;22</strong> | Large - 20"
-                </label>
-              </div>
-            </div>
-            <h2>Toppings</h2>
-            <p><strong>Price includes 2 toppings.</strong></p>
-            <p>Extras &dollar;1.50 each.</p>
-            <div class="form-group">
-              <input type="checkbox" name="toppings" value="Artichoke">Artichoke<br>
-              <input type="checkbox" name="toppings" value="Bacon">Bacon<br>
-              <input type="checkbox" name="toppings" value="Chicken">Chicken<br>
-              <input type="checkbox" name="toppings" value="Feta Cheese">Feta Cheese<br>
-              <input type="checkbox" name="toppings" value="Jalapenos">Jalapenos<br>
-              <input type="checkbox" name="toppings" value="Mushrooms">Mushrooms<br>
-              <input type="checkbox" name="toppings" value="Olives">Olives<br>
-              <input type="checkbox" name="toppings" value="Pepperoni">Pepperoni<br>
-              <input type="checkbox" name="toppings" value="Tomatoes">Tomatoes<br>
-            </div>
-            <div class="btn-group text-center">
-              <button class="btn btn-warning" type="submit">ADD</button>
-              <button class="btn btn-success" type="button">CHECKOUT</button>
-            </div>
-          </div>
-          <div id="order-input2" class="col-xs-4 text-left">
-            <h2>Sauce</h2>
-            <div class="form-group">
-              <div class="radio">
-                <label>
-                  <input type="radio" name="sauce" value="Marinara" checked>Marinara
-                </label>
-              </div>
-            </div>
-            <div class="form-group">
-              <div class="radio">
-                <label>
-                  <input type="radio" name="sauce" value="Pesto">Pesto
-                </label>
-              </div>
-            </div>
-            <div class="form-group">
-              <div class="radio">
-                <label>
-                  <input type="radio" name="sauce" value="No Sauce">No Sauce
-                </label>
-              </div>
-            </div>
-            <h2>Base Cheese</h2>
-            <div class="form-group">
-              <div class="radio">
-                <label>
-                  <input type="radio" name="cheese" value="Mozarella" checked>Mozarella
-                </label>
-              </div>
-            </div>
-            <div class="form-group">
-              <div class="radio">
-                <label>
-                  <input type="radio" name="cheese" value="3-Cheese">Three Cheese Blend
-                </label>
-              </div>
-            </div>
-            <div class="form-group">
-              <div class="radio">
-                <label>
-                  <input type="radio" name="cheese" value="No Cheese">No Cheese
-                </label>
+              <div class="col-xs-6">
+                <h2>Sauce</h2>
+                <div class="form-group">
+                  <div class="radio">
+                    <label>
+                      <input type="radio" name="sauce" value="Marinara" checked>Marinara
+                    </label>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <div class="radio">
+                    <label>
+                      <input type="radio" name="sauce" value="Pesto">Pesto
+                    </label>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <div class="radio">
+                    <label>
+                      <input type="radio" name="sauce" value="No Sauce">No Sauce
+                    </label>
+                  </div>
+                </div>
+                <h2>Base Cheese</h2>
+                <div class="form-group">
+                  <div class="radio">
+                    <label>
+                      <input type="radio" name="cheese" value="Mozarella" checked>Mozarella
+                    </label>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <div class="radio">
+                    <label>
+                      <input type="radio" name="cheese" value="3-Cheese">Three Cheese Blend
+                    </label>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <div class="radio">
+                    <label>
+                      <input type="radio" name="cheese" value="No Cheese">No Cheese
+                    </label>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
