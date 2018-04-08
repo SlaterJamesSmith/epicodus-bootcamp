@@ -36,11 +36,12 @@ $(document).ready(function() {
     })
     $(".pizza").slideDown();
     $("#order" + orderNumber + " button").click(function() {
-      $(this).parent().remove();
+      pizzaQueue.splice(orderNumber, 1);
       orderTotal -= parseFloat($(this).val());
       cartCount --;
       $("#order-total span").text(orderTotal.toFixed(2));
       $("#pizza-count").text(cartCount);
+      $(this).parent().remove();
     });
     orderTotal += pizzaQueue[orderNumber].price;
     cartCount ++;
@@ -64,5 +65,31 @@ $(document).ready(function() {
     pizzaQueue.push(newPizza);
     addToCart();
     $("form")[0].reset();
+  });
+
+  $("#checkout").click(function() {
+    if (orderTotal !== 0) {
+      var itemCount = 1;
+      $("#order-input").fadeOut();
+      $("#order-cart").hide();
+      pizzaQueue.forEach(function(pizza) {
+        $("#confirm-order .bin").append("<div><h4><strong>" + itemCount + ". " + pizza.size + " Pizza</strong></h4><ul></ul></div>")
+        $("#confirm-order .bin ul").last().append("<li><strong>Sauce:</strong> " + pizza.sauce + "</li>");
+        $("#confirm-order .bin ul").last().append("<li><strong>Cheese:</strong> " + pizza.cheese + "</li>");
+        if (pizza.toppings[0] === undefined) {
+          pizza.toppings.push("None")
+        }
+        $("#confirm-order .bin ul").last().append("<li><strong>Toppings:</strong> " + pizza.toppings.join(", ") + "</li>");
+        itemCount ++;
+      });
+      $("#confirm-order").delay(400).fadeIn();
+
+      $("#back").click(function() {
+        $("confirm-order .bin").empty();
+        $("#confirm-order").fadeOut();
+        $("#order-input").fadeIn();
+        $("#order-cart").show();
+      });
+    }
   });
 });
