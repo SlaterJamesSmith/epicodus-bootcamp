@@ -100,4 +100,13 @@ $(document).ready(function() {
       });
     }
   });
+
+  $("#delivery").click(function() {
+    $(".address").show();
+  });
+
+  $("#pick-up").click(function() {
+    $(".address input").val("");
+    $(".address").hide();
+  });
 });

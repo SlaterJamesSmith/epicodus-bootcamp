@@ -117,8 +117,34 @@
                 </div>
               </div>
               <div class="col-xs-6">
-                <form id="payment">
-
+                <h2>Service Type</h2>
+                <form id="service-type">
+                  <div class="form-group">
+                    <div class="radio">
+                      <label>
+                        <input id="pick-up" type="radio" name="delivery" value="Pick-Up">Pick-Up
+                      </label>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <div class="radio">
+                      <label>
+                        <input id="delivery" type="radio" name="delivery" value="Delivery">Delivery
+                      </label>
+                    </div>
+                  </div>
+                  <div class="form-group address display-none">
+                    <label>Street</label>
+                    <input id="street" class="form-control" type="text">
+                  </div>
+                  <div class="form-group address display-none">
+                    <label>City</label>
+                    <input id="city" class="form-control" type="text">
+                  </div>
+                  <div class="form-group address display-none">
+                    <label>Zip</label>
+                    <input id="zip" class="form-control" type="text">
+                  </div>
                 </form>
               </div>
             </div>
