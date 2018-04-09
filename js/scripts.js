@@ -109,4 +109,19 @@ $(document).ready(function() {
     $(".address input").val("");
     $(".address").hide();
   });
+
+  $("#confirm").click(function() {
+    if ($("#delivery").prop("checked")) {
+      var address = $("#street").val() + ", " + $("#city").val() + " " + $("#zip").val();
+      $("#thank-you .bin").append("<p>Your order will be delivered to " + address + " in 30 minutes.");
+    } else {
+      $("#thank-you .bin").append("<p>Your order will be ready for pick up in 30 minutes.</p>");
+    }
+    $("#order").hide();
+    $("#thank-you").show();
+  });
+
+  $("#reset").click(function() {
+    location.reload();
+  });
 });
