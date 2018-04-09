@@ -32,22 +32,12 @@ h3.upsize {
 }
 
 ul {
-  min-height: 175px;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
   padding: 0;
 }
 
 li {
   list-style: none;
-}
-
-#order-cart li {
-  background-color: #3e3e3e;
-  border-radius: 3px;
-  display: block;
-  float: left;
-  margin: 1%;
-  width: 48%;
 }
 
 input[type="checkbox"] {
@@ -58,8 +48,13 @@ input[type="checkbox"] {
   display: none;
 }
 
-#order-total {
-  color: #ffe372;
+#floating-pizza {
+  animation: floaty-pizza 2s infinite;
+  float: right;
+  position: relative;
+  top: 0px;
+  right: -5px;
+  width: 70px;
 }
 
 #order {
@@ -81,13 +76,22 @@ input[type="checkbox"] {
   padding-top: 130px;
 }
 
-#floating-pizza {
-  animation: floaty-pizza 2s infinite;
-  float: right;
-  position: relative;
-  top: 0px;
-  right: -5px;
-  width: 70px;
+#order-total {
+  color: #ffe372;
+}
+
+#order-cart ul {
+  margin-bottom: 10px;
+  min-height: 175px;
+}
+
+#order-cart li {
+  background-color: #3e3e3e;
+  border-radius: 3px;
+  display: block;
+  float: left;
+  margin: 1%;
+  width: 48%;
 }
 
 .pizza {

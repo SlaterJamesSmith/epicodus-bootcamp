@@ -34,20 +34,22 @@ $(document).ready(function() {
     pizzaQueue[orderNumber].toppings.forEach(function(topping) {
       $("#order" + orderNumber + " ul").append("<li>" + topping + "</li>");
     })
-    $(".pizza").slideDown();
+    $(".pizza").fadeIn();
     $("#order" + orderNumber + " button").click(function() {
-      pizzaQueue.splice(orderNumber, 1);
+      var index = $(this).parent().attr("id").slice(5);
+      pizzaQueue[index] = "";
       orderTotal -= parseFloat($(this).val());
       cartCount --;
       $("#order-total span").text(orderTotal.toFixed(2));
       $("#pizza-count").text(cartCount);
       $(this).parent().remove();
+      console.log(pizzaQueue);
     });
     orderTotal += pizzaQueue[orderNumber].price;
     cartCount ++;
-    orderNumber ++;
     $("#order-total span").text(orderTotal.toFixed(2));
     $("#pizza-count").text(cartCount);
+    orderNumber ++;
   }
 
   $("form#order").submit(function(event) {
@@ -69,10 +71,16 @@ $(document).ready(function() {
 
   $("#checkout").click(function() {
     if (orderTotal !== 0) {
+      var pizzaQueueFiltered = [];
       var itemCount = 1;
       $("#order-input").fadeOut();
       $("#order-cart").hide();
       pizzaQueue.forEach(function(pizza) {
+        if (pizza !== "") {
+          pizzaQueueFiltered.push(pizza);
+        }
+      });
+      pizzaQueueFiltered.reverse().forEach(function(pizza) {
         $("#confirm-order .bin").append("<div><h4><strong>" + itemCount + ". " + pizza.size + " Pizza</strong></h4><ul></ul></div>")
         $("#confirm-order .bin ul").last().append("<li><strong>Sauce:</strong> " + pizza.sauce + "</li>");
         $("#confirm-order .bin ul").last().append("<li><strong>Cheese:</strong> " + pizza.cheese + "</li>");
@@ -85,7 +93,7 @@ $(document).ready(function() {
       $("#confirm-order").delay(400).fadeIn();
 
       $("#back").click(function() {
-        $("confirm-order .bin").empty();
+        $("#confirm-order .bin").empty();
         $("#confirm-order").fadeOut();
         $("#order-input").fadeIn();
         $("#order-cart").show();
