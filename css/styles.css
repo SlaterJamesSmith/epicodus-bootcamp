@@ -97,6 +97,10 @@ input[type="checkbox"] {
   width: 48%;
 }
 
+#thank-you h2 {
+  margin-top: 0px;
+}
+
 .pizza {
   background-color: #0f8238e6;
   background-image: url('../img/pizza.svg');

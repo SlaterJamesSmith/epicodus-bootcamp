@@ -73,7 +73,7 @@ $(document).ready(function() {
     if (orderTotal !== 0) {
       var pizzaQueueFiltered = [];
       var itemCount = 1;
-      $("#order-input").fadeOut();
+      $("#order-input").hide();
       $("#order-cart").hide();
       pizzaQueue.forEach(function(pizza) {
         if (pizza !== "") {
@@ -90,11 +90,11 @@ $(document).ready(function() {
         $("#confirm-order .bin ul").last().append("<li><strong>Toppings:</strong> " + pizza.toppings.join(", ") + "</li>");
         itemCount ++;
       });
-      $("#confirm-order").delay(400).fadeIn();
+      $("#confirm-order").fadeIn();
 
       $("#back").click(function() {
         $("#confirm-order .bin").empty();
-        $("#confirm-order").fadeOut();
+        $("#confirm-order").hide();
         $("#order-input").fadeIn();
         $("#order-cart").show();
       });
@@ -118,7 +118,7 @@ $(document).ready(function() {
       $("#thank-you .bin").append("<p>Your order will be ready for pick up in 30 minutes.</p>");
     }
     $("#order").hide();
-    $("#thank-you").show();
+    $("#thank-you").fadeIn();
   });
 
   $("#reset").click(function() {
