@@ -1,4 +1,4 @@
-# _Get to the Crapper!_
+# _2D Game-Maker Framework_
 
 #### _Epicodus Team Project - Intro - Week 5, April 9, 2018_
 
@@ -12,7 +12,14 @@
 
 ## Description
 
- A quirky top-down and turn-based 2D game. The player must navigate obstacles and reach a toilet in time to avoid an embarrassing accident.
+A basic framework for developing single-player, 2-dimensional, top-down, turn-based games. Basic game mechanics allow a player to move across a coordinate map while avoiding enemies and obstacles to complete a level.
+Current built-in features include the following:
+
+1. **Enemy Movement Patterns:** Lateral Patrol, Rectangular Patrol, Player Hunting.
+
+2. **Barrier & Wall Mechanics.**
+
+3. **Turn Metering:** Incremental Meter, Decremental Meter.
 
 ## Specifications
 
@@ -29,15 +36,21 @@
 |**Game Status:** Executes losing condition when player and non-player entities occupy the same coordinates.|Player (x,y) = Non-Player (x,y)| Game Over|
 |**Game Status:** Given movement turn counter of "10," counter decreases by 1 after each player movement.|Player Moves.|Turns = 9|
 |**Game Status:** Executes losing condition when movement turn counter reaches 0.|Turns = 0 | Game Over|
-|**Game Status:** Executes winning condition when player entity occupies the same coordinates as toilet entity|Player (x,y) = Toilet (x,y)|Player Wins|
+|**Game Status:** Executes winning condition when player entity occupies the same coordinates as goal entity.|Player (x,y) = Goal (x,y)|Player Wins|
 
 ## Setup/Installation Requirements
 
-1. Visit website link: **Currently Not Available.**
+Visit website link for demo: https://m-chu.github.io/team-week-1/
+
+1. Clone repository.
+
+2. Modify HTML, CSS, and JavaScript to re-skin or replace default digital assets.
+
+3. Load game by opening HTML file in web browser.
 
 ## Known Bugs
 
-None.
+* Enemy collisions not currently supported.
 
 ## Support and Contact
 
