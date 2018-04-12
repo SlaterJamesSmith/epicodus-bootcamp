@@ -215,7 +215,7 @@ function powerUpCheck(player, item) {
 function triggerInterrupt(player, toilet, enemies, turnCounter, turnLimit) {
   var interrupt = false;
   if (player.xCoordinate === toilet.xCoordinate && player.yCoordinate === toilet.yCoordinate) {
-    $("#game-over h4").html("Whew, you made it! Don't forget to flush.");
+    $("#status h3").html("Whew, you made it! Don't forget to flush.");
     $("#controls").hide();
     $("#game-over").show();
     interrupt = true;
@@ -283,9 +283,9 @@ $(document).ready(function() {
   // Configure Meter
   // Use 0% for Positive Turn Counting (turnCounter < turnLimit) or
   // Use 100% for Negative Turn Counting (turnCounter > turnLimit)
-  $("#meter").width("0%")
-  var turnCounter = 0;
-  var turnLimit = 20;
+  $("#meter").width("100%")
+  var turnCounter = 20;
+  var turnLimit = 0;
 
   var gameObjects = [];
   var enemies = [];
@@ -315,15 +315,21 @@ $(document).ready(function() {
       }
     }
     positionGameObjects(gameObjects);
-    if (triggerInterrupt(player, goal, enemies, turnCounter, turnLimit) === false) {
+    if (!triggerInterrupt(player, goal, enemies, turnCounter, turnLimit)) {
       enemies.forEach(function(enemy) {
         movePattern(enemy, turnCounter);
       });
       positionGameObjects(gameObjects);
+    } else if (triggerInterrupt(player, goal, enemies, turnCounter, turnLimit)) {
+      if (turnLimit === 0) {
+        turnCounter = 1;
+      } else if (turnLimit !== 0) {
+        turnCounter = turnLimit - 1;
+      }
     }
     // Configure Meter - Use meterUp or meterDown - meterUp in Use
-    turnCounter = meterUp(turnCounter, turnLimit);
-    // turnCounter = meterDown(turnCounter, poweredUp, powerUpValue)
+    // turnCounter = meterUp(turnCounter, turnLimit);
+    turnCounter = meterDown(turnCounter, poweredUp, powerUpValue)
     triggerInterrupt(player, goal, enemies, turnCounter, turnLimit);
   }
 
