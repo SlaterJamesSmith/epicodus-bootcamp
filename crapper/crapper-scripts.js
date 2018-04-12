@@ -212,22 +212,22 @@ function powerUpCheck(player, item) {
 }
 
 // USER INTERFACE LOGIC
-function triggerInterrupt(player, toilet, enemies, turnCounter, turnLimit) {
+function triggerInterrupt(player, goal, enemies, turnCounter, turnLimit) {
   var interrupt = false;
-  if (player.xCoordinate === toilet.xCoordinate && player.yCoordinate === toilet.yCoordinate) {
+  if (player.xCoordinate === goal.xCoordinate && player.yCoordinate === goal.yCoordinate) {
     $("#status h3").html("Whew, you made it! Don't forget to flush.");
     $("#controls").hide();
     $("#game-over").show();
     interrupt = true;
   } else if (turnCounter === turnLimit) {
-    $("#game-over h4").html("Oh no! You died from a bowel explosion. Game Over.");
+    $("#status h3").html("Oh no! You died from a bowel explosion. Game Over.");
     $("#controls").hide();
     $("#game-over").show();
     interrupt = true;
   }
   enemies.forEach(function(enemy) {
     if (player.xCoordinate === enemy.xCoordinate && player.yCoordinate === enemy.yCoordinate) {
-      $("#game-over h4").html("You fainted and pooped everywhere. You died from exposure.");
+      $("#status h3").html("You fainted and pooped everywhere. You died from exposure.");
       $("#controls").hide();
       $("#game-over").show();
       interrupt = true;
@@ -283,9 +283,9 @@ $(document).ready(function() {
   // Configure Meter
   // Use 0% for Positive Turn Counting (turnCounter < turnLimit) or
   // Use 100% for Negative Turn Counting (turnCounter > turnLimit)
-  $("#meter").width("100%")
-  var turnCounter = 20;
-  var turnLimit = 0;
+  $("#meter").width("0%")
+  var turnCounter = 0;
+  var turnLimit = 20;
 
   var gameObjects = [];
   var enemies = [];
@@ -315,22 +315,29 @@ $(document).ready(function() {
       }
     }
     positionGameObjects(gameObjects);
-    if (!triggerInterrupt(player, goal, enemies, turnCounter, turnLimit)) {
+    if (triggerInterrupt(player, goal, enemies, turnCounter, turnLimit) === false) {
       enemies.forEach(function(enemy) {
         movePattern(enemy, turnCounter);
       });
       positionGameObjects(gameObjects);
-    } else if (triggerInterrupt(player, goal, enemies, turnCounter, turnLimit)) {
-      if (turnLimit === 0) {
-        turnCounter = 1;
-      } else if (turnLimit !== 0) {
-        turnCounter = turnLimit - 1;
+    }
+    triggerInterrupt(player, goal, enemies, turnCounter, turnLimit);
+    if (triggerInterrupt(player, goal, enemies, turnCounter, turnLimit) === true) {
+      if (player.xCoordinate === goal.xCoordinate && player.yCoordinate === goal.yCoordinate) {
+        $("#meter").addClass("shutdown-meter");
+        $("#meter").removeAttr("id");
+      } else {
+        if (turnLimit === 0) {
+          turnCounter = 1;
+        } else if (turnLimit !== 0) {
+          turnCounter = turnLimit - 1;
+        }
       }
     }
+
     // Configure Meter - Use meterUp or meterDown - meterUp in Use
-    // turnCounter = meterUp(turnCounter, turnLimit);
-    turnCounter = meterDown(turnCounter, poweredUp, powerUpValue)
-    triggerInterrupt(player, goal, enemies, turnCounter, turnLimit);
+    turnCounter = meterUp(turnCounter, turnLimit);
+    // turnCounter = meterDown(turnCounter, poweredUp, powerUpValue)
   }
 
   function playerMove(direction) {

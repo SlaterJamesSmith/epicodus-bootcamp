@@ -1,3 +1,7 @@
+h1.test1.test2 {
+  color: red;
+}
+
 body {
   font-family: 'Maven Pro', sans-serif;
 }
@@ -26,6 +30,10 @@ img {
   max-width: 100%;
 }
 
+img.left {
+  transform: scaleX(-1);
+}
+
 .btn {
   margin: 5px 0;
 }
@@ -34,8 +42,20 @@ img {
   display: none;
 }
 
-img.left {
-  transform: scaleX(-1);
+.shutdown-meter {
+  animation: slide-down 1s 1 forwards, back-to-green 1s 1 forwards;
+  background-color: #5cf9a2;
+  height: 40px;
+  width: 50%;
+}
+
+.shutdown-meter.warning {
+ background-color: #f6f95c;
+}
+
+.shutdown-meter.danger{
+  animation: slide-down 1s 1 forwards, back-to-green 1s 1 forwards;
+  background-color: #ff0000ff;
 }
 
 #gameboard, #navigation {
@@ -53,8 +73,10 @@ img.left {
 
 #status h3 {
   float: left;
+  font-size: 1.2em;
   font-weight: bold;
   margin: 6px 10px;
+  padding-top: 5px;
   width: 100%;
 }
 
@@ -96,6 +118,14 @@ img.left {
 /* Animations */
 @keyframes pulse {
   50% {background-color: #ff000000;}
+}
+
+@keyframes slide-down {
+  100% {width: 0%;}
+}
+
+@keyframes back-to-green {
+  100% {background-color: #5cf9a2;}
 }
 
 /* Game Board Obstructions */
