@@ -243,7 +243,7 @@ function positionGameObjects(array) {
   });
 }
 
-// Positive Turn Counter - Not In Use
+// Positive Turn Counter - In Use
 function meterUp(turnCounter, turnLimit) {
   turnCounter ++;
   var percentileWidth = turnCounter / turnLimit * 100;
@@ -258,7 +258,7 @@ function meterUp(turnCounter, turnLimit) {
   return turnCounter;
 }
 
-// Negative Turn Counter - In Use
+// Negative Turn Counter - Not In Use
 function meterDown(turnCounter, poweredUp, powerUpValue) {
   var meterWidthMax = 660;
   if (poweredUp) {
@@ -283,9 +283,9 @@ $(document).ready(function() {
   // Configure Meter
   // Use 0% for Positive Turn Counting (turnCounter < turnLimit) or
   // Use 100% for Negative Turn Counting (turnCounter > turnLimit)
-  $("#meter").width("100%")
-  var turnCounter = 20;
-  var turnLimit = 0;
+  $("#meter").width("0%")
+  var turnCounter = 0;
+  var turnLimit = 20;
 
   var gameObjects = [];
   var enemies = [];
@@ -321,9 +321,9 @@ $(document).ready(function() {
       });
       positionGameObjects(gameObjects);
     }
-    // Configure Meter - Use meterUp or meterDown - meterDown in Use
-    // turnCounter = meterUp(turnCounter, turnLimit);
-    turnCounter = meterDown(turnCounter, poweredUp, powerUpValue)
+    // Configure Meter - Use meterUp or meterDown - meterUp in Use
+    turnCounter = meterUp(turnCounter, turnLimit);
+    // turnCounter = meterDown(turnCounter, poweredUp, powerUpValue)
     triggerInterrupt(player, goal, enemies, turnCounter, turnLimit);
   }
 
