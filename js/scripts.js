@@ -297,7 +297,7 @@ $(document).ready(function() {
   }
 
   // Mouse Navigation
-  $("#navigation button").click(function() {
+  $("#navigation button.movement").click(function() {
     var playerDirection = $(this).attr("id");
     playerMove(playerDirection);
   });
@@ -306,15 +306,19 @@ $(document).ready(function() {
   $(document).keydown(function(e){
     if (triggerInterrupt(player, toilet, enemies, turnCounter, turnLimit)) {
       return;
-    } else if (e.keyCode === 37) {
+    } else if (e.keyCode === 65) {
        playerMove("left")
-    } else if (e.keyCode === 39) {
+    } else if (e.keyCode === 68) {
        playerMove("right")
-    } else if (e.keyCode === 38) {
+    } else if (e.keyCode === 87) {
        playerMove("up")
-    } else if (e.keyCode === 40) {
+    } else if (e.keyCode === 83) {
        playerMove("down")
     }
+  });
+
+  $("#controls .toggle").click(function() {
+    $("#controls button span").toggle();
   });
 
   $("#restart").click(function() {

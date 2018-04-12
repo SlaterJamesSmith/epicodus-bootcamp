@@ -9,14 +9,16 @@ td {
   text-align: center;
 }
 
-#gameboard, #navigation {
-  margin: 20px auto;
+.btn {
+  margin: 5px 0;
 }
 
-#status h3 {
-  float: left;
-  font-weight: bold;
-  margin: 6px 10px;
+.display-none {
+  display: none;
+}
+
+#gameboard, #navigation {
+  margin: 20px auto;
 }
 
 #status {
@@ -24,6 +26,12 @@ td {
   margin: 0 auto 15px;
   overflow: auto;
   width: 660px;
+}
+
+#status h3 {
+  float: left;
+  font-weight: bold;
+  margin: 6px 10px;
 }
 
 #meter {
@@ -39,6 +47,29 @@ td {
 #meter.danger {
   background-color: #ff5151;
 }
+
+#controls, #controls .row {
+  margin: 0 auto;
+  width: 250px;
+}
+
+#controls .col-xs-4 {
+  margin: 0;
+  padding: 0;
+}
+
+#controls .toggle {
+  width: 97%;
+}
+
+#controls .movement {
+  height: 30px;
+  line-height: 1;
+  margin: 4px 0px;
+  width: 75px;
+}
+
+/* Game Board Obstructions */
 
 .barrier {
   background-color: black;
@@ -58,8 +89,4 @@ td {
 
 .wall-down {
   border-bottom: 5px solid black;
-}
-
-.display-none {
-  display: none;
 }
