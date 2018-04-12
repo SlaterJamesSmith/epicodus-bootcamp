@@ -37,7 +37,6 @@ td {
 #meter {
   background-color: #5cf9a2;
   height: 38px;
-  width: 0%;
 }
 
 #meter.warning {

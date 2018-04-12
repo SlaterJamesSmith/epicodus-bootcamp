@@ -207,13 +207,13 @@ function notAWall(object, direction) {
 function triggerInterrupt(player, toilet, enemies, turnCounter, turnLimit) {
   var interrupt = false;
   if (player.xCoordinate === toilet.xCoordinate && player.yCoordinate === toilet.yCoordinate) {
-    $("#game-over h4").html("Whew, you win! Don't forget to flush.");
+    $("#game-over h4").html("You win!");
     $("#navigation").hide();
     $("#game-over").show();
     interrupt = true;
-  } else if (turnCounter === turnLimit + 1) {
-    $("#game-over h4").html("You ran out of time and had an accident.");
-    $("#navigation").hide();
+  } else if (turnCounter === turnLimit) {
+    $("#game-over h4").html("You're out of turns, you lose!");
+    $("#controls").hide();
     $("#game-over").show();
     interrupt = true;
   }
@@ -235,7 +235,9 @@ function positionGameObjects(array) {
   });
 }
 
-function meter(turnCounter, turnLimit) {
+// Positive Turn Counter - In Use
+function meterUp(turnCounter, turnLimit) {
+  turnCounter ++;
   var percentileWidth = turnCounter / turnLimit * 100;
   if (percentileWidth >= 40 && percentileWidth < 70) {
     $("#meter").addClass("warning");
@@ -243,23 +245,40 @@ function meter(turnCounter, turnLimit) {
     $("#meter").addClass("danger");
   }
   $("#meter").width(percentileWidth + "%");
+  return turnCounter;
+}
+
+// Negative Turn Counter - Not In Use
+function meterDown(turnCounter) {
+  var meterWidthMax = 660;
+  var unitWidth = parseInt($("#meter").width()) / turnCounter;
+  turnCounter --;
+  var percentileWidth = unitWidth * turnCounter / 660 * 100;
+  if (percentileWidth >= 40 && percentileWidth < 70) {
+    $("#meter").addClass("warning");
+  } else if (percentileWidth < 40) {
+    $("#meter").addClass("danger");
+  }
+  $("#meter").width(percentileWidth + "%");
+  return turnCounter;
 }
 
 $(document).ready(function() {
-  var turnCounter = 0;
-  var turnLimit = 20;
+  // Configure Meter
+  // Use 0% for Positive Turn Counting (turnCounter < turnLimit) or
+  // Use 100% for Negative Turn Counting (turnCounter > turnLimit)
+  $("#meter").width("100%")
+  var turnCounter = 20;
+  var turnLimit = 0;
+
   var gameObjects = [];
   var enemies = [];
   var player = new GameObject("player.png", 0, 0);
   var toilet = new GameObject("toilet.png", 5, 5);
   var enemy1 = new GameObject("poop.png", 1, 4, "patrol");
   var enemy2 = new GameObject("hunter.gif", 5, 0, "hunter", player);
-  gameObjects.push(toilet);
-  gameObjects.push(player);
-  gameObjects.push(enemy1);
-  gameObjects.push(enemy2);
-  enemies.push(enemy1);
-  enemies.push(enemy2);
+  gameObjects.push(player, toilet, enemy1, enemy2);
+  enemies.push(enemy1, enemy2);
 
   positionGameObjects(gameObjects);
 
@@ -270,8 +289,9 @@ $(document).ready(function() {
       movePattern(enemy2, enemy2.enemyType, enemy2.enemyTarget, turnCounter);
       positionGameObjects(gameObjects);
     }
-    turnCounter ++;
-    meter(turnCounter, turnLimit);
+    // Configure Meter - Use meterUp or meterDown - meterDown in Use
+    // turnCounter = meterUp(turnCounter, turnLimit);
+    turnCounter = meterDown(turnCounter)
     triggerInterrupt(player, toilet, enemies, turnCounter, turnLimit);
   }
 
