@@ -4,7 +4,7 @@ function GameObject (avatar, xCoordinate, yCoordinate, type, target, direction) 
   this.yCoordinate = yCoordinate;
   this.enemyType = type;
   this.enemyTarget = target;
-  this.enemyDirection = direction;
+  this.direction = direction;
 }
 
 function coinFlip() {
@@ -86,67 +86,67 @@ function moveNpcHunter(enemy) {
 }
 
 function moveNpcPatrol(enemy) {
-  if (enemy.enemyDirection === "down") {
+  if (enemy.direction === "down") {
     if (enemy.yCoordinate < 5 && notABarrier(enemy, "down") && notAWall(enemy, "down")) {
       enemy.yCoordinate +=1;
     } else {
-      enemy.enemyDirection = "left";
+      enemy.direction = "left";
     }
-  } else if (enemy.enemyDirection === "left") {
+  } else if (enemy.direction === "left") {
     if (enemy.xCoordinate > 0 && notABarrier(enemy, "left") && notAWall(enemy, "left")) {
       enemy.xCoordinate -=1;
     } else {
-      enemy.enemyDirection = "up";
+      enemy.direction = "up";
     }
-  } else if (enemy.enemyDirection === "up") {
+  } else if (enemy.direction === "up") {
     if (enemy.yCoordinate > 0 && notABarrier(enemy, "up") && notAWall(enemy, "up")) {
       enemy.yCoordinate -=1;
     } else {
-      enemy.enemyDirection = "right";
+      enemy.direction = "right";
     }
-  } else if (enemy.enemyDirection === "right") {
+  } else if (enemy.direction === "right") {
     if (enemy.xCoordinate < 5 && notABarrier(enemy, "right") && notAWall(enemy, "right")) {
       enemy.xCoordinate +=1;
     } else {
-      enemy.enemyDirection = "down";
+      enemy.direction = "down";
     }
   } else {
-    enemy.enemyDirection = "left";
+    enemy.direction = "left";
   }
 }
 
 function moveNpcHorizontal(enemy) {
-  if (enemy.enemyDirection === "right") {
+  if (enemy.direction === "right") {
     if (enemy.xCoordinate < 5 && notAWall(enemy, "right") && notABarrier(enemy, "right")) {
       enemy.xCoordinate += 1;
     } else {
       enemy.xCoordinate -= 1;
-      enemy.enemyDirection = "left";
+      enemy.direction = "left";
     }
   } else {
     if (enemy.xCoordinate > 0 && notAWall(enemy, "left") && notABarrier(enemy, "left")) {
       enemy.xCoordinate -= 1;
     } else {
       enemy.xCoordinate += 1;
-      enemy.enemyDirection = "right";
+      enemy.direction = "right";
     }
   }
 }
 
 function moveNpcVertical(enemy) {
-  if (enemy.enemyDirection === "down") {
+  if (enemy.direction === "down") {
     if (enemy.yCoordinate < 5 && notAWall(enemy, "down") && notABarrier(enemy, "down")) {
       enemy.yCoordinate += 1;
     } else {
       enemy.yCoordinate -= 1;
-      enemy.enemyDirection = "up";
+      enemy.direction = "up";
     }
   } else {
     if (enemy.yCoordinate > 0 && notAWall(enemy, "up") && notABarrier(enemy, "up")) {
       enemy.yCoordinate -= 1;
     } else {
       enemy.yCoordinate += 1;
-      enemy.enemyDirection = "down";
+      enemy.direction = "down";
     }
   }
 }
@@ -239,7 +239,7 @@ function triggerInterrupt(player, toilet, enemies, turnCounter, turnLimit) {
 function positionGameObjects(array) {
   $("td").text("");
   array.forEach(function(element) {
-    $(".y" + element.yCoordinate + " .x" + element.xCoordinate).html("<img src=\"img/" + element.avatar + "\">");
+    $(".y" + element.yCoordinate + " .x" + element.xCoordinate).html("<img src=\"img/" + element.avatar + "\" class=\"" + element.direction + "\">");
   });
 }
 
@@ -294,7 +294,7 @@ $(document).ready(function() {
   var goal = new GameObject("default-goal.png", 5, 5);
   var powerUp = new GameObject("default-powerup.png", 3, 3,);
   var powerUpValue = 5;
-  var player = new GameObject("default-player.png", 0, 0);
+  var player = new GameObject("player.gif", 0, 0);
   var enemy1 = new GameObject("default-patrol.png", 1, 4, "patrol");
   var enemy2 = new GameObject("default-hunter.png", 5, 0, "hunter", player);
   var enemy3 = new GameObject("default-linear.png", 5, 4, "horizontal");
@@ -331,10 +331,12 @@ $(document).ready(function() {
     if (direction === "left") {
       if (player.xCoordinate > 0 && notAWall(player, "left") && notABarrier(player, "left")) {
         player.xCoordinate = player.xCoordinate - 1;
+        player.direction = "left";
       }
     } else if (direction === "right") {
       if (player.xCoordinate < 5 && notAWall(player, "right") && notABarrier(player, "right")) {
         player.xCoordinate = player.xCoordinate + 1;
+        player.direction = "right";
       }
     } else if (direction === "up") {
       if (player.yCoordinate > 0 && notAWall(player, "up") && notABarrier(player, "up")) {
