@@ -4,30 +4,30 @@ function GameObject (avatar, xCoordinate, yCoordinate, type, target, direction) 
   this.yCoordinate = yCoordinate;
   this.enemyType = type;
   this.enemyTarget = target;
-  this.enemyDirection;
+  this.enemyDirection = direction;
 }
 
 function coinFlip() {
   return Math.floor(Math.random() * 2);
 }
 
-function movePattern (enemy, type, target, counter) {
-  if (type === "horizontal") {
+function movePattern (enemy, counter) {
+  if (enemy.enemyType === "horizontal") {
     moveNpcHorizontal(enemy);
-  } else if (type === "vertical") {
+  } else if (enemy.enemyType === "vertical") {
     moveNpcVertical(enemy);
-  } else if (type === "patrol") {
+  } else if (enemy.enemyType === "patrol") {
     moveNpcPatrol(enemy);
-  } else if (type === "hunter") {
+  } else if (enemy.enemyType === "hunter") {
     if(counter%2 === 0){
-      moveNpcHunter(enemy, target);
+      moveNpcHunter(enemy);
     }
   }
 }
 
-function moveNpcHunter(enemy, target) {
-  var xDistance = target.xCoordinate - enemy.xCoordinate;
-  var yDistance = target.yCoordinate - enemy.yCoordinate;
+function moveNpcHunter(enemy) {
+  var xDistance = enemy.enemyTarget.xCoordinate - enemy.xCoordinate;
+  var yDistance = enemy.enemyTarget.yCoordinate - enemy.yCoordinate;
   if (Math.abs(xDistance) > Math.abs(yDistance)) {
     if (xDistance > 0) {
       if (notABarrier(enemy, "right") && notAWall(enemy, "right")) {
@@ -273,6 +273,8 @@ $(document).ready(function() {
 
   var gameObjects = [];
   var enemies = [];
+
+  // Create extra game objects and push to corresponding arrays
   var player = new GameObject("player.png", 0, 0);
   var toilet = new GameObject("toilet.png", 5, 5);
   var enemy1 = new GameObject("poop.png", 1, 4, "patrol");
@@ -285,8 +287,9 @@ $(document).ready(function() {
   function progressTurn() {
     positionGameObjects(gameObjects);
     if (triggerInterrupt(player, toilet, enemies, turnCounter, turnLimit) === false) {
-      movePattern(enemy1, enemy1.enemyType, enemy1.enemyTarget, turnCounter);
-      movePattern(enemy2, enemy2.enemyType, enemy2.enemyTarget, turnCounter);
+      enemies.forEach(function(enemy) {
+        movePattern(enemy, turnCounter);
+      });
       positionGameObjects(gameObjects);
     }
     // Configure Meter - Use meterUp or meterDown - meterDown in Use
