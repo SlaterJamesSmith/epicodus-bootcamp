@@ -215,19 +215,19 @@ function powerUpCheck(player, item) {
 function triggerInterrupt(player, toilet, enemies, turnCounter, turnLimit) {
   var interrupt = false;
   if (player.xCoordinate === toilet.xCoordinate && player.yCoordinate === toilet.yCoordinate) {
-    $("#game-over h4").html("You win!");
+    $("#game-over h4").html("Whew, you made it! Don't forget to flush.");
     $("#controls").hide();
     $("#game-over").show();
     interrupt = true;
   } else if (turnCounter === turnLimit) {
-    $("#game-over h4").html("You're out of turns, you lose!");
+    $("#game-over h4").html("Oh no! You died from a bowel explosion. Game Over.");
     $("#controls").hide();
     $("#game-over").show();
     interrupt = true;
   }
   enemies.forEach(function(enemy) {
     if (player.xCoordinate === enemy.xCoordinate && player.yCoordinate === enemy.yCoordinate) {
-      $("#game-over h4").html("You lose!");
+      $("#game-over h4").html("You fainted and pooped everywhere. You died from exposure.");
       $("#controls").hide();
       $("#game-over").show();
       interrupt = true;
@@ -295,9 +295,9 @@ $(document).ready(function() {
   var powerUp = new GameObject("default-powerup.png", 3, 3,);
   var powerUpValue = 5;
   var player = new GameObject("player.gif", 0, 0);
-  var enemy1 = new GameObject("default-patrol.png", 1, 4, "patrol");
-  var enemy2 = new GameObject("default-hunter.png", 5, 0, "hunter", player);
-  var enemy3 = new GameObject("default-linear.png", 5, 4, "horizontal");
+  var enemy1 = new GameObject("poop.gif", 1, 4, "patrol");
+  var enemy2 = new GameObject("intestine.png", 5, 0, "hunter", player);
+  var enemy3 = new GameObject("poop2.gif", 5, 4, "horizontal");
 
   gameObjects.push(goal, powerUp, player, enemy1, enemy2, enemy3);
   enemies.push(enemy1, enemy2, enemy3);
