@@ -208,7 +208,7 @@ function triggerInterrupt(player, toilet, enemies, turnCounter, turnLimit) {
   var interrupt = false;
   if (player.xCoordinate === toilet.xCoordinate && player.yCoordinate === toilet.yCoordinate) {
     $("#game-over h4").html("You win!");
-    $("#navigation").hide();
+    $("#controls").hide();
     $("#game-over").show();
     interrupt = true;
   } else if (turnCounter === turnLimit) {
@@ -220,7 +220,7 @@ function triggerInterrupt(player, toilet, enemies, turnCounter, turnLimit) {
   enemies.forEach(function(enemy) {
     if (player.xCoordinate === enemy.xCoordinate && player.yCoordinate === enemy.yCoordinate) {
       $("#game-over h4").html("You lose!");
-      $("#navigation").hide();
+      $("#controls").hide();
       $("#game-over").show();
       interrupt = true;
     }
@@ -275,12 +275,14 @@ $(document).ready(function() {
   var enemies = [];
 
   // Create extra game objects and push to corresponding arrays
-  var player = new GameObject("player.png", 0, 0);
-  var toilet = new GameObject("toilet.png", 5, 5);
-  var enemy1 = new GameObject("poop.png", 1, 4, "patrol");
-  var enemy2 = new GameObject("hunter.gif", 5, 0, "hunter", player);
-  gameObjects.push(player, toilet, enemy1, enemy2);
-  enemies.push(enemy1, enemy2);
+  var player = new GameObject("default-player.png", 0, 0);
+  var toilet = new GameObject("default-goal.png", 5, 5);
+  var enemy1 = new GameObject("default-patrol.png", 1, 4, "patrol");
+  var enemy2 = new GameObject("default-hunter.png", 5, 0, "hunter", player);
+  var enemy3 = new GameObject("default-linear.png", 5, 4, "horizontal");
+  var powerUp = new GameObject("default-powerup.png", 3, 3,);
+  gameObjects.push(player, toilet, enemy1, enemy2, enemy3, powerUp);
+  enemies.push(enemy1, enemy2, enemy3);
 
   positionGameObjects(gameObjects);
 
