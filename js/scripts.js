@@ -212,9 +212,9 @@ function powerUpCheck(player, item) {
 }
 
 // USER INTERFACE LOGIC
-function triggerInterrupt(player, toilet, enemies, turnCounter, turnLimit) {
+function triggerInterrupt(player, goal, enemies, turnCounter, turnLimit) {
   var interrupt = false;
-  if (player.xCoordinate === toilet.xCoordinate && player.yCoordinate === toilet.yCoordinate) {
+  if (player.xCoordinate === goal.xCoordinate && player.yCoordinate === goal.yCoordinate) {
     $("#game-over h4").html("You win!");
     $("#controls").hide();
     $("#game-over").show();

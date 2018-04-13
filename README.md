@@ -12,8 +12,7 @@
 
 ## Description
 
-A basic framework for developing single-player, 2-dimensional, top-down, turn-based games. Basic game mechanics allow a player to move across a coordinate map while avoiding enemies and obstacles to complete a level.
-Current built-in features include the following:
+A basic framework for developing single-player, 2-dimensional, top-down, turn-based games. Basic game mechanics allow a player to move across a coordinate map while avoiding enemies and obstacles to complete a level. Current built-in features include the following:
 
 1. **Enemy Movement Patterns:** Lateral Patrol, Rectangular Patrol, Player Hunting.
 
