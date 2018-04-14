@@ -203,16 +203,18 @@ function notAWall(object, direction) {
   }
 }
 
-function powerUpCheck(player, item, value, turnCounter, turnLimit) {
+function boostPickUp(player, item) {
   if(player.xCoordinate === item.xCoordinate && player.yCoordinate === item.yCoordinate) {
     item.xCoordinate = "";
-    if (turnLimit === 0) {
-      return turnCounter += value;
-    } else if (turnLimit !== 0) {
-      return turnCounter -= value;
-    }
-  } else {
-    return turnCounter;
+    return true;
+  }
+}
+
+function boostActivate(player, item, value, turnCounter, turnLimit) {
+  if (turnLimit === 0) {
+    return turnCounter += value;
+  } else if (turnLimit !== 0) {
+    return turnCounter -= value;
   }
 }
 
@@ -261,10 +263,10 @@ function meterUp(turnCounter, turnLimit) {
 }
 
 // Negative Turn Counter
-function meterDown(turnCounter, poweredUp, powerUpValue) {
+function meterDown(turnCounter, poweredUp, boostValue) {
   var meterWidthMax = 660;
   if (poweredUp) {
-    var unitWidth = parseInt($("#meter").width()) / (turnCounter - powerUpValue);
+    var unitWidth = parseInt($("#meter").width()) / (turnCounter - boostValue);
   } else {
     var unitWidth = parseInt($("#meter").width()) / turnCounter;
   }
@@ -306,27 +308,30 @@ $(document).ready(function() {
 
   // Create Game Pieces and Push to Arrays
   var goal = new GameObject("default-goal.png", 5, 5);
-  var powerUp = new GameObject("default-powerup.png", 3, 3,);
-  var powerUpValue = 5;
+  var boost = new GameObject("default-powerup.png", 3, 3,);
+  var boostValue = 5;
   var player = new GameObject("default-player.png", 0, 0);
   var enemy1 = new GameObject("default-patrol.png", 1, 4, "patrol");
   var enemy2 = new GameObject("default-hunter.png", 5, 0, "hunter", player);
   var enemy3 = new GameObject("default-linear.png", 5, 4, "horizontal");
 
-  gameObjects.push(goal, powerUp, player, enemy1, enemy2, enemy3);
+  gameObjects.push(goal, boost, player, enemy1, enemy2, enemy3);
   enemies.push(enemy1, enemy2, enemy3);
 
   positionGameObjects(gameObjects);
 
   function progressTurn() {
-    turnCounter = powerUpCheck(player, powerUp, powerUpValue, turnCounter, turnLimit);
+    var boostPickedUp = boostPickUp(player, boost);
+    if (boostPickedUp) {
+      turnCounter = boostActivate(player, boost, boostValue, turnCounter, turnLimit);
+    }
     positionGameObjects(gameObjects);
 
     // CONFIGURE METER COUNTER
     // 1. Use meterUp
     turnCounter = meterUp(turnCounter, turnLimit);
     // OR 2. Use meterDown
-    // turnCounter = meterDown(turnCounter, poweredUp, powerUpValue)
+    // turnCounter = meterDown(turnCounter, boostPickedUp, boostValue);
 
     endGame = gameStatus(player, goal, enemies, turnCounter, turnLimit);
     if (endGame[0]) {
@@ -366,7 +371,7 @@ $(document).ready(function() {
     progressTurn();
   }
 
-  // Mouse Navigation
+  // Button Click Navigation
   $("#navigation button.movement").click(function() {
     if (endGame[0]) {
       return;
@@ -376,7 +381,7 @@ $(document).ready(function() {
     }
   });
 
-  // Arrow Key Navigation
+  // Keyboard Navigation
   $(document).keydown(function(e){
     if (endGame[0]) {
       return;
