@@ -203,7 +203,7 @@ function notAWall(object, direction) {
   }
 }
 
-function powerUpCheck(player, item, value, turnLimit, turnCounter) {
+function powerUpCheck(player, item, value, turnCounter, turnLimit) {
   if(player.xCoordinate === item.xCoordinate && player.yCoordinate === item.yCoordinate) {
     item.xCoordinate = "";
     if (turnLimit === 0) {
@@ -217,30 +217,6 @@ function powerUpCheck(player, item, value, turnLimit, turnCounter) {
 }
 
 // USER INTERFACE LOGIC
-function triggerInterrupt(player, goal, enemies, turnCounter, turnLimit) {
-  var interrupt = false;
-  if (player.xCoordinate === goal.xCoordinate && player.yCoordinate === goal.yCoordinate) {
-    $("#status h3").html("You win!");
-    $("#controls").hide();
-    $("#game-over").show();
-    interrupt = true;
-  } else if (turnCounter === turnLimit) {
-    $("#status h3").html("You're out of turns, you lose!");
-    $("#controls").hide();
-    $("#game-over").show();
-    interrupt = true;
-  }
-  enemies.forEach(function(enemy) {
-    if (player.xCoordinate === enemy.xCoordinate && player.yCoordinate === enemy.yCoordinate) {
-      $("#status h3").html("You lose!");
-      $("#controls").hide();
-      $("#game-over").show();
-      interrupt = true;
-    }
-  });
-  return interrupt;
-}
-
 function positionGameObjects(array) {
   $("td").text("");
   array.forEach(function(element) {
@@ -248,11 +224,32 @@ function positionGameObjects(array) {
   });
 }
 
+function gameStatus(player, goal, enemies, turnCounter, turnLimit) {
+  var endGame = [false];
+  if (player.xCoordinate === goal.xCoordinate && player.yCoordinate === goal.yCoordinate) {
+    $("#status h3").html("You win!");
+    $("#game-over").show();
+    endGame = [true, true];
+  } else if (turnCounter === turnLimit) {
+    $("#status h3").html("Out of turns. You lose!");
+    $("#game-over").show();
+    endGame = [true, false];
+  }
+  enemies.forEach(function(enemy) {
+    if (player.xCoordinate === enemy.xCoordinate && player.yCoordinate === enemy.yCoordinate) {
+      $("#status h3").html("Killed by enemy. You lose!");
+      $("#game-over").show();
+      endGame = [true, false];
+    }
+  });
+  return endGame;
+}
+
 // Positive Turn Counter
 function meterUp(turnCounter, turnLimit) {
   turnCounter ++;
   var percentileWidth = turnCounter / turnLimit * 100;
-  $("#meter").removeClass("warning"); // React to Power Up
+  $("#meter").removeClass("warning danger"); // React to Power Up
   if (percentileWidth >= 40 && percentileWidth < 70) {
     $("#meter").removeClass("danger"); // React to Power Up
     $("#meter").addClass("warning");
@@ -273,7 +270,7 @@ function meterDown(turnCounter, poweredUp, powerUpValue) {
   }
   turnCounter --;
   var percentileWidth = unitWidth * turnCounter / 660 * 100;
-  $("#meter").removeClass("warning"); // React to Power Up
+  $("#meter").removeClass("warning danger"); // React to Power Up
   if (percentileWidth >= 40 && percentileWidth < 70) {
     $("#meter").removeClass("danger");  // React to Power Up
     $("#meter").addClass("warning");
@@ -284,19 +281,30 @@ function meterDown(turnCounter, poweredUp, powerUpValue) {
   return turnCounter;
 }
 
+function shutdownMeter(endGameWin) {
+  if (endGameWin) {
+    $("#meter").addClass("shutdown-meter");
+    $("#meter").removeAttr("id");
+  } else {
+    $("#meter").addClass("danger");
+    $("#meter").width("100%");
+  }
+}
+
 $(document).ready(function() {
-  // Configure Meter
-  // Use 0% for Positive Turn Counting (turnCounter = 0, turnLimit = positive)
+  // CONFIGURE METER CONDITIONS
+  // Use 0% Width for Positive Turn Counting (turnCounter = 0, turnLimit = positive)
   // OR
-  // Use 100% for Negative Turn Counting (turnCounter = positive, turnLimit = 0)
+  // Use 100% Width for Negative Turn Counting (turnCounter = positive, turnLimit = 0)
   $("#meter").width("0%");
   var turnCounter = 0;
-  var turnLimit = 3;
+  var turnLimit = 9;
 
+  var endGame = [false];
   var gameObjects = [];
   var enemies = [];
 
-  // Create extra game objects and push to corresponding arrays
+  // Create Game Pieces and Push to Arrays
   var goal = new GameObject("default-goal.png", 5, 5);
   var powerUp = new GameObject("default-powerup.png", 3, 3,);
   var powerUpValue = 5;
@@ -311,46 +319,28 @@ $(document).ready(function() {
   positionGameObjects(gameObjects);
 
   function progressTurn() {
-    var interrupt = false;
-    turnCounter = powerUpCheck(player, powerUp, powerUpValue, turnLimit, turnCounter);
-
+    turnCounter = powerUpCheck(player, powerUp, powerUpValue, turnCounter, turnLimit);
     positionGameObjects(gameObjects);
-    triggerInterrupt(player, goal, enemies, turnCounter, turnLimit);
-    if (triggerInterrupt(player, goal, enemies, turnCounter, turnLimit) === true) {
-      if (player.xCoordinate === goal.xCoordinate && player.yCoordinate === goal.yCoordinate) {
-        $("#meter").addClass("shutdown-meter");
-        $("#meter").removeAttr("id");
-      } else {
-        if (turnLimit === 0) {
-          turnCounter = 1;
-        } else if (turnLimit !== 0) {
-          turnCounter = turnLimit - 1;
-        }
-      }
+
+    // CONFIGURE METER COUNTER
+    // 1. Use meterUp
+    turnCounter = meterUp(turnCounter, turnLimit);
+    // OR 2. Use meterDown
+    // turnCounter = meterDown(turnCounter, poweredUp, powerUpValue)
+
+    endGame = gameStatus(player, goal, enemies, turnCounter, turnLimit);
+    if (endGame[0]) {
+      shutdownMeter(endGame[1]);
     } else {
       enemies.forEach(function(enemy) {
         movePattern(enemy, turnCounter);
       });
       positionGameObjects(gameObjects);
-      triggerInterrupt(player, goal, enemies, turnCounter, turnLimit);
-      if (triggerInterrupt(player, goal, enemies, turnCounter, turnLimit) === true) {
-        if (player.xCoordinate === goal.xCoordinate && player.yCoordinate === goal.yCoordinate) {
-          $("#meter").addClass("shutdown-meter");
-          $("#meter").removeAttr("id");
-        } else {
-          if (turnLimit === 0) {
-            turnCounter = 1;
-          } else if (turnLimit !== 0) {
-            turnCounter = turnLimit - 1;
-          }
-        }
+      endGame = gameStatus(player, goal, enemies, turnCounter, turnLimit);
+      if (endGame[0]) {
+        shutdownMeter(false);
       }
     }
-    // Configure Meter - Use meterUp OR
-    turnCounter = meterUp(turnCounter, turnLimit);
-
-    // Configure Meter - Use meterDown
-    // turnCounter = meterDown(turnCounter, poweredUp, powerUpValue)
   }
 
   function playerMove(direction) {
@@ -378,13 +368,17 @@ $(document).ready(function() {
 
   // Mouse Navigation
   $("#navigation button.movement").click(function() {
-    var playerDirection = $(this).attr("id");
-    playerMove(playerDirection);
+    if (endGame[0]) {
+      return;
+    } else {
+      var playerDirection = $(this).attr("id");
+      playerMove(playerDirection);
+    }
   });
 
   // Arrow Key Navigation
   $(document).keydown(function(e){
-    if (triggerInterrupt(player, goal, enemies, turnCounter, turnLimit)) {
+    if (endGame[0]) {
       return;
     } else if (e.keyCode === 65) {
        playerMove("left")
