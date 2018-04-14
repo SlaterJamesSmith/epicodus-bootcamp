@@ -17,10 +17,17 @@ table {
 }
 
 td {
-  border: solid 1px black;
   height: 110px;
   width: 110px;
   text-align: center;
+}
+
+img {
+  max-width: 100%;
+}
+
+img.left {
+  transform: scaleX(-1);
 }
 
 .btn {
@@ -29,6 +36,22 @@ td {
 
 .display-none {
   display: none;
+}
+
+.shutdown-meter {
+  animation: slide-down 1s 1 forwards, back-to-green 1s 1 forwards;
+  background-color: #5cf9a2;
+  height: 40px;
+  width: 50%;
+}
+
+.shutdown-meter.warning {
+ background-color: #f6f95c;
+}
+
+.shutdown-meter.danger{
+  animation: slide-down 1s 1 forwards, back-to-green 1s 1 forwards;
+  background-color: #ff0000ff;
 }
 
 #gameboard, #navigation {
@@ -44,13 +67,16 @@ td {
 
 #status h3 {
   float: left;
+  font-size: 1.2em;
   font-weight: bold;
-  margin: 6px 10px;
+  margin: 6px 0px;
+  padding-top: 5px;
+  width: 100%;
 }
 
 #meter {
   background-color: #5cf9a2;
-  height: 38px;
+  height: 40px;
 }
 
 #meter.warning {
@@ -58,7 +84,8 @@ td {
 }
 
 #meter.danger {
-  background-color: #ff5151;
+  animation: pulse 1s infinite;
+  background-color: #ff0000ff;
 }
 
 #controls, #controls .row {
@@ -82,8 +109,20 @@ td {
   width: 75px;
 }
 
-/* Game Board Obstructions */
+/* Animations */
+@keyframes pulse {
+  50% {background-color: #ff000000;}
+}
 
+@keyframes slide-down {
+  100% {width: 0%;}
+}
+
+@keyframes back-to-green {
+  100% {background-color: #5cf9a2;}
+}
+
+/* Game Board Obstructions */
 .barrier {
   background-color: black;
 }

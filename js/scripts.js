@@ -4,7 +4,7 @@ function GameObject (avatar, xCoordinate, yCoordinate, type, target, direction) 
   this.yCoordinate = yCoordinate;
   this.enemyType = type;
   this.enemyTarget = target;
-  this.enemyDirection = direction;
+  this.direction = direction;
 }
 
 function coinFlip() {
@@ -86,67 +86,67 @@ function moveNpcHunter(enemy) {
 }
 
 function moveNpcPatrol(enemy) {
-  if (enemy.enemyDirection === "down") {
+  if (enemy.direction === "down") {
     if (enemy.yCoordinate < 5 && notABarrier(enemy, "down") && notAWall(enemy, "down")) {
       enemy.yCoordinate +=1;
     } else {
-      enemy.enemyDirection = "left";
+      enemy.direction = "left";
     }
-  } else if (enemy.enemyDirection === "left") {
+  } else if (enemy.direction === "left") {
     if (enemy.xCoordinate > 0 && notABarrier(enemy, "left") && notAWall(enemy, "left")) {
       enemy.xCoordinate -=1;
     } else {
-      enemy.enemyDirection = "up";
+      enemy.direction = "up";
     }
-  } else if (enemy.enemyDirection === "up") {
+  } else if (enemy.direction === "up") {
     if (enemy.yCoordinate > 0 && notABarrier(enemy, "up") && notAWall(enemy, "up")) {
       enemy.yCoordinate -=1;
     } else {
-      enemy.enemyDirection = "right";
+      enemy.direction = "right";
     }
-  } else if (enemy.enemyDirection === "right") {
+  } else if (enemy.direction === "right") {
     if (enemy.xCoordinate < 5 && notABarrier(enemy, "right") && notAWall(enemy, "right")) {
       enemy.xCoordinate +=1;
     } else {
-      enemy.enemyDirection = "down";
+      enemy.direction = "down";
     }
   } else {
-    enemy.enemyDirection = "left";
+    enemy.direction = "left";
   }
 }
 
 function moveNpcHorizontal(enemy) {
-  if (enemy.enemyDirection === "right") {
+  if (enemy.direction === "right") {
     if (enemy.xCoordinate < 5 && notAWall(enemy, "right") && notABarrier(enemy, "right")) {
       enemy.xCoordinate += 1;
     } else {
       enemy.xCoordinate -= 1;
-      enemy.enemyDirection = "left";
+      enemy.direction = "left";
     }
   } else {
     if (enemy.xCoordinate > 0 && notAWall(enemy, "left") && notABarrier(enemy, "left")) {
       enemy.xCoordinate -= 1;
     } else {
       enemy.xCoordinate += 1;
-      enemy.enemyDirection = "right";
+      enemy.direction = "right";
     }
   }
 }
 
 function moveNpcVertical(enemy) {
-  if (enemy.enemyDirection === "down") {
+  if (enemy.direction === "down") {
     if (enemy.yCoordinate < 5 && notAWall(enemy, "down") && notABarrier(enemy, "down")) {
       enemy.yCoordinate += 1;
     } else {
       enemy.yCoordinate -= 1;
-      enemy.enemyDirection = "up";
+      enemy.direction = "up";
     }
   } else {
     if (enemy.yCoordinate > 0 && notAWall(enemy, "up") && notABarrier(enemy, "up")) {
       enemy.yCoordinate -= 1;
     } else {
       enemy.yCoordinate += 1;
-      enemy.enemyDirection = "down";
+      enemy.direction = "down";
     }
   }
 }
@@ -215,19 +215,19 @@ function powerUpCheck(player, item) {
 function triggerInterrupt(player, goal, enemies, turnCounter, turnLimit) {
   var interrupt = false;
   if (player.xCoordinate === goal.xCoordinate && player.yCoordinate === goal.yCoordinate) {
-    $("#game-over h4").html("You win!");
+    $("#status h3").html("You win!");
     $("#controls").hide();
     $("#game-over").show();
     interrupt = true;
   } else if (turnCounter === turnLimit) {
-    $("#game-over h4").html("You're out of turns, you lose!");
+    $("#status h3").html("You're out of turns, you lose!");
     $("#controls").hide();
     $("#game-over").show();
     interrupt = true;
   }
   enemies.forEach(function(enemy) {
     if (player.xCoordinate === enemy.xCoordinate && player.yCoordinate === enemy.yCoordinate) {
-      $("#game-over h4").html("You lose!");
+      $("#status h3").html("You lose!");
       $("#controls").hide();
       $("#game-over").show();
       interrupt = true;
@@ -239,11 +239,11 @@ function triggerInterrupt(player, goal, enemies, turnCounter, turnLimit) {
 function positionGameObjects(array) {
   $("td").text("");
   array.forEach(function(element) {
-    $(".y" + element.yCoordinate + " .x" + element.xCoordinate).html("<img src=\"img/" + element.avatar + "\">");
+    $(".y" + element.yCoordinate + " .x" + element.xCoordinate).html("<img src=\"img/" + element.avatar + "\" class=\"" + element.direction + "\">");
   });
 }
 
-// Positive Turn Counter - Not In Use
+// Positive Turn Counter - In Use
 function meterUp(turnCounter, turnLimit) {
   turnCounter ++;
   var percentileWidth = turnCounter / turnLimit * 100;
@@ -258,7 +258,7 @@ function meterUp(turnCounter, turnLimit) {
   return turnCounter;
 }
 
-// Negative Turn Counter - In Use
+// Negative Turn Counter - Not In Use
 function meterDown(turnCounter, poweredUp, powerUpValue) {
   var meterWidthMax = 660;
   if (poweredUp) {
@@ -283,9 +283,9 @@ $(document).ready(function() {
   // Configure Meter
   // Use 0% for Positive Turn Counting (turnCounter < turnLimit) or
   // Use 100% for Negative Turn Counting (turnCounter > turnLimit)
-  $("#meter").width("100%")
-  var turnCounter = 20;
-  var turnLimit = 0;
+  $("#meter").width("0%")
+  var turnCounter = 0;
+  var turnLimit = 20;
 
   var gameObjects = [];
   var enemies = [];
@@ -321,20 +321,35 @@ $(document).ready(function() {
       });
       positionGameObjects(gameObjects);
     }
-    // Configure Meter - Use meterUp or meterDown - meterDown in Use
-    // turnCounter = meterUp(turnCounter, turnLimit);
-    turnCounter = meterDown(turnCounter, poweredUp, powerUpValue)
     triggerInterrupt(player, goal, enemies, turnCounter, turnLimit);
+    if (triggerInterrupt(player, goal, enemies, turnCounter, turnLimit) === true) {
+      if (player.xCoordinate === goal.xCoordinate && player.yCoordinate === goal.yCoordinate) {
+        $("#meter").addClass("shutdown-meter");
+        $("#meter").removeAttr("id");
+      } else {
+        if (turnLimit === 0) {
+          turnCounter = 1;
+        } else if (turnLimit !== 0) {
+          turnCounter = turnLimit - 1;
+        }
+      }
+    }
+
+    // Configure Meter - Use meterUp or meterDown - meterUp in Use
+    turnCounter = meterUp(turnCounter, turnLimit);
+    // turnCounter = meterDown(turnCounter, poweredUp, powerUpValue)
   }
 
   function playerMove(direction) {
     if (direction === "left") {
       if (player.xCoordinate > 0 && notAWall(player, "left") && notABarrier(player, "left")) {
         player.xCoordinate = player.xCoordinate - 1;
+        player.direction = "left";
       }
     } else if (direction === "right") {
       if (player.xCoordinate < 5 && notAWall(player, "right") && notABarrier(player, "right")) {
         player.xCoordinate = player.xCoordinate + 1;
+        player.direction = "right";
       }
     } else if (direction === "up") {
       if (player.yCoordinate > 0 && notAWall(player, "up") && notABarrier(player, "up")) {
