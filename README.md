@@ -51,10 +51,6 @@ Visit website link for demo: https://m-chu.github.io/team-week-1/
 
 * Enemy collisions not currently supported.
 
-## Support and Contact
-
-Please send comments and questions to Mike Chu at mcihkue@gmail.com.
-
 ## Technologies Used
 
 * HTML

@@ -203,11 +203,16 @@ function notAWall(object, direction) {
   }
 }
 
-function powerUpCheck(player, item) {
+function powerUpCheck(player, item, value, turnLimit, turnCounter) {
   if(player.xCoordinate === item.xCoordinate && player.yCoordinate === item.yCoordinate) {
-    return true;
-  } else{
-    return false;
+    item.xCoordinate = "";
+    if (turnLimit === 0) {
+      return turnCounter += value;
+    } else if (turnLimit !== 0) {
+      return turnCounter -= value;
+    }
+  } else {
+    return turnCounter;
   }
 }
 
@@ -243,7 +248,7 @@ function positionGameObjects(array) {
   });
 }
 
-// Positive Turn Counter - In Use
+// Positive Turn Counter
 function meterUp(turnCounter, turnLimit) {
   turnCounter ++;
   var percentileWidth = turnCounter / turnLimit * 100;
@@ -258,7 +263,7 @@ function meterUp(turnCounter, turnLimit) {
   return turnCounter;
 }
 
-// Negative Turn Counter - Not In Use
+// Negative Turn Counter
 function meterDown(turnCounter, poweredUp, powerUpValue) {
   var meterWidthMax = 660;
   if (poweredUp) {
@@ -281,11 +286,12 @@ function meterDown(turnCounter, poweredUp, powerUpValue) {
 
 $(document).ready(function() {
   // Configure Meter
-  // Use 0% for Positive Turn Counting (turnCounter < turnLimit) or
-  // Use 100% for Negative Turn Counting (turnCounter > turnLimit)
-  $("#meter").width("0%")
+  // Use 0% for Positive Turn Counting (turnCounter = 0, turnLimit = positive)
+  // OR
+  // Use 100% for Negative Turn Counting (turnCounter = positive, turnLimit = 0)
+  $("#meter").width("0%");
   var turnCounter = 0;
-  var turnLimit = 20;
+  var turnLimit = 3;
 
   var gameObjects = [];
   var enemies = [];
@@ -305,22 +311,10 @@ $(document).ready(function() {
   positionGameObjects(gameObjects);
 
   function progressTurn() {
-    var poweredUp = powerUpCheck(player, powerUp);
-    if (poweredUp) {
-      powerUp.xCoordinate = "";
-      if (turnLimit === 0) {
-        turnCounter += powerUpValue;
-      } else if (turnLimit !== 0) {
-        turnCounter -= powerUpValue;
-      }
-    }
+    var interrupt = false;
+    turnCounter = powerUpCheck(player, powerUp, powerUpValue, turnLimit, turnCounter);
+
     positionGameObjects(gameObjects);
-    if (triggerInterrupt(player, goal, enemies, turnCounter, turnLimit) === false) {
-      enemies.forEach(function(enemy) {
-        movePattern(enemy, turnCounter);
-      });
-      positionGameObjects(gameObjects);
-    }
     triggerInterrupt(player, goal, enemies, turnCounter, turnLimit);
     if (triggerInterrupt(player, goal, enemies, turnCounter, turnLimit) === true) {
       if (player.xCoordinate === goal.xCoordinate && player.yCoordinate === goal.yCoordinate) {
@@ -333,10 +327,29 @@ $(document).ready(function() {
           turnCounter = turnLimit - 1;
         }
       }
+    } else {
+      enemies.forEach(function(enemy) {
+        movePattern(enemy, turnCounter);
+      });
+      positionGameObjects(gameObjects);
+      triggerInterrupt(player, goal, enemies, turnCounter, turnLimit);
+      if (triggerInterrupt(player, goal, enemies, turnCounter, turnLimit) === true) {
+        if (player.xCoordinate === goal.xCoordinate && player.yCoordinate === goal.yCoordinate) {
+          $("#meter").addClass("shutdown-meter");
+          $("#meter").removeAttr("id");
+        } else {
+          if (turnLimit === 0) {
+            turnCounter = 1;
+          } else if (turnLimit !== 0) {
+            turnCounter = turnLimit - 1;
+          }
+        }
+      }
     }
-
-    // Configure Meter - Use meterUp or meterDown - meterUp in Use
+    // Configure Meter - Use meterUp OR
     turnCounter = meterUp(turnCounter, turnLimit);
+
+    // Configure Meter - Use meterDown
     // turnCounter = meterDown(turnCounter, poweredUp, powerUpValue)
   }
 
