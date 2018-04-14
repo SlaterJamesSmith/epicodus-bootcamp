@@ -308,7 +308,7 @@ $(document).ready(function() {
 
   // Create Game Pieces and Push to Arrays
   var goal = new GameObject("default-goal.png", 5, 5);
-  var boost = new GameObject("default-powerup.png", 3, 3,);
+  var boost = new GameObject("default-powerup.png", 3, 3);
   var boostValue = 5;
   var player = new GameObject("default-player.png", 0, 0);
   var enemy1 = new GameObject("default-patrol.png", 1, 4, "patrol");
