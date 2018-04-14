@@ -91,27 +91,37 @@ function moveNpcPatrol(enemy) {
       enemy.yCoordinate +=1;
     } else {
       enemy.direction = "left";
+      if (enemy.xCoordinate > 0 && notABarrier(enemy, "left") && notAWall(enemy, "left")) {
+        enemy.xCoordinate -=1;
+      }
     }
   } else if (enemy.direction === "left") {
     if (enemy.xCoordinate > 0 && notABarrier(enemy, "left") && notAWall(enemy, "left")) {
       enemy.xCoordinate -=1;
     } else {
       enemy.direction = "up";
+      if (enemy.yCoordinate > 0 && notABarrier(enemy, "up") && notAWall(enemy, "up")) {
+        enemy.yCoordinate -=1;
+      }
     }
   } else if (enemy.direction === "up") {
     if (enemy.yCoordinate > 0 && notABarrier(enemy, "up") && notAWall(enemy, "up")) {
       enemy.yCoordinate -=1;
     } else {
       enemy.direction = "right";
+      if (enemy.xCoordinate < 5 && notABarrier(enemy, "right") && notAWall(enemy, "right")) {
+        enemy.xCoordinate +=1;
+      }
     }
   } else if (enemy.direction === "right") {
     if (enemy.xCoordinate < 5 && notABarrier(enemy, "right") && notAWall(enemy, "right")) {
       enemy.xCoordinate +=1;
     } else {
       enemy.direction = "down";
+      if (enemy.yCoordinate < 5 && notABarrier(enemy, "down") && notAWall(enemy, "down")) {
+        enemy.yCoordinate +=1;
+      }
     }
-  } else {
-    enemy.direction = "left";
   }
 }
 
@@ -244,6 +254,9 @@ function gameStatus(player, goal, enemies, turnCounter, turnLimit) {
       endGame = [true, false];
     }
   });
+  if (endGame[0]) {
+    $("#controls").hide();
+  }
   return endGame;
 }
 
@@ -311,9 +324,9 @@ $(document).ready(function() {
   var boost = new GameObject("default-powerup.png", 3, 3);
   var boostValue = 5;
   var player = new GameObject("default-player.png", 0, 0);
-  var enemy1 = new GameObject("default-patrol.png", 1, 4, "patrol");
-  var enemy2 = new GameObject("default-hunter.png", 5, 0, "hunter", player);
-  var enemy3 = new GameObject("default-linear.png", 5, 4, "horizontal");
+  var enemy1 = new GameObject("default-patrol.png", 1, 4, "patrol", "", "left");
+  var enemy2 = new GameObject("default-hunter.png", 5, 0, "hunter", player, "left");
+  var enemy3 = new GameObject("default-linear.png", 5, 4, "horizontal", "", "left");
 
   gameObjects.push(goal, boost, player, enemy1, enemy2, enemy3);
   enemies.push(enemy1, enemy2, enemy3);
