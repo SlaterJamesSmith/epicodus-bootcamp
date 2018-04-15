@@ -11,3 +11,7 @@ Thumbs.db
 # Packages #
 ######################
 node_modules/
+
+# Bundle #
+######################
+dist/
