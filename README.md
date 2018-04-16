@@ -16,10 +16,6 @@ _This project is a practice in utilizing functions and logic to build a simple s
 
 _None._
 
-## Support and contact details
-
-_Please feel free to send your comments, questions, or concerns to Mike Chu at mcihkue@gmail.com._
-
 ## Technologies Used
 
 * _HTML_
@@ -28,8 +24,8 @@ _Please feel free to send your comments, questions, or concerns to Mike Chu at m
 * _JavaScript_
 * _jQuery_
 
-### License
+## License
 
-*GPL*
+_This software is licensed under the MIT license._
 
 Copyright (c) 2018 **_Mike Chu_**
