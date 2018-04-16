@@ -1,4 +1,4 @@
-# _2D Game-Maker Framework_
+# _2D GAME-MAKER FRAMEWORK_
 
 #### _Epicodus Team Project - Intro - Week 5, April 9, 2018_
 
@@ -39,7 +39,7 @@ A basic framework for developing single-player, 2-dimensional, top-down, turn-ba
 
 ## Setup/Installation Requirements
 
-Visit website link for demo: https://m-chu.github.io/team-week-1/
+Visit website link for demo: https://m-chu.github.io/epicodus-team-week-1/
 
 1. Clone repository.
 
@@ -61,6 +61,6 @@ Visit website link for demo: https://m-chu.github.io/team-week-1/
 
 ### License
 
-_GPL_
+_This software is licensed under the MIT license._
 
 Copyright (c) 2018 **Mike Chu, Kayl Eubanks, Kelsey Guerra, Nicholas Kardish & Susan Southall**
