@@ -29,7 +29,3 @@ None.
 * Bootstrap
 * JavaScript
 * jQuery
-
-### License
-
-_GPL_
