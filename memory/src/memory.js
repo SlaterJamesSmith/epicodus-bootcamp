@@ -1,7 +1,7 @@
-export function Card(id) {
-  this.id = id;
+export function Card(type) {
+  this.type = type;
   this.faceUp = true;
-  this.position = ;
+  this.position;
 }
 
 Card.prototype.flipUp = function () {
@@ -12,20 +12,19 @@ Card.prototype.flipDown = function () {
   this.faceUp = false;
 };
 
-var deck = [];
-
-export function createDeck(numberOfCardTypes) {
+export function createDeck(deck) {
+  var numberOfCardTypes = 6;
   for (var i = 1; i <= numberOfCardTypes; i++) {
     deck.push(new Card(i));
     deck.push(new Card(i));
   }
 }
 
-export function cardPositions() {
+export function cardPositions(deck) {
   var deckSize = 12;
   var positionsArray = [];
-  for (var i = 1; i <= deckSize; i++) {
-    positionsArray.push(i);
+  for (var a = 1; a <= deckSize; a++) {
+    positionsArray.push(a);
   }
   // Durstenfeld Shuffle Algorithm
   for (var i = positionsArray.length - 1; i > 0; i--) {
@@ -34,7 +33,7 @@ export function cardPositions() {
     positionsArray[i] = positionsArray[j];
     positionsArray[j] = temp;
   }
-  for (var i = 0; i < positionsArray.length; i++) {
-    deck[i].position = positionsArray[i];
+  for (var b = 0; b < positionsArray.length; b++) {
+    deck[b].position = positionsArray[b];
   }
 }
