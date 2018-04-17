@@ -5,3 +5,13 @@ export function generateNumbers(){
   }
   return generatedArray;
 }
+
+export function filterModuloThree(array) {
+  var generatedArray = [];
+  array.forEach(function(element) {
+    if (element % 3 === 0) {
+      generatedArray.push(element);
+    }
+  });
+  return generatedArray;
+}

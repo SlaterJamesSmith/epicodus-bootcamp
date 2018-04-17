@@ -1,4 +1,4 @@
-import { generateNumbers } from '../src/euler.js';
+import { generateNumbers, filterModuloThree } from '../src/euler.js';
 
 it('should generate an array of numbers between 1 and 1000', function(){
   var testArray = generateNumbers();
@@ -6,10 +6,14 @@ it('should generate an array of numbers between 1 and 1000', function(){
 });
 
 it('should generate an array of numbers between 1 and 1000 that are divisible by three', function(){
-  var testArray = generateNumbers();
-  var arraySum = 0;
+  var initialArray = generateNumbers();
+  var testArray = filterModuloThree(initialArray);
+  console.log(testArray);
+  var divisibleByThree = true;
   testArray.forEach(function(element) {
-    arraySum += element;
+    if (element % 3 !== 0) {
+      divisibleByThree = false;
+    }
   });
-  expect(arraySum % 3).toEqual(0);
+  expect(divisibleByThree).toEqual(true);
 });
