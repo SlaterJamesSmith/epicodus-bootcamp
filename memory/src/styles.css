@@ -1,0 +1,28 @@
+td {
+  background: radial-gradient(circle, #eae4d6, #82631d);
+  border: 10px solid #fff;
+  border-radius: 20px;
+  box-shadow: 0px 0px 2px #000;
+  display: inline-block;
+  height: 200px;
+  margin: 10px;
+  text-align: center;
+  width: 150px;
+}
+
+td:hover {
+  cursor: pointer;
+}
+
+img {
+  margin-top: 40px;
+  max-width: 75%;
+}
+
+.display-none {
+  display: none;
+}
+
+.no-click {
+  pointer-events: none;
+}
