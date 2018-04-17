@@ -1,6 +1,6 @@
-export function generateNumbers(){
+export function generateNumbers(number){
   var generatedArray = [];
-  for (var i = 1; i < 1001; i++) {
+  for (var i = 1; i <= number; i++) {
     generatedArray.push(i);
   }
   return generatedArray;
@@ -14,4 +14,12 @@ export function filterModulo(array) {
     }
   });
   return generatedArray;
+}
+
+export function arraySum(array) {
+  var sum = 0;
+  array.forEach(function(element) {
+    sum += element;
+  });
+  return sum;
 }
