@@ -1,0 +1,5 @@
+1. Return all numbers from 1 - 1000.
+2. Return all numbers that are multiples of 3.
+3. Return all numbers that are multiples of 5.
+4. Return all numbers that are multiples of 3 or 5, without duplicates.
+5. Sum all numbers that are multiples of 3 or 5.
