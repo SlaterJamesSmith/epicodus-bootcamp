@@ -5,6 +5,7 @@
 #### _Collaborators_
 
 * Mike Chu
+* William Chu
 
 ## Description
 
