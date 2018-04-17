@@ -14,7 +14,7 @@ A collection of practice projects focused on Test Driven Development.
 
 1. Clone repository.
 2. Explore project folders in terminal.
-3. Run "npm install" to load required packages.
+3. Run "npm install" in project root to load required packages.
 
 ## Known Bugs
 
@@ -26,3 +26,4 @@ None.
 * Node.js
 * Jasmine
 * Karma
+* Webpack
