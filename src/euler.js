@@ -6,10 +6,10 @@ export function generateNumbers(){
   return generatedArray;
 }
 
-export function filterModuloThree(array) {
+export function filterModulo(array) {
   var generatedArray = [];
   array.forEach(function(element) {
-    if (element % 3 === 0) {
+    if (element % 3 === 0 || element % 5 === 0) {
       generatedArray.push(element);
     }
   });
