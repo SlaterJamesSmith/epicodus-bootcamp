@@ -1,5 +1,5 @@
 import $ from 'jquery';
-// import { function } from './filename';
+// import { generateNumbers } from './euler.js';
 import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './styles.css';
