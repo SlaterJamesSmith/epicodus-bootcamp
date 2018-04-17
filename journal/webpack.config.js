@@ -17,7 +17,7 @@ module.exports = {
     new UglifyJsPlugin({ sourceMap: true }),
     new CleanWebpackPlugin(['dist']),
     new HtmlWebpackPlugin({
-      title: 'Journal',
+      title: 'EPI-JS-WK1: Journal',
       template: './src/index.html',
       inject: 'body'
     })

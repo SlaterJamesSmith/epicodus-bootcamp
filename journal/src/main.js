@@ -21,5 +21,4 @@ $(document).ready(function() {
                         '<p>Consonant Count: ' + newEntry.consonantCount + '</p>');
 
   });
-
 });

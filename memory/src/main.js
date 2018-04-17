@@ -12,7 +12,6 @@ function isMatch (cardType1, cardType2) {
   }
 }
 
-
 $(document).ready(function() {
   var deck = [];
   var cardType1 = null;
