@@ -52,7 +52,8 @@ describe('Character', function() {
     expect(newCharacter.yCoord).toEqual(1);
   });
 
-  it('should add level-up attribute points to corresponding playter attributes', function() {
+  it('should add level-up attribute points to corresponding player attributes', function() {
+    newCharacter.attributePts = 3;
     newCharacter.assignAttrPoint("str");
     newCharacter.assignAttrPoint("dex");
     newCharacter.assignAttrPoint("int");
@@ -60,5 +61,16 @@ describe('Character', function() {
     expect(newCharacter.dexterity).toEqual(11);
     expect(newCharacter.intelligence).toEqual(6);
   });
+
+  it('should not assign attribute points if character has no unusued points', function() {
+    newCharacter.attributePts = 1
+    newCharacter.assignAttrPoint("str");
+    newCharacter.assignAttrPoint("dex");
+    newCharacter.assignAttrPoint("int");
+    expect(newCharacter.strength).toEqual(11);
+    expect(newCharacter.dexterity).toEqual(10);
+    expect(newCharacter.intelligence).toEqual(5);
+  });
+
 
 });

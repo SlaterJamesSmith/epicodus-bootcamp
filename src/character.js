@@ -8,6 +8,8 @@ export class Character {
     this.inventory = ['bandage', 'bat'];
     this.xCoord = 0;
     this.yCoord = 0;
+    this.attributePts = 0;
+
   }
   movePlayer(direction) {
     if (direction === 'right') {
@@ -21,12 +23,19 @@ export class Character {
     }
   }
   assignAttrPoint(attribute) {
-    if (attribute === "str") {
-      this.strength++;
-    } else if (attribute === "dex") {
-      this.dexterity++;
-    } else if (attribute === "int") {
-      this.intelligence++;
+    if (this.attributePts === 0) {
+      return;
+    } else {
+      if (attribute === "str") {
+        this.strength++;
+        this.attributePts--;
+      } else if (attribute === "dex") {
+        this.dexterity++;
+        this.attributePts--;
+      } else if (attribute === "int") {
+        this.intelligence++;
+        this.attributePts--;
+      }
     }
   }
 }
