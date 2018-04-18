@@ -123,5 +123,7 @@ describe('Character', function() {
     newCharacter.currentExp = 300;
     newCharacter.checkXP();
     expect(newCharacter.level).toEqual(3);
+    expect(newCharacter.attributePts).toEqual(6);
+    expect(newCharacter.currentExp).toEqual(80);
   });
 });

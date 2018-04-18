@@ -56,7 +56,7 @@ export class Character {
     }
   }
   checkXP() {
-    if (this.currentExp >= this.levelExp) {
+    while (this.currentExp >= this.levelExp) {
       this.level++;
       this.currentExp -= this.levelExp;
       this.levelExp *= 1.2;
