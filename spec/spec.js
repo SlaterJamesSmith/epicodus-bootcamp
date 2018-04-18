@@ -63,7 +63,7 @@ describe('Character', function() {
   });
 
   it('should not assign attribute points if character has no unusued points', function() {
-    newCharacter.attributePts = 1
+    newCharacter.attributePts = 1;
     newCharacter.assignAttrPoint("str");
     newCharacter.assignAttrPoint("dex");
     newCharacter.assignAttrPoint("int");
@@ -74,6 +74,12 @@ describe('Character', function() {
 
   it('should add health to player when a bandage is used', function() {
     newCharacter.health = 50;
+    newCharacter.useItem('bandage');
+    expect(newCharacter.health).toEqual(100);
+  });
+
+  it('should add health to player, but not exceed max health, when a bandage is used', function() {
+    newCharacter.health = 75;
     newCharacter.useItem('bandage');
     expect(newCharacter.health).toEqual(100);
   });
