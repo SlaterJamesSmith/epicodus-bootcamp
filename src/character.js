@@ -4,5 +4,7 @@ export class Character {
     this.strength = str;
     this.dexterity = dex;
     this.intelligence = int;
+    this.health = 100;
+    this.inventory = ['bandage', 'bat'];
   }
 }
