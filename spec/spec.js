@@ -44,4 +44,12 @@ describe('Character', function() {
     expect(newCharacter.yCoord).toEqual(0);
   });
 
+  it('should update player y-coordinate by one unit downward when moving across y-axis', function () {
+    newCharacter.xCoord = 0;
+    newCharacter.yCoord = 0;
+    newCharacter.movePlayer("down");
+    expect(newCharacter.xCoord).toEqual(0);
+    expect(newCharacter.yCoord).toEqual(1);
+  });
+
 });
