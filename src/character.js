@@ -6,5 +6,12 @@ export class Character {
     this.intelligence = int;
     this.health = 100;
     this.inventory = ['bandage', 'bat'];
+    this.xCoord = 0;
+    this.yCoord = 0;
+  }
+  movePlayer(direction) {
+    if (direction === 'right') {
+      this.xCoord++;
+    }
   }
 }
