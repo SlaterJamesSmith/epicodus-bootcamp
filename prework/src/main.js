@@ -1,5 +1,5 @@
 import $ from 'jquery';
-import { pingPong } from './ping-pong';
+import { pingPong } from './ping-pong.js';
 import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './styles.css';

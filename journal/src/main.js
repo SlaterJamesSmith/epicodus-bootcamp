@@ -1,5 +1,5 @@
 import $ from 'jquery';
-import { Entry } from './journal';
+import { Entry } from './journal.js';
 import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './styles.css';

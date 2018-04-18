@@ -6,6 +6,7 @@
 
 * Mike Chu
 * William Chu
+* Matthew Dowdney
 
 ## Description
 

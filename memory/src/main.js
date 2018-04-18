@@ -1,5 +1,5 @@
 import $ from 'jquery';
-import { Card, createDeck, cardPositions } from './memory';
+import { Card, createDeck, cardPositions } from './memory.js';
 import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './styles.css';
