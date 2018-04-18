@@ -36,4 +36,12 @@ describe('Character', function() {
     expect(newCharacter.yCoord).toEqual(0);
   });
 
+  it('should update player y-coordinate by one unit upward when moving across y-axis', function () {
+    newCharacter.xCoord = 0;
+    newCharacter.yCoord = 1;
+    newCharacter.movePlayer("up");
+    expect(newCharacter.xCoord).toEqual(0);
+    expect(newCharacter.yCoord).toEqual(0);
+  });
+
 });
