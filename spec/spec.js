@@ -20,7 +20,7 @@ describe('Character', function() {
     expect(newCharacter.inventory).toEqual(['bandage', 'bat']);
   });
 
-  it('should update player x-coordinate by one unit when moving across x-axis', function () {
+  it('should update player x-coordinate by one unit to the right when moving across x-axis', function () {
     newCharacter.xCoord = 0;
     newCharacter.yCoord = 0;
     newCharacter.movePlayer("right");
@@ -28,12 +28,20 @@ describe('Character', function() {
     expect(newCharacter.yCoord).toEqual(0);
   });
 
-  it('should update player x-coordinate by one unit when moving across x-axis', function () {
+  it('should update player x-coordinate by one unit to the left when moving across x-axis', function () {
     newCharacter.xCoord = 2;
     newCharacter.yCoord = 0;
     newCharacter.movePlayer("left");
     expect(newCharacter.xCoord).toEqual(1);
     expect(newCharacter.yCoord).toEqual(0);
+  });
+
+  it('should update player x-coordinate by one unit when moving across x-axis', function () {
+    newCharacter.xCoord = 0;
+    newCharacter.yCoord = 0;
+    newCharacter.movePlayer("up");
+    expect(newCharacter.xCoord).toEqual();
+    expect(newCharacter.yCoord).toEqual(1);
   });
 
 });
