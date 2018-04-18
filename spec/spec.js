@@ -20,7 +20,7 @@ describe('Character', function() {
     expect(newCharacter.inventory).toEqual(['bandage', 'bat', 'bandage']);
   });
 
-  it('should update player x-coordinate by one unit to the right when moving across x-axis', function () {
+  it('should update player x-coordinate by one unit to the right when moving across x-axis', function() {
     newCharacter.xCoord = 0;
     newCharacter.yCoord = 0;
     newCharacter.movePlayer("right");
@@ -28,7 +28,7 @@ describe('Character', function() {
     expect(newCharacter.yCoord).toEqual(0);
   });
 
-  it('should update player x-coordinate by one unit to the left when moving across x-axis', function () {
+  it('should update player x-coordinate by one unit to the left when moving across x-axis', function() {
     newCharacter.xCoord = 2;
     newCharacter.yCoord = 0;
     newCharacter.movePlayer("left");
@@ -36,7 +36,7 @@ describe('Character', function() {
     expect(newCharacter.yCoord).toEqual(0);
   });
 
-  it('should update player y-coordinate by one unit upward when moving across y-axis', function () {
+  it('should update player y-coordinate by one unit upward when moving across y-axis', function() {
     newCharacter.xCoord = 0;
     newCharacter.yCoord = 1;
     newCharacter.movePlayer("up");
@@ -44,7 +44,7 @@ describe('Character', function() {
     expect(newCharacter.yCoord).toEqual(0);
   });
 
-  it('should update player y-coordinate by one unit downward when moving across y-axis', function () {
+  it('should update player y-coordinate by one unit downward when moving across y-axis', function() {
     newCharacter.xCoord = 0;
     newCharacter.yCoord = 0;
     newCharacter.movePlayer("down");
@@ -84,10 +84,14 @@ describe('Character', function() {
     expect(newCharacter.health).toEqual(100);
   });
 
-  it ('should remove item from the inventory after use', function(){
+  it ('should remove one item from the inventory after each use', function() {
     newCharacter.useItem('bandage');
-    newCharacter.useItem('bandage');
-    console.log(newCharacter.inventory);
-    expect(newCharacter.inventory).toEqual(['', 'bat', '']);
+    expect(newCharacter.inventory).toEqual(['', 'bat', 'bandage']);
   });
+
+  it('should increase player level when XP cap is reached', function() {
+    newCharacter.checkXP();
+    expect(newCharacter.level).toEqual(2);
+  });
+
 });
