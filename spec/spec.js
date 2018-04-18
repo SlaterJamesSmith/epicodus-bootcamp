@@ -52,4 +52,13 @@ describe('Character', function() {
     expect(newCharacter.yCoord).toEqual(1);
   });
 
+  it('should add level-up attribute points to corresponding playter attributes', function() {
+    newCharacter.assignAttrPoint("str");
+    newCharacter.assignAttrPoint("dex");
+    newCharacter.assignAttrPoint("int");
+    expect(newCharacter.strength).toEqual(11);
+    expect(newCharacter.dexterity).toEqual(11);
+    expect(newCharacter.intelligence).toEqual(6);
+  });
+
 });
