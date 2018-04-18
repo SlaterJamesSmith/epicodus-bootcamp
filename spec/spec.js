@@ -1,13 +1,14 @@
 import { Character } from './../src/character.js';
 
 describe('Character', function() {
-  var newCharater;
+  var newCharacter;
 
   beforeEach(function() {
-    newCharater = new Character('John', 10, 10, 5);
+    newCharacter = new Character('John', 10, 10, 5);
   });
 
   it('should create a character with player inputs', function() {
+    newCharacter;
     expect(newCharacter.name).toEqual('John');
     expect(newCharacter.strength).toEqual(10);
     expect(newCharacter.dexterity).toEqual(10);
@@ -19,6 +20,12 @@ describe('Character', function() {
     expect(newCharacter.inventory).toEqual(['bandage', 'bat']);
   });
 
-  
+  it('should update player x-coordinate by one unit when moving across x-axis', function () {
+    newCharacter.xCoord = 0;
+    newCharacter.yCoord = 0;
+    newCharacter.movePlayer("right");
+    expect(newCharacter.xCoord).toEqual(1);
+    expect(newCharacter.yCoord).toEqual(0);
+  });
 
 });
