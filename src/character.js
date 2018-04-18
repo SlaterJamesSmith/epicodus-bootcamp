@@ -14,6 +14,8 @@ export class Character {
       this.xCoord++;
     } else if (direction === 'left') {
       this.xCoord--;
+    } else if (direction === 'up') {
+      this.yCoord--;
     }
   }
 }
