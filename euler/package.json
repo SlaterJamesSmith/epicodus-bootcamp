@@ -1,7 +1,7 @@
 {
-  "name": "project-template",
+  "name": "euler",
   "version": "1.0.0",
-  "description": "Epicodus JS Project Template",
+  "description": "",
   "main": "main.js",
   "scripts": {
     "build": "webpack --mode development",
@@ -15,7 +15,7 @@
     "type": "git",
     "url": ""
   },
-  "license": "MIT",
+  "license": "",
   "devDependencies": {
     "babel-core": "^6.26.0",
     "babel-loader": "^7.1.3",

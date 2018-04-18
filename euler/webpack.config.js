@@ -17,7 +17,7 @@ module.exports = {
     new UglifyJsPlugin({ sourceMap: true }),
     new CleanWebpackPlugin(['dist']),
     new HtmlWebpackPlugin({
-      title: 'Epicodus JS Project Template',
+      title: 'EPI-JS-WK1: Euler',
       template: './src/index.html',
       inject: 'body'
     })
