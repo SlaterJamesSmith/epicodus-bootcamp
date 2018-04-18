@@ -105,6 +105,13 @@ describe('Character', function() {
     newCharacter.currentExp = 110;
     newCharacter.checkXP();
     expect(newCharacter.levelExp).toEqual(120);
-  })
+  });
+
+  it('should increase max health after level up', function() {
+    newCharacter.currentExp = 110;
+    newCharacter.checkXP();
+    expect(newCharacter.maxHealth).toEqual(120);
+  });
+
 
 });
