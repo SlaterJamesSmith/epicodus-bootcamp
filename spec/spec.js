@@ -17,7 +17,7 @@ describe('Character', function() {
 
   it('should add starting health and inventory to character', function() {
     expect(newCharacter.health).toEqual(100);
-    expect(newCharacter.inventory).toEqual(['bandage', 'bat']);
+    expect(newCharacter.inventory).toEqual(['bandage', 'bat', 'bandage']);
   });
 
   it('should update player x-coordinate by one unit to the right when moving across x-axis', function () {
@@ -86,6 +86,8 @@ describe('Character', function() {
 
   it ('should remove item from the inventory after use', function(){
     newCharacter.useItem('bandage');
-    expect(newCharacter.inventory).toEqual(['', 'bat']);
+    newCharacter.useItem('bandage');
+    console.log(newCharacter.inventory);
+    expect(newCharacter.inventory).toEqual(['', 'bat', '']);
   });
 });

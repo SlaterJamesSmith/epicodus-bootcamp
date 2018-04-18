@@ -6,7 +6,7 @@ export class Character {
     this.dexterity = dex;
     this.intelligence = int;
     this.health = 100;
-    this.inventory = ['bandage', 'bat'];
+    this.inventory = ['bandage', 'bat', 'bandage'];
     this.xCoord = 0;
     this.yCoord = 0;
     this.attributePts = 0;
