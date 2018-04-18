@@ -1,4 +1,4 @@
-import { Character } from '../src/character.js';
+import { Character } from './../src/character.js';
 
 describe('Character', function(){
   it('should create a character with player inputs', function(){
