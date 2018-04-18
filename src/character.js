@@ -40,10 +40,15 @@ export class Character {
     }
   }
   useItem(item) {
-    if (item === 'bandage') {
-      this.health += 50;
-      if (this.health > this.maxHealth) {
-        this.health = this.maxHealth;
+    for (var i = 0; i < this.inventory.length; i++) {
+      if(this.inventory[i] === item) {
+        if (item === 'bandage') {
+          this.health += 50;
+          if (this.health > this.maxHealth) {
+            this.health = this.maxHealth;
+          }
+        }
+        return this.inventory.splice(i, 1, '');
       }
     }
   }

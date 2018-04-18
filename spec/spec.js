@@ -84,4 +84,8 @@ describe('Character', function() {
     expect(newCharacter.health).toEqual(100);
   });
 
+  it ('should remove item from the inventory after use', function(){
+    newCharacter.useItem('bandage');
+    expect(newCharacter.inventory).toEqual(['', 'bat']);
+  });
 });
