@@ -61,6 +61,7 @@ export class Character {
       this.currentExp -= this.levelExp;
       this.levelExp *= 1.2;
       this.maxHealth *= 1.2;
+      this.attributePts += 3;
     }
   }
 
