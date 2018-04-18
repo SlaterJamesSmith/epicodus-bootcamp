@@ -113,5 +113,9 @@ describe('Character', function() {
     expect(newCharacter.maxHealth).toEqual(120);
   });
 
-
+  it('should add three unused attribute points after level up', function() {
+    newCharacter.currentExp = 110;
+    newCharacter.checkXP();
+    expect(newCharacter.attributePts).toEqual(3);
+  });
 });
