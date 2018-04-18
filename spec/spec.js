@@ -95,4 +95,16 @@ describe('Character', function() {
     expect(newCharacter.level).toEqual(2);
   });
 
+  it('should reset player XP after leveling up and add remainder XP over previous cap', function(){
+    newCharacter.currentExp = 110;
+    newCharacter.checkXP();
+    expect(newCharacter.currentExp).toEqual(10);
+  });
+
+  it('should increase level XP requirement after level up', function() {
+    newCharacter.currentExp = 110;
+    newCharacter.checkXP();
+    expect(newCharacter.levelExp).toEqual(120);
+  })
+
 });
