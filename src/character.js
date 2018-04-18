@@ -59,6 +59,7 @@ export class Character {
     if (this.currentExp >= this.levelExp) {
       this.level++;
       this.currentExp -= this.levelExp;
+      this.levelExp *= 1.2;
     }
   }
 
