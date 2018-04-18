@@ -28,4 +28,12 @@ describe('Character', function() {
     expect(newCharacter.yCoord).toEqual(0);
   });
 
+  it('should update player x-coordinate by one unit when moving across x-axis', function () {
+    newCharacter.xCoord = 2;
+    newCharacter.yCoord = 0;
+    newCharacter.movePlayer("left");
+    expect(newCharacter.xCoord).toEqual(1);
+    expect(newCharacter.yCoord).toEqual(0);
+  });
+
 });
