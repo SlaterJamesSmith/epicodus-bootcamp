@@ -13,6 +13,7 @@ function isMatch (cardType1, cardType2) {
 }
 
 $(document).ready(function() {
+  var card = new Card("Joker");
   var deck = [];
   var cardType1 = null;
   var cardType2 = null;
@@ -23,7 +24,7 @@ $(document).ready(function() {
   cardPositions(deck);
 
   deck.forEach(function(card) {
-    $("td#" + card.position).html('<img src="../img/' + card.type + '.svg" class="display-none" data-card-type="' + card.type + '">');
+    $("td#" + card.position).html('<img src="img/' + card.type + '.svg" class="display-none" data-card-type="' + card.type + '">');
   });
 
   $("td").click(function() {
