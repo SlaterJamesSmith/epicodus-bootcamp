@@ -73,8 +73,8 @@ describe('Character', function() {
   });
 
   it('should add health to player when a bandage is used', function() {
-    newCharacter.useItem('bandage');
     newCharacter.health = 50;
+    newCharacter.useItem('bandage');
     expect(newCharacter.health).toEqual(100);
   });
 

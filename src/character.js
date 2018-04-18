@@ -38,4 +38,9 @@ export class Character {
       }
     }
   }
+  useItem(item) {
+    if (item === 'bandage') {
+      this.health += 50;
+    }
+  }
 }
