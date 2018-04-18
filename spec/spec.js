@@ -118,4 +118,10 @@ describe('Character', function() {
     newCharacter.checkXP();
     expect(newCharacter.attributePts).toEqual(3);
   });
+
+  it('should continuously level up character if current XP exceeds max XP', function() {
+    newCharacter.currentExp = 300;
+    newCharacter.checkXP();
+    expect(newCharacter.level).toEqual(3);
+  });
 });
