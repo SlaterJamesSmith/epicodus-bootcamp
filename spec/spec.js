@@ -90,6 +90,7 @@ describe('Character', function() {
   });
 
   it('should increase player level when XP cap is reached', function() {
+    newCharacter.currentExp = 100;
     newCharacter.checkXP();
     expect(newCharacter.level).toEqual(2);
   });

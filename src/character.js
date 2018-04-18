@@ -1,10 +1,13 @@
 export class Character {
   constructor(name, str, dex, int) {
     this.name = name;
+    this.level = 1;
     this.maxHealth = 100;
     this.strength = str;
     this.dexterity = dex;
     this.intelligence = int;
+    this.levelExp = 100;
+    this.currentExp = 0;
     this.health = 100;
     this.inventory = ['bandage', 'bat', 'bandage'];
     this.xCoord = 0;
@@ -52,4 +55,10 @@ export class Character {
       }
     }
   }
+  checkXP() {
+    if (this.currentExp >= this.levelExp) {
+      this.level++;
+    }
+  }
+
 }
