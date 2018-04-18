@@ -12,6 +12,8 @@ export class Character {
   movePlayer(direction) {
     if (direction === 'right') {
       this.xCoord++;
+    } else if (direction === 'left') {
+      this.xCoord--;
     }
   }
 }
