@@ -20,4 +20,13 @@ export class Character {
       this.yCoord++;
     }
   }
+  assignAttrPoint(attribute) {
+    if (attribute === "str") {
+      this.strength++;
+    } else if (attribute === "dex") {
+      this.dexterity++;
+    } else if (attribute === "int") {
+      this.intelligence++;
+    }
+  }
 }
