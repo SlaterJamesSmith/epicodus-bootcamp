@@ -1,6 +1,7 @@
 export class Character {
   constructor(name, str, dex, int) {
     this.name = name;
+    this.maxHealth = 100;
     this.strength = str;
     this.dexterity = dex;
     this.intelligence = int;
@@ -41,6 +42,9 @@ export class Character {
   useItem(item) {
     if (item === 'bandage') {
       this.health += 50;
+      if (this.health > this.maxHealth) {
+        this.health = this.maxHealth;
+      }
     }
   }
 }
