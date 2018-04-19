@@ -15,6 +15,9 @@ class Character {
     this.attributePts = 0;
 
   }
+  numberGen(){
+    return Math.random();
+  }
   genRandomNumber(){
     this.encounter = Math.random();
   }
