@@ -84,6 +84,13 @@ class Character {
       return isHit;
     }
   }
+  damageCalc(hitMiss){
+    let damage = 0;
+    if (hitMiss) {
+      damage = 25;
+    }
+    return damage;
+  }
 }
 
 export {Character};
