@@ -1,4 +1,4 @@
-export class Character {
+class Character {
   constructor(name, str, dex, int) {
     this.name = name;
     this.level = 1;
@@ -15,6 +15,9 @@ export class Character {
     this.attributePts = 0;
 
   }
+  genRandomNumber(){
+    this.encounter = Math.random();
+  }
   movePlayer(direction) {
     if (direction === 'right') {
       this.xCoord++;
@@ -25,6 +28,7 @@ export class Character {
     } else if (direction === 'down') {
       this.yCoord++;
     }
+    this.genRandomNumber();
   }
   assignAttrPoint(attribute) {
     if (this.attributePts === 0) {
@@ -66,3 +70,5 @@ export class Character {
   }
 
 }
+
+export {Character};
