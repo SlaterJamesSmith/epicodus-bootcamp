@@ -2,9 +2,11 @@ import { Character } from './../src/character.js';
 
 describe('Character', function() {
   var newCharacter;
+  var newEnemy;
 
   beforeEach(function() {
     newCharacter = new Character('John', 10, 10, 5);
+    newEnemy = new Character('Enemy', 10, 10, 5);
   });
 
   it('should create a character with player inputs', function() {
@@ -81,6 +83,12 @@ describe('Character', function() {
   it('should calculate damage points when player hits', function(){
     let damageAmt = newCharacter.damageCalc(true);
     expect(damageAmt).toEqual(25);
+  });
+
+  it('should deal player\'s damage to enemy health', function() {
+    let damage = 25;
+    newEnemy.receiveDamage(damage);
+    expect(newEnemy.health).toEqual(75);
   });
 
   it('should add level-up attribute points to corresponding player attributes', function() {
