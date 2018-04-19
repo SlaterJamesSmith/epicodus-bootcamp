@@ -91,6 +91,9 @@ class Character {
     }
     return damage;
   }
+  receiveDamage(damage) {
+    this.health -= damage;
+  }
 }
 
 export {Character};
