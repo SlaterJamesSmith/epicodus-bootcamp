@@ -15,11 +15,8 @@ class Character {
     this.attributePts = 0;
 
   }
-  numberGen(){
-    return Math.random();
-  }
   genRandomNumber(){
-    this.encounter = Math.random();
+    return Math.random();
   }
   movePlayer(direction) {
     if (direction === 'right') {
@@ -31,7 +28,7 @@ class Character {
     } else if (direction === 'down') {
       this.yCoord++;
     }
-    this.genRandomNumber();
+    this.encounter = this.genRandomNumber();
   }
   assignAttrPoint(attribute) {
     if (this.attributePts === 0) {

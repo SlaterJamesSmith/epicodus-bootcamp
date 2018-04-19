@@ -66,7 +66,7 @@ describe('Character', function() {
   });
 
   it('should generate a random number for hit or miss function', function() {
-    let randomNumber = newCharacter.numberGen();
+    let randomNumber = newCharacter.genRandomNumber();
     expect(randomNumber).toBeGreaterThan(0);
     expect(randomNumber).toBeLessThan(1);
   });
