@@ -112,6 +112,4 @@ class Character {
   }
 }
 
-var newCharacter = new Character('John', 'player', 10, 10, 5);
-
 export {Character};
