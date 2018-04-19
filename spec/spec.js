@@ -5,8 +5,8 @@ describe('Character', function() {
   var newEnemy;
 
   beforeEach(function() {
-    newCharacter = new Character('John', 10, 10, 5);
-    newEnemy = new Character('Enemy', 10, 10, 5);
+    newCharacter = new Character('John', 'player', 10, 10, 5);
+    newEnemy = new Character('Enemy', 'enemy', 10, 10, 5);
   });
 
   it('should create a character with player inputs', function() {
@@ -86,15 +86,20 @@ describe('Character', function() {
   });
 
   it('should deal player\'s damage to enemy health', function() {
-    let damage = 25;
-    newEnemy.receiveDamage(damage);
+    newCharacter.attack(newEnemy, true)
     expect(newEnemy.health).toEqual(75);
   });
 
   it('should kill enemy when enemy health reaches 0', function(){
-    let damage = 100;
-    newEnemy.receiveDamage(damage);
+    newEnemy.health = 25;
+    newCharacter.attack(newEnemy, true);
     expect(newEnemy.status).toEqual('dead');
+  });
+
+  it('should award player XP when enemy dies', function() {
+    newEnemy.health = 25;
+    newCharacter.attack(newEnemy, true);
+    expect(newCharacter.currentExp).toEqual(100);
   });
 
   it('should add level-up attribute points to corresponding player attributes', function() {
