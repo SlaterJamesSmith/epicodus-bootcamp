@@ -16,6 +16,7 @@ class Character {
     this.attributePts = 0;
     this.status = 'alive';
     this.inCombat = false;
+    this.gameStatus = 'active';
   }
   genRandomNumber(){
     return Math.random();
@@ -86,6 +87,9 @@ class Character {
         target.status = 'dead';
         this.currentExp += 100;
         this.inCombat = false;
+        if(target.characterType === 'player') {
+          target.gameStatus = 'game over';
+        }
       }
     }
   }
