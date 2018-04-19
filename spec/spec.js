@@ -78,6 +78,11 @@ describe('Character', function() {
     expect(hitFalse).toEqual(false);
   });
 
+  it('should calculate damage points when player hits', function(){
+    let damageAmt = newCharacter.damageCalc(true);
+    expect(damageAmt).toEqual(25);
+  });
+
   it('should add level-up attribute points to corresponding player attributes', function() {
     newCharacter.attributePts = 3;
     newCharacter.assignAttrPoint("str");
