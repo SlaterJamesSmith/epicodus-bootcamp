@@ -68,7 +68,13 @@ class Character {
       this.attributePts += 3;
     }
   }
-
+  encounterCheck() {
+    if (this.encounter < 0.2) {
+      return true;
+    } else {
+      return false;
+    }
+  }
 }
 
 export {Character};
