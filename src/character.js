@@ -75,6 +75,15 @@ class Character {
       return false;
     }
   }
+  hitMiss(roll) {
+    let isHit = false;
+    if (roll >= 0.25) {
+      isHit = true;
+      return isHit;
+    } else {
+      return isHit;
+    }
+  }
 }
 
 export {Character};
