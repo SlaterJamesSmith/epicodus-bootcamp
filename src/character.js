@@ -1,6 +1,7 @@
 class Character {
-  constructor(name, str, dex, int) {
+  constructor(name, type, str, dex, int) {
     this.name = name;
+    this.characterType = type;
     this.level = 1;
     this.maxHealth = 100;
     this.strength = str;
@@ -75,9 +76,20 @@ class Character {
       return false;
     }
   }
-  hitMiss(roll) {
+  attack(target, hitMiss) {
+    if (hitMiss) {
+      let damage = this.damageCalc(true);
+      target.health -= damage;
+      if (target.health <= 0) {
+        target.status = 'dead';
+        this.currentExp += 100;
+      }
+    }
+  }
+
+  hitMiss(diceRoll) {
     let isHit = false;
-    if (roll >= 0.25) {
+    if (diceRoll >= 0.25) {
       isHit = true;
       return isHit;
     } else {
@@ -91,12 +103,8 @@ class Character {
     }
     return damage;
   }
-  receiveDamage(damage) {
-    this.health -= damage;
-    if (this.health <= 0) {
-      this.status = 'dead';
-    }
-  }
 }
+
+var newCharacter = new Character('John', 'player', 10, 10, 5);
 
 export {Character};
