@@ -52,6 +52,13 @@ describe('Character', function() {
     expect(newCharacter.yCoord).toEqual(1);
   });
 
+  it('should generate a random number between 0 - 1 with each character move', function(){
+    newCharacter.xCoord = 0;
+    newCharacter.movePlayer('right');
+    expect(newCharacter.encounter).toBeGreaterThan(0);
+    expect(newCharacter.encounter).toBeLessThan(1);
+  });
+
   it('should add level-up attribute points to corresponding player attributes', function() {
     newCharacter.attributePts = 3;
     newCharacter.assignAttrPoint("str");
@@ -126,4 +133,6 @@ describe('Character', function() {
     expect(newCharacter.attributePts).toEqual(6);
     expect(newCharacter.currentExp).toEqual(80);
   });
+
+
 });
