@@ -65,7 +65,11 @@ describe('Character', function() {
     expect(boolean).toEqual(true);
   });
 
-
+  it('should generate a random number for hit or miss function', function() {
+    let randomNumber = numberGen();
+    expect(randomNumber).toBeGreaterThan(0);
+    expect(randomNumber).toBeLessThan(1);
+  });
 
   it('should add level-up attribute points to corresponding player attributes', function() {
     newCharacter.attributePts = 3;
