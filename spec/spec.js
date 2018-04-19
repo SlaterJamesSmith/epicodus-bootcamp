@@ -118,6 +118,12 @@ describe('Character', function() {
     expect(newCharacter.health).toEqual(75);
   });
 
+  it('should end game if player health reaches 0 or falls below it', function(){
+    newCharacter.health = 25;
+    newEnemy.attack(newCharacter, true);
+    expect(newCharacter.gameStatus).toEqual('game over');
+  });
+
   it('should add level-up attribute points to corresponding player attributes', function() {
     newCharacter.attributePts = 3;
     newCharacter.assignAttrPoint("str");
