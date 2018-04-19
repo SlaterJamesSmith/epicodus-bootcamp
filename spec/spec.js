@@ -113,6 +113,11 @@ describe('Character', function() {
     expect(newCharacter.inCombat).toEqual(true);
   });
 
+  it('should be attacked by enemy', function() {
+    newEnemy.attack(newCharacter, true);
+    expect(newCharacter.health).toEqual(75);
+  });
+
   it('should add level-up attribute points to corresponding player attributes', function() {
     newCharacter.attributePts = 3;
     newCharacter.assignAttrPoint("str");
