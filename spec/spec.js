@@ -102,6 +102,17 @@ describe('Character', function() {
     expect(newCharacter.currentExp).toEqual(100);
   });
 
+  it('should end combat after enemy dies', function() {
+    newEnemy.health = 25;
+    newCharacter.attack(newEnemy, true);
+    expect(newCharacter.inCombat).toEqual(false);
+  });
+
+  it('should not end combat if enemy is alive', function() {
+    newCharacter.inCombat = true;  newCharacter.attack(newEnemy, true);
+    expect(newCharacter.inCombat).toEqual(true);
+  });
+
   it('should add level-up attribute points to corresponding player attributes', function() {
     newCharacter.attributePts = 3;
     newCharacter.assignAttrPoint("str");
