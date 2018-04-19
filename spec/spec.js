@@ -91,6 +91,12 @@ describe('Character', function() {
     expect(newEnemy.health).toEqual(75);
   });
 
+  it('should kill enemy when enemy health reaches 0', function(){
+    let damage = 100;
+    newEnemy.receiveDamage(damage);
+    expect(newEnemy.status).toEqual('dead');
+  });
+
   it('should add level-up attribute points to corresponding player attributes', function() {
     newCharacter.attributePts = 3;
     newCharacter.assignAttrPoint("str");
