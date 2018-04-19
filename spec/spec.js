@@ -59,6 +59,14 @@ describe('Character', function() {
     expect(newCharacter.encounter).toBeLessThan(1);
   });
 
+  it('should initiate battle encounter when random number is less than 0.2', function() {
+    newCharacter.encounter = 0.19;
+    let boolean = newCharacter.encounterCheck();
+    expect(boolean).toEqual(true);
+  });
+
+
+
   it('should add level-up attribute points to corresponding player attributes', function() {
     newCharacter.attributePts = 3;
     newCharacter.assignAttrPoint("str");
@@ -133,6 +141,5 @@ describe('Character', function() {
     expect(newCharacter.attributePts).toEqual(6);
     expect(newCharacter.currentExp).toEqual(80);
   });
-
 
 });
