@@ -15,6 +15,7 @@ class Character {
     this.yCoord = 0;
     this.attributePts = 0;
     this.status = 'alive';
+    this.inCombat = false;
   }
   genRandomNumber(){
     return Math.random();
@@ -71,6 +72,7 @@ class Character {
   }
   encounterCheck() {
     if (this.encounter < 0.2) {
+      this.inCombat = true;
       return true;
     } else {
       return false;
@@ -83,6 +85,7 @@ class Character {
       if (target.health <= 0) {
         target.status = 'dead';
         this.currentExp += 100;
+        this.inCombat = false;
       }
     }
   }
