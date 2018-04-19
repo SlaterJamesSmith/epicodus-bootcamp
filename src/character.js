@@ -13,7 +13,7 @@ class Character {
     this.xCoord = 0;
     this.yCoord = 0;
     this.attributePts = 0;
-
+    this.status = 'alive';
   }
   genRandomNumber(){
     return Math.random();
@@ -93,6 +93,9 @@ class Character {
   }
   receiveDamage(damage) {
     this.health -= damage;
+    if (this.health <= 0) {
+      this.status = 'dead';
+    }
   }
 }
 
