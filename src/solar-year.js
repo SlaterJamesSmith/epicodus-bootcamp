@@ -6,6 +6,7 @@ class User {
     this.earthAgeSeconds;
     this.earthAgeYears;
     this.lifeExpectancy;
+    this.earthYearsBeforeLifeExpect;
     this.jupiterAgeYears;
     this.marsAgeYears;
     this.mercuryAgeYears;
@@ -32,6 +33,10 @@ class User {
     } else if (this.birthSexOrigin === 'female') {
       this.lifeExpectancy = 83;
     }
+  }
+
+  calcYearsBeforeLifeExpect() {
+    this.earthYearsBeforeLifeExpect = this.lifeExpectancy - this.earthAgeYears;
   }
 }
 
