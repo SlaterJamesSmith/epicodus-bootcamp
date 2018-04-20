@@ -54,4 +54,10 @@ describe('SolarYearAge', function() {
     userData.calcLifeExpectancy();
     expect(userData.lifeExpectancy).toEqual(80);
   });
+
+  it('should determine user life expectancy based on female biological sex origin', function() {
+    userData.birthSexOrigin = 'female';
+    userData.calcLifeExpectancy();
+    expect(userData.lifeExpectancy).toEqual(83);
+  });
 });
