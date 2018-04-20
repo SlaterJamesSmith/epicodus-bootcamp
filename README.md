@@ -14,6 +14,7 @@ Based on a person's Earth age, this application will calculate the person's rela
 
 |Program Behavior|Input|Output|
 |----------------|-----|------|
+|Given current date of 04/20/2018, calculates a person's current Earth age based on their birth date.|"04/20/2017"|1|
 |Converts a person's Earth age in years into seconds.|1|3.154e+7|
 |Determines the difference, in seconds, between two dates.|"04/19/2018", "04/20/2018"|86400|
 |Returns a person's Earth age in Mercury years. (1 Mercury year = 0.24 Earth years)|1|4.1667|
