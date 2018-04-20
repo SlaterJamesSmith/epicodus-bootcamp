@@ -68,4 +68,12 @@ describe('SolarYearAge', function() {
     userMale76.calcYearsBeforeLifeExpect();
     expect(userMale76.earthYearsBeforeLifeExpect).toEqual(1);
   });
+
+  it('should calculate user\'s remaining life time on Mercury before expected expiry age', function() {
+    let userMale76 = new User();
+    userMale76.earthAgeYears = 76;
+    userMale76.lifeExpectancy = 77;
+    userMale76.calcYearsBeforeLifeExpect();
+    expect(userMale76.mercuryYearsBeforeLifeExpect).toEqual(4.1667);
+  });
 });
