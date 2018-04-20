@@ -24,7 +24,7 @@ Based on a person's Earth age, this application will calculate the person's rela
 |Returns life expectancy based on biological gender.|""|80|
 |Returns life expectancy based on biological gender.|"Female"|83|
 |Returns a person's remaining life time before expected expiry date on each planet.|"Male", 76|"Mercury: 4.1667", "Venus: 1.6129", "Mars: 0.5319", "Jupiter: 0.0843"|
-|Returns a person's remaining life time before expected expiry date on each planet.|"Male", 77|"Mercury: 0", "Venus: 0", "Mars: 0", "Jupiter: 0"|
+|Returns a person's remaining life time after expected expiry date on each planet.|"Male", 78|"Mercury: 0", "Venus: 0", "Mars: 0", "Jupiter: 0"|
 |Returns a person's life time past expected expiry date on each planet.|"Male", 78|"Mercury: 4.1667", "Venus: 1.6129", "Mars: 0.5319", "Jupiter: 0.0843"|
 
 ## Setup/Installation Requirements
