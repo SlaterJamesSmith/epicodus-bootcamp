@@ -25,4 +25,10 @@ describe('SolarYearAge', function() {
     expect(userData.mercuryAgeYears).toEqual(4.1667);
   });
 
+  it('should calculate user age in Venus years based on birth date and current date', function() {
+    userData.calcEarthAge();
+    userData.calcSolarYearAge();
+    expect(userData.venusAgeYears).toEqual(1.6129);
+  });
+
 });
