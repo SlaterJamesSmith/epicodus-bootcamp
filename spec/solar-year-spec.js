@@ -92,4 +92,12 @@ describe('SolarYearAge', function() {
     userMale76.calcYearsBeforeLifeExpect();
     expect(userMale76.marsYearsBeforeLifeExpect).toEqual(0.5319);
   });
+
+  it('should calculate user\'s remaining life time on Jupiter before expected expiry age', function() {
+    let userMale76 = new User();
+    userMale76.earthAgeYears = 76;
+    userMale76.lifeExpectancy = 77;
+    userMale76.calcYearsBeforeLifeExpect();
+    expect(userMale76.jupiterYearsBeforeLifeExpect).toEqual(0.0843);
+  });
 });
