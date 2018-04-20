@@ -4,6 +4,7 @@ class User {
     this.currentDate;
     this.earthAgeSeconds;
     this.earthAgeYears;
+    this.jupiterAgeYears;
     this.marsAgeYears;
     this.mercuryAgeYears;
     this.venusAgeYears;
@@ -15,6 +16,7 @@ class User {
   }
 
   calcSolarYearAge() {
+    this.jupiterAgeYears = parseFloat((this.earthAgeYears / 11.86).toFixed(4));
     this.marsAgeYears = parseFloat((this.earthAgeYears / 1.88).toFixed(4));
     this.mercuryAgeYears = parseFloat((this.earthAgeYears / 0.24).toFixed(4));
     this.venusAgeYears = parseFloat((this.earthAgeYears / 0.62).toFixed(4));
