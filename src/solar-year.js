@@ -2,11 +2,11 @@ class User {
   constructor() {
     this.birthDate;
     this.currentDate;
-    this.earthAgeYears;
+    this.earthAgeSeconds;
   }
 
   calcEarthAge() {
-    this.earthAgeYears = this.currentDate.getFullYear() - this.birthDate.getFullYear();
+    this.earthAgeSeconds = (this.currentDate - this.birthDate) / 1000;
   }
 }
 
