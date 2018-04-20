@@ -27,6 +27,8 @@ class User {
       this.lifeExpectancy = 77;
     } else if (this.birthSexOrigin === 'not reported or intersex') {
       this.lifeExpectancy = 80;
+    } else if (this.birthSexOrigin === 'female') {
+      this.lifeExpectancy = 83;
     }
   }
 }
