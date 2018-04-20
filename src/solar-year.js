@@ -1,9 +1,11 @@
 class User {
   constructor() {
-    this.birthDate;
     this.currentDate;
+    this.birthDate;
+    this.birthSexOrigin;
     this.earthAgeSeconds;
     this.earthAgeYears;
+    this.lifeExpectancy;
     this.jupiterAgeYears;
     this.marsAgeYears;
     this.mercuryAgeYears;
