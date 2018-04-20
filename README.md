@@ -29,6 +29,8 @@ Based on a user's Earth-age, this application will calculate the user's relative
 
 ## Setup/Installation Requirements
 
+Website: https://m-chu.github.io/epicodus-solo-project-5/
+
 1. Install Node.js on local machine.
 2. Clone repository.
 3. In terminal, navigate to project root.

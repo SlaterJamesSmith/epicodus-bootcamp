@@ -1,0 +1,10 @@
+h1 {
+  text-transform: uppercase;
+}
+
+.container {
+  margin: 0 auto;
+  padding: 25px;
+  text-align: center;
+  width: 95%;
+}
