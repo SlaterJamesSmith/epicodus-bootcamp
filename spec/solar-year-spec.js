@@ -2,11 +2,16 @@ import { User } from './../src/solar-year.js'
 
 describe('SolarYearAge', function() {
   let userData;
+  let userMale76;
 
   beforeEach(function() {
     userData = new User();
     userData.birthDate = new Date(2017, 3, 20, 0, 0, 0);
     userData.currentDate = new Date(2018, 3, 20, 0, 0, 0);
+
+    userMale76 = new User();
+    userMale76.earthAgeYears = 76;
+    userMale76.lifeExpectancy = 77;
   });
 
   it('should calculate user Earth-age in seconds based on birth date and current date', function() {
@@ -62,41 +67,26 @@ describe('SolarYearAge', function() {
   });
 
   it('should calculate user\'s remaining life time on Earth before expected expiry age', function() {
-    let userMale76 = new User();
-    userMale76.earthAgeYears = 76;
-    userMale76.lifeExpectancy = 77;
     userMale76.calcYearsBeforeLifeExpect();
     expect(userMale76.earthYearsBeforeLifeExpect).toEqual(1);
   });
 
   it('should calculate user\'s remaining life time on Mercury before expected expiry age', function() {
-    let userMale76 = new User();
-    userMale76.earthAgeYears = 76;
-    userMale76.lifeExpectancy = 77;
     userMale76.calcYearsBeforeLifeExpect();
     expect(userMale76.mercuryYearsBeforeLifeExpect).toEqual(4.1667);
   });
 
   it('should calculate user\'s remaining life time on Venus before expected expiry age', function() {
-    let userMale76 = new User();
-    userMale76.earthAgeYears = 76;
-    userMale76.lifeExpectancy = 77;
     userMale76.calcYearsBeforeLifeExpect();
     expect(userMale76.venusYearsBeforeLifeExpect).toEqual(1.6129);
   });
 
   it('should calculate user\'s remaining life time on Mars before expected expiry age', function() {
-    let userMale76 = new User();
-    userMale76.earthAgeYears = 76;
-    userMale76.lifeExpectancy = 77;
     userMale76.calcYearsBeforeLifeExpect();
     expect(userMale76.marsYearsBeforeLifeExpect).toEqual(0.5319);
   });
 
   it('should calculate user\'s remaining life time on Jupiter before expected expiry age', function() {
-    let userMale76 = new User();
-    userMale76.earthAgeYears = 76;
-    userMale76.lifeExpectancy = 77;
     userMale76.calcYearsBeforeLifeExpect();
     expect(userMale76.jupiterYearsBeforeLifeExpect).toEqual(0.0843);
   });
