@@ -17,14 +17,14 @@ A collection of practice projects focused on Test Driven Development.
 
 1. Clone repository.
 2. Explore project folders in terminal.
-3. Run "npm install" in root to load required packages.
-4. Update paths in file paths in:
-    - **karma.conf.js**
-    - **package.json**
-    - **webpack.config.js**
-5. Run "npm run build" in root to create distribution folder.
-6. Open dist/index.html in web browser to view project, if applicable (most projects contain only backend testing).
-7. Run "npm test" to view unit test results.
+3. Run "npm install" in project root to load required packages.
+4. Redirect file paths to desired project subfolder in:
+    - **karma.conf.js** - 4 links
+    - **package.json** - 2 links
+    - **webpack.config.js** - 2 links
+5. Execute "npm run build" in project root to create distribution folder.
+6. If applicable, open dist/index.html in web browser to view project. (Some projects contain only backend testing).
+7. Execute "npm test" in project root to view unit test results.
 
 ## Known Bugs
 
