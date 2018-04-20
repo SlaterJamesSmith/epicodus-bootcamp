@@ -1,16 +1,10 @@
-export function Card(type) {
+class Card {
+  constructor(type) {
   this.type = type;
   this.faceUp = true;
   this.position;
+  }
 }
-
-Card.prototype.flipUp = function () {
-  this.faceUp = true;
-};
-
-Card.prototype.flipDown = function () {
-  this.faceUp = false;
-};
 
 export function createDeck(deck) {
   var numberOfCardTypes = 6;
@@ -37,3 +31,5 @@ export function cardPositions(deck) {
     deck[b].position = positionsArray[b];
   }
 }
+
+export { Card };

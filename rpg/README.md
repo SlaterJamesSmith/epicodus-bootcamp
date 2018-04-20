@@ -1,6 +1,6 @@
-# _EPICODUS - RPG_
+# _EPICODUS - JAVASCRIPT - WEEK 1_
 
-#### _Test Driven Development Practice, April 18, 2018_
+#### _RPG Test Driven Development Practice, April 18, 2018_
 
 #### _Collaborators_
 
@@ -9,11 +9,9 @@
 
 ## Description
 
-Add description.
+An RPG practice project focused on Test Driven Development.
 
 ## Specifications
-
-Program Behavior
 
 Character Creation
 - Creates character based on character creation input:

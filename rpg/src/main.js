@@ -1,9 +1,9 @@
 import $ from 'jquery';
-// import { function } from './filename';
+// import { Character } from './character.js';
 import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './styles.css';
 
-$(function() {
+$(document).ready(function() {
 
 });

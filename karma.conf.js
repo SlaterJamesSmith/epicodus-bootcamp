@@ -5,15 +5,15 @@ module.exports = function(config) {
     basePath: '',
     frameworks: ['jquery-3.2.1', 'jasmine'],
     files: [
-      'src/*.js',
-      'spec/*spec.js'
+      'rpg/src/*.js',
+      'rpg/spec/*spec.js'
     ],
     webpack: webpackConfig,
     exclude: [
     ],
     preprocessors: {
-      'src/*.js': ['webpack'],
-      'spec/*spec.js': ['webpack']
+      'rpg/src/*.js': ['webpack'],
+      'rpg/spec/*spec.js': ['webpack']
     },
     plugins: [
       'karma-jquery',

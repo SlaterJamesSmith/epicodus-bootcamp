@@ -13,7 +13,6 @@ function isMatch (cardType1, cardType2) {
 }
 
 $(document).ready(function() {
-  var card = new Card("Joker");
   var deck = [];
   var cardType1 = null;
   var cardType2 = null;
@@ -24,19 +23,19 @@ $(document).ready(function() {
   cardPositions(deck);
 
   deck.forEach(function(card) {
-    $("td#" + card.position).html('<img src="img/' + card.type + '.svg" class="display-none" data-card-type="' + card.type + '">');
+    $("td#" + card.position).html("<div data-card-type=\"" + card.type + "\" class=\"display-none\">" + card.type + "</div>");
   });
 
   $("td").click(function() {
     if (cardType1 === null) {
-      cardType1 = $(this).children("img").attr("data-card-type");
+      cardType1 = $(this).children("div").attr("data-card-type");
       cardPosition1 = $(this).attr("id");
-      $(this).children("img").show();
+      $(this).children("div").show();
       $(this).addClass("no-click");
     } else {
-      cardType2 = $(this).children("img").attr("data-card-type");
+      cardType2 = $(this).children("div").attr("data-card-type");
       cardPosition2 = $(this).attr("id");
-      $(this).children("img").show();
+      $(this).children("div").show();
       $(this).addClass("no-click");
       if (!isMatch(cardType1, cardType2)) {
         $("#" + cardPosition1).children().delay(500).fadeOut(500);

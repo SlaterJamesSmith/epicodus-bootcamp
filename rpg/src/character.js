@@ -18,9 +18,11 @@ class Character {
     this.inCombat = false;
     this.gameStatus = 'active';
   }
-  genRandomNumber(){
+
+  genRandomNumber() {
     return Math.random();
   }
+
   movePlayer(direction) {
     if (direction === 'right') {
       this.xCoord++;
@@ -33,6 +35,7 @@ class Character {
     }
     this.encounter = this.genRandomNumber();
   }
+
   assignAttrPoint(attribute) {
     if (this.attributePts === 0) {
       return;
@@ -49,6 +52,7 @@ class Character {
       }
     }
   }
+
   useItem(item) {
     for (var i = 0; i < this.inventory.length; i++) {
       if(this.inventory[i] === item) {
@@ -62,6 +66,7 @@ class Character {
       }
     }
   }
+
   checkXP() {
     while (this.currentExp >= this.levelExp) {
       this.level++;
@@ -71,6 +76,7 @@ class Character {
       this.attributePts += 3;
     }
   }
+
   encounterCheck() {
     if (this.encounter < 0.2) {
       this.inCombat = true;
@@ -79,6 +85,7 @@ class Character {
       return false;
     }
   }
+
   attack(target, hitMiss) {
     if (hitMiss) {
       let damage = this.damageCalc(true);
@@ -103,6 +110,7 @@ class Character {
       return isHit;
     }
   }
+
   damageCalc(hitMiss){
     let damage = 0;
     if (hitMiss) {
