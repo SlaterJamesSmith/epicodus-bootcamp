@@ -13,7 +13,7 @@ An RPG practice project focused on Test Driven Development.
 
 ## Specifications
 
-Character Creation
+### Character Creation
 - Creates character based on character creation input:
     - Input: "John, 10 Strength, 10 Dexterity, 5 Intelligence"
     - Output: "John", "Str: 10", "Dex: 10", "Int: 5"
@@ -21,7 +21,7 @@ Character Creation
     - Input: Create character
     - Output: "Health: 20", "Inventory: ['Bandage', 'Bat']"
 
-Character Movement
+### Character Movement
 - Given player coordinates (0,0), updates player's x-coordinate by one unit when horizontal movement is initiated.
     - Input: "Right"
     - Output: (1,0)
@@ -35,8 +35,8 @@ Character Movement
     - Input: Move
     - Output: 0 < number < 1
 
-Battle System
-  Player Combat
+### Battle System
+**Player Combat**
 - Initiates battle encounter when random number is less than 0.2:
   - Input: 0.15
   - Output: Run battleEncounter
@@ -59,7 +59,7 @@ Battle System
   - Input: Enemy count = 0
   - Output: End combat
 
-  Enemy Combat
+**Enemy Combat**
 - Initiates enemy attack and determines Hit or Miss:
   - Input: Attack
   - Output: Hit or Miss
@@ -73,7 +73,7 @@ Battle System
   - Input: player health = 0
   - Output: Game over
 
-Level Up
+### Level Up
 - Increases player level when XP cap is reached:
   - Input: 100/100 XP
   - Output: Player level + 1
@@ -87,7 +87,7 @@ Level Up
   - Input: player level + 1
   - Ouput: current unused attribute points + 3
 
-Gameplay Controls
+### Gameplay Controls
 - Adds 1 attribute point to corresponding attribute if unused is greater than 0:
   - Input: Str + 1
   - Output: Current Str + 1
@@ -95,7 +95,7 @@ Gameplay Controls
   - Input: Str + 1
   - Output: Current unused attribute point - 1
 
-Inventory Use
+### Inventory Use
 - Adds health to player when bandage is used:
   - Input: Use Bandage
   - Output: Player health + 5
@@ -103,7 +103,7 @@ Inventory Use
   - Input: Select "Bat"
   - Output: "Equipped: Bat"
 
-End Game Condition
+### End Game Condition
 - Spawns boss encounter when player reaches level 3:
   - Input: Player level = 3
   - Ouput: Initiate boss encounter
@@ -114,8 +114,7 @@ End Game Condition
 
 ## Setup/Installation Requirements
 
-1. Clone repository.
-2. Run "npm install" in root to load required packages.
+1. See main project [README.md](../README.md).
 
 ## Known Bugs
 
