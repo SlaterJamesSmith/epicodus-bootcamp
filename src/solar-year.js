@@ -10,6 +10,7 @@ class User {
     this.jupiterAgeYears;
     this.marsAgeYears;
     this.mercuryAgeYears;
+    this.mercuryYearsBeforeLifeExpect;
     this.venusAgeYears;
   }
 
@@ -37,6 +38,7 @@ class User {
 
   calcYearsBeforeLifeExpect() {
     this.earthYearsBeforeLifeExpect = this.lifeExpectancy - this.earthAgeYears;
+    this.mercuryYearsBeforeLifeExpect = parseFloat((this.earthYearsBeforeLifeExpect / 0.24).toFixed(4));
   }
 }
 
