@@ -9,9 +9,11 @@ class User {
     this.earthYearsBeforeLifeExpect;
     this.jupiterAgeYears;
     this.marsAgeYears;
+    this.marsYearsBeforeLifeExpect
     this.mercuryAgeYears;
     this.mercuryYearsBeforeLifeExpect;
     this.venusAgeYears;
+    this.venusYearsBeforeLifeExpect;
   }
 
   calcEarthAge() {
@@ -38,6 +40,7 @@ class User {
 
   calcYearsBeforeLifeExpect() {
     this.earthYearsBeforeLifeExpect = this.lifeExpectancy - this.earthAgeYears;
+    this.marsYearsBeforeLifeExpect = parseFloat((this.earthYearsBeforeLifeExpect / 1.88).toFixed(4));
     this.mercuryYearsBeforeLifeExpect = parseFloat((this.earthYearsBeforeLifeExpect / 0.24).toFixed(4));
     this.venusYearsBeforeLifeExpect = parseFloat((this.earthYearsBeforeLifeExpect / 0.62).toFixed(4));
   }
