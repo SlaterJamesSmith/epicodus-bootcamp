@@ -21,6 +21,12 @@ class User {
     this.mercuryAgeYears = parseFloat((this.earthAgeYears / 0.24).toFixed(4));
     this.venusAgeYears = parseFloat((this.earthAgeYears / 0.62).toFixed(4));
   }
+
+  calcLifeExpectancy() {
+    if (this.birthSexOrigin === 'male') {
+      this.lifeExpectancy = 77;
+    }
+  }
 }
 
 export { User };
