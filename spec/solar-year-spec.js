@@ -37,4 +37,10 @@ describe('SolarYearAge', function() {
     expect(userData.marsAgeYears).toEqual(0.5319);
   });
 
+  it('should calculate user age in Jupiter years based on birth date and current date', function() {
+    userData.calcEarthAge();
+    userData.calcSolarYearAge();
+    expect(userData.jupiterAgeYears).toEqual(0.0843);
+  });
+
 });
