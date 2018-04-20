@@ -43,4 +43,9 @@ describe('SolarYearAge', function() {
     expect(userData.jupiterAgeYears).toEqual(0.0843);
   });
 
+  it('should determine user life expectancy based on male biological sex origin', function() {
+    userData.birthSexOrigin = 'male';
+    userData.calcLifeExpectancy();
+    expect(userData.lifeExpectancy).toEqual(77);
+  });
 });
