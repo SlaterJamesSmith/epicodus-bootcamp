@@ -3,6 +3,7 @@ import { User } from './../src/solar-year.js'
 describe('SolarYearAge', function() {
   let userData;
   let userMale76;
+  let userMale78;
 
   beforeEach(function() {
     userData = new User();
@@ -12,6 +13,10 @@ describe('SolarYearAge', function() {
     userMale76 = new User();
     userMale76.earthAgeYears = 76;
     userMale76.lifeExpectancy = 77;
+
+    userMale78 = new User();
+    userMale78.earthAgeYears = 78;
+    userMale78.lifeExpectancy = 77;
   });
 
   it('should calculate user Earth-age in seconds based on birth date and current date', function() {
@@ -89,5 +94,14 @@ describe('SolarYearAge', function() {
   it('should calculate user\'s remaining life time on Jupiter before expected expiry age', function() {
     userMale76.calcYearsBeforeLifeExpect();
     expect(userMale76.jupiterYearsBeforeLifeExpect).toEqual(0.0843);
+  });
+
+  it('should set remaining life time before expiry age to 0 if user age is greater than life expectancy', function() {
+    userMale78.calcYearsBeforeLifeExpect();
+    expect(userMale78.earthYearsBeforeLifeExpect).toEqual(0);
+    expect(userMale78.mercuryYearsBeforeLifeExpect).toEqual(0);
+    expect(userMale78.venusYearsBeforeLifeExpect).toEqual(0);
+    expect(userMale78.marsYearsBeforeLifeExpect).toEqual(0);
+    expect(userMale78.jupiterYearsBeforeLifeExpect).toEqual(0);
   });
 });
