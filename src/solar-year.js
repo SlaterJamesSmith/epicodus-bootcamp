@@ -40,7 +40,11 @@ class User {
   }
 
   calcYearsBeforeLifeExpect() {
-    this.earthYearsBeforeLifeExpect = this.lifeExpectancy - this.earthAgeYears;
+    if (this.earthAgeYears > this.lifeExpectancy) {
+      this.earthYearsBeforeLifeExpect = 0;
+    } else {
+      this.earthYearsBeforeLifeExpect = this.lifeExpectancy - this.earthAgeYears;
+    }
     this.jupiterYearsBeforeLifeExpect = parseFloat((this.earthYearsBeforeLifeExpect / 11.86).toFixed(4));
     this.marsYearsBeforeLifeExpect = parseFloat((this.earthYearsBeforeLifeExpect / 1.88).toFixed(4));
     this.mercuryYearsBeforeLifeExpect = parseFloat((this.earthYearsBeforeLifeExpect / 0.24).toFixed(4));
