@@ -18,7 +18,7 @@ module.exports = {
     new UglifyJsPlugin({ sourceMap: true }),
     new CleanWebpackPlugin(['dist']),
     new HtmlWebpackPlugin({
-      title: 'Epicodus Solo Project 5',
+      title: 'Super Galactic Age Calculator',
       template: './src/index.html',
       inject: 'body'
     }),
