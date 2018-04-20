@@ -19,4 +19,10 @@ describe('SolarYearAge', function() {
     expect(userData.earthAgeYears).toEqual(1);
   });
 
+  it('should calculate user age in Mercury years based on birth date and current date', function() {
+    userData.calcEarthAge();
+    userData.calcSolarYearAge();
+    expect(userData.mercuryAgeYears).toEqual(4.1667);
+  });
+
 });
