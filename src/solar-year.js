@@ -25,6 +25,8 @@ class User {
   calcLifeExpectancy() {
     if (this.birthSexOrigin === 'male') {
       this.lifeExpectancy = 77;
+    } else if (this.birthSexOrigin === 'not reported or intersex') {
+      this.lifeExpectancy = 80;
     }
   }
 }
