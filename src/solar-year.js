@@ -7,14 +7,19 @@ class User {
     this.earthAgeYears;
     this.lifeExpectancy;
     this.earthYearsBeforeLifeExpect;
+    this.earthYearsPastLifeExpect;
     this.jupiterAgeYears;
     this.jupiterYearsBeforeLifeExpect;
+    this.jupiterYearsPastLifeExpect;
     this.marsAgeYears;
-    this.marsYearsBeforeLifeExpect
+    this.marsYearsBeforeLifeExpect;
+    this.marsYearsPastLifeExpect;
     this.mercuryAgeYears;
     this.mercuryYearsBeforeLifeExpect;
+    this.mercuryYearsPastLifeExpect;
     this.venusAgeYears;
     this.venusYearsBeforeLifeExpect;
+    this.venusYearsPastLifeExpect;
   }
 
   calcEarthAge() {
@@ -39,9 +44,18 @@ class User {
     }
   }
 
+  calcYearsPastLifeExpect() {
+    this.earthYearsPastLifeExpect = this.earthAgeYears - this.lifeExpectancy;
+    this.jupiterYearsPastLifeExpect = parseFloat((this.earthYearsPastLifeExpect / 11.86).toFixed(4));
+    this.marsYearsPastLifeExpect = parseFloat((this.earthYearsPastLifeExpect / 1.88).toFixed(4));
+    this.mercuryYearsPastLifeExpect = parseFloat((this.earthYearsPastLifeExpect / 0.24).toFixed(4));
+    this.venusYearsPastLifeExpect = parseFloat((this.earthYearsPastLifeExpect / 0.62).toFixed(4));
+  }
+
   calcYearsBeforeLifeExpect() {
     if (this.earthAgeYears > this.lifeExpectancy) {
       this.earthYearsBeforeLifeExpect = 0;
+      this.calcYearsPastLifeExpect();
     } else {
       this.earthYearsBeforeLifeExpect = this.lifeExpectancy - this.earthAgeYears;
     }
