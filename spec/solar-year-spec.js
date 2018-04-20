@@ -48,4 +48,10 @@ describe('SolarYearAge', function() {
     userData.calcLifeExpectancy();
     expect(userData.lifeExpectancy).toEqual(77);
   });
+
+  it('should determine user life expectancy based on average life expectancy', function() {
+    userData.birthSexOrigin = 'not reported or intersex';
+    userData.calcLifeExpectancy();
+    expect(userData.lifeExpectancy).toEqual(80);
+  });
 });
