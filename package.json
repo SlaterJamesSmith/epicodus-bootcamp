@@ -1,7 +1,7 @@
 {
   "name": "epicodus-solo-project-5",
   "version": "1.0.0",
-  "description": "Epicodus JS Project Template",
+  "description": "",
   "main": "index.js",
   "scripts": {
     "build": "webpack --mode development",
