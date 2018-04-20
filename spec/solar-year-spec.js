@@ -104,4 +104,13 @@ describe('SolarYearAge', function() {
     expect(userMale78.marsYearsBeforeLifeExpect).toEqual(0);
     expect(userMale78.jupiterYearsBeforeLifeExpect).toEqual(0);
   });
+
+  it('should calculate user\'s life time past expiry age for each planet', function() {
+    userMale78.calcYearsBeforeLifeExpect();
+    expect(userMale78.earthYearsPastLifeExpect).toEqual(1);
+    expect(userMale78.mercuryYearsPastLifeExpect).toEqual(4.1667);
+    expect(userMale78.venusYearsPastLifeExpect).toEqual(1.6129);
+    expect(userMale78.marsYearsPastLifeExpect).toEqual(0.5319);
+    expect(userMale78.jupiterYearsPastLifeExpect).toEqual(0.0843);
+  });
 });
