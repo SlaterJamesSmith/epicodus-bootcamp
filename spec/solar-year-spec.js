@@ -42,25 +42,25 @@ describe('SolarYearAge', function() {
     expect(leapYearUserData.earthAgeYears).toEqual(1.0021);
   });
 
-  it('should calculate user age in Mercury years based on birth date and current date', function() {
+  it('should convert Earth years into Mercury years', function() {
     userData.calcEarthAge();
     userData.calcSolarYearAge();
     expect(userData.mercuryAgeYears).toEqual(4.1638);
   });
 
-  it('should calculate user age in Venus years based on birth date and current date', function() {
+  it('should convert Earth years into Venus years', function() {
     userData.calcEarthAge();
     userData.calcSolarYearAge();
     expect(userData.venusAgeYears).toEqual(1.6118);
   });
 
-  it('should calculate user age in Mars years based on birth date and current date', function() {
+  it('should convert Earth years into Mars years', function() {
     userData.calcEarthAge();
     userData.calcSolarYearAge();
     expect(userData.marsAgeYears).toEqual(0.5315);
   });
 
-  it('should calculate user age in Jupiter years based on birth date and current date', function() {
+  it('should convert Earth years into Jupiter years', function() {
     userData.calcEarthAge();
     userData.calcSolarYearAge();
     expect(userData.jupiterAgeYears).toEqual(0.0843);
@@ -84,32 +84,32 @@ describe('SolarYearAge', function() {
     expect(userData.lifeExpectancy).toEqual(83);
   });
 
-  it('should calculate user\'s remaining life time on Earth before expected expiry age', function() {
+  it('should calculate user\'s expected remaining life time on Earth before expected expiry age', function() {
     userMale76.calcYearsBeforeLifeExpect();
     expect(userMale76.earthYearsBeforeLifeExpect).toEqual(1);
   });
 
-  it('should calculate user\'s remaining life time on Mercury before expected expiry age', function() {
+  it('should convert expected years of life left on Earth into Mercury years', function() {
     userMale76.calcYearsBeforeLifeExpect();
     expect(userMale76.mercuryYearsBeforeLifeExpect).toEqual(4.1667);
   });
 
-  it('should calculate user\'s remaining life time on Venus before expected expiry age', function() {
+  it('should convert expected years of life left on Earth into Venus years', function() {
     userMale76.calcYearsBeforeLifeExpect();
     expect(userMale76.venusYearsBeforeLifeExpect).toEqual(1.6129);
   });
 
-  it('should calculate user\'s remaining life time on Mars before expected expiry age', function() {
+  it('should convert expected years of life left on Earth into Mars years', function() {
     userMale76.calcYearsBeforeLifeExpect();
     expect(userMale76.marsYearsBeforeLifeExpect).toEqual(0.5319);
   });
 
-  it('should calculate user\'s remaining life time on Jupiter before expected expiry age', function() {
+  it('should convert expected years of life left on Earth into Jupiter years', function() {
     userMale76.calcYearsBeforeLifeExpect();
     expect(userMale76.jupiterYearsBeforeLifeExpect).toEqual(0.0843);
   });
 
-  it('should set remaining life time before expiry age to 0 if user age is greater than life expectancy', function() {
+  it('should set expected remaining life time before expiry age to 0 if user age is past life expectancy', function() {
     userMale78.calcYearsBeforeLifeExpect();
     expect(userMale78.earthYearsBeforeLifeExpect).toEqual(0);
     expect(userMale78.mercuryYearsBeforeLifeExpect).toEqual(0);
