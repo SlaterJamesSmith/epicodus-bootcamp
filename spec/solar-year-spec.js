@@ -24,6 +24,11 @@ describe('SolarYearAge', function() {
     expect(userData.earthAgeSeconds).toEqual(31536000);
   });
 
+  it('should convert user Earth-age from seconds into days', function() {
+    userData.calcEarthAge();
+    expect(userData.earthAgeDays).toEqual(365);
+  });
+
   it('should calculate user Earth-age in years based on birth date and current date', function() {
     userData.calcEarthAge();
     expect(userData.earthAgeYears).toEqual(1);
