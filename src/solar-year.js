@@ -8,7 +8,7 @@ class User {
     this.earthAgeYears;
     this.lifeExpectancy;
     this.earthYearsBeforeLifeExpect;
-    this.earthYearsPastLifeExpect;
+    this.earthYearsPastLifeExpect = 0;
     this.planetConversions = [
       {planet: 'jupiter', conversionFactor: 11.86, ageYears: undefined, expectedYearsLeft: undefined, yearsPastExpectancy: 0},
       {planet: 'mars', conversionFactor: 1.88, ageYears: undefined, expectedYearsLeft: undefined, yearsPastExpectancy: 0},
@@ -23,12 +23,6 @@ class User {
     this.earthAgeYears = parseFloat((this.earthAgeDays / 365.25).toFixed(4));
   }
 
-  calcSolarYearAge() {
-    this.planetConversions.forEach((planet) => {
-      planet.ageYears = parseFloat((this.earthAgeYears / planet.conversionFactor).toFixed(4));
-    });
-  }
-
   calcLifeExpectancy() {
     if (this.birthSexOrigin === 'male') {
       this.lifeExpectancy = 77;
@@ -37,6 +31,17 @@ class User {
     } else if (this.birthSexOrigin === 'female') {
       this.lifeExpectancy = 83;
     }
+    this.earthYearsBeforeLifeExpect = this.lifeExpectancy - this.earthAgeYears;
+    if (this.earthYearsBeforeLifeExpect < 0) {
+      this.earthYearsPastLifeExpect = Math.abs(this.earthYearsBeforeLifeExpect);
+      this.earthYearsBeforeLifeExpect = 0;
+    }
+  }
+
+  calcSolarYearAge() {
+    this.planetConversions.forEach((planet) => {
+      planet.ageYears = parseFloat((this.earthAgeYears / planet.conversionFactor).toFixed(4));
+    });
   }
 
   calcYearsPastLifeExpect() {
