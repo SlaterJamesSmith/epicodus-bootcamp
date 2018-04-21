@@ -26,7 +26,7 @@ class User {
   calcEarthAge() {
     this.earthAgeSeconds = (this.currentDate - this.birthDate) / 1000;
     this.earthAgeDays = this.earthAgeSeconds / 86400;
-    this.earthAgeYears = this.earthAgeDays / 365;
+    this.earthAgeYears = parseFloat((this.earthAgeDays / 365.25).toFixed(4));
   }
 
   calcSolarYearAge() {

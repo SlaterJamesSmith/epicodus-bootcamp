@@ -29,27 +29,27 @@ describe('SolarYearAge', function() {
     expect(userData.earthAgeDays).toEqual(365);
   });
 
-  it('should convert user Earth-age from days into years', function() {
+  it('should correctly convert user Earth-age from days into years for a non-leap-year', function() {
     userData.calcEarthAge();
-    expect(userData.earthAgeYears).toEqual(1);
+    expect(userData.earthAgeYears).toEqual(0.9993);
   });
 
   it('should calculate user age in Mercury years based on birth date and current date', function() {
     userData.calcEarthAge();
     userData.calcSolarYearAge();
-    expect(userData.mercuryAgeYears).toEqual(4.1667);
+    expect(userData.mercuryAgeYears).toEqual(4.1638);
   });
 
   it('should calculate user age in Venus years based on birth date and current date', function() {
     userData.calcEarthAge();
     userData.calcSolarYearAge();
-    expect(userData.venusAgeYears).toEqual(1.6129);
+    expect(userData.venusAgeYears).toEqual(1.6118);
   });
 
   it('should calculate user age in Mars years based on birth date and current date', function() {
     userData.calcEarthAge();
     userData.calcSolarYearAge();
-    expect(userData.marsAgeYears).toEqual(0.5319);
+    expect(userData.marsAgeYears).toEqual(0.5315);
   });
 
   it('should calculate user age in Jupiter years based on birth date and current date', function() {
