@@ -9,18 +9,12 @@ class User {
     this.lifeExpectancy;
     this.earthYearsBeforeLifeExpect;
     this.earthYearsPastLifeExpect;
-    this.jupiterAgeYears;
-    this.jupiterYearsBeforeLifeExpect;
-    this.jupiterYearsPastLifeExpect;
-    this.marsAgeYears;
-    this.marsYearsBeforeLifeExpect;
-    this.marsYearsPastLifeExpect;
-    this.mercuryAgeYears;
-    this.mercuryYearsBeforeLifeExpect;
-    this.mercuryYearsPastLifeExpect;
-    this.venusAgeYears;
-    this.venusYearsBeforeLifeExpect;
-    this.venusYearsPastLifeExpect;
+    this.planetConversions = [
+      {planet: 'jupiter', conversionFactor: 11.86, ageYears: undefined, expectedYearsLeft: undefined, yearsPastExpectancy: 0},
+      {planet: 'mars', conversionFactor: 1.88, ageYears: undefined, expectedYearsLeft: undefined, yearsPastExpectancy: 0},
+      {planet: 'mercury', conversionFactor: 0.24, ageYears: undefined, expectedYearsLeft: undefined, yearsPastExpectancy: 0},
+      {planet: 'venus', conversionFactor: 0.62, ageYears: undefined, expectedYearsLeft: undefined, yearsPastExpectancy: 0},
+    ];
   }
 
   calcEarthAge() {
@@ -30,10 +24,9 @@ class User {
   }
 
   calcSolarYearAge() {
-    this.jupiterAgeYears = parseFloat((this.earthAgeYears / 11.86).toFixed(4));
-    this.marsAgeYears = parseFloat((this.earthAgeYears / 1.88).toFixed(4));
-    this.mercuryAgeYears = parseFloat((this.earthAgeYears / 0.24).toFixed(4));
-    this.venusAgeYears = parseFloat((this.earthAgeYears / 0.62).toFixed(4));
+    this.planetConversions.forEach((planet) => {
+      planet.ageYears = parseFloat((this.earthAgeYears / planet.conversionFactor).toFixed(4));
+    });
   }
 
   calcLifeExpectancy() {
