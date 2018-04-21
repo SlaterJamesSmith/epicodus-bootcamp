@@ -4,6 +4,7 @@ class User {
     this.birthDate;
     this.birthSexOrigin;
     this.earthAgeSeconds;
+    this.earthAgeDays;
     this.earthAgeYears;
     this.lifeExpectancy;
     this.earthYearsBeforeLifeExpect;
@@ -24,6 +25,7 @@ class User {
 
   calcEarthAge() {
     this.earthAgeSeconds = (this.currentDate - this.birthDate) / 1000;
+    this.earthAgeDays = this.earthAgeSeconds / 86400;
     this.earthAgeYears = this.earthAgeSeconds / 31536000;
   }
 
