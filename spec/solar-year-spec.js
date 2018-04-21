@@ -45,25 +45,25 @@ describe('SolarYearAge', function() {
   it('should convert Earth years into Mercury years', function() {
     userData.calcEarthAge();
     userData.calcSolarYearAge();
-    expect(userData.mercuryAgeYears).toEqual(4.1638);
+    expect(userData.planetConversions[2].ageYears).toEqual(4.1638);
   });
 
   it('should convert Earth years into Venus years', function() {
     userData.calcEarthAge();
     userData.calcSolarYearAge();
-    expect(userData.venusAgeYears).toEqual(1.6118);
+    expect(userData.planetConversions[3].ageYears).toEqual(1.6118);
   });
 
   it('should convert Earth years into Mars years', function() {
     userData.calcEarthAge();
     userData.calcSolarYearAge();
-    expect(userData.marsAgeYears).toEqual(0.5315);
+    expect(userData.planetConversions[1].ageYears).toEqual(0.5315);
   });
 
   it('should convert Earth years into Jupiter years', function() {
     userData.calcEarthAge();
     userData.calcSolarYearAge();
-    expect(userData.jupiterAgeYears).toEqual(0.0843);
+    expect(userData.planetConversions[0].ageYears).toEqual(0.0843);
   });
 
   it('should determine user life expectancy based on male biological sex origin', function() {
