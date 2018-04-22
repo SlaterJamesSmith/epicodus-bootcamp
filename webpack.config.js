@@ -20,7 +20,7 @@ module.exports = {
     new HtmlWebpackPlugin({
       title: 'Super Galactic Age Calculator',
       template: './src/index.html',
-      inject: 'body'
+      inject: 'head'
     }),
     new CopyWebpackPlugin([
       { from: 'src/img', to: 'img'}
