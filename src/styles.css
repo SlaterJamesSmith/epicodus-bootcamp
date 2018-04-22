@@ -1,10 +1,14 @@
 h1 {
+  text-align: center;
+  text-transform: uppercase;
+}
+
+button {
   text-transform: uppercase;
 }
 
 .container {
   margin: 0 auto;
   padding: 25px;
-  text-align: center;
   width: 95%;
 }

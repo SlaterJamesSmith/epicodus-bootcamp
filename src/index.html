@@ -7,7 +7,30 @@
   <body>
     <div class="container">
       <h1>Super Galactic Age Calculator</h1>
-      <p>Currently no UI. Backend Tests Only.</p>
+      <div class="card">
+        <form class="card-body">
+          <div class="form-group">
+            <label><strong>Birthdate</strong></label>
+            <input id="birthdate" class="form-control" type="date" required>
+          </div>
+          <label><strong>Sex</strong></label>
+          <div class="form-group">
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="radio" name="birth-sex-origin" value="male">
+              <label class="form-check-label">Male</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="radio" name="birth-sex-origin" value="average">
+              <label class="form-check-label">Intersex</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="radio" name="birth-sex-origin" value="female">
+              <label class="form-check-label">Female</label>
+            </div>
+          </div>
+          <button class="btn btn-info" type="submit">Submit</button>
+        </form>
+      </div>
     </div>
   </body>
 </html>
