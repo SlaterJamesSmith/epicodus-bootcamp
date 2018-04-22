@@ -7,9 +7,9 @@ class User {
     this.earthAgeDays;
     this.earthAgeYears;
     this.lifeExpectancy;
-    this.earthYearsBeforeLifeExpect;
-    this.earthYearsPastLifeExpect = 0;
-    this.planetConversions = [
+    this.earthExpectedYearsLeft;
+    this.earthYearsPastExpectancy = 0;
+    this.planets = [
       {planet: 'jupiter', conversionFactor: 11.86, ageYears: undefined, expectedYearsLeft: undefined, yearsPastExpectancy: 0},
       {planet: 'mars', conversionFactor: 1.88, ageYears: undefined, expectedYearsLeft: undefined, yearsPastExpectancy: 0},
       {planet: 'mercury', conversionFactor: 0.24, ageYears: undefined, expectedYearsLeft: undefined, yearsPastExpectancy: 0},
@@ -17,13 +17,13 @@ class User {
     ];
   }
 
-  calcEarthAge() {
+  calcEarthAgeData() {
     this.earthAgeSeconds = (this.currentDate - this.birthDate) / 1000;
     this.earthAgeDays = parseFloat((this.earthAgeSeconds / 86400).toFixed(4));
     this.earthAgeYears = parseFloat((this.earthAgeDays / 365.25).toFixed(4));
   }
 
-  calcLifeExpectancy() {
+  calcEarthLifeExpectancy() {
     if (this.birthSexOrigin === 'male') {
       this.lifeExpectancy = 77;
     } else if (this.birthSexOrigin === 'average') {
@@ -31,18 +31,18 @@ class User {
     } else if (this.birthSexOrigin === 'female') {
       this.lifeExpectancy = 83;
     }
-    this.earthYearsBeforeLifeExpect = this.lifeExpectancy - this.earthAgeYears;
-    if (this.earthYearsBeforeLifeExpect < 0) {
-      this.earthYearsPastLifeExpect = Math.abs(this.earthYearsBeforeLifeExpect);
-      this.earthYearsBeforeLifeExpect = 0;
+    this.earthExpectedYearsLeft = this.lifeExpectancy - this.earthAgeYears;
+    if (this.earthExpectedYearsLeft < 0) {
+      this.earthYearsPastExpectancy = Math.abs(this.earthExpectedYearsLeft);
+      this.earthExpectedYearsLeft = 0;
     }
   }
 
-  calcSolarYearAge() {
-    this.planetConversions.forEach((planet) => {
+  calcPlanetData() {
+    this.planets.forEach((planet) => {
       planet.ageYears = parseFloat((this.earthAgeYears / planet.conversionFactor).toFixed(4));
-      planet.expectedYearsLeft = parseFloat((this.earthYearsBeforeLifeExpect / planet.conversionFactor).toFixed(4));
-      planet.yearsPastExpectancy = parseFloat((this.earthYearsPastLifeExpect / planet.conversionFactor).toFixed(4));
+      planet.expectedYearsLeft = parseFloat((this.earthExpectedYearsLeft / planet.conversionFactor).toFixed(4));
+      planet.yearsPastExpectancy = parseFloat((this.earthYearsPastExpectancy / planet.conversionFactor).toFixed(4));
     });
   }
 }
