@@ -44,7 +44,7 @@ Add description.
 
 - Tamagotchi cannot be interacted with for 10 seconds after being put to bed.
   - Input: Feed tamagotchi
-  - Output: "Cannot feed while tamagotchi is asleep"
+  - Output: "Tamagotchi cannot be interacted with while sleeping"
 
 - Tamagotchi's age increases by 1 each minute.
   - Input: 1 minute passes
