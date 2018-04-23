@@ -7,6 +7,7 @@ describe('Tamagotchi', function() {
     tamagotchi = new Tamagotchi('Peepers');
     console.log(tamagotchi);
     jasmine.clock().install();
+    tamagotchi.setAge();
     tamagotchi.setFoodLevel();
     tamagotchi.setAttentionLevel();
     tamagotchi.setSleepLevel();
@@ -86,7 +87,10 @@ describe('Tamagotchi', function() {
   it('should wake up after 10 seconds of sleeping and be interactable', function() {
     tamagotchi.feed();
     tamagotchi.sleep();
-    jasmine.clock().tick(10001);
+    jasmine.clock().tick(5001);
+    tamagotchi.feed();
+    tamagotchi.playTime();
+    jasmine.clock().tick(5001);
     tamagotchi.feed();
     tamagotchi.playTime();
     expect(tamagotchi.status).toEqual("Alive");
@@ -98,12 +102,12 @@ describe('Tamagotchi', function() {
   it('should age by 1 point every minute', function() {
     jasmine.clock().tick(60001);
     expect(tamagotchi.age).toEqual(1);
-    expect(tamagotchi.evolution).toEqual("infant");
+    expect(tamagotchi.evolution).toEqual("Infant");
   });
 
   it('should transform into an adult at age 10', function() {
     jasmine.clock().tick(600001);
     expect(tamagotchi.age).toEqual(10);
-    expect(tamagotchi.evolution).toEqual("adult");
+    expect(tamagotchi.evolution).toEqual("Adult");
   });
 });

@@ -2,10 +2,21 @@ class Tamagotchi {
 
   constructor(name) {
     this.name = name;
+    this.age = 0;
+    this.evolution = "Infant";
     this.foodLevel = 10;
     this.attentionLevel = 10;
     this.sleepLevel = 10;
     this.status = "Alive";
+  }
+
+  setAge() {
+    setInterval(() => {
+      this.age++;
+      if (this.age >= 10) {
+        this.evolution = "Adult";
+      }
+    }, 60000);
   }
 
   setFoodLevel() {
@@ -35,6 +46,27 @@ class Tamagotchi {
     }, 10000);
   }
 
+  feed() {
+    if (this.status === "Alive") {
+      this.foodLevel += 10;
+    }
+  }
+
+  playTime() {
+    if (this.status === "Alive") {
+      this.attentionLevel += 10;
+    }
+  }
+
+  sleep() {
+    if (this.status === "Alive") {
+      this.sleepLevel += 10;
+      this.status = "Sleeping";
+      setTimeout(() => {
+        this.status = "Alive";
+      }, 10000);
+    }
+  }
 }
 
 export { Tamagotchi };
