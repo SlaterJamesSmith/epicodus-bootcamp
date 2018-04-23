@@ -1,10 +1,15 @@
 import { Tamagotchi } from './../src/tamagotchi.js'
 
 describe('Tamagotchi', function() {
+  let tamagotchi;
 
   beforeEach(function() {
-    let tamagotchi = new Tamagotchi('Peepers');
+    tamagotchi = new Tamagotchi('Peepers');
+    console.log(tamagotchi);
     jasmine.clock().install();
+    tamagotchi.setFoodLevel();
+    tamagotchi.setAttentionLevel();
+    tamagotchi.setSleepLevel(); 
   });
 
   afterEach(function(){
@@ -50,7 +55,4 @@ describe('Tamagotchi', function() {
     jasmine.clock().tick(100001);
     expect(tamagotchi.status).toEqual("Dead");
   });
-
-  
-
 });
