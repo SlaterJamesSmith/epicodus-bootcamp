@@ -1,0 +1,5 @@
+class Tamagotchi {
+
+}
+
+export { Tamagotchi };
