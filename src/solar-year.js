@@ -1,8 +1,8 @@
 class User {
-  constructor() {
-    this.currentDate;
-    this.birthDate;
-    this.birthSexOrigin;
+  constructor(currentDate, birthDate, sex) {
+    this.currentDate = new Date(currentDate);
+    this.birthDate = new Date(birthDate);
+    this.birthSexOrigin = sex;
     this.earthAgeSeconds;
     this.earthAgeDays;
     this.earthAgeYears;
