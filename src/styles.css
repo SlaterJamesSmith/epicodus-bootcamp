@@ -24,6 +24,10 @@ button {
   text-transform: uppercase;
 }
 
+.display-none {
+  display: none;
+}
+
 .container {
   margin: 0 auto 20px;
   padding: 25px;
