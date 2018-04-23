@@ -1,0 +1,9 @@
+/*.hidden {
+  display: none;
+}*/
+
+#play-room {
+  background-color: gray;
+  height: 400px;
+  width: auto;
+}
