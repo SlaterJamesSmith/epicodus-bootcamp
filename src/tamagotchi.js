@@ -24,7 +24,6 @@ class Tamagotchi {
       this.foodLevel--;
       if (this.foodLevel <= 0) {
         this.status = "Dead";
-        this.death();
       }
     }, 1000);
   }
@@ -34,7 +33,6 @@ class Tamagotchi {
       this.attentionLevel--;
       if (this.attentionLevel <= 0) {
         this.status = "Dead";
-        this.death();
       }
     }, 5000);
   }
@@ -44,25 +42,24 @@ class Tamagotchi {
       this.sleepLevel--;
       if (this.sleepLevel <= 0) {
         this.status = "Dead";
-        this.death();
       }
     }, 10000);
   }
 
   feed() {
-    if (this.status === "Alive") {
+    if (this.status === "Alive" && this.foodLevel < 100) {
       this.foodLevel += 10;
     }
   }
 
   playTime() {
-    if (this.status === "Alive") {
+    if (this.status === "Alive" && this.attentionLevel < 100) {
       this.attentionLevel += 10;
     }
   }
 
   sleep() {
-    if (this.status === "Alive") {
+    if (this.status === "Alive" && this.sleepLevel < 100) {
       this.sleepLevel += 10;
       this.status = "Sleeping";
       setTimeout(() => {

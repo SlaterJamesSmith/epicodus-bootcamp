@@ -2,6 +2,10 @@
   display: none;
 }
 
+.container {
+  text-align: center;
+}
+
 #play-room.death {
   background: url('/img/death.gif');
   background-position: -180px -50px;
@@ -15,6 +19,7 @@
 #play-room {
   background-color: gray;
   background: url('/img/BG.gif');
+  margin: 0 auto;
   height: 400px;
   width: 400px;
   background-position: -165px;
@@ -23,6 +28,9 @@
 img {
   position: relative;
   top: 180px;
-  left: 90px;
   width: 55%;
+}
+
+img.adult {
+
 }

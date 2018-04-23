@@ -6,6 +6,7 @@ import './styles.css';
 
 $(document).ready(function() {
   let tamagotchi;
+  let imgWidth = 55;
 
   $('form').submit(function(e) {
     e.preventDefault();
@@ -27,6 +28,9 @@ $(document).ready(function() {
     updateStats();
 
     setInterval(function() {
+      if (tamagotchi.age >= 100) {
+        tamagotchi.status = "Dead";
+      }
       updateStats();
       if (tamagotchi.age < 10) {
         if (tamagotchi.status === "Dead") {
@@ -47,6 +51,7 @@ $(document).ready(function() {
           $('#play-room').removeClass("sleeping");
         }
       } else {
+        $('#play-room img').addClass('adult');
         if (tamagotchi.status === "Dead") {
           $("#age").hide();
           $("#food-level").hide();
@@ -82,14 +87,24 @@ $(document).ready(function() {
   });
 
   $('#sleep').click(function() {
-      tamagotchi.sleep();
-      $('#sleep-level span').text(tamagotchi.sleepLevel);
-      $('#status span').text(tamagotchi.status);
+    tamagotchi.sleep();
+    $('#sleep-level span').text(tamagotchi.sleepLevel);
+    $('#status span').text(tamagotchi.status);
   });
 
   $('#steroids').click(function() {
-    tamagotchi.age = 10;
-    $('#age span').text(tamagotchi.age);
+    if (tamagotchi.age < 100) {
+      tamagotchi.age += 10;
+      tamagotchi.evolution = "Adult";
+      $('#play-room img').addClass('adult');
+      if (tamagotchi.status === "Sleeping") {
+        $('#play-room img').attr('src', 'img/adult-sleeping.png');
+      } else {
+        $('#play-room img').attr('src', 'img/adult.gif');
+      }
+      $('img').width((imgWidth += 5) + '%');
+      $('#age span').text(tamagotchi.age);
+    }
   });
 
   $('#game-over').click(function() {
