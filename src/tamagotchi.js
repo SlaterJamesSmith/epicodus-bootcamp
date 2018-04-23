@@ -24,6 +24,7 @@ class Tamagotchi {
       this.foodLevel--;
       if (this.foodLevel <= 0) {
         this.status = "Dead";
+        this.death();
       }
     }, 1000);
   }
@@ -33,6 +34,7 @@ class Tamagotchi {
       this.attentionLevel--;
       if (this.attentionLevel <= 0) {
         this.status = "Dead";
+        this.death();
       }
     }, 5000);
   }
@@ -42,6 +44,7 @@ class Tamagotchi {
       this.sleepLevel--;
       if (this.sleepLevel <= 0) {
         this.status = "Dead";
+        this.death();
       }
     }, 10000);
   }

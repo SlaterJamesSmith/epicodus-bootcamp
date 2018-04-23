@@ -1,9 +1,28 @@
-/*.hidden {
+.hidden {
   display: none;
-}*/
+}
+
+#play-room.death {
+  background: url('/img/death.gif');
+  background-position: -180px -50px;
+
+}
+
+#play-room.sleeping {
+  background: url('/img/BG-night.gif');
+}
 
 #play-room {
   background-color: gray;
+  background: url('/img/BG.gif');
   height: 400px;
-  width: auto;
+  width: 400px;
+  background-position: -165px;
+}
+
+img {
+  position: relative;
+  top: 180px;
+  left: 90px;
+  width: 55%;
 }
