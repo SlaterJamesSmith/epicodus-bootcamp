@@ -19,8 +19,8 @@ class User {
 
   calcEarthAgeData() {
     this.earthAgeSeconds = (this.currentDate - this.birthDate) / 1000;
-    this.earthAgeDays = parseFloat((this.earthAgeSeconds / 86400).toFixed(4));
-    this.earthAgeYears = parseFloat((this.earthAgeDays / 365.25).toFixed(4));
+    this.earthAgeDays = parseFloat((this.earthAgeSeconds / 86400).toFixed(2));
+    this.earthAgeYears = parseFloat((this.earthAgeDays / 365.25).toFixed(2));
   }
 
   calcEarthLifeExpectancy() {
@@ -40,9 +40,9 @@ class User {
 
   calcPlanetData() {
     this.planets.forEach((planet) => {
-      planet.ageYears = parseFloat((this.earthAgeYears / planet.conversionFactor).toFixed(4));
-      planet.expectedYearsLeft = parseFloat((this.earthExpectedYearsLeft / planet.conversionFactor).toFixed(4));
-      planet.yearsPastExpectancy = parseFloat((this.earthYearsPastExpectancy / planet.conversionFactor).toFixed(4));
+      planet.ageYears = parseFloat((this.earthAgeYears / planet.conversionFactor).toFixed(2));
+      planet.expectedYearsLeft = parseFloat((this.earthExpectedYearsLeft / planet.conversionFactor).toFixed(2));
+      planet.yearsPastExpectancy = parseFloat((this.earthYearsPastExpectancy / planet.conversionFactor).toFixed(2));
     });
   }
 }

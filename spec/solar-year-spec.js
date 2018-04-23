@@ -31,7 +31,7 @@ describe('SolarYearAge', function() {
 
   it('should correctly convert user Earth-age from days into years for a non-leap-year', function() {
     userData.calcEarthAgeData();
-    expect(userData.earthAgeYears).toEqual(0.9993);
+    expect(userData.earthAgeYears).toEqual(1);
   });
 
   it('should correctly convert user Earth-age from days into years for a leap-year', function() {
@@ -39,31 +39,31 @@ describe('SolarYearAge', function() {
     leapYearUserData.birthDate = new Date(2012, 0, 1, 0, 0, 0);
     leapYearUserData.currentDate = new Date(2013, 0, 1, 0, 0, 0);
     leapYearUserData.calcEarthAgeData();
-    expect(leapYearUserData.earthAgeYears).toEqual(1.0021);
+    expect(leapYearUserData.earthAgeYears).toEqual(1);
   });
 
   it('should convert Earth years into Mercury years', function() {
     userData.calcEarthAgeData();
     userData.calcPlanetData();
-    expect(userData.planets[2].ageYears).toEqual(4.1638);
+    expect(userData.planets[2].ageYears).toEqual(4.17);
   });
 
   it('should convert Earth years into Venus years', function() {
     userData.calcEarthAgeData();
     userData.calcPlanetData();
-    expect(userData.planets[3].ageYears).toEqual(1.6118);
+    expect(userData.planets[3].ageYears).toEqual(1.61);
   });
 
   it('should convert Earth years into Mars years', function() {
     userData.calcEarthAgeData();
     userData.calcPlanetData();
-    expect(userData.planets[1].ageYears).toEqual(0.5315);
+    expect(userData.planets[1].ageYears).toEqual(0.53);
   });
 
   it('should convert Earth years into Jupiter years', function() {
     userData.calcEarthAgeData();
     userData.calcPlanetData();
-    expect(userData.planets[0].ageYears).toEqual(0.0843);
+    expect(userData.planets[0].ageYears).toEqual(0.08);
   });
 
   it('should determine user life expectancy based on male biological sex origin', function() {
@@ -92,25 +92,25 @@ describe('SolarYearAge', function() {
   it('should convert expected years of life left on Earth into Mercury years', function() {
     userMale76.calcEarthLifeExpectancy();
     userMale76.calcPlanetData();
-    expect(userMale76.planets[2].expectedYearsLeft).toEqual(4.1667);
+    expect(userMale76.planets[2].expectedYearsLeft).toEqual(4.17);
   });
 
   it('should convert expected years of life left on Earth into Venus years', function() {
     userMale76.calcEarthLifeExpectancy();
     userMale76.calcPlanetData();
-    expect(userMale76.planets[3].expectedYearsLeft).toEqual(1.6129);
+    expect(userMale76.planets[3].expectedYearsLeft).toEqual(1.61);
   });
 
   it('should convert expected years of life left on Earth into Mars years', function() {
     userMale76.calcEarthLifeExpectancy();
     userMale76.calcPlanetData();
-    expect(userMale76.planets[1].expectedYearsLeft).toEqual(0.5319);
+    expect(userMale76.planets[1].expectedYearsLeft).toEqual(0.53);
   });
 
   it('should convert expected years of life left on Earth into Jupiter years', function() {
     userMale76.calcEarthLifeExpectancy();
     userMale76.calcPlanetData();
-    expect(userMale76.planets[0].expectedYearsLeft).toEqual(0.0843);
+    expect(userMale76.planets[0].expectedYearsLeft).toEqual(0.08);
   });
 
   it('should set expected remaining life time before expiry age to 0 if user age is past life expectancy', function() {
@@ -127,9 +127,9 @@ describe('SolarYearAge', function() {
     userMale78.calcEarthLifeExpectancy();
     userMale78.calcPlanetData();
     expect(userMale78.earthYearsPastExpectancy).toEqual(1);
-    expect(userMale78.planets[2].yearsPastExpectancy).toEqual(4.1667);
-    expect(userMale78.planets[3].yearsPastExpectancy).toEqual(1.6129);
-    expect(userMale78.planets[1].yearsPastExpectancy).toEqual(0.5319);
-    expect(userMale78.planets[0].yearsPastExpectancy).toEqual(0.0843);
+    expect(userMale78.planets[2].yearsPastExpectancy).toEqual(4.17);
+    expect(userMale78.planets[3].yearsPastExpectancy).toEqual(1.61);
+    expect(userMale78.planets[1].yearsPastExpectancy).toEqual(0.53);
+    expect(userMale78.planets[0].yearsPastExpectancy).toEqual(0.08);
   });
 });
