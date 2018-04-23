@@ -34,12 +34,12 @@ describe('SolarYearAge', function() {
     expect(userData.earthAgeYears).toEqual(1);
   });
 
-  it('should correctly convert user Earth-age from days into years for a leap-year', function() {
+  it('should correctly convert user Earth-age from seconds into days for a leap-year', function() {
     let leapYearUserData = new User();
     leapYearUserData.birthDate = new Date(2012, 0, 1, 0, 0, 0);
     leapYearUserData.currentDate = new Date(2013, 0, 1, 0, 0, 0);
     leapYearUserData.calcEarthAgeData();
-    expect(leapYearUserData.earthAgeYears).toEqual(1);
+    expect(leapYearUserData.earthAgeDays).toEqual(366);
   });
 
   it('should convert Earth years into Mercury years', function() {
