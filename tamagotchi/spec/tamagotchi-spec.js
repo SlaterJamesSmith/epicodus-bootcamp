@@ -13,7 +13,7 @@ describe('Tamagotchi', function() {
     tamagotchi.setSleepLevel();
   });
 
-  afterEach(function(){
+  afterEach(function() {
     jasmine.clock().uninstall();
   });
 
@@ -41,20 +41,20 @@ describe('Tamagotchi', function() {
 
   it('should kill tamagotchi if foodLevel equals 0', function() {
     jasmine.clock().tick(10001);
-    expect(tamagotchi.status).toEqual("Dead");
+    expect(tamagotchi.status).toEqual('Dead');
   });
 
   it('should kill tamagotchi if attentionLevel equals 0', function() {
     tamagotchi.foodLevel = 60
     jasmine.clock().tick(50001);
-    expect(tamagotchi.status).toEqual("Dead");
+    expect(tamagotchi.status).toEqual('Dead');
   });
 
   it('should kill tamagotchi if sleepLevel equals 0', function() {
     tamagotchi.foodLevel = 110
     tamagotchi.attentionLevel = 60
     jasmine.clock().tick(100001);
-    expect(tamagotchi.status).toEqual("Dead");
+    expect(tamagotchi.status).toEqual('Dead');
   });
 
   it('should gain 10 foodLevel after being fed', function() {
@@ -78,7 +78,7 @@ describe('Tamagotchi', function() {
     tamagotchi.sleep();
     tamagotchi.feed();
     tamagotchi.playTime();
-    expect(tamagotchi.status).toEqual("Sleeping");
+    expect(tamagotchi.status).toEqual('Sleeping');
     expect(tamagotchi.foodLevel).toEqual(5);
     expect(tamagotchi.attentionLevel).toEqual(9);
     expect(tamagotchi.sleepLevel).toEqual(20);
@@ -93,7 +93,7 @@ describe('Tamagotchi', function() {
     jasmine.clock().tick(5001);
     tamagotchi.feed();
     tamagotchi.playTime();
-    expect(tamagotchi.status).toEqual("Alive");
+    expect(tamagotchi.status).toEqual('Alive');
     expect(tamagotchi.foodLevel).toEqual(20);
     expect(tamagotchi.attentionLevel).toEqual(18);
     expect(tamagotchi.sleepLevel).toEqual(19);
@@ -102,12 +102,12 @@ describe('Tamagotchi', function() {
   it('should age by 1 point every minute', function() {
     jasmine.clock().tick(60001);
     expect(tamagotchi.age).toEqual(1);
-    expect(tamagotchi.evolution).toEqual("Infant");
+    expect(tamagotchi.evolution).toEqual('Infant');
   });
 
   it('should transform into an adult at age 10', function() {
     jasmine.clock().tick(600001);
     expect(tamagotchi.age).toEqual(10);
-    expect(tamagotchi.evolution).toEqual("Adult");
+    expect(tamagotchi.evolution).toEqual('Adult');
   });
 });

@@ -5,7 +5,7 @@ const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = {
-  entry: './src/main.js',
+  entry: './tamagotchi/src/main.js',
   output: {
     filename: 'bundle.js',
     path: path.resolve(__dirname, 'dist')
@@ -18,12 +18,12 @@ module.exports = {
     new UglifyJsPlugin({ sourceMap: true }),
     new CleanWebpackPlugin(['dist']),
     new HtmlWebpackPlugin({
-      title: 'Epicodus JS Project Template',
-      template: './src/index.html',
+      title: 'EPI-JS-WK2',
+      template: './tamagotchi/src/index.html',
       inject: 'head'
     }),
     new CopyWebpackPlugin([
-      { from: 'src/img', to: 'img'}
+      { from: './tamagotchi/src/img', to: 'img'}
     ])
   ],
   module: {
