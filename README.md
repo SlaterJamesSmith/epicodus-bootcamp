@@ -13,7 +13,21 @@ Add description.
 
 ## Specifications
 
-Add specifications.
+- Takes two dates and returns coordinates, location names, and magnitudes of earthquakes that occurred.
+  - Input: "01/01/2017", "01/01/2018"
+  - Output: [Event{coordinates:, name:, magnitude:},<br>Event{...},<br>Event{...}, ...]
+- Passes error message back if earthquakes API call is rejected.
+  - Input: "01/01/2017", "01/01/2018"
+  - Output: "Sorry, we experienced a 401 error. Try again later."
+- Maps locations on Google Maps.
+  - Input: "01/01/2017", "01/01/2018"
+  - Output: [display locations as points on map]
+- Maps locations on Google Maps with magnitudes displayed by circles.
+  - Input: "01/01/2017", "01/01/2018"
+  - Output: [display locations as sized circles on map]
+- Passes error message back if maps API call is rejected.
+  - Input: "01/01/2017", "01/01/2018"
+  - Output: "Sorry, we experienced a 401 error. Try again later."
 
 ## Setup/Installation Requirements
 
