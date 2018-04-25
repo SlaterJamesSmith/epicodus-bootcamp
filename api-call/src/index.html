@@ -9,13 +9,19 @@
   <body>
     <div class="container">
       <h1><a href="index.html">Epicodus JS Week 2</a> <span class="subtitle">API Calls</span></h1>
-      <label>Search Giphy</label>
-      <input id="user-input" type="text">
-      <label>API Call Method</label>
-      <button id="ajax" class="btn btn-primary" type="button">AJAX</button>
-      <button id="javascript" class="btn btn-primary" type="button">Javascript</button>
+      <div class="card card-body">
+        <div class="form-group">
+          <label>Search Giphy</label>
+          <input id="user-input" class="form-control" type="text">
+        </div>
+        <label>API Call Method</label>
+        <div class="btn-group">
+          <button id="ajax" class="btn btn-primary" type="button">AJAX</button>
+          <button id="javascript" class="btn btn-success" type="button">Javascript</button>
+        </div>
+      </div>
+      <div id="errors" class="display-none"></div>
+      <div id="gif-results"></div>
     </div>
-    <div id="gif-results"></div>
-    <div id="errors"></div>
   </body>
 </html>
