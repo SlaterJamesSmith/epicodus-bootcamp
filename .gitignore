@@ -12,6 +12,7 @@ Thumbs.db
 ######################
 node_modules/
 
-# Bundle #
+# Build #
 ######################
 dist/
+.env

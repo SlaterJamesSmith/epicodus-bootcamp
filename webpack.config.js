@@ -3,6 +3,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
+const Dotenv = require('dotenv-webpack');
 
 module.exports = {
   entry: './tamagotchi/src/main.js',
@@ -24,7 +25,8 @@ module.exports = {
     }),
     new CopyWebpackPlugin([
       { from: './tamagotchi/src/img', to: 'img'}
-    ])
+    ]),
+    new Dotenv()
   ],
   module: {
     rules: [
