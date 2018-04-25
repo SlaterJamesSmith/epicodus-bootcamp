@@ -5,7 +5,6 @@ describe('Tamagotchi', function() {
 
   beforeEach(function() {
     tamagotchi = new Tamagotchi('Peepers');
-    console.log(tamagotchi);
     jasmine.clock().install();
     tamagotchi.setAge();
     tamagotchi.setFoodLevel();
@@ -100,12 +99,18 @@ describe('Tamagotchi', function() {
   });
 
   it('should age by 1 point every minute', function() {
+    tamagotchi.foodLevel = 100;
+    tamagotchi.attentionLevel = 100;
+    tamagotchi.sleepLevel = 100;
     jasmine.clock().tick(60001);
     expect(tamagotchi.age).toEqual(1);
     expect(tamagotchi.evolution).toEqual('Infant');
   });
 
   it('should transform into an adult at age 10', function() {
+    tamagotchi.foodLevel = 1000;
+    tamagotchi.attentionLevel = 1000;
+    tamagotchi.sleepLevel = 1000;
     jasmine.clock().tick(600001);
     expect(tamagotchi.age).toEqual(10);
     expect(tamagotchi.evolution).toEqual('Adult');
