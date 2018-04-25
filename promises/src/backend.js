@@ -1,20 +1,15 @@
 import $ from 'jquery';
 
-class GetData {
-  // constructor() {
-  // }
-
-  apiCall(query, displayData, showErrors) {
-    console.log("One");
+class ApiCall {
+  jqueryApiPromise(query, displayData, showErrors) {
     $.get(`http://api.giphy.com/v1/gifs/search?api_key=${process.env.API_KEY}&q=${query}`).then(function(response){
       displayData(response);
-      console.log(response);
     }).fail(function(error){
       showErrors(error);
     });
   }
 
-  promiseCall(query, displayData, showErrors) {
+  es6ApiPromise(query, displayData, showErrors) {
     let promise = new Promise(function(resolve, reject) {
       let request = new XMLHttpRequest();
       let url = `http://api.giphy.com/v1/gifs/search?api_key=${process.env.API_KEY}&q=${query}`;
@@ -25,7 +20,7 @@ class GetData {
           reject(Error(request.statusText));
         }
       }
-      request.open("GET", url, true);
+      request.open('GET', url, true);
       request.send();
     });
 
@@ -38,4 +33,4 @@ class GetData {
   }
 }
 
-export { GetData };
+export { ApiCall };
