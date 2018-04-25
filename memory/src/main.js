@@ -36,12 +36,16 @@ $(document).ready(function() {
       cardType2 = $(this).children("div").attr("data-card-type");
       cardPosition2 = $(this).attr("id");
       $(this).children("div").show();
-      $(this).addClass("no-click");
+      $(".no-match").addClass("no-click");
+      setTimeout(function() {$(".no-match").removeClass("no-click");}, 600);
       if (!isMatch(cardType1, cardType2)) {
         $("#" + cardPosition1).children().delay(500).fadeOut(500);
         $("#" + cardPosition1).removeClass("no-click");
         $("#" + cardPosition2).children().delay(500).fadeOut(500);
         $("#" + cardPosition2).removeClass("no-click");
+      } else {
+        $("#" + cardPosition1).removeClass("no-match");
+        $("#" + cardPosition2).removeClass("no-match");
       }
       cardType1 = null;
       cardType2 = null;
