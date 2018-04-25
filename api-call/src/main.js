@@ -17,7 +17,7 @@ $(document).ready(function() {
         format: 'json'
       },
       success: function(response) {
-        $('#gif-results').append(`<img src='${response.data[0].images.fixed_height.url}'>`);
+        $('#gif-results').append(`<img src='${response.data[Math.floor(Math.random() * response.data.length)].images.fixed_height.url}'>`);
         $('#errors').hide();
       },
       error: function() {
@@ -46,7 +46,7 @@ $(document).ready(function() {
     request.send();
 
     function getElements(response) {
-      $('#gif-results').append(`<img src='${response.data[0].images.fixed_height.url}'>`);
+      $('#gif-results').append(`<img src='${response.data[Math.floor(Math.random() * response.data.length)].images.fixed_height.url}'>`);
       $('#errors').hide();
     }
   });

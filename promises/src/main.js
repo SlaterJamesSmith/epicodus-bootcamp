@@ -5,7 +5,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './styles.css';
 
 let displayData = function(response) {
-  $('#gif-results').append(`<img src="${response.data[0].images.fixed_height.url}">`);
+  $('#gif-results').append(`<img src="${response.data[Math.floor(Math.random() * response.data.length)].images.fixed_height.url}">`);
   $('#errors').hide();
 }
 
