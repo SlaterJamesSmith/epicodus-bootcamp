@@ -1,9 +1,9 @@
 class Api {
-  quakesCall(startTime, endTime){
+  githubCall(desc, location){
     let promise;
     return promise = new Promise(function(resolve, reject) {
       let request = new XMLHttpRequest();
-      let url = `https://earthquake.usgs.gov/fdsnws/event/1/query?format=geojson&starttime=${startTime}&endtime=${endTime}`;
+      let url = `https://jobs.github.com/positions.json?description=${desc}&location=${location}`;
       request.responseType = 'json';
       request.onload = function() {
         if (this.status === 200) {
@@ -18,4 +18,4 @@ class Api {
   }
 }
 
-export { Api }
+export { Api };
