@@ -1,5 +1,5 @@
 import $ from 'jquery';
-import { Api } from './api-class.js';
+import { Api } from './api-call.js';
 import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './styles.css';
@@ -12,7 +12,7 @@ function initMap(response) {
       zoom: 2,
       center: {lat: 0, lng: 0}
     });
-    for (var i = 0; i < response.features.length; i++) {
+    for (var i = 0; i < response.features.length; i ++) {
       let magnitude = response.features[i].properties.mag;
       let coords = response.features[i].geometry.coordinates;
       let latLng = new maps.LatLng(coords[1],coords[0]);
@@ -24,7 +24,7 @@ function initMap(response) {
     }
     function getCircle(magnitude) {
       return {
-        path: google.maps.SymbolPath.CIRCLE,
+        path: maps.SymbolPath.CIRCLE,
         fillColor: 'red',
         fillOpacity: .2,
         scale: Math.pow(2, magnitude) / 2,
@@ -50,8 +50,9 @@ $(function() {
     let dayCount = (endDate - startDate) / 1000 / 86400 + 1;
 
     for (let i = 0; i < dayCount; i++) {
-      let addDay = startDate.getTime() + (86400000 * (i+1));
-      let nextDay = new Date(addDay); quakeDays.push(`${nextDay.getFullYear()}-${nextDay.getMonth() + 1}-${nextDay.getDate()}`);
+      let refDay = startDate.getTime() + (86400000 * (i + 1));
+      let day = new Date(refDay);
+      quakeDays.push(`${day.getFullYear()}-${day.getMonth() + 1}-${day.getDate()}`);
     }
 
     plotClock = setInterval(function() {
@@ -63,10 +64,7 @@ $(function() {
       quakeDays.shift();
       quakePromise.then(function(response) {
         initMap(response);
-      }, function(error) {
-        console.log(`${error.message}`);
       });
     }, 1500);
-
   });
 });

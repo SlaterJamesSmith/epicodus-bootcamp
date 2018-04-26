@@ -1,5 +1,5 @@
 class Api {
-  quakesCall(startTime, endTime){
+  quakesCall(startTime, endTime) {
     let promise;
     return promise = new Promise(function(resolve, reject) {
       let request = new XMLHttpRequest();

@@ -4,6 +4,18 @@ html, body {
   padding: 0;
 }
 
+h1 {
+  font-weight: bold;
+  margin: 20px 0;
+  text-transform: uppercase;
+}
+
+h1 .subtitle {
+  display: block;
+  font-size: 0.8em;
+  font-weight: normal;
+}
+
 form {
   margin: 20px;
 }
@@ -11,5 +23,5 @@ form {
 #map {
   height: 50%;
   margin: 0 auto;
-  width: 95%;
+  width: 85%;
 }
