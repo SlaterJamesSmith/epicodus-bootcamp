@@ -37,10 +37,18 @@ function drawCircle(coord, jobCount, index){
   });
 
   function styleCircle(jobCount) {
+    let color;
+    if (jobCount >= 10) {
+      color = 'red';
+    } else if (jobCount > 4 && jobCount < 10) {
+      color = 'orange';
+    } else {
+      color = 'blue';
+    }
     return {
       path: maps.SymbolPath.CIRCLE,
-      fillColor: 'blue',
-      fillOpacity: .2,
+      fillColor: color,
+      fillOpacity: .5,
       scale: (jobCount + 5) * 2,
       strokeColor: 'white',
       strokeWeight: .5
@@ -98,7 +106,9 @@ $(function() {
       }
       console.log(jobsArray);
       for (let j = 0; j < jobsArray.length; j ++) {
-        drawCircle(cityCoords[j], jobsArray[j].length, j);
+        if (jobsArray[j].length > 0) {
+          drawCircle(cityCoords[j], jobsArray[j].length, j);
+        }
       }
     }, function(error) {
       console.log(`${error.message}`);
