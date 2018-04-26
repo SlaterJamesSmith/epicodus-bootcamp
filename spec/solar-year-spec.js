@@ -69,19 +69,19 @@ describe('SolarYearAge', function() {
   it('should determine user life expectancy based on male biological sex origin', function() {
     userData.birthSexOrigin = 'male';
     userData.calcEarthLifeExpectancy();
-    expect(userData.lifeExpectancy).toEqual(77);
+    expect(userData.earthLifeExpectancy).toEqual(77);
   });
 
   it('should determine user life expectancy based on average life expectancy', function() {
     userData.birthSexOrigin = 'average';
     userData.calcEarthLifeExpectancy();
-    expect(userData.lifeExpectancy).toEqual(80);
+    expect(userData.earthLifeExpectancy).toEqual(80);
   });
 
   it('should determine user life expectancy based on female biological sex origin', function() {
     userData.birthSexOrigin = 'female';
     userData.calcEarthLifeExpectancy();
-    expect(userData.lifeExpectancy).toEqual(83);
+    expect(userData.earthLifeExpectancy).toEqual(83);
   });
 
   it('should calculate user\'s expected remaining life time on Earth before expected expiry age', function() {
@@ -131,5 +131,15 @@ describe('SolarYearAge', function() {
     expect(userMale78.planets[3].yearsPastExpectancy).toEqual(1.61);
     expect(userMale78.planets[1].yearsPastExpectancy).toEqual(0.53);
     expect(userMale78.planets[0].yearsPastExpectancy).toEqual(0.08);
+  });
+
+  it('should convert user\'s Earth life expectancy into relative life expectancy on each planet', function() {
+    userMale78.calcEarthLifeExpectancy();
+    userMale78.calcPlanetData();
+    expect(userMale78.earthLifeExpectancy).toEqual(77);
+    expect(userMale78.planets[2].lifeExpectancy).toEqual(320.83);
+    expect(userMale78.planets[3].lifeExpectancy).toEqual(124.19);
+    expect(userMale78.planets[1].lifeExpectancy).toEqual(40.96);
+    expect(userMale78.planets[0].lifeExpectancy).toEqual(6.49);
   });
 });

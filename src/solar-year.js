@@ -6,14 +6,14 @@ class User {
     this.earthAgeSeconds;
     this.earthAgeDays;
     this.earthAgeYears;
-    this.lifeExpectancy;
+    this.earthLifeExpectancy;
     this.earthExpectedYearsLeft;
     this.earthYearsPastExpectancy = 0;
     this.planets = [
-      {planet: 'jupiter', conversionFactor: 11.86, ageYears: undefined, expectedYearsLeft: undefined, yearsPastExpectancy: 0},
-      {planet: 'mars', conversionFactor: 1.88, ageYears: undefined, expectedYearsLeft: undefined, yearsPastExpectancy: 0},
-      {planet: 'mercury', conversionFactor: 0.24, ageYears: undefined, expectedYearsLeft: undefined, yearsPastExpectancy: 0},
-      {planet: 'venus', conversionFactor: 0.62, ageYears: undefined, expectedYearsLeft: undefined, yearsPastExpectancy: 0},
+      {planet: 'jupiter', conversionFactor: 11.86, ageYears: undefined, lifeExpectancy: undefined, expectedYearsLeft: undefined, yearsPastExpectancy: 0},
+      {planet: 'mars', conversionFactor: 1.88, ageYears: undefined, lifeExpectancy: undefined, expectedYearsLeft: undefined, yearsPastExpectancy: 0},
+      {planet: 'mercury', conversionFactor: 0.24, ageYears: undefined, lifeExpectancy: undefined, expectedYearsLeft: undefined, yearsPastExpectancy: 0},
+      {planet: 'venus', conversionFactor: 0.62, ageYears: undefined, lifeExpectancy: undefined, expectedYearsLeft: undefined, yearsPastExpectancy: 0},
     ];
   }
 
@@ -25,13 +25,13 @@ class User {
 
   calcEarthLifeExpectancy() {
     if (this.birthSexOrigin === 'male') {
-      this.lifeExpectancy = 77;
+      this.earthLifeExpectancy = 77;
     } else if (this.birthSexOrigin === 'average') {
-      this.lifeExpectancy = 80;
+      this.earthLifeExpectancy = 80;
     } else if (this.birthSexOrigin === 'female') {
-      this.lifeExpectancy = 83;
+      this.earthLifeExpectancy = 83;
     }
-    this.earthExpectedYearsLeft = this.lifeExpectancy - this.earthAgeYears;
+    this.earthExpectedYearsLeft = this.earthLifeExpectancy - this.earthAgeYears;
     if (this.earthExpectedYearsLeft < 0) {
       this.earthYearsPastExpectancy = Math.abs(this.earthExpectedYearsLeft);
       this.earthExpectedYearsLeft = 0;
@@ -41,6 +41,7 @@ class User {
   calcPlanetData() {
     this.planets.forEach((planet) => {
       planet.ageYears = parseFloat((this.earthAgeYears / planet.conversionFactor).toFixed(2));
+      planet.lifeExpectancy = parseFloat((this.earthLifeExpectancy / planet.conversionFactor).toFixed(2));
       planet.expectedYearsLeft = parseFloat((this.earthExpectedYearsLeft / planet.conversionFactor).toFixed(2));
       planet.yearsPastExpectancy = parseFloat((this.earthYearsPastExpectancy / planet.conversionFactor).toFixed(2));
     });
