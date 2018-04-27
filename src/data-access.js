@@ -37,14 +37,22 @@ class DataAccess {
             state: responseData[i].practices[j].visit_address.state,
             zip: responseData[i].practices[j].visit_address.zip
           },
-          phone: responseData[i].practices[j].phones[0].number
+          phones: [],
+          website: responseData[i].practices[j].website
+        }
+        for (let k = 0; k < responseData[i].practices[j].phones.length; k ++) {
+          let phone = {
+            number: responseData[i].practices[j].phones[k].number,
+            type: responseData[i].practices[j].phones[k].type
+          }
+          practice.phones.push(phone);
         }
         provider.practices.push(practice);
       }
-      for (let k = 0; k < responseData[i].specialties.length; k ++) {
+      for (let l = 0; l < responseData[i].specialties.length; l ++) {
         let specialty = {
-          name: responseData[i].specialties[k].name,
-          description: responseData[i].specialties[k].description
+          name: responseData[i].specialties[l].name,
+          description: responseData[i].specialties[l].description
         }
         provider.specialties.push(specialty);
       }
