@@ -1,0 +1,45 @@
+html, body {
+  height: 100%;
+}
+
+h1 {
+  background-color: #2B7FC3;
+  color: white;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 3em;
+  padding: 20px 0;
+  text-transform: capitalize;
+}
+
+h1 span {
+  font-weight: normal;
+  font-size: 0.7em;
+  text-transform: uppercase;
+}
+
+form {
+  margin: 20px;
+}
+
+img {
+  width: 100%;
+  margin: 0 auto;
+}
+
+input {
+  padding: 5px 10px;
+  width: 300px;
+}
+
+.btn {
+  margin-left: 20px;
+}
+
+.card {
+  border: 1px solid #ff8484;
+  margin: 20px;
+}
+
+#map {
+  height: 50%;
+}
