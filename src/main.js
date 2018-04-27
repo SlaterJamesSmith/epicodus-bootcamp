@@ -16,6 +16,8 @@ $(document).ready(function() {
     let apiCall = dataAccess.apiCallBetterDoctor(name, query);
     apiCall.then(function(response) {
       console.log(response);
+    }, function(error) {
+      console.log("ERROR: API Call Failed.");
     });
   });
 });
