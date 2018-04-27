@@ -1,0 +1,17 @@
+h1 {
+  margin: 25px;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+h2 {
+  font-size: 1.5em;
+}
+
+.card {
+  margin-bottom: 20px;
+}
+
+.display-none {
+  display: none;
+}
