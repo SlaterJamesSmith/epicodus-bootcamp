@@ -1,6 +1,5 @@
 import $ from 'jquery';
 import { DataAccess } from './data-access.js';
-import { Provider } from './provider.js';
 import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './styles.css';
@@ -15,9 +14,11 @@ $(document).ready(function() {
 
     let apiCall = dataAccess.apiCallBetterDoctor(name, query);
     apiCall.then(function(response) {
-      console.log(response);
+      let providerResults = dataAccess.parseData(response);
+
     }, function(error) {
-      console.log("ERROR: API Call Failed.");
+      $('#results').html(`<div class="text-center"><p class="text-danger">${error}.</p><p>We apologize for the inconvenience. </p><p>Your request cannot be processed at this time. Please try again later.</p></div>`);
+      $('#results').show();
     });
   });
 });
