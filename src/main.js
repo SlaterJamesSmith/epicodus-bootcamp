@@ -8,4 +8,9 @@ $(document).ready(function() {
   let dataAccess = new DataAccess();
   dataAccess.testMessage();
 
+  let apiCall = dataAccess.apiCallBetterDoctor();
+  apiCall.then(function(response) {
+    console.log(response);
+  })
+
 });
