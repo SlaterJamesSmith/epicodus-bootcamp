@@ -10,7 +10,9 @@ $(document).ready(function() {
 
   $('form').submit(function(e) {
     e.preventDefault();
-    let apiCall = dataAccess.apiCallBetterDoctor();
+    let name = $('#name').val();
+
+    let apiCall = dataAccess.apiCallBetterDoctor(name);
     apiCall.then(function(response) {
       console.log(response);
     });
