@@ -1,3 +1,5 @@
+import { Provider } from './provider.js';
+
 class DataAccess {
   apiCallBetterDoctor(name, query) {
     let promise;
@@ -15,6 +17,40 @@ class DataAccess {
       request.open('GET', url, true);
       request.send();
     });
+  }
+
+  parseData(response) {
+    let responseData = response.data;
+    let providerData = [];
+    for (let i = 0; i < responseData.length; i ++) {
+      let provider = new Provider();
+      provider.firstName = responseData[i].profile.first_name;
+      provider.lastName = responseData[i].profile.last_name;
+      for (let j = 0; j < responseData[i].practices.length; j ++) {
+        let practice = {
+          acceptsNewPatients: responseData[i].practices[j].accepts_new_patients,
+          address: {
+            lat: responseData[i].practices[j].lat,
+            lng: responseData[i].practices[j].lon,
+            street: responseData[i].practices[j].visit_address.street,
+            city: responseData[i].practices[j].visit_address.city,
+            state: responseData[i].practices[j].visit_address.state,
+            zip: responseData[i].practices[j].visit_address.zip
+          },
+          phone: responseData[i].practices[j].phones[0].number
+        }
+        provider.practices.push(practice);
+      }
+      for (let k = 0; k < responseData[i].specialties.length; k ++) {
+        let specialty = {
+          name: responseData[i].specialties[k].name,
+          description: responseData[i].specialties[k].description
+        }
+        provider.specialties.push(specialty);
+      }
+      providerData.push(provider);
+    }
+    return providerData;
   }
 }
 
