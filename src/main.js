@@ -6,7 +6,6 @@ import './styles.css';
 
 $(document).ready(function() {
   let dataAccess = new DataAccess();
-  dataAccess.testMessage();
 
   $('form').submit(function(e) {
     e.preventDefault();

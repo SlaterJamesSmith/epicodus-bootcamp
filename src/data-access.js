@@ -1,8 +1,4 @@
 class DataAccess {
-  testMessage() {
-    console.log("DataAccessTestMessage: CLASS IMPORT SUCCESSFUL");
-  }
-
   apiCallBetterDoctor(name, query) {
     let promise;
     return promise = new Promise(function(resolve, reject) {
