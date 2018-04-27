@@ -11,8 +11,9 @@ $(document).ready(function() {
   $('form').submit(function(e) {
     e.preventDefault();
     let name = $('#name').val();
+    let query = $('#query').val();
 
-    let apiCall = dataAccess.apiCallBetterDoctor(name);
+    let apiCall = dataAccess.apiCallBetterDoctor(name, query);
     apiCall.then(function(response) {
       console.log(response);
     });
