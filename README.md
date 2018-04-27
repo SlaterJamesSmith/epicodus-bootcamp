@@ -19,6 +19,7 @@ A collection of practice projects focused on Asynchrony & APIs.
 - API Call Project requires Giphy.
 - Promises Project requires Giphy.
 - Earthquake Project requires Google Maps.
+- Job Map Project requires Google Maps.
 
 **Installation**
 
