@@ -37,14 +37,14 @@ $(document).ready(function() {
     e.preventDefault();
     let name = $('#name').val();
     let query = $('#query').val();
-
-    let apiCall = dataAccess.apiCallBetterDoctor(name, query);
-    apiCall.then(function(response) {
-      let providerResults = dataAccess.parseData(response);
-      if (providerResults.length === 0) {
+    dataAccess.apiCallBetterDoctor(name, query);
+    dataAccess.apiCall.then(function(response) {
+      dataAccess.apiResponse = response.data;
+      dataAccess.parseData();
+      if (dataAccess.dataOut.length === 0) {
         $('#results .container').html('<p class="text-center">No results. Your search criteria did not match any health provider information.</p>');
       } else {
-        displayProviders(providerResults);
+        displayProviders(dataAccess.dataOut);
       }
       $('#results').show();
     }, function(error) {
