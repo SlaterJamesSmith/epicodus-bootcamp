@@ -41,6 +41,7 @@ class DataAccess {
             zip: this.apiResponse[i].practices[j].visit_address.zip
           },
           phones: [],
+          fax: [],
           website: this.apiResponse[i].practices[j].website
         };
         for (let k = 0; k < this.apiResponse[i].practices[j].phones.length; k ++) {
@@ -48,7 +49,11 @@ class DataAccess {
             number: this.apiResponse[i].practices[j].phones[k].number,
             type: this.apiResponse[i].practices[j].phones[k].type
           };
-          practice.phones.push(phone);
+          if (phone.type === 'fax') {
+            practice.fax.push(phone);
+          } else {
+            practice.phones.push(phone);
+          }
         }
         provider.practices.push(practice);
       }
