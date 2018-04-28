@@ -30,6 +30,12 @@ function displayProviders(result) {
   });
 }
 
+function resetDisplay() {
+  $('#results').hide();
+  $('#no-results').hide();
+  $('#error').hide();
+}
+
 $(document).ready(function() {
   let dataAccess = new DataAccess();
 
@@ -37,19 +43,20 @@ $(document).ready(function() {
     e.preventDefault();
     let name = $('#name').val();
     let query = $('#query').val();
+    resetDisplay();
     dataAccess.apiCallBetterDoctor(name, query);
     dataAccess.apiCall.then(function(response) {
       dataAccess.apiResponse = response.data;
       dataAccess.parseData();
       if (dataAccess.dataOut.length === 0) {
-        $('#results .container').html('<p class="text-center">No results. Your search criteria did not match any health provider information.</p>');
+        $('#no-results').show();
       } else {
         displayProviders(dataAccess.dataOut);
       }
       $('#results').show();
     }, function(error) {
-      $('#results').html(`<div class="text-center"><p class="text-danger"><strong>${error}.</strong></p><p>We apologize for the inconvenience. </p><p>Your request cannot be processed at this time. Please try again later.</p></div>`);
-      $('#results').show();
+      $('#error .message').text(`${error}.`);
+      $('#error').show();
     });
   });
 });

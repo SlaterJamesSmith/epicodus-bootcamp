@@ -15,6 +15,15 @@ h4 {
   font-weight: 1.3em;
 }
 
+#no-results, #error {
+  text-align: center;
+}
+
+#error .message {
+  color: #ff0000;
+  font-weight: bold;
+}
+
 .card {
   margin-bottom: 20px;
 }
