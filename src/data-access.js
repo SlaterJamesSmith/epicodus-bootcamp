@@ -4,7 +4,7 @@ class DataAccess {
   constructor() {
     this.apiCall;
     this.apiResponse;
-    this.dataOut = [];
+    this.dataOut;
   }
 
   apiCallBetterDoctor(name, query) {
@@ -25,6 +25,7 @@ class DataAccess {
   }
 
   parseData() {
+    this.dataOut = [];
     for (let i = 0; i < this.apiResponse.length; i ++) {
       let provider = new Provider();
       provider.firstName = this.apiResponse[i].profile.first_name;
