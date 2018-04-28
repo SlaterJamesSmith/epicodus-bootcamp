@@ -39,12 +39,12 @@ class DataAccess {
           },
           phones: [],
           website: responseData[i].practices[j].website
-        }
+        };
         for (let k = 0; k < responseData[i].practices[j].phones.length; k ++) {
           let phone = {
             number: responseData[i].practices[j].phones[k].number,
             type: responseData[i].practices[j].phones[k].type
-          }
+          };
           practice.phones.push(phone);
         }
         provider.practices.push(practice);
@@ -53,7 +53,7 @@ class DataAccess {
         let specialty = {
           name: responseData[i].specialties[l].name,
           description: responseData[i].specialties[l].description
-        }
+        };
         provider.specialties.push(specialty);
       }
       providerData.push(provider);
