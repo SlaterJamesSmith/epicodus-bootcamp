@@ -52,7 +52,7 @@ class DataAccess {
             number: this.apiResponse[i].practices[j].phones[k].number,
             type: this.apiResponse[i].practices[j].phones[k].type
           };
-          if (phone.type === 'fax') {
+          if (phone.type.includes('fax')) {
             practice.fax.push(phone);
           } else {
             practice.phones.push(phone);
