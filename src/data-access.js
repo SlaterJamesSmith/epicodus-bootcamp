@@ -28,8 +28,10 @@ class DataAccess {
     this.dataOut = [];
     for (let i = 0; i < this.apiResponse.length; i ++) {
       let provider = new Provider();
+      provider.uid = this.apiResponse[i].uid;
       provider.firstName = this.apiResponse[i].profile.first_name;
       provider.lastName = this.apiResponse[i].profile.last_name;
+      provider.imageUrl = this.apiResponse[i].profile.image_url;
       for (let j = 0; j < this.apiResponse[i].practices.length; j ++) {
         let practice = {
           acceptsNewPatients: this.apiResponse[i].practices[j].accepts_new_patients,
