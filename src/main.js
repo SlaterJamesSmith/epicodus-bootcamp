@@ -14,13 +14,13 @@ function displayProviders(result) {
         <h3>${provider.firstName} ${provider.lastName}</h3>
         </div>
         <div class="row">
-          <div class="col-sm-2">
+          <div class="col-sm-3">
           <img src="${provider.imageUrl}" alt="profile pic">
           </div>
           <div class="col-sm-5 location">
           <h4>Office Location</h4>
           </div>
-          <div class="col-sm-5">
+          <div class="col-sm-4">
             <h4>Specialty</h4>
             <ul class="specialty"></ul>
           </div>
