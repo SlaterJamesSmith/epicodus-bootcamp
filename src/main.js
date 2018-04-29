@@ -42,9 +42,7 @@ function displayProviders(result) {
         if (provider.practices[i].website !== undefined) {
           $(`#${provider.uid} .location`).append(`<p><span class="subtitle">Website:</span> <a href="${provider.practices[i].website}" target="_blank">${provider.practices[i].website}</a></p>`);
         }
-        provider.practices[i].phones.forEach(function(phone) {
-          $(`#${provider.uid} .location`).append(`<p><span class="subtitle">${phone.type}:</span> ${phone.number.slice(0,3)}.${phone.number.slice(3,6)}.${phone.number.slice(6)}</p>`);
-        });
+        $(`#${provider.uid} .location`).append(`<p><span class="subtitle">Phone:</span> ${provider.practices[i].phones[0].number.slice(0,3)}.${provider.practices[i].phones[0].number.slice(3,6)}.${provider.practices[i].phones[0].number.slice(6)} <em>(${provider.practices[i].phones[0].type})</em></p>`);
         return;
       }
     }
