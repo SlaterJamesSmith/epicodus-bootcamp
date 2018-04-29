@@ -53,10 +53,13 @@ $(document).ready(function() {
       } else {
         displayProviders(dataAccess.dataOut);
       }
-      $('#results').show();
+      $('#loading').hide();
+      $('#results').fadeIn();
     }, function(error) {
       $('#error .message').text(`${error}.`);
+      $('#loading').hide();
       $('#error').show();
     });
+    $('#loading').fadeIn();
   });
 });
