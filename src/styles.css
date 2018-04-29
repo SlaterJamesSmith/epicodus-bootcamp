@@ -15,6 +15,14 @@ h4 {
   font-weight: 1.3em;
 }
 
+.card {
+  margin-bottom: 20px;
+}
+
+.display-none {
+  display: none;
+}
+
 #loading {
   animation: blink 1s infinite;
   color: #28a745;
@@ -34,29 +42,48 @@ h4 {
   font-weight: bold;
 }
 
-.card {
-  margin-bottom: 20px;
-}
-
-.display-none {
-  display: none;
-}
-
 .location {
-  border: 1px solid gray;
-  border-radius: 5px;
-  margin: 15px 0;
-  padding: 10px 15px;
+
 }
 
 .provider {
-  border: 1px solid #87c8ff;
+  border: 1px solid #0069d9;
   border-radius: 5px;
   margin: 20px 0px;
   padding: 20px 25px;
+  word-wrap: break-word;
 }
 
 .provider h3 {
   font-weight: bold;
   text-transform: uppercase;
+}
+
+.provider h4 {
+  font-size: 1.1em;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.provider .subtitle {
+  font-size: 0.8em;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.provider .main {
+  border-bottom: 1px solid #999;
+  margin-bottom: 25px;
+  padding-bottom: 10px;
+}
+
+.provider .new-patients {
+  color: #28a745;
+  font-style: italic;
+  margin: 0;
+}
+
+.provider .specialty {
+  margin-top: 10px;
+  padding-left: 15px;
 }
