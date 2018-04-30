@@ -15,10 +15,13 @@ A collection of practice projects focused on Angular.
 1. Install Node.js on local machine.
 2. Clone repository.
 3. In terminal, navigate to project root.
-4. Run "npm install" to load required packages.
-5. Run "npm test" to view unit test results.
-6. Run "npm run build" to create distribution files.
-7. Open dist/index.html in web browser.
+4. Run "npm install" in project root to load required packages.
+5. Redirect file paths to desired project subfolder in:
+    - **karma.conf.js** - 4 links
+    - **package.json** - 2 links
+    - **webpack.config.js** - 3 links
+6. Execute "npm run build" in project root to create distribution folder.
+7. Open dist/index.html in web browser to view project.
 
 ## Known Bugs
 

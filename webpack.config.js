@@ -6,7 +6,7 @@ const CopyWebpackPlugin = require('copy-webpack-plugin');
 const Dotenv = require('dotenv-webpack');
 
 module.exports = {
-  entry: './src/main.js',
+  entry: './prework/src/main.js',
   output: {
     filename: 'bundle.js',
     path: path.resolve(__dirname, 'dist')
@@ -20,11 +20,11 @@ module.exports = {
     new CleanWebpackPlugin(['dist']),
     new HtmlWebpackPlugin({
       title: 'EPI-JS-WK3',
-      template: './src/index.html',
+      template: './prework/src/index.html',
       inject: 'head'
     }),
     new CopyWebpackPlugin([
-      { from: 'src/img', to: 'img'}
+      { from: './prework/src/img', to: 'img'}
     ]),
     new Dotenv()
   ],
