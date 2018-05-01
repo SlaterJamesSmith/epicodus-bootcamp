@@ -7,12 +7,12 @@ import './styles.css';
 let displayData = function(response) {
   $('#gif-results').append(`<img src="${response.data[Math.floor(Math.random() * response.data.length)].images.fixed_height.url}">`);
   $('#errors').hide();
-}
+};
 
 let showErrors = function(error) {
   $('#errors').text(`There was an error processing your request: ${error.message}. Please try again.`);
   $('#errors').show();
-}
+};
 
 $(document).ready(function() {
   let getData = new ApiCall();

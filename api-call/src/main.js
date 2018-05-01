@@ -40,8 +40,7 @@ $(document).ready(function() {
         let response = JSON.parse(this.responseText);
         getElements(response);
       }
-    }
-
+    };
     request.open('GET', url, true);
     request.send();
 
