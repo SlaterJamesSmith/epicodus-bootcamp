@@ -10,15 +10,20 @@
     </div>
     <div id="map"></div>
     <div class="container">
-      <form class="text-center">
-        <label>Start Date</label>
-        <input id="start-day" type="date" required>
-        <label>End Date</label>
-        <input id="end-day" type="date" required>
+      <div id="date" class="display-none">
+        <h2></h2>
+      </div>
+      <form class="card card-body">
+        <div class="form-group">
+          <label>Start Date</label>
+          <input id="start-day" class="form-control" type="date" required>
+        </div>
+        <div class="form-group">
+          <label>End Date</label>
+          <input id="end-day" class="form-control" type="date" required>
+        </div>
         <button type="submit" class="btn btn-primary">Plot Trend</button>
       </form>
-      <div id="date">
-      </div>
     </div>
   </body>
 </html>

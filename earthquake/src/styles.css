@@ -20,8 +20,17 @@ form {
   margin: 20px;
 }
 
+label {
+  font-weight: bold;
+}
+
 #map {
   height: 50%;
   margin: 0 auto;
   width: 100%;
+}
+
+#date h2 {
+  margin: 20px auto;
+  text-align: center;
 }

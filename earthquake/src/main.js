@@ -69,14 +69,14 @@ $(document).ready(function() {
       if (quakeDays.length === 2) {
         clearInterval(plotter);
       }
-      $('#date').text(quakeDays[0]);
+      clearMarkers(markers);
+      markers = [];
+      $('#date h2').text(quakeDays[0]).slideDown();
       dataAccess.apiCallUSGS(quakeDays[0],quakeDays[1]);
       quakeDays.shift();
       dataAccess.apiCall.then(function(response) {
-        clearMarkers(markers);
-        markers = [];
         placeMarkers(response, markers);
       });
-    }, 1500);
+    }, 2000);
   });
 });
