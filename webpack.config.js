@@ -2,11 +2,11 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
-const CopyWebpackPlugin = require('copy-webpack-plugin');
+// const CopyWebpackPlugin = require('copy-webpack-plugin');
 const Dotenv = require('dotenv-webpack');
 
 module.exports = {
-  entry: './tamagotchi/src/main.js',
+  entry: './job-map/src/main.js',
   output: {
     filename: 'bundle.js',
     path: path.resolve(__dirname, 'dist')
@@ -20,12 +20,12 @@ module.exports = {
     new CleanWebpackPlugin(['dist']),
     new HtmlWebpackPlugin({
       title: 'EPI-JS-WK2',
-      template: './tamagotchi/src/index.html',
+      template: './job-map/src/index.html',
       inject: 'head'
     }),
-    new CopyWebpackPlugin([
-      { from: './tamagotchi/src/img', to: 'img'}
-    ]),
+    // new CopyWebpackPlugin([
+    //   { from: './job-map/src/img', to: 'img'}
+    // ]),
     new Dotenv()
   ],
   module: {

@@ -5,15 +5,15 @@ module.exports = function(config) {
     basePath: '',
     frameworks: ['jquery-3.2.1', 'jasmine'],
     files: [
-      'tamagotchi/src/*.js',
-      'tamagotchi/spec/*spec.js'
+      'job-map/src/*.js',
+      'job-map/spec/*spec.js'
     ],
     webpack: webpackConfig,
     exclude: [
     ],
     preprocessors: {
-      'tamagotchi/src/*.js': ['webpack'],
-      'tamagotchi/spec/*spec.js': ['webpack']
+      'job-map/src/*.js': ['webpack'],
+      'job-map/spec/*spec.js': ['webpack']
     },
     plugins: [
       'karma-jquery',
