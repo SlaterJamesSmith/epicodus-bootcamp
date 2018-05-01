@@ -1,7 +1,10 @@
-class Api {
-  quakesCall(startTime, endTime) {
-    let promise;
-    return promise = new Promise(function(resolve, reject) {
+class DataAccess {
+  constructor() {
+    this.apiCall;
+  }
+
+  apiCallUSGS(startTime, endTime) {
+    this.apiCall = new Promise(function(resolve, reject) {
       let request = new XMLHttpRequest();
       let url = `https://earthquake.usgs.gov/fdsnws/event/1/query?format=geojson&starttime=${startTime}&endtime=${endTime}`;
       request.responseType = 'json';
@@ -11,11 +14,11 @@ class Api {
         } else {
           reject(Error(request.statusText));
         }
-      }
+      };
       request.open('GET', url, true);
       request.send();
     });
   }
 }
 
-export { Api }
+export { DataAccess };

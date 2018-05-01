@@ -1,44 +1,54 @@
 import $ from 'jquery';
-import { Api } from './api-call.js';
+import { DataAccess } from './data-access.js';
 import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './styles.css';
 const mapsapi = require( 'google-maps-api' )( process.env.API_KEY );
 
-let map;
-function initMap(response) {
-  mapsapi().then(function(maps) {
-    map = new maps.Map(document.getElementById('map'), {
+let userInterfaceMap;
+let mapControl;
+
+function initMap() {
+  mapsapi().then(function(googleMaps) {
+    mapControl = googleMaps;
+    userInterfaceMap = new googleMaps.Map(document.getElementById('map'), {
       zoom: 2,
       center: {lat: 0, lng: 0}
     });
-    for (var i = 0; i < response.features.length; i ++) {
-      let magnitude = response.features[i].properties.mag;
-      let coords = response.features[i].geometry.coordinates;
-      let latLng = new maps.LatLng(coords[1],coords[0]);
-      let marker = new maps.Marker({
-        position: latLng,
-        map: map,
-        icon: getCircle(magnitude)
-      });
-    }
-    function getCircle(magnitude) {
-      return {
-        path: maps.SymbolPath.CIRCLE,
+  });
+}
+
+function placeMarkers(mapData, markers) {
+  mapData.features.forEach(function(feature) {
+    let magnitude = feature.properties.mag;
+    let coords = feature.geometry.coordinates;
+    let latLng = new mapControl.LatLng(coords[1],coords[0]);
+    let marker = new mapControl.Marker({
+      position: latLng,
+      map: userInterfaceMap,
+      icon: {
+        path: mapControl.SymbolPath.CIRCLE,
         fillColor: 'red',
         fillOpacity: .2,
         scale: Math.pow(2, magnitude) / 2,
         strokeColor: 'white',
-        strokeWeight: .5
-      };
-    }
+        strokeWeight: .1
+      }
+    });
+    markers.push(marker);
   });
 }
 
-$(function() {
-  let api = new Api();
-  let quakePromise;
-  let plotClock;
+function clearMarkers(markers) {
+  markers.forEach(function(marker) {
+    marker.setMap(null);
+  });
+}
+
+$(document).ready(function() {
+  let dataAccess = new DataAccess();
+  let plotter;
+  let markers = [];
 
   initMap();
 
@@ -55,15 +65,17 @@ $(function() {
       quakeDays.push(`${day.getFullYear()}-${day.getMonth() + 1}-${day.getDate()}`);
     }
 
-    plotClock = setInterval(function() {
+    plotter = setInterval(function() {
       if (quakeDays.length === 2) {
-        clearInterval(plotClock);
+        clearInterval(plotter);
       }
       $('#date').text(quakeDays[0]);
-      quakePromise = api.quakesCall(quakeDays[0],quakeDays[1]);
+      dataAccess.apiCallUSGS(quakeDays[0],quakeDays[1]);
       quakeDays.shift();
-      quakePromise.then(function(response) {
-        initMap(response);
+      dataAccess.apiCall.then(function(response) {
+        clearMarkers(markers);
+        markers = [];
+        placeMarkers(response, markers);
       });
     }, 1500);
   });
