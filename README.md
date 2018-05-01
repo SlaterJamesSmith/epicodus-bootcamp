@@ -12,16 +12,18 @@ A collection of practice projects focused on Angular.
 
 ## Setup/Installation Requirements
 
+**I. Node & NPM Installs**
 1. Install Node.js on local machine.
-2. Clone repository.
-3. In terminal, navigate to project root.
-4. Run "npm install" in project root to load required packages.
-5. Redirect file paths to desired project subfolder in:
-    - **karma.conf.js** - 4 links
-    - **package.json** - 2 links
-    - **webpack.config.js** - 3 links
-6. Execute "npm run build" in project root to create distribution folder.
-7. Open dist/index.html in web browser to view project.
+2. Install TypeScript globally: `npm install -g typescript`
+3. Install Angular CLI globally: `npm install -g @angular/cli`
+
+**II. Project Setup**
+1. Clone repository.
+2. In terminal, navigate to project root.
+3. Run `npm install` in project root to load required packages.
+
+**III. View Project**
+* Development Mode: `ng serve --open`
 
 ## Known Bugs
 
@@ -29,10 +31,7 @@ None.
 
 ## Technologies Used
 
+* Angular
 * JavaScript
 * Node.js
-* Jasmine
-* Karma
-* Webpack
 * TypeScript
-* Angular
