@@ -32,36 +32,48 @@ class DataAccess {
       provider.firstName = this.apiResponse[i].profile.first_name;
       provider.lastName = this.apiResponse[i].profile.last_name;
       provider.imageUrl = this.apiResponse[i].profile.image_url;
+      // Parse provider practice locations.
       for (let j = 0; j < this.apiResponse[i].practices.length; j ++) {
         if (this.apiResponse[i].practices[j].within_search_area) {
-          let practice = {
-            acceptsNewPatients: this.apiResponse[i].practices[j].accepts_new_patients,
-            address: {
-              lat: this.apiResponse[i].practices[j].lat,
-              lng: this.apiResponse[i].practices[j].lon,
-              street: this.apiResponse[i].practices[j].visit_address.street,
-              city: this.apiResponse[i].practices[j].visit_address.city,
-              state: this.apiResponse[i].practices[j].visit_address.state,
-              zip: this.apiResponse[i].practices[j].visit_address.zip
-            },
-            phones: [],
-            fax: [],
-            website: this.apiResponse[i].practices[j].website
-          };
-          for (let k = 0; k < this.apiResponse[i].practices[j].phones.length; k ++) {
-            let phone = {
-              number: this.apiResponse[i].practices[j].phones[k].number,
-              type: this.apiResponse[i].practices[j].phones[k].type
-            };
-            if (phone.type.includes('fax')) {
-              practice.fax.push(phone);
-            } else {
-              practice.phones.push(phone);
-            }
+          // Compare Lat and Long between adjacent array elements.
+          let currentLatLng = this.apiResponse[i].practices[j].lat + this.apiResponse[i].practices[j].lon;
+          let nextLatLng = undefined;
+          if (j < this.apiResponse[i].practices.length - 1) {
+            nextLatLng = this.apiResponse[i].practices[j + 1].lat + this.apiResponse[i].practices[j + 1].lon;
           }
-          provider.practices.push(practice);
+          // Doesn't catch non-adjacent duplicates.
+          if (currentLatLng !== nextLatLng) {
+            let practice = {
+              acceptsNewPatients: this.apiResponse[i].practices[j].accepts_new_patients,
+              address: {
+                lat: this.apiResponse[i].practices[j].lat,
+                lng: this.apiResponse[i].practices[j].lon,
+                street: this.apiResponse[i].practices[j].visit_address.street,
+                city: this.apiResponse[i].practices[j].visit_address.city,
+                state: this.apiResponse[i].practices[j].visit_address.state,
+                zip: this.apiResponse[i].practices[j].visit_address.zip
+              },
+              phones: [],
+              fax: [],
+              website: this.apiResponse[i].practices[j].website
+            };
+            // Separate phones from faxes.
+            for (let k = 0; k < this.apiResponse[i].practices[j].phones.length; k ++) {
+              let phone = {
+                number: this.apiResponse[i].practices[j].phones[k].number,
+                type: this.apiResponse[i].practices[j].phones[k].type
+              };
+              if (phone.type.includes('fax')) {
+                practice.fax.push(phone);
+              } else {
+                practice.phones.push(phone);
+              }
+            }
+            provider.practices.push(practice);
+          }
         }
       }
+      // Parse provider specialties.
       for (let l = 0; l < this.apiResponse[i].specialties.length; l ++) {
         let specialty = {
           name: this.apiResponse[i].specialties[l].name,
@@ -71,18 +83,6 @@ class DataAccess {
       }
       this.dataOut.push(provider);
     }
-  }
-
-  cleanData() {
-    this.dataOut.forEach(function(provider) {
-      for (let i = provider.practices.length - 1; i > 0; i --) {
-        let current = provider.practices[i].address.lat + provider.practices[i].address.lng;
-        let next = provider.practices[i - 1].address.lat + provider.practices[i - 1].address.lng;
-        if (current === next) {
-          provider.practices.splice(i, 1);
-        }
-      }
-    });
   }
 }
 

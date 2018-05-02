@@ -68,7 +68,6 @@ $(document).ready(function() {
     dataAccess.apiCall.then(function(response) {
       dataAccess.apiResponse = response.data;
       dataAccess.parseData();
-      dataAccess.cleanData();
       if (dataAccess.dataOut.length === 0) {
         $('#no-results').show();
       } else {
