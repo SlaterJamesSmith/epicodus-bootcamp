@@ -85,7 +85,9 @@ class DataAccess {
         };
         provider.specialties.push(specialty);
       }
-      this.dataOut.push(provider);
+      if (provider.practices.length !== 0) {
+        this.dataOut.push(provider);
+      }
     }
   }
 }
