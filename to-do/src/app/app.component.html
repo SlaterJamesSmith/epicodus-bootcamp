@@ -8,7 +8,7 @@
   <ul>
     <li *ngFor="let currentTask of tasks" [class]="priorityColor(currentTask)"><button (click)="editTask(currentTask)" class="btn btn-primary">Edit</button> {{currentTask.description}}</li>
   </ul>
-  <div class="card">
+  <div *ngIf="selectedTask" class="card">
     <div class="card-header text-center text-uppercase">
       <strong>Edit Task</strong>
     </div>
@@ -29,6 +29,7 @@
       <div class="radio">
         <input type="radio" [(ngModel)]="selectedTask.priority" value="3">3 (High Priority)
       </div>
+      <button (click)="finishEdit()" class="btn btn-secondary">Done</button>
     </div>
   </div>
 </div>
