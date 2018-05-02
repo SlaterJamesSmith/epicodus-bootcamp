@@ -5,9 +5,7 @@
   <h2>To Do List</h2>
   <h3>{{month}}/{{day}}/{{year}}</h3>
   <h4>{{currentFocus}}</h4>
-  <ul>
-    <li *ngFor="let currentTask of tasks" [class]="priorityColor(currentTask)"><button (click)="editTask(currentTask)" class="btn btn-primary">Edit</button> {{currentTask.description}}</li>
-  </ul>
+  <app-task-list></app-task-list>
   <div *ngIf="selectedTask" class="card">
     <div class="card-header text-center text-uppercase">
       <strong>Edit Task</strong>
