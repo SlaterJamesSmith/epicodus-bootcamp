@@ -5,7 +5,7 @@
   <h2>To Do List</h2>
   <h3>{{month}}/{{day}}/{{year}}</h3>
   <h4>{{currentFocus}}</h4>
-  <app-task-list></app-task-list>
+  <app-task-list [childTaskList]="masterTaskList" (clickSender)="editTask($event)"></app-task-list>
   <div *ngIf="selectedTask" class="card">
     <div class="card-header text-center text-uppercase">
       <strong>Edit Task</strong>

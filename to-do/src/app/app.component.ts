@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Task } from './models/task.model';
 
 @Component({
   selector: 'app-component',
@@ -11,6 +12,12 @@ export class AppComponent {
   day: number = this.currentTime.getDate();
   year: number = this.currentTime.getFullYear();
 
+  masterTaskList: Task[] = [
+    new Task('Finish Angular homework for Epicodus course.', '3'),
+    new Task('Brainstorm possible JS group projects.', '1'),
+    new Task('Add README file to last few Angular repos.', '2')
+  ];
+
   currentFocus: string = 'Angular Homework';
 
   selectedTask = null;
@@ -22,5 +29,4 @@ export class AppComponent {
   finishEdit() {
     this.selectedTask = null;
   }
-
 }
