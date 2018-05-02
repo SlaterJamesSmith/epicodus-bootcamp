@@ -15,8 +15,24 @@ export class AppComponent {
   currentFocus: string = 'Angular Homework';
 
   tasks: Task[] = [
-    new Task('Finish Angular homework for Epicodus course.'),
-    new Task('Brainstorm possible JS group projects.'),
-    new Task('Add README file to last few Angular repos.')
+    new Task('Finish Angular homework for Epicodus course.', '3'),
+    new Task('Brainstorm possible JS group projects.', '1'),
+    new Task('Add README file to last few Angular repos.', '2')
   ];
+
+  selectedTask: Task = this.tasks[0];
+
+  editTask(clickedTask) {
+    this.selectedTask = clickedTask;
+  }
+
+  priorityColor(currentTask) {
+    if (currentTask.priority === '3') {
+      return 'bg-danger text-white';
+    } else if (currentTask.priority === '2') {
+      return 'bg-warning';
+    } else {
+      return 'bg-light';
+    }
+  }
 }
