@@ -33,32 +33,34 @@ class DataAccess {
       provider.lastName = this.apiResponse[i].profile.last_name;
       provider.imageUrl = this.apiResponse[i].profile.image_url;
       for (let j = 0; j < this.apiResponse[i].practices.length; j ++) {
-        let practice = {
-          acceptsNewPatients: this.apiResponse[i].practices[j].accepts_new_patients,
-          address: {
-            lat: this.apiResponse[i].practices[j].lat,
-            lng: this.apiResponse[i].practices[j].lon,
-            street: this.apiResponse[i].practices[j].visit_address.street,
-            city: this.apiResponse[i].practices[j].visit_address.city,
-            state: this.apiResponse[i].practices[j].visit_address.state,
-            zip: this.apiResponse[i].practices[j].visit_address.zip
-          },
-          phones: [],
-          fax: [],
-          website: this.apiResponse[i].practices[j].website
-        };
-        for (let k = 0; k < this.apiResponse[i].practices[j].phones.length; k ++) {
-          let phone = {
-            number: this.apiResponse[i].practices[j].phones[k].number,
-            type: this.apiResponse[i].practices[j].phones[k].type
+        if (this.apiResponse[i].practices[j].within_search_area) {
+          let practice = {
+            acceptsNewPatients: this.apiResponse[i].practices[j].accepts_new_patients,
+            address: {
+              lat: this.apiResponse[i].practices[j].lat,
+              lng: this.apiResponse[i].practices[j].lon,
+              street: this.apiResponse[i].practices[j].visit_address.street,
+              city: this.apiResponse[i].practices[j].visit_address.city,
+              state: this.apiResponse[i].practices[j].visit_address.state,
+              zip: this.apiResponse[i].practices[j].visit_address.zip
+            },
+            phones: [],
+            fax: [],
+            website: this.apiResponse[i].practices[j].website
           };
-          if (phone.type.includes('fax')) {
-            practice.fax.push(phone);
-          } else {
-            practice.phones.push(phone);
+          for (let k = 0; k < this.apiResponse[i].practices[j].phones.length; k ++) {
+            let phone = {
+              number: this.apiResponse[i].practices[j].phones[k].number,
+              type: this.apiResponse[i].practices[j].phones[k].type
+            };
+            if (phone.type.includes('fax')) {
+              practice.fax.push(phone);
+            } else {
+              practice.phones.push(phone);
+            }
           }
+          provider.practices.push(practice);
         }
-        provider.practices.push(practice);
       }
       for (let l = 0; l < this.apiResponse[i].specialties.length; l ++) {
         let specialty = {
