@@ -72,12 +72,15 @@ $(document).ready(function() {
         $('#providers').show();
       }
       $('#loading').hide();
+      $('#search-by').show();
       $('#results').fadeIn();
     }, function(error) {
       $('#error .message').text(`${error}.`);
       $('#loading').hide();
+      $('#search-by').show();
       $('#error').show();
     });
+    $('#search-by').hide();
     $('#loading').show();
   });
 });

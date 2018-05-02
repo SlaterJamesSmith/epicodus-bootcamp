@@ -1,11 +1,21 @@
 body {
-  background-color: #f5f5f5;
+  background-attachment: fixed;
+  background-color: #eff0f5;
+  background-image: url('https://images.pexels.com/photos/905874/pexels-photo-905874.jpeg');
+  background-position-y: 120px;
+  background-repeat: no-repeat;
+  background-size: 100%;
   font-family: 'Roboto Condensed', sans-serif;
   min-width: 500px;
 }
 
 header {
   text-align: center;
+}
+
+form {
+  background-color: #0000;
+  padding: 30px 30px 15px;
 }
 
 h1, h2, h3, h4 {
@@ -25,6 +35,12 @@ h1 span {
 
 h2 {
   font-size: 1.5em;
+  background-color: #ffffffe8;
+  border-radius: 50px;
+  line-height: 1em;
+  margin: 10px auto;
+  padding: 5px 5px 3px;
+  width:  195px;
 }
 
 h4 {
@@ -33,6 +49,19 @@ h4 {
 
 p {
   margin-bottom: 0.7em;
+}
+
+label {
+  background-color: #af55de;
+  border-radius: 5px;
+  color: #fff;
+  font-size: 1.3em;
+  padding: 0px 10px;
+}
+
+.btn {
+  font-size: 1.3em;
+  width: 100%;
 }
 
 .card {
@@ -45,14 +74,7 @@ p {
 
 #loading {
   animation: blink 1s infinite;
-  background-color: #00ff4326;
-  border: 1px solid #28a745;
-  border-radius: 5px;
   color: #28a745;
-  margin: 20px auto;
-  padding: 5px;
-  text-align: center;
-  width: 250px;
 }
 
 @keyframes blink {
@@ -60,7 +82,17 @@ p {
 }
 
 #no-results, #error {
+  background-color: white;
+  margin-top: 25px;
   text-align: center;
+}
+
+#no-results {
+  padding: 17px 20px 5px;
+}
+
+#error {
+  padding: 10px 0 5px;
 }
 
 #error .message {

@@ -11,8 +11,8 @@
       <p>Powered by <a href="https://betterdoctor.com/" target="_blank">BetterDoctor</a></p>
     </header>
     <div class="container">
-      <form class="card card-body">
-        <h2>Search By</h2>
+      <form>
+        <h2 class="text-center"><span id="search-by">Search By</span><span id="loading" class="display-none">Loading</span></h2>
         <div class="form-group">
           <label>Name</label>
           <input id="name" class="form-control" type="text">
@@ -21,11 +21,10 @@
           <label>Medical Issue</label>
           <input id="query" class="form-control" type="text">
         </div>
-        <button class="btn btn-primary" type="submit">Search</button>
+        <button class="btn btn-info" type="submit">Search</button>
       </form>
-      <h2 id="loading" class="display-none">Loading</h2>
       <div id="results" class="display-none">
-        <h2 class="text-center">Search Results</h2>
+        <h2 class="text-center">Results</h2>
         <div id="no-results" class="display-none">
           <p>No results. Your search criteria did not match any health provider information.</p>
         </div>
