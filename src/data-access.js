@@ -70,6 +70,18 @@ class DataAccess {
       this.dataOut.push(provider);
     }
   }
+
+  cleanData() {
+    this.dataOut.forEach(function(provider) {
+      for (let i = provider.practices.length - 1; i > 0; i --) {
+        let current = provider.practices[i].address.lat + provider.practices[i].address.lng;
+        let next = provider.practices[i - 1].address.lat + provider.practices[i - 1].address.lng;
+        if (current === next) {
+          provider.practices.splice(i, 1);
+        }
+      }
+    });
+  }
 }
 
 export { DataAccess };
