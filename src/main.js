@@ -30,20 +30,17 @@ function displayProviders(result) {
       $(`#${provider.uid} .specialty`).append(`<li>${specialty.name}</li>`);
     });
     for (let i = 0; i < provider.practices.length; i ++) {
-      if (provider.practices[i].address.state === "OR" || provider.practices[i].address.state === "WA" ) {
-        if (provider.practices[i].acceptsNewPatients) {
-          $(`#${provider.uid} .new-patients`).html('<span class="yes">Accepting New Patients</span>');
-        } else {
-          $(`#${provider.uid} .new-patients`).html('<span class="no">No New Patients</span>');
-        }
-        $(`#${provider.uid} .location`).append(`
-          <p>${provider.practices[i].address.street}<br>
-          ${provider.practices[i].address.city}, ${provider.practices[i].address.state} ${provider.practices[i].address.zip}</p>`);
-        $(`#${provider.uid} .location`).append(`<p><span class="subtitle">Phone:</span> ${provider.practices[i].phones[0].number.slice(0,3)}.${provider.practices[i].phones[0].number.slice(3,6)}.${provider.practices[i].phones[0].number.slice(6)} <em>(${provider.practices[i].phones[0].type})</em></p>`);
-        if (provider.practices[i].website !== undefined) {
-          $(`#${provider.uid} .location`).append(`<p><a href="${provider.practices[i].website}" target="_blank">Website</a></p>`);
-        }
-        return;
+      if (provider.practices[i].acceptsNewPatients) {
+        $(`#${provider.uid} .new-patients`).html('<span class="yes">Accepting New Patients</span>');
+      } else {
+        $(`#${provider.uid} .new-patients`).html('<span class="no">No New Patients</span>');
+      }
+      $(`#${provider.uid} .location`).append(`
+        <p class="address">${provider.practices[i].address.street}<br>
+        ${provider.practices[i].address.city}, ${provider.practices[i].address.state} ${provider.practices[i].address.zip}</p>`);
+      $(`#${provider.uid} .location`).append(`<p><span class="subtitle">Phone:</span> ${provider.practices[i].phones[0].number.slice(0,3)}.${provider.practices[i].phones[0].number.slice(3,6)}.${provider.practices[i].phones[0].number.slice(6)} <em>(${provider.practices[i].phones[0].type})</em></p>`);
+      if (provider.practices[i].website !== undefined) {
+        $(`#${provider.uid} .location`).append(`<p><a href="${provider.practices[i].website}" target="_blank">Website</a></p>`);
       }
     }
   });
