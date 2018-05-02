@@ -32,16 +32,20 @@ class DataAccess {
       provider.firstName = this.apiResponse[i].profile.first_name;
       provider.lastName = this.apiResponse[i].profile.last_name;
       provider.imageUrl = this.apiResponse[i].profile.image_url;
+      // Sort provider practice locations by latitude.
+      this.apiResponse[i].practices.sort(function (a, b) {
+        return a.lat - b.lat;
+      });
       // Parse provider practice locations.
       for (let j = 0; j < this.apiResponse[i].practices.length; j ++) {
         if (this.apiResponse[i].practices[j].within_search_area) {
-          // Compare Lat and Long between adjacent array elements.
-          let currentLatLng = this.apiResponse[i].practices[j].lat + this.apiResponse[i].practices[j].lon;
+          // Compare latitude and longitude between adjacent array elements.
+          let currentLatLng = this.apiResponse[i].practices[j].lat + " " + this.apiResponse[i].practices[j].lon;
           let nextLatLng = undefined;
           if (j < this.apiResponse[i].practices.length - 1) {
-            nextLatLng = this.apiResponse[i].practices[j + 1].lat + this.apiResponse[i].practices[j + 1].lon;
+            nextLatLng = this.apiResponse[i].practices[j + 1].lat + " " + this.apiResponse[i].practices[j + 1].lon;
           }
-          // Doesn't catch non-adjacent duplicates.
+          // Skip locations with same latitude and longitude
           if (currentLatLng !== nextLatLng) {
             let practice = {
               acceptsNewPatients: this.apiResponse[i].practices[j].accepts_new_patients,
