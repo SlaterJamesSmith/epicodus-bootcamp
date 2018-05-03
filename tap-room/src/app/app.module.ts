@@ -4,12 +4,14 @@ import { AppComponent } from './app.component';
 import { FormsModule } from '@angular/forms';
 import { BeerListComponent } from './beer-list/beer-list.component';
 import { EditBeerTapComponent } from './edit-beer-tap/edit-beer-tap.component';
+import { AddBeerTapComponent } from './add-beer-tap/add-beer-tap.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     BeerListComponent,
-    EditBeerTapComponent
+    EditBeerTapComponent,
+    AddBeerTapComponent
   ],
   imports: [
     BrowserModule,
