@@ -1,10 +1,8 @@
 # _EPICODUS - JAVASCRIPT - WEEK 3_
 
-#### _Angular, April 30, 2018_
+#### _Introduction to Angular, April 30, 2018_
 
-#### _Collaborators_
-
-* Mike Chu
+#### _By Mike Chu_
 
 ## Description
 
