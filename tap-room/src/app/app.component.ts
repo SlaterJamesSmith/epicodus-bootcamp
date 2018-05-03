@@ -43,5 +43,6 @@ export class AppComponent {
 
   sellPint(tap: Keg) {
     tap.fluidOzVolume -= 16;
+    tap.updatePintCount();
   }
 }

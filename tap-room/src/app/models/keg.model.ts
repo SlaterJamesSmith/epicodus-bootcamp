@@ -9,4 +9,8 @@ export class Keg {
     public abv: number,
     public price: number,
   ) { }
+
+  updatePintCount() {
+    this.pintCount = this.fluidOzVolume / 16;
+  }
 }
