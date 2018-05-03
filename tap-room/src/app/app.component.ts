@@ -7,7 +7,7 @@ import { Keg } from './models/keg.model'
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  masterKegTap: Keg[] = [
+  masterKegTaps: Keg[] = [
     new Keg('All Day IPA', 'Founders', 'India Pale Ale', 4.7, 4),
     new Keg('Breakfast Stout', 'Founders', 'Oatmeal Stout', 8.3, 5),
     new Keg('Dirty Bastard', 'Founders', 'Scotch Style Ale', 8.5, 4),

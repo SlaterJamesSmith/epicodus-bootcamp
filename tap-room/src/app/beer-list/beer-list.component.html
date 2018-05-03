@@ -1,0 +1,12 @@
+<div *ngFor="let beerTap of beerListKegTaps" class="beer-tap card">
+  <div class="card-header">
+    <h3>{{beerTap.beerName}}</h3>
+    <h4>{{beerTap.breweryName}}</h4>
+  </div>
+  <div class="card-body">
+    <p>Pints Remaining: {{beerTap.pintCount}}</p>
+    <p>{{beerTap.beerType}}</p>
+    <p>{{beerTap.abv}}% ABV</p>
+    <p>${{beerTap.price}} Pint</p>
+  </div>
+</div>
