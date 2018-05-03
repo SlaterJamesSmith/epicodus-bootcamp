@@ -5,5 +5,5 @@
 <app-add-beer-tap [startNewTap]="startNewTap" (openNewTap)="addNewTap($event)" (cancelNewTap)="stopNewTap()"></app-add-beer-tap>
 <app-edit-beer-tap [selectedTap]="selectedEditTap" (closeEdit)="closeEditTap()"></app-edit-beer-tap>
 <div class="beer-list">
-  <app-beer-list [beerListKegTaps]="masterKegTaps" (selectEditTap)="openEditTap($event)"></app-beer-list>
+  <app-beer-list [beerListKegTaps]="masterKegTaps" (selectEditTap)="openEditTap($event)" (sendPintSale)="sellPint($event)"></app-beer-list>
 </div>

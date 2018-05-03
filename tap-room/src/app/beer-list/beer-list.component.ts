@@ -9,8 +9,13 @@ import { Keg } from '../models/keg.model'
 export class BeerListComponent {
   @Input() beerListKegTaps: Keg[] = [];
   @Output() selectEditTap = new EventEmitter();
+  @Output() sendPintSale = new EventEmitter();
 
   clickEditTap(tap: Keg) {
     this.selectEditTap.emit(tap);
+  }
+
+  clickSellPint(tap: Keg) {
+    this.sendPintSale.emit(tap);
   }
 }

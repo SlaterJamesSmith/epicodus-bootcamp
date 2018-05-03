@@ -40,4 +40,8 @@ export class AppComponent {
   closeEditTap() {
     this.selectedEditTap = null;
   }
+
+  sellPint(tap: Keg) {
+    tap.fluidOzVolume -= 16;
+  }
 }
