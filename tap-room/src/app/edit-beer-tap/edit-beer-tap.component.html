@@ -1,0 +1,32 @@
+<div *ngIf="selectedTap" class="card">
+  <div class="card-header">
+    <h3>Edit Tap</h3>
+  </div>
+  <div class="card-body row">
+    <div class="col-sm-6">
+      <div class="form-group">
+        <label>Beer Name</label>
+        <input [(ngModel)]="selectedTap.beerName" class="form-control" type="text" required>
+      </div>
+      <div class="form-group">
+        <label>Brewery</label>
+        <input [(ngModel)]="selectedTap.breweryName" class="form-control" type="text" required>
+      </div>
+      <div class="form-group">
+        <label>Pint Price</label>
+        <input [(ngModel)]="selectedTap.price" class="form-control" type="text" required>
+      </div>
+    </div>
+    <div class="col-sm-6">
+      <div class="form-group">
+        <label>Type</label>
+        <input [(ngModel)]="selectedTap.beerType" class="form-control" type="text" required>
+      </div>
+      <div class="form-group">
+        <label>ABV Percentage</label>
+        <input [(ngModel)]="selectedTap.abv" class="form-control" type="text" required>
+      </div>
+      <button (click)="clickCloseEdit()" class="btn btn-secondary" type="button">Done</button>
+    </div>
+  </div>
+</div>

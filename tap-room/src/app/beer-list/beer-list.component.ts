@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { Keg } from '../models/keg.model'
 
 @Component({
@@ -8,4 +8,9 @@ import { Keg } from '../models/keg.model'
 })
 export class BeerListComponent {
   @Input() beerListKegTaps: Keg[] = [];
+  @Output() selectEditTap = new EventEmitter();
+
+  clickEditTap(tap: Keg) {
+    this.selectEditTap.emit(tap);
+  }
 }

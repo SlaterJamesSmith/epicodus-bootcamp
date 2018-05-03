@@ -4,6 +4,7 @@ h2 {
 }
 
 .beer-list {
-  margin: 0 auto;
+  margin: 0 auto 20px;
+  overflow: auto;
   width: auto;
 }

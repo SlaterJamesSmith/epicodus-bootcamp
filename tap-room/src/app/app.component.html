@@ -1,4 +1,5 @@
-<h2>Beer Tap</h2>
+<h2>Beer Taps</h2>
 <div class="beer-list">
-  <app-beer-list [beerListKegTaps]="masterKegTaps"></app-beer-list>
+  <app-beer-list [beerListKegTaps]="masterKegTaps" (selectEditTap)="openEditTap($event)"></app-beer-list>
 </div>
+<app-edit-beer-tap [selectedTap]="selectedEditTap" (closeEdit)="closeEditTap()"></app-edit-beer-tap>
