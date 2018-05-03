@@ -1,4 +1,4 @@
-import { Component, Output, EventEmitter } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { Keg } from '../models/keg.model';
 
 @Component({
@@ -7,6 +7,7 @@ import { Keg } from '../models/keg.model';
   styleUrls: ['./add-beer-tap.component.css']
 })
 export class AddBeerTapComponent {
+  @Input() startNewTap: boolean;
   @Output() openNewTap = new EventEmitter();
 
   createTap(beerName: string, breweryName: string, beerType: string, abv: number, price: number) {
