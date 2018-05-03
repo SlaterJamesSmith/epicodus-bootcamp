@@ -6,28 +6,5 @@
   <h3>{{month}}/{{day}}/{{year}}</h3>
   <h4>{{currentFocus}}</h4>
   <app-task-list [childTaskList]="masterTaskList" (clickSender)="editTask($event)"></app-task-list>
-  <div *ngIf="selectedTask" class="card">
-    <div class="card-header text-center text-uppercase">
-      <strong>Edit Task</strong>
-    </div>
-    <div class="card-body">
-      <h4>{{selectedTask.description}}</h4>
-      <p><strong>Task Complete:</strong> {{selectedTask.done}}</p>
-      <div class="form-group">
-        <label>Description</label>
-        <input [(ngModel)]="selectedTask.description" class="form-control">
-      </div>
-      <label>Priority</label>
-      <div class="radio">
-        <input type="radio" [(ngModel)]="selectedTask.priority" value="1">1 (Low Priority)
-      </div>
-      <div class="radio">
-        <input type="radio" [(ngModel)]="selectedTask.priority" value="2">2 (Medium Priority)
-      </div>
-      <div class="radio">
-        <input type="radio" [(ngModel)]="selectedTask.priority" value="3">3 (High Priority)
-      </div>
-      <button (click)="finishEdit()" class="btn btn-primary">Done</button>
-    </div>
-  </div>
+  <app-edit-task [childSelectedTask]="selectedTask" (clickedDone)="finishEdit()"></app-edit-task>
 </div>
