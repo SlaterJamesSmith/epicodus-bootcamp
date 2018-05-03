@@ -11,3 +11,7 @@ h1 .subtitle {
   font-size: 0.8em;
   font-weight: normal;
 }
+
+#angular-logo {
+  margin-bottom: 20px;
+}
