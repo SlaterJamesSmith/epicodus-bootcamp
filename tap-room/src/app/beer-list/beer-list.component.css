@@ -4,6 +4,7 @@ h3 {
 }
 
 h4 {
+  font-size: 1.2em;
   font-style: italic;
 }
 
@@ -15,4 +16,21 @@ h4 {
   float: left;
   margin: 10px;
   width: 300px;
+}
+
+.card-body {
+  padding-top: 0;
+}
+
+.pint-count {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.125);
+  font-weight: bold;
+  margin-left: -20px;
+  margin-right: -20px;
+  padding: 20px;
+}
+
+.price {
+  font-size: 2em;
+  font-weight: bold;
 }

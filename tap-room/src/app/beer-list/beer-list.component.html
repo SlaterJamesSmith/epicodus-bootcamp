@@ -4,10 +4,10 @@
     <h4>{{beerTap.breweryName}}</h4>
   </div>
   <div class="card-body">
-    <p>Pints Remaining: {{beerTap.pintCount}}</p>
+    <p [class]="volumeStatusColor(beerTap)" class="pint-count">Pints Remaining: {{beerTap.pintCount}}</p>
     <p>{{beerTap.beerType}}</p>
     <p>{{beerTap.abv}}% ABV</p>
-    <p>${{beerTap.price}} Pint</p>
+    <p class="price">${{beerTap.price}} Pint</p>
     <button (click)="clickSellPint(beerTap)" class="btn btn-primary" type="button">Sell Pint</button>
     <button (click)="clickEditTap(beerTap)" class="btn btn-dark" type="button">Edit</button>
   </div>

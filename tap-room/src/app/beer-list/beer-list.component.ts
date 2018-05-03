@@ -11,6 +11,16 @@ export class BeerListComponent {
   @Output() selectEditTap = new EventEmitter();
   @Output() sendPintSale = new EventEmitter();
 
+  volumeStatusColor(tap: Keg) {
+    if (tap.pintCount < 40 && tap.pintCount >= 20) {
+      return 'bg-warning pint-count';
+    } else if (tap.pintCount < 20) {
+      return 'bg-danger text-white pint-count';
+    } else {
+      return 'pint-count';
+    }
+  }
+
   clickEditTap(tap: Keg) {
     this.selectEditTap.emit(tap);
   }
