@@ -22,6 +22,10 @@ export class AppComponent {
     this.startNewTap = true;
   }
 
+  stopNewTap() {
+    this.startNewTap = false;
+  }
+
   addNewTap(newTap: Keg) {
     this.masterKegTaps.unshift(newTap);
     this.startNewTap = false;

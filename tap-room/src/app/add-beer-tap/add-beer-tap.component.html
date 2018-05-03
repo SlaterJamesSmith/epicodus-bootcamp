@@ -26,7 +26,10 @@
         <label>ABV Percentage</label>
         <input #abv class="form-control" type="text">
       </div>
-      <button (click)="createTap(beerName.value, breweryName.value, beerType.value, abv.value, price.value); beerName.value='';breweryName.value='';beerType.value='';abv.value='';price.value=''" class="btn btn-success" type="button">Done</button>
+      <div class="btn-group">
+        <button (click)="createTap(beerName.value, breweryName.value, beerType.value, abv.value, price.value); beerName.value='';breweryName.value='';beerType.value='';abv.value='';price.value=''" class="btn btn-success" type="button">Done</button>
+        <button (click)="clickCancelTap(); beerName.value='';breweryName.value='';beerType.value='';abv.value='';price.value=''" class="btn btn-dark" type="button">Cancel</button>
+      </div>
     </div>
   </div>
 </div>

@@ -2,7 +2,7 @@
 <div class="form-group">
   <button *ngIf="startNewTap === false" (click)="clickNewTap()" class="btn btn-success" type="button">Open New Tap</button>
 </div>
-<app-add-beer-tap [startNewTap]="startNewTap" (openNewTap)="addNewTap($event)"></app-add-beer-tap>
+<app-add-beer-tap [startNewTap]="startNewTap" (openNewTap)="addNewTap($event)" (cancelNewTap)="stopNewTap()"></app-add-beer-tap>
 <app-edit-beer-tap [selectedTap]="selectedEditTap" (closeEdit)="closeEditTap()"></app-edit-beer-tap>
 <div class="beer-list">
   <app-beer-list [beerListKegTaps]="masterKegTaps" (selectEditTap)="openEditTap($event)"></app-beer-list>

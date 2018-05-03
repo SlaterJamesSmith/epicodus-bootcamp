@@ -9,9 +9,14 @@ import { Keg } from '../models/keg.model';
 export class AddBeerTapComponent {
   @Input() startNewTap: boolean;
   @Output() openNewTap = new EventEmitter();
+  @Output() cancelNewTap = new EventEmitter();
 
   createTap(beerName: string, breweryName: string, beerType: string, abv: number, price: number) {
     let newTap: Keg = new Keg(beerName, breweryName, beerType, abv, price);
     this.openNewTap.emit(newTap);
+  }
+
+  clickCancelTap() {
+    this.cancelNewTap.emit();
   }
 }
