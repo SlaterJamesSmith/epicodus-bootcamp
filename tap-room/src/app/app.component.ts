@@ -16,6 +16,10 @@ export class AppComponent {
     // new Keg('Solid Gold', 'Founders', 'Lager', 4.4, 4)
   ];
 
+  addNewTap(newTap: Keg) {
+    this.masterKegTaps.push(newTap);
+  }
+
   selectedEditTap: Keg = null;
 
   openEditTap(tap: Keg) {

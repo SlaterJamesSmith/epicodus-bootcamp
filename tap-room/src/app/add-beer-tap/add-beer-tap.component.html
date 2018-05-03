@@ -6,27 +6,27 @@
     <div class="col-sm-6">
       <div class="form-group">
         <label>Beer Name</label>
-        <input #beerName class="form-control" type="text" required>
+        <input #beerName class="form-control" type="text">
       </div>
       <div class="form-group">
         <label>Brewery</label>
-        <input #breweryName class="form-control" type="text" required>
+        <input #breweryName class="form-control" type="text">
       </div>
       <div class="form-group">
         <label>Pint Price</label>
-        <input #price class="form-control" type="text" required>
+        <input #price class="form-control" type="text">
       </div>
     </div>
     <div class="col-sm-6">
       <div class="form-group">
         <label>Type</label>
-        <input #beerType class="form-control" type="text" required>
+        <input #beerType class="form-control" type="text">
       </div>
       <div class="form-group">
         <label>ABV Percentage</label>
-        <input #abv class="form-control" type="text" required>
+        <input #abv class="form-control" type="text">
       </div>
-      <button (click)="createTap(beerName.value, breweryName.value, beerType.value, abv.value, price.value)" class="btn btn-success" type="button">Done</button>
+      <button (click)="createTap(beerName.value, breweryName.value, beerType.value, abv.value, price.value); beerName.value='';breweryName.value='';beerType.value='';abv.value='';price.value=''" class="btn btn-success" type="button">Done</button>
     </div>
   </div>
 </div>
