@@ -18,9 +18,12 @@ export class AppComponent {
     new Task('Add README file to last few Angular repos.', '2')
   ];
 
+  selectedTask = null;
   currentFocus: string = 'Angular Homework';
 
-  selectedTask = null;
+  addTask(newTask: Task) {
+    this.masterTaskList.push(newTask);
+  }
 
   editTask(clickedTask) {
     this.selectedTask = clickedTask;
