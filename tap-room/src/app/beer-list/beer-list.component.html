@@ -8,6 +8,8 @@
     <p>{{beerTap.beerType}}</p>
     <p>{{beerTap.abv}}% ABV</p>
     <p class="price">${{beerTap.price}} Pint</p>
+  </div>
+  <div class="tap-controls">
     <button (click)="clickSellPint(beerTap)" class="btn btn-primary" type="button">Sell Pint</button>
     <button (click)="clickEditTap(beerTap)" class="btn btn-dark" type="button">Edit</button>
   </div>

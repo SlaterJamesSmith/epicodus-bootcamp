@@ -26,6 +26,10 @@ export class BeerListComponent {
   }
 
   clickSellPint(tap: Keg) {
-    this.sendPintSale.emit(tap);
+    if (tap.pintCount >= 1) {
+      this.sendPintSale.emit(tap);
+    } else {
+      alert('Beer Volume Too Low!');
+    }
   }
 }
