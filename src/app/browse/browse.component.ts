@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Video } from '../models/video.model';
 import { VideoService } from '../video.service';
 
@@ -8,9 +8,13 @@ import { VideoService } from '../video.service';
   styleUrls: ['./browse.component.css'],
   providers: [VideoService]
 })
-export class BrowseComponent {
+
+export class BrowseComponent implements OnInit {
+  videos: Video[];
 
   constructor(private videoService: VideoService) { }
 
-  videos: Video[];
+  ngOnInit() {
+    this.videos = this.videoService.getVideos();
+  }
 }
