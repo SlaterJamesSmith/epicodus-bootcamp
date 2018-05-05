@@ -10,5 +10,4 @@ export class VideoService {
   getVideos() {
     return VIDEOS;
   }
-
 }
