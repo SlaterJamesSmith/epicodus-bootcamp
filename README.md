@@ -36,9 +36,12 @@ None.
 
 ## MVC Overview
 
-| Models | Views | Components |
-| ------ | ----- | ---------- |
-| Video {<br>title: string,<br>channel: string,<br>url: string,<br>} | Main<br>Channel<br>Video Playback | Search<br>Browse<br>Channel<br>Video Player |
+| MODELS | | VIEWS | | COMPONENTS |
+| ------ | --- | ----- | --- | ---------- |
+| 1. Video | | 1. Main | | 1. Search |
+| - title: string | | 2. Channel | | 2. Browse |
+| - channel: string | | 3. Video Playback | | 3. Channel |
+| - videoUrl: string | | | | 4. Video Player |
 
 ## User Stories
 
