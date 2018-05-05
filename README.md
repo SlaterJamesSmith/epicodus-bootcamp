@@ -39,9 +39,10 @@ None.
 | MODELS | | VIEWS | | COMPONENTS |
 | ------ | --- | ----- | --- | ---------- |
 | 1. Video | | 1. Main | | 1. Search |
-| - title: string | | 2. Channel | | 2. Browse |
-| - channel: string | | 3. Video Playback | | 3. Channel |
-| - videoUrl: string | | | | 4. Video Player |
+| - title : *string* | | 2. Channel | | 2. Browse |
+| - channelName : *string* | | 3. Video Playback | | 3. Channel |
+| - userName : *string* | | | | 4. Video Player |
+| - videoUrl : *string* | | | | |
 
 ## User Stories
 
