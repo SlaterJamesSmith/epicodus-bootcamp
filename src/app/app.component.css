@@ -1,0 +1,9 @@
+nav {
+  box-shadow: 0 2px 5px #0001;
+}
+
+input.form-control {
+  border: 1px solid #ccc;
+  border-radius: 2px;
+  padding: 0.25em 0.75em;
+}
