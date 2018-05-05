@@ -1,0 +1,25 @@
+.container-fluid {
+  margin-top: 24px;
+}
+
+.video {
+  float: left;
+  margin-right: 4px;
+  width: 210px;
+}
+
+.video h3 {
+  font-size: 0.9em;
+  line-height: 1em;
+  margin: 10px 0;
+}
+
+.video p {
+  color: gray;
+  font-size: 0.8em;
+  line-height: 1em;
+}
+
+.info {
+  padding-right: 24px;
+}
