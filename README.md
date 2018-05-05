@@ -1,4 +1,4 @@
-# _YOUTUBE (LIMITED EDITION)_
+# _YOUTUBE REBUILD_
 
 #### _Epicodus Solo Project - JavaScript - Week 3, May 4, 2018_
 
@@ -6,7 +6,7 @@
 
 ## Description
 
-A limited site rebuild of YouTube.
+A limited site rebuild of YouTube using Angular.
 
 ## Setup/Installation Requirements
 
@@ -34,38 +34,25 @@ None.
 * Node.js
 * TypeScript
 
-## Specifications
+## MVC Overview
 
-### MVC Overview
+| Models | Views | Components |
+| ------ | ----- | ---------- |
+| Video {<br>title: string,<br>channel: string,<br>url: string,<br>} | Main<br>Channel<br>Video Playback | Search<br>Browse<br>Channel<br>Video Player |
 
-#### Models
-* Video
+## User Stories
 
-#### Views
-* Navigation
-* Main
-* Channel
-* Video Playback
-
-#### Components
-* **Search:** Provides site-wide search functions.
-* **Browse:** Displays suggested videos by genre.
-* **Channel:** Displays videos for a specific channel.
-* **Channel Info:** Displays info about specific channel.
-* **Video Player:** Displays video with playback controls.
-
-### MVP User Stories
-|Status|View|User Abilities|Component|
-|:----:|:--:|--------------|:-------:|
-||NAV|Search for videos and channels.|SEARCH|
-||NAV|Navigate to main page or other key areas.|ROOT|
-||MAIN|See lists of suggested videos.|BROWSE|
-||MAIN|Filter video suggestions by genre.|BROWSE|
-||MAIN|Click video links to open Video Playback View.|BROWSE|
-||CHANNEL|See lists of videos specific to a single channel.|CHANNEL|
-||CHANNEL|Open an About section to see channel info.|CHNL INFO|
-||CHANNEL|Click video links to open Video Playback View.|CHANNEL|
-||VIDEO|Watch and control video playback.|VID PLAYER|
+| Status | View | Basic Features | Component |
+| :-: | :-: | --- | :-: |
+| | NAV | Search for videos and channels. | SEARCH |
+| | NAV | Navigate to main page or other key areas. | ROOT |
+| | MAIN | See lists of suggested videos. | BROWSE |
+| | MAIN | Filter video suggestions by genre. | BROWSE |
+| | MAIN | Click video links to open Video Playback View. | BROWSE |
+| | CHANNEL | See lists of videos specific to a single channel. | CHANNEL |
+| | CHANNEL | Open an About section to see channel info. | CHANNEL |
+| | CHANNEL | Click video links to open Video Playback View. | CHANNEL |
+| | VIDEO | Watch and control video playback. | VID PLAYER |
 
 ## License
 
