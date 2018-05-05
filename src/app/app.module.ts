@@ -17,4 +17,5 @@ import { BrowseComponent } from './browse/browse.component';
   providers: [],
   bootstrap: [AppComponent]
 })
+
 export class AppModule { }
