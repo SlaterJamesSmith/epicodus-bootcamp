@@ -10,4 +10,12 @@ export class VideoService {
   getVideos() {
     return VIDEOS;
   }
+
+  getVideoById(videoId: string) {
+    for (let i = 0; i < VIDEOS.length; i++) {
+      if (VIDEOS[i].id === videoId) {
+        return VIDEOS[i];
+      }
+    }
+  }
 }
