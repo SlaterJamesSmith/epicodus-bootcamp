@@ -13,6 +13,7 @@ import { Location } from '@angular/common';
 export class VideoPlayerComponent implements OnInit {
   videoId: string;
   video: Video;
+  iframeHeight: number;
 
   constructor(private videoService: VideoService, private route: ActivatedRoute, private location: Location) { }
 
@@ -21,13 +22,10 @@ export class VideoPlayerComponent implements OnInit {
       this.videoId = urlParams.id;
     });
     this.video = this.videoService.getVideoById(this.videoId);
-  }
-
-  test() {
-    console.log('You resized me.')
+    this.iframeHeight = document.getElementById("video-player").clientWidth / 1.775;
   }
 
   resizeHeight() {
-    return;
+    this.iframeHeight = document.getElementById("video-player").clientWidth / 1.775;
   }
 }

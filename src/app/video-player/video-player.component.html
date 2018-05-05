@@ -1,5 +1,5 @@
 <div class="container">
-  <iframe (window:resize)="test()" src="https://www.youtube.com/embed/4ZX7HbkdZ_s" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+  <iframe id="video-player" (window:resize)="resizeHeight()" [height]="this.iframeHeight" src="https://www.youtube.com/embed/4ZX7HbkdZ_s" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
   <h2>{{video.title}}</h2>
   <h3>{{video.channelName}}</h3>
 </div>
