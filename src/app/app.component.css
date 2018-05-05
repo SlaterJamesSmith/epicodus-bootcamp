@@ -1,9 +1,16 @@
-nav {
+.navbar {
   box-shadow: 0 2px 5px #0001;
 }
 
 input.form-control {
   border: 1px solid #ccc;
-  border-radius: 2px;
+  border-radius: 3px 0 0 3px;
   padding: 0.25em 0.75em;
+}
+
+.navbar .form-group .btn {
+  border-bottom: 1px solid #ccc;
+  border-right: 1px solid #ccc;
+  border-top: 1px solid #ccc;
+  background-color: #f8f8f8;
 }
