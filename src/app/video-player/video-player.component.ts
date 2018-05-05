@@ -22,4 +22,12 @@ export class VideoPlayerComponent implements OnInit {
     });
     this.video = this.videoService.getVideoById(this.videoId);
   }
+
+  test() {
+    console.log('You resized me.')
+  }
+
+  resizeHeight() {
+    return;
+  }
 }

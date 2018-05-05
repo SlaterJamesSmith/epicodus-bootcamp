@@ -1,4 +1,4 @@
-.container-fluid {
+div.container {
   margin-top: 24px;
 }
 
@@ -13,7 +13,5 @@ h3 {
 }
 
 iframe {
-  height: 12em;
-  margin: 0;
-  width: 20em;
+  width: 100%;
 }
