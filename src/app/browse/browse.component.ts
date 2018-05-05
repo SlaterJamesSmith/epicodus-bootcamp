@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Video } from '../models/video.model';
 import { VideoService } from '../video.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-browse',
@@ -12,9 +13,13 @@ import { VideoService } from '../video.service';
 export class BrowseComponent implements OnInit {
   videos: Video[];
 
-  constructor(private videoService: VideoService) { }
+  constructor(private videoService: VideoService, private router: Router) { }
 
   ngOnInit() {
     this.videos = this.videoService.getVideos();
+  }
+
+  loadVideo(clickedVideo: Video) {
+    this.router.navigate(['videos', clickedVideo.id]);
   }
 }

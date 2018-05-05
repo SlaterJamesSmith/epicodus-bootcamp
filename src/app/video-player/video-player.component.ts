@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Video } from '../models/video.model';
 import { VideoService } from '../video.service';
+import { ActivatedRoute, Params } from '@angular/router';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-video-player',
@@ -12,10 +14,12 @@ export class VideoPlayerComponent implements OnInit {
   videoId: string;
   video: Video;
 
-  constructor(private videoService: VideoService) { }
+  constructor(private videoService: VideoService, private route: ActivatedRoute, private location: Location) { }
 
   ngOnInit() {
+    this.route.params.forEach((urlParams) => {
+      this.videoId = urlParams.id;
+    });
     this.video = this.videoService.getVideoById(this.videoId);
   }
-
 }

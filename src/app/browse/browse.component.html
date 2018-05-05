@@ -1,8 +1,8 @@
 <div class="container-fluid">
-  <div *ngFor="let video of videos" class="video">
+  <div *ngFor="let video of videos" (click)="loadVideo(video)" class="video">
     <img width="210" src={{video.thumbUrl}} alt="thumbnail image">
     <div class="info">
-      <h3>{{video.title}}</h3>
+      <h3 (click)="loadVideo(video)">{{video.title}}</h3>
       <p>{{video.channelName}}</p>
     </div>
   </div>
