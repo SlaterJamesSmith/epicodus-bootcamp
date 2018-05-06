@@ -1,7 +1,8 @@
 .container {
-  padding-top: 24px;
+  padding: 24px 25px 0;
   position: relative;
   max-width: 1096px;
+  min-width: 474px;
 }
 
 .strip {
@@ -45,7 +46,6 @@ h2 img {
   background-color: #fff;
   border: none;
   border-radius: 100%;
-  box-shadow: 0 5px 3px #0003;
   cursor: pointer;
   height:40px;
   position: absolute;
@@ -54,12 +54,14 @@ h2 img {
 }
 
 .carousel-btn.left {
-  left: -6px;
+  box-shadow: -1px 4px 3px #0004, -1px -1px 2px #0002;
+  left: 5px;
   top: 115px;
 }
 
 .carousel-btn.right {
-  right: -6px;
+  box-shadow: 1px 4px 3px #0004, 1px -1px 2px #0002;
+  right: 5px;
   top: 115px;
 }
 
@@ -79,6 +81,26 @@ h2 img {
   display: flex;
   overflow: visible;
   position: relative;
+}
+
+.carousel-position-0 {
+  left: 0;
+}
+
+.carousel-position-1 {
+  left: -214px;
+}
+
+.carousel-position-2 {
+  left: -428px;
+}
+
+.carousel-position-3 {
+  left: -642px;
+}
+
+.carousel-position-4 {
+  left: -856px;
 }
 
 .video {
