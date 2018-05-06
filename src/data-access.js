@@ -26,72 +26,71 @@ class DataAccess {
 
   parseData() {
     this.dataOut = [];
-    for (let i = 0; i < this.apiResponse.length; i ++) {
+    this.apiResponse.forEach((betterDoctor) => {
       let provider = new Provider();
-      provider.uid = this.apiResponse[i].uid;
-      provider.firstName = this.apiResponse[i].profile.first_name;
-      provider.lastName = this.apiResponse[i].profile.last_name;
-      provider.imageUrl = this.apiResponse[i].profile.image_url;
+      provider.uid = betterDoctor.uid;
+      provider.firstName = betterDoctor.profile.first_name;
+      provider.lastName = betterDoctor.profile.last_name;
+      provider.imageUrl = betterDoctor.profile.image_url;
       // Sort provider practice locations by latitude.
-      this.apiResponse[i].practices.sort(function (a, b) {
+      betterDoctor.practices.sort(function (a, b) {
         return a.lat - b.lat;
       });
-      // Parse provider practice locations.
-      for (let j = 0; j < this.apiResponse[i].practices.length; j ++) {
-        if (this.apiResponse[i].practices[j].within_search_area) {
+      for (let i = 0; i < betterDoctor.practices.length; i++) {
+        if (betterDoctor.practices[i].within_search_area) {
           // Compare latitude and longitude between adjacent array elements.
-          let currentLatLng = this.apiResponse[i].practices[j].lat + ' ' + this.apiResponse[i].practices[j].lon;
-          let currentStreet = this.apiResponse[i].practices[j].visit_address.street;
+          let currentLatLng = betterDoctor.practices[i].lat + ' ' + betterDoctor.practices[i].lon;
+          let currentStreet = betterDoctor.practices[i].visit_address.street;
           let nextLatLng = null;
           let nextStreet = null;
-          if (j < this.apiResponse[i].practices.length - 1) {
-            nextLatLng = this.apiResponse[i].practices[j + 1].lat + ' ' + this.apiResponse[i].practices[j + 1].lon;
-            nextStreet = this.apiResponse[i].practices[j + 1].visit_address.street;
+          if (i < betterDoctor.practices.length - 1) {
+            nextLatLng = betterDoctor.practices[i + 1].lat + ' ' + betterDoctor.practices[i + 1].lon;
+            nextStreet = betterDoctor.practices[i + 1].visit_address.street;
           }
           // Skip locations with same latitude and longitude
           if (currentLatLng !== nextLatLng && currentStreet !== nextStreet) {
             let practice = {
-              acceptsNewPatients: this.apiResponse[i].practices[j].accepts_new_patients,
+              acceptsNewPatients: betterDoctor.practices[i].accepts_new_patients,
               address: {
-                lat: this.apiResponse[i].practices[j].lat,
-                lng: this.apiResponse[i].practices[j].lon,
-                street: this.apiResponse[i].practices[j].visit_address.street,
-                city: this.apiResponse[i].practices[j].visit_address.city,
-                state: this.apiResponse[i].practices[j].visit_address.state,
-                zip: this.apiResponse[i].practices[j].visit_address.zip
+                lat: betterDoctor.practices[i].lat,
+                lng: betterDoctor.practices[i].lon,
+                street: betterDoctor.practices[i].visit_address.street,
+                city: betterDoctor.practices[i].visit_address.city,
+                state: betterDoctor.practices[i].visit_address.state,
+                zip: betterDoctor.practices[i].visit_address.zip
               },
               phones: [],
               fax: [],
-              website: this.apiResponse[i].practices[j].website
+              website: betterDoctor.practices[i].website
             };
             // Separate phones from faxes.
-            for (let k = 0; k < this.apiResponse[i].practices[j].phones.length; k ++) {
-              let phone = {
-                number: this.apiResponse[i].practices[j].phones[k].number,
-                type: this.apiResponse[i].practices[j].phones[k].type
+            betterDoctor.practices[i].phones.forEach(function(contact) {
+              let device = {
+                number: contact.number,
+                type: contact.type
               };
-              if (phone.type.includes('fax')) {
-                practice.fax.push(phone);
+              if (device.type.includes('fax')) {
+                practice.fax.push(device);
               } else {
-                practice.phones.push(phone);
+                practice.phones.push(device);
               }
-            }
+            });
             provider.practices.push(practice);
           }
         }
       }
       // Parse provider specialties.
-      for (let l = 0; l < this.apiResponse[i].specialties.length; l ++) {
+      betterDoctor.specialties.forEach(function(category) {
         let specialty = {
-          name: this.apiResponse[i].specialties[l].name,
-          description: this.apiResponse[i].specialties[l].description
+          name: category.name,
+          description: category.description
         };
         provider.specialties.push(specialty);
-      }
+      });
       if (provider.practices.length !== 0) {
         this.dataOut.push(provider);
       }
-    }
+    });
   }
 }
 
