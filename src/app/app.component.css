@@ -29,7 +29,7 @@ a.navbar-brand span {
 .circle-btn {
   background-color: #ddd0;
   border: none;
-  border-radius: 50px;
+  border-radius: 100%;
   cursor: pointer;
   height:40px;
   margin-right: 8px;

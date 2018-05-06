@@ -1,5 +1,6 @@
 .container {
   padding-top: 24px;
+  position: relative;
   max-width: 1096px;
 }
 
@@ -36,9 +37,47 @@ h2 img {
   text-transform: uppercase;
 }
 
-.carousel {
-  display: flex;
+.carousel-outer {
   overflow: hidden;
+}
+
+.carousel-btn {
+  background-color: #fff;
+  border: none;
+  border-radius: 100%;
+  box-shadow: 0 5px 3px #0003;
+  cursor: pointer;
+  height:40px;
+  position: absolute;
+  width: 40px;
+  z-index: 1;
+}
+
+.carousel-btn.left {
+  left: -6px;
+  top: 115px;
+}
+
+.carousel-btn.right {
+  right: -6px;
+  top: 115px;
+}
+
+.carousel-btn:focus {
+  outline: none;
+}
+
+.carousel-btn svg {
+  fill: #999;
+  height: 24px;
+  position: relative;
+  top: 3px;
+  width: 24px;
+}
+
+.carousel-inner {
+  display: flex;
+  overflow: visible;
 }
 
 .video {
