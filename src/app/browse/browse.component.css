@@ -8,6 +8,10 @@
   width: 210px;
 }
 
+.video h3, .video img {
+  cursor: pointer;
+}
+
 .video h3 {
   font-size: 0.9em;
   line-height: 1em;

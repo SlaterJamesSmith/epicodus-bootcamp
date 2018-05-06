@@ -29,6 +29,7 @@ a.navbar-brand span {
   background-color: #ddd0;
   border: none;
   border-radius: 50px;
+  cursor: pointer;
   height:40px;
   margin-right: 8px;
   width: 40px;
