@@ -42,21 +42,24 @@ None.
 | - title : *string* | | 2. Channel | | 2. Browse |
 | - channelName : *string* | | 3. Video Playback | | 3. Channel |
 | - userName : *string* | | | | 4. Video Player |
-| - videoUrl : *string* | | | | |
+| - id : *string* | | | | |
 
 ## User Stories
 
 | Status | View | Basic Features | Component |
 | :-: | :-: | --- | :-: |
-| | NAV | Search for videos and channels. | SEARCH |
-| | NAV | Navigate to main page or other key areas. | ROOT |
-| | MAIN | See lists of suggested videos. | BROWSE |
+| Done | NAV | Navigate to main page or other key areas. | ROOT |
+| Done | MAIN | See lists of suggested videos. | BROWSE |
 | | MAIN | Filter video suggestions by genre. | BROWSE |
-| | MAIN | Click video links to open Video Playback View. | BROWSE |
+| Done | MAIN | Click video links to open Video Playback View. | BROWSE |
+| Done | VIDEO | Watch and control video playback. | VID PLAYER |
+
+| Status | View | Advanced Features | Component |
+| :-: | :-: | --- | :-: |
+| | NAV | Search for videos and channels. | SEARCH |
 | | CHANNEL | See lists of videos specific to a single channel. | CHANNEL |
 | | CHANNEL | Open an About section to see channel info. | CHANNEL |
 | | CHANNEL | Click video links to open Video Playback View. | CHANNEL |
-| | VIDEO | Watch and control video playback. | VID PLAYER |
 
 ## License
 
