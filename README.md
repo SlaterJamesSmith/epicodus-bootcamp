@@ -10,17 +10,39 @@ A limited site rebuild of YouTube using Angular.
 
 ## Setup/Installation Requirements
 
-#### I. Node & NPM Installs
+#### I. Firebase Account
+
+1. Create free [Firebase](http://firebase.google.com/) account.
+2. In Firebase dashboard, create new project.
+3. Name project and select your country/region.
+4. In overview, select option to **add Firebase to web app**.
+5. Copy credentials or keep window open for later reference.
+
+#### II. Node & NPM Installs
+
 1. Install Node.js on local machine.
 2. Install TypeScript globally: `npm install -g typescript`
 3. Install Angular CLI globally: `npm install -g @angular/cli@1.6.5`
 
-#### II. Project Setup
+#### III. Project Setup
+
 1. Clone repository.
 2. In terminal, navigate to project root.
 3. Run `npm install` in project root to load required packages.
+4. In **src/app** folder, create new file named **api-keys.ts**.
+5. In **api-keys.ts**, copy in code from below and update with your Firebase credentials:
+```
+export var masterFirebaseConfig = {
+  apiKey: "",
+  authDomain: "",
+  databaseURL: "",
+  storageBucket: "",
+  messagingSenderId: ""
+};
+```
 
-#### III. View Project
+#### IV. View Project
+
 * Development Mode: `ng serve --open`
 
 ## Known Bugs
