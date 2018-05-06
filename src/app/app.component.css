@@ -30,7 +30,7 @@ a.navbar-brand span {
   border: none;
   border-radius: 50px;
   height:40px;
-  margin-right: 10px;
+  margin-right: 8px;
   width: 40px;
 }
 
@@ -61,7 +61,8 @@ a.navbar-brand span {
 }
 
 #search .btn-group {
-  width: 60%;
+  max-width: 640px;
+  width: 80%;
 }
 
 #search .form-control {
@@ -90,7 +91,8 @@ a.navbar-brand span {
   color: #f00;
   font-size: 0.9em;
   font-weight: 500;
-  margin-left: 12px;
+  letter-spacing: -0.2px;
+  margin: 0 5px 0 16px;
   text-transform: uppercase;
   width: 60px;
 }
