@@ -78,6 +78,7 @@ h2 img {
 .carousel-inner {
   display: flex;
   overflow: visible;
+  position: relative;
 }
 
 .video {

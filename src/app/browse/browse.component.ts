@@ -12,6 +12,7 @@ import { Router } from '@angular/router';
 
 export class BrowseComponent implements OnInit {
   videos: Video[];
+  offset: number = 0;
 
   constructor(private videoService: VideoService, private router: Router) { }
 
@@ -21,5 +22,13 @@ export class BrowseComponent implements OnInit {
 
   loadVideo(clickedVideo: Video) {
     this.router.navigate(['videos', clickedVideo.id]);
+  }
+
+  scrollLeft() {
+    this.offset += 214;
+  }
+
+  scrollRight() {
+    this.offset -= 214;
   }
 }
