@@ -24,7 +24,7 @@ A limited site rebuild of YouTube using Angular.
 
 1. Install Node.js on local machine.
 2. Install TypeScript globally: `npm install -g typescript`
-3. Install Angular CLI globally: `npm install -g @angular/cli@1.6.5`
+3. Install Angular CLI globally: `npm install -g @angular/cli@1.7.4`
 
 #### III. Project Setup
 
