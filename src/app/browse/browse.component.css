@@ -37,8 +37,8 @@ h2 img {
 }
 
 .carousel {
-  display: inline-flex;
-  justify-content: center;
+  display: flex;
+  overflow: hidden;
 }
 
 .video {
@@ -51,7 +51,7 @@ h2 img {
 }
 
 .video h3 {
-  font-size: 0.9rem;
+  font-size: 0.85rem;
   line-height: 1rem;
   margin: 10px 0;
 }

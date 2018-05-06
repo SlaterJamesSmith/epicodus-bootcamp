@@ -6,16 +6,17 @@ nav{
   background-color: #f00;
   border-radius: 5px;
   display: inline-block;
-  height: 19px;
-  margin-right: 5px;
-  position: relative;
-  top: 2px;
+  height: 17px;
+  margin-right: 3px;
   width: 33px;
 }
 
 a.navbar-brand {
+  align-items: center;
   color: #000;
+  display: flex;
   font-family: 'Roboto Condensed', sans-serif;
+  font-size: 1.3rem;
   font-weight: 700;
   margin: 0 0 0 -5px;
   transform: scaleX(0.75);
