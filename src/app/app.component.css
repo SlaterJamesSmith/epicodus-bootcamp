@@ -2,15 +2,51 @@ nav{
   box-shadow: 0 2px 5px #0001;
 }
 
-a.navbar-brand {
-  color: #000;
-  font-weight: 500;
+#red-block {
+  background-color: #f00;
+  border-radius: 5px;
+  display: inline-block;
+  height: 19px;
+  margin-right: 5px;
+  position: relative;
+  top: 2px;
+  width: 33px;
 }
 
-svg#menu-icon {
+a.navbar-brand {
+  color: #000;
+  font-family: 'Roboto Condensed', sans-serif;
+  font-weight: 700;
+  margin: 0 0 0 -5px;
+  transform: scaleX(0.75);
+}
+
+a.navbar-brand span {
+  letter-spacing: -2.5px;
+}
+
+.circle-btn {
+  background-color: #ddd0;
+  border: none;
+  border-radius: 50px;
+  height:40px;
+  margin-right: 10px;
+  width: 40px;
+}
+
+.circle-btn:hover {
+  background-color: #ddd;
+}
+
+.circle-btn:focus   {
+  outline: none;
+}
+
+.circle-btn svg {
+  fill: #999;
   height: 24px;
-  opacity: 0.5;
-  margin: 0 22px 0 8px;
+  position: relative;
+  top: 3px;
   width: 24px;
 }
 
@@ -25,7 +61,7 @@ svg#menu-icon {
 }
 
 #search .btn-group {
-  width: 50%;
+  width: 60%;
 }
 
 #search .form-control {
@@ -48,4 +84,17 @@ svg#menu-icon {
   border: 1px solid #a6a6a6;
   box-shadow: 0 1px 1px #ccc;
   opacity: 0.7;
+}
+
+#sign-in a {
+  color: #f00;
+  font-size: 0.9em;
+  font-weight: 500;
+  margin-left: 12px;
+  text-transform: uppercase;
+  width: 60px;
+}
+
+#sign-in a:hover {
+  text-decoration: none;
 }
