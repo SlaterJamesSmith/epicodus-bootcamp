@@ -13,9 +13,11 @@ A limited site rebuild of YouTube using Angular.
 #### I. Firebase Account
 
 1. Create free [Firebase](http://firebase.google.com/) account.
-2. In Firebase dashboard, create new project.
+2. In Firebase console, create new project.
 3. Name project and select your country/region.
-4. In overview, select option to **add Firebase to web app**.
+4. From Project Overview, navigate to Develop > Database > **Realtime Database**.
+5. Select Rules and change **.read** and **.write** to `true`, then **Publish**.
+4. In Project Overview, select option to **add Firebase to web app**.
 5. Copy credentials or keep window open for later reference.
 
 #### II. Node & NPM Installs
