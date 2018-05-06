@@ -1,9 +1,47 @@
 .container {
-  margin-top: 24px;
+  padding-top: 24px;
+  max-width: 1096px;
+}
+
+.strip {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  height: 37px;
+  margin-bottom: 15px;
+}
+
+h2 {
+  align-items: center;
+  display: flex;
+  font-size: 1rem;
+  margin: 0
+}
+
+h2 img {
+  border-radius: 100%;
+  height: 32px;
+  margin-right: 8px;
+  width: 32px;
+}
+
+.subscribe {
+  background-color: #f00;
+  border-radius: 2px;
+  color: #fff;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 700;
+  padding: 10px 16px;
+  text-transform: uppercase;
+}
+
+.carousel {
+  display: inline-flex;
+  justify-content: center;
 }
 
 .video {
-  float: left;
   margin-right: 4px;
   width: 210px;
 }
@@ -13,15 +51,15 @@
 }
 
 .video h3 {
-  font-size: 0.9em;
-  line-height: 1em;
+  font-size: 0.9rem;
+  line-height: 1rem;
   margin: 10px 0;
 }
 
 .video p {
   color: gray;
-  font-size: 0.8em;
-  line-height: 1em;
+  font-size: 0.8rem;
+  line-height: 1rem;
 }
 
 .info {

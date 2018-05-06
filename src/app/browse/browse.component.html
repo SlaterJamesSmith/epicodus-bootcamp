@@ -1,9 +1,15 @@
 <div class="container">
-  <div *ngFor="let video of videos" class="video">
-    <img (click)="loadVideo(video)" width="210" src={{video.thumbUrl}} alt="thumbnail image">
-    <div class="info">
-      <h3 (click)="loadVideo(video)">{{video.title}}</h3>
-      <p>{{video.channelName}}</p>
+  <div class="strip">
+    <h2><img src="https://yt3.ggpht.com/-mqj8pi3nO-U/AAAAAAAAAAI/AAAAAAAAAAA/C_OggyumAW8/s88-c-k-no-mo-rj-c0xffffff/photo.jpg" alt="corridor icon">Corridor</h2>
+    <h2 class="subscribe">Subscribe</h2>
+  </div>
+  <div class="carousel">
+    <div *ngFor="let video of videos" class="video">
+      <img (click)="loadVideo(video)" width="210" src={{video.thumbUrl}} alt="thumbnail image">
+      <div class="info">
+        <h3 (click)="loadVideo(video)">{{video.title}}</h3>
+        <p>{{video.channelName}}</p>
+      </div>
     </div>
   </div>
 </div>
