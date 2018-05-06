@@ -13,7 +13,7 @@ A limited site rebuild of YouTube using Angular.
 #### I. Node & NPM Installs
 1. Install Node.js on local machine.
 2. Install TypeScript globally: `npm install -g typescript`
-3. Install Angular CLI globally: `npm install -g @angular/cli`
+3. Install Angular CLI globally: `npm install -g @angular/cli@1.6.5`
 
 #### II. Project Setup
 1. Clone repository.
@@ -30,6 +30,7 @@ None.
 ## Technologies Used
 
 * Angular
+* Firebase
 * JavaScript
 * Node.js
 * TypeScript
