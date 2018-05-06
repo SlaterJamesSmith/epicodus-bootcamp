@@ -40,13 +40,16 @@ class DataAccess {
       for (let j = 0; j < this.apiResponse[i].practices.length; j ++) {
         if (this.apiResponse[i].practices[j].within_search_area) {
           // Compare latitude and longitude between adjacent array elements.
-          let currentLatLng = this.apiResponse[i].practices[j].lat + " " + this.apiResponse[i].practices[j].lon;
-          let nextLatLng = undefined;
+          let currentLatLng = this.apiResponse[i].practices[j].lat + ' ' + this.apiResponse[i].practices[j].lon;
+          let currentStreet = this.apiResponse[i].practices[j].visit_address.street;
+          let nextLatLng = null;
+          let nextStreet = null;
           if (j < this.apiResponse[i].practices.length - 1) {
-            nextLatLng = this.apiResponse[i].practices[j + 1].lat + " " + this.apiResponse[i].practices[j + 1].lon;
+            nextLatLng = this.apiResponse[i].practices[j + 1].lat + ' ' + this.apiResponse[i].practices[j + 1].lon;
+            nextStreet = this.apiResponse[i].practices[j + 1].visit_address.street;
           }
           // Skip locations with same latitude and longitude
-          if (currentLatLng !== nextLatLng) {
+          if (currentLatLng !== nextLatLng && currentStreet !== nextStreet) {
             let practice = {
               acceptsNewPatients: this.apiResponse[i].practices[j].accepts_new_patients,
               address: {
