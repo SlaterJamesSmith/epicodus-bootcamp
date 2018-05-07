@@ -36,7 +36,7 @@ a.navbar-brand span {
   width: 40px;
 }
 
-.circle-btn:hover {
+.circle-btn.activate {
   background-color: #ddd;
 }
 
@@ -48,7 +48,7 @@ a.navbar-brand span {
   fill: #999;
   height: 24px;
   position: relative;
-  top: 3px;
+  top: 4px;
   width: 24px;
 }
 
