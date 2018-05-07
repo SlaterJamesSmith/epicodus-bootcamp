@@ -1,4 +1,4 @@
-nav{
+nav {
   box-shadow: 0 2px 5px #0001;
 }
 
@@ -29,7 +29,7 @@ a.navbar-brand span {
 }
 
 .circle-btn {
-  background-color: #ddd0;
+  background-color: #0000;
   border: none;
   border-radius: 100%;
   cursor: pointer;
@@ -46,16 +46,17 @@ a.navbar-brand span {
 }
 
 .circle.deactivate {
-  animation: button-fade 0.5s 1 forwards;
+  animation: button-fade 0.25s 1 forwards;
 }
 
 @keyframes button-bloom {
-  0% {height: 0px; width: 0px;}
+  0% {background-color: #ddd; height: 0px; width: 0px;}
   100% {background-color: #ddd; height: 40px; width: 40px;}
 }
 
 @keyframes button-fade {
   0% {background-color: #ddd;}
+  25% {background-color: #ddd8;}
   100% {background-color: #ddd0;}
 }
 
@@ -97,6 +98,7 @@ a.navbar-brand span {
   border: 1px solid #ccc;
   border-right: none;
   border-radius: 2px 0 0 2px;
+  box-shadow: none;
   padding: 0.25em 0.75em;
 }
 
@@ -104,6 +106,7 @@ a.navbar-brand span {
   border: 1px solid #808080;
   border-radius: 0 2px 2px 0;
   background-color: #eee;
+  box-shadow: none;
   opacity: 0.5;
   width: 75px;
 }
