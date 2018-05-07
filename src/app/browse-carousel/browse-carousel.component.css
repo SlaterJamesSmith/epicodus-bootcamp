@@ -1,6 +1,7 @@
 .carousel-group {
+  border-bottom: 1px solid #eee;
+  margin: 0 auto 17px;
   position: relative;
-  margin: 0 auto;
 }
 
 .strip {
