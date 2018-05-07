@@ -1,0 +1,22 @@
+h3 {
+  font-size: 1.1rem;
+  font-weight: bold;
+}
+
+h4 {
+  font-size: 1rem;
+  font-style: italic;
+  margin: 0;
+}
+
+.album-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.album-listing {
+  cursor: pointer;
+  margin: 5px;
+  width: 350px;
+}
