@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { Video } from '../models/video.model';
 import { VideoService } from '../video.service';
 import { Router } from '@angular/router';
@@ -11,28 +11,14 @@ import { Router } from '@angular/router';
 })
 
 export class BrowseCarouselComponent implements OnInit {
-  videos: Video[];
-  maxPosition: number;
+  @Input() maxPositions: number;
   carouselPosition: number = 0;
+  videos: Video[];
 
   constructor(private videoService: VideoService, private router: Router) { }
 
   ngOnInit() {
     this.videos = this.videoService.getVideos();
-    this.calcCarouselLimit();
-  }
-
-  calcCarouselLimit() {
-    let carouselWidth: number = document.getElementById("carousel-all").clientWidth;
-    if (carouselWidth < 638) {
-      this.maxPosition = 4;
-    } else if (carouselWidth < 852) {
-      this.maxPosition = 3;
-    } else if (carouselWidth < 1046) {
-      this.maxPosition = 2;
-    } else {
-      this.maxPosition = 1;
-    }
   }
 
   getCarouselPosition() {
