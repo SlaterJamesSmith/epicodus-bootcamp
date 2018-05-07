@@ -1,14 +1,14 @@
-<div class="carousel-group">
+<div [style.width.px]="carouselWidth" class="carousel-group">
   <div class="strip">
     <h2><img src="https://yt3.ggpht.com/-mqj8pi3nO-U/AAAAAAAAAAI/AAAAAAAAAAA/C_OggyumAW8/s88-c-k-no-mo-rj-c0xffffff/photo.jpg" alt="corridor icon">Corridor</h2>
-    <h2 class="subscribe">Subscribe</h2>
+    <h2 class="subscribe">Subscribe <span class="count">4.6M</span></h2>
   </div>
   <button *ngIf="carouselPosition > 0" (click)="scrollLeft()" class="carousel-btn left" type="button">
     <svg viewBox="0 0 24 24">
       <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"></path>
     </svg>
   </button>
-  <button *ngIf="carouselPosition < maxPositions" (click)="scrollRight()" class="carousel-btn right" type="button">
+  <button *ngIf="carouselPosition < maxCarouselPositions" (click)="scrollRight()" class="carousel-btn right" type="button">
     <svg viewBox="0 0 24 24">
       <path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"></path>
     </svg>

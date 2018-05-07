@@ -11,7 +11,8 @@ import { Router } from '@angular/router';
 })
 
 export class BrowseCarouselComponent implements OnInit {
-  @Input() maxPositions: number;
+  @Input() carouselWidth: number;
+  @Input() maxCarouselPositions: number;
   carouselPosition: number = 0;
   videos: Video[];
 

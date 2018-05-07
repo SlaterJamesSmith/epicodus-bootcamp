@@ -7,21 +7,26 @@ import { Component, OnInit } from '@angular/core';
 })
 
 export class BrowseComponent implements OnInit {
+  carouselWidth: number;
   maxCarouselPositions: number;
 
   ngOnInit() {
-    this.calcCarouselLimit();
+    this.calcCarouselLimits();
   }
 
-  calcCarouselLimit() {
-    let carouselWidth: number = document.getElementById("carousel-all").clientWidth;
-    if (carouselWidth < 638) {
+  calcCarouselLimits() {
+    let availableWidth = document.getElementById("carousel-all").clientWidth;
+    if (availableWidth < 638) {
+      this.carouselWidth = 424;
       this.maxCarouselPositions = 4;
-    } else if (carouselWidth < 852) {
+    } else if (availableWidth < 852) {
+      this.carouselWidth = 638;
       this.maxCarouselPositions = 3;
-    } else if (carouselWidth < 1046) {
+    } else if (availableWidth < 1046) {
+      this.carouselWidth = 852;
       this.maxCarouselPositions = 2;
     } else {
+      this.carouselWidth = 1046;
       this.maxCarouselPositions = 1;
     }
   }

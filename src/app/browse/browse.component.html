@@ -1,6 +1,6 @@
 
 <div class="container">
-  <div id="carousel-all" (window:resize)="calcCarouselLimit()">
-    <app-browse-carousel [maxPositions]="maxCarouselPositions"></app-browse-carousel>
+  <div id="carousel-all" (window:resize)="calcCarouselLimits()">
+    <app-browse-carousel [maxCarouselPositions]="maxCarouselPositions" [carouselWidth]="carouselWidth"></app-browse-carousel>
   </div>
 </div>

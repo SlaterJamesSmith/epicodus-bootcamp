@@ -1,3 +1,8 @@
+.carousel-group {
+  position: relative;
+  margin: 0 auto;
+}
+
 .strip {
   align-items: center;
   display: flex;
@@ -25,10 +30,16 @@ h2 img {
   border-radius: 2px;
   color: #fff;
   cursor: pointer;
-  font-size: 0.9rem;
-  font-weight: 700;
+  font-size: 0.85rem;
+  font-weight: 500;
+  letter-spacing: .007px;
   padding: 10px 16px;
   text-transform: uppercase;
+}
+
+.subscribe .count {
+  color: #ffffffd9;
+  margin-left: 7px;
 }
 
 .carousel-outer {
@@ -48,14 +59,14 @@ h2 img {
 
 .carousel-btn.left {
   box-shadow: -1px 4px 3px #0004, -1px -1px 2px #0002;
-  left: 5px;
-  top: 115px;
+  left: -20px;
+  top: 90px;
 }
 
 .carousel-btn.right {
   box-shadow: 1px 4px 3px #0004, 1px -1px 2px #0002;
-  right: 5px;
-  top: 115px;
+  right: -20px;
+  top: 90px;
 }
 
 .carousel-btn:focus {
