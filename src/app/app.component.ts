@@ -12,18 +12,20 @@ export class AppComponent {
 
   activateBtn(button: string) {
     this.clicker = button;
-    this.effect = 'circle-btn activate';
+    this.effect = 'circle activate';
   }
 
   deactivateBtn(button: string) {
-    this.effect = 'circle-btn';
+    setTimeout(() => {
+      this.effect = 'circle deactivate';
+    },100);
   }
 
   checkClicker(button: string) {
     if (button === this.clicker) {
       return this.effect;
     } else {
-      return 'circle-btn';
+      return 'circle';
     }
   }
 }

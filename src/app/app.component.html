@@ -1,13 +1,14 @@
 <nav (window:mouseup)="deactivateBtn()" class="navbar navbar-expand">
   <div class="nav">
-    <button (mousedown)="activateBtn('menu')" [class]="checkClicker('menu')" class="circle-btn" type="button">
+    <button (mousedown)="activateBtn('menu')" class="circle-btn" type="button">
+      <div [class]="checkClicker('menu')" class="circle"></div>
       <svg viewBox="0 0 24 24">
         <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"></path>
       </svg>
     </button>
   </div>
   <div class="nav">
-    <a class="navbar-brand" routerLink=""><span id="red-block"></span>Yo<span>uT</span>ube</a>
+    <a class="navbar-brand" routerLink=""><span id="red-block"></span><span>Y</span>o<span>uT</span>ube</a>
   </div>
   <div id="search" class="nav justify-content-center">
     <div class="btn-group">
@@ -20,21 +21,24 @@
     </div>
   </div>
   <div class="nav">
-    <button (mousedown)="activateBtn('post-video')" [class]="checkClicker('post-video')" class="circle-btn" type="button">
+    <button (mousedown)="activateBtn('post-video')" class="circle-btn" type="button">
+      <div [class]="checkClicker('post-video')" class="circle"></div>
       <svg viewBox="0 0 24 24">
         <path d="M17 10.5V7c0-.55-.45-1-1-1H4c-.55 0-1 .45-1 1v10c0 .55.45 1 1 1h12c.55 0 1-.45 1-1v-3.5l4 4v-11l-4 4zM14 13h-3v3H9v-3H6v-2h3V8h2v3h3v2z" class="style-scope yt-icon"></path>
       </svg>
     </button>
   </div>
   <div class="nav">
-    <button (mousedown)="activateBtn('apps')" [class]="checkClicker('apps')" class="circle-btn" type="button">
+    <button (mousedown)="activateBtn('apps')" class="circle-btn" type="button">
+      <div [class]="checkClicker('apps')" class="circle"></div>
       <svg viewBox="0 0 24 24">
         <path d="M4 8h4V4H4v4zm6 12h4v-4h-4v4zm-6 0h4v-4H4v4zm0-6h4v-4H4v4zm6 0h4v-4h-4v4zm6-10v4h4V4h-4zm-6 4h4V4h-4v4zm6 6h4v-4h-4v4zm0 6h4v-4h-4v4z" class="style-scope yt-icon"></path>
       </svg>
     </button>
   </div>
   <div class="nav">
-    <button (mousedown)="activateBtn('settings')" [class]="checkClicker('settings')" class="circle-btn" type="button">
+    <button (mousedown)="activateBtn('settings')" class="circle-btn" type="button">
+      <div [class]="checkClicker('settings')" class="circle"></div>
       <svg viewBox="0 0 24 24">
         <path d="M12 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z" class="style-scope yt-icon"></path>
       </svg>
