@@ -16,8 +16,7 @@ A collection of practice projects using JavaScript Arrays & Looping.
 
 ## Setup/Installation Requirements
 
-1. Clone repository.
-2. Open index.html in web browser.
+1. See main [README.md](../README.md).
 
 ## Known Bugs
 
