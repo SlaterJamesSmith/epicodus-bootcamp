@@ -1,13 +1,13 @@
-# _EPICODUS - INTRO - WEEK 4_
+# _EPICODUS: 01 - Intro - Week 4_
 
-#### _Object-Oriented JavaScript Practice, April 2, 2018_
+***Object-Oriented JavaScript, April 2, 2018***
 
-#### _Collaborators_
+***Collaborators***
 
-* Aaron Akbari-Mort
-* Adriana Chen
-* Mike Chu
-* Ami Cooper
+- Aaron Akbari-Mort
+- Adriana Chen
+- Mike Chu
+- Ami Cooper
 
 ## Description
 
@@ -23,8 +23,8 @@ None.
 
 ## Technologies Used
 
-* HTML
-* CSS
-* Bootstrap
-* JavaScript
-* jQuery
+- HTML
+- CSS
+- Bootstrap
+- JavaScript
+- jQuery

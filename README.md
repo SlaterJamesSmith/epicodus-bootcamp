@@ -1,32 +1,29 @@
-# _EPICODUS - UNIT 1_
+# _EPICODUS: 01 - Introduction to Programming_
 
-#### _Introduction to Programming, March 12, 2018_
+***CSS/React Track, Unit 1, March 12, 2018***
 
 ## Sections
 
 ### I. Git, HTML and CSS (Purged)
 
-### II. [JavaScript & jQuery](02-js-jquery/README.md)
+### II. [JavaScript & jQuery](02-js-jquery/)
 
-### III. [Arrays & Looping](03-arrays-looping/README.md)
+### III. [Arrays & Looping](03-arrays-looping/)
 
-### IV. [Object-Oriented JavaScript](04-object-oriented-js/README.md)
+### IV. [Object-Oriented JavaScript](04-object-oriented-js/)
 
-### V. Team Week
+### V. [Team Week](05-team-week/)
 
 ## Setup/Installation Requirements
 
 1. Clone repository.
+
 2. Open index.html in web browser.
-
-## Known Bugs
-
-None.
 
 ## Technologies Used
 
-* HTML
-* CSS
-* Bootstrap
-* JavaScript
-* jQuery
+- HTML
+- CSS
+- Bootstrap
+- JavaScript
+- jQuery

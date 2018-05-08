@@ -1,14 +1,14 @@
-# _EPICODUS - INTRO - WEEK 3_
+# _EPICODUS: 01 - Intro - Week 3_
 
-#### _Arrays & Looping Practice, March 26, 2018_
+***Arrays & Looping, March 26, 2018***
 
-#### _Collaborators_
+***Collaborators***
 
-* Pablo Barreyro
-* Brea Borlas
-* Mike Chu
-* Jesse Drebin
-* Matt Miller
+- Pablo Barreyro
+- Brea Borlas
+- Mike Chu
+- Jesse Drebin
+- Matt Miller
 
 ## Description
 
@@ -24,8 +24,8 @@ None.
 
 ## Technologies Used
 
-* HTML
-* CSS
-* Bootstrap
-* JavaScript
-* jQuery
+- HTML
+- CSS
+- Bootstrap
+- JavaScript
+- jQuery

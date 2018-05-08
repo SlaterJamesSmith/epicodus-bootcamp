@@ -1,14 +1,14 @@
-# _EPICODUS - INTRO - WEEK 2_
+# _EPICODUS: 01 - Intro - Week 2_
 
-#### _JavaScript & jQuery Practice, March 19, 2018_
+***JavaScript & jQuery, March 19, 2018***
 
-#### _Collaborators_
+***Collaborators***
 
-* Mike Chu
-* Matthew Dowdney
-* Brenda Franco
-* Ted Leary
-* Susan Southall
+- Mike Chu
+- Matthew Dowdney
+- Brenda Franco
+- Ted Leary
+- Susan Southall
 
 ## Description
 
@@ -24,8 +24,8 @@ None.
 
 ## Technologies Used
 
-* HTML
-* CSS
-* Bootstrap
-* JavaScript
-* jQuery
+- HTML
+- CSS
+- Bootstrap
+- JavaScript
+- jQuery
