@@ -1,6 +1,6 @@
-# _2D GAME-MAKER FRAMEWORK_
+# _EPICODUS - UNIT 1 - TEAM WEEK_
 
-#### _Epicodus Team Project - Intro - Week 5, April 9, 2018_
+#### _2D Game-Maker Framework, April 9, 2018_
 
 #### _Collaborators_
 
@@ -39,8 +39,6 @@ A basic framework for developing single-player, 2-dimensional, top-down, turn-ba
 
 ## Setup/Installation Requirements
 
-Visit website link for demo: https://m-chu.github.io/epicodus-team-week-1/
-
 1. Clone repository.
 
 2. Modify HTML, CSS, and JavaScript to re-skin or replace default digital assets.
@@ -58,9 +56,3 @@ Visit website link for demo: https://m-chu.github.io/epicodus-team-week-1/
 * Bootstrap
 * JavaScript
 * jQuery
-
-### License
-
-_This software is licensed under the MIT license._
-
-Copyright (c) 2018 **Mike Chu, Kayl Eubanks, Kelsey Guerra, Nicholas Kardish & Susan Southall**
