@@ -1,0 +1,56 @@
+h1 {
+  font-weight: bold;
+  margin: 20px 0;
+  text-transform: uppercase;
+}
+
+h1 .subtitle {
+  display: block;
+  font-size: 0.8em;
+  font-weight: normal;
+}
+
+.monospace p {
+  background-color: #d9edf7;
+  border-radius: 3px;
+  font-family: monospace;
+  font-size: 1.1em;
+  padding: 5px 10px;
+}
+
+.display-none {
+  display: none;
+}
+
+/* Pig Dice */
+#scoreboard .well {
+  min-height: 230px;
+}
+
+/* Tic Tac Toe */
+#tic-tac-toe-grid {
+  margin: 50px auto;
+}
+
+#tic-tac-toe-grid td {
+  border: 1px solid #337ac7;
+  font-size: 6em;
+  height: 150px;
+  width: 150px;
+}
+
+#tic-tac-toe-grid tr:first-child td {
+  border-top: none;
+}
+
+#tic-tac-toe-grid tr:last-child td {
+  border-bottom: none;
+}
+
+#tic-tac-toe-grid tr td:first-child {
+  border-left: none;
+}
+
+#tic-tac-toe-grid tr td:last-child {
+  border-right: none;
+}
