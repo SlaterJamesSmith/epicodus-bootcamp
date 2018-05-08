@@ -20,7 +20,7 @@ export class MarketplaceComponent implements OnInit {
     this.albums = this.albumService.getAlbums();
   }
 
-  goToDetailPage(album: Album) {
-    // this.router.navigate(['albums', album.id]);
+  goToDetailPage(album) {
+    this.router.navigate(['albums', album.$key]);
   }
 }

@@ -19,10 +19,6 @@ export class AlbumService {
   }
 
   getAlbumById(albumId) {
-  //   for (let i = 0; i < ALBUMS.length; i++) {
-  //     if (ALBUMS[i].id === albumId) {
-  //       return ALBUMS[i];
-  //     }
-  //   }
+    return this.database.object('albums/' + albumId);
   }
 }

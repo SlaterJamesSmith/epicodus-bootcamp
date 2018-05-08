@@ -1,27 +1,74 @@
-# MusicStore
+# _EPICODUS - JAVASCRIPT - WEEK 4_
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.7.4.
+#### _Music Store, May 7, 2018_
 
-## Development server
+## Description
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+A marketplace website for a music store.
 
-## Code scaffolding
+## Setup/Installation Requirements
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+### I. Firebase Account
 
-## Build
+1. Create free [Firebase](http://firebase.google.com/) account.
+2. In Firebase console, create new project.
+3. Name project and select your country/region.
+4. From Project Overview, navigate to Develop > Database > **Realtime Database**.
+5. Select Rules and change **.read** and **.write** to `true`, then **publish**.
+4. In Project Overview, select option to **add Firebase to web app**.
+5. Save credentials for Part III Project Setup.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `-prod` flag for a production build.
+### II. Node & NPM Installs
 
-## Running unit tests
+1. Install Node.js on local machine.
+2. Install TypeScript globally: `npm install -g typescript`
+3. Install Angular CLI globally: `npm install -g @angular/cli@1.7.4`
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+### III. Project Setup
 
-## Running end-to-end tests
+1. Clone repository.
+2. In terminal, navigate to project root: `music-store`.
+3. Run `npm install` in project root to load required packages.
+4. Create new file **api-keys.ts** in `music-store/src/app`.
+5. In **api-keys.ts**, copy in code from below and update with your Firebase credentials:
+```
+export const masterFirebaseConfig = {
+  apiKey: "",
+  authDomain: "",
+  databaseURL: "",
+  storageBucket: "",
+  messagingSenderId: ""
+};
+```
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+### IV. View Project
 
-## Further help
+* Development Mode: `ng serve --open`
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+### V. Website Functions
+
+
+* Add single albums to database on **Admin** page.
+  * Firebase will auto-generate keys for each album.
+* Add multiple albums to database via JSON import in Firebase Console.
+  * Album data structure:
+  ```
+  Album {
+    artist: string
+    description: string
+    id: string (unique value required)
+    title: string
+  }
+  ```
+
+## Known Bugs
+
+None.
+
+## Technologies Used
+
+* Angular
+* Firebase
+* JavaScript
+* Node.js
+* TypeScript

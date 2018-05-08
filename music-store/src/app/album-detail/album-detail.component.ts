@@ -12,13 +12,14 @@ import { AlbumService } from '../album.service';
 })
 
 export class AlbumDetailComponent implements OnInit {
-  albumId = null;
-  album: Album;
+  albumId: string;
+  album;
 
   constructor(private route: ActivatedRoute, private location: Location, private albumService: AlbumService) { }
 
   ngOnInit() {
-    this.albumId = parseInt(this.route.params['_value']['id']);
-    // this.album = this.albumService.getAlbumById(this.albumId);
+    console.log(this.route.params);
+    this.albumId = this.route.params['_value']['id'];
+    this.album = this.albumService.getAlbumById(this.albumId);
   }
 }
