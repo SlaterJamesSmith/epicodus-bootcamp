@@ -1,0 +1,15 @@
+<div class="form-group">
+  <select (change)="onChange($event.target.value)" class="form-control">
+    <option value="allTasks">All Tasks</option>
+    <option value="completedTasks">Completed</option>
+    <option value="incompleteTasks" selected="selected">Incomplete</option>
+  </select>
+</div>
+
+<ul>
+  <li *ngFor="let currentTask of childTaskList | completeness:filterByCompleteness" [class]="priorityColor(currentTask)">
+    <input *ngIf="currentTask.done === true" type="checkbox" checked (click)="toggleDone(currentTask, false)">
+    <input *ngIf="currentTask.done === false" type="checkbox" (click)="toggleDone(currentTask, true)">
+    <button (click)="editButtonClicked(currentTask)" class="btn btn-light">Edit</button> {{currentTask.description}}
+  </li>
+</ul>
