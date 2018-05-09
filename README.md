@@ -1,8 +1,8 @@
-# _EPICODUS - JAVASCRIPT - WEEK 4_
+# _EPICODUS: 02 - JavaScript - Week 4_
 
-#### _Angular Extended, May 7, 2018_
+***Angular Extended, May 7, 2018***
 
-#### _By Mike Chu_
+***By Mike Chu***
 
 ## Description
 
@@ -10,12 +10,12 @@ Additional practice projects focused on Angular.
 
 ## Setup/Installation Requirements
 
-### I. [Music Store](./music-store/README.md)
+### I. [Music Store](./music-store/)
 
 ## Technologies Used
 
-* Angular
-* Firebase
-* JavaScript
-* Node.js
-* TypeScript
+- JavaScript
+- TypeScript
+- Angular
+- Firebase
+- Node.js
