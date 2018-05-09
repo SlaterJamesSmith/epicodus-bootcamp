@@ -16,7 +16,6 @@ h4 {
 }
 
 .album-listing {
-  border: none;
   cursor: pointer;
   margin: 5px;
   width: 350px;
@@ -24,5 +23,4 @@ h4 {
 
 .card-header {
   border: none;
-  border-radius: 5px;
 }

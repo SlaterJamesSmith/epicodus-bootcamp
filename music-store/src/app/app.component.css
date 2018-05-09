@@ -9,6 +9,10 @@ h1 {
   text-align: center;
 }
 
+.container {
+  margin-bottom: 100px;
+}
+
 .footer {
   background-color: #f5f5f5;
   bottom: 0;

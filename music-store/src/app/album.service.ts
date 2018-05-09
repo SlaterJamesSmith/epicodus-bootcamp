@@ -21,4 +21,16 @@ export class AlbumService {
   getAlbumById(albumId) {
     return this.database.object('albums/' + albumId);
   }
+
+  updateAlbum(localAlbum) {
+    let albumInFirebase = this.getAlbumById(localAlbum.$key);
+    albumInFirebase.update({title: localAlbum.title,
+                            artist: localAlbum.artist,
+                            description: localAlbum.description});
+  }
+
+  deleteAlbum(localAlbum) {
+    let albumInFirebase = this.getAlbumById(localAlbum.$key);
+    albumInFirebase.remove();
+  }
 }
