@@ -8,6 +8,10 @@
 
 ### II. [Asynchrony & APIs](02-asynchrony-api/)
 
+### III. [Angular](03-angular/)
+
+### IV. Angular Extended (In Progress)
+
 ## Technologies Used
 
 - JavaScript

@@ -35,7 +35,9 @@ A collection of practice projects focused on Asynchrony & APIs.
     - **package.json** - 2 links
     - **webpack.config.js** - 2 links
 
-5. Create new **.env** file and save API key as variable: `API_KEY=""`.
+5. Create new **.env** file and save API key as variable:
+
+    - `API_KEY = ""`
 
 ### III. View Project
 

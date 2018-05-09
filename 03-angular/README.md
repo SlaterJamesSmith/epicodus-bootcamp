@@ -1,8 +1,8 @@
-# _EPICODUS - JAVASCRIPT - WEEK 3_
+# _EPICODUS: 02 - JavaScript - Week 3_
 
-#### _Introduction to Angular, April 30, 2018_
+***Introduction to Angular, April 30, 2018***
 
-#### _By Mike Chu_
+***By Mike Chu***
 
 ## Description
 
@@ -10,18 +10,25 @@ A collection of practice projects focused on Angular.
 
 ## Setup/Installation Requirements
 
-**I. Node & NPM Installs**
+### I. Node.js & NPM Installs
+
 1. Install Node.js on local machine.
+
 2. Install TypeScript globally: `npm install -g typescript`
+
 3. Install Angular CLI globally: `npm install -g @angular/cli`
 
-**II. Project Setup**
-1. Clone repository.
-2. In terminal, navigate to project root.
-3. Run `npm install` in project root to load required packages.
+### II. Project Setup
 
-**III. View Project**
-* Development Mode: `ng serve --open`
+1. Clone repository and navigate to `03-angular`.
+
+2. Navigate into desired project sub-folder.
+
+3. Run `npm install` to load required packages.
+
+### III. View Project
+
+- Development Mode: `ng serve --open`
 
 ## Known Bugs
 
@@ -29,7 +36,7 @@ None.
 
 ## Technologies Used
 
-* Angular
-* JavaScript
-* Node.js
-* TypeScript
+- JavaScript
+- TypeScript
+- Angular
+- Node.js
