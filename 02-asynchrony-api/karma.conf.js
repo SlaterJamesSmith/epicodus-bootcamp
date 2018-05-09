@@ -5,15 +5,15 @@ module.exports = function(config) {
     basePath: '',
     frameworks: ['jquery-3.2.1', 'jasmine'],
     files: [
-      'job-map/src/*.js',
-      'job-map/spec/*spec.js'
+      'earthquake/src/*.js',
+      'earthquake/spec/*spec.js'
     ],
     webpack: webpackConfig,
     exclude: [
     ],
     preprocessors: {
-      'job-map/src/*.js': ['webpack'],
-      'job-map/spec/*spec.js': ['webpack']
+      'earthquake/src/*.js': ['webpack'],
+      'earthquake/spec/*spec.js': ['webpack']
     },
     plugins: [
       'karma-jquery',

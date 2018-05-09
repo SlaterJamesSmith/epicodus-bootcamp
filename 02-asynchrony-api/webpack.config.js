@@ -2,11 +2,10 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
-// const CopyWebpackPlugin = require('copy-webpack-plugin');
 const Dotenv = require('dotenv-webpack');
 
 module.exports = {
-  entry: './job-map/src/main.js',
+  entry: './earthquake/src/main.js',
   output: {
     filename: 'bundle.js',
     path: path.resolve(__dirname, 'dist')
@@ -19,13 +18,10 @@ module.exports = {
     new UglifyJsPlugin({ sourceMap: true }),
     new CleanWebpackPlugin(['dist']),
     new HtmlWebpackPlugin({
-      title: 'EPI-JS-WK2',
-      template: './job-map/src/index.html',
+      title: 'EPI-02-WK2',
+      template: './earthquake/src/index.html',
       inject: 'head'
     }),
-    // new CopyWebpackPlugin([
-    //   { from: './job-map/src/img', to: 'img'}
-    // ]),
     new Dotenv()
   ],
   module: {
