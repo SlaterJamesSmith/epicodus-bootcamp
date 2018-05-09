@@ -17,7 +17,7 @@ module.exports = {
     new UglifyJsPlugin({ sourceMap: true }),
     new CleanWebpackPlugin(['dist']),
     new HtmlWebpackPlugin({
-      title: 'EPI-JS-WK1',
+      title: 'EPI-02-WK1',
       template: './rpg/src/index.html',
       inject: 'body'
     })

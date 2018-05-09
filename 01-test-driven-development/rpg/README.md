@@ -1,4 +1,4 @@
-# _EPICODUS - JAVASCRIPT - WEEK 1_
+# _EPICODUS - UNIT 2 - WEEK 1_
 
 #### _RPG Test Driven Development Practice, April 18, 2018_
 
@@ -10,6 +10,22 @@
 ## Description
 
 An RPG practice project focused on Test Driven Development.
+
+## Setup/Installation Requirements
+
+1. See main [README.md](../README.md).
+
+## Known Bugs
+
+None.
+
+## Technologies Used
+
+* JavaScript
+* Node.js
+* Jasmine
+* Karma
+* Webpack
 
 ## Specifications
 
@@ -110,20 +126,3 @@ An RPG practice project focused on Test Driven Development.
 - Initiates end game sequence after boss and all enemies are removed:
   - Input: Enemy count = 0
   - Output: End game sequence
-
-
-## Setup/Installation Requirements
-
-1. See main project [README.md](../README.md).
-
-## Known Bugs
-
-None.
-
-## Technologies Used
-
-* JavaScript
-* Node.js
-* Jasmine
-* Karma
-* Webpack
