@@ -12,6 +12,8 @@ Additional practice projects focused on Angular.
 
 ### I. [Music Store](./music-store/)
 
+### II. [Mars Rover](./mars-rover/)
+
 ## Technologies Used
 
 - JavaScript
