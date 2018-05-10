@@ -1,9 +1,9 @@
 <div class="card album-listing">
   <div class="card-header bg-primary text-white">
-    <h3>{{(album | async)?.title}}</h3>
-    <h4>by {{(album | async)?.artist}}</h4>
+    <h3>{{album?.title}}</h3>
+    <h4>by {{album?.artist}}</h4>
   </div>
   <div class="card-body">
-    {{(album | async)?.description}}
+    {{album?.description}}
   </div>
 </div>
