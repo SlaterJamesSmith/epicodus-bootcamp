@@ -1,0 +1,7 @@
+<h2>Mars Rover Photos</h2>
+<h3>From {{photos.photos[0].earth_date}} by the {{photos.photos[0].camera.name}}</h3>
+<div class="photo-display">
+  <div *ngFor="let photo of photos.photos" class="photo">
+    <img src={{photo.img_src}}/>
+  </div>
+</div>

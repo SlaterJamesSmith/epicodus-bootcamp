@@ -6,6 +6,9 @@
 /tmp
 /out-tsc
 
+# credentials
+api-keys.ts
+
 # dependencies
 /node_modules
 
