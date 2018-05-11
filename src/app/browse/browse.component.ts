@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { YTChannel } from '../models/ytchannel.model';
 
 @Component({
   selector: 'app-browse',
@@ -9,6 +10,12 @@ import { Component, OnInit } from '@angular/core';
 export class BrowseComponent implements OnInit {
   carouselWidth: number;
   maxCarouselPositions: number;
+  channelIds: string[] = [
+    'UCsn6cjffsvyOZCZxvGoJxGg',
+    'UCmYTgpKxd-QOJCPDrmaXuqQ',
+    'UC3KpzBeoM8lDvn85m4szzfA',
+    'UCSpFnDQr88xCZ80N-X7t0nQ'
+  ];
 
   ngOnInit() {
     this.calcCarouselLimits();

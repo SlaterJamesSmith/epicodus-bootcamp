@@ -14,10 +14,10 @@ import { YouTubeApiService } from '../youtube-api.service';
 export class BrowseCarouselComponent implements OnInit {
   @Input() carouselWidth: number;
   @Input() maxCarouselPositions: number;
+  @Input() channelId: string;
   carouselPosition: number = 0;
   channel: YTChannel;
   videos: YTVideo[] = [];
-  channelId: string = 'UCsn6cjffsvyOZCZxvGoJxGg';
 
   constructor(private youTubeApiService: YouTubeApiService, private router: Router) { }
 
