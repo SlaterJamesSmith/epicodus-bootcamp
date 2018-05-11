@@ -1,0 +1,16 @@
+.photo-display {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.card {
+  margin: 20px;
+  width: 500px;
+}
+
+.photo img {
+  display: block;
+  margin-bottom: 10px;
+  width: 100%;
+}

@@ -1,5 +1,5 @@
 <h2>Image Search</h2>
-<div>
+<div class="card card-body">
   <div class="form-group">
     <label for="camera">Date</label>
     <input class="form-control" type=date #roverDate>
@@ -14,7 +14,11 @@
       <option  value="MAHLI">Mars Hand Lens Imager</option>
     </select>
   </div>
-  <button (click)="getRoverImages(roverDate.value, roverCamera.value)" class="btn btn-primary">Get Photos</button>
+  <div class="btn-group">
+    <button (click)="getRoverImages(roverDate.value, roverCamera.value)" class="btn btn-primary">View Images</button>
+    <button (click)="saveRoverImages(roverDate.value, roverCamera.value)" class="btn btn-success">Save All Images</button>
+    <button routerLink="user/photos" class="btn btn-dark">Saved Photos</button>
+  </div>
 </div>
 <div *ngIf="photos">
   <app-photos-list [photos]="photos"></app-photos-list>
