@@ -12,4 +12,9 @@ export class YouTubeApiService {
     return this.http.get(`https://www.googleapis.com/youtube/v3/videos?id=${videoId}&key=${youtubeApiConfig.apiKey}
    &part=contentDetails,snippet,statistics&fields=items(id,contentDetails,snippet,statistics)`);
   }
+
+  getVideoList(listId: string) {
+    return this.http.get(`https://www.googleapis.com/youtube/v3/playlistItems?playlistId=${listId}&key=${youtubeApiConfig.apiKey}
+   &maxResults=6&part=snippet&fields=items(snippet)`);
+  }
 }

@@ -16,10 +16,10 @@
   <div class="carousel-outer">
     <div [class]="getCarouselPosition()" class="carousel-inner">
       <div *ngFor="let video of videos" class="video">
-        <img (click)="loadVideo(video)" width="210" src={{video.thumbUrl}} alt="thumbnail image">
+        <img (click)="loadVideo(video)" width="210" src={{video.thumbnail}} alt="thumbnail image">
         <div class="info">
           <h3 (click)="loadVideo(video)">{{video.title}}</h3>
-          <p>{{video.channelName}}</p>
+          <p>{{video.channelTitle}}</p>
         </div>
       </div>
     </div>
