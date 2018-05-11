@@ -44,6 +44,9 @@
       </svg>
     </button>
   </div>
+  <div *ngIf="user !== null" id="profile" class="nav">
+    <button (click)="logout()" class="circle-btn" type="button">{{user?.firstInitial}}</button>
+  </div>
   <div *ngIf="user === null" id="sign-in" class="nav">
     <a (click)="signIn()" href="#">Sign In</a>
   </div>

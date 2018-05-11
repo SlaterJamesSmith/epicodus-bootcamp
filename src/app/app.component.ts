@@ -30,6 +30,10 @@ export class AppComponent {
     this.signInToggle = false;
   }
 
+  logout() {
+    this.user = null;
+  }
+
   activateBtn(button: string) {
     this.clicker = button;
     this.effect = 'circle activate';

@@ -131,3 +131,12 @@ a.navbar-brand span {
 #sign-in a:hover {
   text-decoration: none;
 }
+
+#profile button {
+  background-color: #a90f40;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 200;
+  height: 32px;
+  width: 32px;
+}
