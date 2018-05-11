@@ -28,7 +28,7 @@ export class VideoPlayerComponent implements OnInit {
         response.json().items[0].snippet.localized.description,
         response.json().items[0].snippet.channelId,
         response.json().items[0].snippet.channelTitle,
-        response.json().items[0].snippet.thumbnails.high.url,
+        response.json().items[0].snippet.thumbnails.medium.url,
         response.json().items[0].contentDetails.duration,
         response.json().items[0].snippet.publishedAt,
         response.json().items[0].statistics.viewCount,

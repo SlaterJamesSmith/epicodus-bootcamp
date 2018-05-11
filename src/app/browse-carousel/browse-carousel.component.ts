@@ -42,20 +42,22 @@ export class BrowseCarouselComponent implements OnInit {
   initiatePlaylist(listId) {
     this.youTubeApiService.getVideoList(listId).subscribe(response => {
       response.json().items.forEach((item) => {
-        let video = new YTVideo(
-          item.snippet.resourceId.videoId,
-          item.snippet.title,
-          item.snippet.description,
-          item.snippet.channelId,
-          item.snippet.channelTitle,
-          item.snippet.thumbnails.medium.url,
-          null,
-          item.snippet.publishedAt,
-          null,
-          null,
-          null
-        );
-        this.videos.push(video);
+        this.youTubeApiService.getVideo(item.snippet.resourceId.videoId).subscribe(response => {
+          let video = new YTVideo(
+            response.json().items[0].id,
+            response.json().items[0].snippet.localized.title,
+            response.json().items[0].snippet.localized.description,
+            response.json().items[0].snippet.channelId,
+            response.json().items[0].snippet.channelTitle,
+            response.json().items[0].snippet.thumbnails.medium.url,
+            response.json().items[0].contentDetails.duration,
+            response.json().items[0].snippet.publishedAt,
+            response.json().items[0].statistics.viewCount,
+            response.json().items[0].statistics.likeCount,
+            response.json().items[0].statistics.dislikeCount
+          );
+          this.videos.push(video);
+        });
       });
     });
   }

@@ -45,10 +45,10 @@
     </button>
   </div>
   <div *ngIf="user !== null" id="profile" class="nav">
-    <button (click)="logout()" class="circle-btn" type="button">{{user?.firstInitial}}</button>
+    <button (click)="logout()" class="circle-btn" type="button"><span>{{user?.firstInitial}}</span></button>
   </div>
   <div *ngIf="user === null" id="sign-in" class="nav">
-    <a (click)="signIn()" href="#">Sign In</a>
+    <a (click)="signIn()">Sign In</a>
   </div>
 </nav>
 <div class="container-fluid">
