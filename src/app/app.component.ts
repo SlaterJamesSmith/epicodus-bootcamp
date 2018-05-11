@@ -22,7 +22,7 @@ export class AppComponent {
   deactivateBtn(button: string) {
     setTimeout(() => {
       this.effect = 'circle deactivate';
-    },150);
+    }, 150);
   }
 
   checkClicker(button: string) {
