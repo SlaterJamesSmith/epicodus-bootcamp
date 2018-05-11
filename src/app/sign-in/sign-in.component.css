@@ -1,15 +1,18 @@
 .container {
   display: flex;
   justify-content: center;
-  padding-top: 100px;
 }
 
 #sign-in {
+  background-color: #fff;
   box-shadow: 0 -1px 1px #0001, 1px 0 1px #0001, 0px 2px 4px #0005, -1px 0 1px #0001;
   height: 500px;
   min-width: 500px;
   padding: 50px;
+  position: fixed;
+  top: 200px;
   width: 500px;
+  z-index: 10;
 }
 
 h2 {
@@ -18,7 +21,7 @@ h2 {
   margin: 20px 0 0;
 }
 
-.error h3 {
+.error {
   color: #f00;
   font-size: 1rem;
 }

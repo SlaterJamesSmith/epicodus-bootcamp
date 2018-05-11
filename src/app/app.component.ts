@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { User } from './models/user.model';
 import { YouTubeApiService } from './youtube-api.service';
 
 @Component({
@@ -9,10 +10,25 @@ import { YouTubeApiService } from './youtube-api.service';
 })
 
 export class AppComponent {
+  user: User = null;
+  signInToggle: boolean = false;
   clicker: string;
   effect: string;
 
   constructor(private youTubeApiService: YouTubeApiService) { }
+
+  signIn() {
+    if (this.signInToggle === false) {
+      this.signInToggle = true;
+    } else {
+      this.signInToggle = false;
+    }
+  }
+
+  login(user) {
+    this.user = user;
+    this.signInToggle = false;
+  }
 
   activateBtn(button: string) {
     this.clicker = button;

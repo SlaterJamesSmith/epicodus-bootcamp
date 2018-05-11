@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Output, EventEmitter } from '@angular/core';
 import { User } from '../models/user.model';
 
 @Component({
@@ -8,17 +8,19 @@ import { User } from '../models/user.model';
 })
 
 export class SignInComponent {
+  @Output() signIn = new EventEmitter();
   invalidUser: boolean;
   user: User;
 
   constructor() { }
 
-  login(userName: string) {
-    if (userName === '') {
+  login(username: string) {
+    if (username === '') {
       this.invalidUser = true;
     } else {
-      this.user = new User(userName);
+      this.user = new User(username);
       this.invalidUser = false;
+      this.signIn.emit(this.user);
     }
   }
 }

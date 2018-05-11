@@ -10,10 +10,6 @@ const appRoutes: Routes = [
     component: BrowseComponent
   },
   {
-    path: 'sign-in',
-    component: SignInComponent
-  },
-  {
     path: 'videos/:id',
     component: VideoPlayerComponent
   }

@@ -44,10 +44,11 @@
       </svg>
     </button>
   </div>
-  <div id="sign-in" class="nav">
-    <a routerLink="sign-in">Sign In</a>
+  <div *ngIf="user === null" id="sign-in" class="nav">
+    <a (click)="signIn()" href="#">Sign In</a>
   </div>
 </nav>
 <div class="container-fluid">
-  <router-outlet></router-outlet>
+  <app-sign-in *ngIf="signInToggle" (signIn)="login($event)"></app-sign-in>
+  <router-outlet *ngIf="!signInToggle"></router-outlet>
 </div>
