@@ -8,10 +8,8 @@ export class YouTubeApiService {
 
   constructor(private http: Http) { }
 
-  search() {
-    this.http.get(`https://www.googleapis.com/youtube/v3/videos?id=7lCDEYXw3mM&key=${youtubeApiConfig.apiKey}
-   &part=snippet,statistics&fields=items(id,snippet,statistics)`).subscribe(response => {
-     console.log(response.json());
-   });
+  getVideo(videoId: string) {
+    return this.http.get(`https://www.googleapis.com/youtube/v3/videos?id=${videoId}&key=${youtubeApiConfig.apiKey}
+   &part=contentDetails,snippet,statistics&fields=items(id,contentDetails,snippet,statistics)`);
   }
 }

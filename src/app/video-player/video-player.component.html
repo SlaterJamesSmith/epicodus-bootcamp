@@ -1,5 +1,9 @@
 <div class="container">
   <iframe id="video-player" (window:resize)="resizeHeight()" [height]="iframeHeight" [src]="embedUrl" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-  <h2>{{video.title}}</h2>
-  <h3>{{video.channelName}}</h3>
+  <h2>{{video?.title}}</h2>
+  <h3>{{video?.channelTitle}}</h3>
+  <p>Views: {{video?.viewCount}}</p>
+  <p>Likes: {{video?.likeCount}}</p>
+  <p>Dislikes: {{video?.dislikeCount}}</p>
+  <p>{{video?.description}}</p>
 </div>

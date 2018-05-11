@@ -32,8 +32,4 @@ export class AppComponent {
       return 'circle';
     }
   }
-
-  searchYouTubeVideos() {
-    this.youTubeApiService.search();
-  }
 }
