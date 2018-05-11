@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { YTVideo } from '../models/ytVideo.model';
+import { YTVideo } from '../models/ytvideo.model';
 import { YouTubeApiService } from '../youtube-api.service';
 import { ActivatedRoute, Params } from '@angular/router';
 import { Location } from '@angular/common';

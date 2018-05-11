@@ -1,7 +1,7 @@
 <div [style.width.px]="carouselWidth" class="carousel-group">
   <div class="strip">
-    <h2><img src="https://yt3.ggpht.com/-mqj8pi3nO-U/AAAAAAAAAAI/AAAAAAAAAAA/C_OggyumAW8/s88-c-k-no-mo-rj-c0xffffff/photo.jpg" alt="corridor icon">Corridor</h2>
-    <h2 class="subscribe">Subscribe <span class="count">4.6M</span></h2>
+    <h2><img src={{channel?.thumbnail.default.url}} alt="icon">{{channel?.title}}</h2>
+    <h2 class="subscribe">Subscribe <span class="count">{{channel?.subscriberCount}}</span></h2>
   </div>
   <button *ngIf="carouselPosition > 0" (click)="scrollLeft()" class="carousel-btn left" type="button">
     <svg viewBox="0 0 24 24">

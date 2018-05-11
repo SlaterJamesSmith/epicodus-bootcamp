@@ -17,4 +17,9 @@ export class YouTubeApiService {
     return this.http.get(`https://www.googleapis.com/youtube/v3/playlistItems?playlistId=${listId}&key=${youtubeApiConfig.apiKey}
    &maxResults=6&part=snippet&fields=items(snippet)`);
   }
+
+  getChannel(channelId: string) {
+    return this.http.get(`https://www.googleapis.com/youtube/v3/channels?id=${channelId}&key=${youtubeApiConfig.apiKey}
+   &part=snippet,statistics&fields=items(id,snippet,statistics)`);
+  }
 }
