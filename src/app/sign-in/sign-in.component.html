@@ -4,8 +4,13 @@
     <p>to continue to YouTube</p>
     <div class="form-group">
       <label>First Name</label>
-      <input class="form-control">
+      <input #userName class="form-control">
     </div>
-    <button class="btn">Next</button>
+    <div class="form-group">
+      <button (click)="login(userName.value)" class="btn">Next</button>
+    </div>
+    <div *ngIf="invalidUser === true" class="error">
+      <h3>Please enter a name.</h3>
+    </div>
   </div>
 </div>
