@@ -9,6 +9,7 @@ import { VideoPlayerComponent } from './video-player/video-player.component';
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { masterFirebaseConfig } from './api-keys';
+import { SignInComponent } from './sign-in/sign-in.component';
 
 export const firebaseConfig = {
   apiKey: masterFirebaseConfig.apiKey,
@@ -22,7 +23,8 @@ export const firebaseConfig = {
     AppComponent,
     BrowseComponent,
     BrowseCarouselComponent,
-    VideoPlayerComponent
+    VideoPlayerComponent,
+    SignInComponent
   ],
   imports: [
     BrowserModule,
