@@ -20,6 +20,6 @@ export class YouTubeApiService {
 
   getChannel(channelId: string) {
     return this.http.get(`https://www.googleapis.com/youtube/v3/channels?id=${channelId}&key=${youtubeApiConfig.apiKey}
-   &part=snippet,statistics&fields=items(id,snippet,statistics)`);
+   &part=contentDetails,snippet,statistics&fields=items(id,contentDetails,snippet,statistics)`);
   }
 }

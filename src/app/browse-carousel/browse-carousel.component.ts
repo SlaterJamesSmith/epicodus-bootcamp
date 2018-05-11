@@ -18,7 +18,6 @@ export class BrowseCarouselComponent implements OnInit {
   channel: YTChannel;
   videos: YTVideo[] = [];
   channelId: string = 'UCsn6cjffsvyOZCZxvGoJxGg';
-  listId = 'PLVK1Q9ppZiaCJ0a_JKw76mLwGYMMXXyD1';
 
   constructor(private youTubeApiService: YouTubeApiService, private router: Router) { }
 
@@ -33,10 +32,15 @@ export class BrowseCarouselComponent implements OnInit {
         channelData.snippet.publishedAt,
         channelData.statistics.subscriberCount,
         channelData.statistics.videoCount,
-        channelData.statistics.viewCount
+        channelData.statistics.viewCount,
+        channelData.contentDetails.relatedPlaylists.uploads
       );
+      this.initiatePlaylist(this.channel.uploadsPlaylist)
     });
-    this.youTubeApiService.getVideoList(this.listId).subscribe(response => {
+  }
+
+  initiatePlaylist(listId) {
+    this.youTubeApiService.getVideoList(listId).subscribe(response => {
       response.json().items.forEach((item) => {
         let video = new YTVideo(
           item.snippet.resourceId.videoId,
