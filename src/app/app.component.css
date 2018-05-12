@@ -1,5 +1,10 @@
 nav {
+  background-color: #fff;
   box-shadow: 0 2px 5px #0001;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 100;
 }
 
 #red-block {
