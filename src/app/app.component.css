@@ -43,6 +43,7 @@ a.navbar-brand span {
   height:40px;
   margin-right: 8px;
   padding: 0;
+  position: relative;
   width: 40px;
 }
 
@@ -73,7 +74,7 @@ a.navbar-brand span {
   fill: #999;
   height: 24px;
   position: absolute;
-  top: 16px;
+  top: 8px;
   width: 24px;
   z-index: 1;
 }

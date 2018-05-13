@@ -12,6 +12,8 @@ import { YouTubeApiService } from '../youtube-api.service';
 })
 
 export class BrowseCarouselComponent implements OnInit {
+  clicker: string;
+  effect: string;
   @Input() carouselWidth: number;
   @Input() maxCarouselPositions: number;
   @Input() channel: YTChannel;
@@ -57,5 +59,28 @@ export class BrowseCarouselComponent implements OnInit {
 
   loadVideo(clickedVideo: YTVideo) {
     this.router.navigate(['videos', clickedVideo.id]);
+  }
+
+  activateBtn(button: string) {
+    this.clicker = button;
+    this.effect = 'circle-sm activate';
+  }
+
+  deactivateBtn() {
+    setTimeout(() => {
+      this.effect = 'circle-sm deactivate';
+    }, 150);
+  }
+
+  checkClicker(button: string) {
+    if (button === this.clicker) {
+      return this.effect;
+    } else {
+      return 'circle-sm';
+    }
+  }
+
+  clearClicker() {
+    this.clicker = null;
   }
 }

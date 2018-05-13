@@ -39,7 +39,7 @@ export class AppComponent {
     this.effect = 'circle activate';
   }
 
-  deactivateBtn(button: string) {
+  deactivateBtn() {
     setTimeout(() => {
       this.effect = 'circle deactivate';
     }, 150);
