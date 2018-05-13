@@ -12,8 +12,6 @@ export class SignInComponent {
   invalidUser: boolean;
   user: User;
 
-  constructor() { }
-
   login(username: string) {
     if (username === '') {
       this.invalidUser = true;
