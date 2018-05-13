@@ -1,28 +1,51 @@
 import { Component, OnInit } from '@angular/core';
 import { YTChannel } from '../models/ytchannel.model';
+import { YouTubeApiService } from '../youtube-api.service';
 
 @Component({
   selector: 'app-browse',
   templateUrl: './browse.component.html',
-  styleUrls: ['./browse.component.css']
+  styleUrls: ['./browse.component.css'],
+  providers: [YouTubeApiService]
 })
 
 export class BrowseComponent implements OnInit {
   carouselWidth: number;
   maxCarouselPositions: number;
-  channelIds: string[] = [
-    'UCsn6cjffsvyOZCZxvGoJxGg',
-    'UCmYTgpKxd-QOJCPDrmaXuqQ',
-    'UC3KpzBeoM8lDvn85m4szzfA',
-    'UCSpFnDQr88xCZ80N-X7t0nQ'
+  channelQueue: YTChannel[] = [];
+  channelIdList: string[] = [
+    'UCsn6cjffsvyOZCZxvGoJxGg'
   ];
+
+  constructor(private youTubeApiService: YouTubeApiService) { }
 
   ngOnInit() {
     this.calcCarouselLimits();
+    this.gatherChannels();
+  }
+
+  gatherChannels() {
+    this.channelIdList.forEach(channelId => {
+      this.youTubeApiService.getChannel(channelId).subscribe(response => {
+        let channelData = response.json().items[0];
+        let channel = new YTChannel(
+          channelData.id,
+          channelData.snippet.title,
+          channelData.snippet.description,
+          channelData.snippet.thumbnails,
+          channelData.snippet.publishedAt,
+          channelData.statistics.subscriberCount,
+          channelData.statistics.videoCount,
+          channelData.statistics.viewCount,
+          channelData.contentDetails.relatedPlaylists.uploads
+        );
+        this.channelQueue.push(channel);
+      });
+    });
   }
 
   calcCarouselLimits() {
-    let availableWidth = document.getElementById("carousel-all").clientWidth;
+    let availableWidth = document.getElementById('carousel-all').clientWidth;
     if (availableWidth < 638) {
       this.carouselWidth = 424;
       this.maxCarouselPositions = 4;

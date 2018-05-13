@@ -14,33 +14,14 @@ import { YouTubeApiService } from '../youtube-api.service';
 export class BrowseCarouselComponent implements OnInit {
   @Input() carouselWidth: number;
   @Input() maxCarouselPositions: number;
-  @Input() channelId: string;
+  @Input() channel: YTChannel;
   carouselPosition: number = 0;
-  channel: YTChannel;
   videos: YTVideo[] = [];
 
   constructor(private youTubeApiService: YouTubeApiService, private router: Router) { }
 
   ngOnInit() {
-    this.youTubeApiService.getChannel(this.channelId).subscribe(response => {
-      let channelData = response.json().items[0];
-      this.channel = new YTChannel(
-        channelData.id,
-        channelData.snippet.title,
-        channelData.snippet.description,
-        channelData.snippet.thumbnails,
-        channelData.snippet.publishedAt,
-        channelData.statistics.subscriberCount,
-        channelData.statistics.videoCount,
-        channelData.statistics.viewCount,
-        channelData.contentDetails.relatedPlaylists.uploads
-      );
-      this.initiatePlaylist(this.channel.uploadsPlaylist);
-    });
-  }
-
-  initiatePlaylist(listId) {
-    this.youTubeApiService.getVideoList(listId).subscribe(response => {
+    this.youTubeApiService.getVideoList(this.channel.uploadsPlaylist).subscribe(response => {
       response.json().items.forEach((item) => {
         this.youTubeApiService.getVideo(item.snippet.resourceId.videoId).subscribe(response => {
           let video = new YTVideo(

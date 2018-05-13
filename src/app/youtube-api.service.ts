@@ -9,17 +9,14 @@ export class YouTubeApiService {
   constructor(private http: Http) { }
 
   getVideo(videoId: string) {
-    return this.http.get(`https://www.googleapis.com/youtube/v3/videos?id=${videoId}&key=${youtubeApiConfig.apiKey}
-   &part=contentDetails,snippet,statistics`);
+    return this.http.get(`https://www.googleapis.com/youtube/v3/videos?key=${youtubeApiConfig.apiKey}&id=${videoId}&part=contentDetails,snippet,statistics`);
   }
 
   getVideoList(listId: string) {
-    return this.http.get(`https://www.googleapis.com/youtube/v3/playlistItems?playlistId=${listId}&key=${youtubeApiConfig.apiKey}
-   &maxResults=6&part=snippet`);
+    return this.http.get(`https://www.googleapis.com/youtube/v3/playlistItems?key=${youtubeApiConfig.apiKey}&playlistId=${listId}&maxResults=6&part=snippet`);
   }
 
   getChannel(channelId: string) {
-    return this.http.get(`https://www.googleapis.com/youtube/v3/channels?id=${channelId}&key=${youtubeApiConfig.apiKey}
-   &part=contentDetails,snippet,statistics`);
+    return this.http.get(`https://www.googleapis.com/youtube/v3/channels?key=${youtubeApiConfig.apiKey}&id=${channelId}&part=contentDetails,snippet,statistics`);
   }
 }
