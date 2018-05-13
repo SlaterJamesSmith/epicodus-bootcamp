@@ -17,6 +17,14 @@ export class YouTubeApiService {
   }
 
   getChannel(channelId: string) {
-    return this.http.get(`https://www.googleapis.com/youtube/v3/channels?key=${youtubeApiConfig.apiKey}&id=${channelId}&part=contentDetails,snippet,statistics`);
+    return this.http.get(`https://www.googleapis.com/youtube/v3/channels?key=${youtubeApiConfig.apiKey}&id=${channelId}&type=channel&part=contentDetails,snippet,statistics`);
+  }
+
+  searchChannels(topicId: string[]) {
+    return this.http.get(`https://www.googleapis.com/youtube/v3/search?key=${youtubeApiConfig.apiKey}&type=channel&topciId=${topicId}$regionCode=US&maxResults=5&part=snippet`);
+  }
+
+  searchChannelsNextPage(topicId: string[], pageToken: string) {
+    return this.http.get(`https://www.googleapis.com/youtube/v3/search?key=${youtubeApiConfig.apiKey}&type=channel&topciId=${topicId}$regionCode=US&maxResults=5&pageToken=${pageToken}&part=snippet`);
   }
 }

@@ -13,19 +13,30 @@ export class BrowseComponent implements OnInit {
   carouselWidth: number;
   maxCarouselPositions: number;
   channelQueue: YTChannel[] = [];
-  channelIdList: string[] = [
-    'UCsn6cjffsvyOZCZxvGoJxGg'
-  ];
+  channelIdList = new Set([
+    'UCfHOECFpULowQMJZonvudig',
+    'UCsn6cjffsvyOZCZxvGoJxGg',
+    'UCWp2Kj8aD9XlCGiIZzwHciw',
+    'UC3KpzBeoM8lDvn85m4szzfA'
+  ]);
+  pageToken: string = null;
 
   constructor(private youTubeApiService: YouTubeApiService) { }
 
   ngOnInit() {
     this.calcCarouselLimits();
-    this.gatherChannels();
+    this.gatherChannels(this.channelIdList);
+    this.youTubeApiService.searchChannels(['/m/02jjt']).subscribe(response => {
+      let data = response.json();
+      this.pageToken = data.nextPageToken;
+      data.items.forEach(channel => {
+        this.channelIdList.add(channel.snippet.channelId);
+      });
+    });
   }
 
-  gatherChannels() {
-    this.channelIdList.forEach(channelId => {
+  gatherChannels(channelIds) {
+    channelIds.forEach(channelId => {
       this.youTubeApiService.getChannel(channelId).subscribe(response => {
         let channelData = response.json().items[0];
         let channel = new YTChannel(
@@ -42,6 +53,22 @@ export class BrowseComponent implements OnInit {
         this.channelQueue.push(channel);
       });
     });
+  }
+
+  detectScrollLimit() {
+    let contentHeight = document.body.scrollHeight;
+    let scrollPosition = window.scrollY + window.innerHeight;
+    if(scrollPosition === contentHeight) {
+      this.channelIdList = new Set([]);
+      this.youTubeApiService.searchChannelsNextPage(['/m/02jjt'], this.pageToken).subscribe(response => {
+        let data = response.json();
+        this.pageToken = data.nextPageToken;
+        data.items.forEach(channel => {
+          this.channelIdList.add(channel.snippet.channelId);
+        });
+        this.gatherChannels(this.channelIdList);
+      });
+    }
   }
 
   calcCarouselLimits() {
