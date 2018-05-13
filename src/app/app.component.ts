@@ -11,6 +11,8 @@ import { YouTubeApiService } from './youtube-api.service';
 
 export class AppComponent {
   user: User = null;
+  tabTarget: string = null;
+  preventClickOut: boolean = false;
   signInToggle: boolean = false;
   clicker: string;
   effect: string;
@@ -32,6 +34,7 @@ export class AppComponent {
 
   logout() {
     this.user = null;
+    this.tabTarget = null;
   }
 
   activateBtn(button: string) {
@@ -51,5 +54,36 @@ export class AppComponent {
     } else {
       return 'circle';
     }
+  }
+
+  tabSelect(selectedTab) {
+    if (this.tabTarget === selectedTab) {
+      this.tabTarget = null;
+    } else {
+      this.tabTarget = selectedTab;
+    }
+  }
+
+  tabFocus(tab) {
+    if (this.tabTarget === tab) {
+      return 'nav-panel display-flex';
+    } else {
+      return 'nav-panel display-none';
+    }
+  }
+
+  protectClick() {
+    this.preventClickOut = true;
+  }
+
+  clickOut() {
+    if (this.preventClickOut === false) {
+      this.tabTarget = null;
+    }
+    this.preventClickOut = false;
+  }
+
+  closeMenu() {
+    this.tabTarget = null;
   }
 }
