@@ -35,7 +35,7 @@ export class BrowseCarouselComponent implements OnInit {
         channelData.statistics.viewCount,
         channelData.contentDetails.relatedPlaylists.uploads
       );
-      this.initiatePlaylist(this.channel.uploadsPlaylist)
+      this.initiatePlaylist(this.channel.uploadsPlaylist);
     });
   }
 
