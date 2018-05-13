@@ -227,3 +227,23 @@ a.navbar-brand span {
 .menu-separator {
   border-bottom: 1px solid #eee;
 }
+
+#footer {
+  background-color: #fff;
+  bottom: 0;
+  box-shadow: 0 -2px 5px #0001;
+  display: flex;
+  justify-content: center;
+  position: fixed;
+  width: 100%;
+  z-index: 100;
+}
+
+#yt-logo {
+  background-image: url('https://developers.google.com/youtube/images/developed-with-youtube-logos-2x.png');
+  background-position: 0 -20px;
+  background-repeat: no-repeat;
+  display: block;
+  height: 75px;
+  width: 410px;
+}
