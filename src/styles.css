@@ -10,6 +10,10 @@ body {
   display: flex;
 }
 
+.display {
+  display: block;
+}
+
 .display-none {
   display: none;
 }

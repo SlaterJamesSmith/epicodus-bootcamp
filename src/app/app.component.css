@@ -1,6 +1,7 @@
 .container-fluid {
   padding-left: 50px;
   padding-right: 50px;
+  width: 100%;
 }
 
 nav {
@@ -233,10 +234,57 @@ a.navbar-brand span {
   border-bottom: 1px solid #eee;
 }
 
+#side-nav-cover {
+  background-color: #0008;
+  height: 100%;
+  position: fixed;
+  width: 100%;
+  z-index: 20;
+}
+
+#side-nav {
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: center;
+  left: 0;
+  overflow-y: auto;
+  padding-bottom: 125px;
+  position: fixed;
+  text-align: center;
+  width: 240px;
+  z-index: 30;
+}
+
+#side-nav img {
+  border: 2px solid #282828;
+  border-radius: 100%;
+  margin: 0 auto 15px;
+  width: 150px;
+}
+
+#side-nav p {
+  font-size: 0.7rem;
+  margin: 5px 0;
+  padding: 0 15px;
+}
+
+#side-nav h3 {
+  font-size: 1rem;
+  font-weight: 400;
+  margin: 0;
+  padding: 5px 15px;
+}
+
+#side-nav a {
+  color: #f00;
+}
+
 #footer {
   background-color: #fff;
   bottom: 0;
-  box-shadow: 0 -2px 5px #0001;
+  box-shadow: 0 -2px 5px #0002;
   display: flex;
   justify-content: center;
   position: fixed;

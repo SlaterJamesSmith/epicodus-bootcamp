@@ -72,6 +72,14 @@ export class AppComponent {
     }
   }
 
+  sideNavFocus(tab) {
+    if (this.tabTarget === tab) {
+      return 'display';
+    } else {
+      return 'display-none';
+    }
+  }
+
   protectClick() {
     this.preventClickOut = true;
   }
