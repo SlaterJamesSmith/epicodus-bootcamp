@@ -14,6 +14,9 @@
       </div>
     </div>
   </div>
-  <h3>{{video?.channelTitle}}</h3>
-  <p>{{video?.description}}</p>
+  <div class="channel-strip">
+    <img src={{channel?.thumbnail.default.url}} alt="logo">
+    <h3>{{video?.channelTitle}}</h3>
+  </div>
+  <pre>{{video?.description}}</pre>
 </div>

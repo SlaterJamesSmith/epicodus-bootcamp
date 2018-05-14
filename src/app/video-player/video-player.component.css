@@ -2,6 +2,10 @@ div.container {
   margin-top: 24px;
 }
 
+iframe {
+  width: 100%;
+}
+
 h2.video-title {
   font-size: 1.2rem;
   font-weight: 400;
@@ -10,6 +14,29 @@ h2.video-title {
 
 h3 {
   font-size: 0.9em;
+  margin: 0;
+}
+
+pre {
+  font-family: 'Roboto', sans-serif;
+  min-width: 600px;
+  padding-left: 63px;
+  white-space: pre-wrap;
+  width: 50%;
+  word-wrap: break-word;
+}
+
+.channel-strip {
+  align-items: center;
+  display: flex;
+  margin-bottom: 20px;
+}
+
+.channel-strip img {
+  border-radius: 100%;
+  height: 48px;
+  margin-right: 15px;
+  width: 48px;
 }
 
 .info {
@@ -17,7 +44,7 @@ h3 {
   display: flex;
   justify-content: space-between;
   margin-bottom: 20px;
-  padding-bottom: 10px;
+  padding-bottom: 20px;
 }
 
 .info h3 {
@@ -46,8 +73,4 @@ h3 {
   height: 20px;
   margin-right: 7px;
   width: 20px;
-}
-
-iframe {
-  width: 100%;
 }
