@@ -27,13 +27,13 @@ export class BrowseComponent implements OnInit {
   ngOnInit() {
     this.calcCarouselLimits();
     this.gatherChannels(this.channelIdList);
-    // this.youTubeApiService.searchChannels(['/m/02jjt']).subscribe(response => {
-    //   let data = response.json();
-    //   this.pageToken = data.nextPageToken;
-    //   data.items.forEach(channel => {
-    //     this.channelIdList.add(channel.snippet.channelId);
-    //   });
-    // });
+    this.youTubeApiService.searchChannels(['/m/02jjt']).subscribe(response => {
+      let data = response.json();
+      this.pageToken = data.nextPageToken;
+      data.items.forEach(channel => {
+        this.channelIdList.add(channel.snippet.channelId);
+      });
+    });
   }
 
   gatherChannels(channelIds) {
@@ -57,19 +57,19 @@ export class BrowseComponent implements OnInit {
   }
 
   detectScrollLimit() {
-    // let contentHeight = document.body.scrollHeight;
-    // let scrollPosition = window.scrollY + window.innerHeight;
-    // if(scrollPosition === contentHeight) {
-    //   this.channelIdList = new Set([]);
-    //   this.youTubeApiService.searchChannelsNextPage(['/m/02jjt'], this.pageToken).subscribe(response => {
-    //     let data = response.json();
-    //     this.pageToken = data.nextPageToken;
-    //     data.items.forEach(channel => {
-    //       this.channelIdList.add(channel.snippet.channelId);
-    //     });
-    //     this.gatherChannels(this.channelIdList);
-    //   });
-    // }
+    let contentHeight = document.body.scrollHeight;
+    let scrollPosition = window.scrollY + window.innerHeight;
+    if(scrollPosition === contentHeight) {
+      this.channelIdList = new Set([]);
+      this.youTubeApiService.searchChannelsNextPage(['/m/02jjt'], this.pageToken).subscribe(response => {
+        let data = response.json();
+        this.pageToken = data.nextPageToken;
+        data.items.forEach(channel => {
+          this.channelIdList.add(channel.snippet.channelId);
+        });
+        this.gatherChannels(this.channelIdList);
+      });
+    }
   }
 
   calcCarouselLimits() {
