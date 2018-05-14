@@ -1,4 +1,4 @@
-<div [style.width.px]="carouselWidth" class="carousel-group" (window:mouseup)="deactivateBtn()">
+<div [style.width.px]="carouselWidth" class="carousel-group" (window:mouseup)="clickOut(); deactivateBtn()">
   <div class="strip">
     <h2><img src={{channel?.thumbnail.default.url}} alt="icon">{{channel?.title}}</h2>
     <h2 class="subscribe">Subscribe <span class="count">{{channel?.subscriberCount}}</span></h2>
@@ -18,7 +18,13 @@
       <div *ngFor="let video of videos" (mouseleave)="clearClicker()" class="video">
         <img (click)="loadVideo(video)" width="210" src={{video.thumbnail}} alt="thumbnail image">
         <div class="info">
-          <button id={{video.id}} (mousedown)="activateBtn(video.id)" class="circle-btn-sm" type="button">
+          <div (mousedown)="protectClick()" [class]="optionFocus(video.id)" class="options-panel">
+            <ul class="options-list">
+              <li (click)="closeMenu()">Add to Favorites</li>
+              <li (click)="closeMenu()">Watch Later</li>
+            </ul>
+          </div>
+          <button (mousedown)="activateBtn(video.id); protectClick()" (click)="optionSelect(video.id)" class="circle-btn-sm" type="button">
             <div [class]="checkClicker(video.id)" class="circle-sm"></div>
             <svg viewBox="0 0 24 24">
               <path d="M12 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z" class="style-scope yt-icon"></path>

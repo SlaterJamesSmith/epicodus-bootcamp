@@ -14,6 +14,8 @@ import { YouTubeApiService } from '../youtube-api.service';
 export class BrowseCarouselComponent implements OnInit {
   clicker: string;
   effect: string;
+  videoTarget: string;
+  preventClickOut: boolean = false;
   @Input() carouselWidth: number;
   @Input() maxCarouselPositions: number;
   @Input() channel: YTChannel;
@@ -82,5 +84,36 @@ export class BrowseCarouselComponent implements OnInit {
 
   clearClicker() {
     this.clicker = null;
+  }
+
+  optionSelect(video) {
+    if (this.videoTarget === video) {
+      this.videoTarget = null;
+    } else {
+      this.videoTarget = video;
+    }
+  }
+
+  optionFocus(video) {
+    if (this.videoTarget === video) {
+      return 'options-panel display-flex';
+    } else {
+      return 'options-panel display-none';
+    }
+  }
+
+  protectClick() {
+    this.preventClickOut = true;
+  }
+
+  clickOut() {
+    if (this.preventClickOut === false) {
+      this.videoTarget = null;
+    }
+    this.preventClickOut = false;
+  }
+
+  closeMenu() {
+    this.videoTarget = null;
   }
 }
