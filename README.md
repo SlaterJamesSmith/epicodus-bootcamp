@@ -80,8 +80,9 @@ export const youtubeApiConfig = {
 | 2. YTChannel | | 2. Channel | | 2. Browse |
 | 3. User | | 3. Video Playback | | 3. Carousel |
 | | | 4. Search | | 4. Channel |
-| | | | | 5. Video Player |
+| | | 5. Account | | 5. Video Player |
 | | | | | 6. Sign In |
+| | | | | 7. Account |
 
 ## User Stories
 
@@ -92,17 +93,18 @@ export const youtubeApiConfig = {
 | Done | MAIN | Click video links to open Video Playback View. | BROWSE |
 | Done | VIDEO | Watch and control video playback. | VID PLAYER |
 | Done | MAIN | Login and sign-out of an account. | SIGN-IN |
+| Done | MAIN | Add videos to Favorites. | CAROUSEL |
+| | MAIN | Add videos to Watch Later. | CAROUSEL |
+| Done | MAIN | Add channel to subscription list. | CAROUSEL |
+| | NAV | Search for videos and channels. | SEARCH |
 
 | Status | View | Advanced Features | Component |
 | :-: | :-: | --- | :-: |
-| | NAV | Search for videos and channels. | SEARCH |
 | Done | MAIN | Scroll and auto-load more suggestions. | BROWSE |
 | | MAIN | Filter video suggestions by genre. | BROWSE |
-| | ANY | Add videos to Favorites or Watch Later. | N/A |
-| | ANY | Add channel to subscription list. | N/A |
 | | CHNL | See lists of videos specific to a single channel. | CHANNEL |
-| | CHNL | Open an About section to see channel info. | CHANNEL |
 | | ANY | Login with authentication to access profile. | SIGN-IN |
+| | ACCT | View or Delete added vidoes / channels. | ACCOUNT |
 
 ## License
 
