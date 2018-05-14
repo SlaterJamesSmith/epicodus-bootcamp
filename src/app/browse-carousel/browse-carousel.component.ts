@@ -94,7 +94,15 @@ export class BrowseCarouselComponent implements OnInit {
     }
   }
 
-  optionFocus(video) {
+  optionsActive(video) {
+    if (this.videoTarget === video) {
+      return 'circle-btn-sm display-flex';
+    } else {
+      return 'circle-btn-sm display-none';
+    }
+  }
+
+  optionsOpen(video) {
     if (this.videoTarget === video) {
       return 'options-panel display-flex';
     } else {
