@@ -199,7 +199,6 @@ a.navbar-brand span {
   align-content: space-between;
   background-color: #fff;
   box-shadow: 1px 0 5px #5551, 1px 0 15px #5551, 0px 10px 25px #5555, -1px 0 15px #5551;
-  cursor: pointer;
   flex-wrap: wrap;
   position: absolute;
   right: 15px;
@@ -213,16 +212,20 @@ a.navbar-brand span {
   margin: 0;
 }
 
-.menu-list {
+.menu-list, .menu-title {
   padding: 10px 0;
   margin: 0;
   width: 100%;
 }
 
-.menu-list li {
+.menu-list li, .menu-title li {
   font-size: 0.9rem;
   list-style: none;
   padding: 9px 20px;
+}
+
+.menu-list li {
+  cursor: pointer;
 }
 
 .menu-list li:hover {

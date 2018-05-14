@@ -16,8 +16,9 @@ export class BrowseComponent implements OnInit {
   channelIdList = new Set([
     'UCfHOECFpULowQMJZonvudig',
     'UCsn6cjffsvyOZCZxvGoJxGg',
-    // 'UCWp2Kj8aD9XlCGiIZzwHciw',
-    // 'UC3KpzBeoM8lDvn85m4szzfA'
+    'UCmYTgpKxd-QOJCPDrmaXuqQ',
+    'UCWp2Kj8aD9XlCGiIZzwHciw',
+    'UC3KpzBeoM8lDvn85m4szzfA'
   ]);
   pageToken: string = null;
 
