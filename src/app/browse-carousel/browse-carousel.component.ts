@@ -3,12 +3,13 @@ import { Router } from '@angular/router';
 import { YTChannel } from '../models/ytchannel.model';
 import { YTVideo } from '../models/ytvideo.model';
 import { YouTubeApiService } from '../youtube-api.service';
+import { AccountService } from '../account.service';
 
 @Component({
   selector: 'app-browse-carousel',
   templateUrl: './browse-carousel.component.html',
   styleUrls: ['./browse-carousel.component.css'],
-  providers: [YouTubeApiService]
+  providers: [YouTubeApiService, AccountService]
 })
 
 export class BrowseCarouselComponent implements OnInit {
@@ -22,7 +23,7 @@ export class BrowseCarouselComponent implements OnInit {
   carouselPosition: number = 0;
   videos: YTVideo[] = [];
 
-  constructor(private youTubeApiService: YouTubeApiService, private router: Router) { }
+  constructor(private youTubeApiService: YouTubeApiService, private router: Router, private accountService: AccountService) { }
 
   ngOnInit() {
     this.youTubeApiService.getVideoList(this.channel.uploadsPlaylist).subscribe(response => {
@@ -45,6 +46,10 @@ export class BrowseCarouselComponent implements OnInit {
         });
       });
     });
+  }
+
+  addToFavorites(video) {
+    this.accountService.addVideo(video);
   }
 
   getCarouselPosition() {
