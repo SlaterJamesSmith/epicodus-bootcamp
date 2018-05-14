@@ -62,7 +62,7 @@ export const youtubeApiConfig = {
 
 ## Known Bugs
 
-None.
+- Channel uploads are not always populated into carousels in chronological order.
 
 ## Technologies Used
 
@@ -76,11 +76,12 @@ None.
 
 | MODELS | | VIEWS | | COMPONENTS |
 | ------ | --- | ----- | --- | ---------- |
-| 1. Video | | 1. Main | | 1. Search |
-| - title : *string* | | 2. Channel | | 2. Browse |
-| - channelName : *string* | | 3. Video Playback | | 3. Carousel |
-| - userName : *string* | | | | 4. Channel |
-| - id : *string* | | | | 5. Video Player |
+| 1. YTVideo | | 1. Main | | 1. Search |
+| 2. YTChannel | | 2. Channel | | 2. Browse |
+| 3. User | | 3. Video Playback | | 3. Carousel |
+| | | 4. Search | | 4. Channel |
+| | | | | 5. Video Player |
+| | | | | 6. Sign In |
 
 ## User Stories
 
@@ -88,16 +89,20 @@ None.
 | :-: | :-: | --- | :-: |
 | Done | NAV | Navigate to main page or other key areas. | ROOT |
 | Done | MAIN | See lists of suggested videos. | BROWSE |
-| | MAIN | Filter video suggestions by genre. | BROWSE |
 | Done | MAIN | Click video links to open Video Playback View. | BROWSE |
 | Done | VIDEO | Watch and control video playback. | VID PLAYER |
+| Done | MAIN | Login and sign-out of an account. | SIGN-IN |
 
 | Status | View | Advanced Features | Component |
 | :-: | :-: | --- | :-: |
 | | NAV | Search for videos and channels. | SEARCH |
-| | CHANNEL | See lists of videos specific to a single channel. | CHANNEL |
-| | CHANNEL | Open an About section to see channel info. | CHANNEL |
-| | CHANNEL | Click video links to open Video Playback View. | CHANNEL |
+| Done | MAIN | Scroll and auto-load more suggestions. | BROWSE |
+| | MAIN | Filter video suggestions by genre. | BROWSE |
+| | ANY | Add videos to Favorites or Watch Later. | N/A |
+| | ANY | Add channel to subscription list. | N/A |
+| | CHNL | See lists of videos specific to a single channel. | CHANNEL |
+| | CHNL | Open an About section to see channel info. | CHANNEL |
+| | ANY | Login with authentication to access profile. | SIGN-IN |
 
 ## License
 
