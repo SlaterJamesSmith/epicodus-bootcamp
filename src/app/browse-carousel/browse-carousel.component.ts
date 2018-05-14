@@ -53,6 +53,10 @@ export class BrowseCarouselComponent implements OnInit {
     this.accountService.addVideo(video);
   }
 
+  channelSubscribe(channel) {
+    this.accountService.addChannel(channel);
+  }
+
   getCarouselPosition() {
     return `carousel-inner carousel-position-${this.carouselPosition}`;
   }
