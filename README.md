@@ -14,6 +14,8 @@ Additional practice projects focused on Angular.
 
 ### II. [Mars Rover](./mars-rover/)
 
+### III. [User Authentication](./authentication/)
+
 ## Technologies Used
 
 - JavaScript

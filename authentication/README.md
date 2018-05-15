@@ -6,7 +6,7 @@
 
 ## Description
 
-A practice in authenticating users with AngularFire Authentication Module.
+A practice in authenticating users with AngularFire Auth Module.
 
 ## Setup/Installation Requirements
 
@@ -20,11 +20,15 @@ A practice in authenticating users with AngularFire Authentication Module.
 
 4. From *Project Overview*, navigate to Develop > Database > **Realtime Database**.
 
-5. Select *Rules* and change **.read** and **.write** to `true`, then **publish**.
+5. Select *Rules* and change **.read** and **.write** to `true`, then publish.
 
-4. In *Project Overview*, select option to **add Firebase to web app**.
+6. From *Project Overview*, navigate to Develop > **Authentication**.
 
-5. Save credentials for Part IV Project Setup.
+7. Select *Sign-In Method*, enable *Google*, then save.
+
+8. In *Project Overview*, select option to **add Firebase to web app**.
+
+9. Save credentials for Part IV Project Setup.
 
 ### II. Node.js & NPM Installs
 
@@ -38,11 +42,11 @@ A practice in authenticating users with AngularFire Authentication Module.
 
 1. Clone repository and navigate to `authentication`.
 
-3. Run `npm install` to load required packages.
+2. Run `npm install` to load required packages.
 
-4. Create new **api-keys.ts** file in `authentication/src/app`.
+3. Create new **api-keys.ts** file in `authentication/src/app`.
 
-5. In **api-keys.ts**, insert template code block from below and update credentials:
+4. In **api-keys.ts**, insert template code block from below and update credentials:
 ```
 // Firebase Credentials
 export const masterFirebaseConfig = {

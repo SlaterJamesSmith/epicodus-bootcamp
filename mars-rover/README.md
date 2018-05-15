@@ -26,11 +26,11 @@ A practice in implementing API data in Angular.
 
 4. From *Project Overview*, navigate to Develop > Database > **Realtime Database**.
 
-5. Select *Rules* and change **.read** and **.write** to `true`, then **publish**.
+5. Select *Rules* and change **.read** and **.write** to `true`, then publish.
 
-4. In *Project Overview*, select option to **add Firebase to web app**.
+6. In *Project Overview*, select option to **add Firebase to web app**.
 
-5. Save credentials for Part IV Project Setup.
+7. Save credentials for Part IV Project Setup.
 
 ### III. Node.js & NPM Installs
 
@@ -44,11 +44,11 @@ A practice in implementing API data in Angular.
 
 1. Clone repository and navigate to `mars-rover`.
 
-3. Run `npm install` to load required packages.
+2. Run `npm install` to load required packages.
 
-4. Create new **api-keys.ts** file in `mars-rover/src/app`.
+3. Create new **api-keys.ts** file in `mars-rover/src/app`.
 
-5. In **api-keys.ts**, insert template code blocks from below and update credentials:
+4. In **api-keys.ts**, insert template code blocks from below and update credentials:
 ```
 // NASA Credentials
 export const marsRoverApiKey = "";
