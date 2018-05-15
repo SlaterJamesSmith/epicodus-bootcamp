@@ -251,7 +251,7 @@ a.navbar-brand span {
   flex-direction: column;
   height: 100%;
   justify-content: center;
-  left: 0;
+  left: -240px;
   overflow-y: auto;
   padding-bottom: 125px;
   position: fixed;
@@ -282,6 +282,42 @@ a.navbar-brand span {
 
 #side-nav a {
   color: #f00;
+}
+
+.fade-in {
+  animation: fade-in 0.3s 1 forwards;
+}
+
+.fade-out {
+  animation: fade-out 0.3s 1 forwards;
+}
+
+@keyframes fade-in {
+  0% {opacity: 0}
+  100% {opacity: 1;}
+}
+
+@keyframes fade-out {
+  0% {opacity: 1}
+  100% {opacity: 0;}
+}
+
+.side-nav-slide-in {
+  animation: slide-in 0.3s 1 forwards;
+}
+
+.side-nav-slide-out {
+  animation: slide-out 0.2s 1 forwards;
+}
+
+@keyframes slide-in {
+  0% {left: -240px;}
+  100% {left: 0;}
+}
+
+@keyframes slide-out {
+  0% {left: 0;}
+  100% {left: -240px;}
 }
 
 #footer {

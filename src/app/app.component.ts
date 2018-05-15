@@ -16,6 +16,7 @@ export class AppComponent {
   signInToggle: boolean = false;
   clicker: string;
   effect: string;
+  noClicks: boolean = true;
 
   constructor(private youTubeApiService: YouTubeApiService) { }
 
@@ -72,11 +73,25 @@ export class AppComponent {
     }
   }
 
-  sideNavFocus(tab) {
+  clicks() {
+    this.noClicks = false;
+  }
+
+  sideNavCover(tab) {
     if (this.tabTarget === tab) {
-      return 'display';
+      return 'display fade-in';
     } else {
       return 'display-none';
+    }
+  }
+
+  sideNavPanel(tab) {
+    if (this.tabTarget === tab ) {
+      return 'side-nav-slide-in';
+    } else if (this.noClicks) {
+      return;
+    } else {
+      return 'side-nav-slide-out';
     }
   }
 

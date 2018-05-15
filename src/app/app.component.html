@@ -1,6 +1,6 @@
 <nav (window:mouseup)="clickOut(); deactivateBtn()" class="navbar navbar-expand">
   <div class="nav">
-    <button (mousedown)="activateBtn('menu'); protectClick()" (click)="tabSelect('menu')" class="circle-btn" type="button">
+    <button (mousedown)="activateBtn('menu'); protectClick()" (click)="tabSelect('menu'); clicks()" class="circle-btn" type="button">
       <div [class]="checkClicker('menu')" class="circle"></div>
       <svg viewBox="0 0 24 24">
         <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"></path>
@@ -91,18 +91,23 @@
     <span (click)="signIn()">Sign In</span>
   </div>
 </nav>
-<app-sign-in *ngIf="signInToggle" (signIn)="login($event)"></app-sign-in>
-<div id="side-nav-cover" [class]="sideNavFocus('menu')" >
-  <div id="side-nav" (mousedown)="protectClick()">
-    <img src="https://avatars0.githubusercontent.com/u/32079668?s=460&v=4" alt="Mike Chu">
-    <p>A site clone project<br>with Angular.</p>
-    <p>by</p>
-    <h3><a href="https://github.com/m-chu">Mike Chu</a></h3>
-  </div>
+
+<div id="side-nav" (mousedown)="protectClick()" [class]="sideNavPanel('menu')">
+  <img src="https://avatars0.githubusercontent.com/u/32079668?s=460&v=4" alt="Mike Chu">
+  <p>A site clone project<br>with Angular.</p>
+  <p>by</p>
+  <h3><a href="https://github.com/m-chu">Mike Chu</a></h3>
 </div>
+
+<div id="side-nav-cover" [class]="sideNavCover('menu')" >
+</div>
+
+<app-sign-in *ngIf="signInToggle" (signIn)="login($event)"></app-sign-in>
+
 <div class="container-fluid">
   <router-outlet *ngIf="!signInToggle"></router-outlet>
 </div>
+
 <div id="footer">
   <a href="https://www.youtube.com/"><span id="yt-logo"></span></a>
 </div>
