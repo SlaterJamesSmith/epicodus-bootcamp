@@ -11,6 +11,7 @@ import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { masterFirebaseConfig } from './api-keys';
 import { SignInComponent } from './sign-in/sign-in.component';
 import { SearchComponent } from './search/search.component';
+import { UserComponent } from './user/user.component';
 
 export const firebaseConfig = {
   apiKey: masterFirebaseConfig.apiKey,
@@ -26,7 +27,8 @@ export const firebaseConfig = {
     BrowseCarouselComponent,
     VideoPlayerComponent,
     SignInComponent,
-    SearchComponent
+    SearchComponent,
+    UserComponent
   ],
   imports: [
     BrowserModule,

@@ -78,8 +78,8 @@
         <h2>{{user.username}}</h2>
       </div>
       <ul class="menu-list menu-separator">
-        <li (click)="closeMenu()">Watch List</li>
-        <li (click)="closeMenu()">Favorites</li>
+        <li (click)="goToUserAccount(); closeMenu()">Watch List</li>
+        <li (click)="goToUserAccount(); closeMenu()">Favorites</li>
         <li (click)="logout()">Log Out</li>
       </ul>
       <ul class="menu-list">

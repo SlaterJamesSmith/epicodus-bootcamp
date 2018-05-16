@@ -39,6 +39,10 @@ export class AppComponent {
     this.tabTarget = null;
   }
 
+  goToUserAccount() {
+    this.router.navigate(['user', this.user.username]);
+  }
+
   goToSearch(query) {
     this.router.navigate(['search', query]);
   }
