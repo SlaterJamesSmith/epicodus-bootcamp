@@ -240,6 +240,7 @@ a.navbar-brand span {
 #side-nav-cover {
   background-color: #0008;
   height: 100%;
+  left: -100%;
   position: fixed;
   width: 100%;
   z-index: 20;
@@ -293,13 +294,15 @@ a.navbar-brand span {
 }
 
 @keyframes fade-in {
-  0% {opacity: 0}
-  100% {opacity: 1;}
+  0% {opacity: 0; left: -100%;}
+  1% {opacity: 0; left: 0;}
+  100% {opacity: 1; left: 0;}
 }
 
 @keyframes fade-out {
-  0% {opacity: 1}
-  100% {opacity: 0;}
+  0% {opacity: 1; left: 0;}
+  99% {opacity: 0; left: 0;}
+  100% {opacity: 0; left: -100%;}
 }
 
 .side-nav-slide-in {
@@ -307,11 +310,11 @@ a.navbar-brand span {
 }
 
 .side-nav-slide-out {
-  animation: slide-out 0.2s 1 forwards;
+  animation: slide-out 0.3s 1 forwards;
 }
 
 @keyframes slide-in {
-  0% {left: -240px;}
+  1% {left: -240px;}
   100% {left: 0;}
 }
 

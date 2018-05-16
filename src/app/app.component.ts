@@ -79,9 +79,11 @@ export class AppComponent {
 
   sideNavCover(tab) {
     if (this.tabTarget === tab) {
-      return 'display fade-in';
+      return 'fade-in';
+    } else if (this.noClicks) {
+      return;
     } else {
-      return 'display-none';
+      return 'fade-out';
     }
   }
 
