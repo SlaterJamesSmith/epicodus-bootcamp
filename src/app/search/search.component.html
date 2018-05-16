@@ -1,6 +1,6 @@
 <div (window:mouseup)="clickOut(); deactivateBtn()" class="container">
   <div *ngFor="let video of videos" (mouseleave)="clearClicker()" class="video">
-    <img (click)="loadVideo(video)" src={{video.thumbnail}} alt="thumbnail image" width="320" height="180">
+    <img (click)="loadVideo(video)" src={{video.thumbnail}} alt="thumbnail image">
     <div class="info">
       <h2 (click)="loadVideo(video)">{{video.title}}</h2>
       <p>{{video.channelTitle}} &bull; {{video.viewCount}} views</p>
