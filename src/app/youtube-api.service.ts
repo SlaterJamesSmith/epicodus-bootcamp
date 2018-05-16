@@ -8,6 +8,10 @@ export class YouTubeApiService {
 
   constructor(private http: Http) { }
 
+  searchVideos(query: string) {
+    return this.http.get(`https://www.googleapis.com/youtube/v3/search?key=${youtubeApiConfig.apiKey}&type=video&q=${query}&relevanceLanguage=en_US&maxResults=5&part=id`);
+  }
+
   getVideo(videoId: string) {
     return this.http.get(`https://www.googleapis.com/youtube/v3/videos?key=${youtubeApiConfig.apiKey}&id=${videoId}&part=contentDetails,snippet,statistics`);
   }
@@ -21,10 +25,10 @@ export class YouTubeApiService {
   }
 
   searchChannels(topicId: string[]) {
-    return this.http.get(`https://www.googleapis.com/youtube/v3/search?key=${youtubeApiConfig.apiKey}&type=channel&topciId=${topicId}$regionCode=US&maxResults=5&part=snippet`);
+    return this.http.get(`https://www.googleapis.com/youtube/v3/search?key=${youtubeApiConfig.apiKey}&relevanceLanguage=en_US&order=relevance&type=channel&topciId=${topicId}&maxResults=5&part=snippet`);
   }
 
   searchChannelsNextPage(topicId: string[], pageToken: string) {
-    return this.http.get(`https://www.googleapis.com/youtube/v3/search?key=${youtubeApiConfig.apiKey}&type=channel&topciId=${topicId}$regionCode=US&maxResults=5&pageToken=${pageToken}&part=snippet`);
+    return this.http.get(`https://www.googleapis.com/youtube/v3/search?key=${youtubeApiConfig.apiKey}&relevanceLanguage=en_US&order=relevance&type=channel&topciId=${topicId}&maxResults=5&pageToken=${pageToken}&part=snippet`);
   }
 }

@@ -10,6 +10,7 @@ import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { masterFirebaseConfig } from './api-keys';
 import { SignInComponent } from './sign-in/sign-in.component';
+import { SearchComponent } from './search/search.component';
 
 export const firebaseConfig = {
   apiKey: masterFirebaseConfig.apiKey,
@@ -24,7 +25,8 @@ export const firebaseConfig = {
     BrowseComponent,
     BrowseCarouselComponent,
     VideoPlayerComponent,
-    SignInComponent
+    SignInComponent,
+    SearchComponent
   ],
   imports: [
     BrowserModule,

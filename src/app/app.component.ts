@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import { User } from './models/user.model';
 import { YouTubeApiService } from './youtube-api.service';
 
@@ -18,7 +19,7 @@ export class AppComponent {
   effect: string;
   noClicks: boolean = true;
 
-  constructor(private youTubeApiService: YouTubeApiService) { }
+  constructor(private youTubeApiService: YouTubeApiService, private router: Router) { }
 
   signIn() {
     if (this.signInToggle === false) {
@@ -36,6 +37,10 @@ export class AppComponent {
   logout() {
     this.user = null;
     this.tabTarget = null;
+  }
+
+  goToSearch(query) {
+    this.router.navigate(['search', query])
   }
 
   activateBtn(button: string) {
