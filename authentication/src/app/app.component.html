@@ -1,3 +1,8 @@
-<p>
-  app-component works!
-</p>
+<nav id="navbar">
+  <h1 class="navbar-brand" routerLink="">Authentication Example</h1>
+  <div id="nav-links" class="nav">
+    <p *ngIf="isLoggedIn">{{userName}}</p>
+    <button *ngIf="isLoggedIn" (click)="logout()" class="btn btn-primary">Log Out</button>
+    <button *ngIf ="!isLoggedIn" (click)="login()" class="btn btn-success">Log In</button>
+  </div>
+</nav>
