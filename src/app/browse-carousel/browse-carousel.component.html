@@ -21,7 +21,7 @@
           <div (mousedown)="protectClick()" [class]="optionsOpen(video.id)" class="options-panel">
             <ul class="options-list">
               <li (click)="addToFavorites(video); closeMenu()">Add to Favorites</li>
-              <li (click)="closeMenu()">Watch Later</li>
+              <li (click)="addToWatchList(video); closeMenu()">Watch Later</li>
             </ul>
           </div>
           <button (mousedown)="activateBtn(video.id); protectClick()" (click)="optionSelect(video.id)" [class]="optionsActive(video.id)" class="circle-btn-sm" type="button">

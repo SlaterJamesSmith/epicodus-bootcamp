@@ -6,19 +6,25 @@ import { AngularFireDatabase, FirebaseListObservable } from 'angularfire2/databa
 
 @Injectable()
 export class AccountService {
-  videos: FirebaseListObservable<any[]>;
-  channels: FirebaseListObservable<any[]>;
+  favoriteVideos: FirebaseListObservable<any[]>;
+  watchListVideos: FirebaseListObservable<any[]>;
+  channelSubs: FirebaseListObservable<any[]>;
 
   constructor(private database: AngularFireDatabase) {
-    this.videos = this.database.list('videos');
-    this.channels = this.database.list('channels');
+    this.favoriteVideos = this.database.list('favoriteVideos');
+    this.watchListVideos = this.database.list('watchListVideos');
+    this.channelSubs = this.database.list('channelSubs');
   }
 
-  addVideo(newVideo: YTVideo) {
-    this.videos.push(newVideo);
+  addFavoriteVideo(video: YTVideo) {
+    this.favoriteVideos.push(video);
   }
 
-  addChannel(newChannel: YTChannel) {
-    this.channels.push(newChannel);
+  addWatchListVideo(video: YTVideo) {
+    this.watchListVideos.push(video);
+  }
+
+  channelSubscribe(channel: YTChannel) {
+    this.channelSubs.push(channel);
   }
 }

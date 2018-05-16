@@ -50,11 +50,15 @@ export class BrowseCarouselComponent implements OnInit {
   }
 
   addToFavorites(video) {
-    this.accountService.addVideo(video);
+    this.accountService.addFavoriteVideo(video);
+  }
+
+  addToWatchList(video) {
+    this.accountService.addWatchListVideo(video);
   }
 
   channelSubscribe(channel) {
-    this.accountService.addChannel(channel);
+    this.accountService.channelSubscribe(channel);
   }
 
   getCarouselPosition() {
