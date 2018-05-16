@@ -40,7 +40,7 @@ export class AppComponent {
   }
 
   goToSearch(query) {
-    this.router.navigate(['search', query])
+    this.router.navigate(['search', query]);
   }
 
   activateBtn(button: string) {
