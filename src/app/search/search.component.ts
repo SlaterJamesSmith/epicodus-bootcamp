@@ -18,6 +18,7 @@ export class SearchComponent implements OnInit {
   videoTarget: string;
   preventClickOut: boolean = false;
   query: string;
+  pageToken: string = null;
   videos: YTVideo[] = [];
   waitForNewQuery;
 
@@ -28,28 +29,47 @@ export class SearchComponent implements OnInit {
       this.videos = [];
       this.query = this.route.params['_value']['query'];
       this.youTubeApiService.searchVideos(this.query).subscribe(response => {
-        let videoList = response.json().items;
-        videoList.forEach(video => {
-          this.youTubeApiService.getVideo(video.id.videoId).subscribe(response => {
-            let videoData = response.json().items[0];
-            let video = new YTVideo(
-              videoData.id,
-              videoData.snippet.localized.title,
-              videoData.snippet.localized.description.slice(0, 125) + ' ...',
-              videoData.snippet.channelId,
-              videoData.snippet.channelTitle,
-              videoData.snippet.thumbnails.medium.url,
-              videoData.contentDetails.duration,
-              videoData.snippet.publishedAt,
-              videoData.statistics.viewCount,
-              videoData.statistics.likeCount,
-              videoData.statistics.dislikeCount
-            );
-            this.videos.push(video);
-          });
+        let videoList = response.json();
+        this.pageToken = videoList.nextPageToken;
+        videoList.items.forEach(video => {
+          this.gatherVideo(video);
         });
       });
     });
+  }
+
+  gatherVideo(video) {
+    this.youTubeApiService.getVideo(video.id.videoId).subscribe(response => {
+      let videoData = response.json().items[0];
+      let video = new YTVideo(
+        videoData.id,
+        videoData.snippet.localized.title,
+        videoData.snippet.localized.description.slice(0, 125) + ' ...',
+        videoData.snippet.channelId,
+        videoData.snippet.channelTitle,
+        videoData.snippet.thumbnails.medium.url,
+        videoData.contentDetails.duration,
+        videoData.snippet.publishedAt,
+        videoData.statistics.viewCount,
+        videoData.statistics.likeCount,
+        videoData.statistics.dislikeCount
+      );
+      this.videos.push(video);
+    });
+  }
+
+  detectScrollLimit() {
+    let contentHeight = document.body.scrollHeight;
+    let scrollPosition = window.scrollY + window.innerHeight;
+    if(scrollPosition === contentHeight) {
+      this.youTubeApiService.searchVideosNextPage(this.query, this.pageToken).subscribe(response => {
+        let videoList = response.json();
+        this.pageToken = videoList.nextPageToken;
+        videoList.items.forEach(video => {
+          this.gatherVideo(video);
+        });
+      });
+    }
   }
 
   addToFavorites(video) {

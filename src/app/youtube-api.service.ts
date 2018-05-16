@@ -9,7 +9,11 @@ export class YouTubeApiService {
   constructor(private http: Http) { }
 
   searchVideos(query: string) {
-    return this.http.get(`https://www.googleapis.com/youtube/v3/search?key=${youtubeApiConfig.apiKey}&type=video&q=${query}&relevanceLanguage=en_US&maxResults=5&part=id`);
+    return this.http.get(`https://www.googleapis.com/youtube/v3/search?key=${youtubeApiConfig.apiKey}&type=video&q=${query}&relevanceLanguage=en_US&maxResults=10&part=id`);
+  }
+
+  searchVideosNextPage(query: string, pageToken: string) {
+    return this.http.get(`https://www.googleapis.com/youtube/v3/search?key=${youtubeApiConfig.apiKey}&type=video&q=${query}&relevanceLanguage=en_US&maxResults=10&pageToken=${pageToken}&part=id`);
   }
 
   getVideo(videoId: string) {

@@ -1,4 +1,4 @@
-<div (window:mouseup)="clickOut(); deactivateBtn()" class="container">
+<div (window:mouseup)="clickOut(); deactivateBtn()" (window:scroll)="detectScrollLimit()" class="container">
   <div *ngFor="let video of videos" (mouseleave)="clearClicker()" class="video">
     <img (click)="loadVideo(video)" src={{video.thumbnail}} alt="thumbnail image">
     <div class="info">
