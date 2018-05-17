@@ -10,6 +10,8 @@ A limited site rebuild of [YouTube](https://www.youtube.com/) using Angular.
 
 ## Setup/Installation Requirements
 
+### Live Preview: [YouTube Rebuild](https://rebuild-8aeab.firebaseapp.com/)
+
 ### I. YouTube Data API v3
 
 1. Log in to [Google API Console](https://console.developers.google.com/apis/).
@@ -77,6 +79,8 @@ export const youtubeApiConfig = {
 ## Known Bugs
 
 - Channel uploads are not always populated into carousels in chronological order.
+- User can currently save duplicate channels and videos.
+- (Non-Bug) Only *view count* statistics can be affected by user interactions.
 
 ## Technologies Used
 
@@ -96,7 +100,7 @@ export const youtubeApiConfig = {
 | | | 4. Search | | 4. Channel |
 | | | 5. Account | | 5. Video Player |
 | | | | | 6. Sign In |
-| | | | | 7. Account |
+| | | | | 7. User |
 
 ## User Stories
 
@@ -110,15 +114,16 @@ export const youtubeApiConfig = {
 | Done | MAIN | Add videos to Favorites. | CAROUSEL |
 | Done | MAIN | Add videos to Watch Later. | CAROUSEL |
 | Done | MAIN | Add channel to subscription list. | CAROUSEL |
-| | NAV | Search for videos and channels. | SEARCH |
+| Done | NAV | Search for videos and channels. | SEARCH |
 
 | Status | View | Advanced Features | Component |
 | :-: | :-: | --- | :-: |
 | Done | MAIN | Scroll and auto-load more suggestions. | BROWSE |
 | | MAIN | Filter video suggestions by genre. | BROWSE |
 | | CHNL | See lists of videos specific to a single channel. | CHANNEL |
-| | ANY | Login with authentication to access profile. | SIGN-IN |
-| | ACCT | View or Delete added vidoes / channels. | ACCOUNT |
+| | ALL | Login with authentication to access profile. | SIGN-IN |
+| Done | ACCT | View or Delete added vidoes / channels. | ACCOUNT |
+| | ALL | Cannot save duplicate videos or channels. | AcctService |
 
 ## License
 

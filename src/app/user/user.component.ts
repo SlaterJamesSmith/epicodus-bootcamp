@@ -33,7 +33,6 @@ export class UserComponent implements OnInit {
     this.accountService.getChannelSubs().subscribe(response => {
       this.channelSubs = response;
     });
-    console.log(this.channelSubs)
   }
 
   addToFavorites(video) {
