@@ -33,6 +33,7 @@ export class UserComponent implements OnInit {
     this.accountService.getChannelSubs().subscribe(response => {
       this.channelSubs = response;
     });
+    console.log(this.channelSubs)
   }
 
   addToFavorites(video) {
@@ -45,6 +46,10 @@ export class UserComponent implements OnInit {
 
   deleteFavoriteVideo(video) {
     this.accountService.deleteFavoriteVideo(video);
+  }
+
+  deleteChannel(channel) {
+    this.accountService.deleteChannel(channel);
   }
 
   loadVideo(clickedVideo) {

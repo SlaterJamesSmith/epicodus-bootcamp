@@ -58,5 +58,24 @@
     <div *ngIf="channelSubs.length === 0">
       <h3>No Channel Subscriptions.</h3>
     </div>
+    <div *ngFor="let channel of channelSubs" (mouseleave)="clearClicker()" class="video channel">
+      <img src={{channel.thumbnail.medium.url}} alt="thumbnail image">
+      <div class="info">
+        <h3>{{channel.title}}</h3>
+        <p>{{channel.videoCount}} videos &bull; {{channel.viewCount}} views</p>
+        <p>{{channel.description}}</p>
+      </div>
+      <button (mousedown)="activateBtn(channel.id); protectClick()" (click)="optionSelect(channel.id)" [class]="optionsActive(channel.id)" class="circle-btn-sm" type="button">
+        <div [class]="checkClicker(channel.id)" class="circle-sm"></div>
+        <svg viewBox="0 0 24 24">
+          <path d="M12 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z" class="style-scope yt-icon"></path>
+        </svg>
+      </button>
+      <div (mousedown)="protectClick()" [class]="optionsOpen(channel.id)" class="options-panel">
+        <ul class="options-list">
+          <li (click)="deleteChannel(channel); closeMenu()">Remove</li>
+        </ul>
+      </div>
+    </div>
   </div>
 </div>

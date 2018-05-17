@@ -58,4 +58,12 @@ export class AccountService {
     return this.database.object('favoriteVideos/' + videoId);
   }
 
+  deleteChannel(channel) {
+    let selectedChannel = this.getChannelById(channel.$key);
+    selectedChannel.remove();
+  }
+
+  getChannelById(channelId: string) {
+    return this.database.object('channelSubs/' + channelId);
+  }
 }
