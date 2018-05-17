@@ -1,5 +1,62 @@
 <div class="container">
-  <p>
-    user works!
-  </p>
+<!-- WATCH LIST -->
+  <div class="collection">
+    <h2 class="collection-header">Watch List</h2>
+    <div *ngIf="watchListVideos.length === 0">
+      <h3>Watch List Empty.</h3>
+    </div>
+    <div *ngFor="let video of watchListVideos" (mouseleave)="clearClicker()" class="video">
+      <img (click)="loadVideo(video)" src={{video.thumbnail}} alt="thumbnail image">
+      <div class="info">
+        <h3 (click)="loadVideo(video)">{{video.title}}</h3>
+        <p>{{video.channelTitle}} &bull; {{video.viewCount}} views</p>
+        <p>{{video.description}}</p>
+      </div>
+      <button (mousedown)="activateBtn(video.id); protectClick()" (click)="optionSelect(video.id)" [class]="optionsActive(video.id)" class="circle-btn-sm" type="button">
+        <div [class]="checkClicker(video.id)" class="circle-sm"></div>
+        <svg viewBox="0 0 24 24">
+          <path d="M12 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z" class="style-scope yt-icon"></path>
+        </svg>
+      </button>
+      <div (mousedown)="protectClick()" [class]="optionsOpen(video.id)" class="options-panel">
+        <ul class="options-list">
+          <li (click)="addToFavorites(video); deleteWatchListVideo(video); closeMenu()">Add to Favorites</li>
+          <li (click)="deleteWatchListVideo(video); closeMenu()">Remove</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+<!-- FAVORITE VIDEOS -->
+  <div class="collection">
+    <h2 class="collection-header">Favorite Videos</h2>
+    <div *ngIf="favoriteVideos.length === 0">
+      <h3>No Favorite Videos.</h3>
+    </div>
+    <div *ngFor="let video of favoriteVideos" (mouseleave)="clearClicker()" class="video">
+      <img (click)="loadVideo(video)" src={{video.thumbnail}} alt="thumbnail image">
+      <div class="info">
+        <h3 (click)="loadVideo(video)">{{video.title}}</h3>
+        <p>{{video.channelTitle}} &bull; {{video.viewCount}} views</p>
+        <p>{{video.description}}</p>
+      </div>
+      <button (mousedown)="activateBtn(video.id); protectClick()" (click)="optionSelect(video.id)" [class]="optionsActive(video.id)" class="circle-btn-sm" type="button">
+        <div [class]="checkClicker(video.id)" class="circle-sm"></div>
+        <svg viewBox="0 0 24 24">
+          <path d="M12 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z" class="style-scope yt-icon"></path>
+        </svg>
+      </button>
+      <div (mousedown)="protectClick()" [class]="optionsOpen(video.id)" class="options-panel">
+        <ul class="options-list">
+          <li (click)="deleteFavoriteVideo(video); closeMenu()">Remove</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+<!-- CHANNEL SUBSCRIPTIONS -->
+  <div class="collection">
+    <h2 class="collection-header">Channel Subscriptions</h2>
+    <div *ngIf="channelSubs.length === 0">
+      <h3>No Channel Subscriptions.</h3>
+    </div>
+  </div>
 </div>

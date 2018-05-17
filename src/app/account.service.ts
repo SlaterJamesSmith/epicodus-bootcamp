@@ -6,8 +6,8 @@ import { AngularFireDatabase, FirebaseListObservable } from 'angularfire2/databa
 
 @Injectable()
 export class AccountService {
-  favoriteVideos: FirebaseListObservable<any[]>;
   watchListVideos: FirebaseListObservable<any[]>;
+  favoriteVideos: FirebaseListObservable<any[]>;
   channelSubs: FirebaseListObservable<any[]>;
 
   constructor(private database: AngularFireDatabase) {
@@ -16,15 +16,46 @@ export class AccountService {
     this.channelSubs = this.database.list('channelSubs');
   }
 
-  addFavoriteVideo(video: YTVideo) {
+  addFavoriteVideo(video) {
     this.favoriteVideos.push(video);
   }
 
-  addWatchListVideo(video: YTVideo) {
+  addWatchListVideo(video) {
     this.watchListVideos.push(video);
   }
 
-  channelSubscribe(channel: YTChannel) {
+  channelSubscribe(channel) {
     this.channelSubs.push(channel);
   }
+
+  getFavoriteVideos() {
+    return this.favoriteVideos;
+  }
+
+  getWatchListVideos() {
+    return this.watchListVideos;
+  }
+
+  getChannelSubs() {
+    return this.channelSubs;
+  }
+
+  deleteWatchListVideo(video) {
+    let selectedVideo = this.getWatchListVideoById(video.$key);
+    selectedVideo.remove();
+  }
+
+  getWatchListVideoById(videoId: string) {
+    return this.database.object('watchListVideos/' + videoId);
+  }
+
+  deleteFavoriteVideo(video) {
+    let selectedVideo = this.getFavoriteVideoById(video.$key);
+    selectedVideo.remove();
+  }
+
+  getFavoriteVideoById(videoId: string) {
+    return this.database.object('favoriteVideos/' + videoId);
+  }
+
 }
