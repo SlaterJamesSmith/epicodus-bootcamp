@@ -10,8 +10,6 @@ import * as firebase from 'firebase';
 export class PublicComponent {
   private user;
 
-  constructor() { }
-
   ngDoCheck() {
     this.user = firebase.auth().currentUser;
   }

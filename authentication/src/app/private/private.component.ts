@@ -1,15 +1,16 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+import * as firebase from 'firebase';
 
 @Component({
   selector: 'app-private',
   templateUrl: './private.component.html',
   styleUrls: ['./private.component.css']
 })
-export class PrivateComponent implements OnInit {
 
-  constructor() { }
+export class PrivateComponent {
+  private user;
 
-  ngOnInit() {
+  ngDoCheck() {
+    this.user = firebase.auth().currentUser;
   }
-
 }
