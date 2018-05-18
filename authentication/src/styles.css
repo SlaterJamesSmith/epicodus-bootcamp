@@ -10,6 +10,14 @@ h1 .subtitle {
   font-weight: normal;
 }
 
+h2 {
+  font-size: 1.2rem;
+}
+
 #angular-logo {
   margin-bottom: 40px;
+}
+
+.container {
+  margin: 24px auto;
 }
