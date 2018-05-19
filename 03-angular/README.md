@@ -1,6 +1,6 @@
 # _EPICODUS: 02 - JavaScript - Week 3_
 
-***Introduction to Angular, April 30, 2018***
+***Introduction to Angular | April 30, 2018***
 
 ***By Mike Chu***
 

@@ -1,6 +1,6 @@
 # _EPICODUS: 02 - JavaScript - Week 1_
 
-***Test Driven Development, April 16, 2018***
+***Test Driven Development | April 16, 2018***
 
 ***Collaborators***
 

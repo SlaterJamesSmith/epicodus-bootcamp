@@ -1,6 +1,6 @@
 # _EPICODUS: 02 - JavaScript - Week 2_
 
-***Asynchrony & APIs, April 23, 2018***
+***Asynchrony & APIs | April 23, 2018***
 
 ***Collaborators***
 

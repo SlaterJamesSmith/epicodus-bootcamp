@@ -1,0 +1,28 @@
+<h2>Image Search</h2>
+<div class="card card-body">
+  <div class="form-group">
+    <label for="camera">Date</label>
+    <input class="form-control" type=date #roverDate>
+  </div>
+  <div class="form-group">
+    <label for="camera">Camera</label>
+    <select class="form-control" #roverCamera>
+      <option value="FHAZ">Front Hazard Avoidance Camera</option>
+      <option  value="RHAZ">Rear Hazard Avoidance Camera</option>
+      <option value="MAST">Mast Camera</option>
+      <option  value="CHEMCAM">Chemistry and Camera Complex</option>
+      <option  value="MAHLI">Mars Hand Lens Imager</option>
+    </select>
+  </div>
+  <div class="btn-group">
+    <button (click)="getRoverImages(roverDate.value, roverCamera.value)" class="btn btn-primary">View Images</button>
+    <button (click)="saveRoverImages(roverDate.value, roverCamera.value)" class="btn btn-success">Save All Images</button>
+    <button routerLink="user/photos" class="btn btn-dark">Saved Photos</button>
+  </div>
+</div>
+<div *ngIf="photos">
+  <app-photos-list [photos]="photos"></app-photos-list>
+</div>
+<div *ngIf="photos === null">
+  <h3>There were no photos taken on {{roverDate.value}} by the {{roverCamera.value}} camera.</h3>
+</div>

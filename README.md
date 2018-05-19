@@ -1,6 +1,6 @@
 # _EPICODUS: 02 - JavaScript_
 
-***CSS/React Track, Unit 2, April 16, 2018***
+***UI Design & React Track | Unit 2 | April 16, 2018***
 
 ## Sections
 
@@ -10,7 +10,7 @@
 
 ### III. [Angular](03-angular/)
 
-### IV. Angular Extended (In Progress)
+### IV. [Angular Extended](04-angular-extended)
 
 ## Technologies Used
 

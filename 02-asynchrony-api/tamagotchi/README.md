@@ -1,6 +1,6 @@
 # _TAMAGOTCHI_
 
-***Asynchrony & APIs, April 23, 2018***
+***Asynchrony & APIs | April 23, 2018***
 
 ***Collaborators***
 
