@@ -1,7 +1,6 @@
-import { Component, OnInit, AfterViewInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { Tool } from '../models/tool.model';
 import { ToolService } from '../tool.service';
-import * as $ from 'jquery';
 
 @Component({
   selector: 'app-tool-info',
@@ -9,30 +8,8 @@ import * as $ from 'jquery';
   styleUrls: ['./tool-info.component.css'],
   providers: [ToolService]
 })
-export class ToolInfoComponent implements OnInit {
-private req: any;
+export class ToolInfoComponent {
 tools: Tool[]=[];
-  constructor( private toolService: ToolService ) { }
 
-  ngOnInit() {
-    this.req = this.toolService.getTools().subscribe(data=>{
-    let toolsData=data.json();
-    toolsData.forEach((item)=>{
-      let newTool = new Tool(
-        item.pk,
-        item.title,
-        item.createDate,
-        item.status,
-        item.description,
-        item.brand,
-        item.lateFee,
-        item.active,
-        item.featured,
-        item.dueDate,
-        item.imgUrl
-      );
-      this.tools.push(newTool);
-    });
-  })
-}
+  constructor(private toolService: ToolService) { }
 }

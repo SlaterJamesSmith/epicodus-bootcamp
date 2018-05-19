@@ -57,9 +57,6 @@ export class RegisterComponent {
   }
 
   sendNewUserRequest(username, email, password, password2) {
-    this.userService.createNewUser(username, email, password, password2).subscribe(response => {
-      console.log(response);
-    });
-    this.router.navigate(['']);
+    this.userService.createNewUser(username, email, password, password2);
   }
 }
