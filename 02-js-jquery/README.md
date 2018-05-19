@@ -1,6 +1,6 @@
 # _EPICODUS: 01 - Intro - Week 2_
 
-***JavaScript & jQuery, March 19, 2018***
+***JavaScript & jQuery | March 19, 2018***
 
 ***Collaborators***
 

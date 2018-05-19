@@ -1,6 +1,6 @@
 # _EPICODUS: 01 - Intro - Week 4_
 
-***Object-Oriented JavaScript, April 2, 2018***
+***Object-Oriented JavaScript | April 2, 2018***
 
 ***Collaborators***
 

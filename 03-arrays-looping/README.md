@@ -1,6 +1,6 @@
 # _EPICODUS: 01 - Intro - Week 3_
 
-***Arrays & Looping, March 26, 2018***
+***Arrays & Looping | March 26, 2018***
 
 ***Collaborators***
 

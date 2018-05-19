@@ -1,6 +1,6 @@
 # _EPICODUS: 01 - Introduction to Programming_
 
-***CSS/React Track, Unit 1, March 12, 2018***
+***UI Design & React Track | Unit 1 | March 12, 2018***
 
 ## Sections
 
