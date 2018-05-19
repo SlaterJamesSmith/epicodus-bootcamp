@@ -1,6 +1,6 @@
-# _Tool Library_
+# _EPICODUS: 02 - JavaScript - Week 5_
 
-***Epicodus Team Week - JavaScript - Week 5, May 14, 2018***
+***Team Week | Tool Library | May 14, 2018***
 
 ***Collaborators***
 

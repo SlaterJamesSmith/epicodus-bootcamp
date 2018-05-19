@@ -3,7 +3,6 @@ import { NgModule } from '@angular/core';
 import { HttpModule } from '@angular/http';
 import { HttpClientModule } from '@angular/common/http';
 import { routing } from './app.routing';
-import * as $ from 'jquery';
 
 import { AppComponent } from './app.component';
 import { ToolListComponent } from './tool-list/tool-list.component';
