@@ -1,8 +1,8 @@
 # _Tool Library_
 
-#### _Epicodus Team Week - JavaScript - Week 5, May 14, 2018_
+***Epicodus Team Week - JavaScript - Week 5, May 14, 2018***
 
-#### _Collaborators_
+***Collaborators***
 
 - Johnny Alt
 - Pablo Barreyro
@@ -37,7 +37,6 @@ Add instructions.
 ## Technologies Used
 
 * Angular
-* Django / Django RESTful
 
 ## User Stories
 
@@ -56,10 +55,3 @@ Add instructions.
 | | Tool | Verify user "good/bad" standing status. | Auth |
 | | User | Pay late return fee. | UserDash |
 | | Tool | 3D tool visualization. | ToolList |
-
-
-## License
-
-_This software is licensed under the MIT license._
-
-Copyright (c) 2018 **Johnny Alt, Pablo Barreyro, Adriana Chen, Mike Chu & Adrian Messado**
