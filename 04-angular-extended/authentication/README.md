@@ -28,7 +28,7 @@ A practice in authenticating users with AngularFire Auth Module.
 
 8. In *Project Overview*, select option to **add Firebase to web app**.
 
-9. Save credentials for Part IV Project Setup.
+9. Save credentials for Part III Project Setup.
 
 ### II. Node.js & NPM Installs
 
@@ -40,11 +40,11 @@ A practice in authenticating users with AngularFire Auth Module.
 
 ### III. Project Setup
 
-1. Clone repository and navigate to `authentication`.
+1. Clone repository and navigate to `04-angular-extended/authentication`.
 
 2. Run `npm install` to load required packages.
 
-3. Create new **api-keys.ts** file in `authentication/src/app`.
+3. Create new **api-keys.ts** file in `04-angular-extended/authentication/src/app`.
 
 4. In **api-keys.ts**, insert template code block from below and update credentials:
 ```
@@ -61,7 +61,6 @@ export const masterFirebaseConfig = {
 ### IV. View Project
 
 - Development Mode: `ng serve --open`
-
 
 ## Known Bugs
 

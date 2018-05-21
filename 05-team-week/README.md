@@ -12,23 +12,61 @@
 
 ## Description
 
-Add description.
+A tool-share application that allows users to checkout tools on a temporary loan basis similar to traditional libraries.
 
 ## Setup/Installation Requirements
 
-### I. Backend
+### I. Firebase Account
 
-Add instructions.
+1. Create free [Firebase](http://firebase.google.com/) account.
+
+2. In Firebase console, create new project.
+
+3. Name project and select country/region.
+
+4. From *Project Overview*, navigate to Develop > Database > **Realtime Database**.
+
+5. Select *Rules* and change **.read** and **.write** to `true`, then publish.
+
+6. From *Project Overview*, navigate to Develop > **Authentication**.
+
+7. Select *Sign-In Method*, enable *Google*, then save.
+
+8. In *Project Overview*, select option to **add Firebase to web app**.
+
+9. Save credentials for Part III Project Setup.
 
 ### II. Node & NPM Installs
 
 1. Install Node.js on local machine.
+
 2. Install TypeScript globally: `npm install -g typescript`
+
 3. Install Angular CLI globally: `npm install -g @angular/cli@1.7.4`
 
-### III. View Project
+### III. Project Setup
 
-Add instructions.
+1. Clone repository and navigate to `05-team-week`.
+
+2. Run `npm install` to load required packages.
+
+3. Create new **api-keys.ts** file in `05-team-week/src/app`.
+
+4. In **api-keys.ts**, insert template code block from below and update credentials:
+```
+// Firebase Credentials
+export const masterFirebaseConfig = {
+  apiKey: "",
+  authDomain: "",
+  databaseURL: "",
+  storageBucket: "",
+  messagingSenderId: ""
+};
+```
+
+### IV. View Project
+
+- Development Mode: `ng serve --open`
 
 ## Known Bugs
 
@@ -37,6 +75,10 @@ Add instructions.
 ## Technologies Used
 
 * Angular
+* Firebase
+* JavaScript
+* Node.js
+* TypeScript
 
 ## User Stories
 

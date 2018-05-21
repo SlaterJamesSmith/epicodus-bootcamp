@@ -12,6 +12,8 @@
 
 ### IV. [Angular Extended](04-angular-extended)
 
+### V. [Team Week](05-team-week)
+
 ## Technologies Used
 
 - JavaScript

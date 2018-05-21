@@ -36,11 +36,11 @@ A marketplace website for a music store.
 
 ### III. Project Setup
 
-1. Clone repository and navigate to `music-store`.
+1. Clone repository and navigate to `04-angular-extended/music-store`.
 
 2. Run `npm install` to load required packages.
 
-3. Create new **api-keys.ts** file in `music-store/src/app`.
+3. Create new **api-keys.ts** file in `04-angular-extended/music-store/src/app`.
 
 4. In **api-keys.ts**, insert template code block from below and update credentials:
 ```

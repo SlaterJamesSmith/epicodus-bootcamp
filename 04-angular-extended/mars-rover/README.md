@@ -42,11 +42,11 @@ A practice in implementing API data in Angular.
 
 ### IV. Project Setup
 
-1. Clone repository and navigate to `mars-rover`.
+1. Clone repository and navigate to `04-angular-extended/mars-rover`.
 
 2. Run `npm install` to load required packages.
 
-3. Create new **api-keys.ts** file in `mars-rover/src/app`.
+3. Create new **api-keys.ts** file in `04-angular-extended/mars-rover/src/app`.
 
 4. In **api-keys.ts**, insert template code blocks from below and update credentials:
 ```
@@ -67,7 +67,6 @@ export const masterFirebaseConfig = {
 ### IV. View Project
 
 - Development Mode: `ng serve --open`
-
 
 ## Known Bugs
 
