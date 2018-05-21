@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { UserService } from './user.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -7,6 +9,11 @@ import { Component } from '@angular/core';
 })
 
 export class AppComponent {
+  private user;
 
-  constructor() { }
+  constructor(public userService: UserService, private router: Router) {
+    this.userService.user.subscribe(user => {
+      this.user = user;
+    });
+  }
 }
