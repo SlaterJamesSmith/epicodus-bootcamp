@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Tool } from '../models/tool.model';
 import { ToolService } from '../tool.service'
 
 @Component({
@@ -7,4 +8,10 @@ import { ToolService } from '../tool.service'
   styleUrls: ['./tool-list.component.css'],
   providers: [ToolService]
 })
-export class ToolListComponent { }
+export class ToolListComponent {
+  tools: Tool[] = null;
+
+  constructor(private toolService: ToolService) {
+    this.tools = toolService.getTools();
+  }
+}

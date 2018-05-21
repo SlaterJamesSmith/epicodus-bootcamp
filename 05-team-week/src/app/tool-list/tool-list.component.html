@@ -1,1 +1,14 @@
-<p>tools list works!</p>
+<h2 class="text-center">Tool Inventory</h2>
+
+<div class="container">
+
+  <div *ngFor="let tool of tools" class="card">
+    <div class="card-header bg-dark text-white">
+      <h4 class="text-center">{{tool.title}}</h4>
+    </div>
+    <div class="card-body">
+      <p><strong>Status:</strong> {{tool.status}}</p>
+    </div>
+  </div>
+
+</div>
