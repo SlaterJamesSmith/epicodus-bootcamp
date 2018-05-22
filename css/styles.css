@@ -1,0 +1,77 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #f6f6f6;
+  font-family: sans-serif;
+}
+
+a, a:visited {
+  color: #0645ad;
+  text-decoration: none;
+}
+
+img {
+  display: block;
+}
+
+.flex-row {
+  display: flex;
+}
+
+/* MAIN NAVIGATION */
+
+#main-nav {
+  width: 176px;
+  padding: 0 8px;
+}
+
+#main-nav img {
+  margin: 3px auto 29px;
+}
+
+#main-nav ul {
+  font-size: 0.75rem;
+  list-style: none;
+  margin: 20px 19px 0 19px;
+}
+
+#main-nav li.title {
+  border-bottom: 0.5px solid #a2a9b1;
+  color: #444;
+  margin-bottom: 7px;
+  padding-bottom: 3px;
+}
+
+#main-nav li {
+  margin-bottom: 5px;
+}
+
+#main-nav button.gear {
+  background-image: url('https://upload.wikimedia.org/wikipedia/commons/c/c9/Wikipedia_interwiki_section_gear_icon.svg');
+  background-repeat: no-repeat;
+  border: none;
+  cursor: pointer;
+  float: right;
+  opacity: 0.75;
+  outline: none;
+  height: 14px;
+  width: 14px;
+}
+
+#main-nav button.gear:hover {
+  opacity: 1;
+}
+
+/* MAIN CONTENT */
+
+#main {
+  background-color: #fff;
+  border-bottom: 1px solid #a7d7f9;
+  border-left: 1px solid #a7d7f9;
+  height: 500px;
+  width: 100%
+}
