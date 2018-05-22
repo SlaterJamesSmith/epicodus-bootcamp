@@ -231,6 +231,7 @@ header .search button {
 
 .panel {
   padding: 10px;
+  margin-bottom: 5px;
 }
 
 .panel h3 {
@@ -252,6 +253,29 @@ header .search button {
   align-items: center;
   display: flex;
   margin-right: 15px;
+}
+
+.panel.green h3 {
+  background-color: #cef2e0;
+  border: 1px solid #a3bfb1;
+}
+
+.panel.green {
+  background-color: #f5fffa;
+  border: 1px solid #cef2e0;
+  margin-right: 5px;
+  width: 55%;
+}
+
+.panel.blue h3 {
+  background-color: #cedff2;
+  border: 1px solid #a3b0bf;
+}
+
+.panel.blue {
+  background-color: #f5faff;
+  border: 1px solid #cedff2;
+  width: 45%;
 }
 
 .panel.purple h3 {
