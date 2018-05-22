@@ -10,6 +10,17 @@ body {
   min-width: 850px;
 }
 
+h1 {
+  font-size: 1.4rem;
+  font-weight: 400;
+  margin-bottom: 10px;
+}
+
+p {
+  font-size: 0.8rem;
+  line-height: 1.2rem;
+}
+
 a, a:visited {
   color: #0645ad;
   text-decoration: none;
@@ -169,8 +180,40 @@ header .search button {
   border-bottom: 1px solid #a7d7f9;
   border-left: 1px solid #a7d7f9;
   border-top: 1px solid #a7d7f9;
+  padding: 25px;
   height: 2500px;
   width: 100%
+}
+
+#welcome {
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  display: flex;
+  justify-content: space-between;
+  padding: 12px 35px 10px;
+}
+
+#welcome .downsize {
+  font-size: 0.7rem;
+}
+
+#welcome .lists {
+  color: #00528c;
+  display: flex;
+}
+
+#welcome ul {
+  font-size: 1rem;
+  padding: 0 30px;
+}
+
+#welcome li {
+  margin: 3px 0;
+}
+
+#welcome li .downsize {
+  font-size: 0.85rem;
+  margin-left: -5px;
 }
 
 /* FOOTER */
@@ -200,4 +243,10 @@ footer .buttons {
 footer .buttons img {
   height: 31px;
   width: 88px;
+}
+
+/* MISC */
+
+.text-center {
+  text-align: center;
 }
