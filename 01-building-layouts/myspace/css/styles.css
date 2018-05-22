@@ -1,24 +1,30 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
 body {
-  font-size: 0.7rem;
-  font-family: sans-serif;
   box-sizing: border-box;
+  font-family: sans-serif;
+  font-size: 0.7rem;
 }
 
 h1 {
   font-size: 1.1rem;
 }
 
+h2 {
+  font-size: 0.8rem;
+  padding: 3px 15px;
+}
+
+h3 {
+  font-size: 0.7rem;
+  font-weight: bold;
+}
+
 h4 {
   font-size: 1rem;
-  margin: 0;
-}
-
-p {
-  margin: 0;
-}
-
-a {
-  color: #00f;
 }
 
 .wrapper {
@@ -28,29 +34,40 @@ a {
 
 /* NAV */
 
-#nav a {
+nav a {
+  color: #fff;
   text-decoration: none;
-  color: white;
 }
 
-.top-nav {
+nav button {
+  font-size: 0.7rem;
+  padding: 2px 5px;
+}
+
+nav input {
+  margin: 0 10px 0 5px;
+}
+
+#top-nav {
+  align-items: baseline;
+  background-color: #003398;
+  color: white;
   display: flex;
+  height: 130px;
   justify-content: space-between;
-  background-color: #003398;
-  color: white;
-  padding: 7px;
+  padding: 7px 10px;
 }
 
-.center-nav {
-  height: 96px;
-  background-color: #003398;
-}
-
-.bottom-nav {
+#bottom-nav {
   display: flex;
   justify-content: center;
   background-color: #6698cb;
   padding: 6px;
+}
+
+.nav-section {
+  align-items: center;
+  display: flex;
 }
 
 /* MAIN */
@@ -70,10 +87,7 @@ a {
 
 #column-left h2 {
   color: #fff;
-  font-size: 0.8rem;
   background-color: #6698cb;
-  margin: 0;
-  padding: 3px 15px;
 }
 
 #profile {
@@ -134,10 +148,7 @@ a {
 }
 
 .info-title h3 {
-  font-weight: bold;
-  font-size: 0.7rem;
   color: #336699;
-  margin: 0;
 }
 
 .info-content {
@@ -168,14 +179,10 @@ a {
 #column-right h2 {
   color: #FF6600;
   background-color: rgb(255, 204, 153);
-  font-size: 0.8rem;
-  margin: 0 0 7px;
-  padding: 3px 15px;
 }
 
 #column-right h3 {
   color: #FF6600;
-  margin: 0;
 }
 
 #relationship {
