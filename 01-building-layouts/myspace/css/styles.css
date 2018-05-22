@@ -4,9 +4,10 @@
 }
 
 body {
+  background-color: #e5e5e5;
   box-sizing: border-box;
   font-family: sans-serif;
-  font-size: 0.7rem;
+  font-size: 0.75rem;
 }
 
 h1 {
@@ -27,16 +28,28 @@ h4 {
   font-size: 1rem;
 }
 
+a {
+  text-decoration: none;
+}
+
+a:visited {
+  color: #00f;
+}
+
 .wrapper {
-  width: 800px;
+  background-color: #fff;
   margin: 0 auto;
+  width: 800px;
 }
 
 /* NAV */
 
 nav a {
   color: #fff;
-  text-decoration: none;
+}
+
+nav a:visited {
+  color: #fff;
 }
 
 nav button {
@@ -59,9 +72,10 @@ nav input {
 }
 
 #bottom-nav {
+  background-color: #6698cb;
   display: flex;
   justify-content: center;
-  background-color: #6698cb;
+  margin-bottom: 15px;
   padding: 6px;
 }
 
@@ -74,36 +88,37 @@ nav input {
 
 #main {
   display: flex;
+  justify-content: space-around;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
 }
 
 /* COLUMN LEFT */
 
 #column-left {
-  display: flex;
-  flex-direction: column;
-  margin-left: 20px;
-  width: 304px;
+  width: 300px;
 }
 
 #column-left h2 {
-  color: #fff;
   background-color: #6698cb;
+  color: #fff;
 }
 
 #profile {
-  margin-bottom: 5px;
+  display: flex;
+  margin-bottom: 12px;
 }
 
 #profile img {
-  margin-right: 10px;
-}
-
-#profile .info {
-  margin-top: -10px;
+  margin-right: 15px;
+  margin-top: 10px;
 }
 
 #profile .links {
-  margin: 10px 20px;
+  margin: 10px 0 0;
 }
 
 #contact {
@@ -114,25 +129,27 @@ nav input {
 #contact ul {
   display: flex;
   flex-flow: column wrap;
-  height: 60px;
-  padding-left: 30px;
+  height: 124px;
+  margin-top: 10px;
+  padding-left: 20px;
 }
 
 #contact li {
   height: 20px;
   list-style: none;
+  padding: 5px 0 5px 10px;
 }
 
 #myspace-url {
-  color: #6698cb;
   border: 1px solid #6698cb;
-  margin-bottom: 25px;
+  margin: 0 auto 25px;
   padding-left: 5px;
+  width: 95%;
 }
 
 .info-panel {
   border: 2px solid #6698cb;
-  padding-bottom: 4px;
+  padding-bottom: 3px;
   margin-bottom: 25px;
 }
 
@@ -143,8 +160,8 @@ nav input {
 .info-title {
   width: 107px;
   background-color: #b1d1f0;
-  padding: 2px;
-  margin: 4px 2px 0px 4px;
+  margin: 3px 3px 0;
+  padding: 3px;
 }
 
 .info-title h3 {
@@ -152,10 +169,10 @@ nav input {
 }
 
 .info-content {
-  width: 184px;
+  width: 180px;
   background-color: #d6e8fb;
-  padding: 2px;
-  margin:  4px 4px 0px 2px;
+  margin: 3px 3px 0 0;
+  padding: 3px;
 }
 
 #schools .info-title {
@@ -163,16 +180,13 @@ nav input {
 }
 
 #schools .info-content {
-  width: 63px;
+  width: 59px;
   text-align: center;
 }
 
 /* COLUMN RIGHT */
 
 #column-right {
-  display: flex;
-  flex-direction: column;
-  margin-left: 25px;
   width: 440px;
 }
 
@@ -245,9 +259,7 @@ nav input {
 
 #column-right .info-title h3 {
   font-weight: bold;
-  font-size: 0.7rem;
   color: #336699;
-  margin: 0;
 }
 
 #column-right .info-content {
