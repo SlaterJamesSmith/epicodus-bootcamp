@@ -7,6 +7,7 @@
 body {
   background-color: #f6f6f6;
   font-family: sans-serif;
+  min-width: 850px;
 }
 
 a, a:visited {
@@ -26,6 +27,10 @@ img {
   margin-left: 176px;
 }
 
+.flex-row {
+  display: flex;
+}
+
 .flex-split {
   display: flex;
   flex-wrap: wrap;
@@ -42,10 +47,11 @@ img {
 
 header {
   background: linear-gradient(#fff 60%, #f6f6f6);
+  height: 80px;
 }
 
 header .wrapper {
-  height: 80px;
+  height: 81px;
   padding: 10px 10px 0 0;
 }
 
@@ -72,10 +78,42 @@ header .tabs ul {
 
 header .tabs li {
   background: linear-gradient(#fff, #e1eef7);
+  border-bottom: 1px solid #a7d7f9;
   border-right: 1px solid #a7d7f9;
   font-size: 0.8rem;
   margin: 0;
   padding: 8px;
+}
+
+header .tabs .active {
+  background: linear-gradient(#fff, #fff);
+  border-bottom: 1px solid #fff;
+}
+
+header .search {
+  align-items: center;
+  background-color: #fff;
+  border: 1px solid #a2a9b1;
+  display: flex;
+  justify-content: space-between;
+  margin: 4px 0 6px 10px;
+  padding: 0 5px;
+  width: 20vw;
+}
+
+header .search input {
+  border: none;
+  font-size: 0.8rem;
+}
+
+header .search button {
+  background-image: url('https://upload.wikimedia.org/wikipedia/commons/8/8e/Feedbin-Icon-home-search.svg');
+  background-repeat: no-repeat;
+  background-size: 12px 12px;
+  border: none;
+  height: 12px;
+  opacity: 0.6;
+  width: 12px;
 }
 
 /* MAIN NAVIGATION */
