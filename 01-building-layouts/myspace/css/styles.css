@@ -20,20 +20,18 @@ h2 {
 }
 
 h3 {
-  font-size: 0.7rem;
+  font-size: 0.75rem;
   font-weight: bold;
 }
 
 h4 {
-  font-size: 1rem;
+  font-size: 0.8rem;
+  margin-bottom: 10px;
 }
 
-a {
-  text-decoration: none;
-}
-
-a:visited {
+a, a:visited {
   color: #00f;
+  text-decoration: none;
 }
 
 .wrapper {
@@ -149,8 +147,8 @@ nav input {
 
 .info-panel {
   border: 2px solid #6698cb;
-  padding-bottom: 3px;
   margin-bottom: 25px;
+  padding-bottom: 3px;
 }
 
 .info-wrapper {
@@ -158,10 +156,10 @@ nav input {
 }
 
 .info-title {
-  width: 107px;
   background-color: #b1d1f0;
   margin: 3px 3px 0;
   padding: 3px;
+  width: 107px;
 }
 
 .info-title h3 {
@@ -169,10 +167,10 @@ nav input {
 }
 
 .info-content {
-  width: 180px;
   background-color: #d6e8fb;
   margin: 3px 3px 0 0;
   padding: 3px;
+  width: 180px;
 }
 
 #schools .info-title {
@@ -191,23 +189,38 @@ nav input {
 }
 
 #column-right h2 {
-  color: #FF6600;
-  background-color: rgb(255, 204, 153);
+  background-color: #ffcc99;
+  color: #ff6600;
 }
 
 #column-right h3 {
-  color: #FF6600;
+  color: #ff6600;
+  font-size: 0.85rem;
+  margin-top: 5px;
 }
 
 #relationship {
   border: 2px solid #000;
+  margin: 0 0 20px;
+  padding: 20px 0;
   text-align: center;
-  padding: 10px 0;
-  margin: 15px 0 20px;
 }
 
 #blog {
+  margin-bottom: 10px;
+}
+
+#blurbs {
   margin-bottom: 25px;
+}
+
+#blurbs .about-me {
+  padding-left: 5px;
+}
+
+#blurbs span {
+  color: #008000;
+  font-weight: bold;
 }
 
 #blog p {
@@ -218,11 +231,20 @@ nav input {
   margin-bottom: 25px;
 }
 
+#friends-space .count, #friends-comments .count {
+  margin: 10px 5px;
+}
+
+#friends-space span, #friends-comments span {
+  color: #cc0000;
+  font-size: 0.8rem;
+}
+
 .friend-images {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  margin: 10px 0;
+  margin: 20px 5px 0 10px;
 
 }
 .friend {
@@ -235,9 +257,22 @@ nav input {
   padding-top: 3px;
 }
 
+#friends-space a:last-child, #friends-space a:last-child:visited {
+  color: #cc0000;
+}
+
+#friends-comments .comments {
+  margin: 0 auto;
+  width: 95%;
+}
+
+#friends-comments p:last-child {
+  margin: 5px;
+}
+
 #column-right .info-panel {
   border: 2px solid #6698cb;
-  padding-bottom: 4px;
+  padding-bottom: 3px;
   margin-bottom: 25px;
 }
 
@@ -247,9 +282,9 @@ nav input {
 
 #column-right .info-title {
   width: 158px;
-  background-color: rgb(255, 153, 51);
-  padding: 2px;
-  margin: 4px 2px 0px 4px;
+  background-color: #ff9933;
+  margin: 3px 3px 0;
+  padding: 3px;
   text-align: center;
 }
 
@@ -258,30 +293,17 @@ nav input {
 }
 
 #column-right .info-title h3 {
-  font-weight: bold;
   color: #336699;
 }
 
 #column-right .info-content {
   width: 269px;
-  background-color: rgb(249, 214, 180);
-  padding: 5px;
-  margin:  4px 4px 0px 2px;
+  background-color: #f9d6b4;
+  margin: 3px 3px 0 0;
+  padding: 3px;
 }
 
 /* MISC  */
-
-.clearfix {
-  clear: both;
-}
-
-.float-left {
-  float: left;
-}
-
-.float-right {
-  float: right;
-}
 
 .text-center {
   text-align: center;
