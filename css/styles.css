@@ -14,8 +14,16 @@ a, a:visited {
   text-decoration: none;
 }
 
+a:hover {
+  text-decoration: underline;
+}
+
 img {
   display: block;
+}
+
+.wrapper {
+  margin-left: 176px;
 }
 
 .flex-row {
@@ -25,8 +33,9 @@ img {
 /* MAIN NAVIGATION */
 
 #main-nav {
-  width: 176px;
   padding: 0 8px;
+  position: absolute;
+  width: 176px;
 }
 
 #main-nav img {
@@ -72,6 +81,35 @@ img {
   background-color: #fff;
   border-bottom: 1px solid #a7d7f9;
   border-left: 1px solid #a7d7f9;
-  height: 500px;
+  height: 2500px;
   width: 100%
+}
+
+/* FOOTER */
+
+footer {
+  font-size: 0.7rem;
+  overflow: auto;
+  padding: 20px 20px 30px;
+}
+
+footer ul {
+  float: left;
+  overflow: auto;
+}
+
+footer li {
+  float: left;
+  list-style: none;
+  margin-right: 10px;
+  padding-top: 20px;
+}
+
+footer .buttons {
+  float: right;
+}
+
+footer .buttons img {
+  height: 31px;
+  width: 88px;
 }
