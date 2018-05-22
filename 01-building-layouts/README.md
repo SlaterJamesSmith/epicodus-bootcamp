@@ -1,0 +1,31 @@
+# _EPICODUS: 03 - User Interface - Week 1_
+
+***Building Layouts | May 21, 2018***
+
+***Collaborators***
+
+- Mike Chu
+- Ted Leary
+
+## Description
+
+A collection of site-cloning practice projects.
+
+## Setup/Installation Requirements
+
+1. Clone repository.
+
+2. Navigate to `01-building-layouts`.
+
+3. Navigate into desired project sub-folder.
+
+4. Open index.html in web browser.
+
+## Known Bugs
+
+None.
+
+## Technologies Used
+
+- HTML
+- CSS
