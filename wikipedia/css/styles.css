@@ -130,6 +130,7 @@ header .search input {
 }
 
 header .search button {
+  background-color: #fff0;
   background-image: url('https://upload.wikimedia.org/wikipedia/commons/8/8e/Feedbin-Icon-home-search.svg');
   background-repeat: no-repeat;
   background-size: 12px 12px;
@@ -170,6 +171,7 @@ header .search button {
 }
 
 #main-nav button.gear {
+  background-color: #fff0;
   background-image: url('https://upload.wikimedia.org/wikipedia/commons/c/c9/Wikipedia_interwiki_section_gear_icon.svg');
   background-repeat: no-repeat;
   border: none;
@@ -230,7 +232,7 @@ header .search button {
 /* PANELS */
 
 .panel {
-  padding: 10px;
+  padding: 10px 10px 0;
   margin-bottom: 5px;
 }
 
@@ -242,17 +244,33 @@ header .search button {
 .panel p {
   font-size: 0.85rem;
   line-height: 1.4rem;
+  margin-bottom: 10px;
 }
 
 .panel p.downsize {
   font-size: 0.75rem;
-  margin: 10px 0;
 }
 
 .panel-image {
   align-items: center;
   display: flex;
   margin-right: 15px;
+}
+
+.panel ul {
+  font-size: 0.9rem;
+  margin-left: 20px;
+}
+
+.panel li {
+  color: #00528c;
+  line-height: 1.3rem;
+  margin-bottom: 7px;
+}
+
+.panel li .downsize {
+  color: #000;
+  margin-left: -5px;
 }
 
 .panel.green h3 {
