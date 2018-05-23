@@ -1,0 +1,1275 @@
+.wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+ul {
+  background-color: #222;
+  display: grid;
+  grid-template-columns: repeat(45, 30px);
+  grid-auto-rows: 30px;
+  grid-auto-flow: dense;
+  grid-gap: 2px;
+  padding: 0;
+}
+
+li {
+  list-style: none;
+  background-color: #f6f6ef;
+}
+
+.red {
+  background-color: #d3001a;
+}
+
+.blue {
+  background-color: #344879;
+}
+
+.yellow {
+  background-color: #ffd301;
+}
+
+li:nth-child(1) {
+  grid-column: span 3;
+  grid-row: span 4;
+}
+
+li:nth-child(2) {
+  grid-column: span 2;
+  grid-row: span 3;
+}
+
+li:nth-child(3){
+  grid-column: span 7;
+  grid-row: span 3;
+}
+
+li:nth-child(4){
+  grid-column: span 8;
+  grid-row: span 2;
+}
+
+li:nth-child(5){
+  grid-column: span 1;
+  grid-row: span 9;
+}
+
+li:nth-child(6){
+  grid-column: span 3;
+  grid-row: span 5;
+}
+
+li:nth-child(7){
+  grid-column: span 2;
+  grid-row: span 3;
+}
+
+li:nth-child(8){
+  grid-column: span 2;
+  grid-row: span 3;
+}
+
+li:nth-child(9){
+  grid-column: span 1;
+  grid-row: span 3;
+}
+
+li:nth-child(10){
+  grid-column: span 2;
+  grid-row: span 3;
+}
+
+li:nth-child(11){
+  grid-column: span 4;
+  grid-row: span 3;
+}
+
+li:nth-child(12){
+  grid-column: span 8;
+  grid-row: span 3;
+}
+
+li:nth-child(13){
+  grid-column: span 2;
+  grid-row: span 3;
+}
+
+li:nth-child(14){
+  grid-column: span 2;
+  grid-row: span 1;
+}
+
+li:nth-child(15){
+  grid-column: span 3;
+  grid-row: span 1;
+}
+
+li:nth-child(16){
+  grid-column: span 3;
+  grid-row: span 4;
+}
+
+li:nth-child(17){
+  grid-column: span 2;
+  grid-row: span 1;
+}
+
+li:nth-child(18){
+  grid-column: span 7;
+  grid-row: span 1;
+}
+
+li:nth-child(19){
+  grid-column: span 1;
+  grid-row: span 2;
+}
+
+li:nth-child(20){
+  grid-column: span 1;
+  grid-row: span 2;
+}
+
+li:nth-child(21){
+  grid-column: span 3;
+  grid-row: span 1;
+}
+
+li:nth-child(22){
+  grid-column: span 2;
+  grid-row: span 1;
+}
+
+li:nth-child(23){
+  grid-column: span 2;
+  grid-row: span 3;
+}
+
+li:nth-child(24){
+  grid-column: span 1;
+  grid-row: span 1;
+}
+
+li:nth-child(25){
+  grid-column: span 2;
+  grid-row: span 2;
+}
+
+li:nth-child(26){
+  grid-column: span 4;
+  grid-row: span 2;
+}
+
+li:nth-child(27){
+  grid-column: span 8;
+  grid-row: span 2;
+}
+
+li:nth-child(28){
+  grid-column: span 2;
+  grid-row: span 2;
+}
+
+li:nth-child(29){
+  grid-column: span 3;
+  grid-row: span 1;
+}
+
+li:nth-child(30){
+  grid-column: span 2;
+  grid-row: span 1;
+}
+
+li:nth-child(31){
+  grid-column: span 3;
+  grid-row: span 1;
+}
+
+li:nth-child(32){
+  grid-column: span 3;
+  grid-row: span 1;
+}
+
+li:nth-child(33){
+  grid-column: span 1;
+  grid-row: span 1;
+}
+
+li:nth-child(34){
+  grid-column: span 1;
+  grid-row: span 1;
+}
+
+li:nth-child(35){
+  grid-column: span 1;
+  grid-row: span 3;
+}
+
+li:nth-child(36){
+  grid-column: span 1;
+  grid-row: span 3;
+}
+
+li:nth-child(37){
+  grid-column: span 2;
+  grid-row: span 1;
+}
+
+li:nth-child(38){
+  grid-column: span 1;
+  grid-row: span 2;
+}
+
+li:nth-child(39){
+  grid-column: span 3;
+  grid-row: span 3;
+}
+
+li:nth-child(40){
+  grid-column: span 2;
+  grid-row: span 3;
+}
+
+li:nth-child(41){
+  grid-column: span 7;
+  grid-row: span 2;
+}
+
+li:nth-child(42){
+  grid-column: span 1;
+  grid-row: span 3;
+}
+
+li:nth-child(43){
+  grid-column: span 2;
+  grid-row: span 1;
+}
+
+li:nth-child(44){
+  grid-column: span 1;
+  grid-row: span 2;
+}
+
+li:nth-child(45){
+  grid-column: span 1;
+  grid-row: span 2;
+}
+
+li:nth-child(46){
+  grid-column: span 1;
+  grid-row: span 1;
+}
+
+li:nth-child(47){
+  grid-column: span 2;
+  grid-row: span 2;
+}
+
+li:nth-child(48){
+  grid-column: span 1;
+  grid-row: span 1;
+}
+
+li:nth-child(49){
+  grid-column: span 5;
+  grid-row: span 1;
+}
+
+li:nth-child(50){
+  grid-column: span 8;
+  grid-row: span 1;
+}
+
+li:nth-child(51){
+  grid-column: span 2;
+  grid-row: span 1;
+}
+
+li:nth-child(52){
+  grid-column: span 2;
+  grid-row: span 1;
+}
+
+li:nth-child(53){
+  grid-column: span 3;
+  grid-row: span 1;
+}
+
+li:nth-child(54){
+  grid-column: span 1;
+  grid-row: span 1;
+}
+
+li:nth-child(55){
+  grid-column: span 9;
+  grid-row: span 6;
+}
+
+li:nth-child(56){
+  grid-column: span 3;
+  grid-row: span 5;
+}
+
+li:nth-child(57){
+  grid-column: span 4;
+  grid-row: span 2;
+}
+
+li:nth-child(58){
+  grid-column: span 1;
+  grid-row: span 2;
+}
+
+li:nth-child(59){
+  grid-column: span 2;
+  grid-row: span 2;
+}
+
+li:nth-child(60){
+  grid-column: span 1;
+  grid-row: span 1;
+}
+
+li:nth-child(61){
+  grid-column: span 1;
+  grid-row: span 1;
+}
+
+li:nth-child(62){
+  grid-column: span 5;
+  grid-row: span 5;
+}
+
+li:nth-child(63){
+  grid-column: span 2;
+  grid-row: span 4;
+}
+
+li:nth-child(64){
+  grid-column: span 1;
+  grid-row: span 1;
+}
+
+li:nth-child(65){
+  grid-column: span 3;
+  grid-row: span 1;
+}
+
+li:nth-child(66){
+  grid-column: span 1;
+  grid-row: span 1;
+}
+
+li:nth-child(67){
+  grid-column: span 1;
+  grid-row: span 2;
+}
+
+li:nth-child(68){
+  grid-column: span 1;
+  grid-row: span 2;
+}
+
+li:nth-child(69){
+  grid-column: span 2;
+  grid-row: span 1;
+}
+
+li:nth-child(70){
+  grid-column: span 1;
+  grid-row: span 4;
+}
+
+li:nth-child(71){
+  grid-column: span 3;
+  grid-row: span 4;
+}
+
+li:nth-child(72){
+  grid-column: span 2;
+  grid-row: span 4;
+}
+
+li:nth-child(73){
+  grid-column: span 2;
+  grid-row: span 4;
+}
+
+li:nth-child(74){
+  grid-column: span 1;
+  grid-row: span 5;
+}
+
+li:nth-child(75){
+  grid-column: span 1;
+  grid-row: span 1;
+}
+
+li:nth-child(76){
+  grid-column: span 4;
+  grid-row: span 1;
+}
+
+li:nth-child(77){
+  grid-column: span 2;
+  grid-row: span 2;
+}
+
+li:nth-child(78){
+  grid-column: span 1;
+  grid-row: span 3;
+}
+
+li:nth-child(79){
+  grid-column: span 1;
+  grid-row: span 1;
+}
+
+li:nth-child(80){
+  grid-column: span 1;
+  grid-row: span 1;
+}
+
+li:nth-child(81){
+  grid-column: span 1;
+  grid-row: span 3;
+}
+
+li:nth-child(82){
+  grid-column: span 1;
+  grid-row: span 3;
+}
+
+li:nth-child(83){
+  grid-column: span 2;
+  grid-row: span 3;
+}
+
+li:nth-child(84){
+  grid-column: span 5;
+  grid-row: span 6;
+}
+
+li:nth-child(85){
+  grid-column: span 1;
+  grid-row: span 4;
+}
+
+li:nth-child(86){
+  grid-column: span 1;
+  grid-row: span 1;
+}
+
+li:nth-child(87){
+  grid-column: span 1;
+  grid-row: span 1;
+}
+
+li:nth-child(88){
+  grid-column: span 2;
+  grid-row: span 2;
+}
+
+li:nth-child(89){
+  grid-column: span 1;
+  grid-row: span 1;
+}
+
+li:nth-child(90){
+  grid-column: span 1;
+  grid-row: span 1;
+}
+
+li:nth-child(91){
+  grid-column: span 1;
+  grid-row: span 1;
+}
+
+li:nth-child(92){
+  grid-column: span 1;
+  grid-row: span 1;
+}
+
+li:nth-child(93){
+  grid-column: span 2;
+  grid-row: span 2;
+}
+
+li:nth-child(94){
+  grid-column: span 1;
+  grid-row: span 1;
+}
+
+li:nth-child(95){
+  grid-column: span 1;
+  grid-row: span 1;
+}
+
+li:nth-child(96){
+  grid-column: span 3;
+  grid-row: span 1;
+}
+
+li:nth-child(97){
+  grid-column: span 4;
+  grid-row: span 1;
+}
+
+li:nth-child(98){
+  grid-column: span 2;
+  grid-row: span 3;
+}
+
+li:nth-child(99){
+  grid-column: span 1;
+  grid-row: span 3;
+}
+
+li:nth-child(100){
+  grid-column: span 1;
+  grid-row: span 3;
+}
+
+li:nth-child(101){
+  grid-column: span 2;
+  grid-row: span 3;
+}
+
+li:nth-child(102){
+  grid-column: span 3;
+  grid-row: span 2;
+}
+
+li:nth-child(103){
+  grid-column: span 2;
+  grid-row: span 2;
+}
+
+li:nth-child(104){
+  grid-column: span 4;
+  grid-row: span 2;
+}
+
+li:nth-child(105){
+  grid-column: span 2;
+  grid-row: span 2;
+}
+
+li:nth-child(106){
+  grid-column: span 1;
+  grid-row: span 2;
+}
+
+li:nth-child(107){
+  grid-column: span 5;
+  grid-row: span 4;
+}
+
+li:nth-child(108){
+  grid-column: span 10;
+  grid-row: span 1;
+}
+
+li:nth-child(109){
+  grid-column: span 1;
+  grid-row: span 1;
+}
+
+li:nth-child(110){
+  grid-column: span 2;
+  grid-row: span 1;
+}
+
+li:nth-child(111){
+  grid-column: span 1;
+  grid-row: span 1;
+}
+
+li:nth-child(112){
+  grid-column: span 1;
+  grid-row: span 1;
+}
+
+li:nth-child(113){
+  grid-column: span 1;
+  grid-row: span 1;
+}
+
+li:nth-child(114){
+  grid-column: span 1;
+  grid-row: span 2;
+}
+
+li:nth-child(115){
+  grid-column: span 1;
+  grid-row: span 2;
+}
+
+li:nth-child(116){
+  grid-column: span 1;
+  grid-row: span 2;
+}
+
+li:nth-child(117){
+  grid-column: span 1;
+  grid-row: span 1;
+}
+
+li:nth-child(118){
+  grid-column: span 1;
+  grid-row: span 2;
+}
+
+li:nth-child(119){
+  grid-column: span 6;
+  grid-row: span 1;
+}
+
+li:nth-child(120){
+  grid-column: span 1;
+  grid-row: span 1;
+}
+
+li:nth-child(121){
+  grid-column: span 2;
+  grid-row: span 1;
+}
+li:nth-child(122){
+  grid-column: span 3;
+  grid-row: span 1;
+}
+li:nth-child(123){
+  grid-column: span 1;
+  grid-row: span 1;
+}
+li:nth-child(124){
+  grid-column: span 1;
+  grid-row: span 1;
+}
+li:nth-child(125){
+  grid-column: span 5;
+  grid-row: span 1;
+}
+li:nth-child(126){
+  grid-column: span 3;
+  grid-row: span 1;
+}
+li:nth-child(127){
+  grid-column: span 2;
+  grid-row: span 1;
+}
+li:nth-child(128){
+  grid-column: span 1;
+  grid-row: span 1;
+}
+li:nth-child(129){
+  grid-column: span 1;
+  grid-row: span 2;
+}
+li:nth-child(130){
+  grid-column: span 2;
+  grid-row: span 2;
+}
+li:nth-child(131){
+  grid-column: span 2;
+  grid-row: span 2;
+}
+li:nth-child(132){
+  grid-column: span 1;
+  grid-row: span 2;
+}li:nth-child(133){
+  grid-column: span 1;
+  grid-row: span 1;
+}li:nth-child(134){
+  grid-column: span 2;
+  grid-row: span 2;
+}li:nth-child(135){
+  grid-column: span 2;
+  grid-row: span 2;
+}li:nth-child(136){
+  grid-column: span 1;
+  grid-row: span 2;
+}li:nth-child(137){
+  grid-column: span 1;
+  grid-row: span 2;
+}li:nth-child(138){
+  grid-column: span 2;
+  grid-row: span 3;
+}
+li:nth-child(139){
+  grid-column: span 3;
+  grid-row: span 4;
+}
+li:nth-child(140){
+  grid-column: span 1;
+  grid-row: span 4;
+}
+li:nth-child(141){
+  grid-column: span 1;
+  grid-row: span 1;
+}
+li:nth-child(142){
+  grid-column: span 3;
+  grid-row: span 1;
+}
+li:nth-child(143){
+  grid-column: span 4;
+  grid-row: span 1;
+}
+li:nth-child(144){
+  grid-column: span 4;
+  grid-row: span 1;
+}
+li:nth-child(145){
+  grid-column: span 2;
+  grid-row: span 2;
+}
+li:nth-child(146){
+  grid-column: span 3;
+  grid-row: span 4;
+}
+li:nth-child(147){
+  grid-column: span 1;
+  grid-row: span 4;
+}
+li:nth-child(148){
+  grid-column: span 3;
+  grid-row: span 4;
+}
+li:nth-child(149){
+  grid-column: span 1;
+  grid-row: span 1;
+}
+li:nth-child(150){
+  grid-column: span 1;
+  grid-row: span 3;
+}
+li:nth-child(151){
+  grid-column: span 3;
+  grid-row: span 3;
+}
+li:nth-child(152){
+  grid-column: span 5;
+  grid-row: span 3;
+}
+li:nth-child(153){
+  grid-column: span 3;
+  grid-row: span 3;
+}
+
+li:nth-child(154){
+  grid-column: span 2;
+  grid-row: span 3;
+}
+li:nth-child(155){
+  grid-column: span 3;
+  grid-row: span 3;
+}
+li:nth-child(156){
+  grid-column: span 1;
+  grid-row: span 2;
+}
+li:nth-child(157){
+  grid-column: span 2;
+  grid-row: span 2;
+}
+li:nth-child(158){
+  grid-column: span 1;
+  grid-row: span 2;
+}
+li:nth-child(159){
+  grid-column: span 1;
+  grid-row: span 2;
+}
+li:nth-child(160){
+  grid-column: span 1;
+  grid-row: span 1;
+}
+li:nth-child(161){
+  grid-column: span 1;
+  grid-row: span 1;
+}
+li:nth-child(162){
+  grid-column: span 2;
+  grid-row: span 1;
+}
+li:nth-child(163){
+  grid-column: span 2;
+  grid-row: span 1;
+}
+li:nth-child(164){
+  grid-column: span 1;
+  grid-row: span 1;
+}
+li:nth-child(165){
+  grid-column: span 1;
+  grid-row: span 1;
+}
+li:nth-child(166){
+  grid-column: span 2;
+  grid-row: span 4;
+}
+li:nth-child(167){
+  grid-column: span 1;
+  grid-row: span 1;
+}
+li:nth-child(168){
+  grid-column: span 1;
+  grid-row: span 1;
+}
+li:nth-child(169){
+  grid-column: span 2;
+  grid-row: span 1;
+}
+li:nth-child(170){
+  grid-column: span 2;
+  grid-row: span 2;
+}
+li:nth-child(171){
+  grid-column: span 1;
+  grid-row: span 2;
+}
+li:nth-child(172){
+  grid-column: span 3;
+  grid-row: span 2;
+}
+li:nth-child(173){
+  grid-column: span 1;
+  grid-row: span 1;
+}
+li:nth-child(174){
+  grid-column: span 2;
+  grid-row: span 1;
+}
+li:nth-child(175){
+  grid-column: span 1;
+  grid-row: span 1;
+}
+li:nth-child(176){
+  grid-column: span 1;
+  grid-row: span 1;
+}
+li:nth-child(177){
+  grid-column: span 1;
+  grid-row: span 1;
+}
+li:nth-child(178){
+  grid-column: span 1;
+  grid-row: span 1;
+}
+li:nth-child(179){
+  grid-column: span 2;
+  grid-row: span 1;
+}
+li:nth-child(180){
+  grid-column: span 3;
+  grid-row: span 6;
+}
+li:nth-child(181){
+  grid-column: span 1;
+  grid-row: span 5;
+}
+li:nth-child(182){
+  grid-column: span 4;
+  grid-row: span 5;
+}
+
+li:nth-child(183){
+  grid-column: span 5;
+  grid-row: span 5;
+}
+
+li:nth-child(184){
+  grid-column: span 1;
+  grid-row: span 5;
+}
+
+li:nth-child(185){
+  grid-column: span 2;
+  grid-row: span 5;
+}
+
+li:nth-child(186){
+  grid-column: span 3;
+  grid-row: span 8;
+}
+
+li:nth-child(187){
+  grid-column: span 3;
+  grid-row: span 3;
+}
+
+li:nth-child(188){
+  grid-column: span 2;
+  grid-row: span 3;
+}
+
+li:nth-child(189){
+  grid-column: span 1;
+  grid-row: span 3;
+}
+
+li:nth-child(190){
+  grid-column: span 1;
+  grid-row: span 1;
+}
+
+li:nth-child(191){
+  grid-column: span 2;
+  grid-row: span 1;
+}
+
+li:nth-child(192){
+  grid-column: span 1;
+  grid-row: span 1;
+}
+
+li:nth-child(193){
+  grid-column: span 2;
+  grid-row: span 1;
+}
+
+li:nth-child(194){
+  grid-column: span 2;
+  grid-row: span 1;
+}
+
+li:nth-child(195){
+  grid-column: span 1;
+  grid-row: span 1;
+}
+
+li:nth-child(196){
+  grid-column: span 3;
+  grid-row: span 3;
+}
+
+li:nth-child(197){
+  grid-column: span 1;
+  grid-row: span 1;
+}
+
+li:nth-child(198){
+  grid-column: span 1;
+  grid-row: span 3;
+}
+
+li:nth-child(199){
+  grid-column: span 1;
+  grid-row: span 3;
+}
+
+li:nth-child(200){
+  grid-column: span 3;
+  grid-row: span 3;
+}
+
+li:nth-child(201){
+  grid-column: span 1;
+  grid-row: span 1;
+}
+
+li:nth-child(202){
+  grid-column: span 2;
+  grid-row: span 2;
+}
+
+li:nth-child(203){
+  grid-column: span 1;
+  grid-row: span 2;
+}
+
+li:nth-child(204){
+  grid-column: span 2;
+  grid-row: span 2;
+}
+
+li:nth-child(205){
+  grid-column: span 2;
+  grid-row: span 2;
+}
+
+li:nth-child(206){
+  grid-column: span 1;
+  grid-row: span 2;
+}
+
+li:nth-child(207){
+  grid-column: span 1;
+  grid-row: span 2;
+}
+
+li:nth-child(208){
+  grid-column: span 2;
+  grid-row: span 6;
+}
+
+li:nth-child(209){
+  grid-column: span 1;
+  grid-row: span 1;
+}
+
+li:nth-child(210){
+  grid-column: span 3;
+  grid-row: span 5;
+}
+
+li:nth-child(211){
+  grid-column: span 2;
+  grid-row: span 5;
+}
+
+li:nth-child(212){
+  grid-column: span 1;
+  grid-row: span 5;
+}
+
+li:nth-child(213){
+  grid-column: span 1;
+  grid-row: span 1;
+}
+
+li:nth-child(214){
+  grid-column: span 2;
+  grid-row: span 1;
+}
+
+li:nth-child(215){
+  grid-column: span 1;
+  grid-row: span 1;
+}
+
+li:nth-child(216){
+  grid-column: span 2;
+  grid-row: span 1;
+}
+
+li:nth-child(217){
+  grid-column: span 5;
+  grid-row: span 1;
+}
+
+li:nth-child(218){
+  grid-column: span 1;
+  grid-row: span 1;
+}
+
+li:nth-child(219){
+  grid-column: span 2;
+  grid-row: span 5;
+}
+
+li:nth-child(220){
+  grid-column: span 1;
+  grid-row: span 2;
+}
+
+li:nth-child(221){
+  grid-column: span 3;
+  grid-row: span 5;
+}
+
+li:nth-child(222){
+  grid-column: span 3;
+  grid-row: span 4;
+}
+
+li:nth-child(223){
+  grid-column: span 1;
+  grid-row: span 4;
+}
+
+li:nth-child(224){
+  grid-column: span 2;
+  grid-row: span 4;
+}
+
+li:nth-child(225){
+  grid-column: span 6;
+  grid-row: span 4;
+}
+
+li:nth-child(226){
+  grid-column: span 1;
+  grid-row: span 1;
+}
+
+li:nth-child(227){
+  grid-column: span 4;
+  grid-row: span 1;
+}
+
+li:nth-child(228){
+  grid-column: span 5;
+  grid-row: span 1;
+}
+
+li:nth-child(229){
+  grid-column: span 1;
+  grid-row: span 1;
+}
+
+li:nth-child(230){
+  grid-column: span 1;
+  grid-row: span 1;
+}
+
+li:nth-child(231){
+  grid-column: span 1;
+  grid-row: span 1;
+}
+
+li:nth-child(232){
+  grid-column: span 1;
+  grid-row: span 3;
+}
+
+li:nth-child(233){
+  grid-column: span 3;
+  grid-row: span 2;
+}
+
+li:nth-child(234){
+  grid-column: span 1;
+  grid-row: span 2;
+}
+
+li:nth-child(235){
+  grid-column: span 4;
+  grid-row: span 2;
+}
+
+li:nth-child(236){
+  grid-column: span 5;
+  grid-row: span 2;
+}
+
+li:nth-child(237){
+  grid-column: span 1;
+  grid-row: span 2;
+}
+
+li:nth-child(238){
+  grid-column: span 1;
+  grid-row: span 2;
+}
+
+li:nth-child(239){
+  grid-column: span 1;
+  grid-row: span 2;
+}
+
+li:nth-child(240){
+  grid-column: span 4;
+  grid-row: span 2;
+}
+
+li:nth-child(241){
+  grid-column: span 4;
+  grid-row: span 2;
+}
+
+li:nth-child(242){
+  grid-column: span 5;
+  grid-row: span 2;
+}
+
+li:nth-child(243){
+  grid-column: span 1;
+  grid-row: span 2;
+}
+
+li:nth-child(244){
+  grid-column: span 1;
+  grid-row: span 2;
+}
+
+li:nth-child(245){
+  grid-column: span 1;
+  grid-row: span 2;
+}
+
+li:nth-child(246){
+  grid-column: span 2;
+  grid-row: span 2;
+}
+
+li:nth-child(247){
+  grid-column: span 3;
+  grid-row: span 2;
+}
+
+li:nth-child(248){
+  grid-column: span 6;
+  grid-row: span 1;
+}
+
+li:nth-child(249){
+  grid-column: span 3;
+  grid-row: span 1;
+}
+
+li:nth-child(250){
+  grid-column: span 1;
+  grid-row: span 1;
+}
+
+li:nth-child(251){
+  grid-column: span 8;
+  grid-row: span 1;
+}
+
+li:nth-child(252){
+  grid-column: span 2;
+  grid-row: span 1;
+}
+
+li:nth-child(253){
+  grid-column: span 4;
+  grid-row: span 1;
+}
+
+li:nth-child(254){
+  grid-column: span 6;
+  grid-row: span 3;
+}
+
+li:nth-child(255){
+  grid-column: span 14;
+  grid-row: span 3;
+}
+
+li:nth-child(256){
+  grid-column: span 4;
+  grid-row: span 3;
+}
+
+li:nth-child(257){
+  grid-column: span 4;
+  grid-row: span 2;
+}
+
+li:nth-child(258){
+  grid-column: span 11;
+  grid-row: span 2;
+}
+
+li:nth-child(259){
+  grid-column: span 1;
+  grid-row: span 1;
+}
+
+li:nth-child(260){
+  grid-column: span 2;
+  grid-row: span 1;
+}
+
+li:nth-child(261){
+  grid-column: span 3;
+  grid-row: span 2;
+}
+
+li:nth-child(262){
+  grid-column: span 3;
+  grid-row: span 1;
+}
