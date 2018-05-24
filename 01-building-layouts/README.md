@@ -5,6 +5,7 @@
 ***Collaborators***
 
 - Mike Chu
+- Ami Cooper
 - Ted Leary
 
 ## Description
