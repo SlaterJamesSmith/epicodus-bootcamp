@@ -1,0 +1,28 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  color: #bbb;
+}
+
+/* MAIN NAVIGATION */
+
+nav {
+  background-color: #171717;
+  border-bottom: 0.1rem solid #333;
+  box-sizing: border-box;
+  display: grid;
+  position: fixed;
+  left: 0;
+  top: 0;
+  height: 50px;
+  width: 100%;
+}
+
+#brand img {
+  margin: 0 15px;
+  padding: 13px 0 15px;
+  width: 121px;
+}
