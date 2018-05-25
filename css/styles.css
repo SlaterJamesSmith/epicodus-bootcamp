@@ -14,6 +14,10 @@ body {
   line-height: 0.8rem;
 }
 
+p {
+  font-weight: 200;
+}
+
 a, a:visited {
   color: #fff;
   text-decoration: none;
@@ -32,6 +36,12 @@ a.btn-blue {
 a.btn-blue:hover {
   color: #fff;
   background-color: #0a75a2;
+}
+
+.wrapper {
+  margin: auto;
+  max-width: 1400px;
+  width: 85%;
 }
 
 .display-none {
@@ -180,6 +190,38 @@ a:focus + .dropdown {
 
 #login-nav .dropdown a {
   padding: 0 20px 0 17px;
+}
+
+/* MAIN CONTENT */
+
+#main {
+  margin-top: 50px;
+  height: 100vh;
+}
+
+/* FOOTER */
+
+footer {
+  background-color: #222;
+  padding: 15px 0;
+}
+
+footer .wrapper {
+  align-items: center;
+  display: grid;
+  grid-template-columns: 200px 1fr 200px;
+}
+
+footer p {
+  font-size: 0.7rem;
+  text-align: center;
+}
+
+footer img {
+  padding: 0 15px;
+  text-align: center;
+  height: 20px;
+  width: 105px;
 }
 
 /* MEDIA QUERIES */
