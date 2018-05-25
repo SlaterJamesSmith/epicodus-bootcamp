@@ -64,37 +64,6 @@ nav a {
   height: 50px;
 }
 
-.dropdown {
-  background-color: #333;
-  border-bottom-left-radius: 5px;
-  border-bottom-right-radius: 5px;
-  display: block;
-  font-weight: 400;
-  padding-bottom: 10px;
-  position: absolute;
-  text-transform: none;
-  visibility: collapse;
-}
-
-.dropdown a {
-  background-color: #333;
-  border-left: 3px solid #333;
-  border-radius: 0;
-  height: 40px;
-  color: #bbb;
-  transition: background-color 0.2s, border-color 0.2s;
-}
-
-.dropdown .divider {
-  border-top: 0.05rem solid #5d5d5d;
-  margin: 10px 0;
-  height: 1px;
-}
-
-a:focus + .dropdown {
-  visibility: visible;
-}
-
 #brand a {
   margin: 0 15px;
   padding: 0;
@@ -143,8 +112,50 @@ a:focus + .dropdown {
 }
 
 #login-nav .dots-3 {
+  background-color: #171717;
+}
+
+#login-nav .dots-3:focus {
+  background-color: #333;
+  color: #13aff0;
+}
+
+#login-nav .dots-3 span{
   display: block;
   transform: rotate(90deg);
+}
+
+/* MAIN NAVIGATION - DROPDOWN MENUS */
+
+.dropdown {
+  background-color: #333;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  display: block;
+  font-weight: 400;
+  padding-bottom: 10px;
+  position: absolute;
+  text-transform: none;
+  visibility: collapse;
+}
+
+.dropdown a {
+  background-color: #333;
+  border-left: 3px solid #333;
+  border-radius: 0;
+  height: 40px;
+  color: #bbb;
+  transition: background-color 0.2s, border-color 0.2s;
+}
+
+.dropdown .divider {
+  background-color: #5d5d5d;
+  margin: 10px 0;
+  height: 1px;
+}
+
+a:focus + .dropdown {
+  visibility: visible;
 }
 
 #login-nav .dropdown {
