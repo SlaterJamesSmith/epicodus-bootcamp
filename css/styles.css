@@ -29,7 +29,7 @@ nav {
   background-color: #171717;
   border-bottom: 0.05rem solid #333;
   display: grid;
-  grid-template-columns: 151px 1fr;
+  grid-template-columns: 151px 525px 155px 1fr ;
   position: fixed;
   left: 0;
   top: 0;
@@ -53,4 +53,24 @@ nav {
 #main-nav li {
   list-style: none;
   margin-right: 25px;
+}
+
+#search input {
+  background-color: #171717;
+  border: 0.05rem solid #333;
+  border-radius: 3px;
+  box-sizing: border-box;
+  color: #fff;
+  font-size: 0.75rem;
+  line-height: 30px;
+  margin: 10px;
+  padding: 0 10px;
+  height: 30px;
+  width: 125px;
+  transition: border 0.4s;
+}
+
+#search input:focus {
+  border-color: #555;
+  outline: none;
 }
