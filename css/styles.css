@@ -20,7 +20,7 @@ nav {
   background-color: #171717;
   border-bottom: 0.05rem solid #333;
   display: grid;
-  grid-template-columns: 151px 560px 1fr 1fr;
+  grid-template-columns: 151px 560px 1fr 190px;
   position: fixed;
   left: 0;
   top: 0;
@@ -57,10 +57,6 @@ nav li:hover {
   width: 121px;
 }
 
-#main-nav {
-  marginp-right: 15px;
-}
-
 #search input {
   background-color: #171717;
   border: 0.05rem solid #333;
@@ -88,17 +84,25 @@ nav li:hover {
 
 #login-nav ul {
   align-items: center;
-  padding: 0 5px;
 }
 
 #login-nav li {
-  margin-left: 15px;
+  padding: 0 10px;
 }
 
-#login-nav #sign-in {
+#login-nav .btn-blue {
   background-color: #13aff0;
+  line-height: normal;
+  padding: 5px 10px;
+  transition: background-color 0.4s;
 }
 
-.dots-3 {
-  
+#login-nav .btn-blue:hover {
+  background-color: #0a75a2;
+  color: #fff;
+}
+
+#login-nav .dots-3 {
+  display: block;
+  transform: rotate(90deg);
 }
