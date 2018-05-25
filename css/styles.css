@@ -64,6 +64,37 @@ nav a {
   height: 50px;
 }
 
+.dropdown {
+  background-color: #333;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  display: block;
+  font-weight: 400;
+  padding-bottom: 10px;
+  position: absolute;
+  text-transform: none;
+  visibility: collapse;
+}
+
+.dropdown a {
+  background-color: #333;
+  border-left: 3px solid #333;
+  border-radius: 0;
+  height: 40px;
+  color: #bbb;
+  transition: background-color 0.2s, border-color 0.2s;
+}
+
+.dropdown .divider {
+  border-top: 0.05rem solid #5d5d5d;
+  margin: 10px 0;
+  height: 1px;
+}
+
+a:focus + .dropdown {
+  visibility: visible;
+}
+
 #brand a {
   margin: 0 15px;
   padding: 0;
@@ -114,4 +145,19 @@ nav a {
 #login-nav .dots-3 {
   display: block;
   transform: rotate(90deg);
+}
+
+#login-nav .dropdown {
+  right: 0;
+  top: 50px;
+}
+
+#login-nav .dropdown a {
+  padding: 0 20px 0 25px;
+}
+
+#login-nav .dropdown a:hover {
+  background-color: #222;
+  color: #fff;
+  border-left: 3px solid #13aff0;
 }
