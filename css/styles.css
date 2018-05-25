@@ -11,6 +11,7 @@ body {
   font-family: 'Open Sans', 'Arial', sans-serif;
   font-size: 0.8rem;
   letter-spacing: 0.05rem;
+  line-height: 0.8rem;
 }
 
 a, a:visited {
@@ -29,7 +30,8 @@ nav {
   background-color: #171717;
   border-bottom: 0.05rem solid #333;
   display: grid;
-  grid-template-columns: 151px 525px 155px 1fr ;
+  align-items: center;
+  grid-template-columns: 150px 525px 155px 1fr ;
   position: fixed;
   left: 0;
   top: 0;
@@ -39,14 +41,14 @@ nav {
 
 #brand img {
   display: block;
-  padding: 14px 15px;
-  width: 121px;
+  margin: 0 15px;
+  width: 120px;
 }
 
 #main-nav ul {
   font-weight: 600;
   display: flex;
-  padding: 16px 10px;
+  margin: 0 10px;
   text-transform: uppercase;
 }
 
