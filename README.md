@@ -1,4 +1,4 @@
-# _Epicodus Solo Project 8_
+# _ARTSTATION HOMEPAGE CLONE_
 
 #### _Epicodus Solo Project | User Interface | Week 1 | May 25, 2018_
 
@@ -6,7 +6,7 @@
 
 ## Description
 
-Add description.
+A clone of ArtStation's homepage.
 
 ## Setup/Installation Requirements
 
