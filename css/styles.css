@@ -34,6 +34,10 @@ a.btn-blue:hover {
   background-color: #0a75a2;
 }
 
+.display-none {
+  display: none;
+}
+
 /* MAIN NAVIGATION */
 
 nav {
@@ -41,7 +45,7 @@ nav {
   border-bottom: 0.05rem solid #333;
   display: grid;
   align-items: center;
-  grid-template-columns: 151px 560px 1fr 200px;
+  grid-template-columns: 151px 715px 1fr 200px;
   position: fixed;
   left: 0;
   top: 0;
@@ -173,7 +177,21 @@ a:focus + .dropdown {
   border-left: 3px solid #13aff0;
 }
 
-@media screen and (max-width: 1000px) {
+@media screen and (max-width: 1290px) {
+  nav {
+    grid-template-columns: 151px 565px 1fr 200px;
+  }
+
+  #main-nav > ul li:nth-child(7), #main-nav > ul li:nth-child(8) {
+    display: none;
+  }
+
+  #main-nav > ul li:nth-child(6) {
+    display: list-item;
+  }
+}
+
+@media screen and (max-width: 1060px) {
   #login-nav > ul li:nth-child(2n-1) {
     display: none;
   }
