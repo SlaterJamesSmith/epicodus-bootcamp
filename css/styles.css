@@ -14,24 +14,13 @@ body {
   line-height: 0.8rem;
 }
 
-a, a:visited {
-  color: #fff;
-  text-decoration: none;
-  transition: color 0.4s;
-}
-
-a:hover {
-  color: #13aff0;
-}
-
 /* MAIN NAVIGATION */
 
 nav {
   background-color: #171717;
   border-bottom: 0.05rem solid #333;
   display: grid;
-  align-items: center;
-  grid-template-columns: 150px 525px 155px 1fr ;
+  grid-template-columns: 151px 560px 1fr 1fr;
   position: fixed;
   left: 0;
   top: 0;
@@ -39,22 +28,37 @@ nav {
   width: 100%;
 }
 
-#brand img {
-  display: block;
-  margin: 0 15px;
-  width: 120px;
-}
-
-#main-nav ul {
+nav ul {
   font-weight: 600;
   display: flex;
-  margin: 0 10px;
   text-transform: uppercase;
 }
 
-#main-nav li {
+nav li {
+  border-radius: 3px;
+  cursor: pointer;
   list-style: none;
-  margin-right: 25px;
+  padding: 0 15px;
+  line-height: 50px;
+  transition: color 0.4s;
+}
+
+nav li:hover {
+  color: #13aff0;
+}
+
+#brand {
+  margin: 0 15px;
+}
+
+#brand img {
+  display: block;
+  padding: 14px 0;
+  width: 121px;
+}
+
+#main-nav {
+  marginp-right: 15px;
 }
 
 #search input {
@@ -75,4 +79,26 @@ nav {
 #search input:focus {
   border-color: #555;
   outline: none;
+}
+
+#login-nav {
+  display: flex;
+  justify-content: flex-end;
+}
+
+#login-nav ul {
+  align-items: center;
+  padding: 0 5px;
+}
+
+#login-nav li {
+  margin-left: 15px;
+}
+
+#login-nav #sign-in {
+  background-color: #13aff0;
+}
+
+.dots-3 {
+  
 }
