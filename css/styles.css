@@ -136,7 +136,7 @@ nav a {
   padding-bottom: 10px;
   position: absolute;
   text-transform: none;
-  visibility: collapse;
+  visibility: hidden;
 }
 
 .dropdown a {
@@ -171,4 +171,14 @@ a:focus + .dropdown {
   background-color: #222;
   color: #fff;
   border-left: 3px solid #13aff0;
+}
+
+@media screen and (max-width: 1000px) {
+  #login-nav > ul li:nth-child(2n-1) {
+    display: none;
+  }
+
+  #login-nav li {
+    margin: 0 15px;
+  }
 }
