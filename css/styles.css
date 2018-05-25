@@ -14,13 +14,34 @@ body {
   line-height: 0.8rem;
 }
 
+a, a:visited {
+  color: #fff;
+  text-decoration: none;
+  transition: color 0.4s;
+}
+
+a:hover {
+  color: #13aff0;
+}
+
+a.btn-blue {
+  background-color: #13aff0;
+  transition: background-color 0.4s;
+}
+
+a.btn-blue:hover {
+  color: #fff;
+  background-color: #0a75a2;
+}
+
 /* MAIN NAVIGATION */
 
 nav {
   background-color: #171717;
   border-bottom: 0.05rem solid #333;
   display: grid;
-  grid-template-columns: 151px 560px 1fr 190px;
+  align-items: center;
+  grid-template-columns: 151px 560px 1fr 200px;
   position: fixed;
   left: 0;
   top: 0;
@@ -31,29 +52,25 @@ nav {
 nav ul {
   font-weight: 600;
   display: flex;
+  list-style: none;
   text-transform: uppercase;
 }
 
-nav li {
+nav a {
+  align-items: center;
   border-radius: 3px;
-  cursor: pointer;
-  list-style: none;
+  display: flex;
   padding: 0 15px;
-  line-height: 50px;
-  transition: color 0.4s;
+  height: 50px;
 }
 
-nav li:hover {
-  color: #13aff0;
-}
-
-#brand {
+#brand a {
   margin: 0 15px;
+  padding: 0;
 }
 
 #brand img {
-  display: block;
-  padding: 14px 0;
+  height: 22px;
   width: 121px;
 }
 
@@ -86,20 +103,12 @@ nav li:hover {
   align-items: center;
 }
 
-#login-nav li {
+#login-nav a {
   padding: 0 10px;
 }
 
-#login-nav .btn-blue {
-  background-color: #13aff0;
-  line-height: normal;
-  padding: 5px 10px;
-  transition: background-color 0.4s;
-}
-
-#login-nav .btn-blue:hover {
-  background-color: #0a75a2;
-  color: #fff;
+#login-nav a.btn-blue {
+  height: 30px;
 }
 
 #login-nav .dots-3 {
