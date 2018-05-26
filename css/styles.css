@@ -328,18 +328,16 @@ footer img {
     grid-area: login;
   }
 
-  /* MAIN NAV DROPDOWN */
+  /* MAIN NAV DROPDOWN BUTTON */
 
-  .bars-3:hover .bar{
+  .bars-3:hover .bar, .bars-3:focus .bar {
     background-color: #13aff0;
   }
 
   .bars-3 {
     box-sizing: border-box;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    cursor: pointer;
+    position: relative;
     padding: 10px;
     height: 50px;
     width: 50px;
@@ -347,10 +345,41 @@ footer img {
 
   .bar {
     background-color: #bbb;
-    display: block;
-    margin: 0.1rem;
+    position: absolute;
+    left: 0.95rem;
+    top: 1.5rem;
     height: 2px;
-    width: 20px;
-    transition: background-color 0.4s;
+    width: 1.25rem;
+    transition: background-color 0.4s, transform 0.4s, width 0.4s, top 0.4s;
   }
+
+  .bar-top {
+    top: 1.2rem;
+    transform-origin: bottom left;
+  }
+
+  .bar-bottom {
+    top: 1.8rem;
+    transform-origin: top left;
+  }
+
+  .bars-3:focus .bar-top {
+    top: 1.05rem;
+    width: 1.2rem;
+    transform: rotate(45deg);
+  }
+
+  .bars-3:focus .bar-mid {
+    background-color: #171717;
+    width: 0;
+  }
+
+  .bars-3:focus .bar-bottom {
+    top: 1.95rem;
+    width: 1.2rem;
+    transform: rotate(-45deg);
+  }
+
+  /* MAIN NAV DROPDOWN MENU */
+
 }
