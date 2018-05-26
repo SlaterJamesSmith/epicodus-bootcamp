@@ -133,6 +133,7 @@ nav a {
 
 #login-nav .dots-3 {
   background-color: #171717;
+  transition: background-color 0.4s, color 0.4s;
 }
 
 #login-nav .dots-3:focus {
