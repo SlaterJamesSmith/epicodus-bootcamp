@@ -11,7 +11,7 @@ body {
   font-family: 'Open Sans', 'Arial', sans-serif;
   font-size: 0.8rem;
   letter-spacing: 0.05rem;
-  line-height: 0.8rem;
+  line-height: 1.2rem;
 }
 
 p {
@@ -273,5 +273,17 @@ footer img {
 
   #main-nav .dropdown {
     left: 487px;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  footer .wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  footer img {
+    margin-bottom: 5px;
   }
 }
