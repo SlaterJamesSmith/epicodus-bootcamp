@@ -74,6 +74,7 @@ nav ul {
   display: flex;
   list-style: none;
   text-transform: uppercase;
+  transition: font-size 0.4s;
 }
 
 nav a {
@@ -384,4 +385,36 @@ footer img {
 
   /* MAIN NAV DROPDOWN MENU */
 
+  #main-nav button:focus + ul {
+    border-bottom: 1px solid #5d5d5d;
+    opacity: 1;
+    padding-bottom: 5px;
+    visibility: visible;
+    height: 400px;
+    transition: height 0.4s, opacity 0.4s;
+  }
+
+  #main-nav ul {
+    background-color: #171717;
+
+    font-size: 0.85rem;
+    font-weight: 400;
+    display: block;
+    opacity: 0;
+    overflow: hidden;
+    visibility: hidden;
+    position: absolute;
+    top: 50px;
+    height: 0;
+    width: 100%;
+    transition: height 0.3s, opacity 0.3s, visibility 0s 0.2s;
+  }
+
+  #main-nav ul li:nth-child(6) {
+    display: none;
+  }
+
+  #main-nav ul li:nth-child(7), #main-nav ul li:nth-child(8) {
+    display: list-item;
+  }
 }
