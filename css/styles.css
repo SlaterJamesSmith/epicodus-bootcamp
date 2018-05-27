@@ -14,7 +14,17 @@ body {
   line-height: 1.2rem;
 }
 
-h1 {
+h2 {
+  font-size: 2rem;
+  line-height: 2rem;
+  font-weight: 300;
+}
+
+h2, h2 + p {
+  margin-bottom: 25px;
+}
+
+h3 {
   font-size: 3rem;
   line-height: 3rem;
 }
@@ -24,13 +34,27 @@ p {
 }
 
 a, a:visited {
-  color: #fff;
+  color: #13aff0;
   text-decoration: none;
   transition: color 0.4s;
 }
 
 a:hover {
+  color: #0a75a2;
+}
+
+nav a, nav a:visited, footer a, footer a:visited {
+  color: #fff;
+}
+
+nav a:hover, footer a:hover {
   color: #13aff0;
+}
+
+button {
+  background-color: #171717;
+  border: none;
+  outline: none;
 }
 
 a.btn-blue {
@@ -41,12 +65,6 @@ a.btn-blue {
 a.btn-blue:hover {
   color: #fff;
   background-color: #0a75a2;
-}
-
-button {
-  background-color: #171717;
-  border: none;
-  outline: none;
 }
 
 .wrapper {
@@ -296,11 +314,21 @@ a:focus + .dropdown {
 #main {
   border-top: 0.05rem solid #333;
   margin-top: 50px;
-  height: 80vh;
+}
+
+article h3, .card h3 {
+  color: #777;
+}
+
+article p, .card p {
+  color: #ddd;
+  margin-right: 10px;
+  text-transform: uppercase;
 }
 
 #headline {
   display: flex;
+  margin-bottom: 25px;
 }
 
 #headline article {
@@ -317,20 +345,37 @@ a:focus + .dropdown {
   background-color: #444;
 }
 
-#headline h1 {
-  color: #777;
+#jobs, #magazine {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin-bottom: 25px;
 }
 
-#headline p {
-  color: #ddd;
-  margin-right: 10px;
-  text-transform: uppercase;
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-auto-rows: 100px;
+  grid-gap: 20px;
+}
+
+.card {
+  background-color: #333;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card:nth-child(even) {
+  background-color: #444;
 }
 
 /* FOOTER */
 
 footer {
   background-color: #222;
+  margin-top: 50px;
   padding: 15px 0;
 }
 
