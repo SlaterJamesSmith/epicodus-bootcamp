@@ -290,6 +290,7 @@ a:focus + .dropdown {
 
 #main {
   margin-top: 50px;
+  height: 80vh;
 }
 
 /* FOOTER */
@@ -297,9 +298,6 @@ a:focus + .dropdown {
 footer {
   background-color: #222;
   padding: 15px 0;
-  position: fixed;
-  bottom: 0;
-  width: 100%;
 }
 
 footer .wrapper {
@@ -384,10 +382,6 @@ footer img {
 }
 
 @media screen and (max-width: 750px) {
-  nav, footer {
-    min-width: 385px;
-  }
-
   nav {
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-areas: "menu brand login";
