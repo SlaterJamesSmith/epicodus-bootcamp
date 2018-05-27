@@ -1,4 +1,4 @@
-# _ARTSTATION HOMEPAGE CLONE_
+# _ARTSTATION CLONE_
 
 #### _Epicodus Solo Project | User Interface | Week 1 | May 25, 2018_
 
@@ -6,7 +6,13 @@
 
 ## Description
 
-A clone of ArtStation's homepage.
+An aesthetic clone of [ArtStation's](https://www.artstation.com/) homepage layout and user interface.
+
+## ArtStation Viewport References
+
+_Large & Small Screens_
+
+![ArtStation Large & Small Viewports](https://github.com/m-chu/epicodus-solo-project-8/blob/master/img/artstation-screenshot.jpg?raw=true "ArtStation Screenshot")
 
 ## Setup/Installation Requirements
 
