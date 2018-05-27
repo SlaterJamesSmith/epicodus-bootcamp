@@ -5,7 +5,7 @@
   padding: 0;
 }
 
-body {
+body, button {
   background-color: #171717;
   color: #fff;
   font-family: 'Open Sans', 'Arial', sans-serif;
@@ -16,12 +16,8 @@ body {
 
 h2 {
   font-size: 2rem;
-  line-height: 2rem;
+  line-height: normal;
   font-weight: 300;
-}
-
-h2, h2 + p {
-  margin-bottom: 25px;
 }
 
 h3 {
@@ -30,6 +26,7 @@ h3 {
 }
 
 p {
+  font-size: 0.85rem;
   font-weight: 200;
 }
 
@@ -43,17 +40,10 @@ a:hover {
   color: #0a75a2;
 }
 
-nav a, nav a:visited, footer a, footer a:visited {
-  color: #fff;
-}
-
-nav a:hover, footer a:hover {
-  color: #13aff0;
-}
-
 button {
   background-color: #171717;
   border: none;
+  cursor: pointer;
   outline: none;
 }
 
@@ -135,7 +125,7 @@ a.btn-blue:hover {
   transform: rotate(-180deg);
   height: 0.8rem;
   width: 0.8rem;
-  transition: transform 0.15s;
+  transition: transform 0.25s;
 }
 
 .chevron .wing {
@@ -158,7 +148,7 @@ a.btn-blue:hover {
   transform: rotate(-45deg);
 }
 
-a:focus .chevron {
+button:focus .chevron {
   transform: rotate(0deg);
 }
 
@@ -181,6 +171,7 @@ a:focus .chevron {
 
 nav {
   background-color: #171717;
+  border-bottom: 0.05rem solid #333;
   display: grid;
   align-items: center;
   grid-template-columns: 151px 715px 1fr 200px;
@@ -192,19 +183,27 @@ nav {
 }
 
 nav ul {
-  font-weight: 600;
   display: flex;
   list-style: none;
-  text-transform: uppercase;
-  transition: font-size 0.4s;
 }
 
-nav a {
+nav a, nav li button {
   align-items: center;
   border-radius: 3px;
+  font-weight: 600;
   display: flex;
   padding: 0 15px;
+  text-transform: uppercase;
   height: 50px;
+  transition: color 0.4s, font-size 0.4s;
+}
+
+nav a, nav a:visited, nav li button {
+  color: #fff;
+}
+
+nav a:hover, nav button:hover {
+  color: #13aff0;
 }
 
 #brand a {
@@ -246,7 +245,7 @@ nav a {
   align-items: center;
 }
 
-#login-nav a {
+#login-nav a, #login-nav button {
   padding: 0 10px;
 }
 
@@ -256,42 +255,42 @@ nav a {
 
 /* MAIN NAVIGATION - DROPDOWN MENUS */
 
-.dropdown {
+nav .dropdown {
   background-color: #333;
   border-bottom-left-radius: 5px;
   border-bottom-right-radius: 5px;
   box-shadow: 0px 5px 10px #0007;
   display: block;
-  font-size: 0.8rem;
-  font-weight: 400;
   padding-bottom: 10px;
   position: absolute;
   top: 50px;
-  text-transform: none;
   visibility: hidden;
 }
 
-a:focus + .dropdown {
+button:focus + .dropdown {
   visibility: visible;
 }
 
-.dropdown a {
+nav .dropdown a {
   background-color: #333;
   border-left: 3px solid #333;
   border-radius: 0;
   color: #bbb;
+  font-size: 0.8rem;
+  font-weight: 400;
+  text-transform: none;
   padding: 0 20px 0 17px;
   height: 40px;
-  transition: background-color 0.2s, border-color 0.2s;
+  transition: color 0.25s, background-color 0.25s, border-color 0.25s;
 }
 
-.dropdown .divider {
+nav .dropdown .divider {
   background-color: #5d5d5d;
   margin: 10px 0;
   height: 1px;
 }
 
-.dropdown a:hover {
+nav .dropdown a:hover {
   background-color: #222;
   color: #fff;
   border-left: 3px solid #13aff0;
@@ -352,6 +351,22 @@ article p, .card p {
   margin-bottom: 25px;
 }
 
+.section-title {
+  display: flex;
+  align-items: center;
+  margin-bottom: 25px;
+}
+
+.section-title img {
+  margin-right: 15px;
+  height: 1.8rem;
+  width: 2rem;
+}
+
+.section-title + p {
+  margin-bottom: 25px;
+}
+
 .card-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -397,6 +412,15 @@ footer img {
   width: 105px;
 }
 
+footer a, footer a:visited {
+  color: #fff;
+  transition: color 0.4s;
+}
+
+footer a:hover {
+  color: #13aff0;
+}
+
 /* MEDIA QUERIES */
 
 @media screen and (max-width: 1290px) {
@@ -429,7 +453,7 @@ footer img {
     grid-template-columns: 55px 505px 1fr;
   }
 
-  nav ul {
+  nav li, nav li button {
     font-size: 0.65rem;
   }
 
@@ -538,7 +562,7 @@ footer img {
     text-align: center;
   }
 
-  /* MAIN NAV DROPDOWN MENU */
+  /* MAIN NAV TRI-BAR DROPDOWN MENU */
 
   #main-nav .tri-bar:focus + ul {
     border-bottom: 1px solid #5d5d5d;
@@ -551,9 +575,7 @@ footer img {
 
   #main-nav ul {
     background-color: #171717;
-
-    font-size: 0.85rem;
-    font-weight: 400;
+    box-shadow: 0px 5px 10px #0007;
     display: block;
     opacity: 0;
     overflow: hidden;
@@ -563,6 +585,11 @@ footer img {
     height: 0;
     width: 100%;
     transition: height 0.3s, opacity 0.3s, visibility 0s 0.2s;
+  }
+
+  #main-nav li {
+    font-size: 0.85rem;
+    font-weight: 400;
   }
 
   /* MAIN CONTENT */
