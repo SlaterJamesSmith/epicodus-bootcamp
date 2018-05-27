@@ -368,11 +368,12 @@ nav a:hover, nav button:hover {
 
 /* MAIN NAVIGATION - DROPDOWN MENUS */
 
-nav .dropdown {
+ul.dropdown {
   background-color: #333;
   border-bottom-left-radius: 5px;
   border-bottom-right-radius: 5px;
   box-shadow: 0px 5px 10px #0007;
+  list-style: none;
   display: block;
   padding-bottom: 10px;
   position: absolute;
@@ -380,6 +381,7 @@ nav .dropdown {
   opacity: 0;
   visibility: hidden;
   transition: opacity 0.3s, visibility 0s 0.2s;
+  z-index: 10;
 }
 
 button:focus + .dropdown {
@@ -388,29 +390,48 @@ button:focus + .dropdown {
   transition: height 0.4s, opacity 0.4s;
 }
 
-nav .dropdown a {
+ul.dropdown a {
   background-color: #333;
   border-left: 3px solid #333;
   border-radius: 0;
   color: #bbb;
   font-size: 0.8rem;
   font-weight: 400;
+  display: flex;
+  align-items: center;
   text-transform: none;
   padding: 0 20px 0 17px;
   height: 40px;
   transition: color 0.25s, background-color 0.25s, border-color 0.25s;
 }
 
-nav .dropdown .divider {
+ul.dropdown .divider {
   background-color: #5d5d5d;
   margin: 10px 0;
   height: 1px;
 }
 
-nav .dropdown a:hover {
+ul.dropdown a:hover {
   background-color: #222;
   color: #fff;
   border-left: 3px solid #13aff0;
+}
+
+.dropdown.scroll-y::-webkit-scrollbar {
+  width: 0.5rem;
+}
+
+.dropdown.scroll-y::-webkit-scrollbar-track {
+  background-color: #222;
+}
+
+.dropdown.scroll-y::-webkit-scrollbar-thumb {
+  background-color: #555;
+  border-radius: 0.5rem;
+}
+
+.scroll-y {
+  overflow-y: scroll;
 }
 
 #main-nav .dropdown {
@@ -496,14 +517,14 @@ article p, .card p {
   padding: 0 15px;
 }
 
-#artboard-tabs ul {
+#artboard-tabs > ul {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   list-style: none;
 }
 
-#artboard-tabs ul:last-child {
+#artboard-tabs > ul:last-child {
   flex-direction: row-reverse;
 }
 
@@ -530,6 +551,39 @@ article p, .card p {
 #artboard-tabs .refresh:focus {
   background-color: #222;
 }
+
+/* ARTBOARD TABS - DROPDOWN MENUS */
+
+#artboard-tabs > ul li {
+  position: relative;
+}
+
+#artboard-tabs .dropdown {
+  width: 240px;
+  right: 0px;
+  top: 45px;
+  height: 520px;
+}
+
+#artboard-tabs li:last-child .dropdown {
+  height: 420px;
+}
+
+#artboard-tabs .dropdown .text {
+  display: flex;
+  align-items: center;
+  padding: 0 20px 0 17px;
+  height: 40px;
+}
+
+#artboard-tabs .dropdown input {
+  background-color: transparent;
+  margin-right: 10px;
+  position: relative;
+  top: 2px;
+}
+
+/* ARTBOARD */
 
 #artboard {
   background-color: #222;
