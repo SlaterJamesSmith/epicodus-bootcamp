@@ -14,6 +14,11 @@ body {
   line-height: 1.2rem;
 }
 
+h1 {
+  font-size: 3rem;
+  line-height: 3rem;
+}
+
 p {
   font-weight: 200;
 }
@@ -158,7 +163,6 @@ a:focus .chevron {
 
 nav {
   background-color: #171717;
-  border-bottom: 0.05rem solid #333;
   display: grid;
   align-items: center;
   grid-template-columns: 151px 715px 1fr 200px;
@@ -238,6 +242,7 @@ nav a {
   background-color: #333;
   border-bottom-left-radius: 5px;
   border-bottom-right-radius: 5px;
+  box-shadow: 0px 5px 10px #0007;
   display: block;
   font-size: 0.8rem;
   font-weight: 400;
@@ -289,8 +294,37 @@ a:focus + .dropdown {
 /* MAIN CONTENT */
 
 #main {
+  border-top: 0.05rem solid #333;
   margin-top: 50px;
   height: 80vh;
+}
+
+#headline {
+  display: flex;
+}
+
+#headline article {
+  background-color: #333;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 14.286vw;
+  height: 14.286vw;
+}
+
+#headline article:nth-child(even) {
+  background-color: #444;
+}
+
+#headline h1 {
+  color: #777;
+}
+
+#headline p {
+  color: #ddd;
+  margin-right: 10px;
+  text-transform: uppercase;
 }
 
 /* FOOTER */
@@ -332,6 +366,17 @@ footer img {
   #main-nav > ul li:nth-child(6) {
     display: list-item;
   }
+
+  /* MAIN CONTENT */
+
+  #headline article {
+    width: 16.667vw;
+    height: 16.667vw;
+  }
+
+  #headline .item-7 {
+    display: none;
+  }
 }
 
 @media screen and (max-width: 1060px) {
@@ -367,6 +412,17 @@ footer img {
   #main-nav .dropdown {
     left: 487px;
   }
+
+  /* MAIN CONTENT */
+
+  #headline article {
+    width: 20vw;
+    height: 20vw;
+  }
+
+  #headline .item-6 {
+    display: none;
+  }
 }
 
 @media screen and (max-width: 900px) {
@@ -378,6 +434,17 @@ footer img {
 
   footer img {
     margin-bottom: 5px;
+  }
+
+  /* MAIN CONTENT */
+
+  #headline article {
+    width: 25vw;
+    height: 25vw;
+  }
+
+  #headline .item-5 {
+    display: none;
   }
 }
 
@@ -442,11 +509,22 @@ footer img {
     transition: height 0.3s, opacity 0.3s, visibility 0s 0.2s;
   }
 
+  /* MAIN CONTENT */
+
   #main-nav ul li:nth-child(6) {
     display: none;
   }
 
   #main-nav ul li:nth-child(7), #main-nav ul li:nth-child(8) {
     display: list-item;
+  }
+
+  #headline article {
+    width: 33.334vw;
+    height: 33.334vw;
+  }
+
+  #headline .item-4 {
+    display: none;
   }
 }
