@@ -265,11 +265,15 @@ nav .dropdown {
   padding-bottom: 10px;
   position: absolute;
   top: 50px;
+  opacity: 0;
   visibility: hidden;
+  transition: opacity 0.3s, visibility 0s 0.2s;
 }
 
 button:focus + .dropdown {
+  opacity: 1;
   visibility: visible;
+  transition: height 0.4s, opacity 0.4s;
 }
 
 nav .dropdown a {
