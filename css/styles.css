@@ -491,6 +491,17 @@ footer img {
   #headline .item-5 {
     display: none;
   }
+
+  .card-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-auto-rows: 100px;
+    grid-gap: 20px;
+  }
+
+  #jobs .card:last-child {
+    grid-column: span 2;
+  }
 }
 
 @media screen and (max-width: 750px) {
@@ -571,5 +582,9 @@ footer img {
 
   #headline .item-4 {
     display: none;
+  }
+
+  .card {
+    grid-column: span 2;
   }
 }
