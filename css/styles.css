@@ -137,7 +137,7 @@ input:focus {
 }
 
 .chevron {
-  margin: 5px;
+  margin: 5px 0 5px 5px;
   position: relative;
   transform: rotate(-180deg);
   height: 0.8rem;
@@ -449,7 +449,7 @@ article p, .card p {
 
 #artboard-tabs button {
   background-color: #222;
-  font-size: 0.80rem;
+  font-size: 0.85rem;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -468,9 +468,12 @@ article p, .card p {
 }
 
 #artboard {
+  background-color: #222;
+  border-bottom: 1px solid #222;
   display: grid;
   grid-template-columns: repeat(10, 1fr);
   grid-auto-flow: dense;
+  grid-gap: 1px;
   margin-bottom: 25px;
 }
 
@@ -928,6 +931,11 @@ footer a:hover {
 
   #advertise {
     display: none;
+  }
+
+  #artboard-tabs button {
+    font-size: 0.8rem;
+    padding: 0 10px;
   }
 
   #artboard {
