@@ -383,7 +383,7 @@ footer img {
 
 @media screen and (max-width: 750px) {
   nav {
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 140px 1fr;
     grid-template-areas: "menu brand login";
   }
 
@@ -408,6 +408,11 @@ footer img {
 
   #login-nav {
     grid-area: login;
+  }
+
+  #login-nav li {
+    line-height: 0.8rem;
+    text-align: center;
   }
 
   /* MAIN NAV DROPDOWN MENU */
