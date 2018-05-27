@@ -384,7 +384,7 @@ article p, .card p {
 
 #headline {
   display: flex;
-  margin-bottom: 25px;
+  margin-bottom: 30px;
 }
 
 #headline article {
@@ -404,6 +404,28 @@ article p, .card p {
 
 #headline article:nth-child(even) {
   background-color: #444;
+}
+
+#advertise {
+  margin: 0 auto 25px;
+  width: 720px;
+}
+
+#advertise p {
+  color: #777;
+  font-size: 0.8rem;
+  margin-bottom: 5px;
+}
+
+#advertise h3 {
+  background-color: #090909;
+  color: #777;
+  font-weight: 300;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 150px;
 }
 
 #jobs, #magazine {
@@ -784,8 +806,6 @@ footer a:hover {
     font-weight: 400;
   }
 
-  /* MAIN CONTENT */
-
   #main-nav ul li:nth-child(6) {
     display: none;
   }
@@ -794,12 +814,18 @@ footer a:hover {
     display: list-item;
   }
 
+  /* MAIN CONTENT */
+
   #headline article {
     width: 33.334vw;
     height: 33.334vw;
   }
 
   #headline .item-4 {
+    display: none;
+  }
+
+  #advertise {
     display: none;
   }
 
