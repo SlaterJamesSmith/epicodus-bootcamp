@@ -56,34 +56,102 @@ button {
 
 /* SPECIAL ELEMENTS */
 
+.tri-bar {
+  box-sizing: border-box;
+  cursor: pointer;
+  position: relative;
+  padding: 10px;
+  height: 50px;
+  width: 50px;
+}
+
+.bar {
+  background-color: #bbb;
+  position: absolute;
+  left: 0.95rem;
+  top: 1.5rem;
+  height: 2px;
+  width: 1.25rem;
+  transition: background-color 0.4s, transform 0.4s, width 0.4s, top 0.4s;
+}
+
+.bar-top {
+  top: 1.2rem;
+  transform-origin: bottom left;
+}
+
+.bar-bottom {
+  top: 1.8rem;
+  transform-origin: top left;
+}
+
+.tri-bar:hover .bar, .tri-bar:focus .bar {
+  background-color: #13aff0;
+}
+
+.tri-bar:focus .bar-top {
+  top: 1.05rem;
+  width: 1.2rem;
+  transform: rotate(45deg);
+}
+
+.tri-bar:focus .bar-mid {
+  background-color: #171717;
+  width: 0;
+}
+
+.tri-bar:focus .bar-bottom {
+  top: 1.95rem;
+  width: 1.2rem;
+  transform: rotate(-45deg);
+}
+
 .chevron {
   margin: 3px;
   position: relative;
   transform: rotate(-180deg);
-  height: 12px;
-  width: 14px;
-  transition: transform 0.4s;
+  height: 0.8rem;
+  width: 0.8rem;
+  transition: transform 0.15s;
 }
 
 .chevron .wing {
   background-color: #13aff0;
-  border-bottom-left-radius: 2px;
-  border-top-left-radius: 2px;
+  border-radius: 2px;
   position: absolute;
   height: 3px;
   width: 9px;
 }
 
 .chevron .left-wing {
-  left: 4px;
-  top: 4px;
+  left: 5px;
+  top: 5px;
   transform: rotate(-135deg);
 }
 
 .chevron .right-wing {
-  left: 0px;
-  top: 4px;
+  left: 0;
+  top: 5px;
   transform: rotate(-45deg);
+}
+
+a:focus .chevron {
+  transform: rotate(0deg);
+}
+
+.tri-dot {
+  background-color: #171717;
+  transition: background-color 0.4s, color 0.4s;
+}
+
+.tri-dot:focus {
+  background-color: #333;
+  color: #13aff0;
+}
+
+.tri-dot span{
+  display: block;
+  transform: rotate(90deg);
 }
 
 /* MAIN NAVIGATION */
@@ -127,10 +195,6 @@ nav a {
   width: 121px;
 }
 
-#main-nav a:focus .chevron {
-  transform: rotate(0deg);
-}
-
 #search input {
   background-color: #171717;
   border: 0.05rem solid #333;
@@ -166,21 +230,6 @@ nav a {
 
 #login-nav a.btn-blue {
   height: 30px;
-}
-
-#login-nav .dots-3 {
-  background-color: #171717;
-  transition: background-color 0.4s, color 0.4s;
-}
-
-#login-nav .dots-3:focus {
-  background-color: #333;
-  color: #13aff0;
-}
-
-#login-nav .dots-3 span{
-  display: block;
-  transform: rotate(90deg);
 }
 
 /* MAIN NAVIGATION - DROPDOWN MENUS */
@@ -367,61 +416,9 @@ footer img {
     grid-area: login;
   }
 
-  /* MAIN NAV DROPDOWN BUTTON */
-
-  .bars-3:hover .bar, .bars-3:focus .bar {
-    background-color: #13aff0;
-  }
-
-  .bars-3 {
-    box-sizing: border-box;
-    cursor: pointer;
-    position: relative;
-    padding: 10px;
-    height: 50px;
-    width: 50px;
-  }
-
-  .bar {
-    background-color: #bbb;
-    position: absolute;
-    left: 0.95rem;
-    top: 1.5rem;
-    height: 2px;
-    width: 1.25rem;
-    transition: background-color 0.4s, transform 0.4s, width 0.4s, top 0.4s;
-  }
-
-  .bar-top {
-    top: 1.2rem;
-    transform-origin: bottom left;
-  }
-
-  .bar-bottom {
-    top: 1.8rem;
-    transform-origin: top left;
-  }
-
-  .bars-3:focus .bar-top {
-    top: 1.05rem;
-    width: 1.2rem;
-    transform: rotate(45deg);
-  }
-
-  .bars-3:focus .bar-mid {
-    background-color: #171717;
-    width: 0;
-  }
-
-  .bars-3:focus .bar-bottom {
-    top: 1.95rem;
-    width: 1.2rem;
-    transform: rotate(-45deg);
-  }
-
   /* MAIN NAV DROPDOWN MENU */
 
-  #main-nav button:focus + ul {
+  #main-nav .tri-bar:focus + ul {
     border-bottom: 1px solid #5d5d5d;
     opacity: 1;
     padding-bottom: 5px;
