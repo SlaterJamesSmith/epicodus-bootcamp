@@ -184,6 +184,55 @@ button:focus .chevron {
   transform: rotate(90deg);
 }
 
+.suitcase {
+  display: inline-block;
+  margin-right: 5px;
+  position: relative;
+  height: 32px;
+  width: 32px;
+}
+
+.suitcase .shape {
+  background-color: #13aff0;
+  position: absolute;
+}
+
+.suitcase .shape-1 {
+  background-color: #171717;
+  border: 2px solid #13aff0;
+  border-top-left-radius: 2px;
+  border-top-right-radius: 2px;
+  left: 10px;
+  top: 5px;
+  height: 2px;
+  width: 8px;
+}
+
+.suitcase .shape-2 {
+  border-bottom-left-radius: 3px;
+  border-bottom-right-radius: 3px;
+  top: 22px;
+  height: 10px;
+  width: 32px;
+}
+
+.suitcase .shape-3 {
+  border: 2px solid #171717;
+  left: 12px;
+  top: 10px;
+  height: 12px;
+  width: 4px;
+}
+
+.suitcase .shape-4 {
+  border-bottom: 2px solid #171717;
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+  top: 10px;
+  height: 10px;
+  width: 32px;
+}
+
 /* MAIN NAVIGATION */
 
 nav {
@@ -341,11 +390,16 @@ article p, .card p {
 #headline article {
   background-color: #333;
   box-sizing: border-box;
+  cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
   width: 14.286vw;
   height: 14.286vw;
+}
+
+#headline article:hover {
+  filter: brightness(200%);
 }
 
 #headline article:nth-child(even) {
@@ -450,6 +504,7 @@ article p, .card p {
   display: block;
   font-size: 0.9rem;
   padding: 8px 10px;
+  width: 195px;
 }
 
 #newsletter button {
@@ -750,6 +805,10 @@ footer a:hover {
 
   .card {
     grid-column: span 2;
+  }
+
+  #newsletter input {
+    width: 100%;
   }
 
   #connect .grid, #mobile-apps .grid {
