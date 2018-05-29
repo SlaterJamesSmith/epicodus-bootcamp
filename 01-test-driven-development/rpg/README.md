@@ -1,8 +1,8 @@
-# _ROLE-PLAYING GAME_
+# Role-Playing Game
 
-***Test Driven Development | April 18, 2018***
+**Test Driven Development | April 18, 2018**
 
-***Collaborators***
+**Collaborators**
 
 - Mike Chu
 - Cory West-Forbes

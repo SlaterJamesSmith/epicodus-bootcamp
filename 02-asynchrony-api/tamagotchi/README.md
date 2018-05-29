@@ -1,8 +1,8 @@
-# _TAMAGOTCHI_
+# Tamagotchi
 
-***Asynchrony & APIs | April 23, 2018***
+**Asynchrony & APIs | April 23, 2018**
 
-***Collaborators***
+**Collaborators**
 
 - Mike Chu
 - Matt Miller

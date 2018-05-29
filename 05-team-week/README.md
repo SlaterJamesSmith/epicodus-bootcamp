@@ -1,8 +1,8 @@
-# _EPICODUS: 02 - JavaScript - Week 5_
+# EPICODUS: 02 - JavaScript - Week 5
 
-***Team Week | Tool Library | May 14, 2018***
+**Team Week | Tool Library | May 14, 2018**
 
-***Collaborators***
+**Collaborators**
 
 - Johnny Alt
 - Pablo Barreyro

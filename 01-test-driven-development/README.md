@@ -1,8 +1,8 @@
-# _EPICODUS: 02 - JavaScript - Week 1_
+# EPICODUS: 02 - JavaScript - Week 1
 
-***Test Driven Development | April 16, 2018***
+**Test Driven Development | April 16, 2018**
 
-***Collaborators***
+**Collaborators**
 
 - Mike Chu
 - William Chu

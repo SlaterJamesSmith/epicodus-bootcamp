@@ -1,8 +1,8 @@
-# _User Authentication_
+# User Authentication
 
-***Angular Extended | May 15, 2018***
+**Angular Extended | May 15, 2018**
 
-***By Mike Chu***
+**By Mike Chu**
 
 ## Description
 

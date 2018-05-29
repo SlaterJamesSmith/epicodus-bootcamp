@@ -1,6 +1,6 @@
-# _EPICODUS: 02 - JavaScript_
+# EPICODUS: 02 - JavaScript
 
-***UI Design & React Track | Unit 2 | April 16, 2018***
+**UI Design & React Track | Unit 2 | April 16, 2018**
 
 ## Sections
 
