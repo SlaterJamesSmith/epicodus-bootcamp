@@ -1,0 +1,58 @@
+body {
+  min-width: 500px;
+}
+
+h1 {
+  font-size: 2em;
+  font-weight: bold;
+  margin: 25px;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+#display {
+  font-size: 6em;
+  line-height: 1em;
+  padding-right: 40px;
+  text-align: right;
+  word-wrap: break-word;
+}
+
+#keypad .well {
+  font-size: 3em;
+  font-weight: bold;
+  margin: 1%;
+  text-align: center;
+  width: 23%
+}
+
+#keypad .row div {
+  cursor: pointer;
+}
+
+#keypad .row div:hover {
+  filter: invert(100%);
+}
+
+#keypad .row div:focus {
+  filter: invert(0%);
+}
+
+#clear-all {
+  color: white;
+  background-color: orange;
+}
+
+#equals {
+  color: white;
+  background-color: black;
+}
+
+.operator-key {
+  color: white;
+  background-color: teal;
+}
+
+.container {
+  padding: 0 25px;
+}
