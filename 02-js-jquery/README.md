@@ -1,8 +1,8 @@
-# _EPICODUS: 01 - Intro - Week 2_
+# EPICODUS - 01 - Intro - Week 2
 
-***JavaScript & jQuery | March 19, 2018***
+**JavaScript & jQuery | March 19, 2018**
 
-***Collaborators***
+**Collaborators**
 
 - Mike Chu
 - Matthew Dowdney
@@ -16,7 +16,7 @@ A collection of practice projects using JavaScript & jQuery.
 
 ## Setup/Installation Requirements
 
-1. See main [README.md](../README.md).
+1. See main [README](../README.md).
 
 ## Known Bugs
 

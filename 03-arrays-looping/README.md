@@ -1,8 +1,8 @@
-# _EPICODUS: 01 - Intro - Week 3_
+# EPICODUS - 01 - Intro - Week 3
 
-***Arrays & Looping | March 26, 2018***
+**Arrays & Looping | March 26, 2018**
 
-***Collaborators***
+**Collaborators**
 
 - Pablo Barreyro
 - Brea Borlas
@@ -16,7 +16,7 @@ A collection of practice projects using JavaScript Arrays & Looping.
 
 ## Setup/Installation Requirements
 
-1. See main [README.md](../README.md).
+1. See main [README](../README.md).
 
 ## Known Bugs
 

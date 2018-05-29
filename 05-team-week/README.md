@@ -1,8 +1,8 @@
-# _EPICODUS: 01 - Intro - Week 5_
+# EPICODUS - 01 - Intro - Week 5
 
-***Team Week | 2D Game-Maker Framework | April 9, 2018***
+**Team Week | 2D Game-Maker Framework | April 9, 2018**
 
-***Collaborators***
+**Collaborators**
 
 - Mike Chu
 - Kayl Eubanks

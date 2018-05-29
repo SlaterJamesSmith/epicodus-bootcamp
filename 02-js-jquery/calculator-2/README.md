@@ -10,7 +10,7 @@ A practice project focused on utilizing functions and logic to build a simple si
 
 ## Setup/Installation Requirements
 
-1. See main [README.md](../../README.md).
+1. See main [README](../../README.md).
 
 ## Known Bugs
 
