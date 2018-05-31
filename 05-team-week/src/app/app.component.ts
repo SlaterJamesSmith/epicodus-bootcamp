@@ -16,4 +16,8 @@ export class AppComponent {
       this.user = user;
     });
   }
+
+  signOut() {
+    this.userService.signOut();
+  }
 }

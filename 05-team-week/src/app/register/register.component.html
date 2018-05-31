@@ -4,10 +4,6 @@
   </div>
   <div class="card-body">
     <div class="form-group">
-      <h3>Username <span *ngIf="usernameValid === false" class="error-message">Required (no spaces).</span></h3>
-      <input class="form-control" #username>
-    </div>
-    <div class="form-group">
       <h3>Email <span *ngIf="emailValid === false" class="error-message">Required.</span></h3>
       <input class="form-control" #email>
     </div>
@@ -19,6 +15,9 @@
       <h3>Re-Enter Password <span *ngIf="passwordSecondValid === false" class="error-message">Passwords do not match.</span></h3>
       <input class="form-control" #passwordSecond>
     </div>
-    <button (click)="submitNewUser(username.value, email.value, passwordFirst.value, passwordSecond.value)" class="btn btn-success">Submit</button>
+    <div *ngIf="userService.errorMessage !== null">
+      <p class="text-center text-danger"><strong>Error:</strong> {{userService.errorMessage}}</p>
+    </div>
+    <button (click)="submitNewUser(email.value, passwordFirst.value, passwordSecond.value)" class="btn btn-success">Submit</button>
   </div>
 </div>

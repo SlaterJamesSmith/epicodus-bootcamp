@@ -5,6 +5,7 @@
     <a *ngIf="user === null" routerLink="login">Login</a>
     <a *ngIf="user === null" routerLink="register">Register</a>
     <a *ngIf="user !==null" routerLink="dashboard">Dashboard</a>
+    <a *ngIf="user !==null" routerLink="" (click)="signOut()">Sign Out</a>
   </div>
 </nav>
 <!-- CONTENT -->

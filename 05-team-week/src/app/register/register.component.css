@@ -7,6 +7,10 @@ h3 {
   font-size: 1rem;
 }
 
+p {
+  margin-bottom: 15px;
+}
+
 button.btn {
   display: block;
   margin: 0 auto;
