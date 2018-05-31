@@ -13,23 +13,23 @@ export class UserService {
     this.user = afAuth.authState;
   }
 
-  login() {
-    this.afAuth.auth.signInWithPopup(new firebase.auth.GoogleAuthProvider());
+  signIn(email: string, password: string) {
+    firebase.auth().signInWithEmailAndPassword(email, password).catch(error => {
+      this.errorMessage = error.message;
+    });
+    if (this.user) {
+      this.errorMessage = null;
+    }
   }
 
   signOut() {
     this.afAuth.auth.signOut();
   }
 
-  loginUser(username: string, password: string) {
-    alert('Login Sent.');
-
-  }
-
   createNewUser(email: string, password: string) {
     firebase.auth().createUserWithEmailAndPassword(email, password)
     .catch(error => {
-        this.errorMessage = error.message;
+      this.errorMessage = error.message;
     });
     if (this.user) {
       this.errorMessage = null;
