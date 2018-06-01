@@ -6,13 +6,35 @@
 
 ## Description
 
-A front-end site design for a cowork space.
+A front-end site design for a film-production cowork space.
 
 ## Design Process
 
-### I. Research & References
+### I. Direction, Research & References
 
-Add information.
+#### Aesthetic Qualities
+
+1. Modern Design
+
+    - Non-traditional and asymmetrical layouts
+    - Bold or assertive visual elements
+    - Clean-cut typefaces
+
+2. Primary Color Relationships (e.g. RGB or CMYK)
+
+    - Representation of primary archetypal professions or fields
+    - Association with color theory to represent limitless variation of hybrid archetypes
+
+3. Functional Luxury
+
+    - Full spectrum of related styles and design elements for each key profession class
+    - Elements / content embody abundance of class-oriented sophistication
+
+4. Lively / Funky Character
+
+    - Motley crew of fun and vibrant personalities
+    - Welcoming and accessible community
+
 
 ### II. Sketches
 
