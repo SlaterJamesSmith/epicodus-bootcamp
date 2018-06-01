@@ -26,6 +26,10 @@ A front-end site design for a film production cowork space.
 - Motley crew of lively or funky personalities
 - Welcoming and open community
 
+#### Mood Board
+
+![Mood Board](design/moodboard.jpg "Mood Board")
+
 ### II. Sketches
 
 Add sketches.
