@@ -12,11 +12,15 @@ A practice in sketching and wireframing using Epicodus' [Learn How to Program](h
 
 ### I. Sketches
 
+_Mobile Phone Screens_
+
 ![Learn How to Program - Layout Sketch](img/epicodus-sketch.jpg?raw=true "Learn How to Program - Layout Sketch")
 
 ### II. Wireframes
 
-Add wireframes.
+_iPhone SE_
+
+![Learn How to Program - Layout Wireframe](img/epicodus-wireframe-iphone-se.jpg?raw=true "Learn How to Program - iPhone SE Layout Wireframe")
 
 ## Setup/Installation Requirements
 
