@@ -1,4 +1,4 @@
-# Cowork Space
+# Filmmaking Cowork Space
 
 **Web Design Process | June 1, 2018**
 
@@ -6,35 +6,25 @@
 
 ## Description
 
-A front-end site design for a film-production cowork space.
+A front-end site design for a film production cowork space.
 
 ## Design Process
 
 ### I. Direction, Research & References
 
-#### Aesthetic Qualities
+#### Visual Elements
 
-1. Modern Design
+- Bold / assertive
+- Angular or primitive shapes
+- Clean-cut typefaces
+- Strong spatial and color contrast
+- Minimal filler elements / patterns / embellishments
 
-    - Non-traditional and asymmetrical layouts
-    - Bold or assertive visual elements
-    - Clean-cut typefaces
+#### Personality
 
-2. Primary Color Relationships (e.g. RGB or CMYK)
-
-    - Representation of primary archetypal professions or fields
-    - Association with color theory to represent limitless variation of hybrid archetypes
-
-3. Functional Luxury
-
-    - Full spectrum of related styles and design elements for each key profession class
-    - Elements / content embody abundance of class-oriented sophistication
-
-4. Lively / Funky Character
-
-    - Motley crew of fun and vibrant personalities
-    - Welcoming and accessible community
-
+- Adventurous, fun, professional
+- Motley crew of lively or funky personalities
+- Welcoming and open community
 
 ### II. Sketches
 
