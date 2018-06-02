@@ -28,11 +28,11 @@ A front-end site design for a film production cowork space.
 
 #### Mood Board
 
-![Mood Board](design/moodboard.jpg "Mood Board")
+![Mood Board](design/moodboard.jpg?raw=true "Mood Board")
 
 ### II. Sketches
 
-![Sketches](design/sketch.jpg "Sketches")
+![Sketches](design/sketch.jpg?raw=true "Sketches")
 
 ### III. Wireframes
 
