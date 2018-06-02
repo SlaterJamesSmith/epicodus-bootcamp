@@ -6,7 +6,7 @@
 
 ## Description
 
-A practice in sketching and wireframing using [Video Copilot](http://www.videocopilot.net/) as a design reference.
+A practice in sketching and wireframing using [Video Copilot](http://www.videocopilot.net) as a design reference.
 
 ## Design Process
 

@@ -1,8 +1,8 @@
-# _EPICODUS: 03 - User Interface - Week 1_
+# EPICODUS - 03 - User Interface - Week 1
 
-***Building Layouts | May 21, 2018***
+**Building Layouts | May 21, 2018**
 
-***Collaborators***
+**Collaborators**
 
 - Brea Borlas
 - Mike Chu
@@ -19,7 +19,7 @@ A collection of site-cloning practice projects.
 
 2. Navigate to `01-building-layouts`.
 
-3. Navigate into desired project sub-folder.
+3. Navigate to desired project sub-folder.
 
 4. Open index.html in web browser.
 

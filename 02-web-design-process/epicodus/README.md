@@ -6,19 +6,19 @@
 
 ## Description
 
-A practice in sketching and wireframing using Epicodus' [Learn How to Program](https://www.learnhowtoprogram.com/) as a design reference.
+A practice in sketching and wireframing using Epicodus' [Learn How to Program](https://www.learnhowtoprogram.com) as a design reference.
 
 ## Design Process
 
 ### I. Sketches
 
-_Mobile Phone Screens_
+#### Mobile Phone Screens
 
 ![Learn How to Program - Layout Sketch](img/epicodus-sketch.jpg?raw=true "Learn How to Program - Layout Sketch")
 
 ### II. Wireframes
 
-_iPhone SE_
+#### iPhone SE
 
 ![Learn How to Program - Layout Wireframe](img/epicodus-wireframe-iphone-se.jpg?raw=true "Learn How to Program - iPhone SE Layout Wireframe")
 

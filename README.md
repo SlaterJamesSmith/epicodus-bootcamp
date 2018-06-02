@@ -1,14 +1,14 @@
-# _EPICODUS: 03 - User Interface_
+# EPICODUS - 03 - User Interface
 
-***UI Design & React Track | Unit 3 | May 21, 2018***
+**UI Design & React Track | Unit 3 | May 21, 2018**
 
 ## Sections
 
-### I. [Building Layouts](01-building-layouts/)
+### I. [Building Layouts](01-building-layouts)
 
-### II. Web Design Process
+### II. [Web Design Process](02-web-design-process)
 
-### III. Responsive Design & Preprocessors
+### III. [Responsive Design & Preprocessors](03-responsive-preprocessors)
 
 ### IV. Front End Frameworks & Tools
 
@@ -18,3 +18,4 @@
 
 - HTML
 - CSS
+- Sketch
