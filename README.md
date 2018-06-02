@@ -32,7 +32,7 @@ A front-end site design for a film production cowork space.
 
 ### II. Sketches
 
-Add sketches.
+![Sketches](design/sketch.jpg "Sketches")
 
 ### III. Wireframes
 
