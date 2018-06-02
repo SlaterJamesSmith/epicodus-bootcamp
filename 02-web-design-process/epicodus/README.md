@@ -24,14 +24,12 @@ _iPhone SE_
 
 ## Setup/Installation Requirements
 
-1. See main [README.md](../README.md).
+1. Clone repository.
 
-## Known Bugs
+2. Navigate to `02-web-design-process\epicodus`.
 
-None.
+3. Explore design documents.
 
 ## Technologies Used
 
-- HTML
-- CSS
 - Sketch

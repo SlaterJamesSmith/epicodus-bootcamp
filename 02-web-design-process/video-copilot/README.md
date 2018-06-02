@@ -20,14 +20,12 @@ A practice in sketching and wireframing using [Video Copilot](http://www.videoco
 
 ## Setup/Installation Requirements
 
-1. See main [README.md](../README.md).
+1. Clone repository.
 
-## Known Bugs
+2. Navigate to `02-web-design-process\video-copilot`.
 
-None.
+3. Explore design documents.
 
 ## Technologies Used
 
-- HTML
-- CSS
 - Sketch
