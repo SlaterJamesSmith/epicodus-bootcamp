@@ -36,7 +36,9 @@ A front-end site design for a film production cowork space.
 
 ### III. Wireframes
 
-Add wireframes.
+#### iPhone SE - Home View (3 Versions)
+
+![Wireframes](design/wireframe-iphone-home.jpg?raw=true "iPhone SE - Home View - Wireframe")
 
 ### IV. Prototypes
 
@@ -50,7 +52,14 @@ Add Sketch prototypes.
 
 3. Explore design documents.
 
-
 ## Technologies Used
 
 - Sketch
+
+## Artwork & Media Attributions
+
+1. Made by **Freepik** from http://www.flaticon.com.
+
+    - *Color Desk Elements*
+    - Light Bulb
+    - Robots
