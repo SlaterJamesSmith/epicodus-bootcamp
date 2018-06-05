@@ -10,6 +10,7 @@ import { UserService } from '../user.service';
 })
 
 export class RegisterComponent {
+  nameValid: boolean = null;
   emailValid: boolean = null;
   passwordFirstValid: boolean = null;
   passwordSecondValid: boolean = null;
@@ -17,16 +18,23 @@ export class RegisterComponent {
   constructor(private router: Router, private userService: UserService) { }
 
   submitNewUser(name, email, passwordFirst, passwordSecond) {
-    this.validateInput(email, passwordFirst, passwordSecond);
-    if (this.emailValid && this.passwordFirstValid && this.passwordSecondValid) {
+    this.validateInput(name, email, passwordFirst, passwordSecond);
+    if (this.nameValid && this.emailValid && this.passwordFirstValid && this.passwordSecondValid) {
       this.sendNewUserRequest(name, email, passwordFirst);
     }
   }
 
-  validateInput(email: string, passwordFirst: string, passwordSecond: string) {
+  validateInput(name: string, email: string, passwordFirst: string, passwordSecond: string) {
+    this.nameValid = null;
     this.emailValid = null;
     this.passwordFirstValid = null;
     this.passwordSecondValid = null;
+
+    if (name.match(/[^\s]/g) !== null && name !== '') {
+      this.nameValid = true;
+    } else {
+      this.nameValid = false;
+    }
 
     if (!email.includes(' ') && email !== '') {
       this.emailValid = true;
@@ -49,6 +57,5 @@ export class RegisterComponent {
 
   sendNewUserRequest(name, email, password) {
     this.userService.createNewUser(name, email, password);
-
   }
 }

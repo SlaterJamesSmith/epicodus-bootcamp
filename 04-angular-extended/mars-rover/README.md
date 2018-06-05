@@ -12,13 +12,13 @@ A practice in implementing API data in Angular.
 
 ### I. NASA API Key
 
-1. Apply for [NASA](https://api.nasa.gov/) API key.
+1. Apply for [NASA](https://api.nasa.gov) API key.
 
 2. Save API key for Part IV Project Setup.
 
 ### II. Firebase Account
 
-1. Create free [Firebase](http://firebase.google.com/) account.
+1. Create free [Firebase](http://firebase.google.com) account.
 
 2. In Firebase console, create new project.
 

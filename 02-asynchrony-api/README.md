@@ -1,4 +1,4 @@
-# EPICODUS: 02 - JavaScript - Week 2
+# EPICODUS - 02 - JavaScript - Week 2
 
 **Asynchrony & APIs | April 23, 2018**
 

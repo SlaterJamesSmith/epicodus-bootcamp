@@ -1,4 +1,4 @@
-# EPICODUS: 02 - JavaScript - Week 3
+# EPICODUS - 02 - JavaScript - Week 3
 
 **Introduction to Angular | April 30, 2018**
 

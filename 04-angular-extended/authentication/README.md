@@ -12,7 +12,7 @@ A practice in authenticating users with AngularFire Auth Module.
 
 ### I. Firebase Account
 
-1. Create free [Firebase](http://firebase.google.com/) account.
+1. Create free [Firebase](http://firebase.google.com) account.
 
 2. In Firebase console, create new project.
 
@@ -24,7 +24,7 @@ A practice in authenticating users with AngularFire Auth Module.
 
 6. From *Project Overview*, navigate to Develop > **Authentication**.
 
-7. Select *Sign-In Method*, enable *Google*, then save.
+7. Select *Sign-In Method*, enable **Google**, then save.
 
 8. In *Project Overview*, select option to **add Firebase to web app**.
 

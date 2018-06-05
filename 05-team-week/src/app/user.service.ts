@@ -33,7 +33,7 @@ export class UserService {
       this.currentUserId = firebase.auth().currentUser.uid;
     }).then(() => {
       firebase.database().ref('users/' + this.currentUserId).set({
-        username: name,
+        name: name,
         email: email
       });
     }).catch(error => {

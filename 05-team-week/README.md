@@ -1,4 +1,4 @@
-# EPICODUS: 02 - JavaScript - Week 5
+# EPICODUS - 02 - JavaScript - Week 5
 
 **Team Week | Tool Library | May 14, 2018**
 
@@ -18,7 +18,7 @@ A tool-share application that allows users to checkout tools on a temporary loan
 
 ### I. Firebase Account
 
-1. Create free [Firebase](http://firebase.google.com/) account.
+1. Create free [Firebase](http://firebase.google.com) account.
 
 2. In Firebase console, create new project.
 

@@ -1,4 +1,4 @@
-# EPICODUS: 02 - JavaScript - Week 1
+# EPICODUS - 02 - JavaScript - Week 1
 
 **Test Driven Development | April 16, 2018**
 

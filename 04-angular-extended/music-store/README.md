@@ -12,7 +12,7 @@ A marketplace website for a music store.
 
 ### I. Firebase Account
 
-1. Create free [Firebase](http://firebase.google.com/) account.
+1. Create free [Firebase](http://firebase.google.com) account.
 
 2. In Firebase console, create new project.
 
