@@ -7,6 +7,7 @@ import * as firebase from 'firebase/app';
 @Injectable()
 export class UserService {
   user: Observable<firebase.User>;
+  currentUserId: string = null;
   errorMessage: string = null;
 
   constructor(public afAuth: AngularFireAuth) {
@@ -14,25 +15,29 @@ export class UserService {
   }
 
   signIn(email: string, password: string) {
-    firebase.auth().signInWithEmailAndPassword(email, password).catch(error => {
+    firebase.auth().signInWithEmailAndPassword(email, password).then(() => {
+      this.errorMessage = null;
+      this.currentUserId = firebase.auth().currentUser.uid;
+    }).catch(error => {
       this.errorMessage = error.message;
     });
-    if (this.user) {
-      this.errorMessage = null;
-    }
   }
 
   signOut() {
     this.afAuth.auth.signOut();
   }
 
-  createNewUser(email: string, password: string) {
-    firebase.auth().createUserWithEmailAndPassword(email, password)
-    .catch(error => {
+  createNewUser(name: string, email: string, password: string) {
+    firebase.auth().createUserWithEmailAndPassword(email, password).then(() => {
+      this.errorMessage = null;
+      this.currentUserId = firebase.auth().currentUser.uid;
+    }).then(() => {
+      firebase.database().ref('users/' + this.currentUserId).set({
+        username: name,
+        email: email
+      });
+    }).catch(error => {
       this.errorMessage = error.message;
     });
-    if (this.user) {
-      this.errorMessage = null;
-    }
   }
 }

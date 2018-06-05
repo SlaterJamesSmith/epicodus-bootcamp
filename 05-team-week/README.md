@@ -26,11 +26,11 @@ A tool-share application that allows users to checkout tools on a temporary loan
 
 4. From *Project Overview*, navigate to Develop > Database > **Realtime Database**.
 
-5. Select *Rules* and change **.read** and **.write** to `true`, then publish.
+5. Select *Rules* and change **.read** and **.write** to `auth != null`, then publish.
 
 6. From *Project Overview*, navigate to Develop > **Authentication**.
 
-7. Select *Sign-In Method*, enable *Google*, then save.
+7. Select *Sign-In Method*, enable **Email/Password**, then save.
 
 8. In *Project Overview*, select option to **add Firebase to web app**.
 
@@ -82,18 +82,11 @@ export const masterFirebaseConfig = {
 
 ## User Stories
 
-| Status | View | Basic Features (MVP) | Component |
+| Status | View | Basic Features | Component |
 | :-: | :-: | --- | :-: |
-| | Tool | Browse library of tools. | ToolList |
+| Done | Tool | Browse library of tools. | ToolList |
 | | Tool | View individual tools. | ToolDetail |
-| | Register | Register a new user account. | Auth |
-| | Login | Login into an existing account. | Auth |
+| Done | Register | Register a new user account. | Auth |
+| Done | Login | Login into an existing account. | Auth |
 | | Tool | Select tools for checkout. | ToolList |
 | | User | View checked out tools. | UserDash |
-
-| Status | View | Advanced Features | Component |
-| :-: | :-: | --- | :-: |
-| | Tool | Add tools to checkout cart. | Cart |
-| | Tool | Verify user "good/bad" standing status. | Auth |
-| | User | Pay late return fee. | UserDash |
-| | Tool | 3D tool visualization. | ToolList |

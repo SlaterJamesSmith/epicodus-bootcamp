@@ -16,10 +16,10 @@ export class RegisterComponent {
 
   constructor(private router: Router, private userService: UserService) { }
 
-  submitNewUser(email, passwordFirst, passwordSecond) {
+  submitNewUser(name, email, passwordFirst, passwordSecond) {
     this.validateInput(email, passwordFirst, passwordSecond);
     if (this.emailValid && this.passwordFirstValid && this.passwordSecondValid) {
-      this.sendNewUserRequest(email, passwordFirst);
+      this.sendNewUserRequest(name, email, passwordFirst);
     }
   }
 
@@ -47,8 +47,8 @@ export class RegisterComponent {
     }
   }
 
-  sendNewUserRequest(email, password) {
-    this.userService.createNewUser(email, password);
+  sendNewUserRequest(name, email, password) {
+    this.userService.createNewUser(name, email, password);
 
   }
 }
