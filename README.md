@@ -36,9 +36,11 @@ A front-end site design for a film production cowork space.
 
 ### III. Wireframes
 
-#### iPhone SE - Home View (3 Versions)
+#### Home View
 
-![Wireframes](design/wireframe-iphone-home.jpg?raw=true "iPhone SE - Home View - Wireframe")
+**iPhone SE** *(3 options)* | **iPad** | **Desktop HD**
+
+![Wireframes](design/wireframes-home.jpg?raw=true "Wireframes - Home View")
 
 ### IV. Prototypes
 
