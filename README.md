@@ -10,8 +10,6 @@ A custom-built personal portfolio website.
 
 ## Setup/Installation Requirements
 
-Live Site: https://m-chu.github.io/epicodus-solo-01
-
 1. Clone repository.
 
 2. Open index.html in web browser.
