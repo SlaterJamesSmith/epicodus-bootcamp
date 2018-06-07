@@ -38,13 +38,15 @@ A front-end site design for a film production cowork space.
 
 #### Home View
 
-**iPhone SE** *(3 options)* | **iPad** | **Desktop HD**
+iPhone SE *(3 options)*, iPad & Desktop HD
 
 ![Wireframes](design/wireframes-home.jpg?raw=true "Wireframes - Home View")
 
-### IV. Prototypes
+### IV. Prototype Diagrams
 
-Add Sketch prototypes.
+#### iPhone SE
+
+![Prototype](design/prototype-iphone.png?raw=true "iPhone SE - Prototype Diagram")
 
 ## Setup/Installation Requirements
 
