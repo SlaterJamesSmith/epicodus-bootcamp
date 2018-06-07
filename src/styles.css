@@ -1,9 +1,5 @@
 body {
   background-color: #eff0f5;
-  background-image: url('https://images.pexels.com/photos/905874/pexels-photo-905874.jpeg');
-  background-position-y: 120px;
-  background-repeat: no-repeat;
-  background-size: 100%;
   font-family: 'Roboto Condensed', sans-serif;
   min-width: 500px;
 }
