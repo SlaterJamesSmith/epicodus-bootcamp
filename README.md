@@ -10,8 +10,6 @@
 
 ## Setup/Installation Requirements
 
-Live Site: https://m-chu.github.io/epicodus-solo-04
-
 1. Clone repository.
 
 2. Open index.html in web browser.
