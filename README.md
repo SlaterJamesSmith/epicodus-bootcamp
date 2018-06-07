@@ -14,8 +14,12 @@
 
 ### V. Team Week
 
+## Templates
+
+1. [Webpack Project (Sass)](00-templates/webpack-project)
+
 ## Technologies Used
 
-- HTML
 - CSS
+- Sass
 - Sketch
