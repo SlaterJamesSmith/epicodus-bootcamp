@@ -26,7 +26,9 @@ A collection of practice projects focused on Test Driven Development.
 4. Redirect paths in configuration files to desired project sub-folder:
 
     - **karma.conf.js** - 4 links
+
     - **package.json** - 2 links
+
     - **webpack.config.js** - 2 links
 
 ### II. View Project
@@ -37,8 +39,9 @@ A collection of practice projects focused on Test Driven Development.
 
 - Production: `npm run build`
 
-  - Navigate to `01-test-driven-development/dist`
-  - Open **index.html** in web browser.
+  1. Navigate to `01-test-driven-development/dist`.
+
+  2. Open **index.html** in web browser.
 
 ## Known Bugs
 

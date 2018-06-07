@@ -15,5 +15,3 @@ node_modules/
 # Build #
 ######################
 dist/
-.env
-api-keys.ts

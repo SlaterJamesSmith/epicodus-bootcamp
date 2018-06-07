@@ -74,11 +74,11 @@ export const masterFirebaseConfig = {
 
 ## Technologies Used
 
+* JavaScript
+* TypeScript
 * Angular
 * Firebase
-* JavaScript
 * Node.js
-* TypeScript
 
 ## User Stories
 

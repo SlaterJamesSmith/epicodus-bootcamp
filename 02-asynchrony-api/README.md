@@ -32,7 +32,9 @@ A collection of practice projects focused on Asynchrony & APIs.
 4. Redirect paths in configuration files to desired project sub-folder:
 
     - **karma.conf.js** - 4 links
+
     - **package.json** - 2 links
+
     - **webpack.config.js** - 2 links
 
 5. Create new **.env** file and save API key as variable:
@@ -47,8 +49,9 @@ A collection of practice projects focused on Asynchrony & APIs.
 
 - Production: `npm run build`
 
-  - Navigate to `02-asynchrony-api/dist`
-  - Open **index.html** in web browser.
+  1. Navigate to `02-asynchrony-api/dist`.
+
+  2. Open **index.html** in web browser.
 
 ## Known Bugs
 

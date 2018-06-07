@@ -14,6 +14,10 @@
 
 ### V. [Team Week](05-team-week)
 
+## Templates
+
+1. [Webpack Project](00-templates/webpack-project)
+
 ## Technologies Used
 
 - JavaScript
