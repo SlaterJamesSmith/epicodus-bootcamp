@@ -1,11 +1,12 @@
 nav {
+  z-index: 100;
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   padding: 10px 0;
   background-color: #fff;
-  box-shadow: 0 10px 25px #fff;
+  box-shadow: 0 5px 25px #fff;
 
   ul {
     @include flex-split-between;

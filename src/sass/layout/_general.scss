@@ -8,10 +8,10 @@
   @include flex-split-around
 }
 
-// HTML GROUPS
+// HTML ELEMENT & GROUPS
 
 article {
-  padding: 20px 0;
+  padding: 10px 0;
 
   h1 {
     text-align: center;
@@ -30,9 +30,6 @@ article {
     margin-right: 20px;
   }
 }
-
-
-// HTML ELEMENTS
 
 img {
   display: block;
