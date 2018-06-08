@@ -10,6 +10,12 @@
   justify-content: space-around;
 }
 
+@mixin flex-split-left {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
 @mixin flex-column-center {
   display: flex;
   flex-direction: column;

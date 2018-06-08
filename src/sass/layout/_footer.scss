@@ -1,5 +1,6 @@
 footer {
   @include flex-column-center;
+  margin-top: 50px;
   padding: 20px 0 20px;
   background-color: $dark;
 
