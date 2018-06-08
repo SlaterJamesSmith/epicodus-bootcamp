@@ -1,6 +1,6 @@
 # Filmmaking Cowork Space
 
-**Web Design Process | June 1, 2018**
+**Epicodus Solo Project | User Interface | Week 2 & 3 | June 1, 2018**
 
 **By Mike Chu**
 
@@ -8,57 +8,38 @@
 
 A front-end site design for a film production cowork space.
 
-## Design Process
-
-### I. Direction, Research & References
-
-#### Visual Elements
-
-- Bold / assertive
-- Angular or primitive shapes
-- Clean-cut typefaces
-- Strong spatial and color contrast
-- Minimal filler elements / patterns / embellishments
-
-#### Personality
-
-- Adventurous, fun, professional
-- Motley crew of lively or funky personalities
-- Welcoming and open community
-
-#### Mood Board
-
-![Mood Board](design/moodboard.jpg?raw=true "Mood Board")
-
-### II. Sketches
-
-![Sketches](design/sketch.jpg?raw=true "Sketches")
-
-### III. Wireframes
-
-#### Home View
-
-iPhone SE *(3 options)*, iPad & Desktop HD
-
-![Wireframes](design/wireframes-home.jpg?raw=true "Wireframes - Home View")
-
-### IV. Prototype Diagrams
-
-#### iPhone SE
-
-![Prototype](design/prototype-iphone.png?raw=true "iPhone SE - Prototype Diagram")
-
 ## Setup/Installation Requirements
 
-1. Clone repository.
+### I. Project Setup
 
-2. Navigate to project folder.
+1. Install Node.js on local machine.
 
-3. Explore design documents.
+2. Clone repository and navigate to project folder.
+
+3. Run `npm install` to load required packages.
+
+### II. View Project
+
+- Development Mode: `npm start`
+
+- Production: `npm run build`
+
+  1. Navigate to `dist` folder.
+
+  2. Open **index.html** in web browser.
+
+## Known Bugs
+
+None.
 
 ## Technologies Used
 
-- Sketch
+* CSS (Sass)
+* Webpack
+
+## Design Process
+
+- See design [README](design/README.md).
 
 ## Artwork & Media Attributions
 
@@ -67,3 +48,9 @@ iPhone SE *(3 options)*, iPad & Desktop HD
     - *Color Desk Elements*
     - Light Bulb
     - Robots
+
+## License
+
+This software is licensed under the MIT license.
+
+Copyright (c) 2018 **Mike Chu**
