@@ -8,6 +8,10 @@
 
 A collection of practice projects focused on responsive design and Sass.
 
+## Projects
+
+### I. [Color Tests](color-tests)
+
 ## Technologies Used
 
 - Sass
