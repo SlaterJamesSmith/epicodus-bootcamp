@@ -1,0 +1,16 @@
+#splash-screen {
+  @include flex-column-center;
+
+  .group {
+    @include flex-column-center;
+    height: 200px;
+  }
+
+  .robots {
+    margin-bottom: 20px;
+  }
+
+  .btn-group {
+    width: 280px;
+  }
+}

@@ -1,3 +1,18 @@
 .container {
   padding: 85px 20px 0;
 }
+
+img {
+  display: block;
+}
+
+button {
+  cursor: pointer;
+  background-color: none;
+  border: none;
+  outline: none;
+}
+
+.btn-group {
+  @include flex-split-around
+}
