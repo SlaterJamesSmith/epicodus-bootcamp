@@ -1,5 +1,6 @@
 #splash-screen {
   @include flex-column-center;
+  padding-bottom: 20px;
 
   .group {
     @include flex-column-center;

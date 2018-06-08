@@ -1,6 +1,20 @@
+// CLASS GROUPS
+
 .container {
   padding: 85px 20px 0;
 }
+
+.btn-group {
+  @include flex-split-around
+}
+
+// HTML GROUPS
+
+article {
+  padding: 20px 0;
+}
+
+// HTML ELEMENTS
 
 img {
   display: block;
@@ -13,6 +27,6 @@ button {
   outline: none;
 }
 
-.btn-group {
-  @include flex-split-around
+.text-center {
+  text-align: center;
 }
