@@ -11,6 +11,8 @@
 // HTML ELEMENT & GROUPS
 
 article {
+  max-width: 400px;
+  margin: auto;
   padding: 10px 0;
 
   h1 {
@@ -18,7 +20,7 @@ article {
   }
 
   ul {
-    margin: 20px 50px;
+    margin: 20px 25px;
   }
 
   li {

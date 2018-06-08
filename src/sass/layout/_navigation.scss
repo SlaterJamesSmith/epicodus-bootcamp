@@ -17,4 +17,42 @@ nav {
     list-style: none;
     cursor: pointer;
   }
+
+  ul.dropdown {
+    visibility: hidden;
+    height: 0px;
+    width: 100%;
+    display: block;
+    position: absolute;
+    top: 64px;
+    right: 0;
+    overflow: hidden;
+    background-color: $dark;
+    transition: height 0.15s, visibility 0.5s 0s;
+
+    li {
+      padding: 12px 20px;
+      border-bottom: 3px solid #fff;
+      color: #fff;
+    }
+
+    li:hover {
+      background-color: darken($dark, 100%);
+    }
+
+    li:last-child {
+      border-bottom: none;
+      background-color: $primary-color-1;
+    }
+
+    li:last-child:hover {
+      background-color: darken($primary-color-1, 35%);
+    }
+  }
+
+  button.dropdown:focus + ul.dropdown {
+    visibility: visible;
+    height: 222px;
+    transition: height 0.25s;
+  }
 }
