@@ -1,0 +1,18 @@
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 10px 0;
+  background-color: #fff;
+
+  ul {
+    @include flex-split;
+  }
+
+  li {
+    padding: 0 20px;
+    list-style: none;
+    cursor: pointer;
+  }
+}
