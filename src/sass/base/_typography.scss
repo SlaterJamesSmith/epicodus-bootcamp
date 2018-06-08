@@ -30,10 +30,10 @@ h3 {
 }
 
 h4 {
-  font-size: 1.125rem;
+  font-size: 1.15rem;
   font-style: italic;
   font-weight: 900;
-  line-height: 1.125rem;
+  line-height: 1.15rem;
 }
 
 h5 {
@@ -44,10 +44,10 @@ h5 {
 }
 
 h6 {
-  font-size: 1.125rem;
+  font-size: 1.15rem;
   font-style: italic;
   font-weight: 300;
-  line-height: 1.125rem;
+  line-height: 1.15rem;
 }
 
 p {
@@ -64,12 +64,4 @@ p {
 
 .text-color-3 {
   color: $primary-color-3;
-}
-
-.text-dark {
-  color: $dark;
-}
-
-.text-light {
-  color: $light;
 }
