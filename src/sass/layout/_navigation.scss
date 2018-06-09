@@ -13,9 +13,8 @@ nav {
   }
 
   li {
-    padding: 0 20px;
+    margin: 0 20px;
     list-style: none;
-    cursor: pointer;
   }
 
   ul.dropdown {
@@ -32,9 +31,8 @@ nav {
     transition: visibility 0.5s 0s, opacity 0.15s, height 0.15s;
 
     li {
-      padding: 12px 20px;
+      margin: 0;
       border-bottom: 3px solid #fff;
-      color: #fff;
     }
 
     li:hover {
@@ -49,9 +47,15 @@ nav {
     li:last-child:hover {
       background-color: lighten($primary-color-1, 20%);
     }
+
+    a {
+      display: block;
+      padding: 12px 20px;
+      color: #fff;
+    }
   }
 
-  button.dropdown:focus + ul.dropdown {
+  button.dropdown:focus + ul.dropdown, ul.dropdown:hover {
     visibility: visible;
     opacity: 1;
     height: 222px;
@@ -63,7 +67,7 @@ nav {
       display: none;
     }
 
-    ul.dropdown {
+    ul.dropdown, ul.dropdown:hover {
       @include flex-split-between;
       visibility: visible;
       opacity: 1;
@@ -72,15 +76,17 @@ nav {
       top: auto;
       background-color: transparent;
 
-      li, li:last-child {
+      li, li:last-child, li:hover, li:last-child:hover {
         background-color: transparent;
         border-bottom: none;
+      }
+
+      a {
         color: #000;
         transition: color 0.15s;
       }
 
-      li:hover, li:last-child:hover {
-        background-color: transparent;
+      a:hover {
         color: $primary-color-1;
       }
     }
