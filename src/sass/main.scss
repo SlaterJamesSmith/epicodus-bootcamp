@@ -6,8 +6,10 @@
 
 @import 'layout/general';
 @import 'layout/navigation';
-@import 'layout/splash';
-@import 'layout/home-workspaces';
 @import 'layout/footer';
 
 @import 'components/buttons';
+@import 'components/inputs';
+
+@import 'pages/home';
+@import 'pages/sign-in';

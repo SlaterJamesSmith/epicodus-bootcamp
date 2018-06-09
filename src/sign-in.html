@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="utf-8">
     <title>Cowork Space | Contact</title>
   </head>
@@ -26,12 +27,21 @@
           </li>
         </ul>
       </nav>
-      <section>
-        <h1>Sign In Page</h1>
+      <section id="sign-in">
+        <div class="group">
+          <img class="robot" src="img/robot-color-1.svg" alt="robot">
+          <input id="email" type="text" placeholder="Email" required>
+          <input id="password" type="text" placeholder="Password" required>
+        </div>
+        <div class="group">
+          <button><img src="img/btn-icon/write.svg" alt="writing icon"></button>
+          <p>Dont't have an account?</p>
+          <p><a href="#">Register</a></p>
+        </div>
       </section>
     </div>
 <!-- FOOTER -->
-    <footer>
+    <footer class="fixed">
       <div class="container">
         <a href="contact.html" class="contact"><h4>Contact Us</h4></a>
         <h4>Portland, OR</h4>

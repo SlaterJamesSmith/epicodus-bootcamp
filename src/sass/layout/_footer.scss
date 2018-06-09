@@ -25,3 +25,9 @@ footer {
     text-transform: capitalize;
   }
 }
+
+footer.fixed {
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+}
