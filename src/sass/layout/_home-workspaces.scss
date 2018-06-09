@@ -1,7 +1,24 @@
+#workspace-list {
+  h1 {
+    text-align: center;
+  }
+
+  @media screen and (min-width: 1000px) {
+    h1 {
+      text-align: left;
+    }
+
+    article {
+      @include grid-columns-3;
+    }
+  }
+}
+
 .workspace {
   position: relative;
   height: 200px;
-  margin: 20px 0;
+  width: 100%;
+  margin: 20px auto;
   border-radius: 10px;
   overflow: hidden;
   background-size: cover;

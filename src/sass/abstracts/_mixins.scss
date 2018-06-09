@@ -37,8 +37,13 @@
   justify-content: space-between;
 }
 
-@mixin grid-columns {
+@mixin grid-columns-2 {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  align-items: start;
+}
+
+@mixin grid-columns-3 {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 20px;
 }

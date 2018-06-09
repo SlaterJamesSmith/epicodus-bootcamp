@@ -14,4 +14,18 @@
   .btn-group {
     width: 280px;
   }
+
+  @media screen and (min-width: 1000px) {
+    h2 {
+      font-size: 2rem;
+    }
+
+    h6 {
+      font-size: 1.4rem;
+    }
+
+    .btn-group {
+      display: none;
+    }
+  }
 }

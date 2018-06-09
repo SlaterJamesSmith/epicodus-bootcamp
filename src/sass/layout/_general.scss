@@ -5,6 +5,9 @@
   margin: 0 auto;
   padding: 85px 20px 0;
 
+  @media screen and (min-width: 1000px) {
+    max-width: 1200px;
+  }
 }
 
 .list-section {
@@ -13,7 +16,7 @@
   }
 
   @media screen and (min-width: 650px) {
-    @include grid-columns;
+    @include grid-columns-2;
   }
 }
 
