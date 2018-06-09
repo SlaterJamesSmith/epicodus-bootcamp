@@ -18,6 +18,24 @@
   @media screen and (min-width: 650px) {
     @include grid-columns-2;
   }
+
+  @media screen and (min-width: 1000px) {
+    @include flex-column-left;
+
+    article {
+      max-width: none;
+      width: 100%;
+      margin: 0;
+    }
+
+    h1 {
+      text-align: left;
+    }
+
+    ul {
+      @include grid-columns-3;
+    }
+  }
 }
 
 .btn-group {
@@ -28,19 +46,19 @@
 
 article {
   margin: 0 auto;
-  padding: 10px 0;
+  padding: 5px 0;
 
   h1 {
     text-align: center;
   }
 
   ul {
-    margin: 20px 10px;
+    margin: 10px;
   }
 
   li {
     @include flex-split-left;
-    margin: 20px 15px;
+    margin: 15px;
   }
 
   button {
