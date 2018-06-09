@@ -15,6 +15,10 @@
     max-width: 400px;
   }
 
+  button img {
+    width: 50px;
+  }
+
   @media screen and (min-width: 650px) {
     @include grid-columns-2;
   }
@@ -28,7 +32,7 @@
       margin: 0;
     }
 
-    h1 {
+    h1, h2, h3, h4, h5, h6 {
       text-align: left;
     }
 
@@ -45,10 +49,10 @@
 // HTML ELEMENT & GROUPS
 
 article {
-  margin: 0 auto;
+  margin: 0 auto 20px;
   padding: 5px 0;
 
-  h1 {
+  h1, h2, h3, h4 {
     text-align: center;
   }
 
@@ -58,11 +62,11 @@ article {
 
   li {
     @include flex-split-left;
-    margin: 15px;
+    margin: 10px;
   }
 
   button {
-    margin-right: 20px;
+    margin-right: 10px;
   }
 }
 
