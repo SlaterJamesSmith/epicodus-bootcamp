@@ -1,7 +1,20 @@
 // CLASS GROUPS
 
 .container {
+  max-width: 768px;
+  margin: 0 auto;
   padding: 85px 20px 0;
+
+}
+
+.list-section {
+  article {
+    max-width: 400px;
+  }
+
+  @media screen and (min-width: 650px) {
+    @include grid-columns;
+  }
 }
 
 .btn-group {
@@ -11,8 +24,7 @@
 // HTML ELEMENT & GROUPS
 
 article {
-  max-width: 400px;
-  margin: auto;
+  margin: 0 auto;
   padding: 10px 0;
 
   h1 {
@@ -20,12 +32,12 @@ article {
   }
 
   ul {
-    margin: 20px 25px;
+    margin: 20px 10px;
   }
 
   li {
     @include flex-split-left;
-    margin: 20px 0;
+    margin: 20px 15px;
   }
 
   button {
