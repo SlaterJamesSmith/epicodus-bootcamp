@@ -79,7 +79,7 @@
 
 .workspace.pre-prod {
   background-color: $primary-color-2;
-  background-image: url('/img/pre-production.jpg');
+  background-image: url('img/pre-production.jpg');
 
   h3 {
     background-color: transparentize(darken($primary-color-2, 20%), 0.3);
@@ -95,7 +95,7 @@
 
 .workspace.prod {
   background-color: $primary-color-1;
-  background-image: url('/img/production.jpg');
+  background-image: url('img/production.jpg');
 
   h3 {
     background-color: transparentize(darken($primary-color-1, 20%), 0.3);
@@ -111,7 +111,7 @@
 
 .workspace.post-prod {
   background-color: $primary-color-3;
-  background-image: url('/img/post-production.jpg');
+  background-image: url('img/post-production.jpg');
 
   h3 {
     background-color: transparentize(darken($primary-color-3, 20%), 0.3);
