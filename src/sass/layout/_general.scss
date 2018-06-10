@@ -26,18 +26,39 @@ img {
   }
 }
 
-article {
+.flexible {
+  @media screen and (min-width: 650px) {
+    @include grid-columns-2;
+  }
+
+  @media screen and (min-width: 1000px) {
+    @include grid-columns-3;
+  }
+}
+
+.flexible article {
   max-width: 300px;
-  margin: 40px auto 40px;
-  padding-left: 20px;
+  margin: 20px auto 40px;
+  padding: 0 20px;
 
   .icon-title {
     @include flex-split-left;
 
     img {
       width: 50px;
-      margin-right: 10px;
+      margin: 0 10px 0 0;
     }
+  }
+
+  .img-frame {
+    position: relative;
+    margin: 15px auto;
+    border-radius: 10px;
+    overflow: hidden;
+  }
+
+  img {
+    width: 100%;
   }
 
   h5 {
@@ -45,7 +66,7 @@ article {
   }
 
   p {
-    margin: 10px 0 10px 40px;
+    margin: 20px 0 20px 10px;
   }
 
   ul {
@@ -55,15 +76,5 @@ article {
   li {
     margin: 10px 0 10px 50px;
     list-style: square;
-  }
-}
-
-section.flexible {
-  @media screen and (min-width: 650px) {
-    @include grid-columns-2;
-  }
-
-  @media screen and (min-width: 1000px) {
-    @include grid-columns-3;
   }
 }
