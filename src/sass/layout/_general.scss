@@ -31,8 +31,8 @@ article {
     }
   }
 
-  h5 {
-    margin: 20px 10px;
+  h5, p {
+    margin: 20px;
   }
 
   ul {
@@ -40,7 +40,7 @@ article {
   }
 
   li {
-    margin: 10px 0 10px 30px;
+    margin: 10px 0 10px 50px;
     list-style: square;
   }
 }
