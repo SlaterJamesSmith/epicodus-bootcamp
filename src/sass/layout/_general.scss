@@ -1,3 +1,11 @@
+h1 {
+  text-align: center;
+}
+
+img {
+  display: block;
+}
+
 .container {
   max-width: 768px;
   margin: 0 auto;
@@ -9,10 +17,30 @@
   }
 }
 
-.btn-group {
-  @include flex-split-around
-}
+article {
+  max-width: 300px;
+  margin: 20px auto 40px;
+  padding-left: 20px;
 
-img {
-  display: block;
+  .icon-title {
+    @include flex-split-left;
+
+    img {
+      width: 50px;
+      margin-right: 10px;
+    }
+  }
+
+  h5 {
+    margin: 20px 10px;
+  }
+
+  ul {
+    margin: 10px;
+  }
+
+  li {
+    margin: 10px 0 10px 30px;
+    list-style: square;
+  }
 }

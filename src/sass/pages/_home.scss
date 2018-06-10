@@ -12,6 +12,7 @@
   }
 
   .btn-group {
+    @include flex-split-around
     width: 280px;
     margin: 20px 0;
   }
@@ -34,6 +35,13 @@
 #workspace-list {
   h1 {
     text-align: center;
+  }
+
+  article {
+    width: 100%;
+    max-width: none;
+    margin: 0;
+    padding: 0;
   }
 
   @media screen and (min-width: 1000px) {
@@ -121,7 +129,7 @@
   h1, h2, h3, h4 {
     text-align: center;
   }
-  
+
   article {
     max-width: 400px;
     margin: 0 auto 20px;
@@ -134,7 +142,7 @@
 
     li {
       @include flex-split-left;
-      margin: 10px;
+      margin: 15px 10px;
     }
 
     button {
