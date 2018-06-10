@@ -7,7 +7,7 @@ nav {
   padding: 10px 0;
   background-color: #fff;
   box-shadow: 0 5px 25px #fff;
-
+  
   ul {
     @include flex-split-between;
   }

@@ -53,3 +53,9 @@
   grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 20px;
 }
+
+@mixin grid-columns-4 {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-gap: 20px;
+}
