@@ -1,18 +1,13 @@
 footer {
-  margin-top: 50px;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
   background-color: $dark;
 
   .container {
     @include flex-column-distribute;
     height: 100px;
     padding: 25px;
-
-    @media screen and (min-width: 650px) {
-      @include flex-split-between-reverse;
-      height: auto;
-      max-width: 1000px;
-      padding: 25px 50px;
-    }
   }
 
   h1, h4 {
@@ -23,5 +18,14 @@ footer {
     color: $primary-color-1;
     font-size: 1.25rem;
     text-transform: capitalize;
+  }
+
+  @media screen and (min-width: 650px) {
+    .container {
+      @include flex-split-between-reverse;
+      height: auto;
+      max-width: 1000px;
+      padding: 25px 50px;
+    }
   }
 }

@@ -7,7 +7,10 @@
     width: 50%;
     min-width: 250px;
     max-width: 500px;
-    margin-bottom: 40px;
+  }
+
+  .group:first-child {
+    margin-bottom: 30px;
   }
 
   input {
