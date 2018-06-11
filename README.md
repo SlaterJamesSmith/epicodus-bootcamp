@@ -1,16 +1,14 @@
-# _YOUTUBE REBUILD_
+# YouTube Rebuild
 
-#### _Epicodus Solo Project | JavaScript | Week 3 & 4 | May 4, 2018_
+**Epicodus Solo Project | JavaScript | Week 3 & 4 | May 4, 2018**
 
-#### _By Mike Chu_
+**By Mike Chu**
 
 ## Description
 
 A limited site rebuild of [YouTube](https://www.youtube.com/) using Angular.
 
 ## Setup/Installation Requirements
-
-### Live Preview: [YouTube Rebuild](https://rebuild-8aeab.firebaseapp.com/)
 
 ### I. YouTube Data API v3
 
@@ -127,6 +125,6 @@ export const youtubeApiConfig = {
 
 ## License
 
-_This software is licensed under the MIT license._
+This software is licensed under the MIT license.
 
 Copyright (c) 2018 **Mike Chu**

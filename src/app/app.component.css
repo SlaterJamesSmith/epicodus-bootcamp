@@ -335,7 +335,7 @@ a.navbar-brand span {
 }
 
 #yt-logo {
-  background-image: url('https://developers.google.com/youtube/images/developed-with-youtube-logos-2x.png');
+  background-image: url('../assets/developed-with-youtube-logos-2x.png');
   background-position: 0 -237px;
   background-repeat: no-repeat;
   display: block;

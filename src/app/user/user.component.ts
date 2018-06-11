@@ -12,6 +12,7 @@ import { AngularFireDatabase, FirebaseListObservable } from 'angularfire2/databa
   styleUrls: ['./user.component.css'],
   providers: [YouTubeApiService, AccountService]
 })
+
 export class UserComponent implements OnInit {
   watchListVideos: any[] = [];
   favoriteVideos: any[] = [];
