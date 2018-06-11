@@ -72,13 +72,48 @@ export const youtubeApiConfig = {
 
 ### V. View Project
 
-* Development Mode: `ng serve --open`
+1. In project root, run `ng serve --open` to view project in development mode.
+
+### VI. Deploy to Firebase
+
+#### A. Firebase Tools Install
+
+1. Install Firebase Tools globally: `npm install -g firebase-tools`
+
+#### B. Production Build
+
+1. In project root, run `ng build --env=prod`.
+
+#### C. Firebase Initialization & Setup
+
+1. Run `firebase login` to open prompt for logging into Google/Firebase account.
+
+2. In project root, run `firebase init` to initialize Firebase.
+
+3. Select **Database** and **Hosting** options, then confirm choices.
+
+4. Select Firebase project to be used for deployment.
+
+5. Accept **database.rules.json** as  *Database Rules* file.
+
+6. Enter `dist` for *public directory*.
+
+7. Select **No** for *single-page app* configuration.
+
+8. Select **No** for overwriting any project files.
+
+#### D. Deployment
+
+1. In project root, run `firebase deploy`.
+
+2. Run `firebase open` to open Firebase options menu.
+
+3. Select **Hosting: Deployed Site** to navigate to deployed site.
 
 ## Known Bugs
 
 - Channel uploads are not always populated into carousels in chronological order.
 - User can currently save duplicate channels and videos.
-- (Non-Bug) Only *view count* statistics can be affected by user interactions.
 
 ## Technologies Used
 
