@@ -1,0 +1,39 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  font-family: monospace;
+  font-size: 100%;
+}
+
+h1 {
+  font-size: 3rem;
+  line-height: 3rem;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  min-height: 100vh;
+  border: 5vh solid #fff;
+  overflow: hidden;
+  background-color: #eee;
+}
+
+.flex {
+  display: flex;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+}
