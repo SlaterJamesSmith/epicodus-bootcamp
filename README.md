@@ -1,8 +1,8 @@
-# _ARTSTATION CLONE_
+# ArtStation Clone
 
-#### _Epicodus Solo Project | User Interface | Week 1 | May 25, 2018_
+**Epicodus Solo Project | User Interface | Week 1 | May 25, 2018**
 
-#### _By Mike Chu_
+**By Mike Chu**
 
 ## Description
 
@@ -10,13 +10,15 @@ An aesthetic clone of [ArtStation's](https://www.artstation.com/) homepage layou
 
 ## ArtStation Viewport References
 
-_Large & Small Screens_
+**Homepage** | Large & Small Screens
 
 ![ArtStation Large & Small Viewports](https://github.com/m-chu/epicodus-solo-project-8/blob/master/img/artstation-screenshot.jpg?raw=true "ArtStation Screenshot")
 
 ## Setup/Installation Requirements
 
-1. Visit website link: https://m-chu.github.io/epicodus-solo-project-8/
+1. Clone repository.
+
+2. Open index.html in web browser.
 
 ## Known Bugs
 
