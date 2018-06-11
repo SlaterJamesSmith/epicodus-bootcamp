@@ -10,7 +10,7 @@
 
 ### III. [Responsive Design & Preprocessors](03-responsive-preprocessors)
 
-### IV. Front End Frameworks & Tools
+### IV. [Movement, Interactivity & Frameworks](04-movement-interactivity)
 
 ### V. Team Week
 
