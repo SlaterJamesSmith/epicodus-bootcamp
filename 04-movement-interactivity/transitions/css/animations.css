@@ -7,7 +7,7 @@
   border-radius: 100%;
   background-color: #f38;
   color: #fff;
-  transition: transform 0.1s, box-shadow 0.3s steps(3, end);
+  transition: transform 0.1s, box-shadow 0.3s steps(6, end);
 }
 
 .activator:hover {
@@ -16,11 +16,12 @@
 }
 
 .ani-box {
-  opacity: 0;
+  opacity: 1;
   position: absolute;
   height: 100px;
   width: 100px;
   padding: 10px;
+  border-radius: 50px;
   background-color: #6eb;
   color: #111;
   filter: hue-rotate(0);
