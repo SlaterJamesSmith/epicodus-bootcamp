@@ -1,0 +1,13 @@
+@mixin keyframe-animation($name) {
+  @-webkit-keyframes #{$name} {
+    @content;
+  }
+  @keyframes #{$name} {
+    @content;
+  }
+}
+
+@mixin keyframe-property($property, $value) {
+  -webkit-#{$property}: $value;
+          #{$property}: $value;
+}

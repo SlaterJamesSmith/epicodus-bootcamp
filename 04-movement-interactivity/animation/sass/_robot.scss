@@ -1,0 +1,135 @@
+.bar, .base, .eye, .mouth, .arm-joint {
+  background-color: #f3b;
+}
+
+.body, .head, .arm, .forearm, .leg {
+  background-color: #6e8;
+}
+
+.robot.base {
+  height: 50px;
+  width: 50px;
+  position: relative;
+  border-radius: 100%;
+  animation: bounce 0.5s infinite, gyrate 0.75s infinite;
+}
+
+.robot .body {
+  height: 100px;
+  width:50px;
+  position: absolute;
+  top: -75px;
+}
+
+.robot .bar {
+  height: 5px;
+  width: 100%;
+  position: absolute;
+}
+
+.robot .bar.one {
+  top: 25px;
+}
+
+.robot .bar.two {
+  top: 35px;
+}
+
+.robot .bar.three {
+  top: 45px;
+}
+
+.robot .head {
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  top: -45px;
+  left: 5px;
+  animation: head 0.5s infinite;
+}
+
+.robot .eye {
+  height: 5px;
+  width: 5px;
+  position: absolute;
+  top: 10px;
+  border-radius: 100%;
+}
+
+.robot .eye.left {
+  left: 10px;
+}
+
+.robot .eye.right {
+  right: 10px;
+}
+
+.robot .mouth {
+  height: 10px;
+  width: 20px;
+  position: absolute;
+  left: 10px;
+  bottom: 10px;
+  border-radius: 0 0 10px 10px;
+  animation: bounce-face 0.5s infinite;
+}
+
+.robot .arm {
+  height: 75px;
+  width: 20px;
+  position: absolute;
+  top: 10px;
+  transform-origin: 10px 0px;
+}
+
+.robot .arm-joint {
+  height: 20px;
+  width: 20px;
+  position: absolute;
+  top: -10px;
+  border-radius: 100%;
+}
+
+.robot .arm.left {
+  left: -25px;
+  animation: left-arm 1s infinite;
+}
+
+.robot .arm.right {
+  right: -25px;
+  animation: right-arm 1s infinite;
+}
+
+.robot .forearm {
+  height: 75px;
+  width: 20px;
+  position: absolute;
+  bottom: -75px;
+  transform-origin: 10px 0px;
+}
+
+.robot .forearm.left {
+  animation: left-forearm 1s infinite;
+}
+
+.robot .forearm.right {
+  animation: right-forearm 1s infinite;
+}
+
+.robot .leg {
+  height: 100px;
+  width: 20px;
+  position: absolute;
+  bottom: -95px;
+  transform-origin: 10px 0px;
+}
+
+.robot .leg.left {
+  left: -5px;
+  animation: left-leg 0.5s infinite;
+}
+
+.robot .leg.right {
+  right: -5px;
+  animation: right-leg 0.25s infinite;
+}
