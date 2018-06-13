@@ -94,12 +94,12 @@
 
 .robot .arm.left {
   left: -25px;
-  animation: left-arm 1s infinite;
+  animation: rotate-cw-180 reverse 1s infinite;
 }
 
 .robot .arm.right {
   right: -25px;
-  animation: right-arm 1s infinite;
+  animation: rotate-ccw-180 reverse 1s infinite;
 }
 
 .robot .forearm {
@@ -111,11 +111,11 @@
 }
 
 .robot .forearm.left {
-  animation: left-forearm 1s infinite;
+  animation: rotate-cw-90 1s infinite;
 }
 
 .robot .forearm.right {
-  animation: right-forearm 1s infinite;
+  animation: rotate-ccw-90 1s infinite;
 }
 
 .robot .leg {
@@ -128,20 +128,20 @@
 
 .robot .leg.left {
   left: -5px;
-  animation: left-leg 0.5s infinite;
+  animation: rotate-cw-45 0.5s infinite;
 }
 
 .robot .leg.right {
   right: -5px;
-  animation: right-leg 0.5s infinite;
+  animation: rotate-ccw-45 0.5s infinite;
 }
 
 .robot .leg.lower.left {
   left: 0px;
-  animation: left-leg-lower 0.5s infinite;
+  animation: rotate-ccw-45 0.5s infinite;
 }
 
 .robot .leg.lower.right {
   right: 0px;
-  animation: right-leg-lower 0.5s infinite;
+  animation: rotate-cw-45 0.5s infinite;
 }

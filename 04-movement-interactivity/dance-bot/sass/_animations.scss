@@ -34,19 +34,7 @@
   }
 }
 
-@include keyframe-animation(spring) {
-  0% {
-    @include keyframe-property(transform, translateY(-5px));
-  }
-  50% {
-    @include keyframe-property(transform, translateY(5px));
-  }
-  100% {
-    @include keyframe-property(transform, translateY(-5px));
-  }
-}
-
-@include keyframe-animation(left-arm) {
+@include keyframe-animation(rotate-cw-180) {
   0% {
     @include keyframe-property(transform, rotate(180deg));
   }
@@ -58,84 +46,60 @@
   }
 }
 
-@include keyframe-animation(right-arm) {
+@include keyframe-animation(rotate-ccw-180) {
   0% {
-    @include keyframe-property(transform, rotate(0deg));
-  }
-  50% {
     @include keyframe-property(transform, rotate(-180deg));
   }
-  100% {
-    @include keyframe-property(transform, rotate(0deg));
-  }
-}
-
-@include keyframe-animation(left-forearm) {
-  0% {
-    @include keyframe-property(transform, rotate(90deg));
-  }
   50% {
     @include keyframe-property(transform, rotate(0deg));
   }
   100% {
-    @include keyframe-property(transform, rotate(90deg));
+    @include keyframe-property(transform, rotate(-180deg));
   }
 }
 
-@include keyframe-animation(right-forearm) {
+@include keyframe-animation(rotate-cw-90) {
   0% {
     @include keyframe-property(transform, rotate(0deg));
   }
   50% {
-    @include keyframe-property(transform, rotate(-90deg));
+    @include keyframe-property(transform, rotate(95deg));
   }
   100% {
     @include keyframe-property(transform, rotate(0deg));
   }
 }
 
-@include keyframe-animation(left-leg) {
+@include keyframe-animation(rotate-ccw-90) {
   0% {
     @include keyframe-property(transform, rotate(0deg));
   }
   50% {
-    @include keyframe-property(transform, rotate(45deg));
+    @include keyframe-property(transform, rotate(-95deg));
   }
   100% {
     @include keyframe-property(transform, rotate(0deg));
   }
 }
 
-@include keyframe-animation(left-leg-lower) {
-  0% {
-    @include keyframe-property(transform, rotate(0deg));
-  }
-  50% {
-    @include keyframe-property(transform, rotate(-45deg));
-  }
-  100% {
-    @include keyframe-property(transform, rotate(0deg));
-  }
-}
-
-@include keyframe-animation(right-leg) {
-  0% {
-    @include keyframe-property(transform, rotate(0deg));
-  }
-  50% {
-    @include keyframe-property(transform, rotate(-45deg));
-  }
-  100% {
-    @include keyframe-property(transform, rotate(0deg));
-  }
-}
-
-@include keyframe-animation(right-leg-lower) {
+@include keyframe-animation(rotate-cw-45) {
   0% {
     @include keyframe-property(transform, rotate(0deg));
   }
   50% {
     @include keyframe-property(transform, rotate(45deg));
+  }
+  100% {
+    @include keyframe-property(transform, rotate(0deg));
+  }
+}
+
+@include keyframe-animation(rotate-ccw-45) {
+  0% {
+    @include keyframe-property(transform, rotate(0deg));
+  }
+  50% {
+    @include keyframe-property(transform, rotate(-45deg));
   }
   100% {
     @include keyframe-property(transform, rotate(0deg));
