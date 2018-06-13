@@ -1,4 +1,4 @@
-.bar, .base, .eye, .mouth, .arm-joint {
+.bar, .base, .eye, .mouth, .joint {
   background-color: #f3b;
 }
 
@@ -11,7 +11,7 @@
   width: 50px;
   position: relative;
   border-radius: 100%;
-  animation: bounce 0.5s infinite, gyrate 0.75s infinite;
+  animation: bounce 0.5s infinite;
 }
 
 .robot .body {
@@ -28,15 +28,15 @@
 }
 
 .robot .bar.one {
-  top: 25px;
+  top: 30px;
 }
 
 .robot .bar.two {
-  top: 35px;
+  top: 45px;
 }
 
 .robot .bar.three {
-  top: 45px;
+  top: 60px;
 }
 
 .robot .head {
@@ -58,10 +58,12 @@
 
 .robot .eye.left {
   left: 10px;
+  animation: face 0.5s infinite;
 }
 
 .robot .eye.right {
   right: 10px;
+  animation: face 0.5s infinite;
 }
 
 .robot .mouth {
@@ -71,7 +73,7 @@
   left: 10px;
   bottom: 10px;
   border-radius: 0 0 10px 10px;
-  animation: bounce-face 0.5s infinite;
+  animation: face 0.5s infinite;
 }
 
 .robot .arm {
@@ -82,7 +84,7 @@
   transform-origin: 10px 0px;
 }
 
-.robot .arm-joint {
+.robot .joint {
   height: 20px;
   width: 20px;
   position: absolute;
@@ -131,5 +133,15 @@
 
 .robot .leg.right {
   right: -5px;
-  animation: right-leg 0.25s infinite;
+  animation: right-leg 0.5s infinite;
+}
+
+.robot .leg.lower.left {
+  left: 0px;
+  animation: left-leg-lower 0.5s infinite;
+}
+
+.robot .leg.lower.right {
+  right: 0px;
+  animation: right-leg-lower 0.5s infinite;
 }
