@@ -11,3 +11,15 @@
   -webkit-#{$property}: $value;
           #{$property}: $value;
 }
+
+@mixin keyframe-property-loop($property, $min-value, $max-value) {
+  0% {
+    @include keyframe-property(#{$property}, #{$min-value});
+  }
+  50% {
+    @include keyframe-property(#{$property}, #{$max-value});
+  }
+  100% {
+    @include keyframe-property(#{$property}, #{$min-value});
+  }
+}

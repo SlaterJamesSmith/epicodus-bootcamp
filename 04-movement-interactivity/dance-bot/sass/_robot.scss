@@ -39,13 +39,16 @@
   top: 60px;
 }
 
+.robot .head, .robot .eye, .robot .mouth {
+  animation: head-turn 0.5s infinite;
+}
+
 .robot .head {
   height: 40px;
   width: 40px;
   position: absolute;
   top: -45px;
   left: 5px;
-  animation: head 0.5s infinite;
 }
 
 .robot .eye {
@@ -58,12 +61,10 @@
 
 .robot .eye.left {
   left: 10px;
-  animation: face 0.5s infinite;
 }
 
 .robot .eye.right {
   right: 10px;
-  animation: face 0.5s infinite;
 }
 
 .robot .mouth {
@@ -73,7 +74,6 @@
   left: 10px;
   bottom: 10px;
   border-radius: 0 0 10px 10px;
-  animation: face 0.5s infinite;
 }
 
 .robot .arm {

@@ -1,107 +1,31 @@
 @include keyframe-animation(bounce) {
-  0% {
-    @include keyframe-property(transform, translateY(0px));
-  }
-  50% {
-    @include keyframe-property(transform, translateY(50px));
-  }
-  100% {
-    @include keyframe-property(transform, translateY(0px));
-  }
+  @include keyframe-property-loop(transform, translateY(0px), translateY(50px));
 }
 
-@include keyframe-animation(face) {
-  0% {
-    @include keyframe-property(transform, translateX(-4px));
-  }
-  50% {
-    @include keyframe-property(transform, translateX(4px));
-  }
-  100% {
-    @include keyframe-property(transform, translateX(-4px));
-  }
-}
-
-@include keyframe-animation(head) {
-  0% {
-    @include keyframe-property(transform, translate(-5px, -1px));
-  }
-  50% {
-    @include keyframe-property(transform, translate(5px, 1px));
-  }
-  100% {
-    @include keyframe-property(transform, translate(-5px, -1px));
-  }
+@include keyframe-animation(head-turn) {
+  @include keyframe-property-loop(transform, translate(-5px, -1px), translate(5px, 1px));
 }
 
 @include keyframe-animation(rotate-cw-180) {
-  0% {
-    @include keyframe-property(transform, rotate(180deg));
-  }
-  50% {
-    @include keyframe-property(transform, rotate(0deg));
-  }
-  100% {
-    @include keyframe-property(transform, rotate(180deg));
-  }
+  @include keyframe-property-loop(transform, rotate(180deg), rotate(0deg));
 }
 
 @include keyframe-animation(rotate-ccw-180) {
-  0% {
-    @include keyframe-property(transform, rotate(-180deg));
-  }
-  50% {
-    @include keyframe-property(transform, rotate(0deg));
-  }
-  100% {
-    @include keyframe-property(transform, rotate(-180deg));
-  }
+  @include keyframe-property-loop(transform, rotate(-180deg), rotate(0deg));
 }
 
 @include keyframe-animation(rotate-cw-90) {
-  0% {
-    @include keyframe-property(transform, rotate(0deg));
-  }
-  50% {
-    @include keyframe-property(transform, rotate(95deg));
-  }
-  100% {
-    @include keyframe-property(transform, rotate(0deg));
-  }
+  @include keyframe-property-loop(transform, rotate(0deg), rotate(95deg));
 }
 
 @include keyframe-animation(rotate-ccw-90) {
-  0% {
-    @include keyframe-property(transform, rotate(0deg));
-  }
-  50% {
-    @include keyframe-property(transform, rotate(-95deg));
-  }
-  100% {
-    @include keyframe-property(transform, rotate(0deg));
-  }
+  @include keyframe-property-loop(transform, rotate(0deg), rotate(-95deg));
 }
 
 @include keyframe-animation(rotate-cw-45) {
-  0% {
-    @include keyframe-property(transform, rotate(0deg));
-  }
-  50% {
-    @include keyframe-property(transform, rotate(45deg));
-  }
-  100% {
-    @include keyframe-property(transform, rotate(0deg));
-  }
+  @include keyframe-property-loop(transform, rotate(0deg), rotate(45deg));
 }
 
 @include keyframe-animation(rotate-ccw-45) {
-  0% {
-    @include keyframe-property(transform, rotate(0deg));
-  }
-  50% {
-    @include keyframe-property(transform, rotate(-45deg));
-  }
-  100% {
-    @include keyframe-property(transform, rotate(0deg));
-  }
+  @include keyframe-property-loop(transform, rotate(0deg), rotate(-45deg));
 }

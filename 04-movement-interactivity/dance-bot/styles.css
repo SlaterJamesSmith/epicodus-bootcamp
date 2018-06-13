@@ -53,35 +53,7 @@ h1 {
     transform: translateY(0px);
   }
 }
-@-webkit-keyframes face {
-  0% {
-    -webkit-transform: translateX(-4px);
-    transform: translateX(-4px);
-  }
-  50% {
-    -webkit-transform: translateX(4px);
-    transform: translateX(4px);
-  }
-  100% {
-    -webkit-transform: translateX(-4px);
-    transform: translateX(-4px);
-  }
-}
-@keyframes face {
-  0% {
-    -webkit-transform: translateX(-4px);
-    transform: translateX(-4px);
-  }
-  50% {
-    -webkit-transform: translateX(4px);
-    transform: translateX(4px);
-  }
-  100% {
-    -webkit-transform: translateX(-4px);
-    transform: translateX(-4px);
-  }
-}
-@-webkit-keyframes head {
+@-webkit-keyframes head-turn {
   0% {
     -webkit-transform: translate(-5px, -1px);
     transform: translate(-5px, -1px);
@@ -95,7 +67,7 @@ h1 {
     transform: translate(-5px, -1px);
   }
 }
-@keyframes head {
+@keyframes head-turn {
   0% {
     -webkit-transform: translate(-5px, -1px);
     transform: translate(-5px, -1px);
@@ -318,13 +290,16 @@ h1 {
   top: 60px;
 }
 
+.robot .head, .robot .eye, .robot .mouth {
+  animation: head-turn 0.5s infinite;
+}
+
 .robot .head {
   height: 40px;
   width: 40px;
   position: absolute;
   top: -45px;
   left: 5px;
-  animation: head 0.5s infinite;
 }
 
 .robot .eye {
@@ -337,12 +312,10 @@ h1 {
 
 .robot .eye.left {
   left: 10px;
-  animation: face 0.5s infinite;
 }
 
 .robot .eye.right {
   right: 10px;
-  animation: face 0.5s infinite;
 }
 
 .robot .mouth {
@@ -352,7 +325,6 @@ h1 {
   left: 10px;
   bottom: 10px;
   border-radius: 0 0 10px 10px;
-  animation: face 0.5s infinite;
 }
 
 .robot .arm {
