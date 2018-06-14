@@ -2,6 +2,10 @@
   @include keyframe-property-loop(transform, translateY(0px), translateY(50px));
 }
 
+@include keyframe-animation(window-wipe) {
+  @include keyframe-property-loop(transform, rotate(-30deg), rotate(30deg));
+}
+
 @include keyframe-animation(head-turn) {
   @include keyframe-property-loop(transform, translate(-5px, -1px), translate(5px, 1px));
 }

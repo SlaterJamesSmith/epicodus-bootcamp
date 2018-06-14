@@ -1,5 +1,9 @@
-.base {
+.robot-base {
   animation: bounce 0.5s infinite;
+}
+
+.waist {
+  animation: window-wipe 2s infinite;
 }
 
 .head, .eye, .mouth {
