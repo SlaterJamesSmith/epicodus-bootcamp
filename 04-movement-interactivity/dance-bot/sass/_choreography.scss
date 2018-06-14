@@ -3,7 +3,11 @@
 }
 
 .waist {
-  animation: window-wipe 2s infinite;
+  animation: window-wipe-60 2s infinite;
+}
+
+.neck {
+  animation: window-wipe-30 0.5s infinite;
 }
 
 .head, .eye, .mouth {

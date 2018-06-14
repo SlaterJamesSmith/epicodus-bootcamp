@@ -43,7 +43,35 @@ html, body {
     transform: translateY(0px);
   }
 }
-@-webkit-keyframes window-wipe {
+@-webkit-keyframes window-wipe-30 {
+  0% {
+    -webkit-transform: rotate(-15deg);
+    transform: rotate(-15deg);
+  }
+  50% {
+    -webkit-transform: rotate(15deg);
+    transform: rotate(15deg);
+  }
+  100% {
+    -webkit-transform: rotate(-15deg);
+    transform: rotate(-15deg);
+  }
+}
+@keyframes window-wipe-30 {
+  0% {
+    -webkit-transform: rotate(-15deg);
+    transform: rotate(-15deg);
+  }
+  50% {
+    -webkit-transform: rotate(15deg);
+    transform: rotate(15deg);
+  }
+  100% {
+    -webkit-transform: rotate(-15deg);
+    transform: rotate(-15deg);
+  }
+}
+@-webkit-keyframes window-wipe-60 {
   0% {
     -webkit-transform: rotate(-30deg);
     transform: rotate(-30deg);
@@ -57,7 +85,7 @@ html, body {
     transform: rotate(-30deg);
   }
 }
-@keyframes window-wipe {
+@keyframes window-wipe-60 {
   0% {
     -webkit-transform: rotate(-30deg);
     transform: rotate(-30deg);
@@ -73,30 +101,30 @@ html, body {
 }
 @-webkit-keyframes head-turn {
   0% {
-    -webkit-transform: translate(-5px, -1px);
-    transform: translate(-5px, -1px);
+    -webkit-transform: translate(-5px, -3px);
+    transform: translate(-5px, -3px);
   }
   50% {
     -webkit-transform: translate(5px, 1px);
     transform: translate(5px, 1px);
   }
   100% {
-    -webkit-transform: translate(-5px, -1px);
-    transform: translate(-5px, -1px);
+    -webkit-transform: translate(-5px, -3px);
+    transform: translate(-5px, -3px);
   }
 }
 @keyframes head-turn {
   0% {
-    -webkit-transform: translate(-5px, -1px);
-    transform: translate(-5px, -1px);
+    -webkit-transform: translate(-5px, -3px);
+    transform: translate(-5px, -3px);
   }
   50% {
     -webkit-transform: translate(5px, 1px);
     transform: translate(5px, 1px);
   }
   100% {
-    -webkit-transform: translate(-5px, -1px);
-    transform: translate(-5px, -1px);
+    -webkit-transform: translate(-5px, -3px);
+    transform: translate(-5px, -3px);
   }
 }
 @-webkit-keyframes rotate-cw-180 {
@@ -272,7 +300,11 @@ html, body {
 }
 
 .waist {
-  animation: window-wipe 2s infinite;
+  animation: window-wipe-60 2s infinite;
+}
+
+.neck {
+  animation: window-wipe-30 0.5s infinite;
 }
 
 .head, .eye, .mouth {
@@ -333,13 +365,16 @@ html, body {
   position: absolute;
   top: 15px;
 }
-.robot-base .joint, .robot-base .waist, .robot-base .torso, .robot-base .head, .robot-base .eye, .robot-base .mouth, .robot-base .arm, .robot-base .leg {
+.robot-base .joint, .robot-base .waist, .robot-base .torso, .robot-base .neck, .robot-base .head, .robot-base .eye, .robot-base .mouth, .robot-base .arm, .robot-base .leg {
   position: absolute;
 }
-.robot-base .waist {
+.robot-base .waist, .robot-base .neck {
   height: 50px;
   width: 50px;
   border-radius: 100%;
+}
+.robot-base .neck {
+  top: -25px;
 }
 .robot-base .joint {
   height: 20px;
@@ -378,8 +413,8 @@ html, body {
 .robot-base .head {
   height: 40px;
   width: 40px;
-  top: -45px;
   left: 5px;
+  bottom: 30px;
 }
 .robot-base .eye {
   height: 5px;

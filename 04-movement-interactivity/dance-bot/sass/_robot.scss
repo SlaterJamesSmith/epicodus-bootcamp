@@ -27,15 +27,19 @@
   // ROBOT RIG - POSITION RELATIONSHIPS
   position: relative;
 
-  .joint, .waist, .torso, .head, .eye, .mouth, .arm, .leg {
+  .joint, .waist, .torso, .neck, .head, .eye, .mouth, .arm, .leg {
     position: absolute;
   }
 
   // ROBOT RIG - JOINTS
-  .waist {
+  .waist, .neck {
     height: 50px;
     width: 50px;
     border-radius: 100%;
+  }
+
+  .neck {
+    top: -25px;
   }
 
   .joint {
@@ -85,8 +89,8 @@
   .head {
     height: 40px;
     width: 40px;
-    top: -45px;
     left: 5px;
+    bottom: 30px;
   }
 
   .eye {
