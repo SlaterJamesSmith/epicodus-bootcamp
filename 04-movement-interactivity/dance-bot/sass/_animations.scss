@@ -2,6 +2,14 @@
   @include keyframe-property-loop(transform, translateY(0px), translateY(50px));
 }
 
+@include keyframe-animation(spring) {
+  @include keyframe-property-loop(height, 125px, 100px);
+}
+
+@include keyframe-animation(spring-accent-bar) {
+  @include keyframe-property-loop(top, 15px, 20px);
+}
+
 @include keyframe-animation(window-wipe-30) {
   @include keyframe-property-loop(transform, rotate(-15deg), rotate(15deg));
 }

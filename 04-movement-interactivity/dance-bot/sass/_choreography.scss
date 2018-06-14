@@ -6,6 +6,14 @@
   animation: window-wipe-60 2s infinite;
 }
 
+.torso {
+  animation: spring 0.5s infinite;
+}
+
+.accent-bar {
+  animation: spring-accent-bar 0.5s infinite;
+}
+
 .neck {
   animation: window-wipe-30 0.5s infinite;
 }

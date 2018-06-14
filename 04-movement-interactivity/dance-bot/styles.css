@@ -43,6 +43,62 @@ html, body {
     transform: translateY(0px);
   }
 }
+@-webkit-keyframes spring {
+  0% {
+    -webkit-height: 125px;
+    height: 125px;
+  }
+  50% {
+    -webkit-height: 100px;
+    height: 100px;
+  }
+  100% {
+    -webkit-height: 125px;
+    height: 125px;
+  }
+}
+@keyframes spring {
+  0% {
+    -webkit-height: 125px;
+    height: 125px;
+  }
+  50% {
+    -webkit-height: 100px;
+    height: 100px;
+  }
+  100% {
+    -webkit-height: 125px;
+    height: 125px;
+  }
+}
+@-webkit-keyframes spring-accent-bar {
+  0% {
+    -webkit-top: 15px;
+    top: 15px;
+  }
+  50% {
+    -webkit-top: 20px;
+    top: 20px;
+  }
+  100% {
+    -webkit-top: 15px;
+    top: 15px;
+  }
+}
+@keyframes spring-accent-bar {
+  0% {
+    -webkit-top: 15px;
+    top: 15px;
+  }
+  50% {
+    -webkit-top: 20px;
+    top: 20px;
+  }
+  100% {
+    -webkit-top: 15px;
+    top: 15px;
+  }
+}
 @-webkit-keyframes window-wipe-30 {
   0% {
     -webkit-transform: rotate(-15deg);
@@ -303,6 +359,14 @@ html, body {
   animation: window-wipe-60 2s infinite;
 }
 
+.torso {
+  animation: spring 0.5s infinite;
+}
+
+.accent-bar {
+  animation: spring-accent-bar 0.5s infinite;
+}
+
 .neck {
   animation: window-wipe-30 0.5s infinite;
 }
@@ -407,7 +471,7 @@ html, body {
 .robot-base .torso {
   height: 100px;
   width: 50px;
-  top: -75px;
+  bottom: 25px;
   z-index: 10;
 }
 .robot-base .head {
