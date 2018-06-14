@@ -8,16 +8,6 @@ html, body {
   height: 100%;
 }
 
-body {
-  font-family: sans-serif;
-  font-size: 100%;
-}
-
-h1 {
-  font-size: 3em;
-  text-transform: uppercase;
-}
-
 #wrapper {
   min-height: 100%;
   display: flex;
@@ -249,152 +239,140 @@ h1 {
     transform: rotate(0deg);
   }
 }
-.bar, .base, .eye, .mouth, .joint {
-  background-color: #f3b;
-}
-
-.body, .head, .arm, .forearm, .leg {
-  background-color: #6e8;
-}
-
-.robot.base {
-  height: 50px;
-  width: 50px;
-  position: relative;
-  border-radius: 100%;
+.base {
   animation: bounce 0.5s infinite;
 }
 
-.robot .body {
-  height: 100px;
-  width: 50px;
-  position: absolute;
-  top: -75px;
-}
-
-.robot .bar {
-  height: 5px;
-  width: 100%;
-  position: absolute;
-}
-
-.robot .bar.one {
-  top: 30px;
-}
-
-.robot .bar.two {
-  top: 45px;
-}
-
-.robot .bar.three {
-  top: 60px;
-}
-
-.robot .head, .robot .eye, .robot .mouth {
+.head, .eye, .mouth {
   animation: head-turn 0.5s infinite;
 }
 
+.left.shoulder.joint {
+  animation: rotate-cw-180 reverse 1s infinite;
+}
+
+.right.shoulder.joint {
+  animation: rotate-ccw-180 reverse 1s infinite;
+}
+
+.left.elbow.joint {
+  animation: rotate-cw-90 1s infinite;
+}
+
+.right.elbow.joint {
+  animation: rotate-ccw-90 1s infinite;
+}
+
+.left.hip.joint {
+  animation: rotate-cw-45 0.5s infinite;
+}
+
+.right.hip.joint {
+  animation: rotate-ccw-45 0.5s infinite;
+}
+
+.left.knee.joint {
+  animation: rotate-ccw-45 0.5s infinite;
+}
+
+.right.knee.joint {
+  animation: rotate-cw-45 0.5s infinite;
+}
+
+.robot .base {
+  position: relative;
+}
+.robot .joint, .robot .torso, .robot .head, .robot .eye, .robot .mouth, .robot .arm, .robot .leg {
+  position: absolute;
+}
+.robot .base {
+  height: 50px;
+  width: 50px;
+  border-radius: 100%;
+  background-color: #0ff;
+}
+.robot .joint {
+  height: 20px;
+  width: 20px;
+  border-radius: 100%;
+  background-color: #0ff;
+}
+.robot .visible.joint {
+  top: -10px;
+}
+.robot .left.shoulder.joint {
+  top: 0;
+  left: -25px;
+}
+.robot .right.shoulder.joint {
+  top: 0;
+  right: -25px;
+}
+.robot .elbow.joint, .robot .knee.joint {
+  bottom: -10px;
+}
+.robot .hip.joint {
+  bottom: -25px;
+}
+.robot .left.hip.joint {
+  left: 0;
+}
+.robot .right.hip.joint {
+  right: 0;
+}
+.robot .torso {
+  height: 100px;
+  width: 50px;
+  top: -75px;
+  transform-origin: bottom center;
+  z-index: 10;
+}
 .robot .head {
   height: 40px;
   width: 40px;
-  position: absolute;
   top: -45px;
   left: 5px;
 }
-
 .robot .eye {
   height: 5px;
   width: 5px;
-  position: absolute;
   top: 10px;
   border-radius: 100%;
 }
-
-.robot .eye.left {
+.robot .left.eye {
   left: 10px;
 }
-
-.robot .eye.right {
+.robot .right.eye {
   right: 10px;
 }
-
 .robot .mouth {
   height: 10px;
   width: 20px;
-  position: absolute;
   left: 10px;
   bottom: 10px;
   border-radius: 0 0 10px 10px;
 }
-
 .robot .arm {
   height: 75px;
   width: 20px;
-  position: absolute;
   top: 10px;
-  transform-origin: 10px 0px;
 }
-
-.robot .joint {
-  height: 20px;
-  width: 20px;
-  position: absolute;
-  top: -10px;
-  border-radius: 100%;
-}
-
-.robot .arm.left {
-  left: -25px;
-  animation: rotate-cw-180 reverse 1s infinite;
-}
-
-.robot .arm.right {
-  right: -25px;
-  animation: rotate-ccw-180 reverse 1s infinite;
-}
-
-.robot .forearm {
-  height: 75px;
-  width: 20px;
-  position: absolute;
-  bottom: -75px;
-  transform-origin: 10px 0px;
-}
-
-.robot .forearm.left {
-  animation: rotate-cw-90 1s infinite;
-}
-
-.robot .forearm.right {
-  animation: rotate-ccw-90 1s infinite;
-}
-
 .robot .leg {
   height: 100px;
   width: 20px;
+  top: 10px;
+}
+.robot .accent-bar, .robot .base, .robot .eye, .robot .mouth, .robot .visible.joint {
+  background-color: #f3b;
+}
+.robot .torso, .robot .head, .robot .arm, .robot .forearm, .robot .leg {
+  background-color: #6e8;
+}
+.robot .accent-bar {
+  height: 5px;
+  width: 100%;
   position: absolute;
-  bottom: -95px;
-  transform-origin: 10px 0px;
-}
-
-.robot .leg.left {
-  left: -5px;
-  animation: rotate-cw-45 0.5s infinite;
-}
-
-.robot .leg.right {
-  right: -5px;
-  animation: rotate-ccw-45 0.5s infinite;
-}
-
-.robot .leg.lower.left {
-  left: 0px;
-  animation: rotate-ccw-45 0.5s infinite;
-}
-
-.robot .leg.lower.right {
-  right: 0px;
-  animation: rotate-cw-45 0.5s infinite;
+  top: 15px;
 }
 
 /*# sourceMappingURL=styles.css.map */

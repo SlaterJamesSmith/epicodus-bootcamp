@@ -1,0 +1,39 @@
+.base {
+  animation: bounce 0.5s infinite;
+}
+
+.head, .eye, .mouth {
+  animation: head-turn 0.5s infinite;
+}
+
+.left.shoulder.joint {
+  animation: rotate-cw-180 reverse 1s infinite;
+}
+
+.right.shoulder.joint {
+  animation: rotate-ccw-180 reverse 1s infinite;
+}
+
+.left.elbow.joint {
+  animation: rotate-cw-90 1s infinite;
+}
+
+.right.elbow.joint {
+  animation: rotate-ccw-90 1s infinite;
+}
+
+.left.hip.joint {
+  animation: rotate-cw-45 0.5s infinite;
+}
+
+.right.hip.joint {
+  animation: rotate-ccw-45 0.5s infinite;
+}
+
+.left.knee.joint {
+  animation: rotate-ccw-45 0.5s infinite;
+}
+
+.right.knee.joint {
+  animation: rotate-cw-45 0.5s infinite;
+}

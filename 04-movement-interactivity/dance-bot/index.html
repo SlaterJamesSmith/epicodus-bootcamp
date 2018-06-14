@@ -7,39 +7,55 @@
   </head>
   <body>
     <div id="wrapper">
-      <div class="robot base">
-        <div class="body">
-          <div class="bar one"></div>
-          <div class="bar two"></div>
-          <div class="bar three"></div>
-          <div class="head">
-            <div class="eye left"></div>
-            <div class="eye right"></div>
-            <div class="mouth"></div>
-          </div>
-          <div class="arm left">
-            <div class="joint"></div>
-            <div class="forearm left">
-              <div class="joint"></div>
+      <div class="robot">
+        <div class="base">
+          <div class="torso">
+            <div class="accent-bar"><div class="accent-bar"><div class="accent-bar"></div></div></div>
+            <div class="head">
+              <div class="eye left"></div>
+              <div class="eye right"></div>
+              <div class="mouth"></div>
+            </div>
+            <div class="left shoulder joint">
+              <div class="arm">
+                <div class="visible joint"></div>
+                <div class="left elbow joint">
+                  <div class="fore arm">
+                    <div class="visible joint"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="right shoulder joint">
+              <div class="arm">
+                <div class="visible joint"></div>
+                <div class="right elbow joint">
+                  <div class="fore arm">
+                    <div class="visible joint"></div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
-          <div class="arm right">
-            <div class="joint"></div>
-            <div class="forearm right">
-              <div class="joint"></div>
+          <div class="left hip joint">
+            <div class="leg">
+              <div class="visible joint"></div>
+              <div class="left knee joint">
+                <div class="leg">
+                  <div class="visible joint"></div>
+                </div>
+              </div>
             </div>
           </div>
-        </div>
-        <div class="leg left">
-          <div class="joint"></div>
-          <div class="leg lower left">
-            <div class="joint"></div>
-          </div>
-        </div>
-        <div class="leg right">
-          <div class="joint"></div>
-          <div class="leg lower right">
-            <div class="joint"></div>
+          <div class="right hip joint">
+            <div class="leg">
+              <div class="visible joint"></div>
+              <div class="right knee joint">
+                <div class="leg">
+                  <div class="visible joint"></div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
