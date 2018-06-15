@@ -10,24 +10,18 @@
   @include keyframe-property-loop(top, 15px, 20px);
 }
 
+@include keyframe-animation(head-turn) {
+  @include keyframe-property-loop(transform, translate(-5px, -3px), translate(5px, 1px));
+}
+
+// ROTATIONS - NORMAL LOOPED
+
 @include keyframe-animation(window-wipe-30) {
   @include keyframe-property-loop(transform, rotate(-15deg), rotate(15deg));
 }
 
 @include keyframe-animation(window-wipe-60) {
   @include keyframe-property-loop(transform, rotate(-30deg), rotate(30deg));
-}
-
-@include keyframe-animation(head-turn) {
-  @include keyframe-property-loop(transform, translate(-5px, -3px), translate(5px, 1px));
-}
-
-@include keyframe-animation(rotate-cw-180) {
-  @include keyframe-property-loop(transform, rotate(180deg), rotate(0deg));
-}
-
-@include keyframe-animation(rotate-ccw-180) {
-  @include keyframe-property-loop(transform, rotate(-180deg), rotate(0deg));
 }
 
 @include keyframe-animation(rotate-cw-90) {
@@ -44,4 +38,14 @@
 
 @include keyframe-animation(rotate-ccw-45) {
   @include keyframe-property-loop(transform, rotate(0deg), rotate(-45deg));
+}
+
+// ROTATIONS - REVERSE LOOPED
+
+@include keyframe-animation(rotate-cw-180) {
+  @include keyframe-property-loop(transform, rotate(180deg), rotate(0deg));
+}
+
+@include keyframe-animation(rotate-ccw-180) {
+  @include keyframe-property-loop(transform, rotate(-180deg), rotate(0deg));
 }

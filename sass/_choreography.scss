@@ -39,19 +39,11 @@
     animation: rotate-ccw-90 1s infinite;
   }
 
-  .left.hip.joint {
+  .left.hip.joint, .right.knee.joint {
     animation: rotate-cw-45 0.5s infinite;
   }
 
-  .right.hip.joint {
+  .right.hip.joint, .left.knee.joint {
     animation: rotate-ccw-45 0.5s infinite;
-  }
-
-  .left.knee.joint {
-    animation: rotate-ccw-45 0.5s infinite;
-  }
-
-  .right.knee.joint {
-    animation: rotate-cw-45 0.5s infinite;
   }
 }
