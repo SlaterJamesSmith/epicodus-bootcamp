@@ -32,11 +32,11 @@
   }
 
   .left.elbow.joint {
-    animation: rotate-cw-90 1s infinite;
+    animation: rotate-cw-95 1s infinite;
   }
 
   .right.elbow.joint {
-    animation: rotate-ccw-90 1s infinite;
+    animation: rotate-ccw-95 1s infinite;
   }
 
   .left.hip.joint, .right.knee.joint {
@@ -50,19 +50,17 @@
 
 .dance-2 {
   .base {
-    // animation: bounce 0.5s infinite;
+    animation: jump 0.5s infinite;
   }
 
-  .waist {
-    // animation: window-wipe-60 2s infinite;
-  }
+  .waist { }
 
   .torso {
-    // animation: spring 0.5s infinite;
+    animation: spring 0.5s infinite;
   }
 
   .accent-bar {
-    // animation: spring-accent-bar 0.5s infinite;
+    animation: spring-accent-bar 0.5s infinite;
   }
 
   .neck { }
@@ -83,11 +81,11 @@
     animation: wipe-ccw-270 1s infinite;
   }
 
-  .left.hip.joint, .right.knee.joint {
-    // animation: rotate-cw-45 0.5s infinite;
+  .left.hip.joint, .right.hip.joint {
+    animation: rotate-alt-45 1s infinite;
   }
 
-  .right.hip.joint, .left.knee.joint {
-    // animation: rotate-ccw-45 0.5s infinite;
+  .left.knee.joint, .right.knee.joint {
+    animation: rotate-alt-90-rv 1s infinite;
   }
 }

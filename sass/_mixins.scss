@@ -12,14 +12,32 @@
           #{$property}: $value;
 }
 
-@mixin keyframe-property-loop($property, $min-value, $max-value) {
+@mixin set-loop($property, $origin-value, $max-value) {
   0% {
-    @include keyframe-property(#{$property}, #{$min-value});
+    @include keyframe-property(#{$property}, #{$origin-value});
   }
   50% {
     @include keyframe-property(#{$property}, #{$max-value});
   }
   100% {
-    @include keyframe-property(#{$property}, #{$min-value});
+    @include keyframe-property(#{$property}, #{$origin-value});
+  }
+}
+
+@mixin set-2-step-loop($property, $origin-value, $max-value-1, $max-value-2) {
+  0% {
+    @include keyframe-property(#{$property}, #{$origin-value});
+  }
+  25% {
+    @include keyframe-property(#{$property}, #{$max-value-1});
+  }
+  50% {
+    @include keyframe-property(#{$property}, #{$origin-value});
+  }
+  75% {
+    @include keyframe-property(#{$property}, #{$max-value-2});
+  }
+  100% {
+    @include keyframe-property(#{$property}, #{$origin-value});
   }
 }

@@ -44,6 +44,34 @@ html, body {
     transform: translateY(0px);
   }
 }
+@-webkit-keyframes jump {
+  0% {
+    -webkit-transform: translateY(-50px);
+    transform: translateY(-50px);
+  }
+  50% {
+    -webkit-transform: translateY(90px);
+    transform: translateY(90px);
+  }
+  100% {
+    -webkit-transform: translateY(-50px);
+    transform: translateY(-50px);
+  }
+}
+@keyframes jump {
+  0% {
+    -webkit-transform: translateY(-50px);
+    transform: translateY(-50px);
+  }
+  50% {
+    -webkit-transform: translateY(90px);
+    transform: translateY(90px);
+  }
+  100% {
+    -webkit-transform: translateY(-50px);
+    transform: translateY(-50px);
+  }
+}
 @-webkit-keyframes spring {
   0% {
     -webkit-height: 125px;
@@ -212,7 +240,7 @@ html, body {
     transform: rotate(-180deg);
   }
 }
-@-webkit-keyframes rotate-cw-90 {
+@-webkit-keyframes rotate-cw-95 {
   0% {
     -webkit-transform: rotate(0deg);
     transform: rotate(0deg);
@@ -226,7 +254,7 @@ html, body {
     transform: rotate(0deg);
   }
 }
-@keyframes rotate-cw-90 {
+@keyframes rotate-cw-95 {
   0% {
     -webkit-transform: rotate(0deg);
     transform: rotate(0deg);
@@ -240,7 +268,7 @@ html, body {
     transform: rotate(0deg);
   }
 }
-@-webkit-keyframes rotate-ccw-90 {
+@-webkit-keyframes rotate-ccw-95 {
   0% {
     -webkit-transform: rotate(0deg);
     transform: rotate(0deg);
@@ -254,7 +282,7 @@ html, body {
     transform: rotate(0deg);
   }
 }
-@keyframes rotate-ccw-90 {
+@keyframes rotate-ccw-95 {
   0% {
     -webkit-transform: rotate(0deg);
     transform: rotate(0deg);
@@ -464,6 +492,94 @@ html, body {
     transform: rotate(-135deg);
   }
 }
+@-webkit-keyframes rotate-alt-90-rv {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  25% {
+    -webkit-transform: rotate(-90deg);
+    transform: rotate(-90deg);
+  }
+  50% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  75% {
+    -webkit-transform: rotate(90deg);
+    transform: rotate(90deg);
+  }
+  100% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+}
+@keyframes rotate-alt-90-rv {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  25% {
+    -webkit-transform: rotate(-90deg);
+    transform: rotate(-90deg);
+  }
+  50% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  75% {
+    -webkit-transform: rotate(90deg);
+    transform: rotate(90deg);
+  }
+  100% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+}
+@-webkit-keyframes rotate-alt-45 {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  25% {
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+  }
+  50% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  75% {
+    -webkit-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+  }
+  100% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+}
+@keyframes rotate-alt-45 {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  25% {
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+  }
+  50% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  75% {
+    -webkit-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+  }
+  100% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+}
 .dance-1 .base {
   animation: bounce 0.5s infinite;
 }
@@ -489,10 +605,10 @@ html, body {
   animation: rotate-ccw-180-rv reverse 1s infinite;
 }
 .dance-1 .left.elbow.joint {
-  animation: rotate-cw-90 1s infinite;
+  animation: rotate-cw-95 1s infinite;
 }
 .dance-1 .right.elbow.joint {
-  animation: rotate-ccw-90 1s infinite;
+  animation: rotate-ccw-95 1s infinite;
 }
 .dance-1 .left.hip.joint, .dance-1 .right.knee.joint {
   animation: rotate-cw-45 0.5s infinite;
@@ -501,6 +617,15 @@ html, body {
   animation: rotate-ccw-45 0.5s infinite;
 }
 
+.dance-2 .base {
+  animation: jump 0.5s infinite;
+}
+.dance-2 .torso {
+  animation: spring 0.5s infinite;
+}
+.dance-2 .accent-bar {
+  animation: spring-accent-bar 0.5s infinite;
+}
 .dance-2 .head, .dance-2 .eye, .dance-2 .mouth {
   animation: shifty 0.5s infinite;
 }
@@ -513,6 +638,13 @@ html, body {
 .dance-2 .left.elbow.joint, .dance-2 .right.elbow.joint {
   animation: wipe-ccw-270 1s infinite;
 }
+.dance-2 .left.hip.joint, .dance-2 .right.hip.joint {
+  animation: rotate-alt-45 1s infinite;
+}
+.dance-2 .left.knee.joint, .dance-2 .right.knee.joint {
+  animation: rotate-alt-90-rv 1s infinite;
+}
+
 .robot {
   position: relative;
 }
