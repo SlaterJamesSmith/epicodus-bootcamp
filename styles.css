@@ -352,43 +352,61 @@ html, body {
     transform: rotate(-180deg);
   }
 }
-.default.dance .base {
+.dance-1 .base {
   animation: bounce 0.5s infinite;
 }
-.default.dance .waist {
+.dance-1 .waist {
   animation: window-wipe-60 2s infinite;
 }
-.default.dance .torso {
+.dance-1 .torso {
   animation: spring 0.5s infinite;
 }
-.default.dance .accent-bar {
+.dance-1 .accent-bar {
   animation: spring-accent-bar 0.5s infinite;
 }
-.default.dance .neck {
+.dance-1 .neck {
   animation: window-wipe-30 0.5s infinite;
 }
-.default.dance .head, .default.dance .eye, .default.dance .mouth {
+.dance-1 .head, .dance-1 .eye, .dance-1 .mouth {
   animation: head-turn 0.5s infinite;
 }
-.default.dance .left.shoulder.joint {
+.dance-1 .left.shoulder.joint {
   animation: rotate-cw-180 reverse 1s infinite;
 }
-.default.dance .right.shoulder.joint {
+.dance-1 .right.shoulder.joint {
   animation: rotate-ccw-180 reverse 1s infinite;
 }
-.default.dance .left.elbow.joint {
+.dance-1 .left.elbow.joint {
   animation: rotate-cw-90 1s infinite;
 }
-.default.dance .right.elbow.joint {
+.dance-1 .right.elbow.joint {
   animation: rotate-ccw-90 1s infinite;
 }
-.default.dance .left.hip.joint, .default.dance .right.knee.joint {
+.dance-1 .left.hip.joint, .dance-1 .right.knee.joint {
   animation: rotate-cw-45 0.5s infinite;
 }
-.default.dance .right.hip.joint, .default.dance .left.knee.joint {
+.dance-1 .right.hip.joint, .dance-1 .left.knee.joint {
   animation: rotate-ccw-45 0.5s infinite;
 }
 
+.dance-2 .neck {
+  animation: window-wipe-30 0.25s infinite;
+}
+.dance-2 .head, .dance-2 .eye, .dance-2 .mouth {
+  animation: head-turn 0.5s infinite;
+}
+.dance-2 .left.shoulder.joint {
+  animation: window-wipe-60 1s infinite;
+}
+.dance-2 .right.shoulder.joint {
+  animation: window-wipe-60 1s infinite;
+}
+.dance-2 .left.elbow.joint {
+  animation: window-wipe-60 1s infinite;
+}
+.dance-2 .right.elbow.joint {
+  animation: window-wipe-60 1s infinite;
+}
 .robot {
   position: relative;
 }
@@ -404,6 +422,9 @@ html, body {
   height: 50px;
   width: 50px;
   border-radius: 100%;
+}
+.robot .waist {
+  z-index: 10;
 }
 .robot .neck {
   top: -25px;
@@ -440,7 +461,6 @@ html, body {
   height: 100px;
   width: 50px;
   bottom: 25px;
-  z-index: 10;
 }
 .robot .head {
   height: 40px;
@@ -479,7 +499,7 @@ html, body {
 }
 
 .robot .base, .robot .joint {
-  background-color: #f00;
+  background-color: gray;
 }
 .robot .accent-bar {
   height: 5px;
@@ -488,18 +508,25 @@ html, body {
   top: 15px;
 }
 
-.default .accent-bar, .default .waist, .default .eye, .default .mouth, .default .visible.joint {
-  background-color: #f3b;
+.look-1 .accent-bar, .look-1 .waist, .look-1 .eye, .look-1 .mouth, .look-1 .visible.joint {
+  background-color: magenta;
 }
-.default .torso, .default .head, .default .arm, .default .leg {
+.look-1 .torso, .look-1 .head, .look-1 .arm, .look-1 .leg {
   background-color: #6e8;
 }
 
-.look-1 .accent-bar, .look-1 .waist, .look-1 .eye, .look-1 .mouth, .look-1 .visible.joint {
-  background-color: #ff0;
+.look-2 .accent-bar, .look-2 .waist, .look-2 .eye, .look-2 .mouth, .look-2 .visible.joint {
+  background-color: yellow;
 }
-.look-1 .torso, .look-1 .head, .look-1 .arm, .look-1 .leg {
-  background-color: #00f;
+.look-2 .torso, .look-2 .head, .look-2 .arm, .look-2 .leg {
+  background-color: blue;
+}
+
+.look-3 .accent-bar, .look-3 .waist, .look-3 .eye, .look-3 .mouth, .look-3 .visible.joint {
+  background-color: cyan;
+}
+.look-3 .torso, .look-3 .head, .look-3 .arm, .look-3 .leg {
+  background-color: red;
 }
 
 /*# sourceMappingURL=styles.css.map */

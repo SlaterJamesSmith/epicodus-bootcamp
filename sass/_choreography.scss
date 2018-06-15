@@ -1,4 +1,4 @@
-.default.dance {
+.dance-1 {
   .base {
     animation: bounce 0.5s infinite;
   }
@@ -45,5 +45,55 @@
 
   .right.hip.joint, .left.knee.joint {
     animation: rotate-ccw-45 0.5s infinite;
+  }
+}
+
+.dance-2 {
+  .base {
+    // animation: bounce 0.5s infinite;
+  }
+
+  .waist {
+    // animation: window-wipe-60 2s infinite;
+  }
+
+  .torso {
+    // animation: spring 0.5s infinite;
+  }
+
+  .accent-bar {
+    // animation: spring-accent-bar 0.5s infinite;
+  }
+
+  .neck {
+    animation: window-wipe-30 0.25s infinite;
+  }
+
+  .head, .eye, .mouth {
+    animation: head-turn 0.5s infinite;
+  }
+
+  .left.shoulder.joint {
+    animation: window-wipe-60 1s infinite;
+  }
+
+  .right.shoulder.joint {
+    animation: window-wipe-60 1s infinite;
+  }
+
+  .left.elbow.joint {
+    animation: window-wipe-60 1s infinite;
+  }
+
+  .right.elbow.joint {
+    animation: window-wipe-60 1s infinite;
+  }
+
+  .left.hip.joint, .right.knee.joint {
+    // animation: rotate-cw-45 0.5s infinite;
+  }
+
+  .right.hip.joint, .left.knee.joint {
+    // animation: rotate-ccw-45 0.5s infinite;
   }
 }

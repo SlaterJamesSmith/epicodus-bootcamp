@@ -21,6 +21,10 @@
     border-radius: 100%;
   }
 
+  .waist {
+    z-index: 10;
+  }
+
   .neck {
     top: -25px;
   }
@@ -66,7 +70,6 @@
     height: 100px;
     width:50px;
     bottom: 25px;
-    z-index: 10;
   }
 
   .head {
@@ -127,9 +130,19 @@
   }
 }
 
-.default {
+.look-1 {
   .accent-bar, .waist, .eye, .mouth, .visible.joint {
+    background-color: $highlight-1;
+  }
+
+  .torso, .head, .arm, .leg {
     background-color: $color-1;
+  }
+}
+
+.look-2 {
+  .accent-bar, .waist, .eye, .mouth, .visible.joint {
+    background-color: $highlight-2;
   }
 
   .torso, .head, .arm, .leg {
@@ -137,9 +150,9 @@
   }
 }
 
-.look-1 {
+.look-3 {
   .accent-bar, .waist, .eye, .mouth, .visible.joint {
-    background-color: $color-4;
+    background-color: $highlight-3;
   }
 
   .torso, .head, .arm, .leg {
