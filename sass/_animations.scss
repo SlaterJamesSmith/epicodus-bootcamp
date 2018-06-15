@@ -7,7 +7,7 @@
 }
 
 @include keyframe-animation(spring-accent-bar) {
-  @include keyframe-property-loop(top, 15px, 20px);
+  @include keyframe-property-loop(top, 20px, 30px);
 }
 
 @include keyframe-animation(head-turn) {

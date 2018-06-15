@@ -74,30 +74,30 @@ html, body {
 }
 @-webkit-keyframes spring-accent-bar {
   0% {
-    -webkit-top: 15px;
-    top: 15px;
-  }
-  50% {
     -webkit-top: 20px;
     top: 20px;
   }
+  50% {
+    -webkit-top: 30px;
+    top: 30px;
+  }
   100% {
-    -webkit-top: 15px;
-    top: 15px;
+    -webkit-top: 20px;
+    top: 20px;
   }
 }
 @keyframes spring-accent-bar {
   0% {
-    -webkit-top: 15px;
-    top: 15px;
-  }
-  50% {
     -webkit-top: 20px;
     top: 20px;
   }
+  50% {
+    -webkit-top: 30px;
+    top: 30px;
+  }
   100% {
-    -webkit-top: 15px;
-    top: 15px;
+    -webkit-top: 20px;
+    top: 20px;
   }
 }
 @-webkit-keyframes head-turn {
@@ -435,7 +435,10 @@ html, body {
   border-radius: 100%;
 }
 .robot .visible.joint {
-  top: -10px;
+  height: 26px;
+  width: 26px;
+  top: -13px;
+  left: -3px;
 }
 .robot .left.shoulder.joint {
   top: 0;
@@ -502,10 +505,10 @@ html, body {
   background-color: gray;
 }
 .robot .accent-bar {
-  height: 5px;
+  height: 15px;
   width: 100%;
   position: absolute;
-  top: 15px;
+  top: 25px;
 }
 
 .look-1 .accent-bar, .look-1 .waist, .look-1 .eye, .look-1 .mouth, .look-1 .visible.joint {
@@ -527,6 +530,10 @@ html, body {
 }
 .look-3 .torso, .look-3 .head, .look-3 .arm, .look-3 .leg {
   background-color: red;
+}
+
+.robot:hover .head {
+  transform: scale(2, 2);
 }
 
 /*# sourceMappingURL=styles.css.map */
