@@ -100,7 +100,7 @@ html, body {
     top: 20px;
   }
 }
-@-webkit-keyframes head-turn {
+@-webkit-keyframes face-turn {
   0% {
     -webkit-transform: translate(-5px, -3px);
     transform: translate(-5px, -3px);
@@ -114,7 +114,7 @@ html, body {
     transform: translate(-5px, -3px);
   }
 }
-@keyframes head-turn {
+@keyframes face-turn {
   0% {
     -webkit-transform: translate(-5px, -3px);
     transform: translate(-5px, -3px);
@@ -368,7 +368,7 @@ html, body {
   animation: window-wipe-30 0.5s infinite;
 }
 .dance-1 .head, .dance-1 .eye, .dance-1 .mouth {
-  animation: head-turn 0.5s infinite;
+  animation: face-turn 0.5s infinite;
 }
 .dance-1 .left.shoulder.joint {
   animation: rotate-cw-180 reverse 1s infinite;
@@ -390,10 +390,10 @@ html, body {
 }
 
 .dance-2 .neck {
-  animation: window-wipe-30 0.25s infinite;
+  animation: window-wipe-30 0.5s infinite;
 }
 .dance-2 .head, .dance-2 .eye, .dance-2 .mouth {
-  animation: head-turn 0.5s infinite;
+  animation: face-turn 0.5s infinite;
 }
 .dance-2 .left.shoulder.joint {
   animation: window-wipe-60 1s infinite;
@@ -532,8 +532,11 @@ html, body {
   background-color: red;
 }
 
-.robot:hover .head {
-  transform: scale(2, 2);
+.robot:hover .accent-bar, .robot:hover .waist, .robot:hover .eye, .robot:hover .mouth, .robot:hover .visible.joint {
+  background-color: #fff;
+}
+.robot:hover .torso, .robot:hover .head, .robot:hover .arm, .robot:hover .leg {
+  background-color: #222;
 }
 
 /*# sourceMappingURL=styles.css.map */

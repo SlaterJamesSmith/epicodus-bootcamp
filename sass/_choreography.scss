@@ -20,7 +20,7 @@
   }
 
   .head, .eye, .mouth {
-    animation: head-turn 0.5s infinite;
+    animation: face-turn 0.5s infinite;
   }
 
   .left.shoulder.joint {
@@ -66,11 +66,11 @@
   }
 
   .neck {
-    animation: window-wipe-30 0.25s infinite;
+    animation: window-wipe-30 0.5s infinite;
   }
 
   .head, .eye, .mouth {
-    animation: head-turn 0.5s infinite;
+    animation: face-turn 0.5s infinite;
   }
 
   .left.shoulder.joint {

@@ -10,7 +10,9 @@
   @include keyframe-property-loop(top, 20px, 30px);
 }
 
-@include keyframe-animation(head-turn) {
+// HEAD MOVMENTS
+
+@include keyframe-animation(face-turn) {
   @include keyframe-property-loop(transform, translate(-5px, -3px), translate(5px, 1px));
 }
 

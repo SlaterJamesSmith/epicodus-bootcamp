@@ -1,0 +1,9 @@
+.robot:hover{
+  .accent-bar, .waist, .eye, .mouth, .visible.joint {
+    background-color: #fff;
+  }
+
+  .torso, .head, .arm, .leg {
+    background-color: #222;
+  }
+}
