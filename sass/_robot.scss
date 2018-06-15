@@ -1,5 +1,6 @@
-.robot {
+// ROBOT RIG
 
+.robot {
   // ROBOT RIG - POSITION RELATIONSHIPS
   position: relative;
 
@@ -109,18 +110,13 @@
     width: 20px;
     top: 10px;
   }
-  
-  // ROBOT STYLES
+}
+
+// ROBOT STYLES
+
+.robot {
   .base, .joint {
     background-color: $animator-joint;
-  }
-
-  .accent-bar, .waist, .eye, .mouth, .visible.joint {
-    background-color: $color-1;
-  }
-
-  .torso, .head, .arm, .leg {
-    background-color: $color-2;
   }
 
   .accent-bar {
@@ -128,5 +124,25 @@
     width: 100%;
     position: absolute;
     top: 15px;
+  }
+}
+
+.default {
+  .accent-bar, .waist, .eye, .mouth, .visible.joint {
+    background-color: $color-1;
+  }
+
+  .torso, .head, .arm, .leg {
+    background-color: $color-2;
+  }
+}
+
+.look-1 {
+  .accent-bar, .waist, .eye, .mouth, .visible.joint {
+    background-color: $color-4;
+  }
+
+  .torso, .head, .arm, .leg {
+    background-color: $color-3;
   }
 }

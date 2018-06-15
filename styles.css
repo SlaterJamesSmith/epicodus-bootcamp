@@ -352,40 +352,40 @@ html, body {
     transform: rotate(-180deg);
   }
 }
-.default-dance .base {
+.default.dance .base {
   animation: bounce 0.5s infinite;
 }
-.default-dance .waist {
+.default.dance .waist {
   animation: window-wipe-60 2s infinite;
 }
-.default-dance .torso {
+.default.dance .torso {
   animation: spring 0.5s infinite;
 }
-.default-dance .accent-bar {
+.default.dance .accent-bar {
   animation: spring-accent-bar 0.5s infinite;
 }
-.default-dance .neck {
+.default.dance .neck {
   animation: window-wipe-30 0.5s infinite;
 }
-.default-dance .head, .default-dance .eye, .default-dance .mouth {
+.default.dance .head, .default.dance .eye, .default.dance .mouth {
   animation: head-turn 0.5s infinite;
 }
-.default-dance .left.shoulder.joint {
+.default.dance .left.shoulder.joint {
   animation: rotate-cw-180 reverse 1s infinite;
 }
-.default-dance .right.shoulder.joint {
+.default.dance .right.shoulder.joint {
   animation: rotate-ccw-180 reverse 1s infinite;
 }
-.default-dance .left.elbow.joint {
+.default.dance .left.elbow.joint {
   animation: rotate-cw-90 1s infinite;
 }
-.default-dance .right.elbow.joint {
+.default.dance .right.elbow.joint {
   animation: rotate-ccw-90 1s infinite;
 }
-.default-dance .left.hip.joint, .default-dance .right.knee.joint {
+.default.dance .left.hip.joint, .default.dance .right.knee.joint {
   animation: rotate-cw-45 0.5s infinite;
 }
-.default-dance .right.hip.joint, .default-dance .left.knee.joint {
+.default.dance .right.hip.joint, .default.dance .left.knee.joint {
   animation: rotate-ccw-45 0.5s infinite;
 }
 
@@ -477,20 +477,29 @@ html, body {
   width: 20px;
   top: 10px;
 }
+
 .robot .base, .robot .joint {
-  background-color: #0ff;
-}
-.robot .accent-bar, .robot .waist, .robot .eye, .robot .mouth, .robot .visible.joint {
-  background-color: #f3b;
-}
-.robot .torso, .robot .head, .robot .arm, .robot .leg {
-  background-color: #6e8;
+  background-color: #f00;
 }
 .robot .accent-bar {
   height: 5px;
   width: 100%;
   position: absolute;
   top: 15px;
+}
+
+.default .accent-bar, .default .waist, .default .eye, .default .mouth, .default .visible.joint {
+  background-color: #f3b;
+}
+.default .torso, .default .head, .default .arm, .default .leg {
+  background-color: #6e8;
+}
+
+.look-1 .accent-bar, .look-1 .waist, .look-1 .eye, .look-1 .mouth, .look-1 .visible.joint {
+  background-color: #ff0;
+}
+.look-1 .torso, .look-1 .head, .look-1 .arm, .look-1 .leg {
+  background-color: #00f;
 }
 
 /*# sourceMappingURL=styles.css.map */
