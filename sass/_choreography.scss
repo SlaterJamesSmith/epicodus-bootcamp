@@ -50,10 +50,12 @@
 
 .dance-2 {
   .base {
-    animation: jump 0.5s infinite;
+    animation: jump-shift 1s infinite;
   }
 
-  .waist { }
+  .waist {
+    animation: wipe-cw-10 1s infinite;
+  }
 
   .torso {
     animation: spring 0.5s infinite;
@@ -66,15 +68,15 @@
   .neck { }
 
   .head, .eye, .mouth {
-    animation: shifty 0.5s infinite;
+    animation: shifty 1s infinite;
   }
 
   .left.shoulder.joint {
-    animation: wipe-cw-90-left-from-nd 1s infinite;
+    animation: wipe-cw-90-left-from-nd 1.5s infinite;
   }
 
   .right.shoulder.joint {
-    animation: wipe-cw-90-right-from-nd 1s infinite;
+    animation: wipe-cw-90-right-from-nd 1.5s infinite;
   }
 
   .left.elbow.joint, .right.elbow.joint {
@@ -82,10 +84,10 @@
   }
 
   .left.hip.joint, .right.hip.joint {
-    animation: rotate-alt-45 1s infinite;
+    animation: rotate-alt-45 1s linear infinite;
   }
 
   .left.knee.joint, .right.knee.joint {
-    animation: rotate-alt-90-rv 1s infinite;
+    animation: rotate-alt-90-rv 1s linear infinite;
   }
 }

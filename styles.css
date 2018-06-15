@@ -44,32 +44,48 @@ html, body {
     transform: translateY(0px);
   }
 }
-@-webkit-keyframes jump {
+@-webkit-keyframes jump-shift {
   0% {
-    -webkit-transform: translateY(-50px);
-    transform: translateY(-50px);
+    -webkit-transform: translate(0px, -25px);
+    transform: translate(0px, -25px);
+  }
+  25% {
+    -webkit-transform: translate(-25px, 50px);
+    transform: translate(-25px, 50px);
   }
   50% {
-    -webkit-transform: translateY(90px);
-    transform: translateY(90px);
+    -webkit-transform: translate(0px, -25px);
+    transform: translate(0px, -25px);
+  }
+  75% {
+    -webkit-transform: translate(25px, 50px);
+    transform: translate(25px, 50px);
   }
   100% {
-    -webkit-transform: translateY(-50px);
-    transform: translateY(-50px);
+    -webkit-transform: translate(0px, -25px);
+    transform: translate(0px, -25px);
   }
 }
-@keyframes jump {
+@keyframes jump-shift {
   0% {
-    -webkit-transform: translateY(-50px);
-    transform: translateY(-50px);
+    -webkit-transform: translate(0px, -25px);
+    transform: translate(0px, -25px);
+  }
+  25% {
+    -webkit-transform: translate(-25px, 50px);
+    transform: translate(-25px, 50px);
   }
   50% {
-    -webkit-transform: translateY(90px);
-    transform: translateY(90px);
+    -webkit-transform: translate(0px, -25px);
+    transform: translate(0px, -25px);
+  }
+  75% {
+    -webkit-transform: translate(25px, 50px);
+    transform: translate(25px, 50px);
   }
   100% {
-    -webkit-transform: translateY(-50px);
-    transform: translateY(-50px);
+    -webkit-transform: translate(0px, -25px);
+    transform: translate(0px, -25px);
   }
 }
 @-webkit-keyframes spring {
@@ -102,30 +118,30 @@ html, body {
 }
 @-webkit-keyframes spring-accent-bar {
   0% {
-    -webkit-top: 20px;
-    top: 20px;
+    -webkit-top: 35px;
+    top: 35px;
   }
   50% {
-    -webkit-top: 30px;
-    top: 30px;
-  }
-  100% {
     -webkit-top: 20px;
     top: 20px;
+  }
+  100% {
+    -webkit-top: 35px;
+    top: 35px;
   }
 }
 @keyframes spring-accent-bar {
   0% {
-    -webkit-top: 20px;
-    top: 20px;
+    -webkit-top: 35px;
+    top: 35px;
   }
   50% {
-    -webkit-top: 30px;
-    top: 30px;
-  }
-  100% {
     -webkit-top: 20px;
     top: 20px;
+  }
+  100% {
+    -webkit-top: 35px;
+    top: 35px;
   }
 }
 @-webkit-keyframes face-turn {
@@ -350,6 +366,34 @@ html, body {
   100% {
     -webkit-transform: rotate(0deg);
     transform: rotate(0deg);
+  }
+}
+@-webkit-keyframes wipe-cw-10 {
+  0% {
+    -webkit-transform: rotate(-5deg);
+    transform: rotate(-5deg);
+  }
+  50% {
+    -webkit-transform: rotate(5deg);
+    transform: rotate(5deg);
+  }
+  100% {
+    -webkit-transform: rotate(-5deg);
+    transform: rotate(-5deg);
+  }
+}
+@keyframes wipe-cw-10 {
+  0% {
+    -webkit-transform: rotate(-5deg);
+    transform: rotate(-5deg);
+  }
+  50% {
+    -webkit-transform: rotate(5deg);
+    transform: rotate(5deg);
+  }
+  100% {
+    -webkit-transform: rotate(-5deg);
+    transform: rotate(-5deg);
   }
 }
 @-webkit-keyframes wipe-cw-30 {
@@ -618,7 +662,10 @@ html, body {
 }
 
 .dance-2 .base {
-  animation: jump 0.5s infinite;
+  animation: jump-shift 1s infinite;
+}
+.dance-2 .waist {
+  animation: wipe-cw-10 1s infinite;
 }
 .dance-2 .torso {
   animation: spring 0.5s infinite;
@@ -627,22 +674,22 @@ html, body {
   animation: spring-accent-bar 0.5s infinite;
 }
 .dance-2 .head, .dance-2 .eye, .dance-2 .mouth {
-  animation: shifty 0.5s infinite;
+  animation: shifty 1s infinite;
 }
 .dance-2 .left.shoulder.joint {
-  animation: wipe-cw-90-left-from-nd 1s infinite;
+  animation: wipe-cw-90-left-from-nd 1.5s infinite;
 }
 .dance-2 .right.shoulder.joint {
-  animation: wipe-cw-90-right-from-nd 1s infinite;
+  animation: wipe-cw-90-right-from-nd 1.5s infinite;
 }
 .dance-2 .left.elbow.joint, .dance-2 .right.elbow.joint {
   animation: wipe-ccw-270 1s infinite;
 }
 .dance-2 .left.hip.joint, .dance-2 .right.hip.joint {
-  animation: rotate-alt-45 1s infinite;
+  animation: rotate-alt-45 1s linear infinite;
 }
 .dance-2 .left.knee.joint, .dance-2 .right.knee.joint {
-  animation: rotate-alt-90-rv 1s infinite;
+  animation: rotate-alt-90-rv 1s linear infinite;
 }
 
 .robot {

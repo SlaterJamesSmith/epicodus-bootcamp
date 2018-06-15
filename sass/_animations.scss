@@ -4,8 +4,8 @@
   @include set-loop(transform, translateY(0px), translateY(50px));
 }
 
-@include keyframe-animation(jump) {
-  @include set-loop(transform, translateY(-50px), translateY(90px));
+@include keyframe-animation(jump-shift) {
+  @include set-2-step-loop(transform, translate(0px, -25px), translate(-25px, 50px), translate(25px, 50px));
 }
 
 @include keyframe-animation(spring) {
@@ -13,7 +13,7 @@
 }
 
 @include keyframe-animation(spring-accent-bar) {
-  @include set-loop(top, 20px, 30px);
+  @include set-loop(top, 35px, 20px);
 }
 
 // HEAD MOVMENTS
@@ -53,6 +53,10 @@
 }
 
 // ROTATIONS - NORMAL WIPE - LOOPED
+
+@include keyframe-animation(wipe-cw-10) {
+  @include set-loop(transform, rotate(-5deg), rotate(5deg));
+}
 
 @include keyframe-animation(wipe-cw-30) {
   @include set-loop(transform, rotate(-15deg), rotate(15deg));
