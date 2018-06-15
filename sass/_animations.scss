@@ -1,3 +1,5 @@
+// BODY & BASE MOVEMENTS
+
 @include keyframe-animation(bounce) {
   @include keyframe-property-loop(transform, translateY(0px), translateY(50px));
 }
@@ -16,14 +18,18 @@
   @include keyframe-property-loop(transform, translate(-5px, -3px), translate(5px, 1px));
 }
 
-// ROTATIONS - NORMAL LOOPED
-
-@include keyframe-animation(window-wipe-30) {
-  @include keyframe-property-loop(transform, rotate(-15deg), rotate(15deg));
+@include keyframe-animation(shifty) {
+  @include keyframe-property-loop(transform, translateX(-10px), translateX(10px));
 }
 
-@include keyframe-animation(window-wipe-60) {
-  @include keyframe-property-loop(transform, rotate(-30deg), rotate(30deg));
+// ROTATIONS - NORMAL - LOOPED
+
+@include keyframe-animation(rotate-cw-180-rv) {
+  @include keyframe-property-loop(transform, rotate(180deg), rotate(0deg));
+}
+
+@include keyframe-animation(rotate-ccw-180-rv) {
+  @include keyframe-property-loop(transform, rotate(-180deg), rotate(0deg));
 }
 
 @include keyframe-animation(rotate-cw-90) {
@@ -42,12 +48,26 @@
   @include keyframe-property-loop(transform, rotate(0deg), rotate(-45deg));
 }
 
-// ROTATIONS - REVERSE LOOPED
+// ROTATIONS - NORMAL WIPE - LOOPED
 
-@include keyframe-animation(rotate-cw-180) {
-  @include keyframe-property-loop(transform, rotate(180deg), rotate(0deg));
+@include keyframe-animation(wipe-cw-30) {
+  @include keyframe-property-loop(transform, rotate(-15deg), rotate(15deg));
 }
 
-@include keyframe-animation(rotate-ccw-180) {
-  @include keyframe-property-loop(transform, rotate(-180deg), rotate(0deg));
+@include keyframe-animation(wipe-cw-60) {
+  @include keyframe-property-loop(transform, rotate(-30deg), rotate(30deg));
+}
+
+@include keyframe-animation(wipe-ccw-270) {
+  @include keyframe-property-loop(transform, rotate(135deg), rotate(-135deg));
+}
+
+// ROTATIONS - RELATIVE WIPE - LOOPED
+
+@include keyframe-animation(wipe-cw-90-left-from-nd) {
+  @include keyframe-property-loop(transform, rotate(45deg), rotate(135deg));
+}
+
+@include keyframe-animation(wipe-cw-90-right-from-nd) {
+  @include keyframe-property-loop(transform, rotate(-135deg), rotate(-45deg));
 }

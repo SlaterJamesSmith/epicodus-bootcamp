@@ -128,60 +128,88 @@ html, body {
     transform: translate(-5px, -3px);
   }
 }
-@-webkit-keyframes window-wipe-30 {
+@-webkit-keyframes shifty {
   0% {
-    -webkit-transform: rotate(-15deg);
-    transform: rotate(-15deg);
+    -webkit-transform: translateX(-10px);
+    transform: translateX(-10px);
   }
   50% {
-    -webkit-transform: rotate(15deg);
-    transform: rotate(15deg);
+    -webkit-transform: translateX(10px);
+    transform: translateX(10px);
   }
   100% {
-    -webkit-transform: rotate(-15deg);
-    transform: rotate(-15deg);
+    -webkit-transform: translateX(-10px);
+    transform: translateX(-10px);
   }
 }
-@keyframes window-wipe-30 {
+@keyframes shifty {
   0% {
-    -webkit-transform: rotate(-15deg);
-    transform: rotate(-15deg);
+    -webkit-transform: translateX(-10px);
+    transform: translateX(-10px);
   }
   50% {
-    -webkit-transform: rotate(15deg);
-    transform: rotate(15deg);
+    -webkit-transform: translateX(10px);
+    transform: translateX(10px);
   }
   100% {
-    -webkit-transform: rotate(-15deg);
-    transform: rotate(-15deg);
+    -webkit-transform: translateX(-10px);
+    transform: translateX(-10px);
   }
 }
-@-webkit-keyframes window-wipe-60 {
+@-webkit-keyframes rotate-cw-180-rv {
   0% {
-    -webkit-transform: rotate(-30deg);
-    transform: rotate(-30deg);
+    -webkit-transform: rotate(180deg);
+    transform: rotate(180deg);
   }
   50% {
-    -webkit-transform: rotate(30deg);
-    transform: rotate(30deg);
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
   }
   100% {
-    -webkit-transform: rotate(-30deg);
-    transform: rotate(-30deg);
+    -webkit-transform: rotate(180deg);
+    transform: rotate(180deg);
   }
 }
-@keyframes window-wipe-60 {
+@keyframes rotate-cw-180-rv {
   0% {
-    -webkit-transform: rotate(-30deg);
-    transform: rotate(-30deg);
+    -webkit-transform: rotate(180deg);
+    transform: rotate(180deg);
   }
   50% {
-    -webkit-transform: rotate(30deg);
-    transform: rotate(30deg);
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
   }
   100% {
-    -webkit-transform: rotate(-30deg);
-    transform: rotate(-30deg);
+    -webkit-transform: rotate(180deg);
+    transform: rotate(180deg);
+  }
+}
+@-webkit-keyframes rotate-ccw-180-rv {
+  0% {
+    -webkit-transform: rotate(-180deg);
+    transform: rotate(-180deg);
+  }
+  50% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(-180deg);
+    transform: rotate(-180deg);
+  }
+}
+@keyframes rotate-ccw-180-rv {
+  0% {
+    -webkit-transform: rotate(-180deg);
+    transform: rotate(-180deg);
+  }
+  50% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(-180deg);
+    transform: rotate(-180deg);
   }
 }
 @-webkit-keyframes rotate-cw-90 {
@@ -296,67 +324,151 @@ html, body {
     transform: rotate(0deg);
   }
 }
-@-webkit-keyframes rotate-cw-180 {
+@-webkit-keyframes wipe-cw-30 {
   0% {
-    -webkit-transform: rotate(180deg);
-    transform: rotate(180deg);
+    -webkit-transform: rotate(-15deg);
+    transform: rotate(-15deg);
   }
   50% {
-    -webkit-transform: rotate(0deg);
-    transform: rotate(0deg);
+    -webkit-transform: rotate(15deg);
+    transform: rotate(15deg);
   }
   100% {
-    -webkit-transform: rotate(180deg);
-    transform: rotate(180deg);
+    -webkit-transform: rotate(-15deg);
+    transform: rotate(-15deg);
   }
 }
-@keyframes rotate-cw-180 {
+@keyframes wipe-cw-30 {
   0% {
-    -webkit-transform: rotate(180deg);
-    transform: rotate(180deg);
+    -webkit-transform: rotate(-15deg);
+    transform: rotate(-15deg);
   }
   50% {
-    -webkit-transform: rotate(0deg);
-    transform: rotate(0deg);
+    -webkit-transform: rotate(15deg);
+    transform: rotate(15deg);
   }
   100% {
-    -webkit-transform: rotate(180deg);
-    transform: rotate(180deg);
+    -webkit-transform: rotate(-15deg);
+    transform: rotate(-15deg);
   }
 }
-@-webkit-keyframes rotate-ccw-180 {
+@-webkit-keyframes wipe-cw-60 {
   0% {
-    -webkit-transform: rotate(-180deg);
-    transform: rotate(-180deg);
+    -webkit-transform: rotate(-30deg);
+    transform: rotate(-30deg);
   }
   50% {
-    -webkit-transform: rotate(0deg);
-    transform: rotate(0deg);
+    -webkit-transform: rotate(30deg);
+    transform: rotate(30deg);
   }
   100% {
-    -webkit-transform: rotate(-180deg);
-    transform: rotate(-180deg);
+    -webkit-transform: rotate(-30deg);
+    transform: rotate(-30deg);
   }
 }
-@keyframes rotate-ccw-180 {
+@keyframes wipe-cw-60 {
   0% {
-    -webkit-transform: rotate(-180deg);
-    transform: rotate(-180deg);
+    -webkit-transform: rotate(-30deg);
+    transform: rotate(-30deg);
   }
   50% {
-    -webkit-transform: rotate(0deg);
-    transform: rotate(0deg);
+    -webkit-transform: rotate(30deg);
+    transform: rotate(30deg);
   }
   100% {
-    -webkit-transform: rotate(-180deg);
-    transform: rotate(-180deg);
+    -webkit-transform: rotate(-30deg);
+    transform: rotate(-30deg);
+  }
+}
+@-webkit-keyframes wipe-ccw-270 {
+  0% {
+    -webkit-transform: rotate(135deg);
+    transform: rotate(135deg);
+  }
+  50% {
+    -webkit-transform: rotate(-135deg);
+    transform: rotate(-135deg);
+  }
+  100% {
+    -webkit-transform: rotate(135deg);
+    transform: rotate(135deg);
+  }
+}
+@keyframes wipe-ccw-270 {
+  0% {
+    -webkit-transform: rotate(135deg);
+    transform: rotate(135deg);
+  }
+  50% {
+    -webkit-transform: rotate(-135deg);
+    transform: rotate(-135deg);
+  }
+  100% {
+    -webkit-transform: rotate(135deg);
+    transform: rotate(135deg);
+  }
+}
+@-webkit-keyframes wipe-cw-90-left-from-nd {
+  0% {
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+  }
+  50% {
+    -webkit-transform: rotate(135deg);
+    transform: rotate(135deg);
+  }
+  100% {
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+  }
+}
+@keyframes wipe-cw-90-left-from-nd {
+  0% {
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+  }
+  50% {
+    -webkit-transform: rotate(135deg);
+    transform: rotate(135deg);
+  }
+  100% {
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+  }
+}
+@-webkit-keyframes wipe-cw-90-right-from-nd {
+  0% {
+    -webkit-transform: rotate(-135deg);
+    transform: rotate(-135deg);
+  }
+  50% {
+    -webkit-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+  }
+  100% {
+    -webkit-transform: rotate(-135deg);
+    transform: rotate(-135deg);
+  }
+}
+@keyframes wipe-cw-90-right-from-nd {
+  0% {
+    -webkit-transform: rotate(-135deg);
+    transform: rotate(-135deg);
+  }
+  50% {
+    -webkit-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+  }
+  100% {
+    -webkit-transform: rotate(-135deg);
+    transform: rotate(-135deg);
   }
 }
 .dance-1 .base {
   animation: bounce 0.5s infinite;
 }
 .dance-1 .waist {
-  animation: window-wipe-60 2s infinite;
+  animation: wipe-cw-60 2s infinite;
 }
 .dance-1 .torso {
   animation: spring 0.5s infinite;
@@ -365,16 +477,16 @@ html, body {
   animation: spring-accent-bar 0.5s infinite;
 }
 .dance-1 .neck {
-  animation: window-wipe-30 0.5s infinite;
+  animation: wipe-cw-30 0.5s infinite;
 }
 .dance-1 .head, .dance-1 .eye, .dance-1 .mouth {
   animation: face-turn 0.5s infinite;
 }
 .dance-1 .left.shoulder.joint {
-  animation: rotate-cw-180 reverse 1s infinite;
+  animation: rotate-cw-180-rv reverse 1s infinite;
 }
 .dance-1 .right.shoulder.joint {
-  animation: rotate-ccw-180 reverse 1s infinite;
+  animation: rotate-ccw-180-rv reverse 1s infinite;
 }
 .dance-1 .left.elbow.joint {
   animation: rotate-cw-90 1s infinite;
@@ -389,23 +501,17 @@ html, body {
   animation: rotate-ccw-45 0.5s infinite;
 }
 
-.dance-2 .neck {
-  animation: window-wipe-30 0.5s infinite;
-}
 .dance-2 .head, .dance-2 .eye, .dance-2 .mouth {
-  animation: face-turn 0.5s infinite;
+  animation: shifty 0.5s infinite;
 }
 .dance-2 .left.shoulder.joint {
-  animation: window-wipe-60 1s infinite;
+  animation: wipe-cw-90-left-from-nd 1s infinite;
 }
 .dance-2 .right.shoulder.joint {
-  animation: window-wipe-60 1s infinite;
+  animation: wipe-cw-90-right-from-nd 1s infinite;
 }
-.dance-2 .left.elbow.joint {
-  animation: window-wipe-60 1s infinite;
-}
-.dance-2 .right.elbow.joint {
-  animation: window-wipe-60 1s infinite;
+.dance-2 .left.elbow.joint, .dance-2 .right.elbow.joint {
+  animation: wipe-ccw-270 1s infinite;
 }
 .robot {
   position: relative;

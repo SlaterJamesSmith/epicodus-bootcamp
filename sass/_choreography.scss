@@ -4,7 +4,7 @@
   }
 
   .waist {
-    animation: window-wipe-60 2s infinite;
+    animation: wipe-cw-60 2s infinite;
   }
 
   .torso {
@@ -16,7 +16,7 @@
   }
 
   .neck {
-    animation: window-wipe-30 0.5s infinite;
+    animation: wipe-cw-30 0.5s infinite;
   }
 
   .head, .eye, .mouth {
@@ -24,11 +24,11 @@
   }
 
   .left.shoulder.joint {
-    animation: rotate-cw-180 reverse 1s infinite;
+    animation: rotate-cw-180-rv reverse 1s infinite;
   }
 
   .right.shoulder.joint {
-    animation: rotate-ccw-180 reverse 1s infinite;
+    animation: rotate-ccw-180-rv reverse 1s infinite;
   }
 
   .left.elbow.joint {
@@ -65,28 +65,22 @@
     // animation: spring-accent-bar 0.5s infinite;
   }
 
-  .neck {
-    animation: window-wipe-30 0.5s infinite;
-  }
+  .neck { }
 
   .head, .eye, .mouth {
-    animation: face-turn 0.5s infinite;
+    animation: shifty 0.5s infinite;
   }
 
   .left.shoulder.joint {
-    animation: window-wipe-60 1s infinite;
+    animation: wipe-cw-90-left-from-nd 1s infinite;
   }
 
   .right.shoulder.joint {
-    animation: window-wipe-60 1s infinite;
+    animation: wipe-cw-90-right-from-nd 1s infinite;
   }
 
-  .left.elbow.joint {
-    animation: window-wipe-60 1s infinite;
-  }
-
-  .right.elbow.joint {
-    animation: window-wipe-60 1s infinite;
+  .left.elbow.joint, .right.elbow.joint {
+    animation: wipe-ccw-270 1s infinite;
   }
 
   .left.hip.joint, .right.knee.joint {
