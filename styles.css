@@ -351,163 +351,151 @@ html, body {
     transform: rotate(0deg);
   }
 }
-.robot-base {
+.default-dance .base {
   animation: bounce 0.5s infinite;
 }
-
-.waist {
+.default-dance .waist {
   animation: window-wipe-60 2s infinite;
 }
-
-.torso {
+.default-dance .torso {
   animation: spring 0.5s infinite;
 }
-
-.accent-bar {
+.default-dance .accent-bar {
   animation: spring-accent-bar 0.5s infinite;
 }
-
-.neck {
+.default-dance .neck {
   animation: window-wipe-30 0.5s infinite;
 }
-
-.head, .eye, .mouth {
+.default-dance .head, .default-dance .eye, .default-dance .mouth {
   animation: head-turn 0.5s infinite;
 }
-
-.left.shoulder.joint {
+.default-dance .left.shoulder.joint {
   animation: rotate-cw-180 reverse 1s infinite;
 }
-
-.right.shoulder.joint {
+.default-dance .right.shoulder.joint {
   animation: rotate-ccw-180 reverse 1s infinite;
 }
-
-.left.elbow.joint {
+.default-dance .left.elbow.joint {
   animation: rotate-cw-90 1s infinite;
 }
-
-.right.elbow.joint {
+.default-dance .right.elbow.joint {
   animation: rotate-ccw-90 1s infinite;
 }
-
-.left.hip.joint {
+.default-dance .left.hip.joint {
+  animation: rotate-cw-45 0.5s infinite;
+}
+.default-dance .right.hip.joint {
+  animation: rotate-ccw-45 0.5s infinite;
+}
+.default-dance .left.knee.joint {
+  animation: rotate-ccw-45 0.5s infinite;
+}
+.default-dance .right.knee.joint {
   animation: rotate-cw-45 0.5s infinite;
 }
 
-.right.hip.joint {
-  animation: rotate-ccw-45 0.5s infinite;
-}
-
-.left.knee.joint {
-  animation: rotate-ccw-45 0.5s infinite;
-}
-
-.right.knee.joint {
-  animation: rotate-cw-45 0.5s infinite;
-}
-
-.robot-base {
-  height: 50px;
-  width: 50px;
-  border-radius: 100%;
-  background-color: #0ff;
+.robot {
   position: relative;
 }
-.robot-base .joint {
-  background-color: #0ff;
-}
-.robot-base .accent-bar, .robot-base .waist, .robot-base .eye, .robot-base .mouth, .robot-base .visible.joint {
-  background-color: #f3b;
-}
-.robot-base .torso, .robot-base .head, .robot-base .arm, .robot-base .leg {
-  background-color: #6e8;
-}
-.robot-base .accent-bar {
-  height: 5px;
-  width: 100%;
-  position: absolute;
-  top: 15px;
-}
-.robot-base .joint, .robot-base .waist, .robot-base .torso, .robot-base .neck, .robot-base .head, .robot-base .eye, .robot-base .mouth, .robot-base .arm, .robot-base .leg {
+.robot .joint, .robot .waist, .robot .torso, .robot .neck, .robot .head, .robot .eye, .robot .mouth, .robot .arm, .robot .leg {
   position: absolute;
 }
-.robot-base .waist, .robot-base .neck {
+.robot .base {
   height: 50px;
   width: 50px;
   border-radius: 100%;
 }
-.robot-base .neck {
+.robot .waist, .robot .neck {
+  height: 50px;
+  width: 50px;
+  border-radius: 100%;
+}
+.robot .neck {
   top: -25px;
 }
-.robot-base .joint {
+.robot .joint {
   height: 20px;
   width: 20px;
   border-radius: 100%;
 }
-.robot-base .visible.joint {
+.robot .visible.joint {
   top: -10px;
 }
-.robot-base .left.shoulder.joint {
+.robot .left.shoulder.joint {
   top: 0;
   left: -25px;
 }
-.robot-base .right.shoulder.joint {
+.robot .right.shoulder.joint {
   top: 0;
   right: -25px;
 }
-.robot-base .elbow.joint, .robot-base .knee.joint {
+.robot .elbow.joint, .robot .knee.joint {
   bottom: -10px;
 }
-.robot-base .hip.joint {
+.robot .hip.joint {
   bottom: -15px;
 }
-.robot-base .left.hip.joint {
+.robot .left.hip.joint {
   left: -5px;
 }
-.robot-base .right.hip.joint {
+.robot .right.hip.joint {
   right: -5px;
 }
-.robot-base .torso {
+.robot .torso {
   height: 100px;
   width: 50px;
   bottom: 25px;
   z-index: 10;
 }
-.robot-base .head {
+.robot .head {
   height: 40px;
   width: 40px;
   left: 5px;
   bottom: 30px;
 }
-.robot-base .eye {
+.robot .eye {
   height: 5px;
   width: 5px;
   top: 10px;
   border-radius: 100%;
 }
-.robot-base .left.eye {
+.robot .left.eye {
   left: 10px;
 }
-.robot-base .right.eye {
+.robot .right.eye {
   right: 10px;
 }
-.robot-base .mouth {
+.robot .mouth {
   height: 10px;
   width: 20px;
   left: 10px;
   bottom: 10px;
   border-radius: 0 0 10px 10px;
 }
-.robot-base .arm {
+.robot .arm {
   height: 75px;
   width: 20px;
   top: 10px;
 }
-.robot-base .leg {
+.robot .leg {
   height: 100px;
   width: 20px;
   top: 10px;
+}
+.robot .base, .robot .joint {
+  background-color: #0ff;
+}
+.robot .accent-bar, .robot .waist, .robot .eye, .robot .mouth, .robot .visible.joint {
+  background-color: #f3b;
+}
+.robot .torso, .robot .head, .robot .arm, .robot .leg {
+  background-color: #6e8;
+}
+.robot .accent-bar {
+  height: 5px;
+  width: 100%;
+  position: absolute;
+  top: 15px;
 }
 
 /*# sourceMappingURL=styles.css.map */
