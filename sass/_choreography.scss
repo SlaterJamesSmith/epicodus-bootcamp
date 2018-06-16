@@ -84,10 +84,68 @@
   }
 
   .left.hip.joint, .right.hip.joint {
-    animation: rotate-alt-45 1s linear infinite;
+    animation: rotate-alt-45 1s ease-out infinite;
   }
 
   .left.knee.joint, .right.knee.joint {
-    animation: rotate-alt-90-rv 1s linear infinite;
+    animation: rotate-alt-90-rv 1s ease-out infinite;
+  }
+}
+
+.dance-3 {
+  .base {
+    animation: bounce 0.5s infinite;
+  }
+
+  .waist {
+    animation: wipe-cw-30 1s infinite;
+  }
+
+  .torso {
+    animation: spring 0.5s infinite;
+  }
+
+  .accent-bar {
+    animation: spring-accent-bar 0.5s infinite;
+  }
+
+  .neck {
+    animation: wipe-cw-10 1s infinite;
+  }
+
+  .head, .eye, .mouth {
+    animation: face-bounce 0.5s infinite;
+  }
+
+  .left.shoulder.joint {
+    animation: wipe-ccw-90 1s infinite;
+  }
+
+  .right.shoulder.joint {
+    animation: wipe-ccw-90 1s infinite;
+  }
+
+  .left.elbow.joint {
+    animation: wipe-ccw-90 1s infinite;
+  }
+
+  .right.elbow.joint {
+    animation: wipe-ccw-60 1s infinite;
+  }
+
+  .left.hip.joint {
+    animation: rotate-cw-60 0.5s infinite;
+  }
+
+  .right.hip.joint {
+    animation: rotate-ccw-45 0.5s infinite;
+  }
+
+  .left.knee.joint {
+    animation: rotate-ccw-135 0.5s infinite;
+  }
+
+  .right.knee.joint {
+    animation: rotate-cw-45 0.5s infinite;
   }
 }

@@ -22,6 +22,10 @@
   @include set-loop(transform, translate(-5px, -3px), translate(5px, 1px));
 }
 
+@include keyframe-animation(face-bounce) {
+  @include set-loop(transform, translateY(-5px) scale(1), translateY(10px) scale(1.1));
+}
+
 @include keyframe-animation(shifty) {
   @include set-loop(transform, translateX(-10px), translateX(10px));
 }
@@ -36,12 +40,36 @@
   @include set-loop(transform, rotate(-180deg), rotate(0deg));
 }
 
+@include keyframe-animation(rotate-ccw-135) {
+  @include set-loop(transform, rotate(0deg), rotate(-135deg));
+}
+
 @include keyframe-animation(rotate-cw-95) {
   @include set-loop(transform, rotate(0deg), rotate(95deg));
 }
 
 @include keyframe-animation(rotate-ccw-95) {
   @include set-loop(transform, rotate(0deg), rotate(-95deg));
+}
+
+@include keyframe-animation(rotate-cw-90) {
+  @include set-loop(transform, rotate(0deg), rotate(90deg));
+}
+
+@include keyframe-animation(rotate-ccw-90) {
+  @include set-loop(transform, rotate(0deg), rotate(-90deg));
+}
+
+@include keyframe-animation(rotate-cw-60) {
+  @include set-loop(transform, rotate(0deg), rotate(60deg));
+}
+
+@include keyframe-animation(rotate-ccw-60) {
+  @include set-loop(transform, rotate(0deg), rotate(-60deg));
+}
+
+@include keyframe-animation(rotate-cw-60-rv) {
+  @include set-loop(transform, rotate(60deg), rotate(0deg));
 }
 
 @include keyframe-animation(rotate-cw-45) {
@@ -52,22 +80,46 @@
   @include set-loop(transform, rotate(0deg), rotate(-45deg));
 }
 
-// ROTATIONS - NORMAL WIPE - LOOPED
-
-@include keyframe-animation(wipe-cw-10) {
-  @include set-loop(transform, rotate(-5deg), rotate(5deg));
+@include keyframe-animation(rotate-cw-45-rv) {
+  @include set-loop(transform, rotate(45deg), rotate(0deg));
 }
 
-@include keyframe-animation(wipe-cw-30) {
-  @include set-loop(transform, rotate(-15deg), rotate(15deg));
+@include keyframe-animation(rotate-ccw-45-rv) {
+  @include set-loop(transform, rotate(-45deg), rotate(0deg));
+}
+
+// ROTATIONS - NORMAL WIPE - LOOPED
+
+@include keyframe-animation(wipe-ccw-270) {
+  @include set-loop(transform, rotate(135deg), rotate(-135deg));
+}
+
+@include keyframe-animation(wipe-cw-90) {
+  @include set-loop(transform, rotate(-45deg), rotate(45deg));
+}
+
+@include keyframe-animation(wipe-ccw-90) {
+  @include set-loop(transform, rotate(45deg), rotate(-45deg));
 }
 
 @include keyframe-animation(wipe-cw-60) {
   @include set-loop(transform, rotate(-30deg), rotate(30deg));
 }
 
-@include keyframe-animation(wipe-ccw-270) {
-  @include set-loop(transform, rotate(135deg), rotate(-135deg));
+@include keyframe-animation(wipe-ccw-60) {
+  @include set-loop(transform, rotate(30deg), rotate(-30deg));
+}
+
+@include keyframe-animation(wipe-cw-30) {
+  @include set-loop(transform, rotate(-15deg), rotate(15deg));
+}
+
+@include keyframe-animation(wipe-ccw-30) {
+  @include set-loop(transform, rotate(15deg), rotate(-15deg));
+}
+
+@include keyframe-animation(wipe-cw-10) {
+  @include set-loop(transform, rotate(-5deg), rotate(5deg));
 }
 
 // ROTATIONS - RELATIVE WIPE - LOOPED
@@ -82,10 +134,18 @@
 
 // 2 STEP LOOPS
 
+@include keyframe-animation(rotate-alt-90) {
+  @include set-2-step-loop(transform, rotate(0deg), rotate(90deg), rotate(-90deg));
+}
+
 @include keyframe-animation(rotate-alt-90-rv) {
   @include set-2-step-loop(transform, rotate(0deg), rotate(-90deg), rotate(90deg));
 }
 
 @include keyframe-animation(rotate-alt-45) {
   @include set-2-step-loop(transform, rotate(0deg), rotate(45deg), rotate(-45deg));
+}
+
+@include keyframe-animation(rotate-alt-45-rv) {
+  @include set-2-step-loop(transform, rotate(0deg), rotate(-45deg), rotate(45deg));
 }
