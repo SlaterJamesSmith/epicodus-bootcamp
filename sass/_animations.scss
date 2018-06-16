@@ -40,6 +40,10 @@
   @include set-loop(transform, rotate(-180deg), rotate(0deg));
 }
 
+@include keyframe-animation(rotate-cw-135) {
+  @include set-loop(transform, rotate(0deg), rotate(135deg));
+}
+
 @include keyframe-animation(rotate-ccw-135) {
   @include set-loop(transform, rotate(0deg), rotate(-135deg));
 }
@@ -86,6 +90,14 @@
 
 @include keyframe-animation(rotate-ccw-45-rv) {
   @include set-loop(transform, rotate(-45deg), rotate(0deg));
+}
+
+@include keyframe-animation(rotate-cw-30) {
+  @include set-loop(transform, rotate(0deg), rotate(30deg));
+}
+
+@include keyframe-animation(rotate-ccw-30) {
+  @include set-loop(transform, rotate(0deg), rotate(-30deg));
 }
 
 // ROTATIONS - NORMAL WIPE - LOOPED

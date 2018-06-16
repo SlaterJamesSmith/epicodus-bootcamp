@@ -118,34 +118,34 @@
   }
 
   .left.shoulder.joint {
-    animation: wipe-ccw-90 1s infinite;
-  }
-
-  .right.shoulder.joint {
-    animation: wipe-ccw-90 1s infinite;
-  }
-
-  .left.elbow.joint {
-    animation: wipe-ccw-90 1s infinite;
-  }
-
-  .right.elbow.joint {
-    animation: wipe-ccw-60 1s infinite;
-  }
-
-  .left.hip.joint {
     animation: rotate-cw-60 0.5s infinite;
   }
 
+  .right.shoulder.joint {
+    animation: rotate-ccw-45 1s infinite;
+  }
+
+  .left.elbow.joint {
+    animation: rotate-cw-135 2s infinite;
+  }
+
+  .right.elbow.joint {
+    animation: rotate-cw-135 1s infinite;
+  }
+
+  .left.hip.joint {
+    animation: rotate-cw-90 0.5s infinite;
+  }
+
   .right.hip.joint {
-    animation: rotate-ccw-45 0.5s infinite;
+    animation: rotate-ccw-30 0.5s infinite;
   }
 
   .left.knee.joint {
-    animation: rotate-ccw-135 0.5s infinite;
+    animation: rotate-ccw-90 0.5s infinite;
   }
 
   .right.knee.joint {
-    animation: rotate-cw-45 0.5s infinite;
+    animation: rotate-cw-30 0.5s infinite;
   }
 }
