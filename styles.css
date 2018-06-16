@@ -13,6 +13,7 @@ html, body {
   display: flex;
   align-items: center;
   justify-content: space-around;
+  padding: 0px 10%;
   background-color: #000;
 }
 
@@ -50,16 +51,16 @@ html, body {
     transform: translate(0px, -25px);
   }
   25% {
-    -webkit-transform: translate(-25px, 50px);
-    transform: translate(-25px, 50px);
+    -webkit-transform: translate(-25px, 100px);
+    transform: translate(-25px, 100px);
   }
   50% {
     -webkit-transform: translate(0px, -25px);
     transform: translate(0px, -25px);
   }
   75% {
-    -webkit-transform: translate(25px, 50px);
-    transform: translate(25px, 50px);
+    -webkit-transform: translate(25px, 100px);
+    transform: translate(25px, 100px);
   }
   100% {
     -webkit-transform: translate(0px, -25px);
@@ -72,16 +73,16 @@ html, body {
     transform: translate(0px, -25px);
   }
   25% {
-    -webkit-transform: translate(-25px, 50px);
-    transform: translate(-25px, 50px);
+    -webkit-transform: translate(-25px, 100px);
+    transform: translate(-25px, 100px);
   }
   50% {
     -webkit-transform: translate(0px, -25px);
     transform: translate(0px, -25px);
   }
   75% {
-    -webkit-transform: translate(25px, 50px);
-    transform: translate(25px, 50px);
+    -webkit-transform: translate(25px, 100px);
+    transform: translate(25px, 100px);
   }
   100% {
     -webkit-transform: translate(0px, -25px);
@@ -226,6 +227,90 @@ html, body {
   100% {
     -webkit-transform: translateX(-10px);
     transform: translateX(-10px);
+  }
+}
+@-webkit-keyframes starpower-1 {
+  0% {
+    -webkit-transform: translateY(-5px) scale(1.2);
+    transform: translateY(-5px) scale(1.2);
+  }
+  50% {
+    -webkit-transform: translateY(10px) scale(1.5);
+    transform: translateY(10px) scale(1.5);
+  }
+  100% {
+    -webkit-transform: translateY(-5px) scale(1.2);
+    transform: translateY(-5px) scale(1.2);
+  }
+}
+@keyframes starpower-1 {
+  0% {
+    -webkit-transform: translateY(-5px) scale(1.2);
+    transform: translateY(-5px) scale(1.2);
+  }
+  50% {
+    -webkit-transform: translateY(10px) scale(1.5);
+    transform: translateY(10px) scale(1.5);
+  }
+  100% {
+    -webkit-transform: translateY(-5px) scale(1.2);
+    transform: translateY(-5px) scale(1.2);
+  }
+}
+@-webkit-keyframes starpower-2 {
+  0% {
+    -webkit-transform: translate(-5px, -3px) scale(1.2);
+    transform: translate(-5px, -3px) scale(1.2);
+  }
+  50% {
+    -webkit-transform: translate(5px, 1px) scale(1.5);
+    transform: translate(5px, 1px) scale(1.5);
+  }
+  100% {
+    -webkit-transform: translate(-5px, -3px) scale(1.2);
+    transform: translate(-5px, -3px) scale(1.2);
+  }
+}
+@keyframes starpower-2 {
+  0% {
+    -webkit-transform: translate(-5px, -3px) scale(1.2);
+    transform: translate(-5px, -3px) scale(1.2);
+  }
+  50% {
+    -webkit-transform: translate(5px, 1px) scale(1.5);
+    transform: translate(5px, 1px) scale(1.5);
+  }
+  100% {
+    -webkit-transform: translate(-5px, -3px) scale(1.2);
+    transform: translate(-5px, -3px) scale(1.2);
+  }
+}
+@-webkit-keyframes starpower-3 {
+  0% {
+    -webkit-transform: translateX(-10px) scale(1.2);
+    transform: translateX(-10px) scale(1.2);
+  }
+  50% {
+    -webkit-transform: translateX(10px) scale(1.5);
+    transform: translateX(10px) scale(1.5);
+  }
+  100% {
+    -webkit-transform: translateX(-10px) scale(1.2);
+    transform: translateX(-10px) scale(1.2);
+  }
+}
+@keyframes starpower-3 {
+  0% {
+    -webkit-transform: translateX(-10px) scale(1.2);
+    transform: translateX(-10px) scale(1.2);
+  }
+  50% {
+    -webkit-transform: translateX(10px) scale(1.5);
+    transform: translateX(10px) scale(1.5);
+  }
+  100% {
+    -webkit-transform: translateX(-10px) scale(1.2);
+    transform: translateX(-10px) scale(1.2);
   }
 }
 @-webkit-keyframes rotate-cw-180-rv {
@@ -1401,6 +1486,33 @@ html, body {
 }
 .robot:hover .torso, .robot:hover .head, .robot:hover .arm, .robot:hover .leg {
   background-color: #222;
+}
+
+.look-1:hover .eye, .look-1:hover .mouth, .look-1:hover .visible.joint {
+  box-shadow: 0 0 50px 10px magenta;
+}
+
+.look-2:hover .eye, .look-2:hover .mouth, .look-2:hover .visible.joint {
+  box-shadow: 0 0 50px 10px yellow;
+}
+
+.look-3:hover .eye, .look-3:hover .mouth, .look-3:hover .visible.joint {
+  box-shadow: 0 0 50px 10px cyan;
+}
+
+.dance-1:hover .head {
+  animation: starpower-1 0.5s infinite;
+  z-index: 100;
+}
+
+.dance-2:hover .head {
+  animation: starpower-2 0.5s infinite;
+  z-index: 100;
+}
+
+.dance-3:hover .head {
+  animation: starpower-2 0.5s infinite;
+  z-index: 100;
 }
 
 /*# sourceMappingURL=styles.css.map */

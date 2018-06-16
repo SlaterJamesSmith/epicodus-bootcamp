@@ -7,3 +7,42 @@
     background-color: #222;
   }
 }
+
+.look-1:hover {
+  .eye, .mouth, .visible.joint {
+    box-shadow: 0 0 50px 10px $highlight-1;
+  }
+}
+
+.look-2:hover {
+  .eye, .mouth, .visible.joint {
+    box-shadow: 0 0 50px 10px $highlight-2;
+  }
+}
+
+.look-3:hover {
+  .eye, .mouth, .visible.joint {
+    box-shadow: 0 0 50px 10px $highlight-3;
+  }
+}
+
+.dance-1:hover {
+  .head {
+    animation: starpower-1 0.5s infinite;
+    z-index: 100;
+  }
+}
+
+.dance-2:hover {
+  .head {
+    animation: starpower-2 0.5s infinite;
+    z-index: 100;
+  }
+}
+
+.dance-3:hover {
+  .head {
+    animation: starpower-2 0.5s infinite;
+    z-index: 100;
+  }
+}
