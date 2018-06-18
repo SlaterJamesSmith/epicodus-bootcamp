@@ -27,32 +27,60 @@ body {
   overflow: hidden;
 }
 
-@-webkit-keyframes swoop {
+@-webkit-keyframes camera-back-stage-1 {
   0% {
-    -webkit-transform: translate(-15vw, -15vw);
-    transform: translate(-15vw, -15vw);
+    -webkit-transform: translate(-10vw, -10vh) scale(0.8);
+    transform: translate(-10vw, -10vh) scale(0.8);
   }
   50% {
-    -webkit-transform: translate(15vw, -15vw);
-    transform: translate(15vw, -15vw);
+    -webkit-transform: translate(10vw, -10vh) scale(0.8);
+    transform: translate(10vw, -10vh) scale(0.8);
   }
   100% {
-    -webkit-transform: translate(-15vw, -15vw);
-    transform: translate(-15vw, -15vw);
+    -webkit-transform: translate(-10vw, -10vh) scale(0.8);
+    transform: translate(-10vw, -10vh) scale(0.8);
   }
 }
-@keyframes swoop {
+@keyframes camera-back-stage-1 {
   0% {
-    -webkit-transform: translate(-15vw, -15vw);
-    transform: translate(-15vw, -15vw);
+    -webkit-transform: translate(-10vw, -10vh) scale(0.8);
+    transform: translate(-10vw, -10vh) scale(0.8);
   }
   50% {
-    -webkit-transform: translate(15vw, -15vw);
-    transform: translate(15vw, -15vw);
+    -webkit-transform: translate(10vw, -10vh) scale(0.8);
+    transform: translate(10vw, -10vh) scale(0.8);
   }
   100% {
-    -webkit-transform: translate(-15vw, -15vw);
-    transform: translate(-15vw, -15vw);
+    -webkit-transform: translate(-10vw, -10vh) scale(0.8);
+    transform: translate(-10vw, -10vh) scale(0.8);
+  }
+}
+@-webkit-keyframes camera-back-stage-2 {
+  0% {
+    -webkit-transform: translate(-20vw, -20vh) scale(0.6);
+    transform: translate(-20vw, -20vh) scale(0.6);
+  }
+  50% {
+    -webkit-transform: translate(20vw, -20vh) scale(0.6);
+    transform: translate(20vw, -20vh) scale(0.6);
+  }
+  100% {
+    -webkit-transform: translate(-20vw, -20vh) scale(0.6);
+    transform: translate(-20vw, -20vh) scale(0.6);
+  }
+}
+@keyframes camera-back-stage-2 {
+  0% {
+    -webkit-transform: translate(-20vw, -20vh) scale(0.6);
+    transform: translate(-20vw, -20vh) scale(0.6);
+  }
+  50% {
+    -webkit-transform: translate(20vw, -20vh) scale(0.6);
+    transform: translate(20vw, -20vh) scale(0.6);
+  }
+  100% {
+    -webkit-transform: translate(-20vw, -20vh) scale(0.6);
+    transform: translate(-20vw, -20vh) scale(0.6);
   }
 }
 @-webkit-keyframes bounce {
@@ -972,13 +1000,13 @@ body {
   }
 }
 .back-stage-1 {
-  opacity: 0.6;
-  transform: scale(0.8);
+  opacity: 0.25;
+  animation: camera-back-stage-1 8s ease-out infinite;
 }
 
 .back-stage-2 {
-  opacity: 0.3;
-  transform: scale(0.6);
+  opacity: 0.05;
+  animation: camera-back-stage-2 8s ease-out infinite;
 }
 
 .dance-1 .base {
