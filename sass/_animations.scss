@@ -1,7 +1,7 @@
 // CAMERA MOVEMENT
 
 @include keyframe-animation(swoop) {
-  @include set-loop(transform, translate(-15vw, -15vw) scale(0.75), translate(15vw, -15vw) scale(0.75));
+  @include set-loop(transform, translate(-15vw, -15vw), translate(15vw, -15vw));
 }
 
 // BODY & BASE MOVEMENTS

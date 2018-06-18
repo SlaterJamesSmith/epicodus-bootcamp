@@ -16,11 +16,6 @@ body {
   color: #fff;
 }
 
-.back-stage {
-  font-size: 5rem;
-  animation: swoop 4s infinite;
-}
-
 .frame {
   min-height: 100%;
   width: 100%;
@@ -34,30 +29,30 @@ body {
 
 @-webkit-keyframes swoop {
   0% {
-    -webkit-transform: translate(-15vw, -15vw) scale(0.75);
-    transform: translate(-15vw, -15vw) scale(0.75);
+    -webkit-transform: translate(-15vw, -15vw);
+    transform: translate(-15vw, -15vw);
   }
   50% {
-    -webkit-transform: translate(15vw, -15vw) scale(0.75);
-    transform: translate(15vw, -15vw) scale(0.75);
+    -webkit-transform: translate(15vw, -15vw);
+    transform: translate(15vw, -15vw);
   }
   100% {
-    -webkit-transform: translate(-15vw, -15vw) scale(0.75);
-    transform: translate(-15vw, -15vw) scale(0.75);
+    -webkit-transform: translate(-15vw, -15vw);
+    transform: translate(-15vw, -15vw);
   }
 }
 @keyframes swoop {
   0% {
-    -webkit-transform: translate(-15vw, -15vw) scale(0.75);
-    transform: translate(-15vw, -15vw) scale(0.75);
+    -webkit-transform: translate(-15vw, -15vw);
+    transform: translate(-15vw, -15vw);
   }
   50% {
-    -webkit-transform: translate(15vw, -15vw) scale(0.75);
-    transform: translate(15vw, -15vw) scale(0.75);
+    -webkit-transform: translate(15vw, -15vw);
+    transform: translate(15vw, -15vw);
   }
   100% {
-    -webkit-transform: translate(-15vw, -15vw) scale(0.75);
-    transform: translate(-15vw, -15vw) scale(0.75);
+    -webkit-transform: translate(-15vw, -15vw);
+    transform: translate(-15vw, -15vw);
   }
 }
 @-webkit-keyframes bounce {
@@ -976,6 +971,16 @@ body {
     transform: rotate(0deg);
   }
 }
+.back-stage-1 {
+  opacity: 0.6;
+  transform: scale(0.8);
+}
+
+.back-stage-2 {
+  opacity: 0.3;
+  transform: scale(0.6);
+}
+
 .dance-1 .base {
   animation: bounce 0.5s infinite;
 }
@@ -1233,17 +1238,14 @@ body {
 
 .dance-1:hover .head {
   animation: starpower-1 0.5s infinite;
-  z-index: 100;
 }
 
 .dance-2:hover .head {
   animation: starpower-2 0.5s infinite;
-  z-index: 100;
 }
 
 .dance-3:hover .head {
   animation: starpower-2 0.5s infinite;
-  z-index: 100;
 }
 
 /*# sourceMappingURL=styles.css.map */
