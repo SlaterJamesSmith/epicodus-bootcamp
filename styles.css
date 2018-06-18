@@ -27,6 +27,50 @@ body {
   overflow: hidden;
 }
 
+@-webkit-keyframes camera-zoom-around {
+  0% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+  25% {
+    -webkit-transform: scale(0.5);
+    transform: scale(0.5);
+  }
+  50% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+  75% {
+    -webkit-transform: scale(2);
+    transform: scale(2);
+  }
+  100% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+}
+@keyframes camera-zoom-around {
+  0% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+  25% {
+    -webkit-transform: scale(0.5);
+    transform: scale(0.5);
+  }
+  50% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+  75% {
+    -webkit-transform: scale(2);
+    transform: scale(2);
+  }
+  100% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+}
 @-webkit-keyframes camera-back-stage-1 {
   0% {
     -webkit-transform: translate(-10vw, -10vh) scale(0.8);
@@ -999,6 +1043,10 @@ body {
     transform: rotate(0deg);
   }
 }
+.robot {
+  animation: camera-zoom-around 12s ease-out infinite;
+}
+
 .back-stage-1 {
   opacity: 0.25;
   animation: camera-back-stage-1 8s ease-out infinite;

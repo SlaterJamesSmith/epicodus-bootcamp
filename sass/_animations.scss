@@ -1,5 +1,9 @@
 // CAMERA MOVEMENT
 
+@include keyframe-animation(camera-zoom-around) {
+  @include set-2-step-loop(transform, scale(1), scale(0.5), scale(2));
+}
+
 @include keyframe-animation(camera-back-stage-1) {
   @include set-loop(transform, translate(-10vw, -10vh) scale(0.8), translate(10vw, -10vh) scale(0.8));
 }
