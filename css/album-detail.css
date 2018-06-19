@@ -10,7 +10,7 @@ h1 {
   font-size: 2.15rem;
 }
 
-h1.album-title {
+h1.page-title {
   color: #88b9b8;
   font-size: 2.25rem;
   text-transform: uppercase;
@@ -32,9 +32,10 @@ li {
   text-transform: uppercase;
 }
 
-.album-detail-cover {
-  height: 450px;
-  width: 450px;
+.detail-cover-image {
+  height: 550px;
+  width: 550px;
+  margin: 20px 0;
   border-radius: 10px;
   background-color: lightgray;
 }
