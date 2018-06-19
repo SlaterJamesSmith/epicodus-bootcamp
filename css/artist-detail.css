@@ -16,20 +16,8 @@ h1.page-title {
   text-transform: uppercase;
 }
 
-li {
-  margin-bottom: 15px;
-}
-
 .container {
   padding-top: 50px;
-}
-
-.btn-edit {
-  height: 30px;
-  background-color: #88b9b8;
-  color: #fff;
-  font-size: 0.75rem;
-  text-transform: uppercase;
 }
 
 .detail-cover-image {
@@ -40,9 +28,9 @@ li {
   background-color: lightgray;
 }
 
-.artist-thumbnail {
-  height: 60px;
-  width: 60px;
+.album-thumbnail {
+  height: 225px;
+  width: 225px;
   margin-right: 20px;
   border-radius: 10px;
   background-color: lightgray;
