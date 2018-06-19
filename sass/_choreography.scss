@@ -1,5 +1,13 @@
+h1 {
+  animation: fade-in-out 4s ease-in-out 0.15s forwards;
+}
+
+.black-card {
+  animation: fade-out 3s 4s forwards;
+}
+
 .robot {
-    animation: camera-zoom-around 12s ease-out infinite;
+  animation: camera-zoom-around 12s ease-out infinite;
 }
 
 .back-stage-1 {

@@ -1,3 +1,20 @@
+// TRANSITIONS
+
+@include keyframe-animation(fade-in-out) {
+  @include set-loop(opacity, 0, 1);
+}
+
+@include keyframe-animation(fade-out) {
+  0% {
+    @include keyframe-property(opacity,1);
+    @include keyframe-property(visibility, visible);
+  }
+  100% {
+    @include keyframe-property(opacity,0);
+    @include keyframe-property(visibility, hidden);
+  }
+}
+
 // CAMERA MOVEMENT
 
 @include keyframe-animation(camera-zoom-around) {

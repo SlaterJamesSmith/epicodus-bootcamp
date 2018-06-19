@@ -16,6 +16,18 @@ body {
   color: #fff;
 }
 
+h1 {
+  color: yellow;
+  font-size: 5rem;
+  line-height: 5rem;
+  text-align: center;
+}
+
+audio {
+  position: fixed;
+  top: 0;
+}
+
 button {
   height: 50px;
   width: 50px;
@@ -30,7 +42,7 @@ button {
   display: flex;
   align-items: center;
   justify-content: space-around;
-  transition: background-color 0.25s, box-shadow 0.25s;
+  transition: background-color 0.5s, box-shadow 0.25s;
   z-index: 100;
 }
 
@@ -76,6 +88,70 @@ button {
   overflow: hidden;
 }
 
+.black-card {
+  background-color: #000;
+}
+
+.black-card h1 {
+  opacity: 0;
+}
+
+@-webkit-keyframes fade-in-out {
+  0% {
+    -webkit-opacity: 0;
+    opacity: 0;
+  }
+  50% {
+    -webkit-opacity: 1;
+    opacity: 1;
+  }
+  100% {
+    -webkit-opacity: 0;
+    opacity: 0;
+  }
+}
+@keyframes fade-in-out {
+  0% {
+    -webkit-opacity: 0;
+    opacity: 0;
+  }
+  50% {
+    -webkit-opacity: 1;
+    opacity: 1;
+  }
+  100% {
+    -webkit-opacity: 0;
+    opacity: 0;
+  }
+}
+@-webkit-keyframes fade-out {
+  0% {
+    -webkit-opacity: 1;
+    opacity: 1;
+    -webkit-visibility: visible;
+    visibility: visible;
+  }
+  100% {
+    -webkit-opacity: 0;
+    opacity: 0;
+    -webkit-visibility: hidden;
+    visibility: hidden;
+  }
+}
+@keyframes fade-out {
+  0% {
+    -webkit-opacity: 1;
+    opacity: 1;
+    -webkit-visibility: visible;
+    visibility: visible;
+  }
+  100% {
+    -webkit-opacity: 0;
+    opacity: 0;
+    -webkit-visibility: hidden;
+    visibility: hidden;
+  }
+}
 @-webkit-keyframes camera-zoom-around {
   0% {
     -webkit-transform: scale(1);
@@ -1092,6 +1168,14 @@ button {
     transform: rotate(0deg);
   }
 }
+h1 {
+  animation: fade-in-out 4s ease-in-out 0.15s forwards;
+}
+
+.black-card {
+  animation: fade-out 3s 4s forwards;
+}
+
 .robot {
   animation: camera-zoom-around 12s ease-out infinite;
 }
