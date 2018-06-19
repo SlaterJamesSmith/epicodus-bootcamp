@@ -1,0 +1,50 @@
+@import url('https://fonts.googleapis.com/css?family=Lato:400,400i,700');
+
+h1, h2, h3, h4, h5 ,h6 {
+  margin: 20px 0;
+}
+
+h1 {
+  font-family: 'Lato', sans-serif;
+  font-weight: bold;
+  font-size: 2.15rem;
+}
+
+h1.page-title {
+  color: #88b9b8;
+  font-size: 2.25rem;
+  text-transform: uppercase;
+}
+
+.container {
+  padding-top: 50px;
+}
+
+.detail-cover-image {
+  height: 550px;
+  width: 550px;
+  margin: 20px 0;
+  border-radius: 10px;
+  background-color: lightgray;
+}
+
+.album-thumbnail {
+  height: 225px;
+  width: 225px;
+  margin-right: 20px;
+  border-radius: 10px;
+  background-color: lightgray;
+}
+
+.cratemate-social-heading {
+  font-size: 0.85rem;
+  font-weight: normal;
+}
+
+.cratemate-thumbnail {
+  height: 50px;
+  width: 50px;
+  margin: 0 5px;
+  border-radius: 10px;
+  background-color: lightgray;
+}
