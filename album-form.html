@@ -26,7 +26,12 @@
           <div class="col">
             <div class="form-group">
               <label>Artist Name</label>
-              <input class="form-control" type="text" name="artist-name">
+              <input class="form-control" list="artist-list" name="artist-name">
+                <datalist id="artist-list">
+                  <option value="Artist 1">
+                  <option value="Artist 2">
+                  <option value="Artist 3">
+                </datalist>
             </div>
             <div class="form-group">
               <label>Album Name</label>
@@ -43,21 +48,41 @@
             <div class="d-flex justify-content-between indent">
               <div class="form-group">
                 <label>Media Type</label>
-                <input class="form-control" type="text" name="media-type">
+                <select class="custom-select" name="media-type">
+                  <option selected>Choose...</option>
+                  <option value="1">One</option>
+                  <option value="2">Two</option>
+                  <option value="3">Three</option>
+                </select>
               </div>
               <div class="form-group">
                 <label>Media Condition</label>
-                <input class="form-control" type="text" name="media-condition">
+                <select class="custom-select" name="media-condition">
+                  <option selected>Choose...</option>
+                  <option value="1">One</option>
+                  <option value="2">Two</option>
+                  <option value="3">Three</option>
+                </select>
               </div>
             </div>
             <div class="d-flex justify-content-between indent">
               <div class="form-group">
                 <label>Sleeve Type</label>
-                <input class="form-control" type="text" name="sleeve-type">
+                <select class="custom-select" name="sleeve-type">
+                  <option selected>Choose...</option>
+                  <option value="1">One</option>
+                  <option value="2">Two</option>
+                  <option value="3">Three</option>
+                </select>
               </div>
               <div class="form-group">
                 <label>Sleeve Condition</label>
-                <input class="form-control" type="text" name="sleeve-condition">
+                <select class="custom-select" name="sleeve-condition">
+                  <option selected>Choose...</option>
+                  <option value="1">One</option>
+                  <option value="2">Two</option>
+                  <option value="3">Three</option>
+                </select>
               </div>
             </div>
             <div class="form-group">
@@ -67,24 +92,30 @@
             <div class="d-flex justify-content-between indent">
               <div class="form-group">
                 <label>Price</label>
-                <input class="form-control" type="text" name="price">
+                <input class="form-control" type="number" name="price">
               </div>
               <div class="form-group">
                 <label>Purchase Date</label>
-                <input class="form-control" type="text" name="purchase-date">
+                <input class="form-control" type="date" name="purchase-date">
               </div>
             </div>
           </div>
 <!-- 2ND COLUMN -->
           <div class="col">
-            <div class="form-group">
-              <label>Artist Image</label>
-              <input class="form-control" type="text" name="image" value="">
+            <label>Artist Image</label>
+            <div class="input-group mb-3">
+              <div class="custom-file">
+                <input type="file" class="custom-file-input" name="artist-image-upload">
+                <label class="custom-file-label" for="artist-image-upload">Choose file</label>
+              </div>
             </div>
             <div class="preview-image"></div>
-            <div class="form-group">
-              <label>Album Image</label>
-              <input class="form-control" type="text" name="image" value="">
+            <label>Album Image</label>
+            <div class="input-group mb-3">
+              <div class="custom-file">
+                <input type="file" class="custom-file-input" name="album-image-upload">
+                <label class="custom-file-label" for="album-image-upload">Choose file</label>
+              </div>
             </div>
             <div class="preview-image"></div>
           </div>

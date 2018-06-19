@@ -30,7 +30,7 @@ form button {
   padding-top: 50px;
 }
 
-.form-group{
+.form-group, .input-group{
   margin-bottom: 25px;
 }
 
@@ -51,8 +51,8 @@ form button {
 }
 
 .preview-image {
-  height: 265px;
-  width: 265px;
+  height: 270px;
+  width: 270px;
   margin: 20px auto;
   border-radius: 10px;
   background-color: lightgray;
