@@ -16,6 +16,55 @@ body {
   color: #fff;
 }
 
+button {
+  height: 50px;
+  width: 50px;
+  border: none;
+  border-radius: 100%;
+  outline: none;
+}
+
+.starpower-btn {
+  position: fixed;
+  left: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  transition: background-color 0.25s, box-shadow 0.25s;
+  z-index: 100;
+}
+
+.starpower-btn:hover, .starpower-btn:focus {
+  background-color: #fff;
+}
+
+.btn-1 {
+  bottom: 25px;
+  background-color: magenta;
+}
+
+.btn-1:focus {
+  box-shadow: 0 0 50px 10px magenta;
+}
+
+.btn-2 {
+  bottom: 100px;
+  background-color: yellow;
+}
+
+.btn-2:focus {
+  box-shadow: 0 0 50px 10px yellow;
+}
+
+.btn-3 {
+  bottom: 175px;
+  background-color: cyan;
+}
+
+.btn-3:focus {
+  box-shadow: 0 0 50px 10px cyan;
+}
+
 .frame {
   min-height: 100%;
   width: 100%;
@@ -1293,34 +1342,42 @@ body {
   background-color: red;
 }
 
-.robot:hover .accent-bar, .robot:hover .waist, .robot:hover .eye, .robot:hover .mouth, .robot:hover .visible.joint {
+.btn-1:focus ~ .frame .look-1 .accent-bar, .btn-1:focus ~ .frame .look-1 .waist, .btn-1:focus ~ .frame .look-1 .eye, .btn-1:focus ~ .frame .look-1 .mouth, .btn-1:focus ~ .frame .look-1 .visible.joint {
   background-color: #fff;
 }
-.robot:hover .torso, .robot:hover .head, .robot:hover .arm, .robot:hover .leg {
+.btn-1:focus ~ .frame .look-1 .torso, .btn-1:focus ~ .frame .look-1 .head, .btn-1:focus ~ .frame .look-1 .arm, .btn-1:focus ~ .frame .look-1 .leg {
   background-color: #222;
 }
-
-.look-1:hover .eye, .look-1:hover .mouth, .look-1:hover .visible.joint {
+.btn-1:focus ~ .frame .look-1 .eye, .btn-1:focus ~ .frame .look-1 .mouth, .btn-1:focus ~ .frame .look-1 .visible.joint {
   box-shadow: 0 0 50px 10px magenta;
 }
-
-.look-2:hover .eye, .look-2:hover .mouth, .look-2:hover .visible.joint {
-  box-shadow: 0 0 50px 10px yellow;
-}
-
-.look-3:hover .eye, .look-3:hover .mouth, .look-3:hover .visible.joint {
-  box-shadow: 0 0 50px 10px cyan;
-}
-
-.dance-1:hover .head {
+.btn-1:focus ~ .frame .look-1 .head {
   animation: starpower-1 0.5s infinite;
 }
 
-.dance-2:hover .head {
+.btn-2:focus ~ .frame .look-2 .accent-bar, .btn-2:focus ~ .frame .look-2 .waist, .btn-2:focus ~ .frame .look-2 .eye, .btn-2:focus ~ .frame .look-2 .mouth, .btn-2:focus ~ .frame .look-2 .visible.joint {
+  background-color: #fff;
+}
+.btn-2:focus ~ .frame .look-2 .torso, .btn-2:focus ~ .frame .look-2 .head, .btn-2:focus ~ .frame .look-2 .arm, .btn-2:focus ~ .frame .look-2 .leg {
+  background-color: #222;
+}
+.btn-2:focus ~ .frame .look-2 .eye, .btn-2:focus ~ .frame .look-2 .mouth, .btn-2:focus ~ .frame .look-2 .visible.joint {
+  box-shadow: 0 0 50px 10px yellow;
+}
+.btn-2:focus ~ .frame .look-2 .head {
   animation: starpower-2 0.5s infinite;
 }
 
-.dance-3:hover .head {
+.btn-3:focus ~ .frame .look-3 .accent-bar, .btn-3:focus ~ .frame .look-3 .waist, .btn-3:focus ~ .frame .look-3 .eye, .btn-3:focus ~ .frame .look-3 .mouth, .btn-3:focus ~ .frame .look-3 .visible.joint {
+  background-color: #fff;
+}
+.btn-3:focus ~ .frame .look-3 .torso, .btn-3:focus ~ .frame .look-3 .head, .btn-3:focus ~ .frame .look-3 .arm, .btn-3:focus ~ .frame .look-3 .leg {
+  background-color: #222;
+}
+.btn-3:focus ~ .frame .look-3 .eye, .btn-3:focus ~ .frame .look-3 .mouth, .btn-3:focus ~ .frame .look-3 .visible.joint {
+  box-shadow: 0 0 50px 10px cyan;
+}
+.btn-3:focus ~ .frame .look-3 .head {
   animation: starpower-2 0.5s infinite;
 }
 
