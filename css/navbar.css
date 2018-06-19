@@ -1,0 +1,26 @@
+.navbar a {
+  color: #e66a55;
+}
+
+.navbar h3 {
+  font-weight: normal;
+  margin: 0;
+}
+
+.btn-red {
+  background-color: #e66a55;
+  color: white;
+}
+
+.btn-blue {
+  background-color: #86b9b8;
+  color: white;
+}
+
+.btn:focus {
+  box-shadow: none;
+}
+
+.navbar .btn:hover {
+  opacity: .7;
+}
