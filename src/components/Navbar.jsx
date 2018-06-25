@@ -2,7 +2,15 @@ import React from "react";
 
 function Navbar(){
   return (
-    <h1>Navbar</h1>
+    <div>
+      <ul>
+        <li>Home</li>
+        <li>Notifications</li>
+        <li>Messages</li>
+      </ul>
+      <input placeholder="Search"></input>
+      <button>Tweet</button>
+    </div>
   );
 }
 

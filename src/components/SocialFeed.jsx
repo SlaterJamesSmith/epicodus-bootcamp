@@ -1,8 +1,17 @@
 import React from "react";
+import FeedSearch from "./FeedSearch";
+import FeedPost from "./FeedPost";
 
 function SocialFeed(){
   return (
-    <h1>SocialFeed</h1>
+    <div>
+      <FeedSearch/>
+      <FeedPost />
+      <FeedPost />
+      <FeedPost />
+      <FeedPost />
+      <FeedPost />
+    </div>
   );
 }
 

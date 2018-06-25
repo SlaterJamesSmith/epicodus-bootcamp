@@ -2,7 +2,20 @@ import React from "react";
 
 function Profile(){
   return (
-    <h1>Profile</h1>
+    <div>
+      <div className="background"></div>
+      <div>
+        <div>
+          <div className="img"></div>
+          <h1>Profile Name</h1>
+        </div>
+        <ul>
+          <li>Tweets</li>
+          <li>Following</li>
+          <li>Followers</li>
+        </ul>
+      </div>
+    </div>
   );
 }
 
