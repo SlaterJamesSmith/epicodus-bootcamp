@@ -26,10 +26,10 @@ function FeedSearch(){
   };
 
   return (
-    <form style={feedSearch}>
+    <div style={feedSearch}>
       <button style={button}>Go</button>
       <input style={input} placeholder="What's happening?"></input>
-    </form>
+    </div>
   );
 }
 

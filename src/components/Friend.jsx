@@ -1,6 +1,6 @@
 import React from "react";
 
-function Friend(){
+function Friend(props){
   const friend = {
     display: "flex",
     alignItems: "flex-start",
@@ -34,7 +34,7 @@ function Friend(){
   <div style={friend}>
     <div style={friendImg} className="img"></div>
     <div>
-      <h3 style={h3}>Thato Haley</h3>
+      <h3 style={h3}>{props.name}</h3>
       <button style={button}>Message</button>
     </div>
   </div>

@@ -1,6 +1,6 @@
 import React from "react";
 
-function FeedPost(){
+function FeedPost(props){
   const friend = {
     display: "flex",
     alignItems: "flex-start",
@@ -31,8 +31,8 @@ function FeedPost(){
     <div style={friend}>
       <div style={friendImg} className="img"></div>
       <div>
-        <h3 style={h3}>Post Title</h3>
-        <p style={p}>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+        <h3 style={h3}>{props.title}</h3>
+        <p style={p}>{props.msg}</p>
       </div>
     </div>
   );

@@ -17,9 +17,12 @@ function FriendsList(){
   return (
     <div style={friendsList}>
       <h2 style={h2}>Friends List</h2>
-      <Friend/>
-      <Friend/>
-      <Friend/>
+      <Friend
+        name="Mike"/>
+      <Friend
+        name="Matt"/>
+      <Friend
+        name="Mark"/>
     </div>
   );
 }
