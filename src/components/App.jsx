@@ -6,13 +6,26 @@ import SocialFeed from "./SocialFeed";
 import FriendsList from "./FriendsList";
 
 function App(){
+  const main = {
+    display: "grid",
+    gridTemplateColumns: "1fr 1fr 1fr",
+    gridGap: "10px",
+    padding: "10px",
+  };
+
+
+
   return (
     <div>
       <Navbar/>
-      <Profile/>
-      <Bio/>
-      <SocialFeed/>
-      <FriendsList/>
+      <div style={main}>
+        <div>
+          <Profile/>
+          <Bio/>
+        </div>
+        <SocialFeed/>
+        <FriendsList/>
+      </div>
     </div>
   );
 }

@@ -3,9 +3,20 @@ import Friend from "./Friend";
 
 
 function FriendsList(){
+  const friendsList = {
+    border: "2px solid #ccc",
+    padding: "10px 25px",
+    fontFamily: "sans-serif"
+  };
+
+  const h2 = {
+    fontSize: "18px",
+    color: "#333"
+  };
+
   return (
-    <div>
-      <h1>FriendsList</h1>
+    <div style={friendsList}>
+      <h2 style={h2}>Friends List</h2>
       <Friend/>
       <Friend/>
       <Friend/>

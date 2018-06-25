@@ -3,8 +3,13 @@ import FeedSearch from "./FeedSearch";
 import FeedPost from "./FeedPost";
 
 function SocialFeed(){
+  const socialFeed = {
+    fontFamily: "sans-serif",
+    border: "2px solid #ccc"
+  };
+
   return (
-    <div>
+    <div style={socialFeed}>
       <FeedSearch/>
       <FeedPost />
       <FeedPost />
