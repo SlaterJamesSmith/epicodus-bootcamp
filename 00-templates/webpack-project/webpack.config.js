@@ -1,6 +1,7 @@
 const { resolve } = require('path');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const CleanWebpackPlugin = require('clean-webpack-plugin');
 
 module.exports = {
 
@@ -13,10 +14,9 @@ module.exports = {
 
   output: {
     filename: 'app.bundle.js',
-    path: resolve(__dirname, 'build'),
-    publicPath: '/'
+    path: resolve(__dirname, 'build')
   },
-
+  
   resolve: {
     extensions: ['.js', '.jsx']
   },
@@ -25,9 +25,17 @@ module.exports = {
 
   devServer: {
     hot: true,
-    contentBase: resolve(__dirname, 'build'),
-    publicPath: '/'
+    contentBase: resolve(__dirname, 'build')
   },
+
+  plugins: [
+    new webpack.HotModuleReplacementPlugin(),
+    new webpack.NamedModulesPlugin(),
+    new CleanWebpackPlugin(['build']),
+    new HtmlWebpackPlugin({
+      template: './src/index.html'
+    })
+  ],
 
   module: {
     rules: [
@@ -46,13 +54,5 @@ module.exports = {
         }
       }
     ]
-  },
-
-  plugins: [
-    new webpack.HotModuleReplacementPlugin(),
-    new webpack.NamedModulesPlugin(),
-    new HtmlWebpackPlugin({
-      template: './src/index.html'
-    })
-  ]
+  }
 };

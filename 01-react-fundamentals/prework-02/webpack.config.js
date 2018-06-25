@@ -13,8 +13,7 @@ module.exports = {
 
   output: {
     filename: 'app.bundle.js',
-    path: resolve(__dirname, 'build'),
-    publicPath: '/'
+    path: resolve(__dirname, 'build')
   },
 
   resolve: {
@@ -25,9 +24,19 @@ module.exports = {
 
   devServer: {
     hot: true,
-    contentBase: resolve(__dirname, 'build'),
-    publicPath: '/'
+    contentBase: resolve(__dirname, 'build')
   },
+  
+  plugins: [
+    new webpack.HotModuleReplacementPlugin(),
+    new webpack.NamedModulesPlugin(),
+    new HtmlWebpackPlugin({
+      template: './src/template.ejs',
+      appMountId: 'react-app-root',
+      title: 'EPI-04-WK1: Help Queue',
+      filename: resolve(__dirname, 'build', 'index.html')
+    })
+  ],
 
   module: {
     rules: [
@@ -46,16 +55,5 @@ module.exports = {
         }
       }
     ]
-  },
-
-  plugins: [
-    new webpack.HotModuleReplacementPlugin(),
-    new webpack.NamedModulesPlugin(),
-    new HtmlWebpackPlugin({
-      template: './src/template.ejs',
-      appMountId: 'react-app-root',
-      title: 'EPI-04-WK1: Help Queue',
-      filename: resolve(__dirname, 'build', 'index.html')
-    })
-  ]
+  }
 };

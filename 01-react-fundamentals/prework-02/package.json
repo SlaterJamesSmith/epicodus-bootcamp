@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.jsx",
   "scripts": {
+    "build": "webpack",
     "start": "webpack-dev-server --open"
   },
   "author": "",
