@@ -22,4 +22,5 @@ None.
 
 - JavaScript
 - React
+- Babel
 - Webpack

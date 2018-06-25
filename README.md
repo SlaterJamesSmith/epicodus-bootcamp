@@ -12,8 +12,13 @@
 
 ### IV. Advanced Topics
 
+## Templates
+
+1. [Webpack Project (React)](00-templates/webpack-project)
+
 ## Technologies Used
 
 - JavaScript
 - React
+- Babel
 - Webpack
