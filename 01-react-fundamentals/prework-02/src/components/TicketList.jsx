@@ -3,7 +3,11 @@ import Ticket from './Ticket';
 
 function TicketList() {
   return (
-    <Ticket/>
+    <Ticket
+      location='1A'
+      names='Mike'
+      issue='Firebase not saving records.'
+      />
   );
 }
 
