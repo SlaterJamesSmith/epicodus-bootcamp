@@ -26,7 +26,7 @@ module.exports = {
     hot: true,
     contentBase: resolve(__dirname, 'build')
   },
-  
+
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
     new webpack.NamedModulesPlugin(),
@@ -40,6 +40,16 @@ module.exports = {
 
   module: {
     rules: [
+      {
+        test: /\.jsx?$/,
+        enforce: "pre",
+        loader: "eslint-loader",
+        exclude: /node_modules/,
+        options: {
+          emitWarning: true,
+          configFile: "./.eslintrc.json"
+        }
+      },
       {
         test: /\.jsx?$/,
         loader: 'babel-loader',
