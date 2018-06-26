@@ -1,14 +1,14 @@
-import React from "react";
+import React from 'react';
 
-function Bio(){
+function Bio() {
   const bio = {
-    border: "2px solid #ccc",
-    padding: "15px",
-    fontFamily: "sans-serif"
+    border: '2px solid #ccc',
+    padding: '15px',
+    fontFamily: 'sans-serif'
   };
 
   const bioInfo = {
-    color: "gray"
+    color: 'gray'
   };
 
   return (

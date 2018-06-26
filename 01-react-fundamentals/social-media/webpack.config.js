@@ -27,6 +27,18 @@ module.exports = {
    contentBase: resolve(__dirname, 'build')
   },
 
+
+  plugins: [
+    new webpack.HotModuleReplacementPlugin(),
+    new webpack.NamedModulesPlugin(),
+    new HtmlWebpackPlugin({
+      template:'./src/template.ejs',
+      appMountId: 'react-app-root',
+      title: 'Social Media',
+      filename: resolve(__dirname, "build", "index.html")
+    })
+  ],
+
   module: {
     rules: [
       {
@@ -36,7 +48,7 @@ module.exports = {
         options: {
           presets: [
             ["es2015", {"modules": false}],
-            "react",
+            "react"
           ],
           plugins: [
             "react-hot-loader/babel"
@@ -44,16 +56,5 @@ module.exports = {
         }
       }
     ]
-  },
-
-  plugins: [
-    new webpack.HotModuleReplacementPlugin(),
-    new webpack.NamedModulesPlugin(),
-    new HtmlWebpackPlugin({
-      template:'template.ejs',
-      appMountId: 'react-app-root',
-      title: 'Social Media Clone',
-      filename: resolve(__dirname, "build", "index.html"),
-    }),
-  ]
+  }
 };

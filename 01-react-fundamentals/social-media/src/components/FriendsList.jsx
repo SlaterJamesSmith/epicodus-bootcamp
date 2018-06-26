@@ -1,17 +1,17 @@
-import React from "react";
-import Friend from "./Friend";
+import React from 'react';
+import Friend from './Friend';
 
 
-function FriendsList(){
+function FriendsList() {
   const friendsList = {
-    border: "2px solid #ccc",
-    padding: "10px 25px",
-    fontFamily: "sans-serif"
+    border: '2px solid #ccc',
+    padding: '10px 25px',
+    fontFamily: 'sans-serif'
   };
 
   const h2 = {
-    fontSize: "18px",
-    color: "#333"
+    fontSize: '18px',
+    color: '#333'
   };
 
   return (

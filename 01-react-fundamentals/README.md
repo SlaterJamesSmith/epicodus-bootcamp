@@ -2,21 +2,18 @@
 
 **React Fundamentals | June 25, 2018**
 
-**By Mike Chu**
+**Collaborators**
+
+- Mike Chu
+- Matthew Nardoni
 
 ## Description
 
 A collection of practice projects focused on learning React.
 
-## Setup/Installation Requirements
+## Projects
 
-1. Clone repository.
-
-2. Navigate to `01-react-fundamentals`.
-
-## Known Bugs
-
-None.
+### I. [Social Media Site](social-media)
 
 ## Technologies Used
 

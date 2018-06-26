@@ -1,11 +1,11 @@
-import React from "react";
-import FeedSearch from "./FeedSearch";
-import FeedPost from "./FeedPost";
+import React from 'react';
+import FeedSearch from './FeedSearch';
+import FeedPost from './FeedPost';
 
 function SocialFeed(){
   const socialFeed = {
-    fontFamily: "sans-serif",
-    border: "2px solid #ccc"
+    fontFamily: 'sans-serif',
+    border: '2px solid #ccc'
   };
 
   return (
@@ -24,8 +24,8 @@ function SocialFeed(){
         title="Short people are real people too!"
         msg="no..."/>
       <FeedPost
-        title="Cover Letters are due!"
-        msg="Don't forget!"/>
+        title="Internship Week"
+        msg="Don't forget to write your cover letters!"/>
     </div>
   );
 }
