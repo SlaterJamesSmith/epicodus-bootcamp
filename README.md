@@ -7,6 +7,7 @@
 
 ## Description
 
+https://crate-digger2.herokuapp.com/
 This application will allow users to create, read, update, and delete records in a personal collection database.
 
 For Sketch wireframe and prototype design see https://github.com/m-chu/crate-digger-design
@@ -41,14 +42,18 @@ V. As a user, I wnat to be able to delete an artist from a record (unfinished)
 
 ## Setup/Installation Requirements
 
-* View program by cloning repository from https://github.com/mattfmiller/event-planning
+* To view live app, visit https://crate-digger2.herokuapp.com/
+
+* To view program locally, cloning repository from https://github.com/mattfmiller/event-planning
 * Open project in IDE such as IntelliJ IDEA
+* Enter `psql < create.sql` in the command line.
 * Run App.java to compile the program
 * Navigate to localhost:4567/ in browser to interact with program
 
 ## Known Bugs
 
-* Wishlist filters default to collection when there is nothing in wishlist that matches the selected filter.
+* Cannot remove artists from a release
+* Cannot add secondary artist to release when database contains single artist
 
 ## Support and contact details
 
