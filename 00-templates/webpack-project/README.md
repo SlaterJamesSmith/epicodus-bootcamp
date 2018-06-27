@@ -18,15 +18,11 @@ Add Description.
 
 3. Run `npm install` to load required packages.
 
-### II. View Project
+### II. View/Build Project
 
 - Development Mode: `npm start`
 
-- Production: `npm run build`
-
-  1. Navigate to `webpack-project/build`.
-
-  2. Open **index.html** in web browser.
+- Production Build: `npm run build`
 
 ## Known Bugs
 

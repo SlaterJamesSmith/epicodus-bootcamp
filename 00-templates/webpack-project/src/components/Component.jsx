@@ -2,7 +2,7 @@ import React from 'react';
 
 function Component() {
   return (
-    <h2>Empty Component</h2>
+    <h2>Component Template</h2>
   );
 }
 
