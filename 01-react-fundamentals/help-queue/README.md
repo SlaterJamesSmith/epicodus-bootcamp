@@ -1,12 +1,12 @@
-# [PROJECT NAME]
+# Help Queue
 
-**[SUBTITLE] | [MONTH DAY, YEAR]**
+**React Fundamentals | June 24, 2018**
 
-**By [AUTHOR]**
+**By Mike Chu**
 
 ## Description
 
-Add Description.
+A student help queue application using React.
 
 ## Setup/Installation Requirements
 
@@ -14,7 +14,7 @@ Add Description.
 
 1. Install Node.js on local machine.
 
-2. Clone repository and navigate to `webpack-project`.
+2. Clone repository and navigate to `01-react-fundamentals/help-queue`.
 
 3. Run `npm install` to load required packages.
 
@@ -24,7 +24,7 @@ Add Description.
 
 - Production Build: `npm run build`
 
-  1. Locate build files in `webpack-project/build`.
+  1. Locate build files in `01-react-fundamentals/help-queue/build`.
 
 ## Known Bugs
 
@@ -36,13 +36,3 @@ None.
 - React
 - Babel
 - Webpack
-
-## Specifications
-
-Add specifications.
-
-## License
-
-This software is licensed under the MIT license.
-
-Copyright (c) [YEAR] **[AUTHOR]**

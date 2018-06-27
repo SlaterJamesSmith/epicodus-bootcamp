@@ -13,7 +13,8 @@ module.exports = {
 
   output: {
     filename: 'app.bundle.js',
-    path: resolve(__dirname, 'build')
+    path: resolve(__dirname, 'build'),
+    publicPath: '/'
   },
 
   resolve: {
@@ -24,7 +25,8 @@ module.exports = {
 
   devServer: {
    hot: true,
-   contentBase: resolve(__dirname, 'build')
+   contentBase: resolve(__dirname, 'build'),
+   publicPath: '/'
   },
 
 

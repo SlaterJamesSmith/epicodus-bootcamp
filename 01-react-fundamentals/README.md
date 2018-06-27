@@ -13,7 +13,9 @@ A collection of practice projects focused on learning React.
 
 ## Projects
 
-### I. [Social Media Site](social-media)
+### I. [Help Queue](help-queue)
+
+### II. [Social Media Site](social-media)
 
 ## Technologies Used
 

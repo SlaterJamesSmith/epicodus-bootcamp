@@ -21,15 +21,13 @@ A static site build for a generic social media site using React.
 
 3. Run `npm install` to load required packages.
 
-### II. View Project
+### II. View/Build Project
 
 - Development Mode: `npm start`
 
-- Production: `npm run build`
+- Production Build: `npm run build`
 
-  1. Navigate to `01-react-fundamentals/social-media/build`.
-
-  2. Open **index.html** in web browser.
+  1. Locate build files in `01-react-fundamentals/social-media/build`.
 
 ## Known Bugs
 
