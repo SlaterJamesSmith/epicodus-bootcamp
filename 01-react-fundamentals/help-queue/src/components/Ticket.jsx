@@ -4,9 +4,11 @@ import PropTypes from 'prop-types';
 function Ticket(props) {
   return (
     <div>
-      <h2>{new Date().toLocaleTimeString()}</h2>
-      <h3>{props.location} - {props.names}</h3>
-      <p><em>{props.issue}</em></p>
+      <div className="ticket">
+        <h2>{new Date().toLocaleTimeString()}</h2>
+        <h3>{props.location} - {props.names}</h3>
+        <p><em>{props.issue}</em></p>
+      </div>
       <hr/>
     </div>
   );
