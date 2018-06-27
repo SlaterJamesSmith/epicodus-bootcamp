@@ -6,6 +6,7 @@
 
 - Mike Chu
 - Matthew Nardoni
+- Isaac Shoman
 
 ## Description
 
@@ -16,6 +17,8 @@ A collection of practice projects focused on learning React.
 ### I. [Help Queue](help-queue)
 
 ### II. [Social Media Site](social-media)
+
+### III. [Produce Market](produce-market)
 
 ## Technologies Used
 

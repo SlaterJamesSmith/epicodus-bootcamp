@@ -36,7 +36,7 @@ module.exports = {
     new HtmlWebpackPlugin({
       template:'./src/template.ejs',
       appMountId: 'react-app-root',
-      title: 'Social Media',
+      title: 'EPI-04-WK1: Social Media',
       filename: resolve(__dirname, "build", "index.html")
     })
   ],
