@@ -1,4 +1,5 @@
 import React from 'react';
+import Error404 from './Error404';
 import Header from './Header';
 import Component from './Component';
 import { Switch, Route } from 'react-router-dom';
@@ -22,6 +23,7 @@ function App() {
       <Header/>
       <Switch>
         <Route exact path='/' component={Component}/>
+        <Route component={Error404}/>
       </Switch>
     </div>
   );
