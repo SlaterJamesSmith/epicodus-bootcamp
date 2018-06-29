@@ -13,11 +13,11 @@ function Error404(props) {
       <style jsx>
         {`
           div {
+            height: 100%;
             display: flex;
             align-items: center;
             justify-content: center;
             flex-direction: column;
-            padding: 25px;
           }
 
           strong {
@@ -25,8 +25,8 @@ function Error404(props) {
           }
         `}
       </style>
-      <p><strong>The page "{props.location.pathname}" does not exist.</strong></p>
-      <p>Would you like to return <Link to="/" style={navLink}>home</Link> instead?</p>
+      <h2><strong>The page "{props.location.pathname}" does not exist.</strong></h2>
+      <p>Let's go back <Link to="/" style={navLink}>home</Link>.</p>
     </div>
   );
 }
