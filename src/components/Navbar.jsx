@@ -4,8 +4,12 @@ import { Link } from 'react-router-dom';
 function Navbar() {
   const navLink = {
     color: 'red',
-    textDecoration: 'none'
+    fontSize: '0.9rem',
+    fontWeight: '500',
+    textDecoration: 'none',
+    textTransform: 'uppercase'
   };
+
   return (
     <nav>
       <style jsx>
@@ -29,10 +33,6 @@ function Navbar() {
             list-style: none;
           }
 
-          a, a:visited {
-            text-decoration: none;
-          }
-
           #search-input {
             width: 50%;
             display: flex;
@@ -48,7 +48,7 @@ function Navbar() {
       </ul>
       <div id="search-input">
         <input type="text" placeholder="search"/>
-        <Link to="/search" style={navLink}><button>Search</button></Link>
+        <Link to="/search"><button>Search</button></Link>
       </div>
       <ul>
         <li><Link to="/video" style={navLink}>Video</Link></li>

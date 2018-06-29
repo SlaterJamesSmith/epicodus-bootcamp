@@ -13,10 +13,13 @@ function App() {
     <div>
       <style jsx global>
         {`
+          @import url('https://fonts.googleapis.com/css?family=Roboto:400,400i,500,700');
+
           body {
             position: relative;
             margin: 55px 0 75px;
-            font-family: sans-serif;
+            font-family: 'Roboto', sans-serif;
+            font-size: 100%;
           }
 
           nav {
