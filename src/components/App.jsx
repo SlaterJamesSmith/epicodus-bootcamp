@@ -1,7 +1,11 @@
 import React from 'react';
 import Error404 from './Error404';
-import Header from './Header';
-import Component from './Component';
+import Navbar from './Navbar';
+import ChannelList from './ChannelList';
+import SignIn from './SignIn';
+import VideoPlayer from './VideoPlayer';
+import Search from './Search';
+import Footer from './Footer';
 import { Switch, Route } from 'react-router-dom';
 
 function App() {
@@ -14,17 +18,17 @@ function App() {
             padding: 0;
             font-family: sans-serif;
           }
-
-          h1 {
-            color: #08f;
-          }
         `}
       </style>
-      <Header/>
+      <Navbar/>
       <Switch>
-        <Route exact path='/' component={Component}/>
+        <Route exact path='/' component={ChannelList}/>
+        <Route exact path='/signin' component={SignIn}/>
+        <Route exact path='/video' component={VideoPlayer}/>
+        <Route exact path='/search' component={Search}/>
         <Route component={Error404}/>
       </Switch>
+      <Footer/>
     </div>
   );
 }
