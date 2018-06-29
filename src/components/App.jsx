@@ -15,6 +15,10 @@ function App() {
         {`
           @import url('https://fonts.googleapis.com/css?family=Roboto:400,400i,500,700');
 
+          * {
+            box-sizing: border-box;
+          }
+
           body {
             position: relative;
             margin: 55px 0 75px;
