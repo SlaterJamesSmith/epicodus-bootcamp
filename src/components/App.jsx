@@ -15,9 +15,13 @@ function App() {
         {`
           body {
             position: relative;
-            margin: 0 0 125px;
-            padding: 0;
+            margin: 55px 0 75px;
             font-family: sans-serif;
+          }
+
+          nav {
+            position: fixed;
+            top: 0;
           }
 
           footer {
