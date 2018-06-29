@@ -8,6 +8,18 @@
 
 A limited site rebuild of [YouTube](https://www.youtube.com/) using React.
 
+### Friday Prompt | Dev Notes & Thoughts
+
+#### JUNE 29
+
+NOTES
+
+- 10:10AM | Combed through Angular build and drafted component structure without too much trouble.
+
+THOUGHTS
+
+- 10:23AM | Focusing purely on design philosophy, Angular and React feel very much the same at this point. Looking back at the YouTube Rebuild in Angular, functional operations dictated component scope and component relationships. In React, I find myself simply re-orienting focus to visual hierarchy to determine component scope and component relationships. There is a perspective shift, but the underlying design process feels very familiar.
+
 ## Setup/Installation Requirements
 
 ### I. Project Setup
