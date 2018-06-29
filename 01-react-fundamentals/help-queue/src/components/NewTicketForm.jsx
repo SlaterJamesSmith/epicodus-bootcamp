@@ -20,7 +20,6 @@ function NewTicketForm() {
           }
         `}
       </style>
-      <hr/>
       <form>
         <input
           type='text'
