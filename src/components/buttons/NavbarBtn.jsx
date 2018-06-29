@@ -13,6 +13,7 @@ function NavbarBtn(props) {
             position: relative;
             background-color: transparent;
             border: none;
+            cursor: pointer;
           }
         `}
       </style>

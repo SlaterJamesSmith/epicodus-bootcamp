@@ -1,5 +1,6 @@
 import React from 'react';
 import NavbarBtn from './buttons/NavbarBtn';
+import SearchBar from './SearchBar';
 import { Link } from 'react-router-dom';
 
 function Navbar() {
@@ -16,11 +17,14 @@ function Navbar() {
     <nav>
       <style jsx>
         {`
+          nav, ul, li {
+            display: flex;
+            align-items: center;
+          }
+
           nav {
             height: 55px;
             width: 100%;
-            display: flex;
-            align-items: center;
             justify-content: space-between;
             padding: 0 15px;
             background-color: #fff;
@@ -28,27 +32,13 @@ function Navbar() {
           }
 
           ul {
-            display: flex;
-            align-items: center;
             margin: 0;
             padding: 0;
           }
 
           li {
-            display: flex;
-            align-items: center;
             margin-right: 5px;
             list-style: none;
-          }
-
-          #search-input {
-            width: 50%;
-            max-width: 600px;
-            display: flex;
-          }
-
-          input {
-            width: 100%;
           }
         `}
       </style>
@@ -56,10 +46,7 @@ function Navbar() {
         <li><NavbarBtn type="tribar"/></li>
         <li><Link to="/" style={navLink}>Home</Link></li>
       </ul>
-      <div id="search-input">
-        <input type="text" placeholder="search"/>
-        <Link to="/search"><button>Search</button></Link>
-      </div>
+      <SearchBar/>
       <ul>
         <li><NavbarBtn type="video"/></li>
         <li><NavbarBtn type="apps"/></li>
