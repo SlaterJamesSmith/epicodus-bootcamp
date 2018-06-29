@@ -14,9 +14,15 @@ function App() {
       <style jsx global>
         {`
           body {
-            margin: 0;
+            position: relative;
+            margin: 0 0 125px;
             padding: 0;
             font-family: sans-serif;
+          }
+
+          footer {
+            position: fixed;
+            bottom: 0;
           }
         `}
       </style>
