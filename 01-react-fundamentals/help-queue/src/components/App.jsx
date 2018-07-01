@@ -5,32 +5,48 @@ import TicketList from './TicketList';
 import NewTicketControl from './NewTicketControl';
 import { Switch, Route } from 'react-router-dom';
 
-function App() {
-  return(
-    <div>
-      <style jsx global>
-        {`
-          body {
-            font-family: sans-serif;
-          }
+class App extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      masterTicketList: []
+    };
+    this.handleAddingNewTicketToList = this.handleAddingNewTicketToList.bind(this);
+  }
 
-          h1 {
-            padding: 10px 20px;
-          }
+  handleAddingNewTicketToList(newTicket){
+    let newMasterTicketList = this.state.masterTicketList.slice();
+    newMasterTicketList.push(newTicket);
+    this.setState({masterTicketList: newMasterTicketList});
+  }
 
-          .ticket {
-            padding: 10px 20px;
-          }
-        `}
-      </style>
-      <Header/>
-      <Switch>
-        <Route exact path='/' component={TicketList}/>
-        <Route path='/newticket' component={NewTicketControl}/>
-        <Route component={Error404}/>
-      </Switch>
-    </div>
-  );
+  render() {
+    return(
+      <div>
+        <style jsx global>
+          {`
+            body {
+              font-family: sans-serif;
+            }
+
+            h1 {
+              padding: 10px 20px;
+            }
+
+            .ticket {
+              padding: 10px 20px;
+            }
+          `}
+        </style>
+        <Header/>
+        <Switch>
+          <Route exact path='/' render={()=><TicketList ticketList={this.state.masterTicketList}/>}/>
+          <Route path='/newticket' render={() => <NewTicketControl onNewTicketCreation={this.handleAddingNewTicketToList}/>}/>
+          <Route component={Error404}/>
+        </Switch>
+      </div>
+    );
+  }
 }
 
 export default App;
