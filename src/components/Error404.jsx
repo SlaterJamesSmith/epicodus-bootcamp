@@ -13,11 +13,11 @@ function Error404(props) {
       <style jsx>
         {`
           div {
-            height: 100%;
             display: flex;
             align-items: center;
             justify-content: center;
             flex-direction: column;
+            padding: 50px 0;
           }
 
           strong {

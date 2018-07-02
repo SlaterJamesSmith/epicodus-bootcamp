@@ -10,49 +10,33 @@ import { Switch, Route } from 'react-router-dom';
 
 function App() {
   return(
-    <div className="app-container">
+    <div id="app-container">
       <style jsx global>
         {`
-          @import url('https://fonts.googleapis.com/css?family=Roboto:400,400i,500,700');
-
-          * {
-            box-sizing: border-box;
-          }
-
-          html, body {
-            height: 100%;
-            margin: 0;
-          }
-
-          body {
+          #app-container {
+            min-height: 100%;
             position: relative;
             padding: 55px 0 75px;
-            font-family: 'Roboto', sans-serif;
-            font-size: 100%;
           }
 
           nav {
             position: fixed;
             top: 0;
+            z-index: 100;
+          }
+
+          #routes-container {
+            padding: 0 25px;
           }
 
           footer {
-            position: fixed;
+            position: absolute;
             bottom: 0;
-          }
-
-          .app-container {
-            height: 100%;
-          }
-
-          .routes-container {
-            height: 100%;
-            padding: 25px;
           }
         `}
       </style>
       <Navbar/>
-      <div className="routes-container">
+      <div id="routes-container">
         <Switch>
           <Route exact path='/' component={ChannelList}/>
           <Route exact path='/signin' component={SignIn}/>
