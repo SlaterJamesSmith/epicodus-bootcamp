@@ -1,4 +1,5 @@
 import React from 'react';
+import Btn from './buttons/Btn';
 
 function SignIn() {
   return (
@@ -20,6 +21,7 @@ function SignIn() {
           }
 
           h2 {
+            margin-bottom: 50px;
             font-weight: normal;
             line-height: 1.5rem;
           }
@@ -46,13 +48,9 @@ function SignIn() {
             font-size: 1rem;
           }
 
-          button {
-            padding: 10px 20px;
-            border: none;
-            border-radius: 3px;
-            background-color: #4285f4;
-            color: #fff;
-            text-transform: uppercase;
+          .flex-end {
+            display: flex;
+            justify-content: flex-end;
           }
         `}
       </style>
@@ -63,7 +61,9 @@ function SignIn() {
         <input type='text'/>
         <label>Password</label>
         <input type='text'/>
-        <button type='submit'>Next</button>
+        <div className='flex-end'>
+          <Btn btnText='Next'/>
+        </div>
       </form>
     </div>
   );
