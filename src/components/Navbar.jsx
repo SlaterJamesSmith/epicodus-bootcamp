@@ -28,7 +28,8 @@ function Navbar() {
             justify-content: space-between;
             padding: 0 15px;
             background-color: #fff;
-            border-bottom: 1px solid #ccc;
+            border-bottom: 1px solid #eee;
+            box-shadow: 0 1px 5px 0 #eee;
           }
 
           ul {
