@@ -11,8 +11,8 @@ class App extends React.Component {
     this.state = {
       hungerLevel: 10,
       energyLevel: 20,
-      hygieneLevel: 40,
-      happinessLevel: 100,
+      hygieneLevel: 50,
+      happinessLevel: 50,
       hunger: -1,
       energy: -1,
       happiness: 0,
@@ -22,6 +22,7 @@ class App extends React.Component {
     };
     this.handleFeed = this.handleFeed.bind(this);
     this.handlePlay = this.handlePlay.bind(this);
+    this.handleClean = this.handleClean.bind(this);
   }
 
   componentDidMount() {
@@ -116,6 +117,29 @@ class App extends React.Component {
     });
   }
 
+  handleClean() {
+    let newHygieneLevel = this.state.hygieneLevel;
+    let newHappinessLevel = this.state.happinessLevel;
+    let newPoopsOut = this.state.poopsOut;
+    if (newPoopsOut === 0) {
+      if (newHygieneLevel <= 90) {
+        newHygieneLevel += 10;
+      } else {
+        newHygieneLevel = 100;
+      }
+      if (newHappinessLevel <= 99) {
+        newHappinessLevel += 1;
+      }
+    } else {
+      newPoopsOut -= 1;
+    }
+    this.setState({
+      hygieneLevel: newHygieneLevel,
+      happinessLevel: newHappinessLevel,
+      poopsOut: newPoopsOut
+    });
+  }
+
   render() {
     return(
       <div id='app-container'>
@@ -153,6 +177,7 @@ class App extends React.Component {
         <ActionBar
           onFeed={this.handleFeed}
           onPlay={this.handlePlay}
+          onClean={this.handleClean}
         />
       </div>
     );

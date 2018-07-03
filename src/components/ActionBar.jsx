@@ -37,14 +37,15 @@ function ActionBar(props) {
       <button onClick={props.onFeed}>Feed</button>
       <button>Sleep</button>
       <button onClick={props.onPlay}>Play</button>
-      <button>Clean</button>
+      <button onClick={props.onClean}>Clean</button>
     </section>
   );
 }
 
 ActionBar.propTypes = {
   onFeed: PropTypes.func.isRequired,
-  onPlay: PropTypes.func.isRequired
+  onPlay: PropTypes.func.isRequired,
+  onClean: PropTypes.func.isRequired
 };
 
 export default ActionBar;
