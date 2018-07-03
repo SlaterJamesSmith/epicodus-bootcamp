@@ -6,16 +6,17 @@ function StatusBar() {
       <style jsx>
         {`
           section {
+            width: 100%;
             display: grid;
             grid-template-columns: 1fr 1fr 1fr 1fr;
-            grid-gap: 20px;
-            padding: 0 20px 20px;
+            border-bottom: 1px solid #ccc;
           }
 
           div {
             display: flex;
             flex-direction: column;
             align-items: center;
+            margin: 0 20px 10px;
           }
 
           .meter {

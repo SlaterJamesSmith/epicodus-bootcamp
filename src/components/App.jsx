@@ -6,13 +6,21 @@ import { Switch, Route } from 'react-router-dom';
 
 function App() {
   return(
-    <div>
+    <div id='app-container'>
       <style jsx global>
         {`
           body {
             margin: 0;
             padding: 0;
             font-family: sans-serif;
+          }
+
+          #app-container {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
           }
 
           h1 {

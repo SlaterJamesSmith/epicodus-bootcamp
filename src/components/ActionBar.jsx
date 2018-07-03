@@ -6,8 +6,11 @@ function ActionBar() {
       <style jsx>
         {`
           section {
+            width: 100%;
             display: flex;
             justify-content: center;
+            padding: 10px 0 20px;
+            border-top: 1px solid #ccc;
           }
 
           button {
@@ -20,6 +23,7 @@ function ActionBar() {
             color: white;
             margin: 10px;
             background-color: steelblue;
+            outline: none;
           }
           `}
       </style>
