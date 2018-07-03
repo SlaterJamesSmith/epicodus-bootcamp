@@ -9,14 +9,14 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      hungerLevel: 100,
-      energyLevel: 100,
+      hungerLevel: 10,
+      energyLevel: 20,
+      hygieneLevel: 40,
       happinessLevel: 100,
-      hygieneLevel: 100,
       hunger: -1,
       energy: -1,
       happiness: 0,
-      hygiene: 0
+      hygiene: -1
     };
   }
 
@@ -29,17 +29,46 @@ class App extends React.Component {
   processLevelChanges() {
     let newHungerLevel = this.state.hungerLevel + this.state.hunger;
     let newEnergyLevel = this.state.energyLevel + this.state.energy;
-    let newHappinessLevel = this.state.happinessLevel + this.state.happiness;
     let newHygieneLevel = this.state.hygieneLevel + this.state.hygiene;
+    let newHappinessLevel = this.state.happinessLevel + this.state.happiness;
+    let depression = this.checkDepression();
+
+    if (newHungerLevel < 0) {
+      newHungerLevel = 0;
+    }
+    if (newEnergyLevel < 0) {
+      newEnergyLevel = 0;
+    }
+    if (newHygieneLevel < 0) {
+      newHygieneLevel = 0;
+    }
+    if (newHappinessLevel <= 0) {
+      newHappinessLevel = 0;
+      clearInterval(this.levelsUpdater);
+    }
+
     this.setState({
       hungerLevel: newHungerLevel,
       energyLevel: newEnergyLevel,
+      hygieneLevel: newHygieneLevel,
       happinessLevel: newHappinessLevel,
-      hygieneLevel: newHygieneLevel
+      happiness: depression
     });
-    if (newHungerLevel === 0 || newEnergyLevel === 0 || newHappinessLevel === 0 || newHygieneLevel === 0) {
-      clearInterval(this.levelsUpdater);
+  }
+
+  checkDepression() {
+    let depression = 0;
+
+    if (this.state.hungerLevel <= 0) {
+      depression -= 1;
     }
+    if (this.state.energyLevel <= 0) {
+      depression -=1;
+    }
+    if (this.state.hygieneLevel <= 0) {
+      depression -= 1;
+    }
+    return depression;
   }
 
   render() {
@@ -47,23 +76,23 @@ class App extends React.Component {
       <div id='app-container'>
         <style jsx global>
           {`
-            body {
-              margin: 0;
-              padding: 0;
-              font-family: sans-serif;
-            }
+          body {
+            margin: 0;
+            padding: 0;
+            font-family: sans-serif;
+          }
 
-            #app-container {
-              height: 100vh;
-              display: flex;
-              flex-direction: column;
-              align-items: center;
-              justify-content: space-between;
-            }
+          #app-container {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+          }
 
-            h1 {
-              color: #08f;
-            }
+          h1 {
+            color: #08f;
+          }
           `}
         </style>
         <StatusBar

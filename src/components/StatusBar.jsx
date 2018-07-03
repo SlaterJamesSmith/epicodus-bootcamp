@@ -3,6 +3,18 @@ import Meter from './Meter';
 import PropTypes from 'prop-types';
 
 function StatusBar(props) {
+  function setColor(level) {
+    let statusColor;
+    if (level > 65) {
+      statusColor = '#46da46';
+    } else if (level > 35) {
+      statusColor = 'yellow';
+    } else {
+      statusColor = 'red';
+    }
+    return statusColor;
+  }
+
   return (
     <section>
       <style jsx>
@@ -27,19 +39,28 @@ function StatusBar(props) {
       <div className="status-container">
         <div>
           <h2>Hunger</h2>
-          <Meter level={props.hungerLevel}/>
+          <Meter
+            level={props.hungerLevel}
+            color={setColor(props.hungerLevel)}
+          />
         </div>
         <div>
           <h2>Energy</h2>
-          <Meter level={props.energyLevel}/>
-        </div>
-        <div>
-          <h2>Happiness</h2>
-          <Meter level={props.happinessLevel}/>
+          <Meter level={props.energyLevel}
+            color={setColor(props.energyLevel)}
+          />
         </div>
         <div>
           <h2>Hygiene</h2>
-          <Meter level={props.hygieneLevel}/>
+          <Meter level={props.hygieneLevel}
+            color={setColor(props.hygieneLevel)}
+          />
+        </div>
+        <div>
+          <h2>Happiness</h2>
+          <Meter level={props.happinessLevel}
+            color={setColor(props.happinessLevel)}
+          />
         </div>
       </div>
     </section>
