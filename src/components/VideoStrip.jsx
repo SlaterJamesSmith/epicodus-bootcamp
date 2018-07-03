@@ -1,7 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 
 function VideoStrip(props) {
+  const navLink = {
+    color: 'inherit',
+    textDecoration: 'none'
+  };
+
   return (
     <article>
       <style jsx>
@@ -39,13 +45,15 @@ function VideoStrip(props) {
         `}
       </style>
       <figure>
-        <img src={props.thumbnail}/>
+        <Link to='/video' style={navLink}>
+          <img src={props.thumbnail}/>
+        </Link>
       </figure>
-      <div>
+      <Link to='/video' style={navLink}>
         <h1>{props.videoTitle}</h1>
         <p>{props.channelTitle} &bull; {props.viewCount} views</p>
         <p>{props.description}</p>
-      </div>
+      </Link>
     </article>
   );
 }
