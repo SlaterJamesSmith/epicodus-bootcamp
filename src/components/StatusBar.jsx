@@ -22,7 +22,7 @@ function StatusBar() {
           .meter {
             height: 10px;
             width: 100%;
-            background-color: green;
+            background-color: #46da46;
           }
           `}
       </style>

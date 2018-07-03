@@ -2,6 +2,7 @@ import React from 'react';
 import Error404 from './Error404';
 import ActionBar from './ActionBar';
 import StatusBar from './StatusBar';
+import Tamagotchi from './Tamagotchi';
 import { Switch, Route } from 'react-router-dom';
 
 function App() {
@@ -30,6 +31,7 @@ function App() {
       </style>
       <StatusBar/>
       <Switch>
+        <Route exact path='/' component={Tamagotchi}/>
         <Route component={Error404}/>
       </Switch>
       <ActionBar/>

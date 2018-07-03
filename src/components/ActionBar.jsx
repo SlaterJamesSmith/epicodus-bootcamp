@@ -22,8 +22,14 @@ function ActionBar() {
             font-size: 2rem;
             color: white;
             margin: 10px;
-            background-color: steelblue;
+            background-color: #008bff;
             outline: none;
+            cursor: pointer;
+          }
+
+          button:active {
+            box-shadow: 0 2px 2px 0 #3339;
+            background-color: #0066dd;
           }
           `}
       </style>
