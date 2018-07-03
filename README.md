@@ -1,20 +1,37 @@
-# EPICODUS - 04 - React
+# Tamagotchi
 
-**UI Design & React Track | Unit 4 | June 25, 2018**
+**Managing State | July 3, 2018**
 
-## Sections
+**Collaborators**
 
-### I. [React Fundamentals](01-react-fundamentals)
+- Cameron Button
+- Mike Chu
 
-### II. [Managing State](02-managing-state)
+## Description
 
-### III. Redux
+A tamagotchi game using React.
 
-### IV. Advanced Topics
+## Setup/Installation Requirements
 
-## Templates
+### I. Project Setup
 
-1. [Webpack Project (React)](00-templates/webpack-project)
+1. Install Node.js on local machine.
+
+2. Clone repository and navigate to `tamagotchi`.
+
+3. Run `npm install` to load required packages.
+
+### II. View/Build Project
+
+- Development Mode: `npm start`
+
+- Production Build: `npm run build`
+
+  1. Locate build files in `tamagotchi/build`.
+
+## Known Bugs
+
+None.
 
 ## Technologies Used
 
@@ -22,3 +39,13 @@
 - React
 - Babel
 - Webpack
+
+## Specifications
+
+Add specifications.
+
+## License
+
+This software is licensed under the MIT license.
+
+Copyright (c) 2018 **Cameron Button & Mike Chu**
