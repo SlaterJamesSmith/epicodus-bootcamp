@@ -6,7 +6,7 @@
 
 ### I. [React Fundamentals](01-react-fundamentals)
 
-### II. Managing State
+### II. [Managing State](02-managing-state)
 
 ### III. Redux
 
