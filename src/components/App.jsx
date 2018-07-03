@@ -1,7 +1,7 @@
 import React from 'react';
 import Error404 from './Error404';
-import Header from './Header';
-import Component from './Component';
+import ActionBar from './ActionBar';
+import StatusBar from './StatusBar';
 import { Switch, Route } from 'react-router-dom';
 
 function App() {
@@ -20,11 +20,11 @@ function App() {
           }
         `}
       </style>
-      <Header/>
+      <StatusBar/>
       <Switch>
-        <Route exact path='/' component={Component}/>
         <Route component={Error404}/>
       </Switch>
+      <ActionBar/>
     </div>
   );
 }
