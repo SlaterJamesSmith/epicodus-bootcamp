@@ -16,8 +16,12 @@ class App extends React.Component {
       hunger: -1,
       energy: -1,
       happiness: 0,
-      hygiene: -1
+      hygiene: -1,
+      mealsIn: 0,
+      poopsOut: 0
     };
+    this.handleFeed = this.handleFeed.bind(this);
+    this.handlePlay = this.handlePlay.bind(this);
   }
 
   componentDidMount() {
@@ -71,6 +75,47 @@ class App extends React.Component {
     return depression;
   }
 
+  handleFeed() {
+    let newHungerLevel = this.state.hungerLevel;
+    let newEnergyLevel = this.state.energyLevel;
+    let newMealsIn = this.state.mealsIn + 1;
+    if (newHungerLevel <= 90) {
+      newHungerLevel += 10;
+    } else {
+      newHungerLevel = 100;
+    }
+    if (newEnergyLevel <= 97) {
+      newEnergyLevel += 3;
+    } else {
+      newEnergyLevel = 100;
+    }
+    this.setState({
+      hungerLevel: newHungerLevel,
+      energyLevel: newEnergyLevel,
+      mealsIn: newMealsIn
+    });
+  }
+
+  handlePlay() {
+    let newHappinessLevel = this.state.happinessLevel;
+    let newEnergyLevel = this.state.energyLevel;
+    if (newEnergyLevel > 10) {
+      if (newHappinessLevel <= 90) {
+        newHappinessLevel += 10;
+      } else {
+        newHappinessLevel = 100;
+      }
+      newEnergyLevel -= 5;
+      if (newEnergyLevel < 0) {
+        newEnergyLevel = 0;
+      }
+    }
+    this.setState({
+      happinessLevel: newHappinessLevel,
+      energyLevel: newEnergyLevel
+    });
+  }
+
   render() {
     return(
       <div id='app-container'>
@@ -105,7 +150,10 @@ class App extends React.Component {
           <Route exact path='/' component={Tamagotchi}/>
           <Route component={Error404}/>
         </Switch>
-        <ActionBar/>
+        <ActionBar
+          onFeed={this.handleFeed}
+          onPlay={this.handlePlay}
+        />
       </div>
     );
   }

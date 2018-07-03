@@ -1,6 +1,7 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
-function ActionBar() {
+function ActionBar(props) {
   return (
     <section>
       <style jsx>
@@ -33,12 +34,17 @@ function ActionBar() {
           }
           `}
       </style>
-      <button>Feed</button>
+      <button onClick={props.onFeed}>Feed</button>
       <button>Sleep</button>
-      <button>Play</button>
+      <button onClick={props.onPlay}>Play</button>
       <button>Clean</button>
     </section>
   );
 }
+
+ActionBar.propTypes = {
+  onFeed: PropTypes.func.isRequired,
+  onPlay: PropTypes.func.isRequired
+};
 
 export default ActionBar;
