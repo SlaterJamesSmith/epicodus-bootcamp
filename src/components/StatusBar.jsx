@@ -25,25 +25,25 @@ function StatusBar() {
             background-color: green;
           }
           `}
-        </style>
-        <div>
-          <h2>Hunger</h2>
-          <div className='meter'></div>
-        </div>
-        <div>
-          <h2>Energy</h2>
-          <div className='meter'></div>
-        </div>
-        <div>
-          <h2>Happiness</h2>
-          <div className='meter'></div>
-        </div>
-        <div>
-          <h2>Hygiene</h2>
-          <div className='meter'></div>
-        </div>
-      </section>
-    );
-  }
+      </style>
+      <div>
+        <h2>Hunger</h2>
+        <div className='meter'></div>
+      </div>
+      <div>
+        <h2>Energy</h2>
+        <div className='meter'></div>
+      </div>
+      <div>
+        <h2>Happiness</h2>
+        <div className='meter'></div>
+      </div>
+      <div>
+        <h2>Hygiene</h2>
+        <div className='meter'></div>
+      </div>
+    </section>
+  );
+}
 
-  export default StatusBar;
+export default StatusBar;
