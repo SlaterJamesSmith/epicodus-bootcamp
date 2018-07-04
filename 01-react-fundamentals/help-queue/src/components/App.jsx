@@ -53,6 +53,11 @@ class App extends React.Component {
               padding: 10px 20px;
             }
 
+            h2 {
+              margin: 0;
+              padding: 20px;
+            }
+
             .ticket {
               padding: 10px 20px;
             }
@@ -60,10 +65,10 @@ class App extends React.Component {
         </style>
         <Header/>
         <Switch>
-          <Route exact path='/' render={() => <TicketList ticketList={this.state.masterTicketList}/>}/>
-          <Route path='/newticket' render={() => <NewTicketControl onNewTicketCreation={this.handleAddingNewTicketToList}/>}/>
-          <Route path='/admin' component={Admin}/>
-          <Route component={Error404}/>
+          <Route exact path='/' render={() => <TicketList ticketList={this.state.masterTicketList} />} />
+          <Route path='/newticket' render={() => <NewTicketControl onNewTicketCreation={this.handleAddingNewTicketToList} />} />
+          <Route path='/admin' render={(props) => <Admin ticketList={this.state.masterTicketList} currentRouterPath={props.location.pathname} />} />
+          <Route component={Error404} />
         </Switch>
       </div>
     );
