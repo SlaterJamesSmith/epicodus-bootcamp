@@ -35,7 +35,7 @@ function ActionBar(props) {
           `}
       </style>
       <button onClick={props.onFeed}>Feed</button>
-      <button>Sleep</button>
+      <button onClick={props.onSleep}>Sleep</button>
       <button onClick={props.onPlay}>Play</button>
       <button onClick={props.onClean}>Clean</button>
     </section>
@@ -44,6 +44,7 @@ function ActionBar(props) {
 
 ActionBar.propTypes = {
   onFeed: PropTypes.func.isRequired,
+  onSleep: PropTypes.func.isRequired,
   onPlay: PropTypes.func.isRequired,
   onClean: PropTypes.func.isRequired
 };

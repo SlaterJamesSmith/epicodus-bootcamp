@@ -9,18 +9,20 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      hungerLevel: 10,
-      energyLevel: 20,
-      hygieneLevel: 50,
-      happinessLevel: 50,
+      hungerLevel: 100,
+      energyLevel: 100,
+      hygieneLevel: 100,
+      happinessLevel: 100,
       hunger: -1,
       energy: -1,
       happiness: 0,
       hygiene: -1,
+      asleep: false,
       mealsIn: 0,
       poopsOut: 0
     };
     this.handleFeed = this.handleFeed.bind(this);
+    this.handleSleep = this.handleSleep.bind(this);
     this.handlePlay = this.handlePlay.bind(this);
     this.handleClean = this.handleClean.bind(this);
   }
@@ -38,6 +40,12 @@ class App extends React.Component {
     let newHappinessLevel = this.state.happinessLevel + this.state.happiness;
     let depression = this.checkDepression();
 
+    if (this.state.asleep) {
+      newEnergyLevel += 10;
+      if (newEnergyLevel > 100) {
+        newEnergyLevel = 100;
+      }
+    }
     if (newHungerLevel < 0) {
       newHungerLevel = 0;
     }
@@ -62,8 +70,7 @@ class App extends React.Component {
   }
 
   checkDepression() {
-    let depression = 0;
-
+    let depression = -2;
     if (this.state.hungerLevel <= 0) {
       depression -= 1;
     }
@@ -79,6 +86,7 @@ class App extends React.Component {
   handleFeed() {
     let newHungerLevel = this.state.hungerLevel;
     let newEnergyLevel = this.state.energyLevel;
+    let newHygieneLevel = this.state.hygieneLevel;
     let newMealsIn = this.state.mealsIn + 1;
     if (newHungerLevel <= 90) {
       newHungerLevel += 10;
@@ -90,30 +98,48 @@ class App extends React.Component {
     } else {
       newEnergyLevel = 100;
     }
+    newHygieneLevel -= 5;
+    if (newHygieneLevel < 0) {
+      newHygieneLevel = 0;
+    }
     this.setState({
       hungerLevel: newHungerLevel,
       energyLevel: newEnergyLevel,
+      hygieneLevel: newHygieneLevel,
       mealsIn: newMealsIn
     });
+  }
+
+  handleSleep() {
+    if (!this.state.asleep) {
+      this.setState({asleep: true});
+      setTimeout(() => {this.setState({asleep: false});}, 5000);
+    }
   }
 
   handlePlay() {
     let newHappinessLevel = this.state.happinessLevel;
     let newEnergyLevel = this.state.energyLevel;
-    if (newEnergyLevel > 10) {
+    let newHygieneLevel = this.state.hygieneLevel;
+    if (newEnergyLevel > 15) {
       if (newHappinessLevel <= 90) {
         newHappinessLevel += 10;
       } else {
         newHappinessLevel = 100;
       }
-      newEnergyLevel -= 5;
+      newEnergyLevel -= 15;
+      newHygieneLevel -= 5;
       if (newEnergyLevel < 0) {
         newEnergyLevel = 0;
+      }
+      if (newHygieneLevel < 0) {
+        newHygieneLevel = 0;
       }
     }
     this.setState({
       happinessLevel: newHappinessLevel,
-      energyLevel: newEnergyLevel
+      energyLevel: newEnergyLevel,
+      hygieneLevel: newHygieneLevel
     });
   }
 
@@ -176,6 +202,7 @@ class App extends React.Component {
         </Switch>
         <ActionBar
           onFeed={this.handleFeed}
+          onSleep={this.handleSleep}
           onPlay={this.handlePlay}
           onClean={this.handleClean}
         />
