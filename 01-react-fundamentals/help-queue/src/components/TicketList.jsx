@@ -5,7 +5,6 @@ import PropTypes from 'prop-types';
 function TicketList(props) {
   return (
     <div>
-      <hr/>
       {props.ticketList.map((ticket) =>
         <Ticket
           names={ticket.names}

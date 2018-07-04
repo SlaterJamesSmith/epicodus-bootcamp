@@ -26,7 +26,6 @@ class NewTicketControl extends React.Component {
 
     return (
       <div>
-        <hr/>
         {currentlyVisibleContent}
       </div>
     );
