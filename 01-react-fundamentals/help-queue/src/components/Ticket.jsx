@@ -12,16 +12,7 @@ function Ticket(props) {
 
   if (props.currentRouterPath === '/admin') {
     return (
-      <div onClick={() => {
-        props.onTicketSelection(
-          {
-            names: props.names,
-            location: props.location,
-            issue: props.issue,
-            formattedWaitTime: props.formattedWaitTime
-          }
-        );
-      }}>
+      <div onClick={() => {props.onTicketSelection(props.ticketId);}}>
         {ticketInfo}
       </div>
     );
@@ -35,6 +26,7 @@ function Ticket(props) {
 }
 
 Ticket.propTypes = {
+  ticketId: PropTypes.string.isRequired,
   names: PropTypes.string.isRequired,
   location: PropTypes.string.isRequired,
   issue: PropTypes.string.isRequired,
