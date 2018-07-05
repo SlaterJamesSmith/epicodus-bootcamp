@@ -70,7 +70,7 @@ class App extends React.Component {
   }
 
   checkDepression() {
-    let depression = -2;
+    let depression = -1;
     if (this.state.hungerLevel <= 0) {
       depression -= 1;
     }
@@ -188,7 +188,7 @@ class App extends React.Component {
           h1 {
             color: #08f;
           }
-          `}
+        `}
         </style>
         <StatusBar
           hungerLevel={this.state.hungerLevel}

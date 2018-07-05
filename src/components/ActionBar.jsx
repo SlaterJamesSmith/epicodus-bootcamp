@@ -11,19 +11,19 @@ function ActionBar(props) {
             display: flex;
             justify-content: center;
             padding: 10px 0 20px;
-            border-top: 1px solid #ccc;
+            z-index: 100;
           }
 
           button {
-            border: none;
-            box-shadow: 0 5px 2px 0 #3339;
-            border-radius: 10px;
-            padding: 5px 20px;
-            text-transform: uppercase;
-            font-size: 2rem;
-            color: white;
             margin: 10px;
-            background-color: #008bff;
+            padding: 5px 20px;
+            border: none;
+            border-radius: 10px;
+            box-shadow: 0 5px 2px 0 #3339;
+            color: white;
+            background-color: #46c550;
+            font-size: 2rem;
+            text-transform: uppercase;
             outline: none;
             cursor: pointer;
           }
@@ -32,7 +32,7 @@ function ActionBar(props) {
             box-shadow: 0 2px 2px 0 #3339;
             background-color: #0066dd;
           }
-          `}
+        `}
       </style>
       <button onClick={props.onFeed}>Feed</button>
       <button onClick={props.onSleep}>Sleep</button>

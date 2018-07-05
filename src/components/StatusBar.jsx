@@ -22,6 +22,8 @@ function StatusBar(props) {
           section {
             width: 100%;
             border-bottom: 1px solid #ccc;
+            background-color: #fff;
+            z-index: 100;
           }
 
           .status-container {
@@ -34,7 +36,7 @@ function StatusBar(props) {
           h2 {
             text-align: center;
           }
-          `}
+        `}
       </style>
       <div className="status-container">
         <div>
