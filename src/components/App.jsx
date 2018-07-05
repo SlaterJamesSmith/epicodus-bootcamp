@@ -2,7 +2,7 @@ import React from 'react';
 import Error404 from './Error404';
 import ActionBar from './ActionBar';
 import StatusBar from './StatusBar';
-import Tamagotchi from './Tamagotchi';
+import TamaRoom from './TamaRoom';
 import { Switch, Route } from 'react-router-dom';
 
 class App extends React.Component {
@@ -197,7 +197,7 @@ class App extends React.Component {
           hygieneLevel={this.state.hygieneLevel}
         />
         <Switch>
-          <Route exact path='/' component={Tamagotchi}/>
+          <Route exact path='/' component={TamaRoom}/>
           <Route component={Error404}/>
         </Switch>
         <ActionBar
