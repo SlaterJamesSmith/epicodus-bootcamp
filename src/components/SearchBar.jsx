@@ -21,6 +21,7 @@ function SearchBar() {
             border-top-left-radius: 3px;
             border-bottom-left-radius: 3px;
             font-size: 0.9rem;
+            z-index: 10;
           }
         `}
       </style>

@@ -5,12 +5,8 @@ import { Link } from 'react-router-dom';
 
 function Navbar() {
   const navLink = {
-    padding: '0 15px',
     color: 'red',
-    fontSize: '0.9rem',
-    fontWeight: '500',
-    textDecoration: 'none',
-    textTransform: 'uppercase'
+    textDecoration: 'none'
   };
 
   return (
@@ -50,14 +46,29 @@ function Navbar() {
             display: inherit;
           }
 
+          .logo-link {
+            padding: 0 15px;
+            font-size: 1.2rem;
+            font-weight: 700;
+            transform: scaleX(0.75);
+          }
+
+          .logo-link span {
+            letter-spacing: -3px;
+          }
+
+          .signin-link {
+            min-width: 81px;
+            padding: 0 15px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            text-transform: uppercase;
+          }
+
           .search-bar {
             width: 100%;
             max-width: 400px;
             padding: 0 10px 0 5px;
-          }
-
-          .sign-in-link {
-            min-width: 81px;
           }
 
           @media screen and (max-width: 524px) {
@@ -69,6 +80,10 @@ function Navbar() {
               display: none;
             }
 
+            .logo-link {
+              padding-left: 0;
+            }
+
             .search-bar {
               padding: 0 5px;
             }
@@ -77,7 +92,7 @@ function Navbar() {
       </style>
       <ul>
         <li className="collapsible"><NavbarBtn type="tribar"/></li>
-        <li><Link to="/" style={navLink}>Home</Link></li>
+        <li className="logo-link"><Link to="/" style={navLink}><span>Y</span>o<span>uT</span>ube</Link></li>
       </ul>
       <div className="search-bar">
         <SearchBar/>
@@ -86,7 +101,7 @@ function Navbar() {
         <li className="collapsible"><NavbarBtn type="video"/></li>
         <li className="collapsible"><NavbarBtn type="apps"/></li>
         <li><NavbarBtn type="settings"/></li>
-        <li className="collapsible sign-in-link"><Link to="/signin" style={navLink}>Sign In</Link></li>
+        <li className="collapsible signin-link"><Link to="/signin" style={navLink}>Sign In</Link></li>
       </ul>
     </nav>
   );
