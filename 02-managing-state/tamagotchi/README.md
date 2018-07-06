@@ -17,7 +17,7 @@ A tamagotchi game using React.
 
 1. Install Node.js on local machine.
 
-2. Clone repository and navigate to `tamagotchi`.
+2. Clone repository and navigate to `02-managing-state/tamagotchi`.
 
 3. Run `npm install` to load required packages.
 
@@ -27,7 +27,7 @@ A tamagotchi game using React.
 
 - Production Build: `npm run build`
 
-  1. Locate build files in `tamagotchi/build`.
+  1. Locate build files in `02-managing-state/tamagotchi/build`.
 
 ## Known Bugs
 

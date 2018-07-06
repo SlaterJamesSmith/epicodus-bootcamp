@@ -14,15 +14,15 @@ function Error404() {
       <style jsx>
         {`
           section {
+            height: 100%;
+            box-sizing: border-box;
             display: flex;
             flex-direction: column;
             align-items: center;
+            justify-content: center;
+            padding: 105px 0 75px;
           }
-
-          img {
-            margin-left: 24%;
-          }
-          `}
+        `}
       </style>
       <p><strong>Hmmm, where did your tamagotchi go?</strong></p>
       <p><Link style={LINK} to="/">Go Home</Link></p>
