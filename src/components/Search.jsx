@@ -19,8 +19,10 @@ function Search(props) {
         let video = props.videoList[videoId];
         return (
           <VideoStrip
+            videoId={videoId}
             video={video}
             key={videoId}
+            onVideoSelection={props.onVideoSelection}
           />
         );
       })}
@@ -29,7 +31,8 @@ function Search(props) {
 }
 
 Search.propTypes = {
-  videoList: PropTypes.object.isRequired
+  videoList: PropTypes.object.isRequired,
+  onVideoSelection: PropTypes.func.isRequired
 };
 
 export default Search;

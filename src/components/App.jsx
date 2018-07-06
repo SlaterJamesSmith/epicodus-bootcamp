@@ -18,6 +18,7 @@ class App extends React.Component {
       masterVideoList: {},
       selectedVideo: null
     };
+    this.handleVideoSelection = this.handleVideoSelection.bind(this);
   }
 
   componentDidMount() {
@@ -27,6 +28,11 @@ class App extends React.Component {
       masterChannelList: newMasterChannelList,
       masterVideoList: newMasterVideoList
     });
+  }
+
+  handleVideoSelection(videoId) {
+    this.setState({selectedVideo: videoId});
+    alert(`You selected VideoId: ${videoId}`);
   }
 
   render() {
@@ -62,7 +68,10 @@ class App extends React.Component {
             <VideoPlayer video={this.state.selectedVideo} />
           } />
           <Route path='/search' render={() =>
-            <Search videoList={this.state.masterVideoList} />
+            <Search
+              videoList={this.state.masterVideoList}
+              onVideoSelection={this.handleVideoSelection}
+            />
           } />
           <Route component={Error404}/>
         </Switch>

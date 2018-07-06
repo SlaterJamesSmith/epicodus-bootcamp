@@ -9,7 +9,7 @@ function VideoStrip(props) {
   };
 
   return (
-    <article>
+    <article onClick={() => {props.onVideoSelection(props.videoId);}}>
       <style jsx>
         {`
           article {
@@ -49,17 +49,21 @@ function VideoStrip(props) {
           <img src={props.video.thumbnail}/>
         </Link>
       </figure>
-      <Link to='/video' style={navLink}>
-        <h1>{props.video.videoTitle}</h1>
-        <p>{props.video.channelTitle} &bull; {props.video.viewCount} views</p>
-        <p>{props.video.description}</p>
-      </Link>
+      <div>
+        <Link to='/video' style={navLink}>
+          <h1>{props.video.videoTitle}</h1>
+          <p>{props.video.channelTitle} &bull; {props.video.viewCount} views</p>
+          <p>{props.video.description}</p>
+        </Link>
+      </div>
     </article>
   );
 }
 
 VideoStrip.propTypes = {
-  video: PropTypes.object.isRequired
+  videoId: PropTypes.string.isRequired,
+  video: PropTypes.object.isRequired,
+  onVideoSelection: PropTypes.func.isRequired
 };
 
 export default VideoStrip;
