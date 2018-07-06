@@ -15,11 +15,20 @@ function Footer() {
 
           figure {
             height: 75px;
-            min-width: 410px;
+            width: 410px;
             margin: 0;
             background-image: url(${youtubeDeveloperLogos});
             background-position-y: -236px;
             background-repeat: no-repeat;
+            background-size: cover;
+          }
+
+          @media screen and (max-width: 524px) {
+            figure {
+              height: 55px;
+              width: 320px;
+              background-position-y: -251px;
+            }
           }
         `}
       </style>

@@ -4,18 +4,17 @@ import { Link } from 'react-router-dom';
 
 function SearchBar() {
   return (
-    <div id="search">
+    <form>
       <style jsx>
         {`
-          #search {
-            width: 50%;
-            max-width: 600px;
+          form {
             display: flex;
             align-items: center;
           }
 
           input {
             height: 30px;
+            min-width: 50px;
             width: 100%;
             padding: 0 10px;
             border: 1px solid #ccc;
@@ -27,7 +26,7 @@ function SearchBar() {
       </style>
       <input type="text" placeholder="search"/>
       <Link to="/search"><SearchBtn/></Link>
-    </div>
+    </form>
   );
 }
 

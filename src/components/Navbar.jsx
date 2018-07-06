@@ -41,18 +41,52 @@ function Navbar() {
             margin-right: 5px;
             list-style: none;
           }
+
+          li:last-child {
+            margin-right: 0;
+          }
+
+          .collapsible {
+            display: inherit;
+          }
+
+          .search-bar {
+            width: 100%;
+            max-width: 400px;
+            padding: 0 10px 0 5px;
+          }
+
+          .sign-in-link {
+            min-width: 81px;
+          }
+
+          @media screen and (max-width: 524px) {
+            li {
+              margin-right: 0;
+            }
+
+            .collapsible {
+              display: none;
+            }
+
+            .search-bar {
+              padding: 0 5px;
+            }
+          }
         `}
       </style>
       <ul>
-        <li><NavbarBtn type="tribar"/></li>
+        <li className="collapsible"><NavbarBtn type="tribar"/></li>
         <li><Link to="/" style={navLink}>Home</Link></li>
       </ul>
-      <SearchBar/>
+      <div className="search-bar">
+        <SearchBar/>
+      </div>
       <ul>
-        <li><NavbarBtn type="video"/></li>
-        <li><NavbarBtn type="apps"/></li>
+        <li className="collapsible"><NavbarBtn type="video"/></li>
+        <li className="collapsible"><NavbarBtn type="apps"/></li>
         <li><NavbarBtn type="settings"/></li>
-        <li><Link to="/signin" style={navLink}>Sign In</Link></li>
+        <li className="collapsible sign-in-link"><Link to="/signin" style={navLink}>Sign In</Link></li>
       </ul>
     </nav>
   );
