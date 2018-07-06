@@ -20,7 +20,7 @@ function Search(props) {
         return (
           <VideoStrip
             video={video}
-            key={video.videoId}
+            key={videoId}
           />
         );
       })}

@@ -7,6 +7,7 @@ import VideoPlayer from './VideoPlayer';
 import Search from './Search';
 import Footer from './Footer';
 import { Switch, Route } from 'react-router-dom';
+import masterChannelList from '../masterChannelList';
 import masterVideoList from '../masterVideoList';
 
 function App() {
@@ -39,7 +40,9 @@ function App() {
       <Navbar/>
       <div id="routes-container">
         <Switch>
-          <Route exact path='/' component={ChannelList} />
+          <Route exact path='/' render={() =>
+            <ChannelList channelList={masterChannelList} />
+          } />
           <Route path='/signin' component={SignIn} />
           <Route path='/video' component={VideoPlayer} />
           <Route path='/search' render={() =>

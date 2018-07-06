@@ -1,12 +1,25 @@
 import React from 'react';
+import ChannelStrip from './ChannelStrip';
+import PropTypes from 'prop-types';
 
-function ChannelList() {
+function ChannelList(props) {
   return (
-    <div>
-      <h2>ChannelList</h2>
-      <p>ChannelList Works!</p>
-    </div>
+    <section>
+      {Object.keys(props.channelList).map(channelId => {
+        let channel = props.channelList[channelId];
+        return (
+          <ChannelStrip
+            channel={channel}
+            key={channelId}
+          />
+        );
+      })}
+    </section>
   );
 }
+
+ChannelList.propTypes = {
+  channelList: PropTypes.object.isRequired
+};
 
 export default ChannelList;
