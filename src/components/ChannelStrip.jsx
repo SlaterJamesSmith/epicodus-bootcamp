@@ -1,11 +1,17 @@
 import React from 'react';
+import VideoCarousel from './VideoCarousel';
 import PropTypes from 'prop-types';
 
 function ChannelStrip(props) {
   return (
-    <article>
+    <article className='strip'>
       <style jsx>
         {`
+          .strip {
+            margin-bottom: 25px;
+            border-bottom: 1px solid #eee;
+          }
+
           .strip-header {
             display: flex;
             align-items: center;
@@ -24,6 +30,7 @@ function ChannelStrip(props) {
           }
 
           h2 {
+            margin: 0;
             font-size: 1rem;
             font-weight: 500;
           }
@@ -48,6 +55,9 @@ function ChannelStrip(props) {
         </div>
         <button className='subscribe-btn'>Subscribe {props.channel.subscriberCount}</button>
       </div>
+      <VideoCarousel
+        uploads={props.channel.uploads}
+      />
     </article>
   );
 }
