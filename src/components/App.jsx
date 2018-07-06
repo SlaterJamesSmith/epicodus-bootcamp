@@ -27,10 +27,6 @@ function App() {
             z-index: 100;
           }
 
-          #routes-container {
-            padding: 0 25px;
-          }
-
           footer {
             position: absolute;
             bottom: 0;
@@ -38,19 +34,17 @@ function App() {
         `}
       </style>
       <Navbar/>
-      <div id="routes-container">
-        <Switch>
-          <Route exact path='/' render={() =>
-            <ChannelList channelList={masterChannelList} />
-          } />
-          <Route path='/signin' component={SignIn} />
-          <Route path='/video' component={VideoPlayer} />
-          <Route path='/search' render={() =>
-            <Search videoList={masterVideoList} />
-          } />
-          <Route component={Error404}/>
-        </Switch>
-      </div>
+      <Switch>
+        <Route exact path='/' render={() =>
+          <ChannelList channelList={masterChannelList} />
+        } />
+        <Route path='/signin' component={SignIn} />
+        <Route path='/video' component={VideoPlayer} />
+        <Route path='/search' render={() =>
+          <Search videoList={masterVideoList} />
+        } />
+        <Route component={Error404}/>
+      </Switch>
       <Footer/>
     </div>
   );

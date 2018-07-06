@@ -47,6 +47,16 @@ function ChannelStrip(props) {
             font-weight: 500;
             text-transform: uppercase;
           }
+
+          @media screen and (max-width: 524px) {
+            .strip-header {
+              flex-direction: column;
+            }
+
+            .logo-title {
+              margin-bottom: 20px;
+            }
+          }
         `}
       </style>
       <div className='strip-header'>

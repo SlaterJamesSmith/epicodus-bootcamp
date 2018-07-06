@@ -4,15 +4,45 @@ import PropTypes from 'prop-types';
 
 function VideoCarousel(props) {
   return (
-    <section>
+    <section className='carousel'>
       <style jsx>
         {`
-          section {
-            width: 852px;
+          .carousel {
+            width: 1280px;
             display: grid;
             grid-template-columns: repeat(6, 210px);
             grid-gap: 4px;
             overflow: hidden;
+          }
+
+          @media screen and (max-width: 1380px) {
+            .carousel {
+              width: 1066px;
+            }
+          }
+
+          @media screen and (max-width: 1166px) {
+            .carousel {
+              width: 852px;
+            }
+          }
+
+          @media screen and (max-width: 952px) {
+            .carousel {
+              width: 638px;
+            }
+          }
+
+          @media screen and (max-width: 738px) {
+            .carousel {
+              width: 424px;
+            }
+          }
+
+          @media screen and (max-width: 524px) {
+            .carousel {
+              width: 210px;
+            }
           }
         `}
       </style>
