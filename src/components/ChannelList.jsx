@@ -8,6 +8,9 @@ function ChannelList(props) {
       <style jsx>
         {`
           section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
             padding: 40px 0;
           }
         `}

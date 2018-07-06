@@ -8,7 +8,7 @@ function ChannelStrip(props) {
       <style jsx>
         {`
           .strip {
-            margin-bottom: 25px;
+            margin-bottom: 20px;
             border-bottom: 1px solid #eee;
           }
 
@@ -16,6 +16,7 @@ function ChannelStrip(props) {
             display: flex;
             align-items: center;
             justify-content: space-between;
+            margin-bottom: 20px;
           }
 
           .logo-title {
