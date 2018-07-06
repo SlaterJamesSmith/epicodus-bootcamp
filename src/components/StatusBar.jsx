@@ -20,7 +20,9 @@ function StatusBar(props) {
       <style jsx>
         {`
           section {
+            height: 105px;
             width: 100%;
+            position: absolute;
             border-bottom: 1px solid #ccc;
             background-color: #fff;
             z-index: 100;

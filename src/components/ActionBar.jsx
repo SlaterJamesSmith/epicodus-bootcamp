@@ -7,7 +7,10 @@ function ActionBar(props) {
       <style jsx>
         {`
           section {
+            height: 75px;
             width: 100%;
+            position: absolute;
+            bottom: 0;
             display: flex;
             justify-content: center;
             padding: 10px 0 20px;

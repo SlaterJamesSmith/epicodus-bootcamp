@@ -9,6 +9,10 @@ function TamaRoom(props) {
         {`
           section {
             height: 100%;
+            box-sizing: border-box;
+            display: flex;
+            justify-content: center;
+            padding: 105px 0 75px;
           }
         `}
       </style>

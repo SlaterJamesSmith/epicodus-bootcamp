@@ -171,24 +171,25 @@ class App extends React.Component {
       <div id='app-container'>
         <style jsx global>
           {`
-          body {
-            margin: 0;
-            padding: 0;
-            font-family: sans-serif;
-          }
+            html, body, #react-app-root {
+              height: 100%;
+            }
 
-          #app-container {
-            height: 100vh;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: space-between;
-          }
+            body {
+              margin: 0;
+              padding: 0;
+              font-family: sans-serif;
+            }
 
-          h1 {
-            color: #08f;
-          }
-        `}
+            #app-container {
+              height: 100%;
+              position: relative;
+            }
+
+            h1 {
+              color: #08f;
+            }
+          `}
         </style>
         <StatusBar
           hungerLevel={this.state.hungerLevel}

@@ -1,5 +1,4 @@
 import React from 'react';
-import Privacy from '../assets/images/privacy.png';
 import { Link } from 'react-router-dom';
 
 function Error404() {
@@ -25,9 +24,8 @@ function Error404() {
           }
           `}
       </style>
-      <img src={Privacy} alt='GET OUT!'/>
-      <p><strong>You shouldn't be in here!</strong></p>
-      <p><Link style={LINK} to="/">GET OUT!</Link></p>
+      <p><strong>Hmmm, where did your tamagotchi go?</strong></p>
+      <p><Link style={LINK} to="/">Go Home</Link></p>
     </section>
   );
 }
