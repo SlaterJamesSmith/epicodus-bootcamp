@@ -47,6 +47,27 @@ const masterChannelList = {
         description: '✖ Follow Me on G-Plus: http://goo.gl/Zri9ic ✖ Subscribe to ThePrimeCronus (Epic/Orchestral/Trailer Music): http://goo.gl/jrS ...'
       }
     }
+  },
+  'UCmYTgpKxd-QOJCPDrmaXuqQ2': {
+    title: 'MCHU',
+    thumbnail: 'https://yt3.ggpht.com/-r9fqvYZ-Yxc/AAAAAAAAAAI/AAAAAAAAAAA/EddEIOkMV-o/s88-c-k-no-mo-rj-c0xffffff/photo.jpg',
+    subscriberCount: '0',
+    uploads: {
+      'K4bj6fQUSPA': {
+        videoTitle: 'Daemonia',
+        channelTitle: 'MCHU',
+        thumbnail: 'https://i.ytimg.com/vi/K4bj6fQUSPA/mqdefault.jpg',
+        viewCount: '6',
+        description: 'A young man journeys through a world of darkness and light. -- November 2017.'
+      },
+      'By7JXJuKppk': {
+        videoTitle: 'The Night Shift',
+        channelTitle: 'MCHU',
+        thumbnail: 'https://i.ytimg.com/vi/By7JXJuKppk/mqdefault.jpg',
+        viewCount: '6',
+        description: 'A tired old custodian works the night shift as a one-man crew. -- November 2013.'
+      }
+    }
   }
 };
 

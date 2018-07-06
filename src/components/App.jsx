@@ -10,44 +10,66 @@ import { Switch, Route } from 'react-router-dom';
 import masterChannelList from '../masterChannelList';
 import masterVideoList from '../masterVideoList';
 
-function App() {
-  return(
-    <div id="app-container">
-      <style jsx global>
-        {`
-          #app-container {
-            min-height: 100%;
-            position: relative;
-            padding: 55px 0 75px;
-          }
+class App extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state= {
+      masterChannelList: {},
+      masterVideoList: {},
+      selectedVideo: null
+    };
+  }
 
-          nav {
-            position: fixed;
-            top: 0;
-            z-index: 100;
-          }
+  componentDidMount() {
+    let newMasterChannelList = Object.assign({}, masterChannelList);
+    let newMasterVideoList = Object.assign({}, masterVideoList);
+    this.setState({
+      masterChannelList: newMasterChannelList,
+      masterVideoList: newMasterVideoList
+    });
+  }
 
-          footer {
-            position: absolute;
-            bottom: 0;
-          }
-        `}
-      </style>
-      <Navbar/>
-      <Switch>
-        <Route exact path='/' render={() =>
-          <ChannelList channelList={masterChannelList} />
-        } />
-        <Route path='/signin' component={SignIn} />
-        <Route path='/video' component={VideoPlayer} />
-        <Route path='/search' render={() =>
-          <Search videoList={masterVideoList} />
-        } />
-        <Route component={Error404}/>
-      </Switch>
-      <Footer/>
-    </div>
-  );
+  render() {
+    return (
+      <div id="app-container">
+        <style jsx global>
+          {`
+            #app-container {
+              min-height: 100%;
+              position: relative;
+              padding: 55px 0 75px;
+            }
+
+            nav {
+              position: fixed;
+              top: 0;
+              z-index: 100;
+            }
+
+            footer {
+              position: absolute;
+              bottom: 0;
+            }
+          `}
+        </style>
+        <Navbar/>
+        <Switch>
+          <Route exact path='/' render={() =>
+            <ChannelList channelList={this.state.masterChannelList} />
+          } />
+          <Route path='/signin' component={SignIn} />
+          <Route path='/video' render={() =>
+            <VideoPlayer video={this.state.selectedVideo} />
+          } />
+          <Route path='/search' render={() =>
+            <Search videoList={this.state.masterVideoList} />
+          } />
+          <Route component={Error404}/>
+        </Switch>
+        <Footer/>
+      </div>
+    );
+  }
 }
 
 export default App;
