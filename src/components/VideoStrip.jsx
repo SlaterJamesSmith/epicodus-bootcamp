@@ -46,25 +46,20 @@ function VideoStrip(props) {
       </style>
       <figure>
         <Link to='/video' style={navLink}>
-          <img src={props.thumbnail}/>
+          <img src={props.video.thumbnail}/>
         </Link>
       </figure>
       <Link to='/video' style={navLink}>
-        <h1>{props.videoTitle}</h1>
-        <p>{props.channelTitle} &bull; {props.viewCount} views</p>
-        <p>{props.description}</p>
+        <h1>{props.video.videoTitle}</h1>
+        <p>{props.video.channelTitle} &bull; {props.video.viewCount} views</p>
+        <p>{props.video.description}</p>
       </Link>
     </article>
   );
 }
 
 VideoStrip.propTypes = {
-  key: PropTypes.string.isRequired,
-  videoTitle: PropTypes.string.isRequired,
-  channelTitle: PropTypes.string.isRequired,
-  thumbnail: PropTypes.string.isRequired,
-  viewCount: PropTypes.string.isRequired,
-  description: PropTypes.string.isRequired
+  video: PropTypes.object.isRequired
 };
 
 export default VideoStrip;

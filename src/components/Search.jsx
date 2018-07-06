@@ -19,12 +19,8 @@ function Search(props) {
         let video = props.videoList[videoId];
         return (
           <VideoStrip
+            video={video}
             key={video.videoId}
-            videoTitle={video.videoTitle}
-            channelTitle={video.channelTitle}
-            thumbnail={video.thumbnail}
-            viewCount={video.viewCount}
-            description={video.description}
           />
         );
       })}
