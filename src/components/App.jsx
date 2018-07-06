@@ -197,7 +197,11 @@ class App extends React.Component {
           hygieneLevel={this.state.hygieneLevel}
         />
         <Switch>
-          <Route exact path='/' component={TamaRoom}/>
+          <Route exact path='/' render={() =>
+            <TamaRoom
+              happinessLevel={this.state.happinessLevel}
+            />
+          }/>
           <Route component={Error404}/>
         </Switch>
         <ActionBar
