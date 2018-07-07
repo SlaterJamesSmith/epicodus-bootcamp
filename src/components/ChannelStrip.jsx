@@ -67,14 +67,20 @@ function ChannelStrip(props) {
         <button className='subscribe-btn'>Subscribe {props.channel.subscriberCount}</button>
       </div>
       <VideoCarousel
+        channelId={props.channelId}
         uploads={props.channel.uploads}
+        onVideoSelection={props.onVideoSelection}
+        currentRoute={props.currentRoute}
       />
     </article>
   );
 }
 
 ChannelStrip.propTypes = {
-  channel: PropTypes.object.isRequired
+  channelId: PropTypes.string.isRequired,
+  channel: PropTypes.object.isRequired,
+  onVideoSelection: PropTypes.func.isRequired,
+  currentRoute: PropTypes.string.isRequired
 };
 
 export default ChannelStrip;

@@ -9,7 +9,7 @@ function VideoStrip(props) {
   };
 
   return (
-    <article onClick={() => {props.onVideoSelection(props.videoId, props.currentRoute);}}>
+    <article onClick={() => {props.onVideoSelection(props.videoId, null, props.currentRoute);}}>
       <style jsx>
         {`
           article {

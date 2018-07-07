@@ -1,9 +1,15 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 
 function VideoCard(props) {
+  const navLink = {
+    color: 'inherit',
+    textDecoration: 'none'
+  };
+
   return (
-    <article>
+    <article onClick={() => {props.onVideoSelection(props.videoId, props.channelId, props.currentRoute);}}>
       <style jsx>
         {`
           article {
@@ -34,16 +40,22 @@ function VideoCard(props) {
           }
         `}
       </style>
-      <img src={props.video.thumbnail} alt='video thumbnail'/>
-      <h2>{props.video.videoTitle}</h2>
-      <p>{props.video.channelTitle}</p>
-      <p>{props.video.viewCount} views</p>
+      <Link to="/video" style={navLink}>
+        <img src={props.video.thumbnail} alt='video thumbnail'/>
+        <h2>{props.video.videoTitle}</h2>
+        <p>{props.video.channelTitle}</p>
+        <p>{props.video.viewCount} views</p>
+      </Link>
     </article>
   );
 }
 
 VideoCard.propTypes = {
-  video: PropTypes.object.isRequired
+  channelId: PropTypes.string.isRequired,
+  videoId: PropTypes.string.isRequired,
+  video: PropTypes.object.isRequired,
+  onVideoSelection: PropTypes.func.isRequired,
+  currentRoute: PropTypes.string.isRequired
 };
 
 export default VideoCard;

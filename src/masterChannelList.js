@@ -11,7 +11,7 @@ const masterChannelList = {
         viewCount: '10613',
         description: '✖ Subscribe to ThePrimeCronus (Epic/Orchestral/Trailer Music): http://goo.gl/jrSyRt ✖ Subscribe to ThePrimeCronus II: http:/ ...'
       },
-      'se-aMVN5zZE': {
+      'OxXeaTE0R7U': {
         videoTitle: 'Best of Turbo Knight | Best of Synthwave And Retro Electro Music Mix',
         channelTitle: 'ThePrimeThanatos',
         thumbnail: 'https://i.ytimg.com/vi/OxXeaTE0R7U/mqdefault.jpg',

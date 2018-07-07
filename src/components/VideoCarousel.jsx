@@ -50,8 +50,12 @@ function VideoCarousel(props) {
         let video = props.uploads[videoId];
         return (
           <VideoCard
+            channelId={props.channelId}
+            videoId={videoId}
             video={video}
             key={videoId}
+            onVideoSelection={props.onVideoSelection}
+            currentRoute={props.currentRoute}
           />
         );
       })}
@@ -60,7 +64,10 @@ function VideoCarousel(props) {
 }
 
 VideoCarousel.propTypes = {
-  uploads: PropTypes.object.isRequired
+  channelId: PropTypes.string.isRequired,
+  uploads: PropTypes.object.isRequired,
+  onVideoSelection: PropTypes.func.isRequired,
+  currentRoute: PropTypes.string.isRequired
 };
 
 export default VideoCarousel;

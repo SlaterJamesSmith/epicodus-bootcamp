@@ -19,8 +19,11 @@ function ChannelList(props) {
         let channel = props.channelList[channelId];
         return (
           <ChannelStrip
+            channelId={channelId}
             channel={channel}
             key={channelId}
+            onVideoSelection={props.onVideoSelection}
+            currentRoute={props.currentRoute}
           />
         );
       })}
@@ -29,7 +32,9 @@ function ChannelList(props) {
 }
 
 ChannelList.propTypes = {
-  channelList: PropTypes.object.isRequired
+  channelList: PropTypes.object.isRequired,
+  onVideoSelection: PropTypes.func.isRequired,
+  currentRoute: PropTypes.string.isRequired
 };
 
 export default ChannelList;

@@ -17,6 +17,7 @@ class App extends React.Component {
       masterChannelList: {},
       masterVideoList: {},
       selectedVideoId: null,
+      selectedChannelId: null,
       selectorOrigin: null
     };
     this.handleVideoSelection = this.handleVideoSelection.bind(this);
@@ -31,11 +32,13 @@ class App extends React.Component {
     });
   }
 
-  handleVideoSelection(videoId, currentRoute) {
+  handleVideoSelection(videoId, channelId, currentRoute) {
     let newSelectedVideoId = videoId;
+    let newSelectedChannelId = channelId;
     let newSelectorOrigin = currentRoute;
     this.setState({
       selectedVideoId: newSelectedVideoId,
+      selectedChannelId: newSelectedChannelId,
       selectorOrigin: newSelectorOrigin
     });
   }
@@ -65,16 +68,11 @@ class App extends React.Component {
         </style>
         <Navbar/>
         <Switch>
-          <Route exact path="/" render={() =>
-            <ChannelList channelList={this.state.masterChannelList} />
-          } />
-          <Route path="/signin" component={SignIn} />
-          <Route path="/video" render={() =>
-            <VideoPlayer
+          <Route exact path="/" render={(props) =>
+            <ChannelList
               channelList={this.state.masterChannelList}
-              videoList={this.state.masterVideoList}
-              selectedVideoId={this.state.selectedVideoId}
-              selectorOrigin={this.state.selectorOrigin}
+              onVideoSelection={this.handleVideoSelection}
+              currentRoute={props.location.pathname}
             />
           } />
           <Route path="/search" render={(props) =>
@@ -84,6 +82,17 @@ class App extends React.Component {
               currentRoute={props.location.pathname}
             />
           } />
+          <Route path="/video" render={(props) =>
+            <VideoPlayer
+              channelList={this.state.masterChannelList}
+              videoList={this.state.masterVideoList}
+              selectedVideoId={this.state.selectedVideoId}
+              selectedChannelId={this.state.selectedChannelId}
+              selectorOrigin={this.state.selectorOrigin}
+              currentRoute={props.location.pathname}
+            />
+          } />
+          <Route path="/signin" component={SignIn} />
           <Route render={(props) =>
             <Error404
               currentRoute={props.location.pathname}
