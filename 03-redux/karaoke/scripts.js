@@ -5,11 +5,39 @@ const songLyricsArray = 'Ground Control to Major Tom , Ground Control to Major T
 const initialState = {
   songLyricsArray: songLyricsArray,
   arrayPosition: 0,
+};
+
+// REDUX REDUCER
+const reducer = (state = initialState, action) => {
+  switch (action.type) {
+    case 'NEXT_LYRIC':
+      let newArrayPosition = state.arrayPosition + 1;
+      let newState = {
+        songLyricsArray: state.songLyricsArray,
+        arrayPosition: newArrayPosition
+      };
+      return newState;
+    default:
+      return state;
+  }
 }
 
-console.log(initialState);
+// JEST TESTS + SETUP
+const { expect } = window;
+
+expect(reducer(initialState, { type: null})).toEqual(initialState);
+
+expect(reducer(initialState, { type: 'NEXT_LYRIC' })).toEqual({
+  songLyricsArray: songLyricsArray,
+  arrayPosition: 1
+});
+
+// REDUX STORE
+const { createStore } = Redux;
+const store = createStore(reducer);
+console.log(store.getState());
 
 // CLICK LISTENER
 const userClick = () => {
   console.log('click');
-}
+};
