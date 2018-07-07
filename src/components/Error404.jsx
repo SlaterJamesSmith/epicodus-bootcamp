@@ -13,20 +13,22 @@ function Error404(props) {
       <style jsx>
         {`
           div {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-direction: column;
-            padding: 50px 0;
+            padding: 50px;
           }
 
-          strong {
+          h2 {
+            margin: 0 0 25px;
             color: #f00;
+            word-wrap: break-word;
+          }
+
+          h2, p {
+            text-align: center;
           }
         `}
       </style>
-      <h2><strong>The page "{props.location.pathname}" does not exist.</strong></h2>
-      <p>Let's go back <Link to="/" style={navLink}>home</Link>.</p>
+      <h2><strong>No content found at<br/>{props.location.pathname}.</strong></h2>
+      <p>Return to <Link to="/" style={navLink}>YouTube (Rebuild)</Link>.</p>
     </div>
   );
 }
