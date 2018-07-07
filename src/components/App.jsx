@@ -64,6 +64,12 @@ class App extends React.Component {
               position: absolute;
               bottom: 0;
             }
+
+            @media screen and (max-width: 524px) {
+              #app-container {
+                padding-bottom: 55px;
+              }
+            }
           `}
         </style>
         <Navbar/>

@@ -11,7 +11,7 @@ function Search(props) {
             display: flex;
             flex-direction: column;
             align-items: center;
-            padding: 40px 0;
+            padding: 25px 0 5px;
           }
         `}
       </style>

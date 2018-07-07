@@ -27,7 +27,7 @@ function Footer() {
             figure {
               height: 55px;
               width: 320px;
-              background-position-y: -251px;
+              background-position-y: -252px;
             }
           }
         `}
