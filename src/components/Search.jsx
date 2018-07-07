@@ -23,6 +23,7 @@ function Search(props) {
             video={video}
             key={videoId}
             onVideoSelection={props.onVideoSelection}
+            currentRoute={props.currentRoute}
           />
         );
       })}
@@ -32,7 +33,8 @@ function Search(props) {
 
 Search.propTypes = {
   videoList: PropTypes.object.isRequired,
-  onVideoSelection: PropTypes.func.isRequired
+  onVideoSelection: PropTypes.func.isRequired,
+  currentRoute: PropTypes.string.isRequired
 };
 
 export default Search;

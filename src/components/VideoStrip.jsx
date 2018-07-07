@@ -9,7 +9,7 @@ function VideoStrip(props) {
   };
 
   return (
-    <article onClick={() => {props.onVideoSelection(props.videoId);}}>
+    <article onClick={() => {props.onVideoSelection(props.videoId, props.currentRoute);}}>
       <style jsx>
         {`
           article {
@@ -17,9 +17,12 @@ function VideoStrip(props) {
             min-width: 320px;
             width: 90%;
             max-width: 1200px;
-            display: flex;
             margin-bottom: 25px;
             overflow: hidden;
+          }
+
+          .flex {
+            display: flex;
           }
 
           figure {
@@ -44,18 +47,18 @@ function VideoStrip(props) {
           }
         `}
       </style>
-      <figure>
-        <Link to='/video' style={navLink}>
-          <img src={props.video.thumbnail}/>
-        </Link>
-      </figure>
-      <div>
-        <Link to='/video' style={navLink}>
-          <h1>{props.video.videoTitle}</h1>
-          <p>{props.video.channelTitle} &bull; {props.video.viewCount} views</p>
-          <p>{props.video.description}</p>
-        </Link>
-      </div>
+      <Link to="/video" style={navLink}>
+        <div className="flex">
+          <figure>
+            <img src={props.video.thumbnail}/>
+          </figure>
+          <div>
+            <h1>{props.video.videoTitle}</h1>
+            <p>{props.video.channelTitle} &bull; {props.video.viewCount} views</p>
+            <p>{props.video.description}</p>
+          </div>
+        </div>
+      </Link>
     </article>
   );
 }
@@ -63,7 +66,8 @@ function VideoStrip(props) {
 VideoStrip.propTypes = {
   videoId: PropTypes.string.isRequired,
   video: PropTypes.object.isRequired,
-  onVideoSelection: PropTypes.func.isRequired
+  onVideoSelection: PropTypes.func.isRequired,
+  currentRoute: PropTypes.string.isRequired
 };
 
 export default VideoStrip;

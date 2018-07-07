@@ -16,7 +16,8 @@ class App extends React.Component {
     this.state= {
       masterChannelList: {},
       masterVideoList: {},
-      selectedVideo: null
+      selectedVideoId: null,
+      selectorOrigin: null
     };
     this.handleVideoSelection = this.handleVideoSelection.bind(this);
   }
@@ -30,9 +31,13 @@ class App extends React.Component {
     });
   }
 
-  handleVideoSelection(videoId) {
-    this.setState({selectedVideo: videoId});
-    alert(`You selected VideoId: ${videoId}`);
+  handleVideoSelection(videoId, currentRoute) {
+    let newSelectedVideoId = videoId;
+    let newSelectorOrigin = currentRoute;
+    this.setState({
+      selectedVideoId: newSelectedVideoId,
+      selectorOrigin: newSelectorOrigin
+    });
   }
 
   render() {
@@ -60,20 +65,30 @@ class App extends React.Component {
         </style>
         <Navbar/>
         <Switch>
-          <Route exact path='/' render={() =>
+          <Route exact path="/" render={() =>
             <ChannelList channelList={this.state.masterChannelList} />
           } />
-          <Route path='/signin' component={SignIn} />
-          <Route path='/video' render={() =>
-            <VideoPlayer video={this.state.selectedVideo} />
+          <Route path="/signin" component={SignIn} />
+          <Route path="/video" render={() =>
+            <VideoPlayer
+              channelList={this.state.masterChannelList}
+              videoList={this.state.masterVideoList}
+              selectedVideoId={this.state.selectedVideoId}
+              selectorOrigin={this.state.selectorOrigin}
+            />
           } />
-          <Route path='/search' render={() =>
+          <Route path="/search" render={(props) =>
             <Search
               videoList={this.state.masterVideoList}
               onVideoSelection={this.handleVideoSelection}
+              currentRoute={props.location.pathname}
             />
           } />
-          <Route component={Error404}/>
+          <Route render={(props) =>
+            <Error404
+              currentRoute={props.location.pathname}
+            />
+          } />
         </Switch>
         <Footer/>
       </div>

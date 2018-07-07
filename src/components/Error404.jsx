@@ -27,14 +27,14 @@ function Error404(props) {
           }
         `}
       </style>
-      <h2><strong>No content found at<br/>{props.location.pathname}.</strong></h2>
+      <h2><strong>No content found at<br/>{props.currentRoute}.</strong></h2>
       <p>Return to <Link to="/" style={navLink}>YouTube (Rebuild)</Link>.</p>
     </div>
   );
 }
 
 Error404.propTypes = {
-  location: PropTypes.object
+  currentRoute: PropTypes.string.isRequired
 };
 
 export default Error404;
