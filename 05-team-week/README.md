@@ -56,7 +56,6 @@ An application that allows users to create, read, update, and delete music recor
 ## Known Bugs
 
 - Cannot remove artists from a release.
-- Cannot add secondary artist to release when database contains single artist.
 
 ## Technologies Used
 
