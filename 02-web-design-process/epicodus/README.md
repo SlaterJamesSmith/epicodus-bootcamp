@@ -26,7 +26,7 @@ A practice in sketching and wireframing using Epicodus' [Learn How to Program](h
 
 1. Clone repository.
 
-2. Navigate to `02-web-design-process\epicodus`.
+2. Navigate to `02-web-design-process/epicodus`.
 
 3. Explore design documents.
 

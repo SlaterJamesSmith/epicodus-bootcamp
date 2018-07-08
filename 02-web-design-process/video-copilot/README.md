@@ -22,7 +22,7 @@ A practice in sketching and wireframing using [Video Copilot](http://www.videoco
 
 1. Clone repository.
 
-2. Navigate to `02-web-design-process\video-copilot`.
+2. Navigate to `02-web-design-process/video-copilot`.
 
 3. Explore design documents.
 
