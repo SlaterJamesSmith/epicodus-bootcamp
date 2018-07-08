@@ -1,0 +1,36 @@
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  position: relative;
+  font-family: sans-serif;
+  font-size: 100%;
+}
+
+h1 {
+  width: 100%;
+  position: absolute;
+  margin: 0;
+  padding: 10px 0;
+  color: #fff;
+  background-color: #ff5a00;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+#lyrics {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 58px;
+  font-size: 3rem;
+  text-align: center;
+}
