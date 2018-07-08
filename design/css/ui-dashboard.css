@@ -1,0 +1,115 @@
+html, body {
+  height: 100%;
+}
+
+#ui-dashboard {
+  min-height: 100%;
+  display: grid;
+  grid-template-columns: 300px auto;
+}
+
+/* SIDEBAR */
+
+.sidebar {
+  min-height: 100%;
+  width: 300px;
+  position: relative;
+  padding-bottom: 300px;
+  border-right: 10px solid #023aad;
+  background-color: #252525;
+  color: #fff;
+}
+
+.logo {
+  margin: 25px auto;
+}
+
+.logo h1 {
+  margin: 0;
+}
+
+.logo img {
+  width: 100px;
+  height: 100px;
+  filter: invert(100%);
+}
+
+.logo a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.user-profile {
+  margin: 25px 0;
+  text-align: center;
+}
+
+.user-profile img {
+  width: 200px;
+  display: block;
+  margin: 25px auto;
+  border-radius: 100%;
+}
+
+.collection-overview {
+  margin: 25px;
+  text-align: center;
+}
+
+.collection-overview p {
+  margin-bottom: 3px;
+}
+
+.crate-mates {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+
+.crate-mates-images {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 10px;
+  padding: 10px 50px 50px;
+}
+
+.crate-mates-images img {
+  width: 100%;
+  border-radius: 3px;
+}
+
+/* NAVBAR */
+
+nav {
+  min-width: 700px;
+  margin: 10px 0;
+}
+
+.navbar a {
+  display: inline-block;
+  padding: 5px 15px;
+  margin: 0 5px;
+  border-radius: 5px;
+  outline: none;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.button-blue {
+  background-color: #023aad;
+  color: #fff;
+}
+
+.button-hollow {
+  border: 1px solid #023aad;
+  color: #023aad;
+}
+
+.button-logout {
+  background-color: #252525;
+  color: #fff;
+}
+
+.button-blue:hover, .button-logout:hover {
+  color: #fff;
+}
