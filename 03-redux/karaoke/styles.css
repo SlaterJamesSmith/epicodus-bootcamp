@@ -13,17 +13,24 @@ body {
   font-size: 100%;
 }
 
-h1 {
+h1, h2 {
+  text-transform: uppercase;
+}
+
+h1, h2, h3 {
   margin: 0;
 }
 
-header, button {
+button {
+  height: 50px;
+}
+
+header, button.next {
   height: 50px;
   width: 100%;
   position: absolute;
   color: #fff;
   background-color: #ff5a00;
-  text-transform: uppercase;
 }
 
 header {
@@ -31,20 +38,53 @@ header {
 }
 
 button {
-  height: 100px;
-  bottom: 0;
-  border: none;
   cursor: pointer;
 }
 
-button:active {
+button.next {
+  height: 100px;
+  bottom: 0;
+  border: none;
+  text-transform: uppercase;
+}
+
+button.next:active {
   background-color: #e35000;
 }
 
 #wrapper {
   min-height: 100%;
   position: relative;
-  padding: 75px 50px 125px;
+  padding: 140px 50px 125px;
+}
+
+#songs {
+  height: 90px;
+  width: 100%;
+  position: absolute;
+  bottom: -90px;
+}
+
+#songs h2 {
+  height: 50px;
+  display: flex;
+  align-items: center;
+  margin: 0 10px;
+  padding: 10px 20px;
+  color: #fff;
+  background-color: #ff5a00;
+}
+
+#songs button {
+  margin: 0 10px;
+  border: 2px solid #ff5a00;
+  border-radius: 4px;
+  color: #ff5a00;
+  background-color: transparent;
+}
+
+#songs button:active {
+  background-color: #ff5a0011;
 }
 
 #lyrics {
