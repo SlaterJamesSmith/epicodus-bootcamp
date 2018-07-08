@@ -14,7 +14,6 @@ Back-End
 - Matthew Dowdney
 - Matt Miller (Team Lead)
 
-
 ## Description
 
 An application that allows users to create, read, update, and delete music records in a personal collection database.
