@@ -11,13 +11,13 @@ Front-End
 
 Back-End
 
-- Matt Dowdney
+- Matthew Dowdney
 - Matt Miller (Team Lead)
 
 
 ## Description
 
-An application that allows users to create, read, update, and delete records in a personal collection database.
+An application that allows users to create, read, update, and delete music records in a personal collection database.
 
 ## Setup/Installation Requirements
 
@@ -29,13 +29,13 @@ An application that allows users to create, read, update, and delete records in 
 
 3. Navigate to **Plugins** and select **Browse Repositories**.
 
-4. Search for **Handlebars/Mustache**, install it and restart IntelliJ.
+4. Find **Handlebars/Mustache**, install and restart IntelliJ.
 
 ### II. Project Setup
 
 1. Clone repository.
 
-2. From IntelliJ IDEA, open project folder `05-team-week`.
+2. From IntelliJ, open project folder `05-team-week`.
 
 3. In *Import Project from Gradle* window, select:
 
