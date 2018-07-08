@@ -54,7 +54,17 @@ const lyricChangeReducer = (state = initialState.songsById, action) => {
     default:
       return state;
   }
-}
+};
+
+const songChangeReducer = (state = initialState.currentSongId, action) => {
+  switch (action.type) {
+    case 'CHANGE_SONG':
+      return action.newSelectedSongId;
+
+    default:
+      return state;
+  }
+};
 
 // JEST TESTS + SETUP
 const { expect } = window;
@@ -100,35 +110,39 @@ expect(lyricChangeReducer(
   { type: 'RESTART_SONG', currentSongId: 1 }
 )).toEqual(initialState.songsById);
 
+expect(songChangeReducer(initialState, { type: null })).toEqual(initialState);
+
+expect(songChangeReducer(initialState, { type: 'CHANGE_SONG', newSelectedSongId: 1 })).toEqual(1);
+
 // REDUX STORE
 const { createStore } = Redux;
 const store = createStore(lyricChangeReducer);
 
 // RENDERING STATE IN DOM
-const renderLyrics = () => {
-  const lyricsDisplay = document.getElementById('lyrics');
-  while (lyricsDisplay.firstChild) {
-    lyricsDisplay.removeChild(lyricsDisplay.firstChild);
-  }
-  const currentLine = store.getState().songLyricsArray[store.getState().arrayPosition];
-  const renderedLine = document.createTextNode(currentLine);
-  document.getElementById('lyrics').appendChild(renderedLine);
-  console.log(store.getState());
-}
-
-window.onload = function() {
-  renderLyrics();
-}
-
-// CLICK LISTENER
-const userClick = () => {
-  const currentState = store.getState();
-  if (currentState.arrayPosition < currentState.songLyricsArray.length - 1) {
-    store.dispatch({ type: 'NEXT_LYRIC' })
-  } else {
-    store.dispatch({ type: 'RESTART_SONG' });
-  }
-};
-
-// SUBSCRIBE TO REDUX STORE
-store.subscribe(renderLyrics);
+// const renderLyrics = () => {
+//   const lyricsDisplay = document.getElementById('lyrics');
+//   while (lyricsDisplay.firstChild) {
+//     lyricsDisplay.removeChild(lyricsDisplay.firstChild);
+//   }
+//   const currentLine = store.getState().songLyricsArray[store.getState().arrayPosition];
+//   const renderedLine = document.createTextNode(currentLine);
+//   document.getElementById('lyrics').appendChild(renderedLine);
+//   console.log(store.getState());
+// }
+//
+// window.onload = function() {
+//   renderLyrics();
+// }
+//
+// // CLICK LISTENER
+// const userClick = () => {
+//   const currentState = store.getState();
+//   if (currentState.arrayPosition < currentState.songLyricsArray.length - 1) {
+//     store.dispatch({ type: 'NEXT_LYRIC' })
+//   } else {
+//     store.dispatch({ type: 'RESTART_SONG' });
+//   }
+// };
+//
+// // SUBSCRIBE TO REDUX STORE
+// store.subscribe(renderLyrics);
