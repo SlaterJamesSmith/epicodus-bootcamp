@@ -108,6 +108,8 @@ a.navbar-brand span {
 #search .btn-group {
   max-width: 640px;
   width: 80%;
+  display: flex;
+  align-items: center;
 }
 
 #search .form-control {
@@ -118,12 +120,17 @@ a.navbar-brand span {
   padding: 0.25em 0.75em;
 }
 
+#search input {
+  min-width: 0;
+}
+
 #search .btn {
   border: 1px solid #808080;
   border-radius: 0 2px 2px 0;
   background-color: #eee;
   box-shadow: none;
   opacity: 0.5;
+  height: 34px;
   width: 75px;
 }
 
