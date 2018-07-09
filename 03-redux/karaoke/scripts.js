@@ -169,21 +169,34 @@ window.onload = function() {
 
 // CLICK LISTENERS
 const selectSong = (songId) => {
-  let action = {
+  let action;
+  if (store.getState().currentSongId) {
+    action = {
+      type: 'RESTART_SONG',
+      currentSongId: store.getState().currentSongId
+    }
+    store.dispatch(action)
+  }
+  action = {
     type: 'CHANGE_SONG',
     newSelectedSongId: songId
   }
   store.dispatch(action);
 };
 
-// const userClick = () => {
-//   const currentState = store.getState();
-//   if (currentState.arrayPosition < currentState.songLyricsArray.length - 1) {
-//     store.dispatch({ type: 'NEXT_LYRIC' })
-//   } else {
-//     store.dispatch({ type: 'RESTART_SONG' });
-//   }
-// };
+const userClick = () => {
+  if (store.getState().songsById[store.getState().currentSongId].arrayPosition < store.getState().songsById[store.getState().currentSongId].songArray.length - 1) {
+    store.dispatch({
+      type: 'NEXT_LYRIC',
+      currentSongId: store.getState().currentSongId
+    });
+  } else {
+    store.dispatch({
+      type: 'RESTART_SONG',
+      currentSongId: store.getState().currentSongId
+    });
+  }
+};
 
 // SUBSCRIBE TO REDUX STORE
 store.subscribe(renderLyrics);
