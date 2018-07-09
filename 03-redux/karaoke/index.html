@@ -6,7 +6,7 @@
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/expect/1.20.2/expect.min.js"></script>
     <script type="text/javascript" src="scripts.js"></script>
     <link href="styles.css" rel="stylesheet" type="text/css">
-    <title>Karaoke</title>
+    <title>Redux Karaoke</title>
   </head>
   <body>
     <div id="wrapper" class="flex">
@@ -18,7 +18,10 @@
       <section id="lyrics" class="flex">
 
       </section>
-      <button class="next flex" onClick="userClick()"><h1>Next</h1></button>
+      <footer>
+        <h2 id="lyric-number" class="flex"></h2>
+        <button class="flex" onClick="userClick()"><h1>Next</h1></button>
+      </footer>
     </div>
   </body>
 </html>

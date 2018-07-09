@@ -9,6 +9,7 @@ html, body {
 }
 
 body {
+  min-width: 790px;
   position: relative;
   font-size: 100%;
 }
@@ -23,10 +24,11 @@ h1, h2, h3 {
 
 button {
   height: 50px;
+  background-color: transparent;
+  cursor: pointer;
 }
 
-header, button.next {
-  height: 50px;
+header, footer {
   width: 100%;
   position: absolute;
   color: #fff;
@@ -34,28 +36,31 @@ header, button.next {
 }
 
 header {
+  height: 50px;
   top: 0;
 }
 
-button {
-  cursor: pointer;
-}
-
-button.next {
+footer {
   height: 100px;
   bottom: 0;
+}
+
+footer button {
+  height: 100px;
+  width: 100%;
   border: none;
+  color: #fff;
   text-transform: uppercase;
 }
 
-button.next:active {
+footer button:active {
   background-color: #e35000;
 }
 
 #wrapper {
   min-height: 100%;
   position: relative;
-  padding: 140px 50px 125px;
+  padding: 140px 50px 175px;
 }
 
 #songs {
@@ -80,7 +85,6 @@ button.next:active {
   border: 2px solid #ff5a00;
   border-radius: 4px;
   color: #ff5a00;
-  background-color: transparent;
 }
 
 #songs button:active {
@@ -89,6 +93,16 @@ button.next:active {
 
 #lyrics {
   font-size: 3rem;
+  line-height: 6rem;
+  text-align: center;
+}
+
+#lyric-number {
+  height: 50px;
+  width: 100%;
+  position: absolute;
+  top: -50px;
+  color: #ff5a00;
   text-align: center;
 }
 
