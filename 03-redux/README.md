@@ -10,6 +10,8 @@ A collection of practice projects focused on Redux.
 
 ## Projects
 
+### I. [Redux Karaoke](karaoke)
+
 ## Technologies Used
 
 - JavaScript

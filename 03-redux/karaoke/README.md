@@ -1,4 +1,4 @@
-# Karaoke
+# Redux Karaoke
 
 **Redux | July 7, 2018**
 
