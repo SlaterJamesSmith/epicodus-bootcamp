@@ -40,4 +40,54 @@ describe('postListReducer', () => {
       }
     });
   });
+
+  test('Should add to Like count when Like button is clicked', () => {
+    const { name, title, post, timePosted, likes, dislikes, id } = samplePostData;
+    action = {
+      type: 'LIKE_POST',
+      name: name,
+      title: title,
+      post: post,
+      timePosted: timePosted,
+      likes: likes,
+      dislikes: dislikes,
+      id: id
+    };
+    expect(postListReducer({}, action)).toEqual({
+      [id] : {
+        name: name,
+        title: title,
+        post: post,
+        timePosted: timePosted,
+        likes: 1,
+        dislikes: dislikes,
+        id: id
+      }
+    });
+  });
+
+  test('Should add to Like count when Like button is clicked', () => {
+    const { name, title, post, timePosted, likes, dislikes, id } = samplePostData;
+    action = {
+      type: 'DISLIKE_POST',
+      name: name,
+      title: title,
+      post: post,
+      timePosted: timePosted,
+      likes: likes,
+      dislikes: dislikes,
+      id: id
+    };
+    expect(postListReducer({}, action)).toEqual({
+      [id] : {
+        name: name,
+        title: title,
+        post: post,
+        timePosted: timePosted,
+        likes: likes,
+        dislikes: 1,
+        id: id
+      }
+    });
+  });
 });

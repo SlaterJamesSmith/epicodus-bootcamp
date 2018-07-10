@@ -18,6 +18,7 @@ function PostList(props) {
           likes={post.likes}
           dislikes={post.dislikes}
           key={postId}
+          id={postId}
         />;
       })}
 
