@@ -13,9 +13,9 @@ const render = (Component) => {
   ReactDOM.render(
     <AppContainer>
       <HashRouter>
-        <Provider>
+        <Provider store={ store }>
           <Component/>
-        </Provider>  
+        </Provider>
       </HashRouter>
     </AppContainer>,
     document.getElementById('react-app-root')
