@@ -26,12 +26,10 @@ function PostForm(props) {
     };
     dispatch(action);
     // console.log(store.getState());
-
     _name.value = '';
     _title.value = '';
     _post.value = '';
   }
-
 
   return (
     <div>

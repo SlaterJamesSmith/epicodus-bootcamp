@@ -8,12 +8,24 @@ function PostList(props) {
   return (
     <div>
       <h2>COFFEE BLOGS</h2>
-      <Post/>
+      {Object.keys(props.masterPostList).map(function(postId) {
+        let post = props.masterPostList[postId];
+        return <Post
+          name={post.name}
+          title={post.title}
+          post={post.post}
+          timePosted={post.timePosted}
+          likes={post.likes}
+          dislikes={post.dislikes}
+          key={postId}
+        />;
+      })}
+
     </div>
   );
 }
 
-PostList.propsTypes = {
+PostList.propTypes = {
   masterPostList: PropTypes.object
 };
 
