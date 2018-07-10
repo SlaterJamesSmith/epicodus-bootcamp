@@ -1,5 +1,4 @@
 import React from 'react';
-import { v4 } from 'uuid';
 import Header from './Header';
 import TicketList from './TicketList';
 import NewTicketControl from './NewTicketControl';
@@ -14,15 +13,7 @@ class App extends React.Component {
       masterTicketList: {},
       selectedTicket: null
     };
-    this.handleAddingNewTicketToList = this.handleAddingNewTicketToList.bind(this);
     this.handleChangingSelectedTicket = this.handleChangingSelectedTicket.bind(this);
-  }
-
-  handleAddingNewTicketToList(newTicket) {
-    let newTicketId = v4();
-    let newMasterTicketList = Object.assign({}, this.state.masterTicketList, {[newTicketId]: newTicket});
-    newMasterTicketList[newTicketId].formattedWaitTime = newMasterTicketList[newTicketId].timeOpen.fromNow(true);
-    this.setState({masterTicketList: newMasterTicketList});
   }
 
   componentDidMount() {
@@ -76,10 +67,7 @@ class App extends React.Component {
             exact path='/'
             render={() => <TicketList ticketList={this.state.masterTicketList} />}
           />
-          <Route
-            path='/newticket'
-            render={() => <NewTicketControl onNewTicketCreation={this.handleAddingNewTicketToList} />}
-          />
+          <Route path='/newticket' component={NewTicketControl} />
           <Route
             path='/admin'
             render={(props) => <Admin
