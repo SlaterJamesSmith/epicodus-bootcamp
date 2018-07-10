@@ -1,6 +1,8 @@
 import React from 'react';
+import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 
-function PostForm() {
+function PostForm(props) {
   return (
     <div>
       <h1>POST FORM</h1>
@@ -8,4 +10,8 @@ function PostForm() {
   );
 }
 
-export default PostForm;
+PostForm.propTypes = {
+  
+};
+
+export default connect()(PostForm);
