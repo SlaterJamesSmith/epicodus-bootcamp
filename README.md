@@ -14,16 +14,31 @@ The robot dance groups are contained in separate frames, which are treated like 
 
 ## Setup/Installation Requirements
 
+### I. View Project
+
 1. Clone repository.
 
 2. Open index.html in web browser.
+
+### II. Optional Setup (Sass)
+
+#### A. Node and NPM Installs
+
+1. Install Node.js on local machine.
+
+2. Install Sass globally: `npm install -g sass`
+
+#### B. Recompile CSS
+
+1. Navigate to project folder.
+
+2. Run `sass css/sass/main.scss css/styles.css`
 
 ## Known Bugs
 
 None.
 
-## Technologies focused
+## Technologies Used
 
 - HTML
-- CSS
-- Sass
+- CSS (Sass)

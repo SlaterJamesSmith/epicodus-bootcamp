@@ -10,4 +10,5 @@ Thumbs.db
 
 # Sass Generated Files #
 ########################
+.sass-cache
 styles.css.map
