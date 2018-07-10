@@ -12,12 +12,16 @@ function App() {
         {`
           body {
             margin: 0;
-            padding: 0;
+            padding: 0 25px;
             font-family: sans-serif;
           }
 
-          h1 {
+          h1, h3 {
             color: #08f;
+          }
+
+          h2 {
+            color: magenta;
           }
         `}
       </style>

@@ -4,10 +4,9 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 
 function PostList(props) {
-  console.log(props);
   return (
     <div>
-      <h2>COFFEE BLOGS</h2>
+      <h2>POST LIST</h2>
       {Object.keys(props.masterPostList).map(function(postId) {
         let post = props.masterPostList[postId];
         return <Post
@@ -21,6 +20,14 @@ function PostList(props) {
           id={postId}
         />;
       })}
+
+      <style jsx global>
+        {`
+          h2 {
+            text-align: center;
+          }
+        `}
+      </style>
 
     </div>
   );

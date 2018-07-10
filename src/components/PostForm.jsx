@@ -46,12 +46,45 @@ function PostForm(props) {
           placeholder="enter the title of your blog"
           ref={(input) => {_title = input;}}/>
         <label>BLOG POST:</label>
-        <input
+        <textarea
+          className="blogInput"
           type="text"
           placeholder="enter your post content"
-          ref={(input) => {_post = input;}}/>
+          ref={(textarea) => {_post = textarea;}}/>
         <button type="submit" onClick={handleAddingNewBlogPosts}>SUBMIT</button>
       </form>
+      <style jsx>{`
+        form {
+          display: flex;
+          justify-content: flex-start;
+          flex-direction: column;
+          padding: 1rem;
+          font-size: 1rem;
+        }
+        label, input, textarea, button {
+          margin: .4rem;
+        }
+        input, textarea {
+          padding: .5rem;
+          font-size: 1rem;
+        }
+
+        textarea {
+          height: 20rem;
+        }
+        button {
+          background-color: magenta;
+          color: white;
+          padding: .5rem;
+          border-radius: 5px;
+          font-weight: bold;
+          font-size: 1rem;
+          padding: .7rem;
+          width: 50%;
+          margin: 0 auto;
+        }
+        `}
+      </style>
     </div>
   );
 }
