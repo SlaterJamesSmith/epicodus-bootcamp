@@ -10,23 +10,23 @@ A front-end site design for a film production cowork space.
 
 ## Setup/Installation Requirements
 
-### I. Project Setup
+1. Clone repository.
+
+2. Open index.html in web browser.
+
+## Optional Setup (Sass)
+
+### I. Node and NPM Installs
 
 1. Install Node.js on local machine.
 
-2. Clone repository and navigate to project folder.
+2. Install Sass globally: `npm install -g sass`
 
-3. Run `npm install` to load required packages.
+### II. Recompile CSS
 
-### II. View Project
+1. Navigate to project folder.
 
-- Development Mode: `npm start`
-
-- Production: `npm run build`
-
-  1. Navigate to `dist` folder.
-
-  2. Open **index.html** in web browser.
+2. Run `sass css/sass/main.scss css/styles.css`
 
 ## Known Bugs
 
@@ -35,7 +35,6 @@ None.
 ## Technologies Used
 
 * CSS (Sass)
-* Webpack
 
 ## Design Process
 

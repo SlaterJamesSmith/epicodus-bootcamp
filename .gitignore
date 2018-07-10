@@ -8,10 +8,7 @@
 ehthumbs.db
 Thumbs.db
 
-# Packages #
-######################
-node_modules/
-
-# Build #
-######################
-dist/
+# Sass Generated Files #
+########################
+.sass-cache
+styles.css.map
