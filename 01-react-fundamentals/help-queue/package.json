@@ -6,6 +6,7 @@
   "scripts": {
     "lint": "eslint src/*.js* src/**/*.js*",
     "fix": "eslint src/*.js* src/**/*.js* --fix",
+    "test": "jest",
     "build": "webpack",
     "start": "webpack-dev-server --open"
   },
@@ -22,6 +23,7 @@
   },
   "devDependencies": {
     "babel-core": "^6.24.1",
+    "babel-jest": "^20.0.3",
     "babel-loader": "^7.0.0",
     "babel-preset-es2015": "^6.24.1",
     "babel-preset-react": "^6.24.1",
@@ -29,6 +31,7 @@
     "eslint-loader": "^2.0.0",
     "eslint-plugin-react": "^7.10.0",
     "html-webpack-plugin": "^2.29.0",
+    "jest": "^20.0.4",
     "react-hot-loader": "^3.0.0-beta.7",
     "webpack": "^3.4.0",
     "webpack-dev-server": "^2.5.0"
