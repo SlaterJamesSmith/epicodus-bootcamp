@@ -5,7 +5,7 @@ describe('postListReducer', () => {
   const samplePostData = {
     name: 'Mike Chu',
     title: 'My favorite way to drink coffee',
-    post: 'Isn't this cool? Look how much code we're able to cut out of our projects by using Redux! And we\'ve only migrated one state value so far! In the next lesson we\'ll continue migrating our state to Redux, as we address how to retrieve and display Redux-managed state in React user interfaces.',
+    post: 'Isn\'t this cool? Look how much code we\'re able to cut out of our projects by using Redux! And we\'ve only migrated one state value so far! In the next lesson we\'ll continue migrating our state to Redux, as we address how to retrieve and display Redux-managed state in React user interfaces.',
     timePosted: new Date(),
     likes: 0,
     dislikes: 0,
@@ -29,7 +29,7 @@ describe('postListReducer', () => {
       id: id
     };
     expect(postListReducer({}, action)).toEqual({
-      [id]: {
+      [id] : {
         name: name,
         title: title,
         post: post,
