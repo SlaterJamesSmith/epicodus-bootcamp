@@ -94,7 +94,7 @@
 }
 
 .workspace.prod {
-  background-color: $primary-color-1;
+  background-color: lighten($primary-color-1, 20%);
   background-image: url('img/production.jpg');
 
   h3 {
