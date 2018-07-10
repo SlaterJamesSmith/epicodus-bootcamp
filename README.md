@@ -8,21 +8,25 @@
 
 A front-end site design for a film production cowork space.
 
+Additional Documentation: [Design Process](design/README.md)
+
 ## Setup/Installation Requirements
+
+### I. View Project
 
 1. Clone repository.
 
 2. Open index.html in web browser.
 
-## Optional Setup (Sass)
+### II. Optional Setup (Sass)
 
-### I. Node and NPM Installs
+#### A. Node and NPM Installs
 
 1. Install Node.js on local machine.
 
 2. Install Sass globally: `npm install -g sass`
 
-### II. Recompile CSS
+#### B. Recompile CSS
 
 1. Navigate to project folder.
 
@@ -35,10 +39,6 @@ None.
 ## Technologies Used
 
 * CSS (Sass)
-
-## Design Process
-
-- See design [README](design/README.md).
 
 ## Artwork & Media Attributions
 

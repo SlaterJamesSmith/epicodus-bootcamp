@@ -4,10 +4,6 @@
 
 **By Mike Chu**
 
-## Description
-
-A front-end site design for a film production cowork space.
-
 ## Design Process
 
 ### I. Direction, Research & References
@@ -47,14 +43,6 @@ iPhone SE *(3 options)*, iPad & Desktop HD
 #### iPhone SE
 
 ![Prototype](prototype-iphone.png?raw=true "iPhone SE - Prototype Diagram")
-
-## Setup/Installation Requirements
-
-1. Clone repository.
-
-2. Navigate to `design` folder.
-
-3. Explore design documents.
 
 ## Technologies Used
 
