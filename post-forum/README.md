@@ -1,12 +1,15 @@
-# [PROJECT NAME]
+# Post Forum
 
-**[SUBTITLE] | [MONTH DAY, YEAR]**
+**Redux | July 10, 2018**
 
-**By [AUTHOR]**
+**Collaborators**
+
+- Mike Chu
+- Julia Sheremet
 
 ## Description
 
-Add Description.
+A simple public message posting application using Redux.
 
 ## Setup/Installation Requirements
 
@@ -14,7 +17,7 @@ Add Description.
 
 1. Install Node.js on local machine.
 
-2. Clone repository and navigate to `webpack-project`.
+2. Clone repository and navigate to `03-redux/post-forum`.
 
 3. Run `npm install` to load required packages.
 
@@ -24,7 +27,7 @@ Add Description.
 
 - Production Build: `npm run build`
 
-  1. Locate build files in `webpack-project/build`.
+  1. Locate build files in `03-redux/post-forum/build`.
 
 ## Known Bugs
 
@@ -34,15 +37,7 @@ None.
 
 - JavaScript
 - React
+- Redux
+- Jest
 - Babel
 - Webpack
-
-## Specifications
-
-Add specifications.
-
-## License
-
-This software is licensed under the MIT license.
-
-Copyright (c) [YEAR] **[AUTHOR]**
