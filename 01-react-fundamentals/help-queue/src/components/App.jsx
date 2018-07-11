@@ -9,13 +9,6 @@ import { Switch, Route, withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
 
 class App extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      selectedTicket: null
-    };
-    this.handleChangingSelectedTicket = this.handleChangingSelectedTicket.bind(this);
-  }
 
   componentDidMount() {
     this.waitTimeUpdateTimer = setInterval(() =>
@@ -33,10 +26,6 @@ class App extends React.Component {
     //   newMasterTicketList[ticketId].formattedWaitTime = newMasterTicketList[ticketId].timeOpen.fromNow(true);
     // });
     // this.setState({masterTicketList: newMasterTicketList});
-  }
-
-  handleChangingSelectedTicket(ticketId) {
-    this.setState({selectedTicket: ticketId});
   }
 
   render() {
@@ -72,10 +61,7 @@ class App extends React.Component {
           <Route
             path='/admin'
             render={(props) => <Admin
-              ticketList={this.props.masterTicketList}
               currentRouterPath={props.location.pathname}
-              onTicketSelection={this.handleChangingSelectedTicket}
-              selectedTicket={this.state.selectedTicket}
             />}
           />
           <Route component={Error404} />
