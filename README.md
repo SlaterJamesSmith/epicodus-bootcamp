@@ -20,5 +20,7 @@
 
 - JavaScript
 - React
+- Redux
+- Jest
 - Babel
 - Webpack
