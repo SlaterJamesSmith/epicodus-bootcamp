@@ -1,28 +1,12 @@
 # YouTube Rebuild
 
-**Epicodus Solo Project | React | Week 1 | June 29, 2018**
+**Epicodus Solo Project | React | Week 1 & 2 | June 29, 2018**
 
 **By Mike Chu**
 
 ## Description
 
 A limited site rebuild of [YouTube](https://www.youtube.com/) using React.
-
-### Friday Prompt | Dev Notes & Thoughts
-
-#### JUNE 29
-
-NOTES
-
-- 10:10AM | Combed through Angular build and drafted component structure without too much trouble.
-
-- 2:44PM | Rigged up buttons that render icons controlled by props with no problems.
-
-THOUGHTS
-
-- 10:23AM | Focusing purely on design philosophy, Angular and React feel very much the same at this point. Looking back at the YouTube Rebuild in Angular, functional operations dictated component scope and component relationships. In React, I find myself simply re-orienting focus to visual hierarchy to determine component scope and component relationships. There is a perspective shift, but the underlying design process feels very familiar.
-
-- 2:50PM | React leverages modular components very well. Navbar buttons built in Angular were significantly more complicated with very densely packed code for each button. I'm finding that in React, the component separation is much cleaner and code is easier to navigate. Very dynamic and very light weight.
 
 ## Setup/Installation Requirements
 
