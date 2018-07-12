@@ -5,8 +5,8 @@
   "main": "index.jsx",
   "scripts": {
     "lint": "eslint src/*.js* src/**/*.js*",
-    "fix": "eslint src/*.js* src/**/*.js* --fix",
-    "test": "jest",
+    "lint-fix": "eslint src/*.js* src/**/*.js* --fix",
+    "test": "jest --watchAll",
     "build": "webpack",
     "start": "webpack-dev-server --open"
   },
