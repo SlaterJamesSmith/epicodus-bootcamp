@@ -14,7 +14,7 @@ Add Description.
 
 1. Install Node.js on local machine.
 
-2. Clone repository and navigate to `webpack-project`.
+2. Clone repository and navigate to `webpack-react`.
 
 3. Run `npm install` to load required packages.
 
@@ -24,7 +24,7 @@ Add Description.
 
 - Production Build: `npm run build`
 
-  1. Locate build files in `webpack-project/build`.
+  1. Locate build files in `webpack-react/build`.
 
 ## Known Bugs
 
