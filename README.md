@@ -14,7 +14,9 @@
 
 ## Templates
 
-1. [Webpack Project (React)](00-templates/webpack-project)
+1. [Webpack Project (React)](00-templates/webpack-react)
+
+2. [Webpack Project (React-Redux)](00-templates/webpack-react-redux)
 
 ## Technologies Used
 

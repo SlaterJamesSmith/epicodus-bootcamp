@@ -18,9 +18,9 @@ Add Description.
 
 ### II. Project Setup
 
-2. Clone repository and navigate to `webpack-react-redux`.
+1. Clone repository and navigate to `webpack-react-redux`.
 
-3. Run `npm install` to load required packages.
+2. Run `npm install` to load required packages.
 
 ### III. View/Build Project
 

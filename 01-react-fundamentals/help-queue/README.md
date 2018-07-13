@@ -10,15 +10,19 @@ A student help queue application using React.
 
 ## Setup/Installation Requirements
 
-### I. Project Setup
+### I. Node & NPM Installs
 
 1. Install Node.js on local machine.
 
-2. Clone repository and navigate to `01-react-fundamentals/help-queue`.
+2. Install Jest globally: `npm install jest -g`
 
-3. Run `npm install` to load required packages.
+### II. Project Setup
 
-### II. View/Build Project
+1. Clone repository and navigate to `01-react-fundamentals/help-queue`.
+
+2. Run `npm install` to load required packages.
+
+### III. View/Build Project
 
 - Development Mode: `npm start`
 
