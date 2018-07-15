@@ -1,3 +1,4 @@
+import * as actions from './../../src/actions';
 import constants from './../../src/constants';
 import songChangeReducer from './../../src/reducers/songChangeReducer';
 import lyricChangeReducer from './../../src/reducers/lyricChangeReducer';
@@ -15,12 +16,12 @@ describe('Karaoke App', () => {
     });
 
     it('Should update currently-displayed lyric of song', () => {
-      expect(lyricChangeReducer(initialState.songsById, { type: 'NEXT_LYRIC', currentSongId: 2 })[2].arrayPosition).toEqual(initialState.songsById[2].arrayPosition + 1);
+      expect(lyricChangeReducer(initialState.songsById, actions.nextLyric(2))[2].arrayPosition).toEqual(initialState.songsById[2].arrayPosition + 1);
     });
 
     it('Should restart song', () => {
-      let currentState = lyricChangeReducer(initialState.songsById, { type: 'NEXT_LYRIC', currentSongId: 1 });
-      expect(lyricChangeReducer(currentState, { type: 'RESTART_SONG', currentSongId: 1 })[1].arrayPosition).toEqual(0);
+      let currentState = lyricChangeReducer(initialState.songsById, actions.nextLyric(1));
+      expect(lyricChangeReducer(currentState, actions.restartSong(1))[1].arrayPosition).toEqual(0);
     });
 
   });
@@ -28,11 +29,11 @@ describe('Karaoke App', () => {
   describe('songChangeReducer', () => {
 
     it('Should accept and return initial state', () => {
-      expect(songChangeReducer(initialState, { type: null })).toEqual(initialState);
+      expect(songChangeReducer(initialState.currentSongId, { type: null })).toEqual(initialState.currentSongId);
     });
 
     it('Should change selectedSong', () => {
-      expect(songChangeReducer(initialState, { type: 'CHANGE_SONG', newSelectedSongId: 1 })).toEqual(1);
+      expect(songChangeReducer(initialState.currentSongId, actions.changeSong(2))).toEqual(2);
     });
 
   });

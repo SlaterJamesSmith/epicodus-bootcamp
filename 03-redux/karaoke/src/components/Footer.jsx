@@ -1,10 +1,10 @@
 import React from 'react';
+import { nextLyric, restartSong } from './../actions';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 
 const Footer = ({ dispatch, song}) => {
   const { artist, title, songArray, arrayPosition, id } = song;
-  let action;
 
   return (
     <footer>
@@ -66,17 +66,10 @@ const Footer = ({ dispatch, song}) => {
       <button onClick={e => {
         e.preventDefault();
         if (arrayPosition < songArray.length - 1) {
-          action = {
-            type: 'NEXT_LYRIC',
-            currentSongId: id
-          };
+          dispatch(nextLyric(id));
         } else {
-          action = {
-            type: 'RESTART_SONG',
-            currentSongId: id
-          };
+          dispatch(restartSong(id));
         }
-        dispatch(action);
       }}>
         <h1>Next</h1>
       </button>
