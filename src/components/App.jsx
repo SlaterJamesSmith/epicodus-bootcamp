@@ -1,7 +1,8 @@
 import React from 'react';
+import Nav from './Nav';
+import Home from './Home';
+import TamaHome from './TamaHome';
 import Error404 from './Error404';
-import Header from './Header';
-import Component from './Component';
 import { Switch, Route } from 'react-router-dom';
 
 function App() {
@@ -20,9 +21,10 @@ function App() {
           }
         `}
       </style>
-      <Header/>
+      <Nav/>
       <Switch>
-        <Route exact path='/' component={Component}/>
+        <Route exact path='/' component={Home}/>
+        <Route exact path='/tamagotchi' component={TamaHome}/>
         <Route component={Error404}/>
       </Switch>
     </div>
