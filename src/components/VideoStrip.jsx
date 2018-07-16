@@ -50,12 +50,12 @@ function VideoStrip(props) {
       <Link to="/video" style={navLink}>
         <div className="flex">
           <figure>
-            <img src={props.video.thumbnail}/>
+            <img src={props.video.videoThumbnail}/>
           </figure>
           <div>
             <h1>{props.video.videoTitle}</h1>
             <p>{props.video.channelTitle} &bull; {props.video.viewCount} views</p>
-            <p>{props.video.description}</p>
+            <p>{props.video.videoDescription}</p>
           </div>
         </div>
       </Link>

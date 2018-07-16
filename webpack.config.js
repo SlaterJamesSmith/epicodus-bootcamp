@@ -2,6 +2,7 @@ const { resolve } = require('path');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
+const Dotenv = require('dotenv-webpack');
 
 module.exports = {
 
@@ -36,7 +37,8 @@ module.exports = {
     new CleanWebpackPlugin(['build']),
     new HtmlWebpackPlugin({
       template: './src/index.html'
-    })
+    }),
+    new Dotenv()
   ],
 
   module: {

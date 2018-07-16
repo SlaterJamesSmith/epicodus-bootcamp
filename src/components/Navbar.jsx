@@ -1,9 +1,10 @@
 import React from 'react';
 import NavbarBtn from './buttons/NavbarBtn';
 import SearchBar from './SearchBar';
+import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 
-function Navbar() {
+function Navbar(props) {
   const navLink = {
     color: 'red',
     textDecoration: 'none'
@@ -95,7 +96,7 @@ function Navbar() {
         <li className="logo-link"><Link to="/" style={navLink}><span>Y</span>o<span>uT</span>ube</Link></li>
       </ul>
       <div className="search-bar">
-        <SearchBar/>
+        <SearchBar onVideoSearch={props.onVideoSearch} />
       </div>
       <ul>
         <li className="collapsible"><NavbarBtn type="video"/></li>
@@ -106,5 +107,9 @@ function Navbar() {
     </nav>
   );
 }
+
+Navbar.propTypes = {
+  onVideoSearch: PropTypes.func
+};
 
 export default Navbar;

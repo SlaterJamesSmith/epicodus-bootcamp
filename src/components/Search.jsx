@@ -15,8 +15,8 @@ function Search(props) {
           }
         `}
       </style>
-      {Object.keys(props.videoList).map(videoId => {
-        let video = props.videoList[videoId];
+      {Object.keys(props.videoSearchResults).map(videoId => {
+        let video = props.videoSearchResults[videoId];
         return (
           <VideoStrip
             videoId={videoId}
@@ -32,7 +32,7 @@ function Search(props) {
 }
 
 Search.propTypes = {
-  videoList: PropTypes.object.isRequired,
+  videoSearchResults: PropTypes.object,
   onVideoSelection: PropTypes.func.isRequired,
   currentRoute: PropTypes.string.isRequired
 };
