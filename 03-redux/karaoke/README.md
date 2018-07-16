@@ -10,19 +10,32 @@ A simple practice project using Redux to cycle through song lyric lines.
 
 ## Setup/Installation Requirements
 
-### I. Node & NPM Installs
+### I. Musixmatch API Key
+
+1. Apply for [Musixmatch](https://developer.musixmatch.com/) API key.
+
+2. Save API key for Part III Project Setup.
+
+### II. Node & NPM Installs
 
 1. Install Node.js on local machine.
 
 2. Install Jest globally: `npm install jest -g`
 
-### II. Project Setup
+### III. Project Setup
 
 1. Clone repository and navigate to `03-redux/karaoke`.
 
 2. Run `npm install` to load required packages.
 
-### III. View/Build Project
+3. Create new **.env** file.
+
+4. In **.env**, insert template code line from below and update with API key:
+```
+exports.apiKey = ""
+```
+
+### IV. View/Build Project
 
 - Development Mode: `npm start`
 
@@ -39,6 +52,7 @@ None.
 - JavaScript
 - React
 - Redux
+- Redux-Thunk
 - Jest
 - Babel
 - Webpack
