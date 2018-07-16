@@ -7,17 +7,13 @@ import { Switch, Route } from 'react-router-dom';
 
 function App() {
   return(
-    <div>
-      <style jsx global>
+    <div className="wrapper">
+      <style jsx>
         {`
-          body {
-            margin: 0;
-            padding: 0;
-            font-family: sans-serif;
-          }
-
-          h1 {
-            color: #08f;
+          .wrapper {
+            min-height: 100%;
+            padding: 40px;
+            position: relative;
           }
         `}
       </style>
