@@ -1,18 +1,20 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 
-function Error404(props) {
+function Error404() {
   return (
-    <div>
-      <p><strong>The page "{props.location.pathname}" does not exist.</strong></p>
-      <p>Return <Link to="/">home</Link>.</p>
-    </div>
+    <section>
+      <style jsx>
+        {`
+          h2, p {
+            text-align: center;
+          }
+        `}
+      </style>
+      <h2>Where do you think <em>you're</em> going?</h2>
+      <p>Your <Link to="/"><strong>Tamagotchi</strong></Link> needs you!</p>
+    </section>
   );
 }
-
-Error404.propTypes = {
-  location: PropTypes.object
-};
 
 export default Error404;

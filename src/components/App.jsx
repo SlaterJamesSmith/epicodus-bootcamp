@@ -12,7 +12,7 @@ function App() {
         {`
           .wrapper {
             min-height: 100%;
-            padding: 40px;
+            padding: 80px 40px 40px;
             position: relative;
             display: flex;
             align-items: center;
@@ -23,7 +23,7 @@ function App() {
       <Nav/>
       <Switch>
         <Route exact path='/' component={Home}/>
-        <Route exact path='/tamagotchi' component={TamaHome}/>
+        <Route path='/tamagotchi' component={TamaHome}/>
         <Route component={Error404}/>
       </Switch>
     </div>
