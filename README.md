@@ -10,7 +10,7 @@
 
 ### III. [Redux](03-redux)
 
-### IV. Advanced Topics
+### IV. [Advanced Topics](04-advanced-topics)
 
 ## Templates
 
