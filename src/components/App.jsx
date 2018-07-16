@@ -14,6 +14,9 @@ function App() {
             min-height: 100%;
             padding: 40px;
             position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
           }
         `}
       </style>

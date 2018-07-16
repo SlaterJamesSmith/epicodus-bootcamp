@@ -2,7 +2,30 @@ import React from 'react';
 
 function Home() {
   return (
-    <h2>Home Works!</h2>
+    <section>
+      <style jsx>
+        {`
+          h1, p {
+            margin: 0;
+            text-align: center;
+            text-transform: uppercase;
+            word-break: break-all;
+          }
+
+          h1 {
+            color: magenta;
+            font-size: 3rem;
+          }
+
+          p {
+            margin-bottom: 10px;
+            font-weight: bold;
+          }
+        `}
+      </style>
+      <p>Welome to</p>
+      <h1>Super<br/>Tamagotchi</h1>
+    </section>
   );
 }
 
