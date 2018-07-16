@@ -34,6 +34,20 @@ describe('Karaoke App', () => {
       expect(lyricChangeReducer(initialState.songsById, action)[action.songId]).toEqual(newStateEntry);
     });
 
+    it('Should update state on receive song', () => {
+      const action = actions.receiveSong('Song Title', 'Artist Name', 0, ['lyric line 1', 'lyric line 2']);
+      const newObject = {
+        isFetching: false,
+        title: action.title,
+        artist: action.artist,
+        songId: action.songId,
+        receivedAt: action.receivedAt,
+        songArray: action.songArray,
+        arrayPosition: 0
+      };
+      expect(lyricChangeReducer(initialState.songsById, action)[action.songId]).toEqual(newObject);
+    });
+
   });
 
   describe('songChangeReducer', () => {
