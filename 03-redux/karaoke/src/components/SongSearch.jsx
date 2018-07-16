@@ -1,6 +1,9 @@
 import React from 'react';
+import { fetchSongId } from './../actions';
+import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
 
-function SongSearch() {
+function SongSearch({ dispatch }) {
   let input;
 
   return (
@@ -9,6 +12,7 @@ function SongSearch() {
       if (!input.value.trim()) {
         return;
       }
+      dispatch(fetchSongId(input.value.trim()));
       input.value = null;
     }}>
       <style jsx>
@@ -31,6 +35,7 @@ function SongSearch() {
             color: #fff;
             background-color: #ff5a00;
             font-weight: bold;
+            cursor: pointer;
           }
         `}
       </style>
@@ -40,4 +45,8 @@ function SongSearch() {
   );
 }
 
-export default SongSearch;
+SongSearch.propTypes = {
+  dispatch: PropTypes.func
+};
+
+export default connect()(SongSearch);
