@@ -13,7 +13,7 @@ function Home() {
           }
 
           h1 {
-            color: magenta;
+            color: #f09;
             font-size: 3rem;
           }
 

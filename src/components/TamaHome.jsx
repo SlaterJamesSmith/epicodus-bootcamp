@@ -19,13 +19,15 @@ function TamaHome() {
             position: absolute;
             top: 0;
             right: 10%;
+            border-radius: 5px;
             background-color: #fdf;
           }
 
           .roof {
             border-left: 250px solid transparent;
             border-right: 250px solid transparent;
-            border-bottom: 100px solid #fdf;
+            border-bottom: 100px solid #f09;
+            z-index: 5;
           }
 
           .walls {

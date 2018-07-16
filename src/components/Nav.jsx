@@ -11,7 +11,7 @@ function Nav() {
             position: absolute;
             top: 0;
             left: 0;
-            border-bottom: 1px solid magenta;
+            border-bottom: 1px solid #f09;
           }
 
           ul {
