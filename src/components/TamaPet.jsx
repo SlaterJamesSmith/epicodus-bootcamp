@@ -2,7 +2,18 @@ import React from 'react';
 
 function TamaPet() {
   return (
-    <h4>TamaPet Works!</h4>
+    <section className="tama-root">
+      <style jsx>
+        {`
+          .tama-root {
+            height: 100px;
+            width: 100px;
+            border-radius: 100%;
+            background-color: #333;
+          }
+        `}
+      </style>
+    </section>
   );
 }
 

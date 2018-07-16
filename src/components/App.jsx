@@ -12,7 +12,7 @@ function App() {
         {`
           .wrapper {
             min-height: 100%;
-            padding: 80px 40px 40px;
+            padding: 80px 40px;
             position: relative;
             display: flex;
             align-items: center;
