@@ -9,6 +9,7 @@ import Footer from './Footer';
 import { fetchYouTubeVideo, fetchYouTubeVideoIds } from './../actions';
 import { Switch, Route } from 'react-router-dom';
 import masterChannelList from '../masterChannelList';
+import initialStateSearchResults from '../initialStateSearchResults';
 
 class App extends React.Component {
   constructor(props) {
@@ -25,7 +26,10 @@ class App extends React.Component {
   }
 
   componentDidMount() {
-    this.setState({masterChannelList: masterChannelList});
+    this.setState({
+      masterChannelList: masterChannelList,
+      videoSearchResults: initialStateSearchResults
+    });
   }
 
   async handleVideoSearch(query) {
