@@ -9,30 +9,23 @@ import Footer from './Footer';
 import { fetchYouTubeVideo, fetchYouTubeVideoIds } from './../actions';
 import { Switch, Route } from 'react-router-dom';
 import masterChannelList from '../masterChannelList';
-import masterVideoList from '../masterVideoList';
 
 class App extends React.Component {
   constructor(props) {
     super(props);
     this.state= {
       masterChannelList: {},
-      masterVideoList: {},
+      videoSearchResults: {},
       selectedVideoId: null,
       selectedChannelId: null,
-      selectorOrigin: null,
-      videoSearchResults: {}
+      selectorOrigin: null
     };
     this.handleVideoSearch = this.handleVideoSearch.bind(this);
     this.handleVideoSelection = this.handleVideoSelection.bind(this);
   }
 
   componentDidMount() {
-    let newMasterChannelList = Object.assign({}, masterChannelList);
-    let newMasterVideoList = Object.assign({}, masterVideoList);
-    this.setState({
-      masterChannelList: newMasterChannelList,
-      masterVideoList: newMasterVideoList
-    });
+    this.setState({masterChannelList: masterChannelList});
   }
 
   async handleVideoSearch(query) {
@@ -104,7 +97,7 @@ class App extends React.Component {
           <Route path="/video" render={(props) =>
             <VideoPlayer
               channelList={this.state.masterChannelList}
-              videoList={this.state.masterVideoList}
+              videoSearchResults={this.state.videoSearchResults}
               selectedVideoId={this.state.selectedVideoId}
               selectedChannelId={this.state.selectedChannelId}
               selectorOrigin={this.state.selectorOrigin}

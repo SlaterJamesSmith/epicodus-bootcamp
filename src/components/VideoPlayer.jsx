@@ -32,7 +32,7 @@ function VideoPlayer(props) {
       </section>
     );
   } else if (props.selectorOrigin === '/search') {
-    videoContent = props.videoList[props.selectedVideoId];
+    videoContent = props.videoSearchResults[props.selectedVideoId];
     let embedUrl = 'https://www.youtube.com/embed/' + props.selectedVideoId;
     return (
       <section>
@@ -67,7 +67,7 @@ function VideoPlayer(props) {
 
 VideoPlayer.propTypes = {
   channelList: PropTypes.object.isRequired,
-  videoList: PropTypes.object.isRequired,
+  videoSearchResults: PropTypes.object.isRequired,
   selectedVideoId: PropTypes.string,
   selectorOrigin: PropTypes.string,
   currentRoute: PropTypes.string.isRequired
