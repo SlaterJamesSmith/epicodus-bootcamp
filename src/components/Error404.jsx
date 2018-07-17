@@ -3,11 +3,6 @@ import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 
 function Error404(props) {
-  const navLink = {
-    color: 'red',
-    textDecoration: 'none'
-  };
-
   return (
     <div>
       <style jsx>
@@ -28,7 +23,7 @@ function Error404(props) {
         `}
       </style>
       <h2><strong>No content found at<br/>{props.currentRoute}.</strong></h2>
-      <p>Return to <Link to="/" style={navLink}>YouTube (Rebuild)</Link>.</p>
+      <p>Return to <Link to="/">YouTube (Rebuild)</Link>.</p>
     </div>
   );
 }

@@ -60,17 +60,6 @@ class App extends React.Component {
               padding: 55px 0 75px;
             }
 
-            nav {
-              position: fixed;
-              top: 0;
-              z-index: 100;
-            }
-
-            footer {
-              position: absolute;
-              bottom: 0;
-            }
-
             @media screen and (max-width: 524px) {
               #app-container {
                 padding-bottom: 55px;
