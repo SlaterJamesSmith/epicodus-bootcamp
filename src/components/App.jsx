@@ -42,7 +42,7 @@ class App extends React.Component {
       let newVideoEntry = await fetchYouTubeVideo(video.id.videoId);
       newVideoSearchResults = Object.assign(newVideoSearchResults, newVideoEntry);
     });
-    this.setState({videoSearchResults: newVideoSearchResults});
+    setTimeout(() => this.setState({videoSearchResults: newVideoSearchResults}), 100);
   }
 
   handleVideoSelection(videoId, channelId, currentRoute) {

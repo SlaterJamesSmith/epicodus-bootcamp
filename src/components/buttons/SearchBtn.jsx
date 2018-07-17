@@ -18,6 +18,7 @@ function SearchBtn() {
             border-top-right-radius: 3px;
             border-bottom-right-radius: 3px;
             cursor: pointer;
+            outline: none;
           }
 
           svg {
