@@ -28,8 +28,8 @@ function SearchBar(props) {
           }
         `}
       </style>
-      <input type="text" placeholder="search" ref={ input => _query = input}/>
-      <Link to="/search" onClick={() => {props.onVideoSearch(_query.value)}}><SearchBtn/></Link>
+      <input type="text" placeholder="search" ref={ input => _query = input }/>
+      <Link to="/search" onClick={() => props.onVideoSearch(_query.value)}><SearchBtn/></Link>
     </form>
   );
 }
