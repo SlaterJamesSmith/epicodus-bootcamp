@@ -6,6 +6,7 @@ import SignIn from './SignIn';
 import VideoPlayer from './VideoPlayer';
 import Search from './Search';
 import Footer from './Footer';
+import { fetchYouTubeVideo, fetchYouTubeVideoIds } from './../actions';
 import { Switch, Route } from 'react-router-dom';
 import masterChannelList from '../masterChannelList';
 import masterVideoList from '../masterVideoList';
@@ -34,36 +35,14 @@ class App extends React.Component {
     });
   }
 
-  handleVideoSearch(query) {
-    let newVideoSearchResults = Object.assign({}, this.state.videoSearchResults); fetch(`https://www.googleapis.com/youtube/v3/search?key=${process.env.exports.apiKey}&type=video&q=${query}&relevanceLanguage=en_US&maxResults=10&part=id`)
-      .then(response => response.json())
-      .then(response => {
-        response.items.forEach(video => {
-          fetch(`https://www.googleapis.com/youtube/v3/videos?key=${process.env.exports.apiKey}&id=${video.id.videoId}&part=contentDetails,snippet,statistics`)
-            .then(response => response.json())
-            .then(response => {
-              let videoData = response.items[0];
-              let newVideoEntry = {
-                [videoData.id]: {
-                  videoId: videoData.id,
-                  videoTitle: videoData.snippet.localized.title,
-                  videoDescription: videoData.snippet.localized.description.slice(0, 125) + ' ...',
-                  channelId: videoData.snippet.channelId,
-                  channelTitle: videoData.snippet.channelTitle,
-                  videoThumbnail: videoData.snippet.thumbnails.medium.url,
-                  duration: videoData.contentDetails.duration,
-                  publishTime: videoData.snippet.publishedAt,
-                  viewCount: videoData.statistics.viewCount,
-                  likeCount: videoData.statistics.likeCount,
-                  dislikeCount: videoData.statistics.dislikeCount
-                }
-              };
-              newVideoSearchResults = Object.assign(newVideoSearchResults, newVideoEntry);
-            });
-        });
-      })
-      .then(this.setState({videoSearchResults: newVideoSearchResults}))
-      .then(console.log(this.state.videoSearchResults));
+  async handleVideoSearch(query) {
+    let newVideoSearchResults = {};
+    let videoIds = await fetchYouTubeVideoIds(query);
+    videoIds.forEach(async video => {
+      let newVideoEntry = await fetchYouTubeVideo(video.id.videoId);
+      newVideoSearchResults = Object.assign(newVideoSearchResults, newVideoEntry);
+    });
+    this.setState({videoSearchResults: newVideoSearchResults});
   }
 
   handleVideoSelection(videoId, channelId, currentRoute) {
