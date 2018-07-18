@@ -1,5 +1,5 @@
 import React from 'react';
-import TamaPet from './TamaPet';
+import Tamagotchi from './tamagotchi/Tamagotchi';
 
 function TamaRoom() {
   return (
@@ -23,7 +23,7 @@ function TamaRoom() {
         `}
       </style>
       <div className="tama-room-int">
-        <TamaPet/>
+        <Tamagotchi/>
       </div>
     </section>
   );
