@@ -1,5 +1,5 @@
 import React from 'react';
-import TamaHeadJoint from './TamaHeadJoint';
+import TamaHeadNode from './TamaHeadNode';
 
 function Tamagotchi() {
   return (
@@ -9,11 +9,10 @@ function Tamagotchi() {
           .tamagotchi {
             height: 0;
             width: 0;
-            box-shadow: 0 0 0 50px #aaa;
           }
         `}
       </style>
-      <TamaHeadJoint/>
+      <TamaHeadNode/>
     </section>
   );
 }
