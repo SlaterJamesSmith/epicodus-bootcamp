@@ -24,7 +24,7 @@ function Tamagotchi() {
           }
 
           .animate-idle {
-            animation: bounce 1.5s linear infinite;
+            animation: bounce 1.6s linear infinite;
           }
         `}
       </style>
