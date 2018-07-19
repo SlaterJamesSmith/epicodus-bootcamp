@@ -18,17 +18,17 @@ function TamaEye() {
           }
 
           .pupil {
-            height: 24px;
-            width: 24px;
+            height: 22px;
+            width: 22px;
             border-radius: 100%;
             background-color: #000;
           }
 
           .eye-light {
-            height: 12px;
-            width: 12px;
+            height: 10px;
+            width: 10px;
             position: absolute;
-            top: 0;
+            top: 2px;
             border-radius: 100%;
             background-color: #fff;
           }
