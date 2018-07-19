@@ -2,7 +2,7 @@ import React from 'react';
 import TamaEyeLeftNode from './TamaEyeLeftNode';
 import TamaEyeRightNode from './TamaEyeRightNode';
 
-function TamaEyeNode() {
+function TamaEyePairNode() {
   return (
     <div className="tama-eye-node">
       <style jsx>
@@ -23,4 +23,4 @@ function TamaEyeNode() {
   );
 }
 
-export default TamaEyeNode;
+export default TamaEyePairNode;

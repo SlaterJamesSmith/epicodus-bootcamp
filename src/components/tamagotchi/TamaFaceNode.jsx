@@ -1,6 +1,6 @@
 import React from 'react';
 import TamaMouth from './TamaMouth';
-import TamaEyeNode from './TamaEyeNode';
+import TamaEyePairNode from './TamaEyePairNode';
 
 function TamaFaceNode() {
   return (
@@ -16,7 +16,7 @@ function TamaFaceNode() {
           }
         `}
       </style>
-      <TamaEyeNode/>
+      <TamaEyePairNode/>
       <TamaMouth/>
     </div>
   );
