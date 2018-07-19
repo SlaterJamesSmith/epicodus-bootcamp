@@ -13,18 +13,24 @@ function Tamagotchi() {
 
           @keyframes bounce {
             0% {transform: translate(-50px, 100px);}
-            20% {transform: translate(-10px, 5px);}
+
+            5% {transform: translate(-50px, 100px);}
+            21% {transform: translate(-10px, 5px);}
             25% {transform: translate(0, 0);}
-            30% {transform: translate(10px, 5px);}
-            50% {transform: translate(50px, 100px);}
-            70% {transform: translate(10px, 5px);}
+            29% {transform: translate(10px, 5px);}
+            45% {transform: translate(50px, 100px);}
+
+            55% {transform: translate(50px, 100px);}
+            71% {transform: translate(10px, 5px);}
             75% {transform: translate(0, 0);}
-            80% {transform: translate(-10px, 5px);}
+            79% {transform: translate(-10px, 5px);}
+            95% {transform: translate(-50px, 100px);}
+
             100% {transform: translate(-50px, 100px);}
           }
 
           .animate-idle {
-            animation: bounce 1.6s linear infinite;
+            animation: bounce 2s linear infinite;
           }
         `}
       </style>

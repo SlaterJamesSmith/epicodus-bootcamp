@@ -15,17 +15,15 @@ function TamaMouth() {
           }
 
           @keyframes pucker {
-            0% {width: 20px;}
-            2% {width: 20px;}
-            45% {width: 12px;}
-            50% {width: 10px;}
-            55% {width: 12px;}
-            98% {width: 20px;}
-            100% {width: 20px;}
+            0% {width: 10px;}
+            20% {width: 18px;}
+            50% {width: 20px;}
+            80% {width: 18px;}
+            100% {width: 10px;}
           }
 
           .animate-idle {
-            animation: pucker 0.8s linear infinite;
+            animation: pucker 1s linear infinite;
           }
         `}
       </style>

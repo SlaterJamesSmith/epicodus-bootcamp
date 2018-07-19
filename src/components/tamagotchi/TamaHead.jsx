@@ -15,31 +15,17 @@ function TamaHead() {
             transition: transform 1s;
           }
 
-          @keyframes volume-displace {
-            0% {
-              height: 90px;
-              width: 110px;
-            }
-            10% {
-              height: 95px;
-              width: 105px;
-            }
-            50% {
-              height: 100px;
-              width: 100px;
-            }
-            90% {
-              height: 95px;
-              width: 105px;
-            }
-            100% {
-              height: 90px;
-              width: 110px;
-            }
+          @keyframes bounce-volume-displace {
+            0% {height: 90px; width: 115px;}
+            5% {height: 92px; width: 113px;}
+            20% {height: 100px; width: 100px;}
+            80% {height: 100px; width: 100px;}
+            95% {height: 92px; width: 113px;}
+            100% {height: 90px; width: 115px;}
           }
 
           .animate-idle {
-            animation: volume-displace 0.8s linear infinite;
+            animation: bounce-volume-displace 1s linear infinite;
           }
         `}
       </style>
