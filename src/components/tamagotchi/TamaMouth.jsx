@@ -10,7 +10,17 @@ function TamaMouth() {
             width: 20px;
             position: absolute;
             bottom: 20px;
+            display: flex;
+            justify-content: center;
             border-radius: 4px;
+            background-color: #704;
+          }
+
+          .tooth {
+            height: 4px;
+            width: 6px;
+            border-bottom-left-radius: 2px;
+            border-bottom-right-radius: 2px;
             background-color: #fff;
           }
 
@@ -40,6 +50,7 @@ function TamaMouth() {
           }
         `}
       </style>
+      <div className="tooth"></div>
     </div>
   );
 }
