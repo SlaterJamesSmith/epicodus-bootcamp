@@ -18,8 +18,8 @@ function TamaEye() {
           }
 
           .pupil {
-            height: 22px;
-            width: 22px;
+            height: 24px;
+            width: 24px;
             border-radius: 100%;
             background-color: #000;
           }
@@ -32,9 +32,19 @@ function TamaEye() {
             border-radius: 100%;
             background-color: #fff;
           }
+
+          @keyframes eye-blink {
+            48% {transform: scaleY(1);}
+            50% {transform: scaleY(0.1);}
+            52% {transform: scaleY(1);}
+          }
+
+          .pupil.animate-idle {
+            animation: eye-blink 5s infinite;
+          }
         `}
       </style>
-      <div className="pupil"></div>
+      <div className="pupil animate-idle"></div>
       <div className="eye-light"></div>
     </div>
   );
