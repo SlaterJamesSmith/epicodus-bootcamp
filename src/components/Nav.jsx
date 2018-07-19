@@ -12,6 +12,8 @@ function Nav() {
             top: 0;
             left: 0;
             border-bottom: 1px solid #f09;
+            box-shadow: 0 2px 5px #0003;
+            background-color: #fff;
           }
 
           ul {

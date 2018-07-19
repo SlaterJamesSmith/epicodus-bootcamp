@@ -7,7 +7,7 @@ function TamaRoom() {
       <style jsx>
         {`
           .tama-room-ext {
-            border: 4px dashed #aaa;
+            border: 4px dashed #f09;
             border-radius: 5px;
           }
 

@@ -20,7 +20,7 @@ function TamaHome() {
             top: 0;
             right: 10%;
             border-radius: 5px;
-            background-color: #fdf;
+            background-color: #fce;
           }
 
           .roof {
@@ -36,7 +36,7 @@ function TamaHome() {
             padding: 15px;
             border-bottom-left-radius: 10px;
             border-bottom-right-radius: 10px;
-            background-color: #fdf;
+            background-color: #fce;
           }
         `}
       </style>
