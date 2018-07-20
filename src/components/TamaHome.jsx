@@ -1,52 +1,65 @@
 import React from 'react';
 import TamaRoom from './TamaRoom';
 
-function TamaHome() {
-  return (
-    <section id="tama-home">
-      <style jsx>
-        {`
-          #tama-home {
-            position: relative;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-          }
+class TamaHome extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      petStatus: {
+        foodLevel: 100,
+        energyLevel: 100,
+        playLevel: 100
+      }
+    };
+  }
 
-          .chimney {
-            height: 100px;
-            width: 50px;
-            position: absolute;
-            top: 0;
-            right: 10%;
-            border-radius: 5px;
-            background-color: #fce;
-          }
+  render() {
+    return (
+      <section id="tama-home">
+        <style jsx>
+          {`
+            #tama-home {
+              position: relative;
+              display: flex;
+              flex-direction: column;
+              align-items: center;
+            }
 
-          .roof {
-            border-left: 250px solid transparent;
-            border-right: 250px solid transparent;
-            border-bottom: 100px solid #f09;
-            z-index: 5;
-          }
+            .chimney {
+              height: 100px;
+              width: 50px;
+              position: absolute;
+              top: 0;
+              right: 10%;
+              border-radius: 5px;
+              background-color: #fce;
+            }
 
-          .walls {
-            width: 100%;
-            height: 500px;
-            padding: 15px;
-            border-bottom-left-radius: 10px;
-            border-bottom-right-radius: 10px;
-            background-color: #fce;
-          }
-        `}
-      </style>
-      <div className="chimney"></div>
-      <div className="roof"></div>
-      <div className="walls">
-        <TamaRoom/>
-      </div>
-    </section>
-  );
+            .roof {
+              border-left: 250px solid transparent;
+              border-right: 250px solid transparent;
+              border-bottom: 100px solid #f09;
+              z-index: 5;
+            }
+
+            .walls {
+              width: 100%;
+              height: 500px;
+              padding: 15px;
+              border-bottom-left-radius: 10px;
+              border-bottom-right-radius: 10px;
+              background-color: #fce;
+            }
+          `}
+        </style>
+        <div className="chimney"></div>
+        <div className="roof"></div>
+        <div className="walls">
+          <TamaRoom petStatus={this.state.petStatus} />
+        </div>
+      </section>
+    );
+  }
 }
 
 export default TamaHome;

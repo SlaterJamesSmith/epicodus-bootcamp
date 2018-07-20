@@ -1,7 +1,8 @@
 import React from 'react';
 import Tamagotchi from './tamagotchi/Tamagotchi';
+import PropTypes from 'prop-types';
 
-function TamaRoom() {
+function TamaRoom(props) {
   return (
     <section className="tama-room-ext">
       <style jsx>
@@ -23,10 +24,14 @@ function TamaRoom() {
         `}
       </style>
       <div className="tama-room-int">
-        <Tamagotchi/>
+        <Tamagotchi petStatus={props.petStatus} />
       </div>
     </section>
   );
 }
+
+TamaRoom.propTypes = {
+  petStatus: PropTypes.object.isRequired
+};
 
 export default TamaRoom;

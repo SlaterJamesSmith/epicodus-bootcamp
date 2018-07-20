@@ -1,7 +1,8 @@
 import React from 'react';
 import TamaHeadNode from './TamaHeadNode';
+import PropTypes from 'prop-types';
 
-function Tamagotchi() {
+function Tamagotchi(props) {
   return (
     <section className="tamagotchi animate-idle">
       <style jsx>
@@ -38,5 +39,9 @@ function Tamagotchi() {
     </section>
   );
 }
+
+Tamagotchi.propTypes = {
+  petStatus: PropTypes.object.isRequired
+};
 
 export default Tamagotchi;
