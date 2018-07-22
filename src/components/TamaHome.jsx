@@ -12,7 +12,9 @@ class TamaHome extends React.Component {
         energyLevel: 100,
         playLevel: 100
       },
-      decay: 3
+      petDebuff: {
+        statDecayValue: -3
+      }
     };
   }
 
@@ -25,15 +27,15 @@ class TamaHome extends React.Component {
   }
 
   tamaStateUpdater() {
-    this.calcPetStatusLevels(this.state.petStatus);
+    this.calcPetStatusDecay(this.state.petStatus, this.state.petDebuff.statDecayValue);
   }
 
-  calcPetStatusLevels(status) {
+  calcPetStatusDecay(status, decay) {
     this.setState({
       petStatus: {
-        foodLevel: (status.foodLevel - this.state.decay > 0) ? status.foodLevel - this.state.decay : 0,
-        energyLevel: (status.energyLevel - this.state.decay > 0) ? status.energyLevel - this.state.decay : 0,
-        playLevel: (status.playLevel - this.state.decay > 0) ? status.playLevel - this.state.decay : 0
+        foodLevel: (status.foodLevel + decay > 0) ? status.foodLevel + decay : 0,
+        energyLevel: (status.energyLevel + decay > 0) ? status.energyLevel + decay : 0,
+        playLevel: (status.playLevel + decay > 0) ? status.playLevel + decay : 0
       }
     });
     if (status.foodLevel + status.energyLevel + status.playLevel <= 0) {
