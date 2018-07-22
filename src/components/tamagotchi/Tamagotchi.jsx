@@ -35,7 +35,7 @@ function Tamagotchi(props) {
           }
         `}
       </style>
-      <TamaHeadNode/>
+      <TamaHeadNode petStatus={props.petStatus}/>
     </section>
   );
 }

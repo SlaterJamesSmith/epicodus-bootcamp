@@ -1,8 +1,9 @@
 import React from 'react';
 import TamaHead from './TamaHead';
 import TamaFaceNode from './TamaFaceNode';
+import PropTypes from 'prop-types';
 
-function TamaHeadNode() {
+function TamaHeadNode(props) {
   return (
     <div className="tama-head-node animate-idle">
       <style jsx>
@@ -27,9 +28,13 @@ function TamaHeadNode() {
         `}
       </style>
       <TamaHead/>
-      <TamaFaceNode/>
+      <TamaFaceNode petStatus={props.petStatus}/>
     </div>
   );
 }
+
+TamaHeadNode.propTypes = {
+  petStatus: PropTypes.object.isRequired
+};
 
 export default TamaHeadNode;

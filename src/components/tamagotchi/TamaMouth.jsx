@@ -1,6 +1,7 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
-function TamaMouth() {
+function TamaMouth(props) {
   return (
     <div className="tama-mouth animate-idle">
       <style jsx>
@@ -54,5 +55,9 @@ function TamaMouth() {
     </div>
   );
 }
+
+TamaMouth.propTypes = {
+  petStatus: PropTypes.object.isRequired
+};
 
 export default TamaMouth;

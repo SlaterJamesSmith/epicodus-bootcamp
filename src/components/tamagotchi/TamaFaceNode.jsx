@@ -1,8 +1,9 @@
 import React from 'react';
 import TamaMouth from './TamaMouth';
 import TamaEyePairNode from './TamaEyePairNode';
+import PropTypes from 'prop-types';
 
-function TamaFaceNode() {
+function TamaFaceNode(props) {
   return (
     <div className="tama-face-node">
       <style jsx>
@@ -17,9 +18,13 @@ function TamaFaceNode() {
         `}
       </style>
       <TamaEyePairNode/>
-      <TamaMouth/>
+      <TamaMouth petStatus={props.petStatus}/>
     </div>
   );
 }
+
+TamaFaceNode.propTypes = {
+  petStatus: PropTypes.object.isRequired
+};
 
 export default TamaFaceNode;
