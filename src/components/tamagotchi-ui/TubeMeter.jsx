@@ -41,7 +41,7 @@ function TubeMeter(props) {
             position: absolute;
             left: 0;
             z-index: -10;
-            transition: width 1s, background-color 1s;
+            transition: width 1s, background-color 1s, border 1s;
           }
 
           h3 {

@@ -3,6 +3,9 @@ import PropTypes from 'prop-types';
 
 function CircularMeter(props) {
   const statusColor = meterFillColor(props.meterValue);
+  const actionable = {
+    cursor: `${props.onAction ? 'pointer' : 'default'}`
+  };
   const meterLevel = {
     height: `${props.meterValue / props.maxValue * 100}%`,
     borderBottom: `2px solid ${statusColor}`,
@@ -20,7 +23,7 @@ function CircularMeter(props) {
   }
 
   return (
-    <div className="meter" onClick={() => props.onAction(props.actionTarget)}>
+    <div className="meter" style={actionable} onClick={props.onAction ? () => props.onAction(props.actionTarget) : () => {}}>
       <style jsx>
         {`
           .meter {
@@ -41,7 +44,7 @@ function CircularMeter(props) {
             position: absolute;
             bottom: 0;
             z-index: -10;
-            transition: height 1s, background-color 1s;
+            transition: height 1s, background-color 1s, border 1s;
           }
 
           h3 {
