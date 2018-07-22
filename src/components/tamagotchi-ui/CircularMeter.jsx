@@ -10,9 +10,9 @@ function CircularMeter(props) {
   };
 
   function meterFillColor(meterValue) {
-    if (meterValue > 60) {
+    if (meterValue > props.maxValue * 0.6) {
       return '#8f9';
-    } else if (meterValue > 25) {
+    } else if (meterValue > props.maxValue * 0.25) {
       return '#fd0';
     } else {
       return '#f00';
