@@ -2,10 +2,11 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 function CircularMeter(props) {
+  const statusColor = meterFillColor(props.meterValue);
   const meterLevel = {
-    height: `${props.meterValue / 100 * 100}%`,
-    borderBottom: `2px solid ${meterFillColor(props.meterValue)}`,
-    backgroundColor: `${meterFillColor(props.meterValue)}`
+    height: `${props.meterValue / props.maxValue * 100}%`,
+    borderBottom: `2px solid ${statusColor}`,
+    backgroundColor: `${statusColor}`
   };
 
   function meterFillColor(meterValue) {
@@ -56,7 +57,8 @@ function CircularMeter(props) {
 
 CircularMeter.propTypes = {
   meterType: PropTypes.string.isRequired,
-  meterValue: PropTypes.number.isRequired
+  meterValue: PropTypes.number.isRequired,
+  maxValue: PropTypes.number.isRequired
 };
 
 export default CircularMeter;

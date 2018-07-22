@@ -92,14 +92,17 @@ class TamaHome extends React.Component {
           <CircularMeter
             meterType="F"
             meterValue={this.state.petStatus.foodLevel}
+            maxValue={100}
           />
           <CircularMeter
             meterType="E"
             meterValue={this.state.petStatus.energyLevel}
+            maxValue={100}
           />
           <CircularMeter
             meterType="P"
             meterValue={this.state.petStatus.playLevel}
+            maxValue={100}
           />
         </section>
       </section>
