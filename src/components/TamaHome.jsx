@@ -16,10 +16,11 @@ class TamaHome extends React.Component {
         statDecayValue: -3
       }
     };
+    this.handleBuffPetStatus = this.handleBuffPetStatus.bind(this);
   }
 
   componentDidMount() {
-    this.tamaClock = setInterval(() => this.tamaStateUpdater(), 1000);
+    this.tamaClock = setInterval(() => this.tamaStateUpdater(), 2000);
   }
 
   componentWillUnmount() {
@@ -41,6 +42,27 @@ class TamaHome extends React.Component {
     if (status.foodLevel + status.energyLevel + status.playLevel <= 0) {
       clearInterval(this.tamaClock);
     }
+  }
+
+  handleBuffPetStatus(stat) {
+    const status = this.state.petStatus;
+    let newFoodLevel = status.foodLevel;
+    let newEnergyLevel = status.energyLevel;
+    let newPlayLevel = status.playLevel;
+    if (stat === 'foodLevel') {
+      newFoodLevel = (status.foodLevel + 10 < 100) ? newFoodLevel += 10 : 100;
+    } else if (stat === 'energyLevel') {
+      newEnergyLevel = (status.energyLevel + 10 < 100) ? newEnergyLevel += 10 : 100;
+    } else if (stat === 'playLevel') {
+      newPlayLevel = (status.playLevel + 10 < 100) ? newPlayLevel += 10 : 100;
+    }
+    this.setState({
+      petStatus: {
+        foodLevel: newFoodLevel,
+        energyLevel: newEnergyLevel,
+        playLevel: newPlayLevel
+      }
+    });
   }
 
   render() {
@@ -102,16 +124,22 @@ class TamaHome extends React.Component {
             meterType="F"
             meterValue={this.state.petStatus.foodLevel}
             maxValue={100}
+            onAction={this.handleBuffPetStatus}
+            actionTarget="foodLevel"
           />
           <CircularMeter
             meterType="E"
             meterValue={this.state.petStatus.energyLevel}
             maxValue={100}
+            onAction={this.handleBuffPetStatus}
+            actionTarget="energyLevel"
           />
           <CircularMeter
             meterType="P"
             meterValue={this.state.petStatus.playLevel}
             maxValue={100}
+            onAction={this.handleBuffPetStatus}
+            actionTarget="playLevel"
           />
         </section>
       </section>
