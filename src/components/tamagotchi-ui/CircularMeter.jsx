@@ -1,20 +1,20 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-function StatusMeter(props) {
+function CircularMeter(props) {
   const meterLevel = {
-    height: `${props.statusValue / 100 * 50}px`,
-    borderBottom: `2px solid ${meterFillColor(props.statusValue)}`,
-    backgroundColor: `${meterFillColor(props.statusValue)}`
+    height: `${props.meterValue / 100 * 100}%`,
+    borderBottom: `2px solid ${meterFillColor(props.meterValue)}`,
+    backgroundColor: `${meterFillColor(props.meterValue)}`
   };
 
-  function meterFillColor(statusValue) {
-    if (statusValue > 60) {
-      return '#0f9';
-    } else if (statusValue > 25) {
-      return '#fe0';
+  function meterFillColor(meterValue) {
+    if (meterValue > 60) {
+      return '#8f9';
+    } else if (meterValue > 25) {
+      return '#fd0';
     } else {
-      return '#e00';
+      return '#f00';
     }
   }
 
@@ -23,20 +23,19 @@ function StatusMeter(props) {
       <style jsx>
         {`
           .meter {
-            height: 54px;
-            width: 54px;
+            height: 56px;
+            width: 56px;
             position: relative;
             display: flex;
             align-items: center;
             justify-content: center;
             margin: 10px;
-            border: 2px solid #f09;
+            border: 3px solid #888;
             border-radius: 100%;
             overflow: hidden;
           }
 
           .meter-fill {
-            height: 50px;
             width: 100%;
             position: absolute;
             bottom: 0;
@@ -50,14 +49,14 @@ function StatusMeter(props) {
         `}
       </style>
       <div className="meter-fill" style={meterLevel}></div>
-      <h3>{props.statusType}</h3>
+      <h3>{props.meterType}</h3>
     </div>
   );
 }
 
-StatusMeter.propTypes = {
-  statusType: PropTypes.string.isRequired,
-  statusValue: PropTypes.number.isRequired
+CircularMeter.propTypes = {
+  meterType: PropTypes.string.isRequired,
+  meterValue: PropTypes.number.isRequired
 };
 
-export default StatusMeter;
+export default CircularMeter;

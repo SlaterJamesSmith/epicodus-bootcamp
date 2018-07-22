@@ -1,6 +1,6 @@
 import React from 'react';
 import TamaRoom from './TamaRoom';
-import StatusMeter from './tamagotchi-ui/StatusMeter';
+import CircularMeter from './tamagotchi-ui/CircularMeter';
 
 class TamaHome extends React.Component {
   constructor(props) {
@@ -29,14 +29,13 @@ class TamaHome extends React.Component {
   calcPetStatusLevels(status) {
     this.setState({
       petStatus: {
-        foodLevel: (status.foodLevel > 0) ? status.foodLevel - 2 : 0,
-        energyLevel: (status.energyLevel > 0) ? status.energyLevel - 2 : 0,
-        playLevel: (status.playLevel > 0) ? status.playLevel - 2 : 0
+        foodLevel: (status.foodLevel > 0) ? status.foodLevel - 5 : 0,
+        energyLevel: (status.energyLevel > 0) ? status.energyLevel - 5 : 0,
+        playLevel: (status.playLevel > 0) ? status.playLevel - 5 : 0
       }
     });
     if (status.foodLevel + status.energyLevel + status.playLevel <= 0) {
       clearInterval(this.tamaClock);
-      alert('Tamagotchi Died');
     }
   }
 
@@ -90,17 +89,17 @@ class TamaHome extends React.Component {
           <TamaRoom petStatus={this.state.petStatus} />
         </div>
         <section className="status-meters">
-          <StatusMeter
-            statusType="F"
-            statusValue={this.state.petStatus.foodLevel}
+          <CircularMeter
+            meterType="F"
+            meterValue={this.state.petStatus.foodLevel}
           />
-          <StatusMeter
-            statusType="E"
-            statusValue={this.state.petStatus.energyLevel}
+          <CircularMeter
+            meterType="E"
+            meterValue={this.state.petStatus.energyLevel}
           />
-          <StatusMeter
-            statusType="P"
-            statusValue={this.state.petStatus.playLevel}
+          <CircularMeter
+            meterType="P"
+            meterValue={this.state.petStatus.playLevel}
           />
         </section>
       </section>
