@@ -13,7 +13,7 @@ class TamaHome extends React.Component {
         playLevel: 100
       },
       petDebuff: {
-        statDecayValue: -5
+        statDecayValue: -15
       },
       petBuff: {
         statBoostValue: 50
@@ -143,19 +143,19 @@ class TamaHome extends React.Component {
             maxValue={300}
           />
           <CircularMeter
-            meterType="F"
+            meterType="food"
             meterValue={this.state.petStatus.foodLevel}
             maxValue={100}
             onAction={this.handleFeedPet}
           />
           <CircularMeter
-            meterType="E"
+            meterType="energy"
             meterValue={this.state.petStatus.energyLevel}
             maxValue={100}
             onAction={this.handleEnergizePet}
           />
           <CircularMeter
-            meterType="P"
+            meterType="play"
             meterValue={this.state.petStatus.playLevel}
             maxValue={100}
             onAction={this.handlePlayWithPet}
