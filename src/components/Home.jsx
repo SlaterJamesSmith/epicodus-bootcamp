@@ -23,7 +23,7 @@ function Home() {
           }
         `}
       </style>
-      <p>Welome to</p>
+      <p>Welcome to</p>
       <h1>Super<br/>Tamagotchi</h1>
     </section>
   );
