@@ -11,7 +11,6 @@ function TamaMouth(props) {
         borderBottomLeftRadius: '100%',
         borderBottomRightRadius: '100%',
         height: '20px'
-
       };
     } else if (happiness > 75) {
       return {
@@ -21,7 +20,8 @@ function TamaMouth(props) {
     } else {
       return {
         borderTopLeftRadius: '100%',
-        borderTopRightRadius: '100%'
+        borderTopRightRadius: '100%',
+        height: '15px'
       };
     }
   }
