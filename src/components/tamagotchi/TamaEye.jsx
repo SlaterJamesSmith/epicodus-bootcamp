@@ -5,7 +5,7 @@ function TamaEye(props) {
   const expression = checkMood(props.petStatus);
 
   function checkMood(status) {
-    let happiness = status.foodLevel + status.energyLevel + status.playLevel;
+    let happiness = status.foodLevel + status.healthLevel + status.playLevel;
     if (happiness > 180) {
       return {
         height: '20px',

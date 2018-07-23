@@ -9,7 +9,7 @@ class TamaHome extends React.Component {
     this.state = {
       petStatus: {
         foodLevel: 100,
-        energyLevel: 100,
+        healthLevel: 100,
         playLevel: 100
       },
       petDebuff: {
@@ -20,7 +20,7 @@ class TamaHome extends React.Component {
       }
     };
     this.handleFeedPet = this.handleFeedPet.bind(this);
-    this.handleEnergizePet = this.handleEnergizePet.bind(this);
+    this.handleExercisePet = this.handleExercisePet.bind(this);
     this.handlePlayWithPet = this.handlePlayWithPet.bind(this);
   }
 
@@ -42,11 +42,11 @@ class TamaHome extends React.Component {
     this.setState({
       petStatus: {
         foodLevel: (status.foodLevel + decay > 0) ? status.foodLevel + decay : 0,
-        energyLevel: (status.energyLevel + decay > 0) ? status.energyLevel + decay : 0,
+        healthLevel: (status.healthLevel + decay > 0) ? status.healthLevel + decay : 0,
         playLevel: (status.playLevel + decay > 0) ? status.playLevel + decay : 0
       }
     });
-    if (status.foodLevel + status.energyLevel + status.playLevel <= 0) {
+    if (status.foodLevel + status.healthLevel + status.playLevel <= 0) {
       clearInterval(this.tamaClock);
     }
   }
@@ -57,19 +57,19 @@ class TamaHome extends React.Component {
     this.setState({
       petStatus: {
         foodLevel: (status.foodLevel + boost < 100) ? status.foodLevel + boost : 100,
-        energyLevel: status.energyLevel,
+        healthLevel: status.healthLevel,
         playLevel: status.playLevel
       }
     });
   }
 
-  handleEnergizePet() {
+  handleExercisePet() {
     const status = this.state.petStatus;
     const boost = this.state.petBuff.statBoostValue;
     this.setState({
       petStatus: {
         foodLevel: status.foodLevel,
-        energyLevel: (status.energyLevel + boost < 100) ? status.energyLevel + boost : 100,
+        healthLevel: (status.healthLevel + boost < 100) ? status.healthLevel + boost : 100,
         playLevel: status.playLevel
       }
     });
@@ -81,7 +81,7 @@ class TamaHome extends React.Component {
     this.setState({
       petStatus: {
         foodLevel: status.foodLevel,
-        energyLevel: status.energyLevel,
+        healthLevel: status.healthLevel,
         playLevel: (status.playLevel + boost < 100) ? status.playLevel + boost : 100
       }
     });
@@ -139,7 +139,7 @@ class TamaHome extends React.Component {
         <section className="status-meters">
           <TubeMeter
             meterType="HAPPINESS"
-            meterValue={this.state.petStatus.foodLevel + this.state.petStatus.energyLevel + this.state.petStatus.playLevel}
+            meterValue={this.state.petStatus.foodLevel + this.state.petStatus.healthLevel + this.state.petStatus.playLevel}
             maxValue={300}
           />
           <CircularMeter
@@ -149,10 +149,10 @@ class TamaHome extends React.Component {
             onAction={this.handleFeedPet}
           />
           <CircularMeter
-            meterType="energy"
-            meterValue={this.state.petStatus.energyLevel}
+            meterType="health"
+            meterValue={this.state.petStatus.healthLevel}
             maxValue={100}
-            onAction={this.handleEnergizePet}
+            onAction={this.handleExercisePet}
           />
           <CircularMeter
             meterType="play"
