@@ -29,15 +29,20 @@ class TamaHome extends React.Component {
   }
 
   componentDidMount() {
-    this.tamaClock = setInterval(() => this.tamaStateUpdater(), 2000);
+    this.tamaPetStatusTimer = setInterval(() => this.tamaStatusUpdater(), 2000);
+    this.tamaPetConditionsTimer = setInterval(() => this.tamaConditionsUpdater(), 4000);
   }
 
   componentWillUnmount() {
-    clearInterval(this.tamaClock);
+    clearInterval(this.tamaPetStatusTimer);
+    clearInterval(this.tamaPetConditionsTimer);
   }
 
-  tamaStateUpdater() {
+  tamaStatusUpdater() {
     this.calcPetStatusDecay();
+  }
+
+  tamaConditionsUpdater() {
     this.calcPetDigestion();
   }
 
@@ -52,7 +57,8 @@ class TamaHome extends React.Component {
       }
     });
     if (status.foodLevel + status.healthLevel + status.playLevel <= 0) {
-      clearInterval(this.tamaClock);
+      clearInterval(this.tamaPetStatusTimer);
+      clearInterval(this.tamaPetConditionsTimer);
     }
   }
 
