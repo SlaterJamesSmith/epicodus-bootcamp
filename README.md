@@ -6,7 +6,7 @@
 
 ## Description
 
-A standard tamagotchi (digital pet) game with robust animated visual feedback.
+A standard tamagotchi (digital pet) game with robust animated visual feedback. Animations automatically update alongside the tamagotchi's mood as its happiness changes over time.
 
 ## Setup/Installation Requirements
 
@@ -59,11 +59,25 @@ None.
 +----------------------------------------+
 |
 |
-|    +--------------+     +--------------+     +----------------+
-|    |              |     |              |     |                |
-+----+   TamaHome   +-----+   TamaRoom   +-----+   Tamagotchi   |
-     |              |     |              |     |                |
-     +--------------+     +--------------+     +----------------+
+|    +---------------+     +--------------+     +----------------+
+|    |               |     |              |     |                |
++----+   TamaHome    +-----+   TamaRoom   +-----+   Tamagotchi   |
+     |               |     |              |     |                |
+     |     State     |     +--------------+     +----------------+
+     |   petStatus   |
+     |   petDebuff   |
+     |               |     +---------------+
+     |               |     |               |
+     |               +-----+   TubeMeter   |
+     |               |     |               |
+     |               |     +---------------+
+     |               |
+     |               |
+     |               |     +-------------------+
+     |               |     |                   |
+     |               +-----+   CircularMeter   |
+     |               |     |                   |
+     +---------------+     +-------------------+
 ```
 
 ### II. Tamagotchi Sub-Component Structure
@@ -83,24 +97,18 @@ None.
                          +----------+----------+     +---------------+
                                     |
                                     |
-                         +----------+----------+
+                         +----------+----------+     +---------------------+     +-------------+
+                         |                     |     |                     |     |             |
+                         |   TamaEyePairNode   +-----+   TamaEyeLeftNode   +-----+   TamaEye   |
+                         |                     |     |                     |     |             |
+                         |                     |     +---------------------+     +-------------+
                          |                     |
-                         |   TamaEyePairNode   |
                          |                     |
-                         +-------+-----+-------+
-                                 |     |             +---------------------+     +-------------+
-                                 |     |             |                     |     |             |
-                                 |     +-------------+   TamaEyeLeftNode   +-----+   TamaEye   |
-                                 |                   |                     |     |             |
-                                 |                   +---------------------+     +-------------+
-                                 |
-                                 |
-                                 |                   +----------------------+     +-------------+
-                                 |                   |                      |     |             |
-                                 +-------------------+   TamaEyeRightNode   +-----+   TamaEye   |
-                                                     |                      |     |             |
-                                                     +----------------------+     +-------------+
-
+                         |                     |     +----------------------+     +-------------+
+                         |                     |     |                      |     |             |
+                         |                     +-----+   TamaEyeRightNode   +-----+   TamaEye   |
+                         |                     |     |                      |     |             |
+                         +---------------------+     +----------------------+     +-------------+
 ```
 
 Copyright (c) 2018 **Mike Chu**
