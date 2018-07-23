@@ -8,13 +8,13 @@ function TamaEye(props) {
     let happiness = status.foodLevel + status.energyLevel + status.playLevel;
     if (happiness > 180) {
       return {
-        height: '24px',
-        width: '24px'
+        height: '20px',
+        width: '20px'
       };
     } else if (happiness > 75) {
       return {
-        height: '16px',
-        width: '16px'
+        height: '14px',
+        width: '14px'
       };
     } else {
       return {
