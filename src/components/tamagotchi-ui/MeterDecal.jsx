@@ -1,6 +1,7 @@
 import React from 'react';
 import FoodIcon from './FoodIcon';
 import ExerciseIcon from './ExerciseIcon';
+import PlayIcon from './PlayIcon';
 import PropTypes from 'prop-types';
 
 function MeterDecal(props) {
@@ -11,6 +12,8 @@ function MeterDecal(props) {
       return <FoodIcon/>;
     } else if (meterType === 'health') {
       return <ExerciseIcon/>;
+    } else if (meterType === 'play') {
+      return <PlayIcon/>;
     } else {
       return;
     }
