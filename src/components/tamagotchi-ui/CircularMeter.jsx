@@ -37,18 +37,28 @@ function CircularMeter(props) {
             border: 3px solid #888;
             border-radius: 100%;
             overflow: hidden;
+            transition: border 0.2s;
+          }
+
+          .meter:active {
+            border: 5px solid #f09;
+            transition: border 0s;
+          }
+
+          .meter:active h3 {
+            font-size: 1.1rem;
           }
 
           .meter-fill {
             width: 100%;
             position: absolute;
             bottom: 0;
-            z-index: -10;
             transition: height 1s, background-color 1s, border 1s;
           }
 
           h3 {
             color: #f09;
+            z-index: 10;
           }
         `}
       </style>
