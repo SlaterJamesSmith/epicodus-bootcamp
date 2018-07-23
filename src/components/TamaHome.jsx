@@ -19,7 +19,8 @@ class TamaHome extends React.Component {
         statBoostValue: 50
       },
       petConditions: {
-        mealsToDigest: 0
+        mealsToDigest: 0,
+        poopsOut: 0
       }
     };
     this.handleFeedPet = this.handleFeedPet.bind(this);
@@ -37,6 +38,7 @@ class TamaHome extends React.Component {
 
   tamaStateUpdater() {
     this.calcPetStatusDecay();
+    this.calcPetDigestion();
   }
 
   calcPetStatusDecay() {
@@ -52,6 +54,16 @@ class TamaHome extends React.Component {
     if (status.foodLevel + status.healthLevel + status.playLevel <= 0) {
       clearInterval(this.tamaClock);
     }
+  }
+
+  calcPetDigestion() {
+    const conditions = this.state.petConditions;
+    this.setState({
+      petConditions: {
+        mealsToDigest: (conditions.mealsToDigest - 1 > 0) ? conditions.mealsToDigest - 1 : 0,
+        poopsOut: (conditions.mealsToDigest > 0) ? conditions.poopsOut + 1 : conditions.poopsOut
+      }
+    });
   }
 
   handleFeedPet() {
