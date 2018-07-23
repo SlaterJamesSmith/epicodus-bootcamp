@@ -1,7 +1,8 @@
 import React from 'react';
 import TamaEye from './TamaEye';
+import PropTypes from 'prop-types';
 
-function TamaEyeRightNode() {
+function TamaEyeRightNode(props) {
   return (
     <div className="tama-eye-right-node">
       <style jsx>
@@ -16,9 +17,13 @@ function TamaEyeRightNode() {
           }
         `}
       </style>
-      <TamaEye/>
+      <TamaEye petStatus={props.petStatus} />
     </div>
   );
 }
+
+TamaEyeRightNode.propTypes = {
+  petStatus: PropTypes.object.isRequired
+};
 
 export default TamaEyeRightNode;

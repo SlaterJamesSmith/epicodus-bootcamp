@@ -1,6 +1,7 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
-function TamaEye() {
+function TamaEye(props) {
   return (
     <div className="tama-eye">
       <style jsx>
@@ -49,5 +50,9 @@ function TamaEye() {
     </div>
   );
 }
+
+TamaEye.propTypes = {
+  petStatus: PropTypes.object.isRequired
+};
 
 export default TamaEye;

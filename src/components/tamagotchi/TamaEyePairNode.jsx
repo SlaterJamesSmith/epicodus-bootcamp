@@ -1,8 +1,9 @@
 import React from 'react';
 import TamaEyeLeftNode from './TamaEyeLeftNode';
 import TamaEyeRightNode from './TamaEyeRightNode';
+import PropTypes from 'prop-types';
 
-function TamaEyePairNode() {
+function TamaEyePairNode(props) {
   return (
     <div className="tama-eye-node animate-idle">
       <style jsx>
@@ -31,10 +32,14 @@ function TamaEyePairNode() {
           }
         `}
       </style>
-      <TamaEyeLeftNode/>
-      <TamaEyeRightNode/>
+      <TamaEyeLeftNode petStatus={props.petStatus} />
+      <TamaEyeRightNode petStatus={props.petStatus} />
     </div>
   );
 }
+
+TamaEyePairNode.propTypes = {
+  petStatus: PropTypes.object.isRequired
+};
 
 export default TamaEyePairNode;

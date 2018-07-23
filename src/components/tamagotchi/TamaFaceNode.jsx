@@ -17,8 +17,8 @@ function TamaFaceNode(props) {
           }
         `}
       </style>
-      <TamaEyePairNode/>
-      <TamaMouth petStatus={props.petStatus}/>
+      <TamaEyePairNode petStatus={props.petStatus} />
+      <TamaMouth petStatus={props.petStatus} />
     </div>
   );
 }
