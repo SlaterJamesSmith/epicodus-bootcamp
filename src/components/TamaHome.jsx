@@ -17,6 +17,9 @@ class TamaHome extends React.Component {
       },
       petBuff: {
         statBoostValue: 50
+      },
+      petConditions: {
+        mealsToDigest: 0
       }
     };
     this.handleFeedPet = this.handleFeedPet.bind(this);
@@ -53,12 +56,16 @@ class TamaHome extends React.Component {
 
   handleFeedPet() {
     const status = this.state.petStatus;
+    const conditions = this.state.petConditions;
     const boost = this.state.petBuff.statBoostValue;
     this.setState({
       petStatus: {
         foodLevel: (status.foodLevel + boost < 100) ? status.foodLevel + boost : 100,
         healthLevel: status.healthLevel,
         playLevel: status.playLevel
+      },
+      petConditions: {
+        mealsToDigest: conditions.mealsToDigest + 1
       }
     });
   }
@@ -122,7 +129,7 @@ class TamaHome extends React.Component {
               padding: 15px;
               border-bottom-left-radius: 10px;
               border-bottom-right-radius: 10px;
-              background-color: #fce;
+              background-color: #ddd;
             }
 
             .status-meters {
@@ -134,7 +141,10 @@ class TamaHome extends React.Component {
         <div className="chimney"></div>
         <div className="roof"></div>
         <div className="walls">
-          <TamaRoom petStatus={this.state.petStatus} />
+          <TamaRoom
+            petStatus={this.state.petStatus}
+            petConditions={this.state.petConditions}
+          />
         </div>
         <section className="status-meters">
           <TubeMeter

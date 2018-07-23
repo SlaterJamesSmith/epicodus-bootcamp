@@ -35,13 +35,17 @@ function Tamagotchi(props) {
           }
         `}
       </style>
-      <TamaHeadNode petStatus={props.petStatus} />
+      <TamaHeadNode
+        petStatus={props.petStatus}
+        petConditions={props.petConditions}
+      />
     </section>
   );
 }
 
 Tamagotchi.propTypes = {
-  petStatus: PropTypes.object.isRequired
+  petStatus: PropTypes.object.isRequired,
+  petConditions: PropTypes.object.isRequired
 };
 
 export default Tamagotchi;

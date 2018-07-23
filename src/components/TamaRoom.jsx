@@ -10,6 +10,7 @@ function TamaRoom(props) {
           .tama-room-ext {
             border: 4px dashed #f09;
             border-radius: 5px;
+            overflow: hidden;
           }
 
           .tama-room-int {
@@ -24,14 +25,18 @@ function TamaRoom(props) {
         `}
       </style>
       <div className="tama-room-int">
-        <Tamagotchi petStatus={props.petStatus} />
+        <Tamagotchi
+          petStatus={props.petStatus}
+          petConditions={props.petConditions}
+        />
       </div>
     </section>
   );
 }
 
 TamaRoom.propTypes = {
-  petStatus: PropTypes.object.isRequired
+  petStatus: PropTypes.object.isRequired,
+  petConditions: PropTypes.object.isRequired
 };
 
 export default TamaRoom;

@@ -8,15 +8,18 @@ function TamaHead(props) {
     let happiness = status.foodLevel + status.healthLevel + status.playLevel;
     if (happiness > 180) {
       return {
-        backgroundColor: '#f09'
+        backgroundColor: '#f09',
+        transform: `scale(${props.petConditions.mealsToDigest * 0.2 + 1})`
       };
     } else if (happiness > 75) {
       return {
-        backgroundColor: '#f6c'
+        backgroundColor: '#f6c',
+        transform: `scale(${props.petConditions.mealsToDigest * 0.2 + 1})`
       };
     } else {
       return {
-        backgroundColor: '#fce'
+        backgroundColor: '#fce',
+        transform: `scale(${props.petConditions.mealsToDigest * 0.2 + 1})`
       };
     }
   }
@@ -54,7 +57,8 @@ function TamaHead(props) {
 }
 
 TamaHead.propTypes = {
-  petStatus: PropTypes.object.isRequired
+  petStatus: PropTypes.object.isRequired,
+  petConditions: PropTypes.object.isRequired
 };
 
 export default TamaHead;

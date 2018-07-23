@@ -27,14 +27,18 @@ function TamaHeadNode(props) {
           }
         `}
       </style>
-      <TamaHead petStatus={props.petStatus} />
+      <TamaHead
+        petStatus={props.petStatus}
+        petConditions={props.petConditions}
+      />
       <TamaFaceNode petStatus={props.petStatus} />
     </div>
   );
 }
 
 TamaHeadNode.propTypes = {
-  petStatus: PropTypes.object.isRequired
+  petStatus: PropTypes.object.isRequired,
+  petConditions: PropTypes.object.isRequired
 };
 
 export default TamaHeadNode;
