@@ -138,7 +138,7 @@ class TamaHome extends React.Component {
         </div>
         <section className="status-meters">
           <TubeMeter
-            meterType="HAPPINESS"
+            meterType="Happiness"
             meterValue={this.state.petStatus.foodLevel + this.state.petStatus.healthLevel + this.state.petStatus.playLevel}
             maxValue={300}
           />

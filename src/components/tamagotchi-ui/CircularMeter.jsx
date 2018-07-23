@@ -46,6 +46,10 @@ function CircularMeter(props) {
             transition: border 0s;
           }
 
+          .meter:active {
+            transform: scale(0.95);
+          }
+
           .meter-fill {
             width: 100%;
             position: absolute;

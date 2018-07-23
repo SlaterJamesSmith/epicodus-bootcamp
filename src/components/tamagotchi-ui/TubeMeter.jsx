@@ -46,6 +46,7 @@ function TubeMeter(props) {
 
           h3 {
             color: #f09;
+            text-transform: uppercase;
           }
         `}
       </style>
