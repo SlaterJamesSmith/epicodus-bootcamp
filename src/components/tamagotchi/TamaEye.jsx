@@ -2,6 +2,28 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 function TamaEye(props) {
+  const expression = checkMood(props.petStatus);
+
+  function checkMood(status) {
+    let happiness = status.foodLevel + status.energyLevel + status.playLevel;
+    if (happiness > 180) {
+      return {
+        height: '24px',
+        width: '24px'
+      };
+    } else if (happiness > 75) {
+      return {
+        height: '16px',
+        width: '16px'
+      };
+    } else {
+      return {
+        height: '6px',
+        width: '6px'
+      };
+    }
+  }
+
   return (
     <div className="tama-eye">
       <style jsx>
@@ -23,6 +45,7 @@ function TamaEye(props) {
             width: 24px;
             border-radius: 100%;
             background-color: #000;
+            transition: height 1s, width 1s;
           }
 
           .eye-light {
@@ -45,7 +68,7 @@ function TamaEye(props) {
           }
         `}
       </style>
-      <div className="pupil animate-idle"></div>
+      <div className="pupil animate-idle" style={expression}></div>
       <div className="eye-light"></div>
     </div>
   );
