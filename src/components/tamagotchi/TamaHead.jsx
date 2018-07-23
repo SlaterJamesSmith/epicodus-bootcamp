@@ -1,8 +1,28 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
-function TamaHead() {
+function TamaHead(props) {
+  const expression = checkMood(props.petStatus);
+
+  function checkMood(status) {
+    let happiness = status.foodLevel + status.energyLevel + status.playLevel;
+    if (happiness > 180) {
+      return {
+        backgroundColor: '#f09'
+      };
+    } else if (happiness > 75) {
+      return {
+        backgroundColor: '#f6c'
+      };
+    } else {
+      return {
+        backgroundColor: '#fce'
+      };
+    }
+  }
+
   return (
-    <div className="tama-head animate-idle">
+    <div className="tama-head animate-idle" style={expression}>
       <style jsx>
         {`
           .tama-head {
@@ -12,7 +32,7 @@ function TamaHead() {
             bottom: 0;
             border-radius: 100%;
             background-color: #f09;
-            transition: transform 1s;
+            transition: transform 1s, background-color 1s;
           }
 
           @keyframes bounce-volume-displace {
@@ -32,5 +52,9 @@ function TamaHead() {
     </div>
   );
 }
+
+TamaHead.propTypes = {
+  petStatus: PropTypes.object.isRequired
+};
 
 export default TamaHead;
