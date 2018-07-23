@@ -2,19 +2,44 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 function TamaMouth(props) {
+  const expression = checkMood(props.petStatus);
+
+  function checkMood(status) {
+    let happiness = status.foodLevel + status.energyLevel + status.playLevel;
+    if (happiness > 180) {
+      return {
+        borderBottomLeftRadius: '100%',
+        borderBottomRightRadius: '100%',
+        height: '20px'
+
+      };
+    } else if (happiness > 75) {
+      return {
+        borderBottomLeftRadius: '75%',
+        borderBottomRightRadius: '75%'
+      };
+    } else {
+      return {
+        borderTopLeftRadius: '100%',
+        borderTopRightRadius: '100%'
+      };
+    }
+  }
+
   return (
-    <div className="tama-mouth animate-idle">
+    <div className="tama-mouth animate idle" style={expression}>
       <style jsx>
         {`
           .tama-mouth {
-            height: 10px;
+            height: 12px;
             width: 20px;
             position: absolute;
-            bottom: 20px;
+            bottom: 15px;
             display: flex;
             justify-content: center;
-            border-radius: 4px;
+            border-radius: 5px;
             background-color: #704;
+            transition: height 1s, border-radius 1s;
           }
 
           .tooth {
@@ -44,7 +69,7 @@ function TamaMouth(props) {
             100% {transform: translateY(0);}
           }
 
-          .animate-idle {
+          .animate.idle {
             animation:
               pucker 1s linear infinite,
               inertial-bounce 1s linear infinite;
