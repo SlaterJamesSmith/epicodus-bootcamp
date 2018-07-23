@@ -1,5 +1,6 @@
 import React from 'react';
 import FoodIcon from './FoodIcon';
+import ExerciseIcon from './ExerciseIcon';
 import PropTypes from 'prop-types';
 
 function MeterDecal(props) {
@@ -8,6 +9,8 @@ function MeterDecal(props) {
   function setIconType(meterType) {
     if (meterType === 'food') {
       return <FoodIcon/>;
+    } else if (meterType === 'health') {
+      return <ExerciseIcon/>;
     } else {
       return;
     }
