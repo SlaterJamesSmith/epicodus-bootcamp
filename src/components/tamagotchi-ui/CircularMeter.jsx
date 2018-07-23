@@ -23,7 +23,7 @@ function CircularMeter(props) {
   }
 
   return (
-    <div className="meter" style={actionable} onClick={props.onAction ? () => props.onAction(props.actionTarget) : () => {}}>
+    <div className="meter" style={actionable} onClick={props.onAction ? () => props.onAction() : () => {}}>
       <style jsx>
         {`
           .meter {
@@ -72,8 +72,7 @@ CircularMeter.propTypes = {
   meterType: PropTypes.string.isRequired,
   meterValue: PropTypes.number.isRequired,
   maxValue: PropTypes.number.isRequired,
-  onAction: PropTypes.func,
-  actionTarget: PropTypes.string
+  onAction: PropTypes.func
 };
 
 export default CircularMeter;

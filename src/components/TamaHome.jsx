@@ -13,10 +13,15 @@ class TamaHome extends React.Component {
         playLevel: 100
       },
       petDebuff: {
-        statDecayValue: -3
+        statDecayValue: -5
+      },
+      petBuff: {
+        statBoostValue: 50
       }
     };
-    this.handleBuffPetStatus = this.handleBuffPetStatus.bind(this);
+    this.handleFeedPet = this.handleFeedPet.bind(this);
+    this.handleEnergizePet = this.handleEnergizePet.bind(this);
+    this.handlePlayWithPet = this.handlePlayWithPet.bind(this);
   }
 
   componentDidMount() {
@@ -28,10 +33,12 @@ class TamaHome extends React.Component {
   }
 
   tamaStateUpdater() {
-    this.calcPetStatusDecay(this.state.petStatus, this.state.petDebuff.statDecayValue);
+    this.calcPetStatusDecay();
   }
 
-  calcPetStatusDecay(status, decay) {
+  calcPetStatusDecay() {
+    const status = this.state.petStatus;
+    const decay = this.state.petDebuff.statDecayValue;
     this.setState({
       petStatus: {
         foodLevel: (status.foodLevel + decay > 0) ? status.foodLevel + decay : 0,
@@ -44,23 +51,38 @@ class TamaHome extends React.Component {
     }
   }
 
-  handleBuffPetStatus(stat) {
+  handleFeedPet() {
     const status = this.state.petStatus;
-    let newFoodLevel = status.foodLevel;
-    let newEnergyLevel = status.energyLevel;
-    let newPlayLevel = status.playLevel;
-    if (stat === 'foodLevel') {
-      newFoodLevel = (status.foodLevel + 10 < 100) ? newFoodLevel += 10 : 100;
-    } else if (stat === 'energyLevel') {
-      newEnergyLevel = (status.energyLevel + 10 < 100) ? newEnergyLevel += 10 : 100;
-    } else if (stat === 'playLevel') {
-      newPlayLevel = (status.playLevel + 10 < 100) ? newPlayLevel += 10 : 100;
-    }
+    const boost = this.state.petBuff.statBoostValue;
     this.setState({
       petStatus: {
-        foodLevel: newFoodLevel,
-        energyLevel: newEnergyLevel,
-        playLevel: newPlayLevel
+        foodLevel: (status.foodLevel + boost < 100) ? status.foodLevel + boost : 100,
+        energyLevel: status.energyLevel,
+        playLevel: status.playLevel
+      }
+    });
+  }
+
+  handleEnergizePet() {
+    const status = this.state.petStatus;
+    const boost = this.state.petBuff.statBoostValue;
+    this.setState({
+      petStatus: {
+        foodLevel: status.foodLevel,
+        energyLevel: (status.energyLevel + boost < 100) ? status.energyLevel + boost : 100,
+        playLevel: status.playLevel
+      }
+    });
+  }
+
+  handlePlayWithPet() {
+    const status = this.state.petStatus;
+    const boost = this.state.petBuff.statBoostValue;
+    this.setState({
+      petStatus: {
+        foodLevel: status.foodLevel,
+        energyLevel: status.energyLevel,
+        playLevel: (status.playLevel + boost < 100) ? status.playLevel + boost : 100
       }
     });
   }
@@ -124,22 +146,19 @@ class TamaHome extends React.Component {
             meterType="F"
             meterValue={this.state.petStatus.foodLevel}
             maxValue={100}
-            onAction={this.handleBuffPetStatus}
-            actionTarget="foodLevel"
+            onAction={this.handleFeedPet}
           />
           <CircularMeter
             meterType="E"
             meterValue={this.state.petStatus.energyLevel}
             maxValue={100}
-            onAction={this.handleBuffPetStatus}
-            actionTarget="energyLevel"
+            onAction={this.handleEnergizePet}
           />
           <CircularMeter
             meterType="P"
             meterValue={this.state.petStatus.playLevel}
             maxValue={100}
-            onAction={this.handleBuffPetStatus}
-            actionTarget="playLevel"
+            onAction={this.handlePlayWithPet}
           />
         </section>
       </section>
