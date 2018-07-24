@@ -32,7 +32,6 @@ function Nav() {
       </style>
       <ul>
         <li><Link to="/">Home</Link></li>
-        <li><Link to="/tamagotchi">Tamagotchi</Link></li>
       </ul>
     </section>
   );
