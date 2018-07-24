@@ -1,8 +1,9 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
-function Poop() {
+function Poop(props) {
   return (
-    <div className="poop">
+    <div className="poop" onClick={() => props.onScoopPoop(props.poopId)}>
       <style jsx>
         {`
           .poop {
@@ -10,6 +11,7 @@ function Poop() {
             flex-direction: column;
             align-items: center;
             justify-content: center;
+            cursor: pointer;
             animation: bounce 0.75s ease-in-out infinite;
           }
 
@@ -73,5 +75,10 @@ function Poop() {
     </div>
   );
 }
+
+Poop.propTypes = {
+  poopId: PropTypes.string.isRequired,
+  onScoopPoop: PropTypes.func.isRequired
+};
 
 export default Poop;

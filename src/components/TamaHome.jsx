@@ -27,6 +27,7 @@ class TamaHome extends React.Component {
     this.handleFeedPet = this.handleFeedPet.bind(this);
     this.handleExercisePet = this.handleExercisePet.bind(this);
     this.handlePlayWithPet = this.handlePlayWithPet.bind(this);
+    this.handleScoopPoop = this.handleScoopPoop.bind(this);
   }
 
   componentDidMount() {
@@ -121,6 +122,18 @@ class TamaHome extends React.Component {
     });
   }
 
+  handleScoopPoop(poopId) {
+    const conditions = this.state.petConditions;
+    let newPoopsOut = Object.assign({}, conditions.poopsOut);
+    delete newPoopsOut[poopId];
+    this.setState({
+      petConditions: {
+        mealsToDigest: conditions.mealsToDigest,
+        poopsOut: newPoopsOut
+      }
+    });
+  }
+
   render() {
     return (
       <section id="tama-home">
@@ -171,6 +184,7 @@ class TamaHome extends React.Component {
           <TamaRoom
             petStatus={this.state.petStatus}
             petConditions={this.state.petConditions}
+            onScoopPoop={this.handleScoopPoop}
           />
         </div>
         <section className="status-meters">

@@ -46,6 +46,7 @@ function TamaRoom(props) {
             return (
               <Poop
                 poopId={poopId}
+                onScoopPoop={props.onScoopPoop}
                 key={poopId}
               />
             );
@@ -58,7 +59,8 @@ function TamaRoom(props) {
 
 TamaRoom.propTypes = {
   petStatus: PropTypes.object.isRequired,
-  petConditions: PropTypes.object.isRequired
+  petConditions: PropTypes.object.isRequired,
+  onScoopPoop: PropTypes.func.isRequired
 };
 
 export default TamaRoom;
