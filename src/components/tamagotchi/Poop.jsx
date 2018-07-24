@@ -16,7 +16,7 @@ function Poop() {
           .poop-base, .poop-middle, .poop-top {
             position: relative;
             border-radius: 20px;
-            background-color: brown;
+            background-color: #c93;
             box-shadow: 0 0 4px 2px #0002;
           }
 

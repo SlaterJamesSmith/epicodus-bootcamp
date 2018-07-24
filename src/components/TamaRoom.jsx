@@ -17,11 +17,22 @@ function TamaRoom(props) {
           .tama-room-int {
             height: 462px;
             width: 100%;
+            position: relative;
             display: flex;
             align-items: center;
             justify-content: center;
             border-radius: 5px;
             background-color: #fff;
+          }
+
+          .litter-box {
+            width: 450px;
+            position: absolute;
+            bottom: 0;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap-reverse;
+            padding: 25px;
           }
         `}
       </style>
@@ -30,14 +41,16 @@ function TamaRoom(props) {
           petStatus={props.petStatus}
           petConditions={props.petConditions}
         />
-        {Object.keys(props.petConditions.poopsOut).map(poopId => {
-          return (
-            <Poop
-              poopId={poopId}
-              key={poopId}
-            />
-          );
-        })}
+        <div className="litter-box">
+          {Object.keys(props.petConditions.poopsOut).map(poopId => {
+            return (
+              <Poop
+                poopId={poopId}
+                key={poopId}
+              />
+            );
+          })}
+        </div>
       </div>
     </section>
   );
