@@ -2,6 +2,7 @@ import React from 'react';
 import TamaRoom from './TamaRoom';
 import CircularMeter from './tamagotchi-ui/CircularMeter';
 import TubeMeter from './tamagotchi-ui/TubeMeter';
+import { v4 } from 'uuid';
 
 class TamaHome extends React.Component {
   constructor(props) {
@@ -20,7 +21,7 @@ class TamaHome extends React.Component {
       },
       petConditions: {
         mealsToDigest: 0,
-        poopsOut: 0
+        poopsOut: {}
       }
     };
     this.handleFeedPet = this.handleFeedPet.bind(this);
@@ -64,10 +65,17 @@ class TamaHome extends React.Component {
 
   calcPetDigestion() {
     const conditions = this.state.petConditions;
+    let newPoopsOut = Object.assign({}, conditions.poopsOut);
+    if (conditions.mealsToDigest > 0) {
+      let newPoopId = v4();
+      newPoopsOut = Object.assign(newPoopsOut, {
+        [newPoopId]: 'Poop'
+      });
+    }
     this.setState({
       petConditions: {
         mealsToDigest: (conditions.mealsToDigest - 1 > 0) ? conditions.mealsToDigest - 1 : 0,
-        poopsOut: (conditions.mealsToDigest > 0) ? conditions.poopsOut + 1 : conditions.poopsOut
+        poopsOut: newPoopsOut
       }
     });
   }
@@ -83,7 +91,8 @@ class TamaHome extends React.Component {
         playLevel: status.playLevel
       },
       petConditions: {
-        mealsToDigest: conditions.mealsToDigest + 1
+        mealsToDigest: conditions.mealsToDigest + 1,
+        poopsOut: conditions.poopsOut
       }
     });
   }
