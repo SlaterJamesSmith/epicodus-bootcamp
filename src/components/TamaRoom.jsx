@@ -1,5 +1,6 @@
 import React from 'react';
 import Tamagotchi from './tamagotchi/Tamagotchi';
+import Poop from './tamagotchi/Poop';
 import PropTypes from 'prop-types';
 
 function TamaRoom(props) {
@@ -29,6 +30,14 @@ function TamaRoom(props) {
           petStatus={props.petStatus}
           petConditions={props.petConditions}
         />
+        {Object.keys(props.petConditions.poopsOut).map(poopId => {
+          return (
+            <Poop
+              poopId={poopId}
+              key={poopId}
+            />
+          );
+        })}
       </div>
     </section>
   );
