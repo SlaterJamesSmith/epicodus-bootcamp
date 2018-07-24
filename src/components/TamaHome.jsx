@@ -32,7 +32,7 @@ class TamaHome extends React.Component {
 
   componentDidMount() {
     this.tamaPetStatusTimer = setInterval(() => this.tamaStatusUpdater(), 2000);
-    this.tamaPetConditionsTimer = setInterval(() => this.tamaConditionsUpdater(), 4000);
+    this.tamaPetConditionsTimer = setInterval(() => this.tamaConditionsUpdater(), 5000);
   }
 
   componentWillUnmount() {
@@ -58,10 +58,10 @@ class TamaHome extends React.Component {
         playLevel: (status.playLevel + decay > 0) ? status.playLevel + decay : 0
       }
     });
-    if (status.foodLevel + status.healthLevel + status.playLevel <= 0) {
-      clearInterval(this.tamaPetStatusTimer);
-      clearInterval(this.tamaPetConditionsTimer);
-    }
+    // if (status.foodLevel + status.healthLevel + status.playLevel <= 0) {
+    //   clearInterval(this.tamaPetStatusTimer);
+    //   clearInterval(this.tamaPetConditionsTimer);
+    // }
   }
 
   calcPetDigestion() {
@@ -70,7 +70,7 @@ class TamaHome extends React.Component {
     if (conditions.mealsToDigest > 0) {
       let newPoopId = v4();
       newPoopsOut = Object.assign(newPoopsOut, {
-        [newPoopId]: 'Poop'
+        [newPoopId]: {status: 'unscooped'}
       });
     }
     this.setState({
@@ -124,6 +124,20 @@ class TamaHome extends React.Component {
 
   handleScoopPoop(poopId) {
     const conditions = this.state.petConditions;
+    let newPoopsOut = Object.assign({}, conditions.poopsOut, {
+      [poopId]: {status: 'scooped'}
+    });
+    this.setState({
+      petConditions: {
+        mealsToDigest: conditions.mealsToDigest,
+        poopsOut: newPoopsOut
+      }
+    });
+    setTimeout(() => this.removePoop(poopId), 1000);
+  }
+
+  removePoop(poopId) {
+    const conditions = this.state.petConditions;
     let newPoopsOut = Object.assign({}, conditions.poopsOut);
     delete newPoopsOut[poopId];
     this.setState({
@@ -153,7 +167,7 @@ class TamaHome extends React.Component {
               top: 0;
               right: 10%;
               border-radius: 5px;
-              background-color: #fce;
+              background-color: #ddd;
             }
 
             .roof {

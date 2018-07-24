@@ -46,6 +46,7 @@ function TamaRoom(props) {
             return (
               <Poop
                 poopId={poopId}
+                poopStatus={props.petConditions.poopsOut[poopId].status}
                 onScoopPoop={props.onScoopPoop}
                 key={poopId}
               />

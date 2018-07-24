@@ -2,16 +2,29 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 function Poop(props) {
+  const poopStatus = checkStatus(props.poopStatus);
+
+  function checkStatus(status) {
+    if (status === 'scooped') {
+      return {
+        maxWidth: '0',
+        opacity: '0'
+      };
+    }
+  }
+
   return (
-    <div className="poop" onClick={() => props.onScoopPoop(props.poopId)}>
+    <div className="poop" style={poopStatus} onClick={() => props.onScoopPoop(props.poopId)}>
       <style jsx>
         {`
           .poop {
+            max-width: 40px;
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
             cursor: pointer;
+            transition: max-width 1s, opacity 1s;
             animation: bounce 0.75s ease-in-out infinite;
           }
 
@@ -78,6 +91,7 @@ function Poop(props) {
 
 Poop.propTypes = {
   poopId: PropTypes.string.isRequired,
+  poopStatus: PropTypes.string.isRequired,
   onScoopPoop: PropTypes.func.isRequired
 };
 
