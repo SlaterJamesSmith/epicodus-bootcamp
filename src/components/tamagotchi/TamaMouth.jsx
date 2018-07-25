@@ -6,6 +6,7 @@ function TamaMouth(props) {
 
   //TamaMouth CSS Animations
   const mouthAnimation = 'idle';
+  const vomitAnimation = '';
 
   //TamaMouth CSS Transformations
   const mouthExpression = setMouthShape();
@@ -44,6 +45,14 @@ function TamaMouth(props) {
             background-color: #fff;
           }
 
+          .vomit {
+            height: 0;
+            width: 100%;
+            position: absolute;
+            border-radius: 20px;
+            background-color: #0f09;
+          }
+
           @keyframes pucker {
             0% {width: 12px;}
             10% {width: 16px;}
@@ -63,14 +72,24 @@ function TamaMouth(props) {
             100% {transform: translateY(0);}
           }
 
+          @keyframes vomit {
+            0% {height: 0;}
+            100% {height: 500px;}
+          }
+
           .tama-mouth.animate-idle {
             animation:
               pucker 1s linear infinite,
               inertial-bounce 1s linear infinite;
           }
+
+          .vomit.animate-expel {
+            animation: vomit 1s infinite;
+          }
         `}
       </style>
       <div className="tooth"></div>
+      <div className={'vomit animate-' + vomitAnimation}></div>
     </div>
   );
 }
