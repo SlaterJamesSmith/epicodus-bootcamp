@@ -2,26 +2,34 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 function TamaEye(props) {
-  //Pupil Options
-  const happyPupil = {height: '20px', width: '20px'};
-  const regularPupil = {height: '14px', width: '14px'};
-  const sadPupil = {height: '6px', width: '6px'};
-
+  const happiness = props.petStatus.foodLevel + props.petStatus.healthLevel + props.petStatus.playLevel;
+  const eyeExpression = setEyeBags();
   const pupilExpression = setPupilSize();
 
-  function setPupilSize() {
-    let happiness = props.petStatus.foodLevel + props.petStatus.healthLevel + props.petStatus.playLevel;
-    if (happiness > 180) {
-      return happyPupil;
-    } else if (happiness > 75) {
-      return regularPupil;
+  function setEyeBags() {
+    if (happiness > 150) {
+      return {boxShadow: '0 0 0 0 #0000'};
+    } else if (happiness > 100) {
+      return {boxShadow: '0 2px 0 0 #0002'};
+    } else if (happiness > 50) {
+      return {boxShadow: '0 4px 0 0 #0002'};
     } else {
-      return sadPupil;
+      return {boxShadow: '0 8px 0 1px #0002'};
+    }
+  }
+
+  function setPupilSize() {
+    if (happiness > 180) {
+      return {height: '20px', width: '20px'};
+    } else if (happiness > 75) {
+      return {height: '14px', width: '14px'};
+    } else {
+      return {height: '6px', width: '6px'};
     }
   }
 
   return (
-    <div className="tama-eye">
+    <div className="tama-eye" style={eyeExpression}>
       <style jsx>
         {`
           .tama-eye {
@@ -34,6 +42,7 @@ function TamaEye(props) {
             border: 2px solid #fff;
             border-radius: 100%;
             background-color: #fff;
+            transition: box-shadow 2s;
           }
 
           .pupil {
