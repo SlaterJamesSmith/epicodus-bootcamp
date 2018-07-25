@@ -17,14 +17,18 @@ function TamaFaceNode(props) {
           }
         `}
       </style>
-      <TamaEyePairNode petStatus={props.petStatus} />
+      <TamaEyePairNode
+        petStatus={props.petStatus}
+        petConditions={props.petConditions}
+      />
       <TamaMouth petStatus={props.petStatus} />
     </div>
   );
 }
 
 TamaFaceNode.propTypes = {
-  petStatus: PropTypes.object.isRequired
+  petStatus: PropTypes.object.isRequired,
+  petConditions: PropTypes.object.isRequired
 };
 
 export default TamaFaceNode;

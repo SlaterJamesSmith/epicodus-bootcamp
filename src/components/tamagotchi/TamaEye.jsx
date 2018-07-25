@@ -3,14 +3,19 @@ import PropTypes from 'prop-types';
 
 function TamaEye(props) {
   const happiness = props.petStatus.foodLevel + props.petStatus.healthLevel + props.petStatus.playLevel;
+  const poopCount = Object.keys(props.petConditions.poopsOut).length;
 
   //TamaEye CSS Animations
   const eyeAnimation = setEyeAnimation();
   const pupilAnimation = 'blink';
 
   function setEyeAnimation() {
-    if (happiness < 75) {
+    if (happiness < 75 && poopCount > 0) {
+      return 'paranoid-look-down';
+    } else if (happiness < 75) {
       return 'paranoid';
+    } else if (poopCount > 0) {
+      return 'look-down';
     }
   }
 
@@ -45,8 +50,8 @@ function TamaEye(props) {
       <style jsx>
         {`
           .tama-eye {
-            min-height: 30px;
-            min-width: 30px;
+            min-height: 32px;
+            min-width: 32px;
             position: relative;
             display: flex;
             align-items: center;
@@ -74,7 +79,7 @@ function TamaEye(props) {
             background-color: #fff;
           }
 
-          @keyframes eye-paranoid {
+          @keyframes look-left-right-down {
             0% {justify-content: center;}
             20% {justify-content: flex-start;}
             40% {justify-content: flex-end;}
@@ -83,18 +88,39 @@ function TamaEye(props) {
             100% {align-items: center; justify-content: center;}
           }
 
+          @keyframes look-left-right {
+            0% {justify-content: center;}
+            33% {justify-content: flex-start;}
+            66% {justify-content: flex-end;}
+            100% {justify-content: center;}
+          }
+
+          @keyframes look-down {
+            0% {align-items: center;}
+            50% {align-items: flex-end;}
+            100% {align-items: center;}
+          }
+
           @keyframes eye-blink {
             48% {transform: scaleY(1);}
             50% {transform: scaleY(0.1);}
             52% {transform: scaleY(1);}
           }
 
+          .tama-eye.animate-paranoid-look-down {
+            animation: look-left-right-down 10s infinite;
+          }
+
           .tama-eye.animate-paranoid {
-            animation: eye-paranoid 15s infinite;
+            animation: look-left-right 5s infinite;
+          }
+
+          .tama-eye.animate-look-down {
+            animation: look-down 5s infinite;
           }
 
           .pupil.animate-blink {
-            animation: eye-blink 5s infinite;
+            animation: eye-blink 6s infinite;
           }
         `}
       </style>
@@ -105,7 +131,8 @@ function TamaEye(props) {
 }
 
 TamaEye.propTypes = {
-  petStatus: PropTypes.object.isRequired
+  petStatus: PropTypes.object.isRequired,
+  petConditions: PropTypes.object.isRequired
 };
 
 export default TamaEye;

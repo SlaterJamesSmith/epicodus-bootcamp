@@ -5,10 +5,10 @@ import PropTypes from 'prop-types';
 
 function TamaEyePairNode(props) {
   return (
-    <div className="tama-eye-node animate-idle">
+    <div className="tama-eye-pair-node animate-idle">
       <style jsx>
         {`
-          .tama-eye-node {
+          .tama-eye-pair-node {
             height: 0;
             width: 0;
             position: absolute;
@@ -32,14 +32,21 @@ function TamaEyePairNode(props) {
           }
         `}
       </style>
-      <TamaEyeLeftNode petStatus={props.petStatus} />
-      <TamaEyeRightNode petStatus={props.petStatus} />
+      <TamaEyeLeftNode
+        petStatus={props.petStatus}
+        petConditions={props.petConditions}
+      />
+      <TamaEyeRightNode
+        petStatus={props.petStatus}
+        petConditions={props.petConditions}
+      />
     </div>
   );
 }
 
 TamaEyePairNode.propTypes = {
-  petStatus: PropTypes.object.isRequired
+  petStatus: PropTypes.object.isRequired,
+  petConditions: PropTypes.object.isRequired
 };
 
 export default TamaEyePairNode;

@@ -17,13 +17,17 @@ function TamaEyeLeftNode(props) {
           }
         `}
       </style>
-      <TamaEye petStatus={props.petStatus} />
+      <TamaEye
+        petStatus={props.petStatus}
+        petConditions={props.petConditions}
+      />
     </div>
   );
 }
 
 TamaEyeLeftNode.propTypes = {
-  petStatus: PropTypes.object.isRequired
+  petStatus: PropTypes.object.isRequired,
+  petConditions: PropTypes.object.isRequired
 };
 
 export default TamaEyeLeftNode;
