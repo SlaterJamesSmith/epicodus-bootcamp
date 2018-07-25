@@ -2,25 +2,21 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 function TamaEye(props) {
-  const expression = checkMood(props.petStatus);
+  //Pupil Options
+  const happyPupil = {height: '20px', width: '20px'};
+  const regularPupil = {height: '14px', width: '14px'};
+  const sadPupil = {height: '6px', width: '6px'};
 
-  function checkMood(status) {
-    let happiness = status.foodLevel + status.healthLevel + status.playLevel;
+  const pupilExpression = setPupilSize();
+
+  function setPupilSize() {
+    let happiness = props.petStatus.foodLevel + props.petStatus.healthLevel + props.petStatus.playLevel;
     if (happiness > 180) {
-      return {
-        height: '20px',
-        width: '20px'
-      };
+      return happyPupil;
     } else if (happiness > 75) {
-      return {
-        height: '14px',
-        width: '14px'
-      };
+      return regularPupil;
     } else {
-      return {
-        height: '6px',
-        width: '6px'
-      };
+      return sadPupil;
     }
   }
 
@@ -68,7 +64,7 @@ function TamaEye(props) {
           }
         `}
       </style>
-      <div className="pupil animate-idle" style={expression}></div>
+      <div className="pupil animate-idle" style={pupilExpression}></div>
       <div className="eye-light"></div>
     </div>
   );
