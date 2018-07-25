@@ -24,7 +24,7 @@ function Poop(props) {
             align-items: center;
             justify-content: center;
             cursor: pointer;
-            transition: max-width 0.5s, opacity 0.5s;
+            transition: max-width 0.25s, opacity 0.25s;
             animation: bounce 0.75s ease-in-out infinite;
           }
 

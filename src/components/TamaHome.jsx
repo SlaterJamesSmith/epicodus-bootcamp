@@ -133,7 +133,7 @@ class TamaHome extends React.Component {
         poopsOut: newPoopsOut
       }
     });
-    setTimeout(() => this.removePoop(poopId), 500);
+    setTimeout(() => this.removePoop(poopId), 250);
   }
 
   removePoop(poopId) {
