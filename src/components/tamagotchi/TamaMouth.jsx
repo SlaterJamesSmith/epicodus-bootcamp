@@ -2,32 +2,26 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 function TamaMouth(props) {
-  const expression = checkMood(props.petStatus);
+  const happiness = props.petStatus.foodLevel + props.petStatus.healthLevel + props.petStatus.playLevel;
 
-  function checkMood(status) {
-    let happiness = status.foodLevel + status.healthLevel + status.playLevel;
+  //TamaMouth CSS Animations
+  const mouthAnimation = 'idle';
+
+  //TamaMouth CSS Transformations
+  const mouthExpression = setMouthShape();
+
+  function setMouthShape() {
     if (happiness > 180) {
-      return {
-        borderBottomLeftRadius: '100%',
-        borderBottomRightRadius: '100%',
-        height: '20px'
-      };
+      return {borderBottomLeftRadius: '100%', borderBottomRightRadius: '100%', height: '20px'};
     } else if (happiness > 75) {
-      return {
-        borderBottomLeftRadius: '75%',
-        borderBottomRightRadius: '75%'
-      };
+      return {borderBottomLeftRadius: '75%', borderBottomRightRadius: '75%'};
     } else {
-      return {
-        borderTopLeftRadius: '100%',
-        borderTopRightRadius: '100%',
-        height: '15px'
-      };
+      return {borderTopLeftRadius: '100%', borderTopRightRadius: '100%', height: '15px'};
     }
   }
 
   return (
-    <div className="tama-mouth animate idle" style={expression}>
+    <div className={'tama-mouth animate-' + mouthAnimation} style={mouthExpression}>
       <style jsx>
         {`
           .tama-mouth {
@@ -69,7 +63,7 @@ function TamaMouth(props) {
             100% {transform: translateY(0);}
           }
 
-          .animate.idle {
+          .tama-mouth.animate-idle {
             animation:
               pucker 1s linear infinite,
               inertial-bounce 1s linear infinite;
