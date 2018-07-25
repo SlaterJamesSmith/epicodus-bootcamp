@@ -56,7 +56,7 @@ function TamaEye(props) {
             display: flex;
             align-items: center;
             justify-content: center;
-            border: 4px solid #fff;
+            border: 3px solid #fff;
             border-radius: 100%;
             background-color: #fff;
             transition: box-shadow 2s;
@@ -74,7 +74,7 @@ function TamaEye(props) {
             height: 10px;
             width: 10px;
             position: absolute;
-            top: 0;
+            top: 2px;
             border-radius: 100%;
             background-color: #fff;
           }
