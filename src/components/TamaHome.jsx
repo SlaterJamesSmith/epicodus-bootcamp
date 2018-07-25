@@ -158,6 +158,7 @@ class TamaHome extends React.Component {
               display: flex;
               flex-direction: column;
               align-items: center;
+              animation: fade-in 2s forwards;
             }
 
             .chimney {
@@ -189,6 +190,11 @@ class TamaHome extends React.Component {
             .status-meters {
               display: flex;
               justify-content: center;
+            }
+
+            @keyframes fade-in {
+              0% {opacity: 0;}
+              100% {opacity: 1;}
             }
           `}
         </style>
