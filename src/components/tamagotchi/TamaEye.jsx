@@ -3,6 +3,18 @@ import PropTypes from 'prop-types';
 
 function TamaEye(props) {
   const happiness = props.petStatus.foodLevel + props.petStatus.healthLevel + props.petStatus.playLevel;
+
+  //TamaEye CSS Animations
+  const eyeAnimation = setEyeAnimation();
+  const pupilAnimation = 'blink';
+
+  function setEyeAnimation() {
+    if (happiness < 75) {
+      return 'paranoid';
+    }
+  }
+
+  //TamaEye CSS Transformations
   const eyeExpression = setEyeBags();
   const pupilExpression = setPupilSize();
 
@@ -29,7 +41,7 @@ function TamaEye(props) {
   }
 
   return (
-    <div className="tama-eye" style={eyeExpression}>
+    <div className={'tama-eye animate-' + eyeAnimation} style={eyeExpression}>
       <style jsx>
         {`
           .tama-eye {
@@ -39,7 +51,7 @@ function TamaEye(props) {
             display: flex;
             align-items: center;
             justify-content: center;
-            border: 2px solid #fff;
+            border: 4px solid #fff;
             border-radius: 100%;
             background-color: #fff;
             transition: box-shadow 2s;
@@ -57,9 +69,18 @@ function TamaEye(props) {
             height: 10px;
             width: 10px;
             position: absolute;
-            top: 2px;
+            top: 0;
             border-radius: 100%;
             background-color: #fff;
+          }
+
+          @keyframes eye-paranoid {
+            0% {justify-content: center;}
+            20% {justify-content: flex-start;}
+            40% {justify-content: flex-end;}
+            60% {align-items: center; justify-content: center;}
+            80% {align-items: flex-end; justify-content: center;}
+            100% {align-items: center; justify-content: center;}
           }
 
           @keyframes eye-blink {
@@ -68,12 +89,16 @@ function TamaEye(props) {
             52% {transform: scaleY(1);}
           }
 
-          .pupil.animate-idle {
+          .tama-eye.animate-paranoid {
+            animation: eye-paranoid 15s infinite;
+          }
+
+          .pupil.animate-blink {
             animation: eye-blink 5s infinite;
           }
         `}
       </style>
-      <div className="pupil animate-idle" style={pupilExpression}></div>
+      <div className={'pupil animate-' + pupilAnimation} style={pupilExpression}></div>
       <div className="eye-light"></div>
     </div>
   );
