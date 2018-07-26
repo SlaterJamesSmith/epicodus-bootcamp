@@ -21,7 +21,11 @@ class TamaHome extends React.Component {
       },
       petConditions: {
         mealsToDigest: 0,
-        poopsOut: {}
+        poopsOut: {},
+        vomitsOut: 0
+      },
+      petConstants: {
+        mealCapacity: 25
       }
     };
     this.handleFeedPet = this.handleFeedPet.bind(this);
@@ -76,7 +80,8 @@ class TamaHome extends React.Component {
     this.setState({
       petConditions: {
         mealsToDigest: (conditions.mealsToDigest - 1 > 0) ? conditions.mealsToDigest - 1 : 0,
-        poopsOut: newPoopsOut
+        poopsOut: newPoopsOut,
+        vomitsOut: conditions.vomitsOut
       }
     });
   }
@@ -85,17 +90,28 @@ class TamaHome extends React.Component {
     const status = this.state.petStatus;
     const conditions = this.state.petConditions;
     const boost = this.state.petBuff.statBoostValue;
-    this.setState({
-      petStatus: {
-        foodLevel: (status.foodLevel + boost < 100) ? status.foodLevel + boost : 100,
-        healthLevel: status.healthLevel,
-        playLevel: status.playLevel
-      },
-      petConditions: {
-        mealsToDigest: conditions.mealsToDigest + 1,
-        poopsOut: conditions.poopsOut
-      }
-    });
+    if (conditions.mealsToDigest < this.state.petConstants.mealCapacity) {
+      this.setState({
+        petStatus: {
+          foodLevel: (status.foodLevel + boost < 100) ? status.foodLevel + boost : 100,
+          healthLevel: status.healthLevel,
+          playLevel: status.playLevel
+        },
+        petConditions: {
+          mealsToDigest: conditions.mealsToDigest + 1,
+          poopsOut: conditions.poopsOut,
+          vomitsOut: conditions.vomitsOut
+        }
+      });
+    } else {
+      this.setState({
+        petConditions: {
+          mealsToDigest: 0,
+          poopsOut: conditions.poopsOut,
+          vomitsOut: conditions.vomitsOut + 1
+        }
+      });
+    }
   }
 
   handleExercisePet() {
@@ -130,7 +146,8 @@ class TamaHome extends React.Component {
     this.setState({
       petConditions: {
         mealsToDigest: conditions.mealsToDigest,
-        poopsOut: newPoopsOut
+        poopsOut: newPoopsOut,
+        vomitsOut: conditions.vomitsOut
       }
     });
     setTimeout(() => this.removePoop(poopId), 250);
@@ -143,7 +160,8 @@ class TamaHome extends React.Component {
     this.setState({
       petConditions: {
         mealsToDigest: conditions.mealsToDigest,
-        poopsOut: newPoopsOut
+        poopsOut: newPoopsOut,
+        vomitsOut: conditions.vomitsOut
       }
     });
   }
