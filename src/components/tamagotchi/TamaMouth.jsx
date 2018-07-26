@@ -6,7 +6,13 @@ function TamaMouth(props) {
 
   //TamaMouth CSS Animations
   const mouthAnimation = 'idle';
-  const vomitAnimation = '';
+  const vomitAnimation = setVomitAnimation();
+
+  function setVomitAnimation() {
+    if (props.petConditions.activeStatus === 'vomiting') {
+      return 'expel';
+    }
+  }
 
   //TamaMouth CSS Transformations
   const mouthExpression = setMouthShape();
@@ -84,7 +90,7 @@ function TamaMouth(props) {
           }
 
           .vomit.animate-expel {
-            animation: vomit 1s infinite;
+            animation: vomit 0.7s infinite;
           }
         `}
       </style>
@@ -95,7 +101,8 @@ function TamaMouth(props) {
 }
 
 TamaMouth.propTypes = {
-  petStatus: PropTypes.object.isRequired
+  petStatus: PropTypes.object.isRequired,
+  petConditions: PropTypes.object.isRequired
 };
 
 export default TamaMouth;
