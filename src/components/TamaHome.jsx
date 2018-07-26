@@ -20,6 +20,7 @@ class TamaHome extends React.Component {
         statBoostValue: 50
       },
       petConditions: {
+        activeStatus: null,
         mealsToDigest: 0,
         poopsOut: {},
         vomitsOut: 0
@@ -79,6 +80,7 @@ class TamaHome extends React.Component {
     }
     this.setState({
       petConditions: {
+        activeStatus: conditions.activeStatus,
         mealsToDigest: (conditions.mealsToDigest - 1 > 0) ? conditions.mealsToDigest - 1 : 0,
         poopsOut: newPoopsOut,
         vomitsOut: conditions.vomitsOut
@@ -90,7 +92,7 @@ class TamaHome extends React.Component {
     const status = this.state.petStatus;
     const conditions = this.state.petConditions;
     const boost = this.state.petBuff.statBoostValue;
-    if (conditions.mealsToDigest < this.state.petConstants.mealCapacity) {
+    if (conditions.mealsToDigest < this.state.petConstants.mealCapacity && conditions.activeStatus !== 'vomiting') {
       this.setState({
         petStatus: {
           foodLevel: (status.foodLevel + boost < 100) ? status.foodLevel + boost : 100,
@@ -98,20 +100,40 @@ class TamaHome extends React.Component {
           playLevel: status.playLevel
         },
         petConditions: {
+          activeStatus: conditions.activeStatus,
           mealsToDigest: conditions.mealsToDigest + 1,
           poopsOut: conditions.poopsOut,
           vomitsOut: conditions.vomitsOut
         }
       });
     } else {
-      this.setState({
-        petConditions: {
-          mealsToDigest: 0,
-          poopsOut: conditions.poopsOut,
-          vomitsOut: conditions.vomitsOut + 1
-        }
-      });
+      this.startVomit();
     }
+  }
+
+  startVomit() {
+    const conditions = this.state.petConditions;
+    this.setState({
+      petConditions: {
+        activeStatus: 'vomiting',
+        mealsToDigest: 0,
+        poopsOut: conditions.poopsOut,
+        vomitsOut: conditions.vomitsOut + 1
+      }
+    });
+    setTimeout(() => this.stopVomit(), 2000);
+  }
+
+  stopVomit() {
+    const conditions = this.state.petConditions;
+    this.setState({
+      petConditions: {
+        activeStatus: null,
+        mealsToDigest: conditions.mealsToDigest,
+        poopsOut: conditions.poopsOut,
+        vomitsOut: conditions.vomitsOut
+      }
+    });
   }
 
   handleExercisePet() {
@@ -145,6 +167,7 @@ class TamaHome extends React.Component {
     });
     this.setState({
       petConditions: {
+        activeStatus: conditions.activeStatus,
         mealsToDigest: conditions.mealsToDigest,
         poopsOut: newPoopsOut,
         vomitsOut: conditions.vomitsOut
@@ -159,6 +182,7 @@ class TamaHome extends React.Component {
     delete newPoopsOut[poopId];
     this.setState({
       petConditions: {
+        activeStatus: conditions.activeStatus,
         mealsToDigest: conditions.mealsToDigest,
         poopsOut: newPoopsOut,
         vomitsOut: conditions.vomitsOut
