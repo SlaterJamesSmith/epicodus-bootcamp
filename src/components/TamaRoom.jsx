@@ -25,6 +25,15 @@ function TamaRoom(props) {
             background-color: #fff;
           }
 
+          .vomit-pool {
+            height: ${props.petConditions.vomitsOut * 10}px;
+            width: 100%;
+            position: absolute;
+            bottom: 0;
+            background-color: #0f08;
+            transition: height 2s linear;
+          }
+
           .litter-box {
             width: 450px;
             position: absolute;
@@ -41,6 +50,7 @@ function TamaRoom(props) {
           petStatus={props.petStatus}
           petConditions={props.petConditions}
         />
+        <div className="vomit-pool"></div>
         <div className="litter-box">
           {Object.keys(props.petConditions.poopsOut).map(poopId => {
             return (
