@@ -26,12 +26,13 @@ class TamaHome extends React.Component {
         vomitsOut: 0
       },
       petConstants: {
-        mealCapacity: 25
+        mealCapacity: 20
       }
     };
     this.handleFeedPet = this.handleFeedPet.bind(this);
     this.handleExercisePet = this.handleExercisePet.bind(this);
     this.handlePlayWithPet = this.handlePlayWithPet.bind(this);
+    this.handleDrainVomit = this.handleDrainVomit.bind(this);
     this.handleScoopPoop = this.handleScoopPoop.bind(this);
   }
 
@@ -63,10 +64,6 @@ class TamaHome extends React.Component {
         playLevel: (status.playLevel + decay > 0) ? status.playLevel + decay : 0
       }
     });
-    // if (status.foodLevel + status.healthLevel + status.playLevel <= 0) {
-    //   clearInterval(this.tamaPetStatusTimer);
-    //   clearInterval(this.tamaPetConditionsTimer);
-    // }
   }
 
   calcPetDigestion() {
@@ -106,7 +103,7 @@ class TamaHome extends React.Component {
           vomitsOut: conditions.vomitsOut
         }
       });
-    } else {
+    } else if (conditions.activeStatus !== 'vomiting') {
       this.startVomit();
     }
   }
@@ -156,6 +153,18 @@ class TamaHome extends React.Component {
         foodLevel: status.foodLevel,
         healthLevel: status.healthLevel,
         playLevel: (status.playLevel + boost < 100) ? status.playLevel + boost : 100
+      }
+    });
+  }
+
+  handleDrainVomit() {
+    const conditions = this.state.petConditions;
+    this.setState({
+      petConditions: {
+        activeStatus: conditions.activeStatus,
+        mealsToDigest: conditions.mealsToDigest,
+        poopsOut: conditions.poopsOut,
+        vomitsOut: (conditions.vomitsOut - 1 >= 0) ? conditions.vomitsOut - 1 : 0
       }
     });
   }
@@ -246,6 +255,7 @@ class TamaHome extends React.Component {
           <TamaRoom
             petStatus={this.state.petStatus}
             petConditions={this.state.petConditions}
+            onDrainVomit={this.handleDrainVomit}
             onScoopPoop={this.handleScoopPoop}
           />
         </div>

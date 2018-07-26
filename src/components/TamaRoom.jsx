@@ -26,22 +26,23 @@ function TamaRoom(props) {
           }
 
           .vomit-pool {
-            height: ${props.petConditions.vomitsOut * 10}px;
+            height: ${props.petConditions.vomitsOut * 25}px;
             width: 100%;
             position: absolute;
             bottom: 0;
             background-color: #0f08;
+            cursor: pointer;
             transition: height 2s linear;
           }
 
           .litter-box {
-            width: 450px;
+            max-width: 400px;
             position: absolute;
-            bottom: 0;
+            bottom: 25px;
             display: flex;
             justify-content: center;
             flex-wrap: wrap-reverse;
-            padding: 25px;
+            padding: 25px 0 0;
           }
         `}
       </style>
@@ -50,7 +51,7 @@ function TamaRoom(props) {
           petStatus={props.petStatus}
           petConditions={props.petConditions}
         />
-        <div className="vomit-pool"></div>
+        <div className="vomit-pool" onClick={() => props.onDrainVomit()}></div>
         <div className="litter-box">
           {Object.keys(props.petConditions.poopsOut).map(poopId => {
             return (
@@ -71,6 +72,7 @@ function TamaRoom(props) {
 TamaRoom.propTypes = {
   petStatus: PropTypes.object.isRequired,
   petConditions: PropTypes.object.isRequired,
+  onDrainVomit: PropTypes.func.isRequired,
   onScoopPoop: PropTypes.func.isRequired
 };
 
