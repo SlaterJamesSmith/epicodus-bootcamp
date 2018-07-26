@@ -3,18 +3,18 @@ import PropTypes from 'prop-types';
 
 function TamaEye(props) {
   const happiness = props.petStatus.foodLevel + props.petStatus.healthLevel + props.petStatus.playLevel;
-  const poopCount = Object.keys(props.petConditions.poopsOut).length;
+  const vomitPoopCount = Object.keys(props.petConditions.poopsOut).length + props.petConditions.vomitsOut;
 
   //TamaEye CSS Animations
   const eyeAnimation = setEyeAnimation();
   const pupilAnimation = 'blink';
 
   function setEyeAnimation() {
-    if (happiness < 75 && poopCount > 0) {
+    if (happiness < 75 && vomitPoopCount > 0) {
       return 'paranoid-look-down';
     } else if (happiness < 75) {
       return 'paranoid';
-    } else if (poopCount > 0) {
+    } else if (vomitPoopCount > 0) {
       return 'look-down';
     }
   }
