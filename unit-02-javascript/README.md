@@ -24,7 +24,6 @@
 - TypeScript
 - Angular
 - Firebase
-- Node.js
 - Webpack
 - Jasmine
 - Karma

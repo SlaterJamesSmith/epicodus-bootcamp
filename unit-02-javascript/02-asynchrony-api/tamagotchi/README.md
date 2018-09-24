@@ -22,7 +22,6 @@ None.
 ## Technologies Used
 
 * JavaScript
-* Node.js
 * Webpack
 * Jasmine
 * Karma

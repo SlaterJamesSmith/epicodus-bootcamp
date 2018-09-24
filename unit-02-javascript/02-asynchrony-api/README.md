@@ -1,25 +1,31 @@
-# EPICODUS - 02 - JavaScript - Week 1
+# EPICODUS - 02 - JavaScript - Week 2
 
-**Test Driven Development | April 16, 2018**
+**Asynchrony & APIs | April 23, 2018**
 
 **Collaborators**
 
+- Pablo Barreyro
 - Mike Chu
-- William Chu
-- Matthew Dowdney
-- Cory West-Forbes
+- Matt Miller
 
 ## Description
 
-A collection of practice projects focused on Test Driven Development.
+A collection of practice projects focused on Asynchrony & APIs.
 
 ## Setup/Installation Requirements
 
-### I. Project Setup
+### I. API Keys
+
+- API Call project requires Giphy.
+- Promises project requires Giphy.
+- Earthquake project requires Google Maps.
+- Job Map project requires Google Maps.
+
+### II. Project Setup
 
 1. Install Node.js on local machine.
 
-2. Clone repository and navigate to `01-test-driven-development`.
+2. Clone repository and navigate to `02-asynchrony-api`.
 
 3. Run `npm install` to load required packages.
 
@@ -31,7 +37,11 @@ A collection of practice projects focused on Test Driven Development.
 
     - **webpack.config.js** - 2 links
 
-### II. View Project
+5. Create new **.env** file and save API key as variable:
+
+    - `API_KEY = ""`
+
+### III. View Project
 
 - Test Mode: `npm test`
 
@@ -39,7 +49,7 @@ A collection of practice projects focused on Test Driven Development.
 
 - Production: `npm run build`
 
-  1. Navigate to `01-test-driven-development/dist`.
+  1. Navigate to `02-asynchrony-api/dist`.
 
   2. Open **index.html** in web browser.
 
@@ -50,7 +60,6 @@ None.
 ## Technologies Used
 
 - JavaScript
-- Node.js
 - Webpack
 - Jasmine
 - Karma

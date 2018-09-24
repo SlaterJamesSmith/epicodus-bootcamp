@@ -39,4 +39,3 @@ None.
 - JavaScript
 - TypeScript
 - Angular
-- Node.js

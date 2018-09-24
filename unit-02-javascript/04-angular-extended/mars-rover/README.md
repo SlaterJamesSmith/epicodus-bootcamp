@@ -78,4 +78,3 @@ None.
 - TypeScript
 - Angular
 - Firebase
-- Node.js
