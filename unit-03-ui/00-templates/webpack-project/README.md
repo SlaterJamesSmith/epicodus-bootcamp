@@ -38,7 +38,6 @@ None.
 
 * CSS (Sass)
 * JavaScript
-* Node.js
 * Webpack
 * Jasmine
 * Karma
