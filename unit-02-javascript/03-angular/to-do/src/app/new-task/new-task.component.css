@@ -1,0 +1,15 @@
+label {
+  font-weight: bold;
+}
+
+input[type=radio] {
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.card .btn {
+  display: block;
+  font-size: 0.9em;
+  margin: 0 auto;
+  text-transform: uppercase;
+}

@@ -1,0 +1,21 @@
+label {
+  font-weight: bold;
+}
+
+.btn {
+  text-transform: uppercase;
+  width: 50%;
+}
+
+.btn-group {
+  margin-top: 32px;
+  width: 100%;
+}
+
+.card {
+  margin: 10px;
+}
+
+.card-header {
+  text-align: center;
+}

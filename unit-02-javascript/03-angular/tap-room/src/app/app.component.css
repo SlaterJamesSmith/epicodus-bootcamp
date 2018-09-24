@@ -1,0 +1,10 @@
+h2 {
+  color: #007bff;
+  text-transform: uppercase;
+}
+
+.beer-list {
+  margin: 0 auto 20px;
+  overflow: auto;
+  width: auto;
+}

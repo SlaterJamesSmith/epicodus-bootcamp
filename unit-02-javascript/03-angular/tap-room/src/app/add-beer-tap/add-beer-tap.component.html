@@ -1,0 +1,35 @@
+<div *ngIf="startNewTap" class="card">
+  <div class="card-header">
+    <h3>Open New Tap</h3>
+  </div>
+  <div class="card-body row">
+    <div class="col-sm-6">
+      <div class="form-group">
+        <label>Beer Name</label>
+        <input #beerName class="form-control" type="text">
+      </div>
+      <div class="form-group">
+        <label>Brewery</label>
+        <input #breweryName class="form-control" type="text">
+      </div>
+      <div class="form-group">
+        <label>Pint Price</label>
+        <input #price class="form-control" type="text">
+      </div>
+    </div>
+    <div class="col-sm-6">
+      <div class="form-group">
+        <label>Type</label>
+        <input #beerType class="form-control" type="text">
+      </div>
+      <div class="form-group">
+        <label>ABV Percentage</label>
+        <input #abv class="form-control" type="text">
+      </div>
+      <div class="btn-group">
+        <button (click)="createTap(beerName.value, breweryName.value, beerType.value, abv.value, price.value); beerName.value='';breweryName.value='';beerType.value='';abv.value='';price.value=''" class="btn btn-success" type="button">Done</button>
+        <button (click)="clickCancelTap(); beerName.value='';breweryName.value='';beerType.value='';abv.value='';price.value=''" class="btn btn-dark" type="button">Cancel</button>
+      </div>
+    </div>
+  </div>
+</div>
