@@ -1,29 +1,37 @@
-# EPICODUS - 01 - Introduction to Programming
+# EPICODUS - UI Design & React Track
 
-**UI Design & React Track | Unit 1 | March 12, 2018**
+**March 12, 2018**
 
-## Sections
+**By Mike Chu**
 
-### I. Git, HTML and CSS (Purged)
+## Description
 
-### II. [JavaScript & jQuery](02-js-jquery)
+Course work completed through the UI Design & React program track at Epicodus.
 
-### III. [Arrays & Looping](03-arrays-looping)
+## Course Units
 
-### IV. [Object-Oriented JavaScript](04-object-oriented-js)
+### I. [Introduction to Programming](unit-01-intro)
 
-### V. [Team Week](05-team-week)
+### II. [JavaScript](unit-02-javascript)
+
+### III. [User Interface](unit-03-ui)
+
+### IV. [React](unit-04-react)
 
 ## Setup/Installation Requirements
 
 1. Clone repository.
 
-2. Open index.html in web browser.
+2. Follow unit/project README instructions to explore course work.
 
 ## Technologies Used
 
 - HTML
-- CSS
-- Bootstrap
-- JavaScript
-- jQuery
+- CSS (Bootstrap)
+- JavaScript (jQuery)
+- TypeScript
+- Angular
+- Firebase
+- Webpack
+- Jasmine
+- Karma
