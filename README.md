@@ -27,11 +27,15 @@ Course work completed through the UI Design & React program track at Epicodus.
 ## Technologies Used
 
 - HTML
-- CSS (Bootstrap)
+- CSS (Bootstrap, Sass)
 - JavaScript (jQuery)
 - TypeScript
 - Angular
+- React
+- Redux
 - Firebase
 - Webpack
+- Babel
 - Jasmine
 - Karma
+- Jest
