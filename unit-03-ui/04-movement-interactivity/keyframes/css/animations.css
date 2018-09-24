@@ -1,0 +1,36 @@
+@keyframes spin {
+  0% {transform: rotate(0deg); background-color: #6eb;}
+  50% {background-color: #f38;}
+  100% {transform: rotate(360deg); background-color: #6eb;}
+}
+
+.spin-1 {
+  animation: spin 1s infinite alternate linear;
+}
+
+.spin-2 {
+  animation: spin 0.5s infinite linear;
+}
+
+.spin-3 {
+  animation: spin 0.5s infinite alternate linear;
+}
+
+@keyframes colorize {
+  0% {background-color: #6eb;}
+  50% {background-color: #f38;}
+  100% {background-color: #6eb;}
+}
+
+.colorize {
+  animation: colorize 1s infinite linear;
+}
+
+@keyframes rotate {
+  0% {transform: rotate(0deg);}
+  100% {transform: rotate(360deg);}
+}
+
+.rotate {
+  animation: rotate 1s infinite linear;
+}

@@ -1,0 +1,335 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #e5e5e5;
+  box-sizing: border-box;
+  font-family: sans-serif;
+  font-size: 0.75rem;
+}
+
+h1 {
+  font-size: 1.1rem;
+}
+
+h2 {
+  font-size: 0.8rem;
+  padding: 3px 15px;
+}
+
+h3 {
+  font-size: 0.75rem;
+  font-weight: bold;
+}
+
+h4 {
+  font-size: 0.8rem;
+  margin-bottom: 10px;
+}
+
+a, a:visited {
+  color: #039;
+  text-decoration: none;
+}
+
+.wrapper {
+  background-color: #fff;
+  margin: 0 auto;
+  width: 800px;
+}
+
+/* NAV */
+
+nav a {
+  color: #fff;
+}
+
+nav a:visited {
+  color: #fff;
+}
+
+nav button {
+  font-size: 0.7rem;
+  padding: 2px 5px;
+}
+
+nav input {
+  margin: 0 10px 0 5px;
+}
+
+#top-nav {
+  align-items: baseline;
+  background-color: #003398;
+  color: white;
+  display: flex;
+  height: 115px;
+  justify-content: space-between;
+  padding: 7px 10px;
+}
+
+#bottom-nav {
+  background-color: #6698cb;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 15px;
+  padding: 6px;
+}
+
+.nav-section {
+  align-items: center;
+  display: flex;
+}
+
+/* MAIN */
+
+#main {
+  display: flex;
+  justify-content: space-around;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+}
+
+/* COLUMN LEFT */
+
+#column-left {
+  margin-left: 15px;
+  width: 300px;
+}
+
+#column-left h2 {
+  background-color: #6698cb;
+  color: #fff;
+}
+
+#profile {
+  display: flex;
+  margin-bottom: 12px;
+}
+
+#profile img {
+  margin-right: 15px;
+  margin-top: 10px;
+}
+
+#profile .links {
+  margin: 10px 0 0;
+}
+
+#contact {
+  border: 2px solid #6698cb;
+  margin-bottom: 25px;
+}
+
+#contact ul {
+  display: flex;
+  flex-flow: column wrap;
+  height: 124px;
+  margin-top: 10px;
+  padding-left: 20px;
+}
+
+#contact li {
+  height: 20px;
+  list-style: none;
+  padding: 5px 0 5px 10px;
+}
+
+#contact a, #contact a:visited {
+  color: #00f;
+}
+
+#myspace-url {
+  border: 1px solid #6698cb;
+  margin: 0 auto 25px;
+  padding-left: 5px;
+  width: 95%;
+}
+
+.info-panel {
+  border: 2px solid #6698cb;
+  margin-bottom: 25px;
+  padding-bottom: 3px;
+}
+
+.info-wrapper {
+  display: flex;
+}
+
+.info-title {
+  background-color: #b1d1f0;
+  margin: 3px 3px 0;
+  padding: 3px;
+  width: 107px;
+}
+
+.info-title h3 {
+  color: #336699;
+}
+
+.info-content {
+  background-color: #d6e8fb;
+  margin: 3px 3px 0 0;
+  padding: 3px;
+  width: 180px;
+}
+
+#schools .info-title {
+  width: 228px;
+}
+
+#schools .info-content {
+  width: 59px;
+  text-align: center;
+}
+
+/* COLUMN RIGHT */
+
+#column-right {
+  width: 440px;
+}
+
+#column-right h2 {
+  background-color: #ffcc99;
+  color: #ff6600;
+}
+
+#column-right h3 {
+  color: #ff6600;
+  font-size: 0.85rem;
+  margin-top: 5px;
+}
+
+#relationship {
+  border: 2px solid #000;
+  margin: 0 0 20px;
+  padding: 20px 0;
+  text-align: center;
+}
+
+#blog {
+  margin-bottom: 10px;
+}
+
+#blurbs {
+  margin-bottom: 25px;
+}
+
+#blurbs .about-me {
+  padding-left: 5px;
+}
+
+#blurbs span {
+  color: #008000;
+  font-weight: bold;
+}
+
+#blog p {
+  margin-bottom: 15px;
+}
+
+#friends-space {
+  margin-bottom: 25px;
+}
+
+#friends-space .count, #friends-comments .count {
+  margin: 10px 5px;
+}
+
+#friends-space span, #friends-comments span {
+  color: #cc0000;
+  font-size: 0.8rem;
+}
+
+.friend-images {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 20px 5px 0 10px;
+
+}
+.friend {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.friend img {
+  display: block;
+  padding-top: 3px;
+}
+
+#friends-space a:last-child, #friends-space a:last-child:visited {
+  color: #cc0000;
+}
+
+#friends-comments .comments {
+  margin: 0 auto;
+  width: 95%;
+}
+
+#friends-comments p:last-child {
+  margin: 5px;
+}
+
+#column-right .info-panel {
+  border: 2px solid #6698cb;
+  padding-bottom: 3px;
+  margin-bottom: 25px;
+}
+
+#column-right .info-wrapper {
+  display: flex;
+}
+
+#column-right .info-title {
+  width: 158px;
+  background-color: #ff9933;
+  margin: 3px 3px 0;
+  padding: 3px;
+  text-align: center;
+}
+
+#column-right .info-title img {
+  margin: 8px auto 45px;
+}
+
+#column-right .info-title h3 {
+  color: #336699;
+}
+
+#column-right .info-content {
+  width: 269px;
+  background-color: #f9d6b4;
+  margin: 3px 3px 0 0;
+  padding: 3px;
+}
+
+/* FOOTER */
+
+#footer {
+  text-align: center;
+  margin: 0 auto;
+  width: 800px;
+}
+
+#footer a {
+  text-decoration: underline;
+}
+
+#footer .links {
+  margin: 15px 0 25px;
+}
+
+/* MISC  */
+
+.text-center {
+  text-align: center;
+}
+
+.text-right {
+text-align: right;
+}

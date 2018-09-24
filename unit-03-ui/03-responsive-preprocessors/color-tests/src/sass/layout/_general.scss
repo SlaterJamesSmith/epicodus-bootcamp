@@ -1,0 +1,146 @@
+html {
+  box-sizing: border-box;
+}
+
+.container {
+  margin: auto;
+  padding-top: 5vw;
+  width: 90%;
+}
+
+ul {
+  @include flex-row-center;
+  margin-bottom: 5vw;
+  width: 100%;
+  li {
+    list-style: none;
+    height: (100vw / 6);
+    width: (100vw / 6);
+  }
+}
+
+.palette-1 {
+  li:nth-child(1) {
+    background-color: lighten($color-1, 0);
+  }
+  li:nth-child(2) {
+    background-color: lighten($color-1, 5);
+  }
+  li:nth-child(3) {
+    background-color: lighten($color-1, 10);
+  }
+  li:nth-child(4) {
+    background-color: lighten($color-1, 15);
+  }
+  li:nth-child(5) {
+    background-color: lighten($color-1, 20);
+  }
+  li:nth-child(6) {
+    background-color: lighten($color-1, 25);
+  }
+}
+
+.palette-2 {
+  li:nth-child(1) {
+    background-color: lighten($color-2, 0);
+  }
+  li:nth-child(2) {
+    background-color: lighten($color-2, 5);
+  }
+  li:nth-child(3) {
+    background-color: lighten($color-2, 10);
+  }
+  li:nth-child(4) {
+    background-color: lighten($color-2, 15);
+  }
+  li:nth-child(5) {
+    background-color: lighten($color-2, 20);
+  }
+  li:nth-child(6) {
+    background-color: lighten($color-2, 25);
+  }
+}
+
+.palette-3 {
+  li:nth-child(1) {
+    background-color: lighten($color-3, 0);
+  }
+  li:nth-child(2) {
+    background-color: lighten($color-3, 5);
+  }
+  li:nth-child(3) {
+    background-color: lighten($color-3, 10);
+  }
+  li:nth-child(4) {
+    background-color: lighten($color-3, 15);
+  }
+  li:nth-child(5) {
+    background-color: lighten($color-3, 20);
+  }
+  li:nth-child(6) {
+    background-color: lighten($color-3, 25);
+  }
+}
+
+.palette-4 {
+  li:nth-child(1) {
+    background-color: lighten($color-4, 0);
+  }
+  li:nth-child(2) {
+    background-color: lighten($color-4, 5);
+  }
+  li:nth-child(3) {
+    background-color: lighten($color-4, 10);
+  }
+  li:nth-child(4) {
+    background-color: lighten($color-4, 15);
+  }
+  li:nth-child(5) {
+    background-color: lighten($color-4, 20);
+  }
+  li:nth-child(6) {
+    background-color: lighten($color-4, 25);
+  }
+}
+
+.palette-5 {
+  li:nth-child(1) {
+    background-color: lighten($color-5, 0);
+  }
+  li:nth-child(2) {
+    background-color: lighten($color-5, 5);
+  }
+  li:nth-child(3) {
+    background-color: lighten($color-5, 10);
+  }
+  li:nth-child(4) {
+    background-color: lighten($color-5, 15);
+  }
+  li:nth-child(5) {
+    background-color: lighten($color-5, 20);
+  }
+  li:nth-child(6) {
+    background-color: lighten($color-5, 25);
+  }
+}
+
+.palette-6 {
+  li:nth-child(1) {
+    background-color: lighten($color-6, 0);
+  }
+  li:nth-child(2) {
+    background-color: lighten($color-6, 5);
+  }
+  li:nth-child(3) {
+    background-color: lighten($color-6, 10);
+  }
+  li:nth-child(4) {
+    background-color: lighten($color-6, 15);
+  }
+  li:nth-child(5) {
+    background-color: lighten($color-6, 20);
+  }
+  li:nth-child(6) {
+    background-color: lighten($color-6, 25);
+  }
+}
