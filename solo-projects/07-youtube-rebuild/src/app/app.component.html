@@ -1,0 +1,113 @@
+<nav (window:mouseup)="clickOut(); deactivateBtn()" class="navbar navbar-expand">
+  <div class="nav">
+    <button (mousedown)="activateBtn('menu'); protectClick()" (click)="tabSelect('menu'); clicks()" class="circle-btn">
+      <div [class]="checkClicker('menu')" class="circle"></div>
+      <svg viewBox="0 0 24 24">
+        <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"></path>
+      </svg>
+    </button>
+  </div>
+  <div class="nav">
+    <a class="navbar-brand" routerLink=""><span id="red-block"></span><span>Y</span>o<span>uT</span>ube</a>
+  </div>
+  <div id="search" class="nav justify-content-center">
+    <div class="btn-group">
+      <input class="form-control" type="text" placeholder="Search" #query>
+      <button (click)="goToSearch(query.value); query.value=''" class="btn">
+        <svg viewBox="0 0 24 24">
+          <path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"></path>
+        </svg>
+      </button>
+    </div>
+  </div>
+  <div class="nav">
+    <button (mousedown)="activateBtn('post-video'); protectClick()"  (click)="tabSelect('post-video')" class="circle-btn">
+      <div [class]="checkClicker('post-video')" class="circle"></div>
+      <svg viewBox="0 0 24 24">
+        <path d="M17 10.5V7c0-.55-.45-1-1-1H4c-.55 0-1 .45-1 1v10c0 .55.45 1 1 1h12c.55 0 1-.45 1-1v-3.5l4 4v-11l-4 4zM14 13h-3v3H9v-3H6v-2h3V8h2v3h3v2z" class="style-scope yt-icon"></path>
+      </svg>
+    </button>
+    <div (mousedown)="protectClick()" [class]="tabFocus('post-video')" class="nav-panel">
+      <ul class="menu-title menu-separator">
+        <li><strong>Create Video</strong></li>
+      </ul>
+      <ul class="menu-list">
+        <li (click)="closeMenu()">No Functions</li>
+      </ul>
+    </div>
+  </div>
+  <div class="nav">
+    <button (mousedown)="activateBtn('apps'); protectClick()" (click)="tabSelect('apps')" class="circle-btn">
+      <div [class]="checkClicker('apps')" class="circle"></div>
+      <svg viewBox="0 0 24 24">
+        <path d="M4 8h4V4H4v4zm6 12h4v-4h-4v4zm-6 0h4v-4H4v4zm0-6h4v-4H4v4zm6 0h4v-4h-4v4zm6-10v4h4V4h-4zm-6 4h4V4h-4v4zm6 6h4v-4h-4v4zm0 6h4v-4h-4v4z" class="style-scope yt-icon"></path>
+      </svg>
+    </button>
+    <div (mousedown)="protectClick()" [class]="tabFocus('apps')" class="nav-panel">
+      <ul class="menu-title menu-separator">
+        <li><strong>YouTube Apps</strong></li>
+      </ul>
+      <ul class="menu-list">
+        <li (click)="closeMenu()">No Functions</li>
+      </ul>
+    </div>
+  </div>
+  <div class="nav">
+    <button (mousedown)="activateBtn('settings'); protectClick()" (click)="tabSelect('settings')" class="circle-btn">
+      <div [class]="checkClicker('settings')" class="circle"></div>
+      <svg viewBox="0 0 24 24">
+        <path d="M12 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z" class="style-scope yt-icon"></path>
+      </svg>
+    </button>
+    <div (mousedown)="protectClick()" [class]="tabFocus('settings')" class="nav-panel">
+      <ul class="menu-title menu-separator">
+        <li><strong>Settings</strong></li>
+      </ul>
+      <ul class="menu-list">
+        <li (click)="closeMenu()">No Functions</li>
+      </ul>
+    </div>
+  </div>
+  <div *ngIf="user !== null" id="profile" class="nav">
+    <button (mousedown)="protectClick()" (click)="tabSelect('profile')" class="circle-btn"><span>{{user?.firstInitial}}</span></button>
+    <div (mousedown)="protectClick()" [class]="tabFocus('profile')" class="nav-panel">
+      <div id="profile-header">
+        <div id="profile-icon">
+          <span>{{user?.firstInitial}}</span>
+        </div>
+        <h2>{{user.username}}</h2>
+      </div>
+      <ul class="menu-list menu-separator">
+        <li (click)="goToUserAccount(); closeMenu()">Watch List</li>
+        <li (click)="goToUserAccount(); closeMenu()">Favorites</li>
+        <li (click)="logout()">Log Out</li>
+      </ul>
+      <ul class="menu-list">
+        <li (click)="closeMenu()">Delete Account</li>
+      </ul>
+    </div>
+  </div>
+  <div *ngIf="user === null" id="sign-in" class="nav">
+    <span (click)="signIn()">Sign In</span>
+  </div>
+</nav>
+
+<div id="side-nav" (mousedown)="protectClick()" [class]="sideNavPanel('menu')">
+  <img src="https://avatars0.githubusercontent.com/u/32079668?s=460&v=4" alt="Mike Chu">
+  <p>A site clone project<br>using Angular</p>
+  <p>by</p>
+  <h3><a href="https://github.com/m-chu">Mike Chu</a></h3>
+</div>
+
+<div id="side-nav-cover" [class]="sideNavCover('menu')" >
+</div>
+
+<app-sign-in *ngIf="signInToggle" (signIn)="login($event)"></app-sign-in>
+
+<div class="container-fluid">
+  <router-outlet *ngIf="!signInToggle"></router-outlet>
+</div>
+
+<div id="footer">
+  <a href="https://www.youtube.com/"><span id="yt-logo"></span></a>
+</div>

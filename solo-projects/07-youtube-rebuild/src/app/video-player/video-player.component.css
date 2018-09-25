@@ -1,0 +1,76 @@
+div.container {
+  margin-top: 24px;
+}
+
+iframe {
+  width: 100%;
+}
+
+h2.video-title {
+  font-size: 1.2rem;
+  font-weight: 400;
+  margin: 15px 0 10px;
+}
+
+h3 {
+  font-size: 0.9em;
+  margin: 0;
+}
+
+pre {
+  font-family: 'Roboto', sans-serif;
+  min-width: 600px;
+  padding-left: 63px;
+  white-space: pre-wrap;
+  width: 50%;
+  word-wrap: break-word;
+}
+
+.channel-strip {
+  align-items: center;
+  display: flex;
+  margin-bottom: 20px;
+}
+
+.channel-strip img {
+  border-radius: 100%;
+  height: 48px;
+  margin-right: 15px;
+  width: 48px;
+}
+
+.info {
+  border-bottom: 1px solid #eee;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+}
+
+.info h3 {
+  color: #9e9e9e;
+  font-size: 1rem;
+  font-weight: 300;
+}
+
+.likes-dislikes div {
+  float: left;
+  margin-right: 20px;
+}
+
+.likes-dislikes h3 {
+  font-size: 0.8rem;
+  margin: 0;
+}
+
+.likes, .dislikes {
+  display: flex;
+  align-items: center;
+}
+
+.likes-dislikes svg {
+  fill: #888888;
+  height: 20px;
+  margin-right: 7px;
+  width: 20px;
+}

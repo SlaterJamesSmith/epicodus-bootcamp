@@ -1,0 +1,16 @@
+<div class="container">
+  <div id="sign-in">
+    <h2>Sign in</h2>
+    <p>to continue to YouTube</p>
+    <div class="form-group">
+      <label>First Name</label>
+      <input #username class="form-control">
+    </div>
+    <div class="form-group">
+      <button (click)="login(username.value)" class="btn">Next</button>
+    </div>
+    <div *ngIf="invalidUser === true">
+      <p class="error">Please enter a name.</p>
+    </div>
+  </div>
+</div>

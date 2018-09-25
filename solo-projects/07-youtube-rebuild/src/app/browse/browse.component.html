@@ -1,0 +1,5 @@
+<div class="container">
+  <div id="carousel-all" (window:resize)="calcCarouselLimits()" (window:scroll)="detectScrollLimit()">
+    <app-browse-carousel *ngFor="let channel of channelQueue" [channel]="channel" [maxCarouselPositions]="maxCarouselPositions" [carouselWidth]="carouselWidth"></app-browse-carousel>
+  </div>
+</div>
