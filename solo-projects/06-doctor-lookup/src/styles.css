@@ -1,0 +1,150 @@
+body {
+  background-color: #eff0f5;
+  font-family: 'Roboto Condensed', sans-serif;
+  min-width: 500px;
+}
+
+header {
+  text-align: center;
+}
+
+form {
+  background-color: #0000;
+  padding: 30px 30px 15px;
+}
+
+h1, h2, h3, h4 {
+  font-family: 'Comfortaa', cursive;
+}
+
+h1 {
+  color: #007bff;
+  font-size: 3em;
+  margin: 25px 0 0;
+  text-transform: uppercase;
+}
+
+h1 span {
+  color: #c81fff;
+}
+
+h2 {
+  font-size: 1.5em;
+  background-color: #ffffffe8;
+  border-radius: 50px;
+  line-height: 1em;
+  margin: 10px auto;
+  padding: 5px 5px 3px;
+  width:  195px;
+}
+
+h4 {
+  font-weight: 1.3em;
+}
+
+p {
+  margin-bottom: 0.7em;
+}
+
+label {
+  background-color: #af55de;
+  border-radius: 5px;
+  color: #fff;
+  font-size: 1.3em;
+  padding: 0px 10px;
+}
+
+.btn {
+  font-size: 1.3em;
+  width: 100%;
+}
+
+.card {
+  margin-bottom: 20px;
+}
+
+.display-none {
+  display: none;
+}
+
+#loading {
+  animation: blink 1s infinite;
+  color: #28a745;
+}
+
+@keyframes blink {
+  50% {opacity: 0;}
+}
+
+#no-results, #error {
+  background-color: white;
+  margin-top: 25px;
+  text-align: center;
+}
+
+#no-results {
+  padding: 17px 20px 5px;
+}
+
+#error {
+  padding: 10px 0 5px;
+}
+
+#error .message {
+  color: #ff0000;
+  font-weight: bold;
+}
+
+.provider {
+  background-color: #fff;
+  border: 1px dotted #999;
+  margin: 20px 0px;
+  padding: 20px 25px;
+  word-wrap: break-word;
+}
+
+.provider h3 {
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.provider h4 {
+  font-size: 1.1em;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.provider img {
+  margin-bottom: 20px;
+  max-width: 106px;
+  width: 100%;
+}
+
+.provider .subtitle {
+  font-size: 0.8em;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.provider .main {
+  border-bottom: 1px solid #999;
+  margin-bottom: 25px;
+  padding-bottom: 10px;
+}
+
+.provider .new-patients {
+  color: #28a745;
+  font-style: italic;
+  margin: 0;
+}
+
+.provider .specialty {
+  border-top: 1px dotted #999;
+  padding-left: 15px;
+  padding-top: 10px;
+}
+
+.address {
+  border-top: 1px dotted #999;
+  padding-top: 10px;
+}

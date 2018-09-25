@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <link href="https://fonts.googleapis.com/css?family=Comfortaa|Roboto+Condensed" rel="stylesheet">
+    <meta charset="utf-8">
+    <title>Doctor Lookup</title>
+  </head>
+  <body>
+    <header class="container">
+      <h1>Doctor <span>Lookup</span></h1>
+      <p>Powered by <a href="https://betterdoctor.com/" target="_blank">BetterDoctor</a></p>
+    </header>
+    <div class="container">
+      <form>
+        <h2 class="text-center"><span id="search-by">Search By</span><span id="loading" class="display-none">Loading</span></h2>
+        <div class="form-group">
+          <label>Name</label>
+          <input id="name" class="form-control" type="text">
+        </div>
+        <div class="form-group">
+          <label>Medical Issue</label>
+          <input id="query" class="form-control" type="text">
+        </div>
+        <button class="btn btn-info" type="submit">Search</button>
+      </form>
+      <div id="results" class="display-none">
+        <h2 class="text-center">Results</h2>
+        <div id="no-results" class="display-none">
+          <p>No results. Your search criteria did not match any health provider information.</p>
+        </div>
+        <div id="providers" class="display-none">
+
+        </div>
+      </div>
+      <div id="error" class="display-none">
+        <p class="message"></p>
+        <p>We apologize for the inconvenience.</p>
+        <p>Your request cannot be processed at this time. Please try again later.</p>
+      </div>
+    </div>
+  </body>
+</html>
