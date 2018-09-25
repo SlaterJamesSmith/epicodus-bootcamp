@@ -1,0 +1,173 @@
+h1 {
+  animation: fade-in-out 4s ease-in-out 0.15s forwards;
+}
+
+.black-card {
+  animation: fade-out 3s 4s forwards;
+}
+
+.robot {
+  animation: camera-zoom-around 12s ease-out infinite;
+}
+
+.back-stage-1 {
+  opacity: 0.5;
+  animation: camera-back-stage-1 8s ease-out infinite;
+}
+
+.back-stage-2 {
+  opacity: 0.25;
+  animation: camera-back-stage-2 8s ease-out infinite;
+}
+
+.dance-1 {
+  .base {
+    animation: bounce 0.5s infinite;
+  }
+
+  .waist {
+    animation: wipe-cw-60 2s infinite;
+  }
+
+  .torso {
+    animation: spring 0.5s infinite;
+  }
+
+  .accent-bar {
+    animation: spring-accent-bar 0.5s infinite;
+  }
+
+  .neck {
+    animation: wipe-cw-30 0.5s infinite;
+  }
+
+  .head, .eye, .mouth {
+    animation: face-turn 0.5s infinite;
+  }
+
+  .left.shoulder.joint {
+    animation: rotate-cw-180-rv reverse 1s infinite;
+  }
+
+  .right.shoulder.joint {
+    animation: rotate-ccw-180-rv reverse 1s infinite;
+  }
+
+  .left.elbow.joint {
+    animation: rotate-cw-95 1s infinite;
+  }
+
+  .right.elbow.joint {
+    animation: rotate-ccw-95 1s infinite;
+  }
+
+  .left.hip.joint, .right.knee.joint {
+    animation: rotate-cw-45 0.5s infinite;
+  }
+
+  .right.hip.joint, .left.knee.joint {
+    animation: rotate-ccw-45 0.5s infinite;
+  }
+}
+
+.dance-2 {
+  .base {
+    animation: jump-shift 1s infinite;
+  }
+
+  .waist {
+    animation: wipe-cw-10 1s infinite;
+  }
+
+  .torso {
+    animation: spring 0.5s infinite;
+  }
+
+  .accent-bar {
+    animation: spring-accent-bar 0.5s infinite;
+  }
+
+  .neck { }
+
+  .head, .eye, .mouth {
+    animation: shifty 1s infinite;
+  }
+
+  .left.shoulder.joint {
+    animation: wipe-cw-90-left-from-nd 1.5s infinite;
+  }
+
+  .right.shoulder.joint {
+    animation: wipe-cw-90-right-from-nd 1.5s infinite;
+  }
+
+  .left.elbow.joint, .right.elbow.joint {
+    animation: wipe-ccw-270 1s infinite;
+  }
+
+  .left.hip.joint, .right.hip.joint {
+    animation: rotate-alt-45 1s ease-out infinite;
+  }
+
+  .left.knee.joint, .right.knee.joint {
+    animation: rotate-alt-90-rv 1s ease-out infinite;
+  }
+}
+
+.dance-3 {
+  .base {
+    animation: bounce 0.5s infinite;
+  }
+
+  .waist {
+    animation: wipe-cw-30 1s infinite;
+  }
+
+  .torso {
+    animation: spring 0.5s infinite;
+  }
+
+  .accent-bar {
+    animation: spring-accent-bar 0.5s infinite;
+  }
+
+  .neck {
+    animation: wipe-cw-10 1s infinite;
+  }
+
+  .head, .eye, .mouth {
+    animation: face-bounce 0.5s infinite;
+  }
+
+  .left.shoulder.joint {
+    animation: rotate-cw-60 0.5s infinite;
+  }
+
+  .right.shoulder.joint {
+    animation: rotate-ccw-45 1s infinite;
+  }
+
+  .left.elbow.joint {
+    animation: rotate-cw-135 2s infinite;
+  }
+
+  .right.elbow.joint {
+    animation: rotate-cw-135 1s infinite;
+  }
+
+  .left.hip.joint {
+    animation: rotate-cw-90 0.5s infinite;
+  }
+
+  .right.hip.joint {
+    animation: rotate-ccw-30 0.5s infinite;
+  }
+
+  .left.knee.joint {
+    animation: rotate-ccw-90 0.5s infinite;
+  }
+
+  .right.knee.joint {
+    animation: rotate-cw-30 0.5s infinite;
+  }
+}

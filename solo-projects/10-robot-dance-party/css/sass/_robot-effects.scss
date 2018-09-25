@@ -1,0 +1,53 @@
+.btn-1:focus ~ .frame .look-1 {
+  .accent-bar, .waist, .eye, .mouth, .visible.joint {
+    background-color: #fff;
+  }
+
+  .torso, .head, .arm, .leg {
+    background-color: #222;
+  }
+
+  .eye, .mouth, .visible.joint {
+    box-shadow: 0 0 50px 10px $highlight-1;
+  }
+
+  .head {
+    animation: starpower-1 0.5s infinite;
+  }
+}
+
+.btn-2:focus ~ .frame .look-2 {
+  .accent-bar, .waist, .eye, .mouth, .visible.joint {
+    background-color: #fff;
+  }
+
+  .torso, .head, .arm, .leg {
+    background-color: #222;
+  }
+
+  .eye, .mouth, .visible.joint {
+    box-shadow: 0 0 50px 10px $highlight-2;
+  }
+
+  .head {
+    animation: starpower-2 0.5s infinite;
+  }
+}
+
+.btn-3:focus ~ .frame .look-3 {
+  .accent-bar, .waist, .eye, .mouth, .visible.joint {
+    background-color: #fff;
+  }
+
+  .torso, .head, .arm, .leg {
+    background-color: #222;
+  }
+
+  .eye, .mouth, .visible.joint {
+    box-shadow: 0 0 50px 10px $highlight-3;
+  }
+
+  .head {
+    animation: starpower-2 0.5s infinite;
+  }
+}
