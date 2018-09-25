@@ -1,0 +1,35 @@
+body {
+  min-width: 475px;
+}
+
+h1 {
+  font-weight: bold;
+  margin-bottom: 25px;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+h2 {
+  font-size: 1.5em;
+}
+
+h3 {
+  font-size: 1em;
+  font-weight: bold;
+  margin-bottom: 15px;
+  text-transform: uppercase;
+}
+
+button {
+  text-transform: uppercase;
+}
+
+.display-none {
+  display: none;
+}
+
+.container {
+  margin: 0 auto 20px;
+  padding: 25px;
+  width: 95%;
+}

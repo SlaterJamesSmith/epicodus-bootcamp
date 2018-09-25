@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Super Galactic Age Calculator</title>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Super Galactic Age Calculator</h1>
+      <form class="card container">
+        <h2>Your Background</h2>
+        <p>Enter your information below to see your age and life expectancy on various planets.</p>
+        <div class="row">
+          <div class="form-group col-6">
+            <h3>Birthdate</h3>
+            <input id="birthdate" class="form-control" type="date" required>
+          </div>
+          <div class="form-group col-6">
+            <h3>Sex</h3>
+            <div class="display-none">
+              <input class="form-check-input" type="radio" name="birth-sex-origin" value="average" checked>
+              <label class="form-check-label">Default</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="radio" name="birth-sex-origin" value="male">
+              <label class="form-check-label">Male</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="radio" name="birth-sex-origin" value="average">
+              <label class="form-check-label">Intersex</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="radio" name="birth-sex-origin" value="female">
+              <label class="form-check-label">Female</label>
+            </div>
+          </div>
+        </div>
+        <button class="btn btn-primary" type="submit">Submit</button>
+      </form>
+      <div id="results" class="card container display-none">
+        <h2 class="text-center">Your Galactic Age Results</h2>
+        <div id="earth">
+          <h3>Earth Years</h3>
+          <p class="age">Age: <span></span></p>
+          <p class="life-expectancy">Life Expectancy: <span></span></p>
+          <p class="years-left">Expected Years Left: <span></span></p>
+          <p class="years-past">Years Past Life Expectancy: <span></span></p>
+        </div>
+      </div>
+      <div class="text-center">
+        <button id="reset" class="btn btn-dark display-none" type="button">Start Over</button>
+      </div>
+    </div>
+  </body>
+</html>
