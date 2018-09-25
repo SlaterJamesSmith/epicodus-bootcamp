@@ -1,0 +1,23 @@
+#sign-in {
+  @include flex-column-center;
+  padding-bottom: 20px;
+
+  .group {
+    @include flex-column-center;
+    width: 50%;
+    min-width: 250px;
+    max-width: 500px;
+  }
+
+  .group:first-child {
+    margin-bottom: 30px;
+  }
+
+  input {
+    margin: 0 0 10px;
+  }
+
+  button {
+    margin-bottom: 5px;
+  }
+}
