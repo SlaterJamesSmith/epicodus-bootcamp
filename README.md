@@ -1,6 +1,6 @@
 # EPICODUS - UI Design & React Track
 
-**March 12, 2018**
+**March 12, 2018 - July 26, 2018**
 
 **By Mike Chu**
 
@@ -17,6 +17,10 @@ Course work completed through the UI Design & React program track at Epicodus.
 ### III. [User Interface](unit-03-ui)
 
 ### IV. [React](unit-04-react)
+
+## Solo Projects
+
+1. [Portfolio](solo-projects/01-portfolio)
 
 ## Setup/Installation Requirements
 
