@@ -1,0 +1,16 @@
+<div *ngFor="let beerTap of beerListKegTaps" class="beer-tap card">
+  <div class="card-header">
+    <h3>{{beerTap.beerName}}</h3>
+    <h4>{{beerTap.breweryName}}</h4>
+  </div>
+  <div class="card-body">
+    <p [class]="volumeStatusColor(beerTap)" class="pint-count">Pints Remaining: {{beerTap.pintCount}}</p>
+    <p>{{beerTap.beerType}}</p>
+    <p>{{beerTap.abv}}% ABV</p>
+    <p class="price">${{beerTap.price}} Pint</p>
+  </div>
+  <div class="tap-controls">
+    <button (click)="clickSellPint(beerTap)" class="btn btn-primary" type="button">Sell Pint</button>
+    <button (click)="clickEditTap(beerTap)" class="btn btn-dark" type="button">Edit</button>
+  </div>
+</div>

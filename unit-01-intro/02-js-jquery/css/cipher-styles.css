@@ -1,0 +1,99 @@
+#project-title {
+  color: #fff;
+  font-weight: bold;
+  margin: 20px 0;
+  padding: 0;
+  text-align: left;
+  text-transform: uppercase;
+}
+
+#project-title .subtitle {
+  display: block;
+  font-size: 0.8em;
+  font-weight: normal;
+}
+
+body {
+  background-color: #000;
+  min-width: 450px;
+}
+
+h1 {
+  border-radius: 3px;
+  font-weight: bold;
+  margin: 10px auto;
+  padding: 10px
+}
+
+a:link, a:visited, a:hover, a:active {
+  text-decoration: none;
+}
+
+.activate h1 {
+  background-color: #3a6960;
+  border: 3px solid #36ffb8;
+  text-shadow: 0px 0px 10px #36ffb8;
+  transition: border 1s, width 0.5s;
+  width: 90%;
+}
+
+.activate h1:hover {
+  border: 3px dotted #0a271d;
+  filter: blur(1px);
+  width: 80%;
+}
+
+.activate a:link {
+  color: #36ffb8;
+}
+
+.activate a:hover {
+  color: #7bffd0;
+  text-shadow: 0px 0px 50px #7bffd0;
+}
+
+.monitor h1 {
+  background-color: #421e00;
+  border: 3px solid #ff7500;
+  text-shadow: 0px 0px 10px #ff7500;
+  transition: border 1s, width 0.5s;
+  width: 90%;
+}
+
+.monitor h1:hover {
+  border: 3px dotted #2f1600;
+  filter: blur(1px);
+  width: 80%;
+}
+
+.monitor a:link {
+  color: #ff7500;
+}
+
+.monitor a:hover {
+  color: #ffa960;
+  text-shadow: 0px 0px 50px #ffa960;
+}
+
+.cipher h2 {
+  background-color: #000613;
+  border: 1px dashed #36ffb8;
+  border-radius: 3px;
+  color: #36ffb8;
+  font-size: 1.5em;
+  font-weight: lighter;
+  height: auto;
+  margin: 10px auto;
+  min-height: 50px;
+  padding: 20px 10px;
+  width: 100%;
+}
+
+.container {
+  text-align: center;
+}
+
+.panel {
+  background-color: #000;
+  margin: 20px 10px;
+}

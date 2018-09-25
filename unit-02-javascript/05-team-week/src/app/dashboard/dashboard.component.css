@@ -1,0 +1,14 @@
+#user-info {
+  display: flex;
+  justify-content: flex-start;
+  padding: 20px;
+}
+
+#user-info div {
+  margin-right: 100px;
+}
+
+#tool-bucket {
+  display: flex;
+  padding: 25px;
+}

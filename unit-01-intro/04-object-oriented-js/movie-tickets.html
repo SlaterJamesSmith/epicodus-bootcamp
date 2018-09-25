@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link href="../css/bootstrap.css" rel="stylesheet" type="text/css">
+    <link href="css/styles.css" rel="stylesheet" type="text/css">
+    <script src="../js/jquery-3.3.1.js"></script>
+    <script src="js/movie-tickets-scripts.js"></script>
+    <meta charset="utf-8">
+    <title>EPI-01-WK4: Movie Tickets</title>
+  </head>
+  <body>
+    <div class="container">
+      <h1><a href="index.html">Epicodus: 01 - Intro</a> <span class="subtitle">Movie Tickets</span></h1>
+      <div class="row">
+        <div class="col-sm-6">
+          <form class="well">
+            <div class="form-group">
+              <label>Age Group</label>
+              <select id="age-group" class="form-control">
+                <option value="1">Under 18</option>
+                <option value="2">Adult</option>
+                <option value="3">65+</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>Show Times</label>
+              <select id="show-time" class="form-control">
+                <option value="1">Matinee</option>
+                <option value="2">Evening</option>
+              </select>
+            </div>
+            <button type="submit" class="btn btn-info">SUBMIT</button>
+          </form>
+          <div id="show-tickets" class="text-center display-none">
+            <h2>Movie Showings:</h2>
+          </div>
+        </div>
+        <div class="col-sm-6">
+          <div id="show-price" class="text-center display-none">
+            <h2>Total:</h2>
+            <h3></h3>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

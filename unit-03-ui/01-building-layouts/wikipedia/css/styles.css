@@ -1,0 +1,408 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #f6f6f6;
+  font-family: sans-serif;
+  min-width: 850px;
+}
+
+h1 {
+  font-size: 1.4rem;
+  font-weight: 400;
+  margin-bottom: 10px;
+}
+
+h2 {
+  border-bottom: 1px solid #a2a9b1;
+  font-family: serif;
+  font-weight: 400;
+  line-height: 2rem;
+  margin-bottom: 10px;
+}
+
+h3 {
+  font-size: 1.1rem;
+}
+
+p {
+  font-size: 0.8rem;
+  line-height: 1.2rem;
+}
+
+a, a:visited {
+  color: #3466bb;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+img {
+  display: block;
+}
+
+.wrapper {
+  margin-left: 176px;
+}
+
+.flex-row {
+  display: flex;
+}
+
+.flex-split {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.flex-spread {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* HEADER */
+
+header {
+  background: linear-gradient(#fff 60%, #f6f6f6);
+  height: 80px;
+}
+
+header .wrapper {
+  height: 81px;
+  padding: 10px 10px 0 0;
+}
+
+header ul {
+  display: flex;
+  font-size: 0.75rem;
+  justify-content: flex-end;
+}
+
+header li {
+  color: #707070;
+  list-style: none;
+  margin-right: 10px;
+}
+
+header .tabs {
+  display: flex;
+  justify-content: space-between;
+}
+
+header .tabs ul {
+  border-left: 1px solid #a7d7f9;
+}
+
+header .tabs li {
+  background: linear-gradient(#fff, #e1eef7);
+  border-bottom: 1px solid #a7d7f9;
+  border-right: 1px solid #a7d7f9;
+  font-size: 0.8rem;
+  margin: 0;
+  padding: 8px;
+}
+
+header .tabs .active {
+  background: linear-gradient(#fff, #fff);
+  border-bottom: 1px solid #fff;
+}
+
+header .search {
+  align-items: center;
+  background-color: #fff;
+  border: 1px solid #a2a9b1;
+  display: flex;
+  justify-content: space-between;
+  margin: 4px 0 6px 10px;
+  padding: 0 5px;
+  width: 20vw;
+}
+
+header .search input {
+  border: none;
+  font-size: 0.8rem;
+}
+
+header .search button {
+  background-color: #fff0;
+  background-image: url('https://upload.wikimedia.org/wikipedia/commons/8/8e/Feedbin-Icon-home-search.svg');
+  background-repeat: no-repeat;
+  background-size: 12px 12px;
+  border: none;
+  height: 12px;
+  opacity: 0.6;
+  width: 12px;
+}
+
+/* MAIN NAVIGATION */
+
+#main-nav {
+  padding: 0 8px 25px;
+  position: absolute;
+  top: 0;
+  width: 176px;
+}
+
+#main-nav img {
+  margin: 3px auto 29px;
+}
+
+#main-nav ul {
+  font-size: 0.75rem;
+  list-style: none;
+  margin: 20px 19px 0 19px;
+}
+
+#main-nav li.title {
+  border-bottom: 0.5px solid #a2a9b1;
+  color: #444;
+  margin-bottom: 7px;
+  padding-bottom: 3px;
+}
+
+#main-nav li {
+  margin-bottom: 5px;
+}
+
+#main-nav button.gear {
+  background-color: #fff0;
+  background-image: url('https://upload.wikimedia.org/wikipedia/commons/c/c9/Wikipedia_interwiki_section_gear_icon.svg');
+  background-repeat: no-repeat;
+  border: none;
+  cursor: pointer;
+  float: right;
+  opacity: 0.75;
+  outline: none;
+  height: 14px;
+  width: 14px;
+}
+
+#main-nav button.gear:hover {
+  opacity: 1;
+}
+
+/* MAIN CONTENT */
+
+#main {
+  background-color: #fff;
+  border-bottom: 1px solid #a7d7f9;
+  border-left: 1px solid #a7d7f9;
+  border-top: 1px solid #a7d7f9;
+  padding: 25px 25px 0;
+}
+
+#welcome {
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 5px;
+  padding: 12px 35px 10px;
+}
+
+#welcome .downsize {
+  font-size: 0.7rem;
+}
+
+#welcome .lists {
+  color: #00528c;
+  display: flex;
+}
+
+#welcome ul {
+  font-size: 1rem;
+  padding: 0 30px;
+}
+
+#welcome li {
+  margin: 3px 0;
+}
+
+#welcome li .downsize {
+  font-size: 0.85rem;
+  margin-left: -5px;
+}
+
+/* PANELS */
+
+.panel {
+  padding: 10px 10px 0;
+  margin-bottom: 5px;
+}
+
+.panel h3 {
+  margin-bottom: 10px;
+  padding: 5px;
+}
+
+.panel p {
+  font-size: 0.85rem;
+  line-height: 1.4rem;
+  margin-bottom: 10px;
+}
+
+.panel p.downsize {
+  font-size: 0.75rem;
+}
+
+.panel-image {
+  align-items: center;
+  display: flex;
+  margin-right: 15px;
+}
+
+.panel ul {
+  font-size: 0.9rem;
+  margin-left: 20px;
+}
+
+.panel li {
+  color: #00528c;
+  line-height: 1.3rem;
+  margin-bottom: 7px;
+}
+
+.panel li .downsize {
+  color: #000;
+  margin-left: -5px;
+}
+
+.panel.green h3 {
+  background-color: #cef2e0;
+  border: 1px solid #a3bfb1;
+}
+
+.panel.green {
+  background-color: #f5fffa;
+  border: 1px solid #cef2e0;
+  margin-right: 5px;
+  width: 55%;
+}
+
+.panel.blue h3 {
+  background-color: #cedff2;
+  border: 1px solid #a3b0bf;
+}
+
+.panel.blue {
+  background-color: #f5faff;
+  border: 1px solid #cedff2;
+  width: 45%;
+}
+
+.panel.purple h3 {
+  background-color: #ddcef2;
+  border: 1px solid #afa3bf;
+}
+
+.panel.purple {
+  background-color: #faf5ff;
+  border: 1px solid #ddcef2;
+  margin-bottom: 25px;
+}
+
+/* LINKS */
+
+#projects {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: -20px;
+  padding-right: 10%;
+}
+
+#projects ul {
+  font-size: 0.9rem;
+  list-style: none;
+  margin: 10px 30px 0 0;
+  width: 270px;
+}
+
+#projects li {
+  color: #000;
+  display: flex;
+  justify-content: flex-start;
+  line-height: 1.4rem;
+  margin-bottom: 15px;
+}
+
+#projects .project-icon {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  margin-right: 10px;
+  width: 55px;
+}
+
+#projects li img {
+  display: inline;
+}
+
+.links {
+  margin-bottom: 25px;
+}
+
+.links p {
+  font-size: 0.85rem;
+  margin-bottom: 10px;
+}
+
+.links ul {
+  font-size: 1rem;
+  margin-left: 20px;
+}
+
+.links li {
+  color: #00528c;
+  margin-bottom: 7px;
+}
+
+.links li .downsize {
+  color: #000;
+  font-size: 0.85rem;
+  margin-left: -5px;
+}
+
+/* FOOTER */
+
+footer {
+  font-size: 0.7rem;
+  padding: 20px 20px 30px;
+}
+
+footer ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+
+footer li {
+  list-style: none;
+  margin-right: 10px;
+  padding-top: 20px;
+}
+
+footer .buttons {
+  display: flex;
+  justify-content: flex-end;
+}
+
+footer .buttons img {
+  height: 31px;
+  width: 88px;
+}
+
+/* MISC */
+
+.text-center {
+  text-align: center;
+}
+
+.text-right {
+  text-align: right;
+}

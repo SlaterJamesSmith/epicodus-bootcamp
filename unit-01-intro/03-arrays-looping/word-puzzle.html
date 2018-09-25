@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link href="../css/bootstrap.css" rel="stylesheet" type="text/css">
+    <link href="css/styles.css" rel="stylesheet" type="text/css">
+    <script src="../js/jquery-3.3.1.js"></script>
+    <script src="js/word-puzzle-scripts.js"></script>
+    <meta charset="utf-8">
+    <title>EPI-01-WK3: Word Puzzle</title>
+  </head>
+  <body>
+    <div class="container">
+      <h1><a href="index.html">Epicodus: 01 - Intro</a> <span class="subtitle">Word Puzzle</span></h1>
+      <form class="well">
+        <div class="form-group">
+          <label>Enter a sentence:</label>
+          <input id="input" class="form-control" type="text" required>
+        </div>
+        <button type="submit" class="btn btn-warning">CREATE PUZZLE</button>
+      </form>
+      <div id="result" class="well display-none">
+        <p id="solution" class="display-none"></p>
+        <p id="output"></p>
+        <button id="toggle-solution" type="button" class="btn btn-info">TOGGLE SOLUTION</button>
+      </div>
+    </div>
+  </body>
+</html>
