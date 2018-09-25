@@ -22,6 +22,26 @@ Course work completed through the UI Design & React program track at Epicodus.
 
 1. [Portfolio](solo-projects/01-portfolio)
 
+2. [Epicodus Program Track Suggester](solo-projects/02-track-suggester)
+
+3. [Beep! Boop! Machine](solo-projects/03-beep-boop)
+
+4. [Tasty Pizza](solo-projects/04-tasty-pizza)
+
+5. [Super Galactic Age Calculator](solo-projects/05-galactic-age)
+
+6. [Doctor Lookup](solo-projects/06-doctor-lookup)
+
+7. [YouTube Rebuild](solo-projects/07-youtube-rebuild)
+
+8. [ArtStation Clone](solo-projects/08-artstation-clone)
+
+9. [Filmmaking Cowork Space](solo-projects/09-cowork-space)
+
+10. [Robot Dance Party](solo-projects/10-robot-dance-party)
+
+11. [YouTube Rebuild (React)](solo-projects/11-youtube-rebuild-react)
+
 ## Setup/Installation Requirements
 
 1. Clone repository.
