@@ -18,9 +18,10 @@ function TamaMouth(props) {
   const mouthExpression = setMouthShape();
 
   function setMouthShape() {
-    if (happiness > 180) {
+    const activeStatus = props.petConditions.activeStatus;
+    if (happiness > 180 && activeStatus !== 'vomiting') {
       return {borderBottomLeftRadius: '100%', borderBottomRightRadius: '100%', height: '20px'};
-    } else if (happiness > 75) {
+    } else if (happiness > 75  && activeStatus !== 'vomiting') {
       return {borderBottomLeftRadius: '75%', borderBottomRightRadius: '75%'};
     } else {
       return {borderTopLeftRadius: '100%', borderTopRightRadius: '100%', height: '15px'};
