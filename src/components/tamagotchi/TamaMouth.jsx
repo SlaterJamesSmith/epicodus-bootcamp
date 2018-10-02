@@ -36,7 +36,7 @@ function TamaMouth(props) {
             height: 12px;
             width: 20px;
             position: absolute;
-            bottom: 15px;
+            top: -30px;
             display: flex;
             justify-content: center;
             border-radius: 5px;
@@ -69,6 +69,11 @@ function TamaMouth(props) {
             100% {width: 12px;}
           }
 
+          @keyframes munch {
+            0% {height: 12px;}
+            100% {height: 1px;}
+          }
+
           @keyframes inertial-bounce {
             0% {transform: translateY(0);}
             10% {transform: translateY(4px);}
@@ -87,6 +92,12 @@ function TamaMouth(props) {
           .tama-mouth.animate-idle {
             animation:
               pucker 1s linear infinite,
+              inertial-bounce 1s linear infinite;
+          }
+
+          .tama-mouth.animate-eating {
+            animation:
+              munch 0.25s alternate infinite;
               inertial-bounce 1s linear infinite;
           }
 
