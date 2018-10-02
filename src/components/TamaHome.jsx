@@ -26,7 +26,7 @@ class TamaHome extends React.Component {
         vomitsOut: 0
       },
       petConstants: {
-        mealCapacity: 20
+        mealCapacity: 6
       }
     };
     this.handleFeedPet = this.handleFeedPet.bind(this);
@@ -86,26 +86,44 @@ class TamaHome extends React.Component {
   }
 
   handleFeedPet() {
+    const conditions = this.state.petConditions;
+    if (conditions.mealsToDigest < this.state.petConstants.mealCapacity && conditions.activeStatus === null) {
+      this.startFeed();
+    } else if (conditions.mealsToDigest >= this.state.petConstants.mealCapacity && conditions.activeStatus === null) {
+      this.startVomit();
+    }
+  }
+
+  startFeed() {
+    const conditions = this.state.petConditions;
+    this.setState({
+      petConditions: {
+        activeStatus: 'eating',
+        mealsToDigest: conditions.mealsToDigest,
+        poopsOut: conditions.poopsOut,
+        vomitsOut: conditions.vomitsOut
+      }
+    });
+    setTimeout(() => this.stopFeed(), 1000);
+  }
+
+  stopFeed() {
     const status = this.state.petStatus;
     const conditions = this.state.petConditions;
     const boost = this.state.petBuff.statBoostValue;
-    if (conditions.mealsToDigest < this.state.petConstants.mealCapacity && conditions.activeStatus !== 'vomiting') {
-      this.setState({
-        petStatus: {
-          foodLevel: (status.foodLevel + boost < 100) ? status.foodLevel + boost : 100,
-          healthLevel: status.healthLevel,
-          playLevel: status.playLevel
-        },
-        petConditions: {
-          activeStatus: conditions.activeStatus,
-          mealsToDigest: conditions.mealsToDigest + 1,
-          poopsOut: conditions.poopsOut,
-          vomitsOut: conditions.vomitsOut
-        }
-      });
-    } else if (conditions.activeStatus !== 'vomiting') {
-      this.startVomit();
-    }
+    this.setState({
+      petStatus: {
+        foodLevel: (status.foodLevel + boost < 100) ? status.foodLevel + boost : 100,
+        healthLevel: status.healthLevel,
+        playLevel: status.playLevel
+      },
+      petConditions: {
+        activeStatus: null,
+        mealsToDigest: conditions.mealsToDigest + 1,
+        poopsOut: conditions.poopsOut,
+        vomitsOut: conditions.vomitsOut
+      }
+    });
   }
 
   startVomit() {
