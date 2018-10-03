@@ -5,8 +5,16 @@ function TamaMouth(props) {
   const happiness = props.petStatus.foodLevel + props.petStatus.healthLevel + props.petStatus.playLevel;
 
   //TamaMouth CSS Animations
-  const mouthAnimation = 'idle';
+  const mouthAnimation = setEatAnimation();
   const vomitAnimation = setVomitAnimation();
+
+  function setEatAnimation() {
+    if (props.petConditions.activeStatus === 'eating') {
+      return 'eating';
+    } else {
+      return 'idle';
+    }
+  }
 
   function setVomitAnimation() {
     if (props.petConditions.activeStatus === 'vomiting') {
@@ -29,14 +37,17 @@ function TamaMouth(props) {
   }
 
   return (
-    <div className={'tama-mouth animate-' + mouthAnimation} style={mouthExpression}>
+    <div className="tama-mouth animate-idle">
       <style jsx>
         {`
           .tama-mouth {
-            height: 12px;
-            width: 20px;
             position: absolute;
             top: -30px;
+          }
+
+          .tama-mouth-inner {
+            height: 12px;
+            width: 100%;
             display: flex;
             justify-content: center;
             border-radius: 5px;
@@ -56,22 +67,23 @@ function TamaMouth(props) {
             height: 0;
             width: 100%;
             position: absolute;
-            border-radius: 20px;
+            border-radius: 10px;
             background-color: #0f09;
           }
 
           @keyframes pucker {
-            0% {width: 12px;}
-            10% {width: 16px;}
-            15% {width: 20px;}
-            85% {width: 20px;}
-            90% {width: 16px;}
-            100% {width: 12px;}
+            0% {width: 16px;}
+            10% {width: 20px;}
+            15% {width: 26px;}
+            85% {width: 26px;}
+            90% {width: 20px;}
+            100% {width: 16px;}
           }
 
           @keyframes munch {
             0% {height: 12px;}
-            100% {height: 1px;}
+            50% {height: 1px;}
+            100% {height: 12px;}
           }
 
           @keyframes inertial-bounce {
@@ -90,15 +102,12 @@ function TamaMouth(props) {
           }
 
           .tama-mouth.animate-idle {
-            animation:
-              pucker 1s linear infinite,
-              inertial-bounce 1s linear infinite;
+            animation: inertial-bounce 1s linear infinite;
+            animation: pucker 1s linear infinite;
           }
 
-          .tama-mouth.animate-eating {
-            animation:
-              munch 0.25s alternate infinite;
-              inertial-bounce 1s linear infinite;
+          .tama-mouth-inner.animate-eating {
+            animation: munch 0.2s infinite;
           }
 
           .vomit.animate-expel {
@@ -106,8 +115,10 @@ function TamaMouth(props) {
           }
         `}
       </style>
-      <div className="tooth"></div>
-      <div className={'vomit animate-' + vomitAnimation}></div>
+      <div className={'tama-mouth-inner animate-' + mouthAnimation} style={mouthExpression}>
+        <div className="tooth"></div>
+        <div className={'vomit animate-' + vomitAnimation}></div>
+      </div>
     </div>
   );
 }
