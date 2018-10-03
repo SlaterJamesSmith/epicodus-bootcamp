@@ -26,7 +26,7 @@ function Home() {
             color: #fff;
             background-color: #f09;
             text-align: center;
-            animation: play-button 2s linear infinite;
+            animation: play-button 1.5s ease-in-out infinite;
           }
 
           p {
@@ -35,9 +35,9 @@ function Home() {
           }
 
           @keyframes play-button {
-            0% {transform: scale(1);}
-            50% {transform: scale(1.1);}
-            100% {transform: scale(1);}
+            0% {transform: translateY(0);}
+            50% {transform: translateY(10px);}
+            100% {transform: translateY(0);}
           }
         `}
       </style>
