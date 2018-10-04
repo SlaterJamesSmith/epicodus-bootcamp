@@ -128,8 +128,9 @@ function TamaMouth(props) {
           }
 
           .tama-mouth.animate-idle {
-            animation: inertial-bounce 1s linear infinite;
-            animation: pucker 1s linear infinite;
+            animation:
+              inertial-bounce 1s linear infinite,
+              pucker 1s linear infinite;
           }
 
           .tama-mouth-inner.animate-eating {
