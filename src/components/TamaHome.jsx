@@ -267,7 +267,37 @@ class TamaHome extends React.Component {
               width: 100%;
               position: absolute;
               top: 0;
+              display: flex;
+              align-items: center;
+              justify-content: center;
               background: linear-gradient(#00b8ff, #fff);
+              overflow: hidden;
+            }
+
+            .scenery-origin {
+              height: 0;
+              width: 0;
+              position: relative;
+            }
+
+            .rotator {
+              height: 0;
+              width: 0;
+              position: absolute;
+              display: flex;
+              justify-content: center;
+              top: 500px;
+              animation: rotate-sky 12s linear infinite;
+            }
+
+            .sun {
+              height: 150px;
+              width: 150px;
+              position: absolute;
+              bottom: 850px;
+              border-radius: 100%;
+              background: #fff7d1;
+              animation: sun 12s linear infinite;
             }
 
             .lawn {
@@ -319,9 +349,28 @@ class TamaHome extends React.Component {
               0% {opacity: 0;}
               100% {opacity: 1;}
             }
+
+            @keyframes rotate-sky {
+              0% {transform: rotate(0deg);}
+              100% {transform: rotate(-360deg);}
+            }
+
+            @keyframes sun {
+              0% {background: #fff7d1;}
+              10% {background: #fff7d1;}
+              25% {background: #ffa500;}
+              75% {background: #ffa500;}
+              90% {background: #fff7d1;}
+              100% {background: #fff7d1;}
+            }
           `}
         </style>
         <section className="scenery">
+          <div className="scenery-origin">
+            <div className="rotator">
+              <div className="sun"></div>
+            </div>
+          </div>
           <div className="lawn"></div>
         </section>
         <section className="house">
