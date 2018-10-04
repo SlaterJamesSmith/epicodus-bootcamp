@@ -271,13 +271,18 @@ class TamaHome extends React.Component {
               align-items: center;
               justify-content: center;
               background: linear-gradient(#00b8ff, #fff);
-              overflow: hidden;
+              animation: hue 24s linear infinite;
             }
 
-            .scenery-origin {
-              height: 0;
-              width: 0;
-              position: relative;
+            .sky-box {
+              height: 50%;
+              width: 100%;
+              position: absolute;
+              display: flex;
+              justify-content: center;
+              top: 0;
+              overflow: hidden;
+              z-index: 10;
             }
 
             .rotator {
@@ -286,9 +291,9 @@ class TamaHome extends React.Component {
               position: absolute;
               display: flex;
               justify-content: center;
-              top: 500px;
+              top: 1000px;
               transform: rotate(180deg);
-              animation: rotate-sky 12s linear infinite;
+              animation: rotate-sky 24s linear infinite;
             }
 
             .sun {
@@ -298,7 +303,7 @@ class TamaHome extends React.Component {
               bottom: 850px;
               border-radius: 100%;
               background: #fff7d1;
-              animation: sun 12s linear infinite;
+              animation: sun 24s linear infinite;
             }
 
             .moon-ext {
@@ -308,7 +313,7 @@ class TamaHome extends React.Component {
               top: 850px;
               border-radius: 100%;
               overflow: hidden;
-              animation: moon 12s linear infinite;
+              animation: moon 24s linear infinite;
             }
 
             .moon-int {
@@ -319,7 +324,7 @@ class TamaHome extends React.Component {
               top: -35px;
               left: -70px;
               border-radius: 100%;
-              border: 60px solid #a8f7ff;
+              border: 60px solid #fff;
             }
 
             .lawn {
@@ -328,6 +333,15 @@ class TamaHome extends React.Component {
               position: absolute;
               bottom: 0;
               background: linear-gradient(#42dc63, #00a424);
+            }
+
+            .color-filter {
+              height: 100%;
+              width: 100%;
+              position: absolute;
+              opacity: 0.5;
+              z-index: 5;
+              animation: color 24s linear infinite;
             }
 
             .house {
@@ -378,12 +392,10 @@ class TamaHome extends React.Component {
             }
 
             @keyframes sun {
-              0% {background: #fff7d1;}
               10% {background: #fff7d1;}
-              25% {background: #ffa500;}
-              75% {background: #ffa500;}
+              25% {background: #ff966e;}
+              75% {background: #ff966e;}
               90% {background: #fff7d1;}
-              100% {background: #fff7d1;}
             }
 
             @keyframes moon {
@@ -391,10 +403,23 @@ class TamaHome extends React.Component {
               50% {transform: rotate(-45deg);}
               75% {transform: rotate(45deg);}
             }
+
+            @keyframes hue {
+              0% {filter: hue-rotate(0deg);}
+              50% {filter: hue-rotate(50deg);}
+              100% {filter: hue-rotate(0deg);}
+            }
+
+            @keyframes color {
+              0% {background: transparent;}
+              50% {background: #430065;}
+              100% {background: transparent;}
+            }
           `}
         </style>
         <section className="scenery">
-          <div className="scenery-origin">
+          <div className="color-filter"></div>
+          <div className="sky-box">
             <div className="rotator">
               <div className="sun"></div>
               <div className="moon-ext">
