@@ -7,6 +7,7 @@ function Nav() {
       <style jsx>
         {`
           #nav {
+            height: 39px;
             width: 100%;
             position: absolute;
             top: 0;
@@ -14,6 +15,7 @@ function Nav() {
             border-bottom: 1px solid #f09;
             box-shadow: 0 2px 5px #0003;
             background-color: #fff;
+            z-index: 100;
           }
 
           ul {

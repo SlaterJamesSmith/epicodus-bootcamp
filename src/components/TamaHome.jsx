@@ -223,21 +223,49 @@ class TamaHome extends React.Component {
         <style jsx>
           {`
             #tama-home {
-              position: relative;
+              min-height: 100vh;
+              width: 100%;
+              position: absolute;
+              top: 0;
               display: flex;
               flex-direction: column;
               align-items: center;
+              justify-content: center;
+              padding: 100px 0 25px;
               animation: fade-in 2s forwards;
             }
 
-            .chimney {
-              height: 100px;
-              width: 50px;
+            .scenery {
+              height: 100%;
+              width: 100%;
               position: absolute;
               top: 0;
+              background: #97e2ff;
+            }
+
+            .lawn {
+              height: 50%;
+              width: 100%;
+              position: absolute;
+              bottom: 0;
+              background: linear-gradient(#42dc63, #00a424);
+            }
+
+            .house {
+              width: 500px;
+              position: relative;
+              z-index: 10;
+            }
+
+            .chimney {
+              height: 80px;
+              width: 40px;
+              position: absolute;
+              top: 20px;
               right: 10%;
               border-radius: 5px;
-              background-color: #ddd;
+              background-color: #f09;
+              z-index: 0;
             }
 
             .roof {
@@ -248,7 +276,6 @@ class TamaHome extends React.Component {
             }
 
             .walls {
-              width: 100%;
               height: 500px;
               padding: 15px;
               border-bottom-left-radius: 10px;
@@ -258,7 +285,7 @@ class TamaHome extends React.Component {
 
             .status-meters {
               display: flex;
-              justify-content: center;
+              z-index: 10;
             }
 
             @keyframes fade-in {
@@ -267,16 +294,21 @@ class TamaHome extends React.Component {
             }
           `}
         </style>
-        <div className="chimney"></div>
-        <div className="roof"></div>
-        <div className="walls">
-          <TamaRoom
-            petStatus={this.state.petStatus}
-            petConditions={this.state.petConditions}
-            onDrainVomit={this.handleDrainVomit}
-            onScoopPoop={this.handleScoopPoop}
-          />
-        </div>
+        <section className="scenery">
+          <div className="lawn"></div>
+        </section>
+        <section className="house">
+          <div className="chimney"></div>
+          <div className="roof"></div>
+          <div className="walls">
+            <TamaRoom
+              petStatus={this.state.petStatus}
+              petConditions={this.state.petConditions}
+              onDrainVomit={this.handleDrainVomit}
+              onScoopPoop={this.handleScoopPoop}
+            />
+          </div>
+        </section>
         <section className="status-meters">
           <TubeMeter
             meterType="Happiness"
