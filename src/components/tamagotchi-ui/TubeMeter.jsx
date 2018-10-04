@@ -33,6 +33,7 @@ function TubeMeter(props) {
             margin: 10px;
             border: 3px solid #888;
             border-radius: 28px;
+            background: #fff;
             overflow: hidden;
           }
 
@@ -40,13 +41,13 @@ function TubeMeter(props) {
             height: 100%;
             position: absolute;
             left: 0;
-            z-index: -10;
             transition: width 1s, background-color 1s, border 1s;
           }
 
           h3 {
             color: #f09;
             text-transform: uppercase;
+            z-index: 10;
           }
         `}
       </style>

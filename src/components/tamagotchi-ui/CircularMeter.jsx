@@ -37,6 +37,7 @@ function CircularMeter(props) {
             margin: 10px;
             border: 3px solid #888;
             border-radius: 100%;
+            background: #fff;
             overflow: hidden;
             transition: border 0.2s;
           }
