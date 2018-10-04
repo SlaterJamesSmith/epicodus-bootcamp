@@ -240,7 +240,7 @@ class TamaHome extends React.Component {
               width: 100%;
               position: absolute;
               top: 0;
-              background: #97e2ff;
+              background: linear-gradient(#00b8ff, #fff);
             }
 
             .lawn {
