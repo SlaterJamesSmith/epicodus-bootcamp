@@ -287,6 +287,7 @@ class TamaHome extends React.Component {
               display: flex;
               justify-content: center;
               top: 500px;
+              transform: rotate(180deg);
               animation: rotate-sky 12s linear infinite;
             }
 
@@ -298,6 +299,27 @@ class TamaHome extends React.Component {
               border-radius: 100%;
               background: #fff7d1;
               animation: sun 12s linear infinite;
+            }
+
+            .moon-ext {
+              height: 100px;
+              width: 100px;
+              position: absolute;
+              top: 850px;
+              border-radius: 100%;
+              overflow: hidden;
+              animation: moon 12s linear infinite;
+            }
+
+            .moon-int {
+              box-sizing: content-box;
+              height: 80px;
+              width: 120px;
+              position: absolute;
+              top: -35px;
+              left: -70px;
+              border-radius: 100%;
+              border: 60px solid #a8f7ff;
             }
 
             .lawn {
@@ -363,12 +385,21 @@ class TamaHome extends React.Component {
               90% {background: #fff7d1;}
               100% {background: #fff7d1;}
             }
+
+            @keyframes moon {
+              25% {transform: rotate(-135deg);}
+              50% {transform: rotate(-45deg);}
+              75% {transform: rotate(45deg);}
+            }
           `}
         </style>
         <section className="scenery">
           <div className="scenery-origin">
             <div className="rotator">
               <div className="sun"></div>
+              <div className="moon-ext">
+                <div className="moon-int"></div>
+              </div>
             </div>
           </div>
           <div className="lawn"></div>
