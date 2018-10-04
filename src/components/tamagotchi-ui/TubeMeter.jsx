@@ -31,7 +31,7 @@ function TubeMeter(props) {
             align-items: center;
             justify-content: center;
             margin: 10px;
-            border: 3px solid #888;
+            border: 4px solid #fff;
             border-radius: 28px;
             background: #fff;
             overflow: hidden;
@@ -45,6 +45,9 @@ function TubeMeter(props) {
           }
 
           h3 {
+            padding: 5px 35px;
+            border-radius: 20px;
+            background: #fff9;
             color: #f09;
             text-transform: uppercase;
             z-index: 10;
