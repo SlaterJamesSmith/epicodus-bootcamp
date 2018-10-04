@@ -26,7 +26,7 @@ class TamaHome extends React.Component {
         vomitsOut: 0
       },
       petConstants: {
-        mealCapacity: 6
+        mealCapacity: 5
       }
     };
     this.handleFeedPet = this.handleFeedPet.bind(this);
@@ -37,7 +37,7 @@ class TamaHome extends React.Component {
   }
 
   componentDidMount() {
-    this.tamaPetStatusTimer = setInterval(() => this.tamaStatusUpdater(), 2000);
+    this.tamaPetStatusTimer = setInterval(() => this.tamaStatusUpdater(), 3000);
     this.tamaPetConditionsTimer = setInterval(() => this.tamaConditionsUpdater(), 5000);
   }
 
@@ -95,19 +95,6 @@ class TamaHome extends React.Component {
   }
 
   startFeed() {
-    const conditions = this.state.petConditions;
-    this.setState({
-      petConditions: {
-        activeStatus: 'eating',
-        mealsToDigest: conditions.mealsToDigest,
-        poopsOut: conditions.poopsOut,
-        vomitsOut: conditions.vomitsOut
-      }
-    });
-    setTimeout(() => this.stopFeed(), 1000);
-  }
-
-  stopFeed() {
     const status = this.state.petStatus;
     const conditions = this.state.petConditions;
     const boost = this.state.petBuff.statBoostValue;
@@ -118,8 +105,21 @@ class TamaHome extends React.Component {
         playLevel: status.playLevel
       },
       petConditions: {
-        activeStatus: null,
+        activeStatus: 'eating',
         mealsToDigest: conditions.mealsToDigest + 1,
+        poopsOut: conditions.poopsOut,
+        vomitsOut: conditions.vomitsOut
+      }
+    });
+    setTimeout(() => this.stopFeed(), 1000);
+  }
+
+  stopFeed() {
+    const conditions = this.state.petConditions;
+    this.setState({
+      petConditions: {
+        activeStatus: null,
+        mealsToDigest: conditions.mealsToDigest,
         poopsOut: conditions.poopsOut,
         vomitsOut: conditions.vomitsOut
       }
@@ -164,13 +164,40 @@ class TamaHome extends React.Component {
   }
 
   handlePlayWithPet() {
+    const conditions = this.state.petConditions;
+    if (conditions.activeStatus === null) {
+      this.startPlay();
+    }
+  }
+
+  startPlay() {
     const status = this.state.petStatus;
+    const conditions = this.state.petConditions;
     const boost = this.state.petBuff.statBoostValue;
     this.setState({
       petStatus: {
         foodLevel: status.foodLevel,
         healthLevel: status.healthLevel,
         playLevel: (status.playLevel + boost < 100) ? status.playLevel + boost : 100
+      },
+      petConditions: {
+        activeStatus: (Math.random() > 0.5) ? 'playing-1' : 'playing-2',
+        mealsToDigest: conditions.mealsToDigest,
+        poopsOut: conditions.poopsOut,
+        vomitsOut: conditions.vomitsOut
+      }
+    });
+    setTimeout(() => this.stopPlay(), 1000);
+  }
+
+  stopPlay() {
+    const conditions = this.state.petConditions;
+    this.setState({
+      petConditions: {
+        activeStatus: null,
+        mealsToDigest: conditions.mealsToDigest,
+        poopsOut: conditions.poopsOut,
+        vomitsOut: conditions.vomitsOut
       }
     });
   }
