@@ -152,13 +152,40 @@ class TamaHome extends React.Component {
   }
 
   handleExercisePet() {
+    const conditions = this.state.petConditions;
+    if (conditions.activeStatus === null) {
+      this.startExercise();
+    }
+  }
+
+  startExercise() {
     const status = this.state.petStatus;
+    const conditions = this.state.petConditions;
     const boost = this.state.petBuff.statBoostValue;
     this.setState({
       petStatus: {
         foodLevel: status.foodLevel,
         healthLevel: (status.healthLevel + boost < 100) ? status.healthLevel + boost : 100,
         playLevel: status.playLevel
+      },
+      petConditions: {
+        activeStatus: 'exercising',
+        mealsToDigest: conditions.mealsToDigest,
+        poopsOut: conditions.poopsOut,
+        vomitsOut: conditions.vomitsOut
+      }
+    });
+    setTimeout(() => this.stopExercise(), 1000);
+  }
+
+  stopExercise() {
+    const conditions = this.state.petConditions;
+    this.setState({
+      petConditions: {
+        activeStatus: null,
+        mealsToDigest: conditions.mealsToDigest,
+        poopsOut: conditions.poopsOut,
+        vomitsOut: conditions.vomitsOut
       }
     });
   }
