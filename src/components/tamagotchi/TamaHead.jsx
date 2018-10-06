@@ -2,40 +2,63 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 function TamaHead(props) {
-  const expression = checkMood(props.petStatus);
+  const happiness = props.petStatus.foodLevel + props.petStatus.healthLevel + props.petStatus.playLevel;
 
-  function checkMood(status) {
-    let happiness = status.foodLevel + status.healthLevel + status.playLevel;
+  //TamaMouth CSS Animations
+  const headAnimation = setHeadAnimation();
+
+  function setHeadAnimation() {
+    if (props.petConditions.activeStatus === 'exercising') {
+      return 'exercising';
+    }
+  }
+
+  //TamaHead CSS Transformations
+  const headSize = setHeadSize(props.petStatus);
+  const complexion = setComplexion(props.petStatus);
+
+  function setHeadSize(status) {
     if (happiness > 180) {
-      return {
-        backgroundColor: '#f09',
-        transform: `scale(${props.petConditions.mealsToDigest * 0.2 + 1})`
-      };
+      return {transform: `scale(${props.petConditions.mealsToDigest * 0.2 + 1})`};
     } else if (happiness > 75) {
-      return {
-        backgroundColor: '#f6c',
-        transform: `scale(${props.petConditions.mealsToDigest * 0.2 + 1})`
-      };
+      return {transform: `scale(${props.petConditions.mealsToDigest * 0.2 + 1})`};
     } else {
-      return {
-        backgroundColor: '#fce',
-        transform: `scale(${props.petConditions.mealsToDigest * 0.2 + 1})`
-      };
+      return {transform: `scale(${props.petConditions.mealsToDigest * 0.2 + 1})`};
+    }
+  }
+
+  function setComplexion(status) {
+    if (happiness > 180) {
+      return {backgroundColor: '#f09'};
+    } else if (happiness > 75) {
+      return {backgroundColor: '#f6c'};
+    } else {
+      return {backgroundColor: '#fce'};
     }
   }
 
   return (
-    <div className="tama-head animate-idle" style={expression}>
+    <div className="tama-head-container animate-idle" style={headSize}>
       <style jsx>
         {`
-          .tama-head {
+          .tama-head-container {
             height: 100px;
             width: 100px;
             position: absolute;
             bottom: 0;
+            display: flex;
+            justify-content: center;
+            transition: transform 1s;
+          }
+
+          .tama-head {
+            height: 100%;
+            width: 100%;
+            position: absolute;
+            bottom: 0;
             border-radius: 100%;
             background-color: #f09;
-            transition: transform 1s, background-color 1s;
+            transition: background-color 1s;
           }
 
           @keyframes bounce-volume-displace {
@@ -47,11 +70,22 @@ function TamaHead(props) {
             100% {height: 90px; width: 115px;}
           }
 
-          .animate-idle {
+          @keyframes shape-up {
+            0% {height: 100%; width: 100%; border-radius: 100%;}
+            50% {height: 110%; width: 120%; border-radius: 20%;}
+            100% {height: 100%; width: 100%; border-radius: 100%;}
+          }
+
+          .tama-head-container.animate-idle {
             animation: bounce-volume-displace 1s linear infinite;
+          }
+
+          .tama-head.animate-exercising {
+            animation: shape-up 0.5s linear infinite;
           }
         `}
       </style>
+      <div className={'tama-head animate-' + headAnimation} style={complexion}></div>
     </div>
   );
 }
