@@ -16,7 +16,9 @@ Additional Documentation: [Design Process](design/README.md)
 
 1. Clone repository.
 
-2. Open index.html in web browser.
+2. Navigate to project root: `solo-projects/09-cowork-space`.
+
+3. Open **index.html** in web browser.
 
 ### II. Optional Setup (Sass)
 
@@ -28,7 +30,7 @@ Additional Documentation: [Design Process](design/README.md)
 
 #### B. Recompile CSS
 
-1. Navigate to project folder.
+1. Navigate to project root: `solo-projects/09-cowork-space`.
 
 2. Run `sass css/sass/main.scss css/styles.css`
 

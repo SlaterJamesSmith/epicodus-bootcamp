@@ -18,7 +18,9 @@ The robot dance groups are contained in separate frames, which are treated like 
 
 1. Clone repository.
 
-2. Open index.html in web browser.
+2. Navigate to project root: `solo-projects/10-robot-dance-party`.
+
+3. Open **index.html** in web browser.
 
 ### II. Optional Setup (Sass)
 
@@ -30,7 +32,7 @@ The robot dance groups are contained in separate frames, which are treated like 
 
 #### B. Recompile CSS
 
-1. Navigate to project folder.
+1. Navigate to project root: `solo-projects/10-robot-dance-party`.
 
 2. Run `sass css/sass/main.scss css/styles.css`
 

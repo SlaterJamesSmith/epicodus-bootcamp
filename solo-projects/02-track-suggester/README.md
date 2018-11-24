@@ -14,7 +14,9 @@ Users submit a selection of self-defining statements, which are then scored and 
 
 1. Clone repository.
 
-2. Open index.html in web browser.
+2. Navigate to project root: `solo-projects/02-track-suggester`.
+
+3. Open **index.html** in web browser.
 
 ## Known Bugs
 

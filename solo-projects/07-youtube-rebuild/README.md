@@ -46,13 +46,15 @@ A limited site rebuild of [YouTube](https://www.youtube.com/) using Angular.
 
 ### IV. Project Setup
 
-1. Clone repository and navigate to project root.
+1. Clone repository.
 
-2. Run `npm install` in project root to load required packages.
+2. Navigate to project root: `solo-projects/07-youtube-rebuild`.
 
-3. Create new file **api-keys.ts** in `src/app`.
+3. Run `npm install` to load required packages.
 
-4. In **api-keys.ts**, insert template code blocks from below and update credentials:
+4. Create new file **api-keys.ts** in `src/app`.
+
+5. In **api-keys.ts**, insert template code blocks from below and update credentials:
 ```
 // Firebase Credentials
 export const masterFirebaseConfig = {
@@ -120,7 +122,6 @@ export const youtubeApiConfig = {
 * Angular
 * Firebase
 * JavaScript
-* Node.js
 * TypeScript
 
 ## MVC Overview

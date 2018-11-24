@@ -20,13 +20,15 @@ Access up-to-date information on healthcare providers in Portland, OR, through B
 
 1. Install Node.js on local machine.
 
-2. Clone repository and navigate to project folder.
+2. Clone repository.
 
-3. Run `npm install` to load required packages.
+3. Navigate to project root: `solo-projects/06-doctor-lookup`.
 
-4. Create new **.env** file.
+4. Run `npm install` to load required packages.
 
-5. In **.env**, insert template code line from below and update with API key:
+5. Create new **.env** file.
+
+6. In **.env**, insert template code line from below and update with API key:
 ```
 exports.apiKey = ""
 ```
@@ -48,7 +50,6 @@ None.
 ## Technologies Used
 
 * JavaScript
-* Node.js
 * Webpack
 
 ## Specifications

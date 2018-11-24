@@ -14,9 +14,11 @@ A standard tamagotchi (digital pet) game with robust animated visual feedback. A
 
 1. Install Node.js on local machine.
 
-2. Clone repository and navigate to `epicodus-solo-12`.
+2. Clone repository.
 
-3. Run `npm install` to load required packages.
+3. Navigate to project root: `solo-projects/12-super-tamagotchi`.
+
+4. Run `npm install` to load required packages.
 
 ### II. View/Build Project
 
@@ -24,7 +26,7 @@ A standard tamagotchi (digital pet) game with robust animated visual feedback. A
 
 - Production Build: `npm run build`
 
-  1. Locate build files in `epicodus-solo-12/build`.
+  1. Locate build files in `solo-projects/12-super-tamagotchi/build`.
 
 ## Known Bugs
 

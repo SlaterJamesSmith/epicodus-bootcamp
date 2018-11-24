@@ -16,9 +16,11 @@ Based on a user's Earth-age, this application will calculate the user's relative
 
 1. Install Node.js on local machine.
 
-2. Clone repository and navigate to project folder.
+2. Clone repository.
 
-3. Run `npm install` to load required packages.
+3. Navigate to project root: `solo-projects/05-galactic-age`.
+
+4. Run `npm install` to load required packages.
 
 ### II. View Project
 
@@ -39,7 +41,6 @@ None.
 ## Technologies Used
 
 * JavaScript
-* Node.js
 * Webpack
 * Jasmine
 * Karma

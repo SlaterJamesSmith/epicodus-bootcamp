@@ -16,7 +16,9 @@ A user inputs a single number and an optional login name. The application return
 
 1. Clone repository.
 
-2. Open index.html in web browser.
+2. Navigate to project root: `solo-projects/03-beep-boop`.
+
+3. Open **index.html** in web browser.
 
 ## Known Bugs
 

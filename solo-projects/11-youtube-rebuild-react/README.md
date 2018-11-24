@@ -24,13 +24,15 @@ A limited site rebuild of [YouTube](https://www.youtube.com/) using React.
 
 1. Install Node.js on local machine.
 
-2. Clone repository and navigate to `epicodus-solo-11`.
+2. Clone repository.
 
-3. Run `npm install` to load required packages.
+3. Navigate to project root: `solo-projects/11-youtube-rebuild-react`.
 
-4. Create new **.env** file.
+4. Run `npm install` to load required packages.
 
-5. In **.env**, insert template code line from below and update with API key:
+5. Create new **.env** file.
+
+6. In **.env**, insert template code line from below and update with API key:
 ```
 exports.apiKey = ""
 ```
@@ -41,7 +43,7 @@ exports.apiKey = ""
 
 - Production Build: `npm run build`
 
-  1. Locate build files in `epicodus-solo-11/build`.
+  1. Locate build files in `solo-projects/11-youtube-rebuild-react/build`.
 
 ## Known Bugs
 

@@ -12,7 +12,9 @@
 
 1. Clone repository.
 
-2. Open index.html in web browser.
+2. Navigate to project root: `solo-projects/04-tasty-pizza`.
+
+3. Open **index.html** in web browser.
 
 ## Known Bugs
 

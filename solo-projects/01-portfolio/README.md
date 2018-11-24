@@ -12,7 +12,9 @@ A custom-built personal portfolio website.
 
 1. Clone repository.
 
-2. Open index.html in web browser.
+2. Navigate to project root: `solo-projects/01-portfolio`.
+
+3. Open **index.html** in web browser.
 
 ## Known Bugs
 

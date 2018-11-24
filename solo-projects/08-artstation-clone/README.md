@@ -18,7 +18,9 @@ An aesthetic clone of [ArtStation's](https://www.artstation.com/) homepage layou
 
 1. Clone repository.
 
-2. Open index.html in web browser.
+2. Navigate to project root: `solo-projects/08-artstation-clone`.
+
+3. Open **index.html** in web browser.
 
 ## Known Bugs
 

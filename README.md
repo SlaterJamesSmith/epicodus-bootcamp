@@ -42,6 +42,8 @@ Course work completed through the UI Design & React program track at Epicodus.
 
 11. [YouTube Rebuild (React)](solo-projects/11-youtube-rebuild-react)
 
+11. [Super Tamagotchi](solo-projects/12-super-tamagotchi)
+
 ## Setup/Installation Requirements
 
 1. Clone repository.
